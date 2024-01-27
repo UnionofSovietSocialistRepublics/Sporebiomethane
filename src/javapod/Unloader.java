@@ -9,7 +9,7 @@ import mindustry.gen.*;
 import mindustry.mod.*;
 import mindustry.ui.dialogs.*;
 
-public class Unloader extends Mod{
+public class Unloader extends Mod{.\gradlew jar
 
     public Unloader(){
         Log.info("The fog the fog is coming");
@@ -18,7 +18,6 @@ public class Unloader extends Mod{
     @Override
     public void loadContent(){
         Log.info("Go to hell.");
-        JpodUnitTypes.load();
     }
 
 }
