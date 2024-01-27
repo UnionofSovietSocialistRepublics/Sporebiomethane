@@ -1,8 +1,8 @@
-displayName: "Java Mod Template"
+displayName: "Spore biomethane"
 name: "javapod"
-author: "You"
+author: "Water white"
 main: "javapod.Unloader"
-description: "A Mindustry Java mod template."
+description: "Quite the holy sight there am i rite?"
 version: 1.0
 minGameVersion: 145
 java: true
