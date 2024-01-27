@@ -41,7 +41,7 @@ public class JavapodUnits {
 
         DeathImp = new UnitType("DeathImp"){{
             this.constructor = UnitEntity::create;
-            speed = 1f;
+            speed = 1.75f;
             hitSize = 8f;
             health = 215;
             range = 50f;
@@ -72,7 +72,7 @@ public class JavapodUnits {
         }};        
                 Imp = new UnitType("Imp"){{
             this.constructor = LegsUnit::create;
-            speed = 1f;
+            speed = 1.5f;
             hitSize = 8f;
             health = 450;
             range = 50f;
@@ -95,7 +95,7 @@ public class JavapodUnits {
             abilities.add(new SpawnDeathAbility(DeathImp, 1, 11f));//, new LiquidExplodeAbility(liquid = Liquids.neoplasm));
            // abilities.add(new LiquidExplodeAbility(water, 250));
         }};
-                Autus = new UnitType("Autus"){{
+            Autus = new UnitType("Autus"){{
             this.constructor = LegsUnit::create;
             speed = 1f;
             hitSize = 8f;
