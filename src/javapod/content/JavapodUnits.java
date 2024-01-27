@@ -38,31 +38,6 @@ public class JavapodUnits {
 
         public static void load(){
 
-        Imp = new UnitType("Imp"){{
-            this.constructor = LegsUnit::create;
-            speed = 1f;
-            hitSize = 8f;
-            health = 450;
-            range = 50f;
-            weapons.add(new Weapon("kys"){{
-                reload = 5f;
-                x = 0f;
-                y = 0f;
-                top = false;
-                bullet = new BombBulletType(2.5f, 9){{
-                    rangeOverride = 30f;
-                    width = 0f;
-                    height = 0f;
-                    lifetime = 10f;
-                    splashDamage = 175f;
-                    splashDamageRadius = 60f;
-                    killShooter = true;
-                }};
-            }});
-            abilities.add(new SpawnDeathAbility(DeathImp, 5, 11f));
-           // abilities.add(new LiquidExplodeAbility(water, 250));
-        }};
-
         DeathImp = new UnitType("DeathImp"){{
             this.constructor = LegsUnit::create;
             speed = 1f;
@@ -87,4 +62,28 @@ public class JavapodUnits {
             }});
             //abilities.add(new LiquidExplodeAbility(water, 250));
         }};        
+                Imp = new UnitType("Imp"){{
+            this.constructor = LegsUnit::create;
+            speed = 1f;
+            hitSize = 8f;
+            health = 450;
+            range = 50f;
+            weapons.add(new Weapon("kys"){{
+                reload = 5f;
+                x = 0f;
+                y = 0f;
+                top = false;
+                bullet = new BombBulletType(2.5f, 9){{
+                    rangeOverride = 30f;
+                    width = 0f;
+                    height = 0f;
+                    lifetime = 10f;
+                    splashDamage = 175f;
+                    splashDamageRadius = 60f;
+                    killShooter = true;
+                }};
+            }});
+            abilities.add(new SpawnDeathAbility(DeathImp, 1, 11f));
+           // abilities.add(new LiquidExplodeAbility(water, 250));
+        }};
 }}
