@@ -112,13 +112,23 @@ public class JavapodUnits {
                 y = 0f;
                 //shootStatus = Shielded;
                 //shootStatusDuration = 80f;
+                shootSound = Sounds.flame;
                 bullet = new BasicBulletType(2.5f, 9){{
                     collidesAir = true;
                     speed = 5f;
                     damage = 65f;
                     width = 0.1f;
                     height = 0.1f;
+                    pierce = true;
+                    pierceCap = 3;
+                    statusDuration = 60f * 10;
+                    shootEffect = Fx.shootSmallFlame;
+                    hitEffect = Fx.hitFlameSmall;
                     lifetime = 25f;
+                    despawnEffect = Fx.none;
+                    status = StatusEffects.burning;
+                    keepVelocity = false;
+                    hittable = false;
                     lightColor = Color.valueOf("8B73C7");
                 }};
             }});
