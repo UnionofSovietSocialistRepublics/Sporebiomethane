@@ -9,7 +9,7 @@ import mindustry.gen.*;
 import mindustry.mod.*;
 import mindustry.ui.dialogs.*;
 
-public class Unloader extends Mod{.\gradlew jar
+public class Unloader extends Mod{
 
     public Unloader(){
         Log.info("The fog the fog is coming");
