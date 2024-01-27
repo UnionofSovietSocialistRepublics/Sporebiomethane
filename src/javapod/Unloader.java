@@ -8,6 +8,7 @@ import mindustry.game.EventType.*;
 import mindustry.gen.*;
 import mindustry.mod.*;
 import mindustry.ui.dialogs.*;
+import javapod.content.*;
 
 public class Unloader extends Mod{
 
@@ -18,6 +19,8 @@ public class Unloader extends Mod{
     @Override
     public void loadContent(){
         Log.info("Go to hell.");
+        Log.info("Loading units");
+        JavapodUnits.load();
     }
 
 }
