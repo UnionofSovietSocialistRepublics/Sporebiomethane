@@ -17,6 +17,7 @@ import mindustry.entities.pattern.*;
 import mindustry.gen.*;
 import mindustry.graphics.*;
 import mindustry.type.*;
+import mindustry.content.*;
 import mindustry.type.ammo.*;
 import mindustry.type.unit.*;
 import mindustry.type.weapons.*;
@@ -92,6 +93,46 @@ public class JavapodUnits {
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new SpawnDeathAbility(DeathImp, 1, 11f));//, new LiquidExplodeAbility(liquid = Liquids.neoplasm));
+           // abilities.add(new LiquidExplodeAbility(water, 250));
+        }};
+                Autus = new UnitType("Autus"){{
+            this.constructor = LegsUnit::create;
+            speed = 1f;
+            hitSize = 8f;
+            health = 1100;
+            armor = 4;
+            range = 50f;
+            legCount = 4;
+            legLength = 13f;
+            legExtension = 7f;
+            legBaseOffset = 6f;
+            weapons.add(new Weapon("flamer"){{
+                reload = 5f;
+                x = 0f;
+                y = 0f;
+                //shootStatus = Shielded;
+                //shootStatusDuration = 80f;
+                bullet = new BasicBulletType(2.5f, 9){{
+                    collidesAir = true;
+                    speed = 5f;
+                    damage = 65f;
+                    width = 0.1f;
+                    height = 0.1f;
+                    lifetime = 25f;
+                    lightColor = Color.valueOf("8B73C7");
+                }};
+            }});
+            outlineColor = Color.valueOf("303a45");
+            parts.add(new RegionPart("-hand"){{
+                mirror = true;
+                progress = PartProgress.warmup;
+                layerOffset= 0.001f;
+                x = 3f;
+                y = 3f;
+                moveX = -1.5f;
+                moveY = -1.25f;
+                moveRot = 10f;
+            }});
            // abilities.add(new LiquidExplodeAbility(water, 250));
         }};
 }}
