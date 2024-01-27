@@ -122,8 +122,17 @@ public class JavapodUnits {
                     pierce = true;
                     pierceCap = 3;
                     statusDuration = 60f * 10;
-                    shootEffect = Fx.incendTrail;
                     hitEffect = Fx.hitFlameSmall;
+                    shootEffect = new ParticleEffect() {{
+                        particles = 30;
+                        sizeFrom= 50f;
+                        sizeTo= 1f;
+                        length= 80f;
+                        lifetime= 25f;
+                        lightColor: Color.valueOf("8B73C7");
+                        colorFrom: Color.valueOf("8B73C7");
+                        colorTo: Color.valueOf("8B73C7");
+                    }};
                     lifetime = 12f;
                     despawnEffect = Fx.none;
                     status = StatusEffects.burning;
