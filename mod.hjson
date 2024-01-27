@@ -1,7 +1,7 @@
 displayName: "Java Mod Template"
 name: "javapod"
 author: "You"
-main: "javapod.javapod"
+main: "javapod.Unloader"
 description: "A Mindustry Java mod template."
 version: 1.0
 minGameVersion: 145
