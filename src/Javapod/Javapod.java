@@ -9,12 +9,12 @@ import mindustry.gen.*;
 import mindustry.mod.*;
 import mindustry.ui.dialogs.*;
 
-public class ExampleJavaMod extends Mod{
+public class Javapod extends Mod{
 
-    public ExampleJavaMod(){
+    public Javapod(){
         Log.info("Loaded ExampleJavaMod constructor.");
 
-        //listen for game load event
+        //listen for games load event
         Events.on(ClientLoadEvent.class, e -> {
             //show dialog upon startup
             Time.runTask(10f, () -> {
