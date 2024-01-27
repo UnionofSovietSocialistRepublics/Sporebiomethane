@@ -63,7 +63,7 @@ public class JavapodUnits {
            // abilities.add(new LiquidExplodeAbility(water, 250));
         }};
 
-        Imp = new UnitType("Imp"){{
+        DeathImp = new UnitType("DeathImp"){{
             this.constructor = LegsUnit::create;
             speed = 1f;
             hitSize = 8f;
