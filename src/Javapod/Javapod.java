@@ -1,4 +1,4 @@
-package example;
+package Javapod;
 
 import arc.*;
 import arc.util.*;
