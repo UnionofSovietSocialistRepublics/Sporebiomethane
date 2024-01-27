@@ -122,13 +122,14 @@ public class JavapodUnits {
                     pierce = true;
                     pierceCap = 3;
                     statusDuration = 60f * 10;
-                    shootEffect = Fx.shootSmallFlame;
+                    shootEffect = Fx.incendTrail;
                     hitEffect = Fx.hitFlameSmall;
-                    lifetime = 25f;
+                    lifetime = 12f;
                     despawnEffect = Fx.none;
                     status = StatusEffects.burning;
                     keepVelocity = false;
                     hittable = false;
+                    reflectable = false;
                     lightColor = Color.valueOf("8B73C7");
                 }};
             }});
