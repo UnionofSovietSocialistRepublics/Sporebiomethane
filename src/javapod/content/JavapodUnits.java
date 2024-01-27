@@ -30,7 +30,7 @@ import static mindustry.Vars.*;
 public class JavapodUnits {
     public static UnitType
 
-    Imp, baslisk, autus,
+    Imp, Baslisk, Autus,
 
     DeathImp;
 
@@ -39,12 +39,18 @@ public class JavapodUnits {
         public static void load(){
 
         DeathImp = new UnitType("DeathImp"){{
-            this.constructor = LegsUnit::create;
+            this.constructor = UnitEntity::create;
             speed = 1f;
             hitSize = 8f;
             health = 215;
             range = 50f;
+            engineOffset = 5f;
+            engineSize = 4f;
+            rotateSpeed = 7f;
             flying = true;
+            hitSize = 9f;
+            drag = 0.05f;
+            accel = 0.11f;
             weapons.add(new Weapon("kys"){{
                 reload = 5f;
                 x = 0f;
@@ -60,7 +66,8 @@ public class JavapodUnits {
                     killShooter = true;
                 }};
             }});
-            //abilities.add(new LiquidExplodeAbility(water, 250));
+            outlineColor = Color.valueOf("303a45");
+            //abilities.add(new LiquidExplodeAbility(liquid = Liquids.neoplasm));
         }};        
                 Imp = new UnitType("Imp"){{
             this.constructor = LegsUnit::create;
@@ -83,7 +90,8 @@ public class JavapodUnits {
                     killShooter = true;
                 }};
             }});
-            abilities.add(new SpawnDeathAbility(DeathImp, 1, 11f));
+            outlineColor = Color.valueOf("303a45");
+            abilities.add(new SpawnDeathAbility(DeathImp, 1, 11f));//, new LiquidExplodeAbility(liquid = Liquids.neoplasm));
            // abilities.add(new LiquidExplodeAbility(water, 250));
         }};
 }}
