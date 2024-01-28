@@ -30,10 +30,12 @@ import static mindustry.Vars.*;
 
 public class JavapodUnits {
     public static UnitType
-
-    Imp, Baslisk, Autus,
-
-    DeathImp;
+    //Legs
+    Carci,Imp, Baslisk, Autus,
+    //missiles
+    Bomb,
+    //Floaty
+    Guardian,Thera,DeathImp;
 
 
 
@@ -114,32 +116,12 @@ public class JavapodUnits {
                 //shootStatusDuration = 80f;
                 shootSound = Sounds.flame;
                 bullet = new BasicBulletType(2.5f, 9){{
+                    spawnUnit = Bomb;
                     collidesAir = true;
-                    speed = 5f;
-                    damage = 65f;
-                    width = 0.1f;
-                    height = 0.1f;
-                    pierce = true;
-                    pierceCap = 3;
-                    statusDuration = 60f * 10;
-                    hitEffect = Fx.hitFlameSmall;
-                    shootEffect = new ParticleEffect() {{
-                        particles = 30;
-                        sizeFrom= 50f;
-                        sizeTo= 1f;
-                        length= 80f;
-                        lifetime= 25f;
-                        lightColor = Color.valueOf("8B73C7");
-                        colorFrom = Color.valueOf("8B73C7");
-                        colorTo = Color.valueOf("8B73C7");
-                        cone = 10f;
-                    }};
-                    lifetime = 12f;
-                    despawnEffect = Fx.none;
-                    status = StatusEffects.burning;
-                    keepVelocity = false;
-                    hittable = false;
-                    reflectable = false;
+                    instantDisappear = true;
+                    shootEffect = Fx.shootBig;
+                    smokeEffect = Fx.shootBigSmoke;
+                    damage = 0f;
                     lightColor = Color.valueOf("8B73C7");
                 }};
             }});
@@ -147,7 +129,8 @@ public class JavapodUnits {
             parts.add(new RegionPart("-hand"){{
                 mirror = true;
                 progress = PartProgress.warmup;
-                layerOffset= 0.001f;
+                layerOffset= 0.0001f;
+                under = true;
                 x = 3f;
                 y = 3f;
                 moveX = -1.5f;
@@ -156,4 +139,64 @@ public class JavapodUnits {
             }});
            // abilities.add(new LiquidExplodeAbility(water, 250));
         }};
+        Thera = new UnitType("Thera"){{
+            this.constructor = UnitEntity::create;
+            speed = 1.75f;
+            hitSize = 8f;
+            health = 215;
+            range = 50f;
+            engineOffset = 5f;
+            engineSize = 4f;
+            rotateSpeed = 7f;
+            flying = true;
+            hitSize = 9f;
+            drag = 0.05f;
+            accel = 0.11f;
+            weapons.add(new Weapon("balls"){{
+                x = 6f;
+                y = 6f;
+                mirror = true;
+                reload = 75f;
+                top = false;
+                bullet = new BasicBulletType(2.5f, 9){{
+                    collidesAir = false;
+                    rangeOverride = 30f;
+                    width = 0f;
+                    height = 0f;
+                    lifetime = 10f;
+                    damage = 0f;
+                    shoot.shots = 4;
+                    alternate = true;
+                    shoot.shotDelay = 5f;
+                    spawnUnit = new MissileUnitType("Bomb"){{
+                    //aiController = MissileAI::new;
+                    flying = true;
+                    useUnitCap = false;
+                    lifetime = 50f;
+                    trailLength = 3;
+                    trailColor = Color.valueOf("A865C9");
+                    health = 1120f;
+                    hitSize = 3f;
+                    hidden = true;
+                    drawCell =false;
+                    weapons.add(new Weapon(){{
+                        shootCone = 360f;
+                        mirror = false;
+                        reload = 1f;
+                        shootOnDeath = true;
+                        bullet = new ExplosionBulletType(110f, 25f){{
+                            killShooter = true;
+                            shootEffect = Fx.massiveExplosion;
+                            collidesAir = false;
+                            splashDamage = 75f;
+                            splashDamageRadius = 60f;
+                    }};}});
+                    outlineColor = Color.valueOf("303a45");
+                    }};
+                }};
+            }});
+            outlineColor = Color.valueOf("303a45");
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (70f * 60f) * 100f;}});
+            abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
+        }};  
 }}

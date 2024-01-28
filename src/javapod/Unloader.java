@@ -13,12 +13,12 @@ import javapod.content.*;
 public class Unloader extends Mod{
 
     public Unloader(){
-        Log.info("The fog the fog is coming");
+        Log.info("Unloading the storm");
     }
 
     @Override
     public void loadContent(){
-        Log.info("Go to hell.");
+        Log.info("Ah shit here we go again. Another mod, another load.");
         Log.info("Loading units");
         JavapodUnits.load();
     }
