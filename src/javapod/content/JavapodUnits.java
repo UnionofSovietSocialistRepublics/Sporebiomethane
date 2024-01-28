@@ -129,9 +129,10 @@ public class JavapodUnits {
                         sizeTo= 1f;
                         length= 80f;
                         lifetime= 25f;
-                        lightColor: Color.valueOf("8B73C7");
-                        colorFrom: Color.valueOf("8B73C7");
-                        colorTo: Color.valueOf("8B73C7");
+                        lightColor = Color.valueOf("8B73C7");
+                        colorFrom = Color.valueOf("8B73C7");
+                        colorTo = Color.valueOf("8B73C7");
+                        cone = 10f;
                     }};
                     lifetime = 12f;
                     despawnEffect = Fx.none;
