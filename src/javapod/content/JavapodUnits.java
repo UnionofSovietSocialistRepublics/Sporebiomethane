@@ -104,28 +104,46 @@ public class JavapodUnits {
             this.constructor = LegsUnit::create;
             speed = 1f;
             hitSize = 8f;
-            health = 1100;
+            health = 1500;
             armor = 4;
-            range = 50f;
+            range = 30f;
             legCount = 4;
             legLength = 13f;
             legExtension = 7f;
             legBaseOffset = 6f;
             weapons.add(new Weapon("flamer"){{
+
+                top = true;
                 reload = 5f;
                 x = 0f;
                 y = 0f;
                 shootStatus = StatusEffects.shielded;
                 shootStatusDuration = 80f;
                 shootSound = Sounds.flame;
+                ejectEffect = Fx.none;
                 bullet = new BasicBulletType(2.5f, 9){{
-                    spawnUnit = Bomb;
                     collidesAir = true;
-                    instantDisappear = true;
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
                     damage = 65f;
+                    lifetime = 12f;
                     lightColor = Color.valueOf("8B73C7");
+                    pierce = true;
+                    pierceBuilding = true;
+                    pierceCap = 3;
+                    shootEffect = new ParticleEffect() {{
+                    particles = 30;
+                    sizeFrom = 5f;
+                    sizeTo = 0f;
+                    length = 80f;
+                    lifetime = 25f;
+                    lightColor = Color.valueOf("8B73C7");
+                    colorFrom = Color.valueOf("8B73C7");
+                    colorTo = Color.valueOf("8B73C7");
+                    cone = 10f;
+                    hittable = false;
+                    reflectable = false;
+                }};
                 }};
             }});
             healColor = Color.valueOf("590e14");
@@ -148,8 +166,8 @@ public class JavapodUnits {
             this.constructor = UnitEntity::create;
             speed = 1.75f;
             hitSize = 8f;
-            health = 215;
-            range = 50f;
+            health = 1150;
+            range = 75f;
             engineOffset = 5f;
             engineSize = 4f;
             rotateSpeed = 7f;
@@ -165,7 +183,6 @@ public class JavapodUnits {
                 top = false;
                 bullet = new BasicBulletType(2.5f, 9){{
                     collidesAir = false;
-                    rangeOverride = 30f;
                     width = 0f;
                     height = 0f;
                     lifetime = 10f;
@@ -191,7 +208,7 @@ public class JavapodUnits {
                         bullet = new ExplosionBulletType(110f, 25f){{
                             killShooter = true;
                             shootEffect = Fx.massiveExplosion;
-                            collidesAir = false;
+                            collidesAir = true;
                             splashDamage = 75f;
                             splashDamageRadius = 60f;
                     }};}});

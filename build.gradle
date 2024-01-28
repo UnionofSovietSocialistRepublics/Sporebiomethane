@@ -15,6 +15,10 @@ java{
     sourceCompatibility = JavaVersion.VERSION_17
 }
 
+ dependencies {
+    implementation 'com.github.liplum:MultiCrafterLib:v1.7'
+}
+
 ext{
     //the build number that this mod is made for
     mindustryVersion = 'v146'
