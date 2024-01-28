@@ -51,7 +51,7 @@ public class JavapodItem{
             explosiveness = 1.5f;
         }};
 
-        Vanadium = new Item("Carbine-composite", Color.valueOf("485767")){{
+        Vanadium = new Item("Vanadium", Color.valueOf("485767")){{
             hardness = 3;
             cost = 1.5f;
             flammability = 2f;

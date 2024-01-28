@@ -8,6 +8,8 @@ import mindustry.game.EventType.*;
 import mindustry.gen.*;
 import mindustry.mod.*;
 import mindustry.ui.dialogs.*;
+import javapod.content.JavapodItem;
+import javapod.content.JavapodblockLoader;
 import javapod.content.*;
 
 public class Unloader extends Mod{
@@ -19,10 +21,12 @@ public class Unloader extends Mod{
     @Override
     public void loadContent(){
         Log.info("Ah shit here we go again. Another mod, another load.");
+        Log.info("Loading items");
+        JavapodItem.load();
+        Log.info("Loading blocks");
+        JavapodblockLoader.load();
         Log.info("Loading units");
         JavapodUnits.load();
-        Log.info(" ");
-        JavapodItem.load();
     }
 
 }
