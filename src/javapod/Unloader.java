@@ -21,6 +21,8 @@ public class Unloader extends Mod{
         Log.info("Ah shit here we go again. Another mod, another load.");
         Log.info("Loading units");
         JavapodUnits.load();
+        Log.info(" ");
+        JavapodItem.load();
     }
 
 }
