@@ -51,6 +51,7 @@ public class JavapodUnits {
             engineSize = 4f;
             rotateSpeed = 7f;
             flying = true;
+            hidden = true;
             hitSize = 9f;
             drag = 0.05f;
             accel = 0.11f;
@@ -70,7 +71,7 @@ public class JavapodUnits {
                 }};
             }});
             outlineColor = Color.valueOf("303a45");
-            //abilities.add(new LiquidExplodeAbility(liquid = Liquids.neoplasm));
+            abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};        
                 Imp = new UnitType("Imp"){{
             this.constructor = LegsUnit::create;
@@ -93,9 +94,11 @@ public class JavapodUnits {
                     killShooter = true;
                 }};
             }});
+            healColor = Color.valueOf("590e14");
             outlineColor = Color.valueOf("303a45");
-            abilities.add(new SpawnDeathAbility(DeathImp, 1, 11f));//, new LiquidExplodeAbility(liquid = Liquids.neoplasm));
-           // abilities.add(new LiquidExplodeAbility(water, 250));
+            abilities.add(new SpawnDeathAbility(DeathImp, 1, 11f));
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (70f * 60f) * 100f;}});
+            abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};
             Autus = new UnitType("Autus"){{
             this.constructor = LegsUnit::create;
@@ -112,8 +115,8 @@ public class JavapodUnits {
                 reload = 5f;
                 x = 0f;
                 y = 0f;
-                //shootStatus = Shielded;
-                //shootStatusDuration = 80f;
+                shootStatus = StatusEffects.shielded;
+                shootStatusDuration = 80f;
                 shootSound = Sounds.flame;
                 bullet = new BasicBulletType(2.5f, 9){{
                     spawnUnit = Bomb;
@@ -121,10 +124,11 @@ public class JavapodUnits {
                     instantDisappear = true;
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
-                    damage = 0f;
+                    damage = 65f;
                     lightColor = Color.valueOf("8B73C7");
                 }};
             }});
+            healColor = Color.valueOf("590e14");
             outlineColor = Color.valueOf("303a45");
             parts.add(new RegionPart("-hand"){{
                 mirror = true;
@@ -137,7 +141,8 @@ public class JavapodUnits {
                 moveY = -1.25f;
                 moveRot = 10f;
             }});
-           // abilities.add(new LiquidExplodeAbility(water, 250));
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (70f * 60f) * 100f;}});
+            abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};
         Thera = new UnitType("Thera"){{
             this.constructor = UnitEntity::create;
@@ -169,7 +174,6 @@ public class JavapodUnits {
                     alternate = true;
                     shoot.shotDelay = 5f;
                     spawnUnit = new MissileUnitType("Bomb"){{
-                    //aiController = MissileAI::new;
                     flying = true;
                     useUnitCap = false;
                     lifetime = 50f;
@@ -191,6 +195,7 @@ public class JavapodUnits {
                             splashDamage = 75f;
                             splashDamageRadius = 60f;
                     }};}});
+                    healColor = Color.valueOf("590e14");
                     outlineColor = Color.valueOf("303a45");
                     }};
                 }};
@@ -199,4 +204,42 @@ public class JavapodUnits {
             abilities.add(new RegenAbility(){{percentAmount = 1f / (70f * 60f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};  
+            Carci = new UnitType("Carci"){{
+            this.constructor = LegsUnit::create;
+            speed = 0.65f;
+            targetAir = false;
+            hitSize = 8f;
+            health = 875;
+            armor = 2;
+            range = 50f;
+            legCount = 4;
+            legLength = 8f;
+            legExtension = 4f;
+            legBaseOffset = 5f;
+            weapons.add(new Weapon("mouh"){{
+                reload = 60f;
+                x = 0f;
+                y = 0f;
+                shootSound = Sounds.flame;
+                bullet = new ArtilleryBulletType(2.5f, 9){{
+                    speed = 3f;
+                    shootEffect = Fx.shootBig;
+                    smokeEffect = Fx.shootBigSmoke;
+                    splashDamageRadius = 25f;
+                    splashDamage = 125f;
+                    lifetime = 75f;
+                    statusDuration = 60f * 4;
+                    status = StatusEffects.slow;
+                    backColor = Color.valueOf("85151e");
+                    frontColor = Color.valueOf("85151e");
+                    collidesTiles = true;
+                    trailLength = 5;
+                    trailColor = Color.valueOf("69262b");
+                }};
+            }});
+            healColor = Color.valueOf("590e14");
+            outlineColor = Color.valueOf("303a45");
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (70f * 60f) * 100f;}});
+            abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
+        }};
 }}
