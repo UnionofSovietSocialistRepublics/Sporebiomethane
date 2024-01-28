@@ -50,8 +50,8 @@ public class JavapodUnitFactory{
         pool = new UnitFactory("pool"){{
             requirements(Category.units, with(copper,50,lead,120,silicon, 80));
             plans = Seq.with(
-                new UnitPlan(JavapodUnits.Imp, 60f * 15, with(silicon, 10, lead, 10)),
-                new UnitPlan(JavapodUnits.Imp, 60f * 10, with(silicon, 8, coal, 10)),
+                new UnitPlan(JavapodUnits.Zergling, 60f * 15, with(silicon, 10, lead, 10)),
+                new UnitPlan(JavapodUnits.Baneling, 60f * 10, with(silicon, 8, coal, 10)),
                 new UnitPlan(JavapodUnits.Imp, 60f * 40, with(silicon, 30, lead, 20, titanium, 20))
             );
             size = 3;
@@ -61,8 +61,8 @@ public class JavapodUnitFactory{
         Synapsetower = new UnitFactory("Synapse-tower"){{
             requirements(Category.units, with(copper,50,lead,120,silicon,80));
             plans = Seq.with(
-                new UnitPlan(JavapodUnits.Imp, 60f * 15, with( silicon, 10, lead, 10)),
-                new UnitPlan(JavapodUnits.Imp, 60f * 10, with( silicon, 8, coal, 10)),
+                new UnitPlan(JavapodUnits.Thera, 60f * 15, with( silicon, 10, lead, 10)),
+                new UnitPlan(JavapodUnits.Autus, 60f * 10, with( silicon, 8, coal, 10)),
                 new UnitPlan(JavapodUnits.Imp, 60f * 40, with( silicon, 30, lead, 20, titanium, 20))
             );
             size = 3;

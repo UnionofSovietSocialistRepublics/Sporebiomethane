@@ -31,11 +31,11 @@ import static mindustry.Vars.*;
 public class JavapodUnits {
     public static UnitType
     //Legs
-    Carci,Imp, Baslisk, Autus,
+    Carci,Imp, Baslisk, Autus, Baneling, Zergling,
     //missiles
     Bomb,
     //Floaty
-    Guardian,Thera,DeathImp;
+    Guardian,Thera,DeathImp,Drone,Interceptor;
 
 
 
@@ -94,12 +94,61 @@ public class JavapodUnits {
                     killShooter = true;
                 }};
             }});
+
             healColor = Color.valueOf("590e14");
             outlineColor = Color.valueOf("303a45");
             abilities.add(new SpawnDeathAbility(DeathImp, 1, 11f));
             abilities.add(new RegenAbility(){{percentAmount = 1f / (70f * 60f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};
+                Baneling = new UnitType("Baneling"){{
+            this.constructor = LegsUnit::create;
+            speed = 1.25f;
+            hitSize = 8f;
+            health = 225;
+            range = 50f;
+            legCount = 4;
+            weapons.add(new Weapon("kys"){{
+                reload = 5f;
+                x = 0f;
+                y = 0f;
+                top = false;
+                bullet = new BombBulletType(2.5f, 9){{
+                    rangeOverride = 30f;
+                    width = 0f;
+                    height = 0f;
+                    lifetime = 10f;
+                    splashDamage = 200f;
+                    splashDamageRadius = 60f;
+                    killShooter = true;
+                }};
+            }});
+            outlineColor = Color.valueOf("303a45");
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});
+        }};
+            Zergling = new UnitType("Zergling"){{
+            this.constructor = LegsUnit::create;
+            speed = 1.45f;
+            hitSize = 8f;
+            health = 250;
+            range = 50f;
+            legCount = 4;
+            weapons.add(new Weapon("claws"){{
+                reload = 30f;
+                x = 0f;
+                y = 0f;
+                bullet = new BasicBulletType(2.5f, 9){{
+                    backColor = Color.valueOf("8B73C7");
+                    frontColor = Color.valueOf("8B73C7");
+                    rangeOverride = 30f;
+                    speed = 3f;
+                    lifetime = 75f;
+                    damage = 25f;
+                }};
+            }});
+            outlineColor = Color.valueOf("303a45");
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});
+            }};
             Autus = new UnitType("Autus"){{
             this.constructor = LegsUnit::create;
             speed = 1f;
