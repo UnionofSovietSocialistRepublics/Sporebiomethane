@@ -384,10 +384,10 @@ public class JavapodUnits {
                 bullet = new BasicBulletType(2.5f, 9){{
                     hitEffect = Fx.sapExplosion;
                     collidesTiles = false;
-                    width = 10f;
-                    height = 10f;
+                    width = 15f;
+                    height = 15f;
                     speed = 3f;
-                    lifetime = 55f;
+                    lifetime = 65f;
                     damage = 45f;
                     backColor = Color.valueOf("CBC3E3");
                     frontColor = Color.valueOf("CBC3E3");
@@ -426,7 +426,7 @@ public class JavapodUnits {
                     splashDamageRadius = 5f;
                     lifetime = 110f;
                     statusDuration = 60f * 4;
-                    status = JavapodStatus.Dissolving;
+                    //status = JavapodStatus.Dissolving;
                     backColor = Color.valueOf("8FFE09");
                     frontColor = Color.valueOf("8FFE09");
                     lightColor = Color.valueOf("8FFE09");
