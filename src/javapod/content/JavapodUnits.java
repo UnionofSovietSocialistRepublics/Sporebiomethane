@@ -160,7 +160,7 @@ public class JavapodUnits {
             legLength = 13f;
             legExtension = 7f;
             legBaseOffset = 6f;
-            weapons.add(new Weapon("flamer"){{
+            weapons.add(new Weapon(name + "-flamer"){{
 
                 top = true;
                 reload = 5f;
@@ -286,7 +286,7 @@ public class JavapodUnits {
                 reload = 60f;
                 x = 0f;
                 y = 0f;
-                shootSound = Sounds.flame;
+                shootSound = Sounds.artillery;
                 bullet = new ArtilleryBulletType(2.5f, 9){{
                     speed = 3f;
                     shootEffect = Fx.shootBig;
@@ -310,32 +310,30 @@ public class JavapodUnits {
         }};
             Lobber = new UnitType("Lobber"){{
             this.constructor = LegsUnit::create;
-            speed = 0.65f;
-            targetAir = false;
+            speed = 1f;
             hitSize = 8f;
             health = 215;
             armor = 2;
             range = 60f;
             legCount = 4;
-            weapons.add(new Weapon("Lobbergun"){{
+            weapons.add(new Weapon(name + "-gun"){{
                 reload = 60f;
                 x = 0f;
                 y = 0f;
-                shootSound = Sounds.flame;
-                bullet = new ArtilleryBulletType(2.5f, 9){{
+                bullet = new BasicBulletType(2.5f, 9){{
                     speed = 3f;
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
+                    splashDamage = 30f;
                     splashDamageRadius = 25f;
-                    splashDamage = 125f;
-                    lifetime = 75f;
+                    lifetime = 50f;
                     statusDuration = 60f * 4;
                     status = StatusEffects.slow;
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
+                    lightColor = Color.valueOf("8B73C7");
                     collidesTiles = true;
                     trailLength = 5;
-                    lightColor = Color.valueOf("8B73C7");
                     trailColor = Color.valueOf("8B73C7");
                 }};
             }});
@@ -344,42 +342,51 @@ public class JavapodUnits {
         }};
             Behomoth = new UnitType("Behomoth"){{
             this.constructor = LegsUnit::create;
-            speed = 1.45f;
+            speed = 0.65f;
             hitSize = 16f;
             health = 9000;
             range = 50f;
             legCount = 4;
+            legExtension = -15f;
+            legBaseOffset = 10f;
             weapons.add(new Weapon(name + "-gun"){{
-                reload = 30f;
+                reload = 150f;
                 x = 0f;
                 y = -23f;
                 bullet = new BasicBulletType(2.5f, 9){{
                     hitEffect = Fx.sapExplosion;
-                    backColor = Color.valueOf("8B73C7");
-                    frontColor = Color.valueOf("8B73C7");
+                    width = 14f;
+                    height = 14f;
                     speed = 3f;
                     lifetime = 75f;
-                    damage = 25f;
+                    splashDamage = 150f;
+                    splashDamageRadius = 25f;
+                    statusDuration = 60f * 4;
+                    status = StatusEffects.slow;
+                    backColor = Color.valueOf("8B73C7");
+                    frontColor = Color.valueOf("8B73C7");
+                    lightColor = Color.valueOf("8B73C7");
                 }};
 
             }});
-            weapons.add(new Weapon(name + "-smol-gun"){{
+            weapons.add(new Weapon(name + "-mini"){{
                 reload = 30f;
                 x = -15f;
                 y = -23f;
                 mirror = true;
                 bullet = new BasicBulletType(2.5f, 9){{
                     hitEffect = Fx.sapExplosion;
-                    backColor = Color.valueOf("8B73C7");
-                    frontColor = Color.valueOf("8B73C7");
+                    collidesTiles = false;
                     speed = 3f;
-                    lifetime = 75f;
-                    damage = 25f;
+                    lifetime = 55f;
+                    damage = 195f;
+                    backColor = Color.valueOf("CBC3E3");
+                    frontColor = Color.valueOf("CBC3E3");
                 }};
 
             }});
             outlineColor = Color.valueOf("303a45");
-            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (200f * 60f) * 100f;}});
             abilities.add(new UnitSpawnAbility(Lobber,550f,0f,-7f));
             }};
 }}
