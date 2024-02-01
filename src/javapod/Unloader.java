@@ -23,10 +23,10 @@ public class Unloader extends Mod{
         Log.info("Ah shit here we go again. Another mod, another load.");
         Log.info("Loading items");
         JavapodItem.load();
-        Log.info("Loading blocks");
-        JavapodblockLoader.load();
         Log.info("Loading units");
         JavapodUnits.load();
+        Log.info("Loading blocks");
+        JavapodblockLoader.load();
     }
 
 }
