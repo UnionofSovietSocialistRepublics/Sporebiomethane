@@ -11,8 +11,7 @@ import mindustry.world.blocks.liquid.*;
 import mindustry.world.blocks.units.Reconstructor;
 import mindustry.world.blocks.units.UnitFactory;
 import mindustry.type.*;
-import javapod.content.JavapodItem;
-import javapod.content.JavapodUnits;
+import javapod.content.*;
 import mindustry.content.*;
 
 import static mindustry.Vars.*;
@@ -32,6 +31,7 @@ public class JavapodUnitFactory{
                 new UnitPlan(JavapodUnits.Zergling, 15 * 60f, with(silicon, 65)),
                 new UnitPlan(JavapodUnits.Baneling, 10 * 60f, with(silicon, 45))
             );
+            health = 500;
             size = 3;
             consumePower(1.5f);
 
@@ -45,6 +45,7 @@ public class JavapodUnitFactory{
                 new UnitPlan(JavapodUnits.Autus, 60f * 10, with( silicon, 8, coal, 10)),
                 new UnitPlan(JavapodUnits.Imp, 60f * 40, with( silicon, 30, lead, 20, titanium, 20))
             );
+            health = 500;
             size = 3;
             consumePower(1.5f);
 
@@ -57,18 +58,21 @@ public class JavapodUnitFactory{
                 new UnitPlan(JavapodUnits.Thera, 60f * 25, with( silicon, 175, JavapodItem.Biomass,75, JavapodItem.Neocells, 75)),
                 new UnitPlan(JavapodUnits.Imp, 60f * 15, with( silicon, 45, pyratite, 15, JavapodItem.Biomass,5, JavapodItem.Neocells, 15))
             );
+            health = 2500;
             size = 3;
             consumePower(7f);
-            consumeLiquid(Liquids.water, 15f / 60f);
+            consumeLiquid(Liquids.neoplasm, 15f / 60f);
 
         }};
         Assembler = new UnitFactory("Assembler"){{
             requirements(Category.units, with(silicon,250,JavapodItem.Biomass,75));
             plans = Seq.with(
-                new UnitPlan(JavapodUnits.Thera, 60f * 15, with( silicon, 10, lead, 10)),
-                new UnitPlan(JavapodUnits.Autus, 60f * 10, with( silicon, 8, coal, 10)),
-                new UnitPlan(JavapodUnits.Imp, 60f * 40, with( silicon, 30, lead, 20, titanium, 20))
+                new UnitPlan(JavapodUnits.Behomoth, 60f * 15, with( silicon, 10, lead, 10)),
+                new UnitPlan(JavapodUnits.Guardian, 60f * 10, with( silicon, 8, coal, 10))
+                //new UnitPlan(JavapodUnits.Breacher, 60f * 40, with( silicon, 30, lead, 20, titanium, 20)),
+                //new UnitPlan(JavapodUnits.Scarabid, 60f * 40, with( silicon, 30, lead, 20, titanium, 20))
             );
+            health = 1750;
             size = 3;
             consumePower(1.2f);
 

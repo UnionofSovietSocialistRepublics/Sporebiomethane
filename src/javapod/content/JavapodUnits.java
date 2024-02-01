@@ -23,6 +23,7 @@ import mindustry.type.unit.*;
 import mindustry.type.weapons.*;
 import mindustry.entities.abilities.UnitSpawnAbility;
 import mindustry.world.meta.*;
+import javapod.content.*;
 
 import static arc.graphics.g2d.Draw.*;
 import static arc.graphics.g2d.Lines.*;
@@ -32,7 +33,7 @@ import static mindustry.Vars.*;
 public class JavapodUnits {
     public static UnitType
     //Legs
-    Carci,Imp, Baslisk, Autus, Baneling, Zergling, Behomoth, Lobber,
+    Carci,Imp, Baslisk, Autus, Baneling, Zergling, Behomoth, Lobber, Breacher, Scarabid,
     //missiles
     Bomb,
     //Floaty
@@ -168,6 +169,7 @@ public class JavapodUnits {
                 x = 0f;
                 y = 0f;
                 mirror = false;
+                recoil = 0f;
                 shootStatus = StatusEffects.shielded;
                 shootStatusDuration = 80f;
                 shootSound = Sounds.flame;
@@ -321,6 +323,7 @@ public class JavapodUnits {
                 reload = 60f;
                 x = 0f;
                 y = 0f;
+                mirror = false;
                 bullet = new BasicBulletType(2.5f, 9){{
                     speed = 3f;
                     shootEffect = Fx.shootBig;
@@ -339,7 +342,7 @@ public class JavapodUnits {
                 }};
             }});
             outlineColor = Color.valueOf("303a45");
-            abilities.add(new RegenAbility(){{percentAmount = 1f / (70f * 60f) * 100f;}});
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f) * 100f;}});
         }};
             Behomoth = new UnitType("Behomoth"){{
             this.constructor = LegsUnit::create;
@@ -359,8 +362,8 @@ public class JavapodUnits {
                 mirror = false;
                 bullet = new BasicBulletType(2.5f, 9){{
                     hitEffect = Fx.sapExplosion;
-                    width = 14f;
-                    height = 14f;
+                    width = 15f;
+                    height = 30f;
                     speed = 3f;
                     lifetime = 75f;
                     splashDamage = 150f;
@@ -374,18 +377,18 @@ public class JavapodUnits {
 
             }});
             weapons.add(new Weapon(name + "-mini"){{
-                reload = 30f;
+                reload = 15f;
                 x = -15f;
                 y = -23f;
                 mirror = true;
                 bullet = new BasicBulletType(2.5f, 9){{
                     hitEffect = Fx.sapExplosion;
                     collidesTiles = false;
-                    width = 14f;
-                    height = 14f;
+                    width = 10f;
+                    height = 10f;
                     speed = 3f;
                     lifetime = 55f;
-                    damage = 195f;
+                    damage = 45f;
                     backColor = Color.valueOf("CBC3E3");
                     frontColor = Color.valueOf("CBC3E3");
                 }};
@@ -395,4 +398,44 @@ public class JavapodUnits {
             abilities.add(new RegenAbility(){{percentAmount = 1f / (200f * 60f) * 100f;}});
             abilities.add(new UnitSpawnAbility(Lobber,550f,0f,-7f));
             }};
+
+            Guardian = new UnitType("Guardian"){{
+            this.constructor = UnitEntity::create;
+            speed = 1f;
+            hitSize = 18f;
+            health = 1500;
+            armor = 4;
+            range = 175f;
+            legCount = 4;
+            flying = true;
+            engineOffset = 10f;
+            engineSize = 4f;
+            drag = 0.04f;
+            accel = 0.08f;               
+            weapons.add(new Weapon(name + "-gun"){{
+                reload = 125f;
+                x = 11f;
+                y = 4f;
+                mirror = true;
+                bullet = new BasicBulletType(2.5f, 9){{
+                    speed = 3f;
+                    shootEffect = Fx.shootBig;
+                    smokeEffect = Fx.shootBigSmoke;
+                    damage = 145f;
+                    splashDamage = 30f;
+                    splashDamageRadius = 5f;
+                    lifetime = 110f;
+                    statusDuration = 60f * 4;
+                    status = JavapodStatus.Dissolving;
+                    backColor = Color.valueOf("8FFE09");
+                    frontColor = Color.valueOf("8FFE09");
+                    lightColor = Color.valueOf("8FFE09");
+                    collidesTiles = true;
+                    trailLength = 3;
+                    trailColor = Color.valueOf("bbfe6b");
+                }};
+            }});
+            outlineColor = Color.valueOf("303a45");
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});
+        }};
 }}
