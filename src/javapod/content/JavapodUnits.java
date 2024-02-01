@@ -137,6 +137,7 @@ public class JavapodUnits {
             weapons.add(new Weapon("claws"){{
                 reload = 30f;
                 x = 0f;
+                mirror = false;
                 y = 0f;
                 bullet = new BasicBulletType(2.5f, 9){{
                     backColor = Color.valueOf("8B73C7");
@@ -166,14 +167,13 @@ public class JavapodUnits {
                 reload = 5f;
                 x = 0f;
                 y = 0f;
+                mirror = false;
                 shootStatus = StatusEffects.shielded;
                 shootStatusDuration = 80f;
                 shootSound = Sounds.flame;
                 ejectEffect = Fx.none;
                 bullet = new BasicBulletType(2.5f, 9){{
                     collidesAir = true;
-                    shootEffect = Fx.shootBig;
-                    smokeEffect = Fx.shootBigSmoke;
                     damage = 65f;
                     lifetime = 15f;
                     lightColor = Color.valueOf("8B73C7");
@@ -286,6 +286,7 @@ public class JavapodUnits {
                 reload = 60f;
                 x = 0f;
                 y = 0f;
+                mirror = false;
                 shootSound = Sounds.artillery;
                 bullet = new ArtilleryBulletType(2.5f, 9){{
                     speed = 3f;
@@ -347,12 +348,15 @@ public class JavapodUnits {
             health = 9000;
             range = 50f;
             legCount = 4;
+            legLength = 30f;
             legExtension = -15f;
             legBaseOffset = 10f;
             weapons.add(new Weapon(name + "-gun"){{
-                reload = 150f;
+                reload = 200f;
                 x = 0f;
                 y = -23f;
+                recoil = 4f;
+                mirror = false;
                 bullet = new BasicBulletType(2.5f, 9){{
                     hitEffect = Fx.sapExplosion;
                     width = 14f;
@@ -377,6 +381,8 @@ public class JavapodUnits {
                 bullet = new BasicBulletType(2.5f, 9){{
                     hitEffect = Fx.sapExplosion;
                     collidesTiles = false;
+                    width = 14f;
+                    height = 14f;
                     speed = 3f;
                     lifetime = 55f;
                     damage = 195f;
