@@ -21,6 +21,7 @@ import mindustry.content.*;
 import mindustry.type.ammo.*;
 import mindustry.type.unit.*;
 import mindustry.type.weapons.*;
+import mindustry.entities.abilities.UnitSpawnAbility;
 import mindustry.world.meta.*;
 
 import static arc.graphics.g2d.Draw.*;
@@ -31,7 +32,7 @@ import static mindustry.Vars.*;
 public class JavapodUnits {
     public static UnitType
     //Legs
-    Carci,Imp, Baslisk, Autus, Baneling, Zergling,
+    Carci,Imp, Baslisk, Autus, Baneling, Zergling, Behomoth, Lobber,
     //missiles
     Bomb,
     //Floaty
@@ -140,7 +141,6 @@ public class JavapodUnits {
                 bullet = new BasicBulletType(2.5f, 9){{
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
-                    rangeOverride = 30f;
                     speed = 3f;
                     lifetime = 75f;
                     damage = 25f;
@@ -155,7 +155,7 @@ public class JavapodUnits {
             hitSize = 8f;
             health = 1500;
             armor = 4;
-            range = 30f;
+            range = 40f;
             legCount = 4;
             legLength = 13f;
             legExtension = 7f;
@@ -175,7 +175,7 @@ public class JavapodUnits {
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
                     damage = 65f;
-                    lifetime = 12f;
+                    lifetime = 15f;
                     lightColor = Color.valueOf("8B73C7");
                     pierce = true;
                     pierceBuilding = true;
@@ -308,4 +308,78 @@ public class JavapodUnits {
             abilities.add(new RegenAbility(){{percentAmount = 1f / (70f * 60f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};
+            Lobber = new UnitType("Lobber"){{
+            this.constructor = LegsUnit::create;
+            speed = 0.65f;
+            targetAir = false;
+            hitSize = 8f;
+            health = 215;
+            armor = 2;
+            range = 60f;
+            legCount = 4;
+            weapons.add(new Weapon("Lobbergun"){{
+                reload = 60f;
+                x = 0f;
+                y = 0f;
+                shootSound = Sounds.flame;
+                bullet = new ArtilleryBulletType(2.5f, 9){{
+                    speed = 3f;
+                    shootEffect = Fx.shootBig;
+                    smokeEffect = Fx.shootBigSmoke;
+                    splashDamageRadius = 25f;
+                    splashDamage = 125f;
+                    lifetime = 75f;
+                    statusDuration = 60f * 4;
+                    status = StatusEffects.slow;
+                    backColor = Color.valueOf("8B73C7");
+                    frontColor = Color.valueOf("8B73C7");
+                    collidesTiles = true;
+                    trailLength = 5;
+                    lightColor = Color.valueOf("8B73C7");
+                    trailColor = Color.valueOf("8B73C7");
+                }};
+            }});
+            outlineColor = Color.valueOf("303a45");
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (70f * 60f) * 100f;}});
+        }};
+            Behomoth = new UnitType("Behomoth"){{
+            this.constructor = LegsUnit::create;
+            speed = 1.45f;
+            hitSize = 16f;
+            health = 9000;
+            range = 50f;
+            legCount = 4;
+            weapons.add(new Weapon(name + "-gun"){{
+                reload = 30f;
+                x = 0f;
+                y = -23f;
+                bullet = new BasicBulletType(2.5f, 9){{
+                    hitEffect = Fx.sapExplosion;
+                    backColor = Color.valueOf("8B73C7");
+                    frontColor = Color.valueOf("8B73C7");
+                    speed = 3f;
+                    lifetime = 75f;
+                    damage = 25f;
+                }};
+
+            }});
+            weapons.add(new Weapon(name + "-smol-gun"){{
+                reload = 30f;
+                x = -15f;
+                y = -23f;
+                mirror = true;
+                bullet = new BasicBulletType(2.5f, 9){{
+                    hitEffect = Fx.sapExplosion;
+                    backColor = Color.valueOf("8B73C7");
+                    frontColor = Color.valueOf("8B73C7");
+                    speed = 3f;
+                    lifetime = 75f;
+                    damage = 25f;
+                }};
+
+            }});
+            outlineColor = Color.valueOf("303a45");
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});
+            abilities.add(new UnitSpawnAbility(Lobber,550f,0f,-7f));
+            }};
 }}
