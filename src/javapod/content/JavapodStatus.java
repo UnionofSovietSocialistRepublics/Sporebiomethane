@@ -8,10 +8,12 @@ import mindustry.type.StatusEffect;
 
 public class JavapodStatus {
     public static StatusEffect
-    Dissolving;
+    Dissolving, Frostshield;
     public static void load(){
         Dissolving = new StatusEffect("Dissolving"){{
             damage = 60f / 60f;
         }};
-
+        Frostshield = new StatusEffect("Frostshield"){{
+            healthMultiplier = 4f;
+        }};
     }};

@@ -545,7 +545,6 @@ public class JavapodUnits {
             this.constructor = LegsUnit::create;
             speed = 0.25f;
             hitSize = 8f;
-            hidden = true;
             health = 30000;
             armor = 15;
             range = 80f;
@@ -558,10 +557,10 @@ public class JavapodUnits {
                 top = true;
                 reload = 5f;
                 x = 0f;
-                y = 3f;
+                y = 7f;
                 mirror = false;
                 recoil = 0f;
-                shootStatus = StatusEffects.shielded;
+                shootStatus = JavapodStatus.Frostshield;
                 shootStatusDuration = 80f;
                 shootSound = Sounds.flame;
                 ejectEffect = Fx.none;
@@ -576,6 +575,8 @@ public class JavapodUnits {
                     pierceBuilding = true;
                     despawnEffect = Fx.none;
                     pierceCap = 5;
+                    hittable = false;
+                    reflectable = false;
                     shootEffect = new ParticleEffect() {{
                     particles = 60;
                     sizeFrom = 4f;
@@ -586,8 +587,6 @@ public class JavapodUnits {
                     colorFrom = Color.valueOf("87ceeb");
                     colorTo = Color.valueOf("87ceeb");
                     cone = 10f;
-                    hittable = false;
-                    reflectable = false;
                 }};
                 }};
             }});
@@ -669,6 +668,7 @@ public class JavapodUnits {
                     collidesAir = true;
                     damage = 35f;
                     lifetime = 30f;
+                    despawnEffect = Fx.none;
                     lightColor = Color.valueOf("8B73C7");
                     pierce = true;
                     pierceBuilding = true;
@@ -677,7 +677,7 @@ public class JavapodUnits {
                     particles = 30;
                     sizeFrom = 5f;
                     sizeTo = 0f;
-                    length = 100f;
+                    length = 140f;
                     lifetime = 25f;
                     lightColor = Color.valueOf("8B73C7");
                     colorFrom = Color.valueOf("8B73C7");
