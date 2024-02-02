@@ -603,6 +603,10 @@ public class JavapodUnits {
                 moveY = -1.25f;
                 moveRot = 10f;
             }});
+            canDrown = false;
+            immunities.add(StatusEffects.burning);
+            immunities.add(StatusEffects.melting);
+            immunities.add(StatusEffects.freezing);
             abilities.add(new RegenAbility(){{percentAmount = 1f / (600f * 60f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.cryofluid;}});
         }};
