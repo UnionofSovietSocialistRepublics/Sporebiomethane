@@ -331,8 +331,8 @@ public class JavapodUnits {
                     splashDamage = 30f;
                     splashDamageRadius = 25f;
                     lifetime = 50f;
-                    statusDuration = 60f * 4;
-                    status = StatusEffects.slow;
+                    //statusDuration = 60f * 4;
+                    //status = StatusEffects.slow;
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
                     lightColor = Color.valueOf("8B73C7");
@@ -347,7 +347,7 @@ public class JavapodUnits {
             Behomoth = new UnitType("Behomoth"){{
             this.constructor = LegsUnit::create;
             speed = 0.65f;
-            hitSize = 16f;
+            hitSize = 44f;
             health = 9000;
             range = 50f;
             legCount = 4;
@@ -364,8 +364,8 @@ public class JavapodUnits {
                     hitEffect = Fx.sapExplosion;
                     width = 15f;
                     height = 30f;
-                    speed = 3f;
-                    lifetime = 75f;
+                    speed = 6f;
+                    lifetime = 50f;
                     splashDamage = 150f;
                     splashDamageRadius = 25f;
                     statusDuration = 60f * 4;
@@ -377,7 +377,7 @@ public class JavapodUnits {
 
             }});
             weapons.add(new Weapon(name + "-mini"){{
-                reload = 15f;
+                reload = 10f;
                 x = -15f;
                 y = -23f;
                 mirror = true;
@@ -406,7 +406,6 @@ public class JavapodUnits {
             health = 1500;
             armor = 4;
             range = 175f;
-            legCount = 4;
             flying = true;
             engineOffset = 10f;
             engineSize = 4f;
@@ -419,6 +418,7 @@ public class JavapodUnits {
                 mirror = true;
                 bullet = new BasicBulletType(2.5f, 9){{
                     speed = 3f;
+                    height = width = 20f;
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
                     damage = 145f;
@@ -426,7 +426,82 @@ public class JavapodUnits {
                     splashDamageRadius = 5f;
                     lifetime = 110f;
                     statusDuration = 60f * 4;
-                    //status = JavapodStatus.Dissolving;
+                    status = JavapodStatus.Dissolving;
+                    backColor = Color.valueOf("8FFE09");
+                    frontColor = Color.valueOf("8FFE09");
+                    lightColor = Color.valueOf("8FFE09");
+                    collidesTiles = true;
+                    trailLength = 3;
+                    trailColor = Color.valueOf("bbfe6b");
+                }};
+            }});
+            outlineColor = Color.valueOf("303a45");
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});
+        }};
+            Scarabid = new UnitType("Scarabid"){{
+            this.constructor = LegsUnit::create;
+            speed = 1f;
+            hitSize = 18f;
+            health = 1150;
+            armor = 4;
+            range = 125f;
+            legCount = 4;            
+            weapons.add(new Weapon(name + "-Cannon"){{
+                reload = 125f;
+                x = -2f;
+                y = 0f;
+                mirror = true;
+                targetAir = false;
+                shoot.shots = 4;
+                inaccuracy = 7f;
+                velocityRnd = 0.2f;
+                bullet = new ArtilleryBulletType(2.5f, 9){{
+                    speed = 6f;
+                    height = width = 20f;
+                    shootEffect = Fx.shootBig;
+                    smokeEffect = Fx.shootBigSmoke;
+                    damage = 145f;
+                    splashDamage = 10f;
+                    splashDamageRadius = 5f;
+                    lifetime = 75f;
+                    statusDuration = 60f * 4;
+                    status = JavapodStatus.Dissolving;
+                    backColor = Color.valueOf("8FFE09");
+                    frontColor = Color.valueOf("8FFE09");
+                    lightColor = Color.valueOf("8FFE09");
+                    collidesTiles = true;
+                    trailLength = 3;
+                    trailColor = Color.valueOf("bbfe6b");
+                }};
+                shootSound = Sounds.artillery;
+            }});
+            outlineColor = Color.valueOf("303a45");
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});
+        }};
+            Breacher = new UnitType("Breacher"){{
+            this.constructor = LegsUnit::create;
+            speed = 1f;
+            hitSize = 18f;
+            health = 1150;
+            armor = 4;
+            range = 125f;
+            legCount = 4;            
+            weapons.add(new Weapon(name + "-Missiles"){{
+                reload = 250f;
+                x = -1f;
+                y = 0f;
+                mirror = true;
+                targetAir = false;
+                shoot.shots = 8;
+                bullet = new ArtilleryBulletType(2.5f, 9){{
+                    speed = 6f;
+                    height = width = 20f;
+                    shootEffect = Fx.shootBig;
+                    smokeEffect = Fx.shootBigSmoke;
+                    damage = 145f;
+                    splashDamage = 10f;
+                    splashDamageRadius = 5f;
+                    lifetime = 75f;
                     backColor = Color.valueOf("8FFE09");
                     frontColor = Color.valueOf("8FFE09");
                     lightColor = Color.valueOf("8FFE09");

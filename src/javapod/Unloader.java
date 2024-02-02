@@ -21,6 +21,7 @@ public class Unloader extends Mod{
     @Override
     public void loadContent(){
         Log.info("Ah shit here we go again. Another mod, another load.");
+        JavapodStatus.load();
         Log.info("Loading items");
         JavapodItem.load();
         Log.info("Loading units");
