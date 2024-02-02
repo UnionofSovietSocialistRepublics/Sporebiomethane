@@ -591,7 +591,7 @@ public class JavapodUnits {
                 }};
             }});
             healColor = Color.valueOf("87ceeb");
-            outlineColor = Color.valueOf("5a5a5a");
+            outlineColor = Color.valueOf("747474");
             parts.add(new RegionPart("-hand"){{
                 mirror = true;
                 progress = PartProgress.warmup;
