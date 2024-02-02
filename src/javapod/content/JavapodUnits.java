@@ -581,7 +581,7 @@ public class JavapodUnits {
                     particles = 60;
                     sizeFrom = 4f;
                     sizeTo = 0f;
-                    length = 240f;
+                    length = 360f;
                     lifetime = 30f;
                     lightColor = Color.valueOf("87ceeb");
                     colorFrom = Color.valueOf("87ceeb");
@@ -603,7 +603,7 @@ public class JavapodUnits {
                 moveY = -1.25f;
                 moveRot = 10f;
             }});
-            canDrown = false;
+            
             immunities.add(StatusEffects.burning);
             immunities.add(StatusEffects.melting);
             immunities.add(StatusEffects.freezing);
