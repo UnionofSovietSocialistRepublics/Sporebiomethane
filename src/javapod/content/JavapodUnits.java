@@ -547,18 +547,18 @@ public class JavapodUnits {
             hitSize = 8f;
             hidden = true;
             health = 30000;
-            armor = 4;
+            armor = 15;
             range = 80f;
             legCount = 4;
             legLength = 13f;
             legExtension = 7f;
             legBaseOffset = 6f;
-            weapons.add(new Weapon(name + "-flamer"){{
+            weapons.add(new Weapon("I AM THE STORM THAT IS APPROACHING"){{
 
                 top = true;
                 reload = 5f;
                 x = 0f;
-                y = -3f;
+                y = 3f;
                 mirror = false;
                 recoil = 0f;
                 shootStatus = StatusEffects.shielded;
