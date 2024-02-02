@@ -25,6 +25,7 @@ import mindustry.entities.abilities.UnitSpawnAbility;
 import mindustry.world.meta.*;
 import javapod.content.*;
 
+
 import static arc.graphics.g2d.Draw.*;
 import static arc.graphics.g2d.Lines.*;
 import static arc.math.Angles.*;
@@ -558,10 +559,10 @@ public class JavapodUnits {
                 shootStatus = StatusEffects.shielded;
                 shootStatusDuration = 80f;
                 shootSound = Sounds.flame;
-                shootEffect = Fx.none;
                 ejectEffect = Fx.none;
                 bullet = new BasicBulletType(2.5f, 9){{
                     collidesAir = true;
+                    shootEffect = Fx.none;
                     width = 0.1f;
                     height = 0.1f;
                     damage = 150f;
