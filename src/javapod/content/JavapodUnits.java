@@ -541,7 +541,7 @@ public class JavapodUnits {
             speed = 0.25f;
             hitSize = 8f;
             hidden = true;
-            health = 65000;
+            health = 30000;
             armor = 4;
             range = 80f;
             legCount = 4;
@@ -565,7 +565,7 @@ public class JavapodUnits {
                     shootEffect = Fx.none;
                     width = 0.1f;
                     height = 0.1f;
-                    damage = 150f;
+                    damage = 250f;
                     lifetime = 50f;
                     pierce = true;
                     pierceBuilding = true;
