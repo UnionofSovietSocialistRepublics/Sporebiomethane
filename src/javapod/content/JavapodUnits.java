@@ -167,7 +167,7 @@ public class JavapodUnits {
                 top = true;
                 reload = 5f;
                 x = 0f;
-                y = 0f;
+                y = -3f;
                 mirror = false;
                 recoil = 0f;
                 shootStatus = StatusEffects.shielded;
@@ -487,13 +487,14 @@ public class JavapodUnits {
             armor = 4;
             range = 125f;
             legCount = 4;            
-            weapons.add(new Weapon(name + "-Gun"){{
+            weapons.add(new Weapon(name + "-gun"){{
                 reload = 250f;
                 x = 0f;
                 y = -10f;
                 mirror = false;
                 targetAir = false;
                 shoot.shots = 8;
+                shoot.shotDelay = 5f;
                 recoil = 5;
                 bullet = new MissileBulletType(2.5f, 9){{
                     speed = 6f;
@@ -504,6 +505,8 @@ public class JavapodUnits {
                     splashDamage = 10f;
                     splashDamageRadius = 5f;
                     lifetime = 75f;
+                    homingPower = 0.08f;
+                    homingRange = 50f;
                     backColor = Color.valueOf("8FFE09");
                     frontColor = Color.valueOf("8FFE09");
                     lightColor = Color.valueOf("8FFE09");
@@ -511,7 +514,7 @@ public class JavapodUnits {
                     trailLength = 3;
                     trailColor = Color.valueOf("bbfe6b");
                 }};
-            weapons.add(new Weapon(name + "-Missiles"){{
+            weapons.add(new Weapon(name + "-missiles"){{
                 reload = 5f;
                 x = -11f;
                 y = 2f;

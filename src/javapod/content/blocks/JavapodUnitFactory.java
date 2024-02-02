@@ -73,7 +73,7 @@ public class JavapodUnitFactory{
                 new UnitPlan(JavapodUnits.Scarabid, 60f * 40, with( silicon, 300, plastanium, 90, JavapodItem.Biomass,25))
             );
             health = 1750;
-            size = 3;
+            size = 4;
             consumePower(1.2f);
 
         }};
