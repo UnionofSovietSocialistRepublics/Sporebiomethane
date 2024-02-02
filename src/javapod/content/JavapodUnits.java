@@ -578,7 +578,7 @@ public class JavapodUnits {
                     hittable = false;
                     reflectable = false;
                     shootEffect = new ParticleEffect() {{
-                    particles = 15;
+                    particles = 360;
                     sizeFrom = 4f;
                     sizeTo = 0f;
                     length = 400f;
