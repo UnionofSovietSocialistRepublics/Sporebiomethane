@@ -568,7 +568,7 @@ public class JavapodUnits {
                     lifetime = 50f;
                     pierce = true;
                     pierceBuilding = true;
-                    despawnEffect = Fx.none
+                    despawnEffect = Fx.none;
                     pierceCap = 5;
                     shootEffect = new ParticleEffect() {{
                     particles = 60;
