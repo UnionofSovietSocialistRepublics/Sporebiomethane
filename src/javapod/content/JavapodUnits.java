@@ -567,10 +567,10 @@ public class JavapodUnits {
                     pierceBuilding = true;
                     pierceCap = 5;
                     shootEffect = new ParticleEffect() {{
-                    particles = 30;
-                    sizeFrom = 5f;
+                    particles = 60;
+                    sizeFrom = 4f;
                     sizeTo = 0f;
-                    length = 180f;
+                    length = 240f;
                     lifetime = 30f;
                     lightColor = Color.valueOf("87ceeb");
                     colorFrom = Color.valueOf("87ceeb");
@@ -582,7 +582,7 @@ public class JavapodUnits {
                 }};
             }});
             healColor = Color.valueOf("87ceeb");
-            outlineColor = Color.valueOf("bec0c2");
+            outlineColor = Color.valueOf("5a5a5a");
             parts.add(new RegionPart("-hand"){{
                 mirror = true;
                 progress = PartProgress.warmup;
