@@ -322,7 +322,7 @@ public class JavapodUnits {
             weapons.add(new Weapon(name + "-gun"){{
                 reload = 60f;
                 x = 0f;
-                y = 0f;
+                y = -5f;
                 mirror = false;
                 bullet = new BasicBulletType(2.5f, 9){{
                     speed = 3f;
@@ -407,6 +407,7 @@ public class JavapodUnits {
             armor = 4;
             range = 175f;
             flying = true;
+            targetAir = false;
             engineOffset = 10f;
             engineSize = 4f;
             drag = 0.04f;
@@ -449,7 +450,7 @@ public class JavapodUnits {
             weapons.add(new Weapon(name + "-Cannon"){{
                 reload = 125f;
                 x = 0f;
-                y = -2f;
+                y = -8f;
                 mirror = false;
                 targetAir = false;
                 shoot.shots = 4;
@@ -460,10 +461,10 @@ public class JavapodUnits {
                     height = width = 20f;
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
-                    damage = 145f;
-                    splashDamage = 10f;
-                    splashDamageRadius = 5f;
-                    lifetime = 75f;
+                    damage = 90f;
+                    splashDamage = 125f;
+                    splashDamageRadius = 17f;
+                    lifetime = 50f;
                     statusDuration = 60f * 4;
                     status = JavapodStatus.Dissolving;
                     backColor = Color.valueOf("8FFE09");
@@ -486,14 +487,15 @@ public class JavapodUnits {
             armor = 4;
             range = 125f;
             legCount = 4;            
-            weapons.add(new Weapon(name + "-Missiles"){{
+            weapons.add(new Weapon(name + "-Gun"){{
                 reload = 250f;
                 x = 0f;
-                y = -2f;
+                y = -10f;
                 mirror = false;
                 targetAir = false;
                 shoot.shots = 8;
-                bullet = new ArtilleryBulletType(2.5f, 9){{
+                recoil = 5;
+                bullet = new MissileBulletType(2.5f, 9){{
                     speed = 6f;
                     height = width = 20f;
                     shootEffect = Fx.shootBig;
@@ -509,10 +511,10 @@ public class JavapodUnits {
                     trailLength = 3;
                     trailColor = Color.valueOf("bbfe6b");
                 }};
-            weapons.add(new Weapon(name + "-gun"){{
+            weapons.add(new Weapon(name + "-Missiles"){{
                 reload = 5f;
-                x = -5f;
-                y = -0f;
+                x = -11f;
+                y = 2f;
                 mirror = true;
                 bullet = new BasicBulletType(2.5f, 9){{
                     hitEffect = Fx.sapExplosion;
