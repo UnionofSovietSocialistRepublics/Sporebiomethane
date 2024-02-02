@@ -41,6 +41,7 @@ public class Javapodenv {
 
         wall = new StaticWall("wall"){{
 			variants = 1;
+            attributes.set(Javapodattribute.Zinc, 1.5f);
 		}};
     }
 

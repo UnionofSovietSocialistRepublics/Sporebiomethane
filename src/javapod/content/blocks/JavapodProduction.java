@@ -59,12 +59,10 @@ public class JavapodProduction{
             consumePower(2f);
             hasItems = true;
             radius = 1;
-
             //craftEffect = Fx.none;
             attribute = Javapodattribute.Zinc;
-
             maxBoost = 2f;
-            boostScale = 0.2f;
+            boostScale = 0.5f;
             baseEfficiency = 0;
         }};
 
