@@ -54,7 +54,6 @@ public class JavapodItem{
         Vanadium = new Item("Vanadium", Color.valueOf("485767")){{
             hardness = 3;
             cost = 1.5f;
-            flammability = 2f;
         }};
 
         VCA = new Item("VCA", Color.valueOf("303a45")){{

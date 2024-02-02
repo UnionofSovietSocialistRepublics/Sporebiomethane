@@ -448,9 +448,9 @@ public class JavapodUnits {
             legCount = 4;            
             weapons.add(new Weapon(name + "-Cannon"){{
                 reload = 125f;
-                x = -2f;
-                y = 0f;
-                mirror = true;
+                x = 0f;
+                y = -2f;
+                mirror = false;
                 targetAir = false;
                 shoot.shots = 4;
                 inaccuracy = 7f;
@@ -488,9 +488,9 @@ public class JavapodUnits {
             legCount = 4;            
             weapons.add(new Weapon(name + "-Missiles"){{
                 reload = 250f;
-                x = -1f;
-                y = 0f;
-                mirror = true;
+                x = 0f;
+                y = -2f;
+                mirror = false;
                 targetAir = false;
                 shoot.shots = 8;
                 bullet = new ArtilleryBulletType(2.5f, 9){{
@@ -509,6 +509,24 @@ public class JavapodUnits {
                     trailLength = 3;
                     trailColor = Color.valueOf("bbfe6b");
                 }};
+            weapons.add(new Weapon(name + "-gun"){{
+                reload = 5f;
+                x = -5f;
+                y = -0f;
+                mirror = true;
+                bullet = new BasicBulletType(2.5f, 9){{
+                    hitEffect = Fx.sapExplosion;
+                    collidesTiles = false;
+                    width = 15f;
+                    height = 15f;
+                    speed = 3f;
+                    lifetime = 65f;
+                    damage = 50f;
+                    backColor = Color.valueOf("CBC3E3");
+                    frontColor = Color.valueOf("CBC3E3");
+                }};
+
+            }});
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});

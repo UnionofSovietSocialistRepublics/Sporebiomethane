@@ -54,7 +54,7 @@ public class JavapodUnitFactory{
             requirements(Category.units, with(silicon,750,JavapodItem.Nanitealloy,500,JavapodItem.Biomass,250,JavapodItem.Neocells,75));
             plans = Seq.with(
                 new UnitPlan(JavapodUnits.Carci, 60f * 25, with( silicon, 150, thorium, 75, JavapodItem.Neocells, 30)),
-                new UnitPlan(JavapodUnits.Autus, 60f * 35, with( silicon, 8, JavapodItem.Biomass,75,pyratite,45, JavapodItem.Neocells, 75)),
+                new UnitPlan(JavapodUnits.Autus, 60f * 35, with( silicon, 200, JavapodItem.Biomass,75,pyratite,45, JavapodItem.Neocells, 75)),
                 new UnitPlan(JavapodUnits.Thera, 60f * 25, with( silicon, 175, JavapodItem.Biomass,75, JavapodItem.Neocells, 75)),
                 new UnitPlan(JavapodUnits.Imp, 60f * 15, with( silicon, 45, pyratite, 15, JavapodItem.Biomass,5, JavapodItem.Neocells, 15))
             );
@@ -67,10 +67,10 @@ public class JavapodUnitFactory{
         Assembler = new UnitFactory("Assembler"){{
             requirements(Category.units, with(silicon,250,JavapodItem.Biomass,75));
             plans = Seq.with(
-                new UnitPlan(JavapodUnits.Behomoth, 60f * 15, with( silicon, 10, lead, 10)),
-                new UnitPlan(JavapodUnits.Guardian, 60f * 10, with( silicon, 8, coal, 10))
-                //new UnitPlan(JavapodUnits.Breacher, 60f * 40, with( silicon, 30, lead, 20, titanium, 20)),
-                //new UnitPlan(JavapodUnits.Scarabid, 60f * 40, with( silicon, 30, lead, 20, titanium, 20))
+                new UnitPlan(JavapodUnits.Breacher, 60f * 15, with( silicon, 350, JavapodItem.Biomass,75)),
+                new UnitPlan(JavapodUnits.Guardian, 60f * 10, with( silicon, 300, JavapodItem.Biomass,75)),
+                new UnitPlan(JavapodUnits.Behomoth, 60f * 40, with( silicon, 850, JavapodItem.Biomass,400, JavapodItem.Nanitealloy,400)),
+                new UnitPlan(JavapodUnits.Scarabid, 60f * 40, with( silicon, 300, plastanium, 90, JavapodItem.Biomass,25))
             );
             health = 1750;
             size = 3;
