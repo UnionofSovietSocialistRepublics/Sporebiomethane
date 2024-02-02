@@ -33,7 +33,7 @@ import static mindustry.Vars.*;
 public class JavapodUnits {
     public static UnitType
     //Legs
-    Carci,Imp, Baslisk, Autus, Baneling, Zergling, Behomoth, Lobber, Breacher, Scarabid,
+    Carci,Imp, Baslisk, Autus, Baneling, Zergling, Behomoth, Lobber, Breacher, Scarabid, Frost,
     //missiles
     Bomb,
     //Floaty
@@ -492,16 +492,16 @@ public class JavapodUnits {
                 x = 0f;
                 y = -10f;
                 mirror = false;
-                targetAir = false;
                 shoot.shots = 8;
                 shoot.shotDelay = 5f;
                 recoil = 5;
                 bullet = new MissileBulletType(2.5f, 9){{
                     speed = 6f;
-                    height = width = 20f;
+                    height = width = 10f;
+                    hitEffect = Fx.sapExplosion;
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
-                    damage = 145f;
+                    damage = 85f;
                     splashDamage = 10f;
                     splashDamageRadius = 5f;
                     lifetime = 75f;
@@ -514,19 +514,18 @@ public class JavapodUnits {
                     trailLength = 3;
                     trailColor = Color.valueOf("bbfe6b");
                 }};
-            weapons.add(new Weapon(name + "-missiles"){{
+            weapons.add(new Weapon(name + "-canon"){{
                 reload = 5f;
                 x = -11f;
                 y = 2f;
                 mirror = true;
                 bullet = new BasicBulletType(2.5f, 9){{
-                    hitEffect = Fx.sapExplosion;
-                    collidesTiles = false;
+                    collidesTiles = true;
                     width = 15f;
                     height = 15f;
                     speed = 3f;
                     lifetime = 65f;
-                    damage = 50f;
+                    damage = 25f;
                     backColor = Color.valueOf("CBC3E3");
                     frontColor = Color.valueOf("CBC3E3");
                 }};
@@ -535,5 +534,67 @@ public class JavapodUnits {
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});
+        }};
+            Frost = new UnitType("Frost"){{
+            this.constructor = LegsUnit::create;
+            speed = 0.25f;
+            hitSize = 8f;
+            hidden = true;
+            health = 65000;
+            armor = 4;
+            range = 80f;
+            legCount = 4;
+            legLength = 13f;
+            legExtension = 7f;
+            legBaseOffset = 6f;
+            weapons.add(new Weapon(name + "-flamer"){{
+
+                top = true;
+                reload = 5f;
+                x = 0f;
+                y = -3f;
+                mirror = false;
+                recoil = 0f;
+                shootStatus = StatusEffects.shielded;
+                shootStatusDuration = 80f;
+                shootSound = Sounds.flame;
+                ejectEffect = Fx.none;
+                bullet = new BasicBulletType(2.5f, 9){{
+                    collidesAir = true;
+                    damage = 150f;
+                    lifetime = 60f;
+                    pierce = true;
+                    pierceBuilding = true;
+                    pierceCap = 5;
+                    shootEffect = new ParticleEffect() {{
+                    particles = 30;
+                    sizeFrom = 5f;
+                    sizeTo = 0f;
+                    length = 80f;
+                    lifetime = 25f;
+                    lightColor = Color.valueOf("87ceeb");
+                    colorFrom = Color.valueOf("87ceeb");
+                    colorTo = Color.valueOf("87ceeb");
+                    cone = 10f;
+                    hittable = false;
+                    reflectable = false;
+                }};
+                }};
+            }});
+            healColor = Color.valueOf("590e14");
+            outlineColor = Color.valueOf("303a45");
+            parts.add(new RegionPart("-hand"){{
+                mirror = true;
+                progress = PartProgress.warmup;
+                layerOffset= 0.0001f;
+                under = true;
+                x = 3f;
+                y = 3f;
+                moveX = -1.5f;
+                moveY = -1.25f;
+                moveRot = 10f;
+            }});
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (600f * 60f) * 100f;}});
+            abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.cryofluid;}});
         }};
 }}
