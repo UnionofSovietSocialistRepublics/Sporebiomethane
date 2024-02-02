@@ -26,7 +26,7 @@ public class Javapodenv {
 
 		ZincOre = new OreBlock("ZincOre"){{
 			oreDefault = true;
-			variants = 3;
+			variants = 1;
 			oreThreshold = 0.95F;
 			oreScale = 20.380953F;
 			itemDrop = JavapodItem.Zinc;

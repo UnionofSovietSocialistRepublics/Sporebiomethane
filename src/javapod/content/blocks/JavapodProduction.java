@@ -35,6 +35,37 @@ import mindustry.world.blocks.units.*;
 import mindustry.world.consumers.*;
 import mindustry.world.draw.*;
 import mindustry.world.meta.*;
+import javapod.content.JavapodAC;
+import javapod.content.*;
 
 import static mindustry.Vars.*;
 import static mindustry.type.ItemStack.*;
+import static mindustry.content.Items.*;
+
+
+public class JavapodProduction{
+    public static Block
+        ZincExtractor;
+
+        public static void load(){
+
+        ZincExtractor = new JavapodAC("ZincExtractor"){{
+            requirements(Category.production, with(silicon, 20));
+
+            outputItem = new ItemStack(JavapodItem.Zinc, 1);
+            craftTime = 60;
+            size = 2;
+            hasPower = true;
+            consumePower(2f);
+            hasItems = true;
+            radius = 1;
+
+            //craftEffect = Fx.none;
+            attribute = Javapodattribute.Zinc;
+
+            maxBoost = 2f;
+            boostScale = 0.2f;
+            baseEfficiency = 0;
+        }};
+
+        }};

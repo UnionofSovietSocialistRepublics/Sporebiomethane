@@ -6,5 +6,6 @@ public class JavapodblockLoader {
     public static void load(){
         JavapodUnitFactory.load();
         Javapodenv.load();
+        JavapodProduction.load();
     }
 }
