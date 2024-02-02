@@ -570,8 +570,8 @@ public class JavapodUnits {
                     particles = 30;
                     sizeFrom = 5f;
                     sizeTo = 0f;
-                    length = 80f;
-                    lifetime = 60f;
+                    length = 180f;
+                    lifetime = 30f;
                     lightColor = Color.valueOf("87ceeb");
                     colorFrom = Color.valueOf("87ceeb");
                     colorTo = Color.valueOf("87ceeb");
