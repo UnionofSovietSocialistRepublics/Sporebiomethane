@@ -578,11 +578,11 @@ public class JavapodUnits {
                     hittable = false;
                     reflectable = false;
                     shootEffect = new ParticleEffect() {{
-                    particles = 90;
+                    particles = 15;
                     sizeFrom = 4f;
                     sizeTo = 0f;
-                    length = 300f;
-                    lifetime = 15f;
+                    length = 400f;
+                    lifetime = 30f;
                     lightColor = Color.valueOf("87ceeb");
                     colorFrom = Color.valueOf("87ceeb");
                     colorTo = Color.valueOf("87ceeb");
