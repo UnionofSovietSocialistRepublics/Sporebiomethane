@@ -34,7 +34,7 @@ import static mindustry.Vars.*;
 public class JavapodUnits {
     public static UnitType
     //Legs
-    Carci,Imp, Baslisk, Autus, Baneling, Zergling, Behomoth, Lobber, Breacher, Scarabid, Frost,
+    Carci,Imp, Baslisk, Autus, Baneling, Zergling, Behomoth, Lobber, Breacher, Scarabid, Frost, Roach, Purger,
     //missiles
     Bomb,
     //Floaty
@@ -97,7 +97,9 @@ public class JavapodUnits {
                     killShooter = true;
                 }};
             }});
-
+            immunities.add(StatusEffects.burning);
+            immunities.add(StatusEffects.melting);
+            immunities.add(StatusEffects.freezing);
             healColor = Color.valueOf("590e14");
             outlineColor = Color.valueOf("303a45");
             abilities.add(new SpawnDeathAbility(DeathImp, 1, 11f));
@@ -203,7 +205,7 @@ public class JavapodUnits {
             parts.add(new RegionPart("-hand"){{
                 mirror = true;
                 progress = PartProgress.warmup;
-                layerOffset= 0.0001f;
+                layerOffset= -0.0001f;
                 under = true;
                 x = 3f;
                 y = 3f;
@@ -211,6 +213,8 @@ public class JavapodUnits {
                 moveY = -1.25f;
                 moveRot = 10f;
             }});
+            immunities.add(StatusEffects.burning);
+            immunities.add(StatusEffects.melting);
             abilities.add(new RegenAbility(){{percentAmount = 1f / (70f * 60f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};
@@ -418,9 +422,10 @@ public class JavapodUnits {
                 x = 11f;
                 y = 4f;
                 mirror = true;
+                layerOffset = -0.01f;
                 bullet = new BasicBulletType(2.5f, 9){{
                     speed = 3f;
-                    height = width = 20f;
+                    height = width = 15f;
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
                     damage = 145f;
@@ -433,7 +438,7 @@ public class JavapodUnits {
                     frontColor = Color.valueOf("8FFE09");
                     lightColor = Color.valueOf("8FFE09");
                     collidesTiles = true;
-                    trailLength = 3;
+                    trailLength = 6;
                     trailColor = Color.valueOf("bbfe6b");
                 }};
             }});
@@ -505,9 +510,9 @@ public class JavapodUnits {
                     damage = 85f;
                     splashDamage = 10f;
                     splashDamageRadius = 5f;
-                    lifetime = 75f;
-                    homingPower = 0.08f;
-                    homingRange = 50f;
+                    lifetime = 55f;
+                    homingPower = 0.1f;
+                    homingRange = 60f;
                     backColor = Color.valueOf("8FFE09");
                     frontColor = Color.valueOf("8FFE09");
                     lightColor = Color.valueOf("8FFE09");
@@ -515,7 +520,7 @@ public class JavapodUnits {
                     trailLength = 3;
                     trailColor = Color.valueOf("bbfe6b");
                 }};
-            weapons.add(new Weapon(name + "-canon"){{
+            weapons.add(new Weapon(name + "-thestorm"){{
                 reload = 5f;
                 x = -11f;
                 y = 2f;
@@ -525,7 +530,7 @@ public class JavapodUnits {
                     width = 15f;
                     height = 15f;
                     speed = 3f;
-                    lifetime = 65f;
+                    lifetime = 45f;
                     damage = 25f;
                     backColor = Color.valueOf("CBC3E3");
                     frontColor = Color.valueOf("CBC3E3");
@@ -591,7 +596,7 @@ public class JavapodUnits {
             parts.add(new RegionPart("-hand"){{
                 mirror = true;
                 progress = PartProgress.warmup;
-                layerOffset= 0.0001f;
+                layerOffset= -0.0001f;
                 under = true;
                 x = 3f;
                 y = 3f;
@@ -601,5 +606,92 @@ public class JavapodUnits {
             }});
             abilities.add(new RegenAbility(){{percentAmount = 1f / (600f * 60f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.cryofluid;}});
+        }};
+            Roach = new UnitType("Roach"){{
+            this.constructor = LegsUnit::create;
+            speed = 1f;
+            hitSize = 18f;
+            health = 650;
+            armor = 4;
+            range = 125f;
+            legCount = 4;            
+            weapons.add(new Weapon(name + "-gun"){{
+                reload = 75f;
+                x = -10f;
+                y = 0f;
+                mirror = true;
+                targetAir = false;
+                bullet = new ArtilleryBulletType(2.5f, 9){{
+                    speed = 6f;
+                    height = width = 20f;
+                    shootEffect = Fx.shootBig;
+                    smokeEffect = Fx.shootBigSmoke;
+                    damage = 90f;
+                    splashDamage = 90f;
+                    splashDamageRadius = 17f;
+                    lifetime = 50f;
+                    statusDuration = 60f * 4;
+                    status = JavapodStatus.Dissolving;
+                    backColor = Color.valueOf("8FFE09");
+                    frontColor = Color.valueOf("8FFE09");
+                    lightColor = Color.valueOf("8FFE09");
+                    collidesTiles = true;
+                    trailLength = 3;
+                    trailColor = Color.valueOf("bbfe6b");
+                }};
+                shootSound = Sounds.artillery;
+            }});
+            outlineColor = Color.valueOf("303a45");
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});
+        }};
+            Purger = new UnitType("Purger"){{
+            this.constructor = LegsUnit::create;
+            speed = 1f;
+            hitSize = 8f;
+            health = 650;
+            armor = 2;
+            range = 45f;
+            legCount = 4;
+            legLength = 13f;
+            legExtension = 7f;
+            legBaseOffset = 6f;
+            weapons.add(new Weapon(name + "-flamer"){{
+
+                top = true;
+                reload = 5f;
+                x = 11f;
+                y = 1f;
+                mirror = true;
+                recoil = 0f;
+                shootSound = Sounds.flame;
+                ejectEffect = Fx.none;
+                bullet = new BasicBulletType(2.5f, 9){{
+                    collidesAir = true;
+                    damage = 35f;
+                    lifetime = 30f;
+                    lightColor = Color.valueOf("8B73C7");
+                    pierce = true;
+                    pierceBuilding = true;
+                    pierceCap = 3;
+                    shootEffect = new ParticleEffect() {{
+                    particles = 30;
+                    sizeFrom = 5f;
+                    sizeTo = 0f;
+                    length = 100f;
+                    lifetime = 25f;
+                    lightColor = Color.valueOf("8B73C7");
+                    colorFrom = Color.valueOf("8B73C7");
+                    colorTo = Color.valueOf("8B73C7");
+                    cone = 10f;
+                    hittable = false;
+                    reflectable = false;
+                }};
+                }};
+            }});
+            immunities.add(StatusEffects.burning);
+            immunities.add(StatusEffects.melting);
+            healColor = Color.valueOf("590e14");
+            outlineColor = Color.valueOf("303a45");
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});
         }};
 }}

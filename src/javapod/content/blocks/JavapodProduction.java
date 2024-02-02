@@ -45,8 +45,10 @@ import static mindustry.content.Items.*;
 
 public class JavapodProduction{
     public static Block
-        ZincExtractor;
+        Extractor,ZincExtractor;
 
         public static void load(){
 
+
+            
         }};

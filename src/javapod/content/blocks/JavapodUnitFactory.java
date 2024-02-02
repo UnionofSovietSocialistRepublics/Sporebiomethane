@@ -28,8 +28,10 @@ public class JavapodUnitFactory{
         pool = new UnitFactory("pool"){{
             requirements(Category.units, with(silicon,150,JavapodItem.Biomass,45));
             plans = Seq.with(
-                new UnitPlan(JavapodUnits.Zergling, 15 * 60f, with(silicon, 65)),
-                new UnitPlan(JavapodUnits.Baneling, 10 * 60f, with(silicon, 45))
+                new UnitPlan(JavapodUnits.Zergling, 15 * 60f, with(silicon, 65,JavapodItem.Biomass,10)),
+                new UnitPlan(JavapodUnits.Baneling, 10 * 60f, with(silicon, 45,JavapodItem.Biomass,5, coal, 30)),
+                new UnitPlan(JavapodUnits.Roach, 20 * 60f, with(silicon, 95,JavapodItem.Biomass,25)),
+                new UnitPlan(JavapodUnits.Purger, 25 * 60f, with(silicon, 115,JavapodItem.Biomass,45))
             );
             health = 500;
             size = 3;
