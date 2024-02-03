@@ -47,7 +47,7 @@ import static mindustry.content.Items.*;
 public class JavapodProduction{
     public static Block
         Extractor,ZincExtractor,
-        Nanoprocessor,Naniteinfuser,CCB,FR,Gaschamber;
+        Nanoprocessor,Naniteinfuser,CCB,FR,Gaschamber,BioSynthesizer;
 
         public static void load(){
 
@@ -102,7 +102,7 @@ public class JavapodProduction{
             hasItems = true;
 
             consumePower(1f);
-            consumeItem(JavapodItem.Fluoresilt, 5);
+            consumeItem(JavapodItem.Fluoresilt, 3);
         }};
         Gaschamber = new GenericCrafter("Voltaicchamber"){{
             requirements(Category.crafting, with(silicon, 75, graphite, 90));
@@ -117,6 +117,21 @@ public class JavapodProduction{
 
             consumePower(5f);
             consumeItem(sporePod, 5);
+            consumeLiquid(Liquids.water, 15f / 60f);
+        }};
+         BioSynthesizer= new GenericCrafter("BioSynthesizer"){{
+            requirements(Category.crafting, with(silicon, 75, graphite, 90));
+
+            craftEffect = Fx.pulverizeMedium;
+            outputItem = new ItemStack(JavapodItem.BioSil, 1);
+            craftTime = 90f;
+            size = 3;
+            hasItems = true;
+            hasPower = true;
+            hasLiquids = true;
+
+            consumePower(5f);
+            consumeItems(with(JavapodItem.Biomass, 3,sporePod, 2,graphite, 2));
             consumeLiquid(Liquids.water, 15f / 60f);
         }};
         }};

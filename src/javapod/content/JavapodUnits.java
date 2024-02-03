@@ -185,6 +185,7 @@ public class JavapodUnits {
                     pierce = true;
                     pierceBuilding = true;
                     pierceCap = 3;
+                    despawnEffect = Fx.none;
                     shootEffect = new ParticleEffect() {{
                     particles = 30;
                     sizeFrom = 5f;
@@ -595,7 +596,7 @@ public class JavapodUnits {
             weapons.add(new Weapon("Autus generator"){{
 
                 top = true;
-                reload = 300f;
+                reload = 3600f;
                 x = 0f;
                 y = 0f;
                 mirror = false;
@@ -612,7 +613,7 @@ public class JavapodUnits {
                     damage = 0f;
                     shoot.shots = 4;
                     alternate = true;
-                    shoot.shotDelay = 5f;
+                    shoot.shotDelay = 90f;
                     spawnUnit = JavapodUnits.Autus;
                 }};
 
@@ -636,6 +637,7 @@ public class JavapodUnits {
             immunities.add(StatusEffects.freezing);
             abilities.add(new RegenAbility(){{percentAmount = 1f / (600f * 60f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.cryofluid;}});
+            abilities.add(new StatusFieldAbility(JavapodStatus.Frostshield, 60f * 5, 60f * 12f, 60f));
         }};
             Roach = new UnitType("Roach"){{
             this.constructor = LegsUnit::create;
@@ -723,7 +725,6 @@ public class JavapodUnits {
             }});
             immunities.add(StatusEffects.burning);
             immunities.add(StatusEffects.melting);
-            healColor = Color.valueOf("590e14");
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});
         }};
