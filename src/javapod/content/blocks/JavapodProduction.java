@@ -47,7 +47,8 @@ import static mindustry.content.Items.*;
 public class JavapodProduction{
     public static Block
         Extractor,ZincExtractor,
-        Nanoprocessor,Naniteinfuser,CCB,FR,Gaschamber,BioSynthesizer;
+        Nanoprocessor,Naniteinfuser,CCB,FR,Gaschamber,BioSynthesizer,
+        Lotus;
 
         public static void load(){
 
@@ -134,4 +135,12 @@ public class JavapodProduction{
             consumeItems(with(JavapodItem.Biomass, 3,sporePod, 2,graphite, 2));
             consumeLiquid(Liquids.water, 15f / 60f);
         }};
+        Lotus = new SolarGenerator("Lotus-panel"){{
+            requirements(Category.power, with(silicon, 75, graphite, 90));
+            size = 4;
+            powerProduction = 3f;
         }};
+
+
+        }};
+

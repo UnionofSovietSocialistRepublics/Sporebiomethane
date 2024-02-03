@@ -7,5 +7,6 @@ public class JavapodblockLoader {
         JavapodUnitFactory.load();
         Javapodenv.load();
         JavapodProduction.load();
+        JavapodOther.load();
     }
 }
