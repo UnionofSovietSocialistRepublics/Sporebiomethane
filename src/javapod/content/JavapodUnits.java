@@ -590,6 +590,32 @@ public class JavapodUnits {
                     cone = 10f;
                 }};
                 }};
+
+            }});
+            weapons.add(new Weapon("Autus generator"){{
+
+                top = true;
+                reload = 300f;
+                x = 0f;
+                y = -f;
+                mirror = false;
+                recoil = 0f;
+                shootStatus = JavapodStatus.Frostshield;
+                shootStatusDuration = 360f;
+                shootSound = Sounds.flame;
+                ejectEffect = Fx.none;
+                bullet = new BasicBulletType(2.5f, 9){{
+                    collidesAir = false;
+                    width = 0f;
+                    height = 0f;
+                    lifetime = 10f;
+                    damage = 0f;
+                    shoot.shots = 4;
+                    alternate = true;
+                    shoot.shotDelay = 5f;
+                    spawnUnit = JavapodUnits.Autus;
+                }};
+
             }});
             healColor = Color.valueOf("87ceeb");
             outlineColor = Color.valueOf("747474");
