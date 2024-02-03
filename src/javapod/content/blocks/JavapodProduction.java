@@ -57,7 +57,7 @@ public class JavapodProduction{
 
             craftEffect = Fx.pulverizeMedium;
             outputItem = new ItemStack(JavapodItem.Biomass, 1);
-            craftTime = 90f;
+            craftTime = 50f;
             size = 2;
             hasItems = true;
             hasPower = true;
@@ -66,11 +66,11 @@ public class JavapodProduction{
             consumeItem(sporePod, 5);
         }};
         Naniteinfuser = new GenericCrafter("Naniteinfuser"){{
-            requirements(Category.crafting, with(JavapodItem.BioSil,95,silicon, 325, graphite, 275));
+            requirements(Category.crafting, with(silicon, 325, graphite, 275,JavapodItem.BioSil,95));
 
             craftEffect = Fx.pulverizeMedium;
             outputItem = new ItemStack(JavapodItem.Nanitealloy, 1);
-            craftTime = 90f;
+            craftTime = 50f;
             size = 2;
             hasPower = true;
             hasItems = true;
@@ -79,11 +79,11 @@ public class JavapodProduction{
             consumeItems(with(JavapodItem.Biomass, 5,JavapodItem.BioSil,5,silicon,10));
         }};
         CCB = new GenericCrafter("Carbine-composite-smelter"){{
-            requirements(Category.crafting, with(silicon, 75, graphite, 30));
+            requirements(Category.crafting, with(JavapodItem.Vanadium,600,JavapodItem.BioSil, 450,JavapodItem.Nanitealloy, 425));
 
             craftEffect = Fx.smeltsmoke;
             outputItem = new ItemStack(JavapodItem.Carbinecomposite, 1);
-            craftTime = 90f;
+            craftTime = 80f;
             size = 2;
             drawer = new DrawMulti(new DrawDefault(), new DrawFlame(Color.valueOf("8B73C7")));
             hasPower = true;
@@ -93,11 +93,11 @@ public class JavapodProduction{
             consumeItems(with(JavapodItem.BioSil, 2,JavapodItem.Vanadium,4,JavapodItem.Nanitealloy, 3));
         }};
         FR = new GenericCrafter("Fluoresilt-refinery"){{
-            requirements(Category.crafting, with(silicon, 75, graphite, 30));
+            requirements(Category.crafting, with(JavapodItem.Biomass, 250,silicon, 150, graphite, 145));
 
             craftEffect = Fx.pulverizeMedium;
             outputItem = new ItemStack(JavapodItem.Fluorite, 1);
-            craftTime = 90f;
+            craftTime = 50f;
             size = 2;
             hasPower = true;
             hasItems = true;
@@ -106,11 +106,11 @@ public class JavapodProduction{
             consumeItem(JavapodItem.Fluoresilt, 3);
         }};
         Gaschamber = new GenericCrafter("Voltaicchamber"){{
-            requirements(Category.crafting, with(silicon, 75, graphite, 90));
+            requirements(Category.crafting, with(graphite, 475,titanium, 350, plastanium, 75));
 
             craftEffect = Fx.pulverizeMedium;
             outputItem = new ItemStack(JavapodItem.Voltaicgas, 1);
-            craftTime = 90f;
+            craftTime = 70f;
             size = 3;
             hasItems = true;
             hasPower = true;
@@ -121,11 +121,11 @@ public class JavapodProduction{
             consumeLiquid(Liquids.water, 15f / 60f);
         }};
          BioSynthesizer= new GenericCrafter("BioSynthesizer"){{
-            requirements(Category.crafting, with(silicon, 75, graphite, 90));
+            requirements(Category.crafting, with(JavapodItem.Biomass, 375,silicon, 150, graphite, 90));
 
             craftEffect = Fx.pulverizeMedium;
             outputItem = new ItemStack(JavapodItem.BioSil, 1);
-            craftTime = 90f;
+            craftTime = 80f;
             size = 3;
             hasItems = true;
             hasPower = true;
@@ -136,7 +136,7 @@ public class JavapodProduction{
             consumeLiquid(Liquids.water, 15f / 60f);
         }};
         Lotus = new SolarGenerator("Lotus-panel"){{
-            requirements(Category.power, with(silicon, 75, graphite, 90));
+            requirements(Category.power, with(silicon, 175,JavapodItem.Vanadium, 125,JavapodItem.Biomass, 50));
             size = 4;
             powerProduction = 3f;
         }};

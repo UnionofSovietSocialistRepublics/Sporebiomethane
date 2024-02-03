@@ -53,11 +53,5 @@ VCAwall;
         VCAwall = new Wall("Vanadiumcarbidewall"){{
             health = 8500;
         }};
-        
-
-
-
-
-
 
 }};

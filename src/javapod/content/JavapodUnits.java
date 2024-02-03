@@ -547,7 +547,7 @@ public class JavapodUnits {
             speed = 0.25f;
             hitSize = 8f;
             health = 30000;
-            armor = 15;
+            armor = 5;
             range = 80f;
             legCount = 4;
             legLength = 13f;
@@ -596,7 +596,7 @@ public class JavapodUnits {
             weapons.add(new Weapon("Autus generator"){{
 
                 top = true;
-                reload = 3600f;
+                reload = 2500f;
                 x = 0f;
                 y = 0f;
                 mirror = false;
@@ -637,7 +637,7 @@ public class JavapodUnits {
             immunities.add(StatusEffects.freezing);
             abilities.add(new RegenAbility(){{percentAmount = 1f / (600f * 60f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.cryofluid;}});
-            abilities.add(new StatusFieldAbility(JavapodStatus.Frostshield, 60f * 5, 60f * 12f, 60f));
+            abilities.add(new StatusFieldAbility(JavapodStatus.Frostshield, 60f * 5, 60f * 7f, 60f));
         }};
             Roach = new UnitType("Roach"){{
             this.constructor = LegsUnit::create;
