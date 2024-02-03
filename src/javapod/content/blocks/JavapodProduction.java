@@ -47,20 +47,76 @@ import static mindustry.content.Items.*;
 public class JavapodProduction{
     public static Block
         Extractor,ZincExtractor,
-        Nanoprocessor;
+        Nanoprocessor,Naniteinfuser,CCB,FR,Gaschamber;
 
         public static void load(){
 
-        Nanoprocessor = new GenericCrafter("Nanoprocessors"){{
-            requirements(Category.crafting, with(silicon, 75, graphite, 30));
+        Nanoprocessor = new GenericCrafter("Nanoprocessor"){{
+            requirements(Category.crafting, with(silicon, 75, graphite, 90));
 
             craftEffect = Fx.pulverizeMedium;
             outputItem = new ItemStack(JavapodItem.Biomass, 1);
             craftTime = 90f;
             size = 2;
             hasItems = true;
+            hasPower = true;
 
+            consumePower(1f);
             consumeItem(sporePod, 5);
         }};
-            
+        Naniteinfuser = new GenericCrafter("Naniteinfuser"){{
+            requirements(Category.crafting, with(JavapodItem.BioSil,95,silicon, 325, graphite, 275));
+
+            craftEffect = Fx.pulverizeMedium;
+            outputItem = new ItemStack(JavapodItem.Nanitealloy, 1);
+            craftTime = 90f;
+            size = 2;
+            hasPower = true;
+            hasItems = true;
+
+            consumePower(5f);
+            consumeItems(with(JavapodItem.Biomass, 5,JavapodItem.BioSil,5,silicon,10));
+        }};
+        CCB = new GenericCrafter("Carbine-composite-smelter"){{
+            requirements(Category.crafting, with(silicon, 75, graphite, 30));
+
+            craftEffect = Fx.smeltsmoke;
+            outputItem = new ItemStack(JavapodItem.Carbinecomposite, 1);
+            craftTime = 90f;
+            size = 2;
+            drawer = new DrawMulti(new DrawDefault(), new DrawFlame(Color.valueOf("8B73C7")));
+            hasPower = true;
+            hasItems = true;
+
+            consumePower(4f);
+            consumeItems(with(JavapodItem.BioSil, 2,JavapodItem.Vanadium,4,JavapodItem.Nanitealloy, 3));
+        }};
+        FR = new GenericCrafter("Fluoresilt-refinery"){{
+            requirements(Category.crafting, with(silicon, 75, graphite, 30));
+
+            craftEffect = Fx.pulverizeMedium;
+            outputItem = new ItemStack(JavapodItem.Fluorite, 1);
+            craftTime = 90f;
+            size = 2;
+            hasPower = true;
+            hasItems = true;
+
+            consumePower(1f);
+            consumeItem(JavapodItem.Fluoresilt, 5);
+        }};
+        Gaschamber = new GenericCrafter("Voltaicchamber"){{
+            requirements(Category.crafting, with(silicon, 75, graphite, 90));
+
+            craftEffect = Fx.pulverizeMedium;
+            outputItem = new ItemStack(JavapodItem.Voltaicchamber, 1);
+            craftTime = 90f;
+            size = 3;
+            hasItems = true;
+            hasPower = true;
+            hasLiquids = true;
+
+            consumePower(5f);
+            consumeItem(sporePod, 5);
+            consumeLiquid(Liquids.water, 15f / 60f);
+        }};
         }};
