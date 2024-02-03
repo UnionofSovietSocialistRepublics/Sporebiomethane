@@ -37,6 +37,7 @@ import mindustry.world.draw.*;
 import mindustry.world.meta.*;
 //import javapod.content.JavapodAC;
 import javapod.content.*;
+import mindustry.content.Fx;
 
 import static mindustry.Vars.*;
 import static mindustry.type.ItemStack.*;
@@ -45,10 +46,21 @@ import static mindustry.content.Items.*;
 
 public class JavapodProduction{
     public static Block
-        Extractor,ZincExtractor;
+        Extractor,ZincExtractor,
+        Nanoprocessor;
 
         public static void load(){
 
+        Nanoprocessor = new GenericCrafter("Nanoprocessors"){{
+            requirements(Category.crafting, with(silicon, 75, graphite, 30));
 
+            craftEffect = Fx.pulverizeMedium;
+            outputItem = new ItemStack(JavapodItem.Biomass, 1);
+            craftTime = 90f;
+            size = 2;
+            hasItems = true;
+
+            consumeItem(sporePod, 5);
+        }};
             
         }};

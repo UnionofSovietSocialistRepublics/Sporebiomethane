@@ -567,10 +567,11 @@ public class JavapodUnits {
                 bullet = new BasicBulletType(2.5f, 9){{
                     collidesAir = true;
                     shootEffect = Fx.none;
+                    speed = 6f;
                     width = 0.1f;
                     height = 0.1f;
                     damage = 250f;
-                    lifetime = 50f;
+                    lifetime = 25f;
                     pierce = true;
                     pierceBuilding = true;
                     despawnEffect = Fx.none;
@@ -670,8 +671,10 @@ public class JavapodUnits {
                 ejectEffect = Fx.none;
                 bullet = new BasicBulletType(2.5f, 9){{
                     collidesAir = true;
+                    speed = 6f;
                     damage = 35f;
-                    lifetime = 30f;
+                    lifetime = 15f;
+                    width = height = 0.1f;
                     despawnEffect = Fx.none;
                     lightColor = Color.valueOf("8B73C7");
                     pierce = true;
