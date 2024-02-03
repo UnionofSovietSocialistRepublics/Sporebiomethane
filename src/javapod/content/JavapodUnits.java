@@ -597,7 +597,7 @@ public class JavapodUnits {
                 top = true;
                 reload = 300f;
                 x = 0f;
-                y = -f;
+                y = 0f;
                 mirror = false;
                 recoil = 0f;
                 shootStatus = JavapodStatus.Frostshield;
