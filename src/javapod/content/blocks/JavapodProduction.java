@@ -37,7 +37,7 @@ import mindustry.world.draw.*;
 import mindustry.world.meta.*;
 //import javapod.content.JavapodAC;
 import javapod.content.*;
-import mindustry.content.Fx;
+import mindustry.content.*;
 
 import static mindustry.Vars.*;
 import static mindustry.type.ItemStack.*;
@@ -108,7 +108,7 @@ public class JavapodProduction{
             requirements(Category.crafting, with(silicon, 75, graphite, 90));
 
             craftEffect = Fx.pulverizeMedium;
-            outputItem = new ItemStack(JavapodItem.Voltaicchamber, 1);
+            outputItem = new ItemStack(JavapodItem.Voltaicgas, 1);
             craftTime = 90f;
             size = 3;
             hasItems = true;
