@@ -595,38 +595,6 @@ public class JavapodUnits {
                 }};
 
             }});
-            weapons.add(new Weapon("Haha area damage go brrrrrr"){{
-                range = 60f;
-                top = true;
-                reload = 1200f;
-                x = 0f;
-                y = 0f;
-                aiControllable = false;
-                mirror = false;
-                alwaysShooting = true;
-                targetAir = false;
-                targetGround = false;
-                recoil = 0f;
-                shootStatus = JavapodStatus.Frostshield;
-                shootStatusDuration = 360f;
-                shootSound = Sounds.flame;
-                ejectEffect = Fx.none;
-                bullet = new BasicBulletType(2.5f, 9){{
-                    collidesAir = false;
-                    despawnEffect = Fx.overdriveWave;
-                    width = 0f;
-                    height = 0f;
-                    lifetime = 5f;
-                    damage = 0f;
-                    alternate = true;
-                    splashDamage = 1000f;
-                    splashDamageRadius = 75f;
-                    statusDuration = 60f * 4;
-                    status = StatusEffects.freezing;
-                    status = StatusEffects.slow;
-                }};
-
-            }});
             weapons.add(new Weapon("Autus generator"){{
                 range = 60f;
                 top = true;
@@ -645,12 +613,15 @@ public class JavapodUnits {
                 ejectEffect = Fx.none;
                 bullet = new BasicBulletType(2.5f, 9){{
                     collidesAir = false;
+                    despawnEffect = Fx.overdriveWave;
                     width = 0f;
                     height = 0f;
                     lifetime = 5f;
                     damage = 0f;
-                    shoot.shots = 4;
                     alternate = true;
+                    splashDamage = 1000f;
+                    splashDamageRadius = 45f;
+                    shoot.shots = 4;
                     shoot.shotDelay = 50f;
                     spawnUnit = JavapodUnits.Autus;
                 }};
