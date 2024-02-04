@@ -51,6 +51,8 @@ VCAwall;
         public static void load(){
         
         VCAwall = new Wall("Vanadiumcarbidewall"){{
+            requirements(Category.defense, with(JPItem.VCA, 40));
+            envDisabled |= Env.scorching;
             health = 8500;
         }};
 

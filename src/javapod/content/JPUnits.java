@@ -609,6 +609,7 @@ public class JPUnits {
                 shootSound = Sounds.flame;
                 ejectEffect = Fx.none;
                 bullet = new BasicBulletType(2.5f, 9){{
+                    rangeOverride = 1f;
                     collidesAir = false;
                     width = 0f;
                     height = 0f;
