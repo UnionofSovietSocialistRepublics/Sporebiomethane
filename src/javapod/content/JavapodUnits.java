@@ -601,6 +601,7 @@ public class JavapodUnits {
                 reload = 1200f;
                 x = 0f;
                 y = 0f;
+                aiControllable = false;
                 mirror = false;
                 alwaysShooting = true;
                 targetAir = false;
@@ -633,6 +634,7 @@ public class JavapodUnits {
                 x = 0f;
                 y = 0f;
                 mirror = false;
+                aiControllable = false;
                 alwaysShooting = true;
                 targetAir = false;
                 targetGround = false;
