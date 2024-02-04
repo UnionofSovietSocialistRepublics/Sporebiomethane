@@ -596,16 +596,13 @@ public class JavapodUnits {
 
             }});
             weapons.add(new Weapon("Autus generator"){{
-                range = 60f;
+                range = 30f;
                 top = true;
                 reload = 2500f;
                 x = 0f;
                 y = 0f;
                 mirror = false;
-                aiControllable = false;
                 alwaysShooting = true;
-                targetAir = false;
-                targetGround = false;
                 recoil = 0f;
                 shootStatus = JavapodStatus.Frostshield;
                 shootStatusDuration = 360f;
@@ -613,14 +610,11 @@ public class JavapodUnits {
                 ejectEffect = Fx.none;
                 bullet = new BasicBulletType(2.5f, 9){{
                     collidesAir = false;
-                    despawnEffect = Fx.overdriveWave;
                     width = 0f;
                     height = 0f;
                     lifetime = 5f;
                     damage = 0f;
                     alternate = true;
-                    splashDamage = 1000f;
-                    splashDamageRadius = 45f;
                     shoot.shots = 4;
                     shoot.shotDelay = 50f;
                     spawnUnit = JavapodUnits.Autus;
