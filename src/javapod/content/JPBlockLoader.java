@@ -8,5 +8,6 @@ public class JPBlockLoader {
         JPEnv.load();
         JPProduction.load();
         JPOther.load();
+        JPTurret.load();
     }
 }
