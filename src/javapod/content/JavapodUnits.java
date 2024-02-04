@@ -266,8 +266,8 @@ public class JavapodUnits {
                             killShooter = true;
                             shootEffect = Fx.massiveExplosion;
                             collidesAir = true;
-                            splashDamage = 75f;
-                            splashDamageRadius = 60f;
+                            splashDamage = 145f;
+                            splashDamageRadius = 30f;
                     }};}});
                     healColor = Color.valueOf("590e14");
                     outlineColor = Color.valueOf("303a45");
@@ -566,6 +566,8 @@ public class JavapodUnits {
                 shootSound = Sounds.flame;
                 ejectEffect = Fx.none;
                 bullet = new BasicBulletType(2.5f, 9){{
+                    statusDuration = 60f * 4;
+                    status = StatusEffects.freezing;
                     collidesAir = true;
                     shootEffect = Fx.none;
                     speed = 6f;
@@ -593,13 +595,43 @@ public class JavapodUnits {
                 }};
 
             }});
-            weapons.add(new Weapon("Autus generator"){{
+            weapons.add(new Weapon("Haha area damage go brrrrrr"){{
+                range = 60f;
+                top = true;
+                reload = 1200f;
+                x = 0f;
+                y = 0f;
+                mirror = false;
+                targetAir = false;
+                recoil = 0f;
+                shootStatus = JavapodStatus.Frostshield;
+                shootStatusDuration = 360f;
+                shootSound = Sounds.flame;
+                ejectEffect = Fx.none;
+                bullet = new BasicBulletType(2.5f, 9){{
+                    collidesAir = false;
+                    despawnEffect = Fx.overdriveWave;
+                    width = 0f;
+                    height = 0f;
+                    lifetime = 5f;
+                    damage = 0f;
+                    alternate = true;
+                    splashDamage = 1000f;
+                    splashDamageRadius = 75f;
+                    statusDuration = 60f * 4;
+                    status = StatusEffects.freezing;
+                    status = StatusEffects.slow;
+                }};
 
+            }});
+            weapons.add(new Weapon("Autus generator"){{
+                range = 60f;
                 top = true;
                 reload = 2500f;
                 x = 0f;
                 y = 0f;
                 mirror = false;
+                targetAir = false;
                 recoil = 0f;
                 shootStatus = JavapodStatus.Frostshield;
                 shootStatusDuration = 360f;
@@ -609,11 +641,11 @@ public class JavapodUnits {
                     collidesAir = false;
                     width = 0f;
                     height = 0f;
-                    lifetime = 10f;
+                    lifetime = 5f;
                     damage = 0f;
                     shoot.shots = 4;
                     alternate = true;
-                    shoot.shotDelay = 90f;
+                    shoot.shotDelay = 50f;
                     spawnUnit = JavapodUnits.Autus;
                 }};
 
@@ -635,9 +667,9 @@ public class JavapodUnits {
             immunities.add(StatusEffects.burning);
             immunities.add(StatusEffects.melting);
             immunities.add(StatusEffects.freezing);
-            abilities.add(new RegenAbility(){{percentAmount = 1f / (600f * 60f) * 100f;}});
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (800f * 60f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.cryofluid;}});
-            abilities.add(new StatusFieldAbility(JavapodStatus.Frostshield, 60f * 3, 60f * 7f, 60f));
+            abilities.add(new StatusFieldAbility(JavapodStatus.Frostshield, 60f * 3, 60f * 9f, 60f));
         }};
             Roach = new UnitType("Roach"){{
             this.constructor = LegsUnit::create;
