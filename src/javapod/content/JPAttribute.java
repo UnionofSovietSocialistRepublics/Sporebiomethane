@@ -1,8 +1,8 @@
-package javapod.content;
+package jp.content;
 
 import mindustry.world.meta.Attribute;
 
-public class Javapodattribute {
+public class JPAttribute {
     public static Attribute
     Zinc;
 

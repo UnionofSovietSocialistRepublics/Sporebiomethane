@@ -1,4 +1,4 @@
-package javapod.content.blocks;
+package jp.content.blocks;
 
 import arc.graphics.Color;
 import mindustry.content.Fx;
@@ -14,10 +14,11 @@ import mindustry.world.blocks.defense.Wall;
 import mindustry.world.blocks.environment.*;
 import mindustry.world.meta.Attribute;
 import mindustry.world.meta.BuildVisibility;
-import javapod.content.*;
+import jp.content.*;
+import mindustry.content.*;
 import static mindustry.type.ItemStack.with;
 
-public class Javapodenv {
+public class JPEnv {
     public static Block
     ZincOre, VanadiumOre,
     wall;
@@ -29,19 +30,19 @@ public class Javapodenv {
 			variants = 1;
 			oreThreshold = 0.95F;
 			oreScale = 20.380953F;
-			itemDrop = JavapodItem.Zinc;
-			attributes.set(Javapodattribute.Zinc, 1.5f);
+			itemDrop = JPItem.Zinc;
+			attributes.set(JPAttribute.Zinc, 1.5f);
 			mapColor.set(itemDrop.color);
 			useColor = true;
 		}};
 
         VanadiumOre = new OreBlock("VanadiumOre") {{
-        itemDrop = JavapodItem.Vanadium;
+        itemDrop = JPItem.Vanadium;
          }};
 
         wall = new StaticWall("wall"){{
 			variants = 1;
-            attributes.set(Javapodattribute.Zinc, 1.5f);
+            attributes.set(JPAttribute.Zinc, 1.5f);
 		}};
     }
 

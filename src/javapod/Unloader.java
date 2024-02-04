@@ -1,4 +1,4 @@
-package javapod;
+package jp;
 
 import arc.*;
 import arc.util.*;
@@ -8,9 +8,7 @@ import mindustry.game.EventType.*;
 import mindustry.gen.*;
 import mindustry.mod.*;
 import mindustry.ui.dialogs.*;
-import javapod.content.JavapodItem;
-import javapod.content.JavapodblockLoader;
-import javapod.content.*;
+import jp.content.*;
 
 public class Unloader extends Mod{
 
@@ -21,14 +19,14 @@ public class Unloader extends Mod{
     @Override
     public void loadContent(){
         Log.info("Ah shit here we go again. Another mod, another load.");
-        JavapodStatus.load();
-        Javapodattribute.load();
+        JPStatus.load();
+        JPAttribute.load();
         Log.info("Loading items");
-        JavapodItem.load();
+        JPItem.load();
         Log.info("Loading units");
-        JavapodUnits.load();
+        JPUnits.load();
         Log.info("Loading blocks");
-        JavapodblockLoader.load();
+        JPBlockLoader.load();
     }
 
 }

@@ -1,4 +1,4 @@
-package javapod.content;
+package jp.content;
 
 import arc.graphics.*;
 import arc.graphics.g2d.*;
@@ -23,7 +23,7 @@ import mindustry.type.unit.*;
 import mindustry.type.weapons.*;
 import mindustry.entities.abilities.UnitSpawnAbility;
 import mindustry.world.meta.*;
-import javapod.content.*;
+import jp.content.*;
 
 
 import static arc.graphics.g2d.Draw.*;
@@ -31,7 +31,7 @@ import static arc.graphics.g2d.Lines.*;
 import static arc.math.Angles.*;
 import static mindustry.Vars.*;
 
-public class JavapodUnits {
+public class JPUnits {
     public static UnitType
     //Legs
     Carci,Imp, Baslisk, Autus, Baneling, Zergling, Behomoth, Lobber, Breacher, Scarabid, Frost, Roach, Purger,
@@ -434,7 +434,7 @@ public class JavapodUnits {
                     splashDamageRadius = 5f;
                     lifetime = 110f;
                     statusDuration = 60f * 4;
-                    status = JavapodStatus.Dissolving;
+                    status = JPStatus.Dissolving;
                     backColor = Color.valueOf("8FFE09");
                     frontColor = Color.valueOf("8FFE09");
                     lightColor = Color.valueOf("8FFE09");
@@ -473,7 +473,7 @@ public class JavapodUnits {
                     splashDamageRadius = 17f;
                     lifetime = 50f;
                     statusDuration = 60f * 4;
-                    status = JavapodStatus.Dissolving;
+                    status = JPStatus.Dissolving;
                     backColor = Color.valueOf("8FFE09");
                     frontColor = Color.valueOf("8FFE09");
                     lightColor = Color.valueOf("8FFE09");
@@ -561,7 +561,7 @@ public class JavapodUnits {
                 y = 7f;
                 mirror = false;
                 recoil = 0f;
-                shootStatus = JavapodStatus.Frostshield;
+                shootStatus = JPStatus.Frostshield;
                 shootStatusDuration = 80f;
                 shootSound = Sounds.flame;
                 ejectEffect = Fx.none;
@@ -596,7 +596,7 @@ public class JavapodUnits {
 
             }});
             weapons.add(new Weapon("Autus generator"){{
-                range = 30f;
+                range = 10f;
                 top = true;
                 reload = 2500f;
                 x = 0f;
@@ -604,7 +604,7 @@ public class JavapodUnits {
                 mirror = false;
                 alwaysShooting = true;
                 recoil = 0f;
-                shootStatus = JavapodStatus.Frostshield;
+                shootStatus = JPStatus.Frostshield;
                 shootStatusDuration = 360f;
                 shootSound = Sounds.flame;
                 ejectEffect = Fx.none;
@@ -612,12 +612,12 @@ public class JavapodUnits {
                     collidesAir = false;
                     width = 0f;
                     height = 0f;
-                    lifetime = 5f;
+                    lifetime = 1f;
                     damage = 0f;
                     alternate = true;
                     shoot.shots = 4;
                     shoot.shotDelay = 50f;
-                    spawnUnit = JavapodUnits.Autus;
+                    spawnUnit =  JPUnits.Autus;
                 }};
 
             }});
@@ -640,7 +640,7 @@ public class JavapodUnits {
             immunities.add(StatusEffects.freezing);
             abilities.add(new RegenAbility(){{percentAmount = 1f / (800f * 60f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.cryofluid;}});
-            abilities.add(new StatusFieldAbility(JavapodStatus.Frostshield, 60f * 3, 60f * 9f, 60f));
+            abilities.add(new StatusFieldAbility(JPStatus.Frostshield, 60f * 3, 60f * 9f, 60f));
         }};
             Roach = new UnitType("Roach"){{
             this.constructor = LegsUnit::create;
@@ -666,7 +666,7 @@ public class JavapodUnits {
                     splashDamageRadius = 17f;
                     lifetime = 50f;
                     statusDuration = 60f * 4;
-                    status = JavapodStatus.Dissolving;
+                    status = JPStatus.Dissolving;
                     backColor = Color.valueOf("8FFE09");
                     frontColor = Color.valueOf("8FFE09");
                     lightColor = Color.valueOf("8FFE09");

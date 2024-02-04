@@ -1,10 +1,10 @@
-package javapod.content;
+package jp.content;
 
 import arc.graphics.*;
 import arc.struct.*;
 import mindustry.type.*;
 
-public class JavapodItem{
+public class JPItem{
     public static Item
 
     Azurite,Biomass,BioSil,Carbinecomposite,Fluoresilt,Fluorite,Nanitealloy,Neocells,Vanadium,VCA,Voltaicgas,Zinc;

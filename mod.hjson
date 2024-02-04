@@ -1,7 +1,7 @@
 displayName: "Spore biomethane"
-name: "javapod"
+name: "jp"
 author: "Water white"
-main: "javapod.Unloader"
+main: "jp.Unloader"
 description: "Quite the holy sight there am i rite?"
 version: 1.0
 minGameVersion: 145

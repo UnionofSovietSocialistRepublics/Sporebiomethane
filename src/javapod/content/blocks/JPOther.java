@@ -1,4 +1,4 @@
-package javapod.content.blocks;
+package jp.content.blocks;
 
 import arc.graphics.*;
 import arc.math.*;
@@ -35,8 +35,8 @@ import mindustry.world.blocks.units.*;
 import mindustry.world.consumers.*;
 import mindustry.world.draw.*;
 import mindustry.world.meta.*;
-//import javapod.content.JavapodAC;
-import javapod.content.*;
+//import jp.content.jpAC;
+import jp.content.*;
 import mindustry.content.*;
 
 import static mindustry.Vars.*;
@@ -44,7 +44,7 @@ import static mindustry.type.ItemStack.*;
 import static mindustry.content.Items.*;
 
 
-public class JavapodOther{
+public class JPOther{
     public static Block
 VCAwall;
 
