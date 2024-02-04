@@ -47,7 +47,7 @@ import static mindustry.content.Items.*;
 
 public class JPTurret{
     public static Block
-Impalercannon,Flakaccelerator;
+Impalercannon,Flakaccelerator,Artilleryturret,Oarch;
 
         public static void load(){
 
@@ -55,8 +55,9 @@ Impalercannon,Flakaccelerator;
             requirements(Category.turret, with(surgeAlloy, 750, JPItem.Nanitealloy, 500,thorium, 500,silicon, 450));
             recoil = 0.5f;
             size = 4;
+            range = 300f;
             rotateSpeed = 2f;
-            reload = 300f;
+            reload = 160f;
             recoil = 2f;
             shootCone = 2f;
             ammoPerShot = 5;
@@ -65,7 +66,6 @@ Impalercannon,Flakaccelerator;
             inaccuracy = 2f;
             rotateSpeed = 10f;
             coolant = consumeCoolant(0.1f);
-            researchCostMultiplier = 0.05f;
 
             ammo(
                JPItem.Biomass, new PointBulletType(){{
@@ -85,32 +85,37 @@ Impalercannon,Flakaccelerator;
             consumeLiquid(Liquids.neoplasm, 15f / 60f);
         }};
         Flakaccelerator = new ItemTurret("Flakaccelerator"){{
-            requirements(Category.turret, with(surgeAlloy, 750, JPItem.Nanitealloy, 500,thorium, 500,silicon, 450));
+            requirements(Category.turret, with(graphite, 125, silicon, 100, JPItem.Biomass, 75));
             recoil = 0.5f;
-            size = 4;
+            size = 3;
             rotateSpeed = 2f;
-            reload = 300f;
+            range = 225f;
+            reload = 35f;
             recoil = 2f;
             shootCone = 2f;
             ammoPerShot = 5;
             ammoUseEffect = Fx.casing1;
             health = 1500;
             shoot.shots = 2;
-            shoot.shotDelay = 5f;
+            shoot.shotDelay = 10f;
             inaccuracy = 2f;
             rotateSpeed = 10f;
             coolant = consumeCoolant(0.1f);
-            researchCostMultiplier = 0.05f;
 
             ammo(
                JPItem.Biomass, new FlakBulletType(){{
                     damage = 25f;
                     speed = 5f;
                     fragBullets = 6;
+                    backColor = Color.valueOf("8B73C7");
+                    frontColor = Color.valueOf("8B73C7");
+                    lightColor = Color.valueOf("8B73C7");
                     fragBullet = new BasicBulletType(3f, 5){{
                         width = 5f;
-                        height = 12f;
-                        shrinkY = 1f;
+                        height = 5f;
+                        backColor = Color.valueOf("8B73C7");
+                        frontColor = Color.valueOf("8B73C7");
+                        lightColor = Color.valueOf("8B73C7");
                         damage = 5f;
                         lifetime = 20f;
                         backColor = Pal.gray;
@@ -120,6 +125,85 @@ Impalercannon,Flakaccelerator;
                     }};
                 }});
         }};
+        Artilleryturret = new ItemTurret("Artilleryturret"){{
+            requirements(Category.turret, with(graphite, 675, JPItem.Nanitealloy, 250, JPItem.Biomass, 150));
+            recoil = 0.5f;
+            size = 3;
+            rotateSpeed = 2f;
+            range = 225f;
+            reload = 180f;
+            recoil = 2f;
+            shootCone = 10f;
+            ammoPerShot = 5;
+            ammoUseEffect = Fx.casing1;
+            shootSound = Sounds.artillery;
+            health = 1500;
+            shoot.shots = 4;
+            shoot.shotDelay = 10f;
+            inaccuracy = 2f;
+            rotateSpeed = 10f;
+            coolant = consumeCoolant(0.1f);
 
+            ammo(
+               JPItem.Biomass, new BasicBulletType(){{
+                    damage = 125f;
+                    speed = 4f;
+                    backColor = Color.valueOf("8B73C7");
+                    frontColor = Color.valueOf("8B73C7");
+                    lightColor = Color.valueOf("8B73C7");
+                    width = height = 15f;
+                    shootEffect = Fx.shootSmall;
+                    smokeEffect = Fx.shootSmallSmoke;
+                }});
+        }};
+        Oarch = new ItemTurret("Oarch"){{
+            requirements(Category.turret, with(graphite, 100, silicon, 75, JPItem.Biomass, 55));
+            recoil = 0.5f;
+            size = 3;
+            rotateSpeed = 2f;
+            range = 250f;
+            reload = 40f;
+            recoil = 2f;
+            shootCone = 2f;
+            ammoPerShot = 5;
+            ammoUseEffect = Fx.casing1;
+            health = 750;
+            inaccuracy = 2f;
+            rotateSpeed = 10f;
+            coolant = consumeCoolant(0.1f);
+
+            ammo(
+               JPItem.Biomass, new FlakBulletType(){{
+                    lifetime = 100f;
+                    damage = 175f;
+                    splashDamage = 25f;
+                    splashDamageRadius = 15f;
+                    speed = 5f;
+                    height = width = 15f;
+                    fragBullets = 10;
+                    statusDuration = 60f * 5;
+                    status = StatusEffects.slow;
+                    backColor = Color.valueOf("8B73C7");
+                    frontColor = Color.valueOf("8B73C7");
+                    lightColor = Color.valueOf("8B73C7");
+                    fragBullet = new BasicBulletType(3f, 5){{
+                        width = 5f;
+                        height = 5f;
+                        statusDuration = 60f * 5;
+                        status = StatusEffects.slow;
+                        backColor = Color.valueOf("8B73C7");
+                        frontColor = Color.valueOf("8B73C7");
+                        lightColor = Color.valueOf("8B73C7");
+                        damage = 50f;
+                        splashDamage = 15f;
+                        splashDamageRadius = 5f;
+                        lifetime = 20f;
+                        backColor = Pal.gray;
+                        frontColor = Color.white;
+                        despawnEffect = Fx.none;
+                        collidesGround = false;
+                    }};
+                }});
+        }};
 
 }};
