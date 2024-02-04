@@ -201,7 +201,6 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch;
                         backColor = Pal.gray;
                         frontColor = Color.white;
                         despawnEffect = Fx.none;
-                        collidesGround = false;
                     }};
                 }});
         }};
