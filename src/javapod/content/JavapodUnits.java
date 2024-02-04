@@ -602,7 +602,9 @@ public class JavapodUnits {
                 x = 0f;
                 y = 0f;
                 mirror = false;
+                alwaysShooting = true;
                 targetAir = false;
+                targetGround = false;
                 recoil = 0f;
                 shootStatus = JavapodStatus.Frostshield;
                 shootStatusDuration = 360f;
@@ -631,7 +633,9 @@ public class JavapodUnits {
                 x = 0f;
                 y = 0f;
                 mirror = false;
+                alwaysShooting = true;
                 targetAir = false;
+                targetGround = false;
                 recoil = 0f;
                 shootStatus = JavapodStatus.Frostshield;
                 shootStatusDuration = 360f;
