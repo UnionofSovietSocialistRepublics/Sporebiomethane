@@ -47,17 +47,19 @@ import static mindustry.content.Items.*;
 
 public class JPTurret{
     public static Block
-Impalercannon;
+Impalercannon,Flakaccelerator;
 
         public static void load(){
 
         Impalercannon= new ItemTurret("Impalercannon"){{
             requirements(Category.turret, with(surgeAlloy, 750, JPItem.Nanitealloy, 500,thorium, 500,silicon, 450));
             recoil = 0.5f;
-            shootY = 3f;
-            reload = 20f;
-            range = 110;
-            shootCone = 15f;
+            size = 4;
+            rotateSpeed = 2f;
+            reload = 300f;
+            recoil = 2f;
+            shootCone = 2f;
+            ammoPerShot = 5;
             ammoUseEffect = Fx.casing1;
             health = 250;
             inaccuracy = 2f;
@@ -66,7 +68,7 @@ Impalercannon;
             researchCostMultiplier = 0.05f;
 
             ammo(
-               JPItem.Biomass, new RailBulletType(){{
+               JPItem.Biomass, new PointBulletType(){{
                     shootEffect = Fx.instShoot;
                     hitEffect = Fx.instHit;
                     smokeEffect = Fx.smokeCloud;
@@ -79,7 +81,44 @@ Impalercannon;
                     speed = 500f;
                     ammoMultiplier = 1.5f;
                 }});
-            recoils = 2;
+            consumePower(7f);
+            consumeLiquid(Liquids.neoplasm, 15f / 60f);
+        }};
+        Flakaccelerator = new ItemTurret("Flakaccelerator"){{
+            requirements(Category.turret, with(surgeAlloy, 750, JPItem.Nanitealloy, 500,thorium, 500,silicon, 450));
+            recoil = 0.5f;
+            size = 4;
+            rotateSpeed = 2f;
+            reload = 300f;
+            recoil = 2f;
+            shootCone = 2f;
+            ammoPerShot = 5;
+            ammoUseEffect = Fx.casing1;
+            health = 1500;
+            shoot.shots = 2;
+            shoot.shotDelay = 5f;
+            inaccuracy = 2f;
+            rotateSpeed = 10f;
+            coolant = consumeCoolant(0.1f);
+            researchCostMultiplier = 0.05f;
+
+            ammo(
+               JPItem.Biomass, new FlakBulletType(){{
+                    damage = 25f;
+                    speed = 5f;
+                    fragBullets = 6;
+                    fragBullet = new BasicBulletType(3f, 5){{
+                        width = 5f;
+                        height = 12f;
+                        shrinkY = 1f;
+                        damage = 5f;
+                        lifetime = 20f;
+                        backColor = Pal.gray;
+                        frontColor = Color.white;
+                        despawnEffect = Fx.none;
+                        collidesGround = false;
+                    }};
+                }});
         }};
 
 
