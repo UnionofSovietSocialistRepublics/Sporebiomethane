@@ -732,4 +732,82 @@ public class JPUnits {
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});
         }};
+            Hivedefender = new UnitType("Hivedefender"){{
+            this.constructor = UnitEntity::create;
+            speed = 1f;
+            hitSize = 18f;
+            health = 175;
+            range = 125f;    
+            flying = true;
+            engineOffset = 7f;
+            engineSize = 4f;
+            mineSpeed = 2f;
+            buildSpeed = 1f;
+            mineTier = 3f;
+            drag = 0.05f;
+            accel = 0.11f;
+            weapons.add(new Weapon(name + "-gun"){{
+                reload = 75f;
+                x = -6f;
+                y = 2f;
+                layerOffset = -1f;
+                mirror = true;
+                shoot.shots = 2;
+                shoot.shotDelay = 5f;
+                bullet = new BasicBulletType(2.5f, 9){{
+                    speed = 5f;
+                    height = width = 15f;
+                    shootEffect = Fx.shootBig;
+                    smokeEffect = Fx.shootBigSmoke;
+                    damage = 15f;
+                    buildingDamageMultiplier = 0.15f;
+                    lifetime = 50f;
+                    backColor = Color.valueOf("8FFE09");
+                    frontColor = Color.valueOf("8FFE09");
+                    lightColor = Color.valueOf("8FFE09");
+                    collidesTiles = true;
+                }};
+            }});
+            outlineColor = Color.valueOf("303a45");
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f) * 100f;}});
+        }};
+            HiveSentinel = new UnitType("HiveSentinel"){{
+            this.constructor = UnitEntity::create;
+            speed = 1f;
+            hitSize = 18f;
+            health = 400;
+            range = 125f;    
+            flying = true;
+            engineOffset = 12f;
+            engineSize = 4f;
+            mineSpeed = 3f;
+            buildSpeed = 2f;
+            mineTier = 4f;
+            drag = 0.05f;
+            accel = 0.11f;
+            weapons.add(new Weapon(name + "-gun"){{
+                reload = 65f;
+                x = -9f;
+                y = 5f;
+                layerOffset = -1f;
+                mirror = true;
+                shoot.shots = 4
+                shoot.shotDelay = 5f;
+                bullet = new BasicBulletType(2.5f, 9){{
+                    speed = 5f;
+                    height = width = 15f;
+                    shootEffect = Fx.shootBig;
+                    smokeEffect = Fx.shootBigSmoke;
+                    damage = 30f;
+                    buildingDamageMultiplier = 0.15f;
+                    lifetime = 50f;
+                    backColor = Color.valueOf("8FFE09");
+                    frontColor = Color.valueOf("8FFE09");
+                    lightColor = Color.valueOf("8FFE09");
+                    collidesTiles = true;
+                }};
+            }});
+            outlineColor = Color.valueOf("303a45");
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f) * 100f;}});
+        }};
 }}

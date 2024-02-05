@@ -186,7 +186,7 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
                     fragBullets = 10;
                     statusDuration = 60f * 5;
                     status = StatusEffects.slow;
-                    sprite = "ExplodingTNT";
+                    //sprite = "ExplodingTNT";
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
                     lightColor = Color.valueOf("8B73C7");
