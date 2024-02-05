@@ -284,14 +284,17 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
             reload = 14f;
             recoil = 1f;
             shootCone = 10f;
+            shoot = new ShootAlternate(){{
+                barrels = 2;
+            }};
             shootSound = Sounds.shootBig;
-            alternate = true;
             ammoUseEffect = Fx.casing1;
             health = 1500;
             rotateSpeed = 10f;
 
             ammo(
                JPItem.Biomass, new BasicBulletType(){{
+                    
                     lifetime = 45f;
                     damage = 25f;
                     speed = 5f;
