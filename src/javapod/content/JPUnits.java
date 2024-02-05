@@ -756,15 +756,15 @@ public class JPUnits {
                 shoot.shotDelay = 5f;
                 bullet = new BasicBulletType(2.5f, 9){{
                     speed = 5f;
-                    height = width = 15f;
+                    height = width = 10f;
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
                     damage = 15f;
                     buildingDamageMultiplier = 0.15f;
                     lifetime = 50f;
-                    backColor = Color.valueOf("8FFE09");
-                    frontColor = Color.valueOf("8FFE09");
-                    lightColor = Color.valueOf("8FFE09");
+                    backColor = Color.valueOf("8B73C7");
+                    frontColor = Color.valueOf("8B73C7");
+                    lightColor = Color.valueOf("8B73C7");
                     collidesTiles = true;
                 }};
             }});
@@ -801,9 +801,9 @@ public class JPUnits {
                     damage = 30f;
                     buildingDamageMultiplier = 0.15f;
                     lifetime = 50f;
-                    backColor = Color.valueOf("8FFE09");
-                    frontColor = Color.valueOf("8FFE09");
-                    lightColor = Color.valueOf("8FFE09");
+                    backColor = Color.valueOf("8B73C7");
+                    frontColor = Color.valueOf("8B73C7");
+                    lightColor = Color.valueOf("8B73C7");
                     collidesTiles = true;
                 }};
             }});
