@@ -3,6 +3,6 @@ name: "jp"
 author: "Water white"
 main: "jp.Unloader"
 description: "Quite the holy sight there am i rite?"
-version: 1.0
+version: 0.3
 minGameVersion: 145
 java: true

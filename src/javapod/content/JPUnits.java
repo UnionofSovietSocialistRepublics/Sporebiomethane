@@ -38,7 +38,7 @@ public class JPUnits {
     //missiles
     Bomb,
     //Floaty
-    Guardian,Thera,DeathImp,Drone,Interceptor;
+    Guardian,Thera,DeathImp,Drone,Interceptor,Hivedefender,HiveSentinel,Sporophage;
 
 
 

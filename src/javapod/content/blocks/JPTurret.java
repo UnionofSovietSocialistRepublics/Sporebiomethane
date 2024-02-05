@@ -81,6 +81,7 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
                     speed = 500f;
                     ammoMultiplier = 1.5f;
                 }});
+            coolantMultiplier = 0.2f;
             coolant = consumeCoolant(2f);
             consumePower(7f);
         }};
@@ -217,7 +218,6 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
             reload = 35f;
             recoil = 2f;
             shootCone = 2f;
-            ammoPerShot = 5;
             ammoUseEffect = Fx.casing1;
             health = 1500;
             inaccuracy = 2f;
@@ -225,7 +225,7 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
 
                shootType = new BasicBulletType(){{
                     height = width = 15f;
-                    damage = 25f;
+                    damage = 40f;
                     speed = 5f;
                     fragBullets = 6;
                     backColor = Color.valueOf("8B73C7");
@@ -244,7 +244,6 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
             reload = 35f;
             recoil = 2f;
             shootCone = 2f;
-            ammoPerShot = 5;
             ammoUseEffect = Fx.casing1;
             health = 1500;
             hasPower = true;
@@ -281,24 +280,21 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
             recoil = 0.5f;
             size = 3;
             rotateSpeed = 2f;
-            range = 225f;
-            reload = 180f;
-            recoil = 2f;
+            range = 200f;
+            reload = 14f;
+            recoil = 1f;
             shootCone = 10f;
-            ammoPerShot = 5;
+            shootSound = Sounds.shootBig;
+            alternate = true;
             ammoUseEffect = Fx.casing1;
             health = 1500;
-            shoot.shots = 4;
-            shoot.shotDelay = 10f;
-            inaccuracy = 2f;
             rotateSpeed = 10f;
-            coolant = consumeCoolant(0.1f);
 
             ammo(
                JPItem.Biomass, new BasicBulletType(){{
-                    lifetime = 75f;
-                    damage = 225f;
-                    speed = 4f;
+                    lifetime = 45f;
+                    damage = 25f;
+                    speed = 5f;
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
                     lightColor = Color.valueOf("8B73C7");
@@ -307,29 +303,30 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
                     smokeEffect = Fx.shootSmallSmoke;
                     collidesGround = true;
                 }});
+                coolant = consumeCoolant(0.25f);
         }};
         Sentinel = new ContinuousTurret("Sentinel"){{
             requirements(Category.turret, with(graphite, 675, JPItem.Nanitealloy, 250, JPItem.Biomass, 150));
-            recoil = 0.5f;
-            size = 3;
+            health = 1500;
+            size = 2;
             rotateSpeed = 1f;
+            liquidCapacity = 300F;
             range = 225f;
             reload = 180f;
             recoil = 2f;
             shootCone = 10f;
             ammoPerShot = 5;
             minWarmup = 0.94f;
+            shootY = -1f;
             shootWarmupSpeed = 0.05f;
             ammoUseEffect = Fx.casing1;
-            health = 1500;
-            inaccuracy = 2f;
-            rotateSpeed = 10f;
             shootType = new PointLaserBulletType(){{
-	            sprite = "Sentinellaser";
+	            //sprite = "Sentinellaser";
 	            collidesTeam = true;
-	            damage = 100;
+	            damage = 75;
+                hitColor = Color.valueOf("fda981");
             }};
-             drawer = new DrawTurret("-bottom"){{
+            drawer = new DrawTurret("-bottom"){{
                 parts.add(new RegionPart("-bottom"){{
                 }});
                 parts.add(new RegionPart("-prongs"){{
@@ -338,7 +335,9 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
                     moveX = 1.5f;
                     moveY = 1.25f;
                     moveRot = -10f;
-                }});
+            }});
         }};
+        consumeLiquid(Liquids.water, 15f / 60f);
+        consumePower(7f);
         }};
 }};
