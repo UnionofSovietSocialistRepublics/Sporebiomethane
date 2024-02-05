@@ -742,8 +742,8 @@ public class JPUnits {
             engineOffset = 7f;
             engineSize = 4f;
             mineSpeed = 2f;
-            buildSpeed = 1f;
-            mineTier = 3f;
+            buildSpeed = 1;
+            mineTier = 3;
             drag = 0.05f;
             accel = 0.11f;
             weapons.add(new Weapon(name + "-gun"){{
@@ -781,8 +781,8 @@ public class JPUnits {
             engineOffset = 12f;
             engineSize = 4f;
             mineSpeed = 3f;
-            buildSpeed = 2f;
-            mineTier = 4f;
+            buildSpeed = 2;
+            mineTier = 4;
             drag = 0.05f;
             accel = 0.11f;
             weapons.add(new Weapon(name + "-gun"){{
@@ -791,7 +791,7 @@ public class JPUnits {
                 y = 5f;
                 layerOffset = -1f;
                 mirror = true;
-                shoot.shots = 4
+                shoot.shots = 4;
                 shoot.shotDelay = 5f;
                 bullet = new BasicBulletType(2.5f, 9){{
                     speed = 5f;
