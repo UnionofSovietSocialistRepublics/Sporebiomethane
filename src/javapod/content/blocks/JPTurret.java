@@ -47,7 +47,7 @@ import static mindustry.content.Items.*;
 
 public class JPTurret{
     public static Block
-Impalercannon,Flakaccelerator,Artilleryturret,Oarch;
+Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Suppressor,Sentinel;
 
         public static void load(){
 
@@ -65,7 +65,7 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch;
             health = 250;
             inaccuracy = 2f;
             rotateSpeed = 10f;
-            coolant = consumeCoolant(0.1f);
+
 
             ammo(
                JPItem.Biomass, new PointBulletType(){{
@@ -81,8 +81,8 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch;
                     speed = 500f;
                     ammoMultiplier = 1.5f;
                 }});
+            coolant = consumeCoolant(2f);
             consumePower(7f);
-            consumeLiquid(Liquids.water, 15f / 60f);
         }};
         Flakaccelerator = new ItemTurret("Flakaccelerator"){{
             requirements(Category.turret, with(graphite, 125, silicon, 100, JPItem.Biomass, 75));
@@ -96,6 +96,7 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch;
             ammoPerShot = 5;
             ammoUseEffect = Fx.casing1;
             health = 1500;
+            targetGround = false;
             shoot.shots = 2;
             shoot.shotDelay = 10f;
             inaccuracy = 2f;
@@ -146,6 +147,7 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch;
 
             ammo(
                JPItem.Biomass, new BasicBulletType(){{
+                    lifetime = 75f;
                     damage = 125f;
                     speed = 4f;
                     backColor = Color.valueOf("8B73C7");
@@ -171,11 +173,10 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch;
             health = 750;
             inaccuracy = 2f;
             rotateSpeed = 10f;
-            coolant = consumeCoolant(0.1f);
 
             ammo(
                JPItem.Biomass, new FlakBulletType(){{
-                    lifetime = 100f;
+                    lifetime = 75f;
                     damage = 175f;
                     splashDamage = 25f;
                     splashDamageRadius = 15f;
@@ -187,24 +188,94 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch;
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
                     lightColor = Color.valueOf("8B73C7");
+                    collidesGround = true;
+                    collidesAir = true;
                     fragBullet = new BasicBulletType(3f, 5){{
                         width = 5f;
                         height = 5f;
-                        statusDuration = 60f * 5;
-                        status = StatusEffects.slow;
                         backColor = Color.valueOf("8B73C7");
                         frontColor = Color.valueOf("8B73C7");
                         lightColor = Color.valueOf("8B73C7");
-                        damage = 50f;
-                        splashDamage = 15f;
-                        splashDamageRadius = 5f;
+                        damage = 5f;
                         lifetime = 20f;
                         backColor = Pal.gray;
                         frontColor = Color.white;
                         despawnEffect = Fx.none;
                         collidesGround = true;
+                        collidesAir = true;
                     }};
                 }});
+                coolant = consumeCoolant(0.1f);
+        }};
+        Sporegarrison = new PowerTurret("Sporegarrison"){{
+            requirements(Category.turret, with(graphite, 125, silicon, 100, JPItem.Biomass, 75));
+            recoil = 0.5f;
+            size = 3;
+            rotateSpeed = 2f;
+            range = 225f;
+            reload = 35f;
+            recoil = 2f;
+            shootCone = 2f;
+            ammoPerShot = 5;
+            ammoUseEffect = Fx.casing1;
+            health = 1500;
+            targetGround = false;
+            shoot.shots = 2;
+            shoot.shotDelay = 10f;
+            inaccuracy = 2f;
+            rotateSpeed = 10f;
+
+               shootType = new BasicBulletType(){{
+                    damage = 25f;
+                    speed = 5f;
+                    fragBullets = 6;
+                    backColor = Color.valueOf("8B73C7");
+                    frontColor = Color.valueOf("8B73C7");
+                    lightColor = Color.valueOf("8B73C7");
+                }};
+                coolant = consumeCoolant(0.1f);
+                consumePower(7f);
+        }};
+        Mitocannon = new PowerTurret("Mitocannon"){{
+            requirements(Category.turret, with(graphite, 125, silicon, 100, JPItem.Biomass, 75));
+            recoil = 0.5f;
+            size = 3;
+            rotateSpeed = 2f;
+            range = 225f;
+            reload = 35f;
+            recoil = 2f;
+            shootCone = 2f;
+            ammoPerShot = 5;
+            ammoUseEffect = Fx.casing1;
+            health = 1500;
+            targetGround = false;
+            hasPower = true;
+            inaccuracy = 2f;
+            rotateSpeed = 10f;
+
+               shootType = new BasicBulletType(){{
+                    damage = 25f;
+                    speed = 5f;
+                    fragBullets = 6;
+                    backColor = Color.valueOf("8B73C7");
+                    frontColor = Color.valueOf("8B73C7");
+                    lightColor = Color.valueOf("8B73C7");
+                    fragBullet = new BasicBulletType(3f, 5){{
+                        width = 5f;
+                        height = 5f;
+                        backColor = Color.valueOf("8B73C7");
+                        frontColor = Color.valueOf("8B73C7");
+                        lightColor = Color.valueOf("8B73C7");
+                        damage = 5f;
+                        lifetime = 20f;
+                        backColor = Pal.gray;
+                        frontColor = Color.white;
+                        despawnEffect = Fx.none;
+                        collidesGround = false;
+                    }};
+                }};
+                coolant = consumeCoolant(0.1f);
+                consumePower(7f);
         }};
 
 }};
