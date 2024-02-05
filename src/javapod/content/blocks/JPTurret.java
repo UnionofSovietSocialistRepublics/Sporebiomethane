@@ -148,7 +148,7 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
             ammo(
                JPItem.Biomass, new BasicBulletType(){{
                     lifetime = 75f;
-                    damage = 125f;
+                    damage = 225f;
                     speed = 4f;
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
@@ -160,7 +160,7 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
                 }});
         }};
         Oarch = new ItemTurret("Oarch"){{
-            requirements(Category.turret, with(graphite, 100, silicon, 75, JPItem.Biomass, 55));
+            requirements(Category.turret, with(graphite, 200, silicon, 125, JPItem.Nanitealloy, 95));
             recoil = 0.5f;
             size = 2;
             rotateSpeed = 2f;
@@ -177,7 +177,7 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
             ammo(
                JPItem.Biomass, new FlakBulletType(){{
                     lifetime = 75f;
-                    damage = 175f;
+                    damage = 75f;
                     splashDamage = 25f;
                     splashDamageRadius = 15f;
                     speed = 5f;
@@ -185,6 +185,7 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
                     fragBullets = 10;
                     statusDuration = 60f * 5;
                     status = StatusEffects.slow;
+                    sprite = "ExplodingTNT";
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
                     lightColor = Color.valueOf("8B73C7");
@@ -208,9 +209,9 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
                 coolant = consumeCoolant(0.1f);
         }};
         Sporegarrison = new PowerTurret("Sporegarrison"){{
-            requirements(Category.turret, with(graphite, 125, silicon, 100, JPItem.Biomass, 75));
+            requirements(Category.turret, with(graphite, 125, silicon, 145, JPItem.Biomass, 95));
             recoil = 0.5f;
-            size = 3;
+            size = 2;
             rotateSpeed = 2f;
             range = 225f;
             reload = 35f;
@@ -219,13 +220,11 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
             ammoPerShot = 5;
             ammoUseEffect = Fx.casing1;
             health = 1500;
-            targetGround = false;
-            shoot.shots = 2;
-            shoot.shotDelay = 10f;
             inaccuracy = 2f;
             rotateSpeed = 10f;
 
                shootType = new BasicBulletType(){{
+                    height = width = 15f;
                     damage = 25f;
                     speed = 5f;
                     fragBullets = 6;
@@ -237,9 +236,9 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
                 consumePower(7f);
         }};
         Mitocannon = new PowerTurret("Mitocannon"){{
-            requirements(Category.turret, with(graphite, 125, silicon, 100, JPItem.Biomass, 75));
+            requirements(Category.turret, with(graphite, 300, JPItem.Neocells, 240, JPItem.Biomass, 175));
             recoil = 0.5f;
-            size = 3;
+            size = 2;
             rotateSpeed = 2f;
             range = 225f;
             reload = 35f;
@@ -248,12 +247,12 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
             ammoPerShot = 5;
             ammoUseEffect = Fx.casing1;
             health = 1500;
-            targetGround = false;
             hasPower = true;
             inaccuracy = 2f;
             rotateSpeed = 10f;
 
                shootType = new BasicBulletType(){{
+                    height = width = 15F;
                     damage = 25f;
                     speed = 5f;
                     fragBullets = 6;
@@ -277,5 +276,69 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
                 coolant = consumeCoolant(0.1f);
                 consumePower(7f);
         }};
+        Suppressor = new ItemTurret("Suppressor"){{
+            requirements(Category.turret, with(graphite, 675, JPItem.Nanitealloy, 250, JPItem.Biomass, 150));
+            recoil = 0.5f;
+            size = 3;
+            rotateSpeed = 2f;
+            range = 225f;
+            reload = 180f;
+            recoil = 2f;
+            shootCone = 10f;
+            ammoPerShot = 5;
+            ammoUseEffect = Fx.casing1;
+            health = 1500;
+            shoot.shots = 4;
+            shoot.shotDelay = 10f;
+            inaccuracy = 2f;
+            rotateSpeed = 10f;
+            coolant = consumeCoolant(0.1f);
 
+            ammo(
+               JPItem.Biomass, new BasicBulletType(){{
+                    lifetime = 75f;
+                    damage = 225f;
+                    speed = 4f;
+                    backColor = Color.valueOf("8B73C7");
+                    frontColor = Color.valueOf("8B73C7");
+                    lightColor = Color.valueOf("8B73C7");
+                    width = height = 15f;
+                    shootEffect = Fx.shootSmall;
+                    smokeEffect = Fx.shootSmallSmoke;
+                    collidesGround = true;
+                }});
+        }};
+        Sentinel = new ContinuousTurret("Sentinel"){{
+            requirements(Category.turret, with(graphite, 675, JPItem.Nanitealloy, 250, JPItem.Biomass, 150));
+            recoil = 0.5f;
+            size = 3;
+            rotateSpeed = 1f;
+            range = 225f;
+            reload = 180f;
+            recoil = 2f;
+            shootCone = 10f;
+            ammoPerShot = 5;
+            minWarmup = 0.94f;
+            shootWarmupSpeed = 0.05f;
+            ammoUseEffect = Fx.casing1;
+            health = 1500;
+            inaccuracy = 2f;
+            rotateSpeed = 10f;
+            shootType = new PointLaserBulletType(){{
+	            sprite = "Sentinellaser";
+	            collidesTeam = true;
+	            damage = 100;
+            }};
+             drawer = new DrawTurret("-bottom"){{
+                parts.add(new RegionPart("-bottom"){{
+                }});
+                parts.add(new RegionPart("-prongs"){{
+                    progress = PartProgress.warmup;
+                    mirror = true;
+                    moveX = 1.5f;
+                    moveY = 1.25f;
+                    moveRot = -10f;
+                }});
+        }};
+        }};
 }};
