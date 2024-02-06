@@ -900,7 +900,7 @@ public class JPUnits {
                 bladeMoveSpeed = 80f;
                 bladeBlurAlphaMultiplier = 0.5f;
                 bladeLayer = -1f;
-            }};
+            }},
             new Blade(name + "-wing2"){{
                 y = 3f; x = 8f;
                 bladeMoveSpeed = 80f;
