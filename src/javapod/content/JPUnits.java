@@ -1,5 +1,7 @@
 package jp.content;
 
+
+import arc.func.Prov;
 import arc.graphics.*;
 import arc.graphics.g2d.*;
 import arc.math.*;
@@ -41,7 +43,41 @@ public class JPUnits {
     Guardian,Thera,DeathImp,Drone,Interceptor,Hivedefender,HiveSentinel,Sporophage,
     //Outcast
     Gragoth;
+
+    private static final ObjectMap.Entry<Class<? extends Entityc>, Prov<? extends Entityc>>[] types = new ObjectMap.Entry[]{
+        prov(JPCopterUnitEntity.class, JPCopterUnitEntity::new)
+    };
     private static final ObjectIntMap<Class<? extends Entityc>> idMap = new ObjectIntMap<>();
+    
+
+        private static <T extends Entityc> ObjectMap.Entry<Class<T>, Prov<T>> prov(Class<T> type, Prov<T> prov) {
+        ObjectMap.Entry<Class<T>, Prov<T>> entry = new ObjectMap.Entry<>();
+        entry.key = type;
+        entry.value = prov;
+        return entry;
+    }
+        /**
+     * Setups all entity IDs and maps them into {@link EntityMapping}.
+     * <p>
+     * Put this inside load()
+     * </p>
+     * @author GlennFolker
+     */
+    private static void setupID() {
+        for (
+                int i = 0,
+                j = 0,
+                len = EntityMapping.idMap.length;
+                i < len;
+                i++
+        ) {
+            if (EntityMapping.idMap[i] == null) {
+                idMap.put(types[j].key, i);
+                EntityMapping.idMap[i] = types[j].value;
+                if (++j >= types.length) break;
+            }
+        }
+    }
     /**
      * Retrieves the class ID for a certain entity type.
      * @author GlennFolker
