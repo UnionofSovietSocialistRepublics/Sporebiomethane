@@ -840,8 +840,8 @@ public class JPUnits {
                 mirror = false;
                 bullet = new BasicBulletType(2.5f, 9){{
                     speed = 3f;
-                    height = 30f;
-                    width = 15f;
+                    height = 15f;
+                    width = 30f;
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
                     pierce = true;
@@ -849,11 +849,55 @@ public class JPUnits {
                     pierceCap = 7;
                     damage = 250f;
                     buildingDamageMultiplier = 0.15f;
-                    lifetime = 150f;
+                    lifetime = 95f;
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
                     lightColor = Color.valueOf("8B73C7");
                     collidesTiles = true;
+                    trailEffect = Fx.missileTrail;
+                    trailInterval = 3f;
+                    trailParam = 4f;
+                    speed = 3f;
+                    damage = 75f;
+                    lifetime = 60f;
+                    width = height = 15f;
+                    shrinkX = shrinkY = 0f;
+                    trailColor = Color.valueOf("8B73C7");
+                    trailLength = 12;
+                    trailWidth = 2.2f;
+                    despawnEffect = hitEffect = new ExplosionEffect(){{
+                        waveColor = Pal.sapBullet;
+                        smokeColor = Color.gray;
+                        sparkColor = Pal.sap;
+                        waveStroke = 4f;
+                        waveRad = 40f;
+                    }};
+                    intervalBullet = new LightningBulletType(){{
+                    damage = 16;
+                    collidesAir = false;
+                    ammoMultiplier = 1f;
+                    lightningColor = Pal.sapBullet;
+                    lightningLength = 3;
+                    lightningLengthRand = 6;
+
+                        //for visual stats only.
+                    buildingDamageMultiplier = 0.25f;
+
+                    lightningType = new BulletType(0.0001f, 0f){{
+                        lifetime = Fx.lightning.lifetime;
+                        hitEffect = Fx.hitLancer;
+                        despawnEffect = Fx.none;
+                        hittable = false;
+                        lightColor = Color.white;
+                        buildingDamageMultiplier = 0.25f;
+                        }};}};
+                    bulletInterval = 4f;
+
+                    lightningColor = Color.valueOf("8B73C7");
+                    lightningDamage = 17;
+                    lightning = 8;
+                    lightningLength = 2;
+                    lightningLengthRand = 8;
                 }};
             }});
             blade.add(
