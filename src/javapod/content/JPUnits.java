@@ -822,14 +822,11 @@ public class JPUnits {
             Gragoth = new JPCopterUnitType("Gragoth"){{
             speed = 1f;
             hitSize = 18f;
-            health = 400;
+            health = 2400;
             range = 125f;    
             flying = true;
             engineOffset = 12f;
             engineSize = 4f;
-            mineSpeed = 3f;
-            buildSpeed = 2;
-            mineTier = 4;
             drag = 0.05f;
             accel = 0.11f;
             weapons.add(new Weapon(name + "-railgun"){{
@@ -848,7 +845,6 @@ public class JPUnits {
                     pierceBuilding = true;
                     pierceCap = 7;
                     damage = 250f;
-                    buildingDamageMultiplier = 0.15f;
                     lifetime = 95f;
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
@@ -879,8 +875,6 @@ public class JPUnits {
                     lightningColor = Pal.sapBullet;
                     lightningLength = 3;
                     lightningLengthRand = 6;
-
-                        //for visual stats only.
                     buildingDamageMultiplier = 0.25f;
 
                     lightningType = new BulletType(0.0001f, 0f){{
@@ -902,12 +896,18 @@ public class JPUnits {
             }});
             blade.add(
                 new Blade(name + "-wing"){{
-                y = -2f; x = 10f;
+                y = -4f; x = 10f;
+                bladeMoveSpeed = 80f;
+                bladeBlurAlphaMultiplier = 0.5f;
+                bladeLayer = -1f;
+            }};
+            new Blade(name + "-wing2"){{
+                y = 3f; x = 8f;
                 bladeMoveSpeed = 80f;
                 bladeBlurAlphaMultiplier = 0.5f;
                 bladeLayer = -1f;
             }});
             outlineColor = Color.valueOf("303a45");
-            abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f) * 100f;}});
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});
         }};
 }}
