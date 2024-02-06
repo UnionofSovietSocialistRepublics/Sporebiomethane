@@ -840,10 +840,13 @@ public class JPUnits {
                 mirror = false;
                 bullet = new BasicBulletType(2.5f, 9){{
                     speed = 3f;
-                    height = width = 30f;
+                    height = 30f;
+                    width = 15f;
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
                     pierce = true;
+                    pierceBuilding = true;
+                    pierceCap = 7;
                     damage = 250f;
                     buildingDamageMultiplier = 0.15f;
                     lifetime = 150f;
@@ -855,7 +858,7 @@ public class JPUnits {
             }});
             blade.add(
                 new Blade(name + "-wing"){{
-                y = -2f; x = 14f;
+                y = -2f; x = 10f;
                 bladeMoveSpeed = 80f;
                 bladeBlurAlphaMultiplier = 0.5f;
                 bladeLayer = -1f;
