@@ -839,13 +839,14 @@ public class JPUnits {
                 y = -8f;
                 mirror = false;
                 bullet = new BasicBulletType(2.5f, 9){{
-                    speed = 5f;
-                    height = width = 15f;
+                    speed = 3f;
+                    height = width = 30f;
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
-                    damage = 30f;
+                    pierce = true;
+                    damage = 250f;
                     buildingDamageMultiplier = 0.15f;
-                    lifetime = 50f;
+                    lifetime = 150f;
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
                     lightColor = Color.valueOf("8B73C7");
@@ -857,6 +858,7 @@ public class JPUnits {
                 y = -2f; x = 14f;
                 bladeMoveSpeed = 80f;
                 bladeBlurAlphaMultiplier = 0.5f;
+                bladeLayer = -1f;
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f) * 100f;}});
