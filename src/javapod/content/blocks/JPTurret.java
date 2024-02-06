@@ -276,7 +276,7 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
             size = 3;
             rotateSpeed = 2f;
             range = 200f;
-            reload = 14f;
+            reload = 10f;
             recoil = 1f;
             shootCone = 10f;
             shoot = new ShootAlternate(){{
@@ -290,7 +290,8 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
                JPItem.Biomass, new BasicBulletType(){{
                     
                     lifetime = 45f;
-                    damage = 25f;
+                    splashDamage = 25f;
+                    splashDamageRadius = 7f;
                     speed = 5f;
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
@@ -300,7 +301,7 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
                     smokeEffect = Fx.shootSmallSmoke;
                     collidesGround = true;
                 }});
-                coolantMultiplier = 0.5f;
+                coolantMultiplier = 0.75f;
                 coolant = consumeCoolant(0.5f);
         }};
         Sentinel = new ContinuousTurret("Sentinel"){{

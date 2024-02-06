@@ -38,8 +38,17 @@ public class JPUnits {
     //missiles
     Bomb,
     //Floaty
-    Guardian,Thera,DeathImp,Drone,Interceptor,Hivedefender,HiveSentinel,Sporophage;
-
+    Guardian,Thera,DeathImp,Drone,Interceptor,Hivedefender,HiveSentinel,Sporophage,
+    //Outcast
+    Gragoth;
+    private static final ObjectIntMap<Class<? extends Entityc>> idMap = new ObjectIntMap<>();
+    /**
+     * Retrieves the class ID for a certain entity type.
+     * @author GlennFolker
+     */
+    public static <T extends Entityc> int classID(Class<T> type) {
+        return idMap.get(type, -1);
+    }
 
 
         public static void load(){
@@ -806,6 +815,48 @@ public class JPUnits {
                     lightColor = Color.valueOf("8B73C7");
                     collidesTiles = true;
                 }};
+            }});
+            outlineColor = Color.valueOf("303a45");
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f) * 100f;}});
+        }};
+            Gragoth = new JPCopterUnitType("Gragoth"){{
+            speed = 1f;
+            hitSize = 18f;
+            health = 400;
+            range = 125f;    
+            flying = true;
+            engineOffset = 12f;
+            engineSize = 4f;
+            mineSpeed = 3f;
+            buildSpeed = 2;
+            mineTier = 4;
+            drag = 0.05f;
+            accel = 0.11f;
+            weapons.add(new Weapon(name + "-railgun"){{
+                reload = 250f;
+                recoil = 6f;
+                x = 0f;
+                y = -8f;
+                mirror = false;
+                bullet = new BasicBulletType(2.5f, 9){{
+                    speed = 5f;
+                    height = width = 15f;
+                    shootEffect = Fx.shootBig;
+                    smokeEffect = Fx.shootBigSmoke;
+                    damage = 30f;
+                    buildingDamageMultiplier = 0.15f;
+                    lifetime = 50f;
+                    backColor = Color.valueOf("8B73C7");
+                    frontColor = Color.valueOf("8B73C7");
+                    lightColor = Color.valueOf("8B73C7");
+                    collidesTiles = true;
+                }};
+            }});
+            blade.add(
+                new Blade(name + "-wing"){{
+                y = -2f; x = 14f;
+                bladeMoveSpeed = 80f;
+                bladeBlurAlphaMultiplier = 0.5f;
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f) * 100f;}});
