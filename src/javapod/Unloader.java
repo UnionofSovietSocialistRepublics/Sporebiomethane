@@ -20,6 +20,7 @@ public class Unloader extends Mod{
     public void loadContent(){
         Log.info("Ah shit here we go again. Another mod, another load.");
         JPStatus.load();
+        JPsectors.load();
         JPAttribute.load();
         Log.info("Loading items");
         JPItem.load();
