@@ -167,7 +167,7 @@ public class JPProduction{
             new DrawRegion("-bottom"), 
             new DrawLiquidTile(Liquids.water), 
             new DrawDefault(),
-            new DrawCultivator(),
+            new DrawCultivator()
             );
             consumePower(10f);
             consumeLiquid(Liquids.water, 18f / 60f);
