@@ -20,8 +20,10 @@ import static mindustry.type.ItemStack.with;
 
 public class JPEnv {
     public static Block
-    ZincOre, VanadiumOre,
-    wall;
+    ZincOre, VanadiumOre,AzuriteOre,
+    wall,
+	mossy,Fluoresiltile,VS,tile,
+	blackboulder;
 
     public static void load() {
 
@@ -38,11 +40,30 @@ public class JPEnv {
 
         VanadiumOre = new OreBlock("VanadiumOre") {{
         itemDrop = JPItem.Vanadium;
-         }};
+        }};
+
+        AzuriteOre = new OreBlock("AzuriteOre") {{
+        itemDrop = JPItem.Azurite;
+        }};
 
         wall = new StaticWall("wall"){{
 			variants = 1;
-            attributes.set(JPAttribute.Zinc, 1.5f);
+		}};
+        mossy = new Floor("mossy"){{
+			variants = 2;
+		}};
+        Fluoresiltile = new Floor("Fluoresiltile"){{
+			variants = 4;
+			itemDrop = JPItem.Fluoresilt;
+		}};
+        VS = new Floor("VS"){{
+			variants = 2;
+		}};
+        tile = new Floor("tile"){{
+			variants = 2;
+		}};
+        blackboulder = new Prop("blackboulder"){{
+			variants = 1;
 		}};
     }
 
