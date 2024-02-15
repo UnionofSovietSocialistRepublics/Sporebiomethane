@@ -40,10 +40,12 @@ public class JPEnv {
 
         VanadiumOre = new OreBlock("VanadiumOre") {{
         itemDrop = JPItem.Vanadium;
+		variants = 3;
         }};
 
         AzuriteOre = new OreBlock("AzuriteOre") {{
         itemDrop = JPItem.Azurite;
+		variants = 3;
         }};
 
         wall = new StaticWall("wall"){{
