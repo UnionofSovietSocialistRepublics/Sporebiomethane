@@ -157,13 +157,18 @@ public class JPProduction{
             requirements(Category.production, with(silicon, 650,JPItem.Biomass, 250,thorium, 450));
             craftEffect = Fx.pulverizeMedium;
             outputItem = new ItemStack(sporePod, 5);
-            craftTime = 50f;
+            craftTime = 75f;
             size = 3;
             hasItems = true;
             itemCapacity = 50;
             hasPower = true;
             hasLiquids = true;
-            drawer = new DrawMulti(new DrawRegion("-bottom"), new DrawLiquidTile(Liquids.water), new DrawLiquidTile(Liquids.water){{drawLiquidLight = true;}}, new DrawDefault());
+            drawer = new DrawMulti(
+            new DrawRegion("-bottom"), 
+            new DrawLiquidTile(Liquids.water), 
+            new DrawDefault(),
+            new DrawCultivator(),
+            );
             consumePower(10f);
             consumeLiquid(Liquids.water, 18f / 60f);
         }};
