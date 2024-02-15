@@ -39,6 +39,8 @@ public class JPUnits {
     Bomb,
     //Floaty
     Guardian,Thera,DeathImp,Drone,Interceptor,Hivedefender,HiveSentinel,Sporophage,
+    //Le tether
+    Zeta,
     //Outcast
     Gragoth;
     private static final ObjectIntMap<Class<? extends Entityc>> idMap = new ObjectIntMap<>();
@@ -820,7 +822,7 @@ public class JPUnits {
             abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f) * 100f;}});
         }};
             Gragoth = new JPCopterUnitType("Gragoth"){{
-            this.constructor = JPCopterUnitEntity::create;
+            //this.constructor = JPCopterUnitEntity::create;
             speed = 1f;
             hitSize = 18f;
             health = 2400;
@@ -834,7 +836,8 @@ public class JPUnits {
                 reload = 250f;
                 recoil = 6f;
                 x = 0f;
-                y = -8f;
+                y = 8f;
+                layerOffset = -1f;
                 mirror = false;
                 bullet = new BasicBulletType(2.5f, 9){{
                     speed = 3f;
@@ -900,15 +903,118 @@ public class JPUnits {
                 y = -4f; x = 10f;
                 bladeMoveSpeed = 80f;
                 bladeBlurAlphaMultiplier = 0.5f;
-                bladeLayer = -1f;
+                //bladeLayer = -1f;
             }},
             new Blade(name + "-wing2"){{
                 y = 3f; x = 8f;
                 bladeMoveSpeed = 80f;
                 bladeBlurAlphaMultiplier = 0.5f;
-                bladeLayer = -1f;
+                //bladeLayer = -1f;
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});
+        }};
+            Drone = new UnitType("Drone"){{
+            controller = u -> new MinerAI();
+            defaultCommand = UnitCommand.mineCommand;
+            this.constructor = UnitEntity::create;
+            speed = 1f;
+            hitSize = 18f;
+            health = 400;
+            range = 50f;    
+            flying = true;
+            engineOffset = 12f;
+            engineSize = 4f;
+            mineSpeed = 3f;
+            buildSpeed = 0.75f;
+            mineTier = 3;
+            drag = 0.05f;
+            accel = 0.11f;
+            weapons.add(new Weapon("sus"){{
+                reload = 65f;
+                x = 0f;
+                y = 0f;
+                layerOffset = -1f;
+                rotate = false;
+                mirror = false;
+                bullet = new SapBulletType(){{
+                    sapStrength = 0.5f;
+                    length = 75;
+                    speed = 5f;
+                    width = 0.4f;
+                    shootEffect = Fx.shootBig;
+                    smokeEffect = Fx.shootBigSmoke;
+                    damage = 15f;
+                    lifetime = 20f;
+                    color = Color.valueOf("FFE70F");
+                }};
+            }});
+            outlineColor = Color.valueOf("303a45");
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f) * 100f;}});
+            }};
+
+            Zeta = new UnitType("Zeta"){{
+            controller = u -> new AssemblerAI();
+            this.constructor = UnitEntity::create;
+            speed = 1f;
+            hitSize = 18f;
+            health = 400;
+            range = 50f;    
+            flying = true;
+            engineOffset = 12f;
+            engineSize = 4f;
+            mineSpeed = 3f;
+            buildSpeed = 0.75f;
+            mineTier = 3;
+            drag = 0.05f;
+            accel = 0.11f;
+            targetable = false;
+            bounded = false;
+            isEnemy = false;
+            hidden = true;
+            useUnitCap = false;
+            logicControllable = false;
+            playerControllable = false;
+            allowedInPayloads = false;
+            createWreck = false;
+            outlineColor = Color.valueOf("303a45");
+            }};
+            Interceptor = new UnitType("Interceptor"){{
+            this.constructor = UnitEntity::create;
+            speed = 1f;
+            hitSize = 18f;
+            health = 650;
+            armor = 4;
+            range = 125f;      
+            flying = true;
+            engineOffset = 12f;
+            engineSize = 5f;
+            drag = 0.08f;
+            accel = 0.04f;
+            weapons.add(new Weapon("Mouh"){{
+                reload = 75f;
+                x = -10f;
+                y = 0f;
+                mirror = true;
+                bullet = new BasicBulletType(2.5f, 9){{
+                    speed = 6f;
+                    height = width = 20f;
+                    shootEffect = Fx.shootBig;
+                    smokeEffect = Fx.shootBigSmoke;
+                    damage = 90f;
+                    splashDamage = 90f;
+                    splashDamageRadius = 17f;
+                    lifetime = 50f;
+                    statusDuration = 60f * 4;
+                    backColor = Color.valueOf("8FFE09");
+                    frontColor = Color.valueOf("8FFE09");
+                    lightColor = Color.valueOf("8FFE09");
+                    collidesTiles = true;
+                    trailLength = 3;
+                    trailColor = Color.valueOf("bbfe6b");
+                }};
+            }});
+            outlineColor = Color.valueOf("303a45");
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (90f * 60f) * 100f;}});
         }};
 }}

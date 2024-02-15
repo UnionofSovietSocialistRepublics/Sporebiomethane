@@ -47,8 +47,9 @@ import static mindustry.content.Items.*;
 public class JPProduction{
     public static Block
         Extractor,ZincExtractor,
-        Nanoprocessor,Naniteinfuser,CCB,FR,Gaschamber,BioSynthesizer,
-        Lotus;
+        Masscultivator,
+        Nanoprocessor,Naniteinfuser,CCB,FR,Gaschamber,BioSynthesizer,Vanadicarbide,Neostabilizer,
+        Biomassreactor,Neocell,Lotus;
 
         public static void load(){
 
@@ -120,7 +121,7 @@ public class JPProduction{
             consumeItem(sporePod, 5);
             consumeLiquid(Liquids.water, 15f / 60f);
         }};
-         BioSynthesizer= new GenericCrafter("BioSynthesizer"){{
+        BioSynthesizer = new GenericCrafter("BioSynthesizer"){{
             requirements(Category.crafting, with(JPItem.Biomass, 375,silicon, 150, graphite, 90));
 
             craftEffect = Fx.pulverizeMedium;
@@ -135,12 +136,76 @@ public class JPProduction{
             consumeItems(with(JPItem.Biomass, 3,sporePod, 2,graphite, 2));
             consumeLiquid(Liquids.water, 15f / 60f);
         }};
+        Neostabilizer = new GenericCrafter("Neostabilizer"){{
+            requirements(Category.crafting, with(JPItem.Biomass, 650,JPItem.Nanitealloy, 450,JPItem.Carbinecomposite, 450));
+
+            craftEffect = Fx.pulverizeMedium;
+            outputItem = new ItemStack(JPItem.Neocells, 1);
+            craftTime = 60f;
+            size = 3;
+            hasItems = true;
+            hasPower = true;
+            hasLiquids = true;
+            drawer = new DrawMulti(new DrawRegion("-bottom"), new DrawLiquidTile(Liquids.water), new DrawLiquidTile(Liquids.neoplasm){{drawLiquidLight = true;}}, new DrawDefault());
+            consumePower(10f);
+            consumeItems(with(JPItem.Vanadium, 4,JPItem.Zinc, 2));
+            consumeLiquid(Liquids.neoplasm, 6f / 60f);
+        }};
+        Masscultivator = new GenericCrafter("Masscultivator"){{
+            health = 750;
+            requirements(Category.crafting, with(silicon, 650,JPItem.Biomass, 250,thorium, 450));
+
+            craftEffect = Fx.pulverizeMedium;
+            outputItem = new ItemStack(sporePod, 5);
+            craftTime = 50f;
+            size = 3;
+            hasItems = true;
+            hasPower = true;
+            hasLiquids = true;
+            drawer = new DrawMulti(new DrawRegion("-bottom"), new DrawLiquidTile(Liquids.water), new DrawLiquidTile(Liquids.water){{drawLiquidLight = true;}}, new DrawDefault());
+            consumePower(10f);
+            consumeLiquid(Liquids.water, 18f / 60f);
+        }};
+        Vanadicarbide = new HeatProducer("Vanadicarbide"){{
+            health = 750;
+            requirements(Category.crafting, with(silicon, 270,JPItem.Biomass, 125,JPItem.Vanadium, 450));
+
+            craftEffect = Fx.pulverizeMedium;
+            outputItem = new ItemStack(JPItem.VCA, 1);
+            craftTime = 50f;
+            size = 3;
+            hasItems = true;
+            hasPower = true;
+            heatOutput = 5f;
+            consumePower(5f);
+            consumeItems(with(JPItem.Vanadium, 5,JPItem.BioSil, 3));
+        }};
         Lotus = new SolarGenerator("Lotus-panel"){{
             requirements(Category.power, with(silicon, 175,JPItem.Vanadium, 125,JPItem.Biomass, 50));
+            health = 625;
             size = 4;
             powerProduction = 3f;
         }};
-
-
+        Neocell = new ConsumeGenerator("Neocell-generator"){{
+            requirements(Category.power, with(silicon, 225,JPItem.Vanadium, 75,JPItem.Neocells, 95));
+            health = 650;
+            size = 2;
+            powerProduction = 5f;
+            consumeItem(JPItem.Neocells);
+        }};
+        Biomassreactor = new ImpactReactor("Biomassreactor"){{
+            requirements(Category.power, with(silicon, 225,JPItem.Vanadium, 75,JPItem.Neocells, 95));
+            health = 1750;
+            size = 4;
+            hasLiquids = false;
+            consumePower(10f);
+            powerProduction = 40f;
+            consumeItem(JPItem.Biomass);
+            warmupSpeed = 0.0025f;
+            explosionRadius = 10;
+            explosionDamage = 4000;
+            ambientSound = Sounds.pulse;
+            ambientSoundVolume = 0.07f;
+        }};
         }};
 
