@@ -43,9 +43,9 @@ public class JPUnitFactory{
         Synapsetower = new UnitFactory("Synapse-tower"){{
             requirements(Category.units, with(silicon,250,JPItem.Biomass,75));
             plans = Seq.with(
-                new UnitPlan( JPUnits.Thera, 60f * 15, with( silicon, 10, lead, 10)),
-                new UnitPlan( JPUnits.Autus, 60f * 10, with( silicon, 8, coal, 10)),
-                new UnitPlan( JPUnits.Imp, 60f * 40, with( silicon, 30, lead, 20, titanium, 20))
+                new UnitPlan( JPUnits.Drone, 60f * 15, with(silicon, 15, JPItem.Biomass,10,lead, 25)),
+                new UnitPlan( JPUnits.Interceptor, 60f * 10, with(silicon, 45, JPItem.Biomass,10)),
+                new UnitPlan( JPUnits.Guardian, 60f * 40, with(silicon, 125, JPItem.Biomass,65))
             );
             health = 500;
             size = 3;

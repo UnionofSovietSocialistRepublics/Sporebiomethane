@@ -824,6 +824,7 @@ public class JPUnits {
             Gragoth = new JPCopterUnitType("Gragoth"){{
             //this.constructor = JPCopterUnitEntity::create;
             speed = 1f;
+            armor = 3;
             hitSize = 18f;
             health = 2400;
             range = 125f;    
@@ -981,30 +982,26 @@ public class JPUnits {
             Interceptor = new UnitType("Interceptor"){{
             this.constructor = UnitEntity::create;
             speed = 1f;
-            hitSize = 18f;
+            hitSize = 10f;
             health = 650;
-            armor = 4;
             range = 125f;      
             flying = true;
             engineOffset = 12f;
             engineSize = 5f;
-            drag = 0.08f;
-            accel = 0.04f;
+            drag = 0.05f;
+            accel = 0.11f;
             weapons.add(new Weapon("Mouh"){{
                 reload = 75f;
-                x = -10f;
+                x = 0f;
                 y = 0f;
-                mirror = true;
+                mirror = false;
                 bullet = new BasicBulletType(2.5f, 9){{
                     speed = 6f;
                     height = width = 20f;
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
-                    damage = 90f;
-                    splashDamage = 90f;
-                    splashDamageRadius = 17f;
+                    damage = 45f;
                     lifetime = 50f;
-                    statusDuration = 60f * 4;
                     backColor = Color.valueOf("8FFE09");
                     frontColor = Color.valueOf("8FFE09");
                     lightColor = Color.valueOf("8FFE09");
