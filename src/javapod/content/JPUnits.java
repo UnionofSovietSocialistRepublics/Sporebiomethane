@@ -919,11 +919,11 @@ public class JPUnits {
             defaultCommand = UnitCommand.mineCommand;
             this.constructor = UnitEntity::create;
             speed = 1f;
-            hitSize = 18f;
+            hitSize = 10f;
             health = 400;
             range = 50f;    
             flying = true;
-            engineOffset = 12f;
+            engineOffset = 5f;
             engineSize = 4f;
             mineSpeed = 3f;
             buildSpeed = 0.75f;
@@ -982,7 +982,7 @@ public class JPUnits {
             Interceptor = new UnitType("Interceptor"){{
             this.constructor = UnitEntity::create;
             speed = 1f;
-            hitSize = 10f;
+            hitSize = 18f;
             health = 650;
             range = 125f;      
             flying = true;

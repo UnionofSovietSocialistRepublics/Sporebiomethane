@@ -195,7 +195,7 @@ public class JPProduction{
             requirements(Category.power, with(silicon, 225,JPItem.Vanadium, 75,JPItem.Neocells, 95));
             health = 650;
             size = 2;
-            powerProduction = 5f;
+            powerProduction = 10f;
             consumeItem(JPItem.Neocells);
         }};
         Biomassreactor = new ImpactReactor("Biomassreactor"){{
@@ -214,12 +214,19 @@ public class JPProduction{
         }};
         Extractor = new Drill("Extractor"){{
             requirements(Category.production, with(silicon, 25,graphite, 30));
-            health = 450;
-            tier = 3;
+            health = 320;
+            tier = 4;
             size = 2;
             hasLiquids = true;
+            drillTime = 250f;
+            itemCapacity = 40;
             drillMultipliers.put(Items.copper, 0f);
             drillMultipliers.put(Items.lead, 0f);
+            drillMultipliers.put(Items.titanium, 0f);
+            drillMultipliers.put(Items.thorium, 0f);
+            drillMultipliers.put(Items.scrap, 0f);
+            drillMultipliers.put(Items.beryllium, 0f);
+            drillMultipliers.put(Items.tungsten, 0f);
             consumeLiquid(Liquids.water, 0.05f).boost();
         }};
 

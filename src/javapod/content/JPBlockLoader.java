@@ -9,5 +9,6 @@ public class JPBlockLoader {
         JPProduction.load();
         JPOther.load();
         JPTurret.load();
+        JPDistribution.load();
     }
 }
