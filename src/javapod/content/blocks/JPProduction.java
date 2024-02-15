@@ -213,12 +213,14 @@ public class JPProduction{
             ambientSoundVolume = 0.07f;
         }};
         Extractor = new Drill("Extractor"){{
-            requirements(Category.power, with(silicon, 25,graphite, 30));
-            health = 1750;
+            requirements(Category.production, with(silicon, 25,graphite, 30));
+            health = 450;
+            tier = 3;
             size = 2;
             hasLiquids = true;
             drillMultipliers.put(Items.copper, 0f);
             drillMultipliers.put(Items.lead, 0f);
+            consumeLiquid(Liquids.water, 0.05f).boost();
         }};
 
         }};
