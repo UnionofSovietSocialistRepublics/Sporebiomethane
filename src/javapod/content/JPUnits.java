@@ -828,10 +828,9 @@ public class JPUnits {
             health = 2400;
             range = 125f;    
             flying = true;
-            engineOffset = 12f;
-            engineSize = 4f;
             drag = 0.05f;
             accel = 0.11f;
+            engineSize = 0f;
             weapons.add(new Weapon(name + "-railgun"){{
                 reload = 250f;
                 recoil = 6f;

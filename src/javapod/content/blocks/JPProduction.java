@@ -137,6 +137,7 @@ public class JPProduction{
             consumeLiquid(Liquids.water, 15f / 60f);
         }};
         Neostabilizer = new GenericCrafter("Neostabilizer"){{
+            health = 1000;
             requirements(Category.crafting, with(JPItem.Biomass, 650,JPItem.Nanitealloy, 450,JPItem.Carbinecomposite, 450));
 
             craftEffect = Fx.pulverizeMedium;
@@ -153,13 +154,13 @@ public class JPProduction{
         }};
         Masscultivator = new GenericCrafter("Masscultivator"){{
             health = 750;
-            requirements(Category.crafting, with(silicon, 650,JPItem.Biomass, 250,thorium, 450));
-
+            requirements(Category.production, with(silicon, 650,JPItem.Biomass, 250,thorium, 450));
             craftEffect = Fx.pulverizeMedium;
             outputItem = new ItemStack(sporePod, 5);
             craftTime = 50f;
             size = 3;
             hasItems = true;
+            itemCapacity = 50;
             hasPower = true;
             hasLiquids = true;
             drawer = new DrawMulti(new DrawRegion("-bottom"), new DrawLiquidTile(Liquids.water), new DrawLiquidTile(Liquids.water){{drawLiquidLight = true;}}, new DrawDefault());
@@ -173,7 +174,7 @@ public class JPProduction{
             craftEffect = Fx.pulverizeMedium;
             outputItem = new ItemStack(JPItem.VCA, 1);
             craftTime = 50f;
-            size = 3;
+            size = 2;
             hasItems = true;
             hasPower = true;
             heatOutput = 5f;
