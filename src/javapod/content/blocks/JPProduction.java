@@ -133,8 +133,7 @@ public class JPProduction{
             hasLiquids = true;
 
             consumePower(5f);
-            consumeItems(with(JPItem.Biomass, 3,sporePod, 2,graphite, 2));
-            consumeLiquid(Liquids.water, 15f / 60f);
+            consumeItems(with(JPItem.Biomass, 3,silicon, 2,graphite, 2));
         }};
         Neostabilizer = new GenericCrafter("Neostabilizer"){{
             health = 1000;
@@ -155,7 +154,6 @@ public class JPProduction{
         Masscultivator = new GenericCrafter("Masscultivator"){{
             health = 750;
             requirements(Category.production, with(silicon, 650,JPItem.Biomass, 250,thorium, 450));
-            craftEffect = Fx.pulverizeMedium;
             outputItem = new ItemStack(sporePod, 5);
             craftTime = 75f;
             size = 3;
@@ -214,5 +212,14 @@ public class JPProduction{
             ambientSound = Sounds.pulse;
             ambientSoundVolume = 0.07f;
         }};
+        Extractor = new Drill("Extractor"){{
+            requirements(Category.power, with(silicon, 25,graphite, 30));
+            health = 1750;
+            size = 2;
+            hasLiquids = true;
+            drillMultipliers.put(Items.copper, 0f);
+            drillMultipliers.put(Items.lead, 0f);
+        }};
+
         }};
 
