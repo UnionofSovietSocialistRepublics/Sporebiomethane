@@ -34,7 +34,7 @@ import static mindustry.Vars.*;
 public class JPUnits {
     public static UnitType
     //Legs
-    Carci,Imp, Baslisk, Autus, Baneling, Zergling, Behomoth, Lobber, Breacher, Scarabid, Frost, Roach, Purger,
+    Carci,Imp, Baslisk, Autus, Baneling, Zergling, Behomoth, Lobber, Breacher, Scarabid, Frost, Roach, Purger, Gorgon,
     //missiles
     Bomb,
     //Floaty
@@ -998,8 +998,6 @@ public class JPUnits {
                 bullet = new BasicBulletType(2.5f, 9){{
                     speed = 6f;
                     height = width = 20f;
-                    shootEffect = Fx.shootBig;
-                    smokeEffect = Fx.shootBigSmoke;
                     damage = 45f;
                     lifetime = 50f;
                     backColor = Color.valueOf("8FFE09");
@@ -1012,5 +1010,108 @@ public class JPUnits {
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (90f * 60f) * 100f;}});
+        }};
+            Sporophage = new UnitType("Sporophage"){{
+            this.constructor = UnitEntity::create;
+            speed = 2f;
+            hitSize = 17f;
+            health = 425;
+            range = 125f;      
+            flying = true;
+            mineSpeed = 3.5f;
+            buildSpeed = 2.5f;
+            mineTier = 6;
+            engineOffset = 12f;
+            engineSize = 4f;
+            drag = 0.05f;
+            accel = 0.11f;
+            weapons.add(new Weapon("Mouh"){{
+                reload = 75f;
+                shootY = 8f;
+                x = 0f;
+                y = 0f;
+                shoot.firstShotDelay = Fx.greenLaserChargeSmall.lifetime - 1f;
+                mirror = false;
+                bullet = new ContinuousLaserBulletType(){{
+                    width = 2f;
+                    damage = 25f;
+                    length = 75f;
+                    drawSize = 100f;
+                    lifetime = 125f;
+                    damage = 45f;
+                    lifetime = 50f;
+                    healPercent = 1f;
+                    collidesTeam = true;
+                    colors = new Color[]{Color.valueOf("8B73C7"), Color.valueOf("A865C9"), Color.valueOf("A865C9"), Color.valueOf("ffffff")};
+                }};
+            }});
+            outlineColor = Color.valueOf("303a45");
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (75f * 60f) * 100f;}});
+        }};
+            Gorgon = new UnitType("Gorgon"){{
+            this.constructor = LegsUnit::create;
+            speed = 1f;
+            hitSize = 27f;
+            health = 6000;
+            range = 150f;      
+            weapons.add(new Weapon("Mouh"){{
+                reload = 75f;
+                shootY = 8f;
+                x = 0f;
+                y = 0f;
+                shoot.firstShotDelay = Fx.greenLaserChargeSmall.lifetime - 1f;
+                mirror = false;
+                bullet = new ContinuousLaserBulletType(){{
+                    width = 2f;
+                    damage = 50f;
+                    length = 75f;
+                    drawSize = 100f;
+                    lifetime = 125f;
+                    damage = 45f;
+                    lifetime = 50f;
+                    healPercent = 1f;
+                    collidesTeam = true;
+                    colors = new Color[]{Color.valueOf("8B73C7"), Color.valueOf("A865C9"), Color.valueOf("A865C9"), Color.valueOf("ffffff")};
+                }};
+            }});
+            outlineColor = Color.valueOf("303a45");
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (100f * 60f) * 100f;}});
+        }};
+            Baslisk = new UnitType("Baslisk"){{
+            this.constructor = LegsUnit::create;
+            speed = 0.55f;
+            hitSize = 44f;
+            health = 35000;
+            armor = 10;
+            range = 125f;
+            legCount = 4;            
+            weapons.add(new Weapon("Le gun"){{
+                reload = 400f;
+                x = 0f;
+                y = 0f;
+                mirror = false;
+                targetAir = false;
+                bullet = new ArtilleryBulletType(2.5f, 9){{
+                    speed = 7f;
+                    height = width = 20f;
+                    shootEffect = Fx.shootBig;
+                    smokeEffect = Fx.shootBigSmoke;
+                    damage = 650f;
+                    splashDamage = 250f;
+                    splashDamageRadius = 17f;
+                    lifetime = 60f;
+                    statusDuration = 600f * 4;
+                    status = JPStatus.Dissolving;
+                    backColor = Color.valueOf("8FFE09");
+                    frontColor = Color.valueOf("8FFE09");
+                    lightColor = Color.valueOf("8FFE09");
+                    collidesTiles = true;
+                    trailLength = 3;
+                    trailColor = Color.valueOf("bbfe6b");
+                }};
+                shootSound = Sounds.artillery;
+            }});
+            outlineColor = Color.valueOf("303a45");
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (240f * 60f) * 100f;}});
         }};
 }}
