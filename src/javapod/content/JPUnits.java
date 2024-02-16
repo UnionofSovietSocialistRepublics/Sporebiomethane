@@ -34,7 +34,7 @@ import static mindustry.Vars.*;
 public class JPUnits {
     public static UnitType
     //Legs
-    Carci,Imp, Baslisk, Autus, Baneling, Zergling, Behomoth, Lobber, Breacher, Scarabid, Frost, Roach, Purger, Gorgon,
+    Carci,Imp, Basilisk, Autus, Baneling, Zergling, Behomoth, Lobber, Breacher, Scarabid, Frost, Roach, Purger, Gorgon,
     //missiles
     Bomb,
     //Floaty
@@ -1030,6 +1030,7 @@ public class JPUnits {
                 shootY = 8f;
                 x = 0f;
                 y = 0f;
+                continuous = true;
                 shoot.firstShotDelay = Fx.greenLaserChargeSmall.lifetime - 1f;
                 mirror = false;
                 bullet = new ContinuousLaserBulletType(){{
@@ -1055,16 +1056,17 @@ public class JPUnits {
             health = 6000;
             range = 150f;      
             weapons.add(new Weapon("Mouh"){{
-                reload = 75f;
+                reload = 200f;
                 shootY = 8f;
                 x = 0f;
                 y = 0f;
+                continuous = true;
                 shoot.firstShotDelay = Fx.greenLaserChargeSmall.lifetime - 1f;
                 mirror = false;
                 bullet = new ContinuousLaserBulletType(){{
                     width = 2f;
-                    damage = 50f;
-                    length = 75f;
+                    damage = 65f;
+                    length = 125f;
                     drawSize = 100f;
                     lifetime = 125f;
                     damage = 45f;
@@ -1077,7 +1079,7 @@ public class JPUnits {
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (100f * 60f) * 100f;}});
         }};
-            Baslisk = new UnitType("Baslisk"){{
+            Basilisk = new UnitType("Basilisk"){{
             this.constructor = LegsUnit::create;
             speed = 0.55f;
             hitSize = 44f;
@@ -1093,7 +1095,8 @@ public class JPUnits {
                 targetAir = false;
                 bullet = new ArtilleryBulletType(2.5f, 9){{
                     speed = 7f;
-                    height = width = 20f;
+                    height = 50f;
+                    width = 35f;
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
                     damage = 650f;
