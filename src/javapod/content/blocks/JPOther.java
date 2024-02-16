@@ -46,7 +46,7 @@ import static mindustry.content.Items.*;
 
 public class JPOther{
     public static Block
-VCAwall,Sporecore,Hive;
+VCAwall,Sporecore,Hive,Nydusaecore;
 
         public static void load(){
         
@@ -68,7 +68,7 @@ VCAwall,Sporecore,Hive;
             researchCostMultiplier = 0.5f;
         }};
         Hive = new CoreBlock("Hive"){{
-            requirements(Category.effect, with(JPItem.Biomass, 6000, JPItem.Nanitealloy, 4000, silicon, 8000, surgeAlloy, 4000));
+            requirements(Category.effect, with(JPItem.Biomass, 6000, JPItem.Nanitealloy, 4000, silicon, 6000, surgeAlloy, 4000));
 
             unitType = JPUnits.HiveSentinel;
             health = 9500;
@@ -76,7 +76,19 @@ VCAwall,Sporecore,Hive;
             size = 5;
             thrusterLength = 34/4f;
 
-            unitCapModifier = 40;
+            unitCapModifier = 32;
             researchCostMultiplier = 0.25f;
+        }};
+        Nydusaecore = new CoreBlock("Hive"){{
+            requirements(Category.effect, with(JPItem.Biomass, 12000, JPItem.Nanitealloy, 8000, JPItem.VCA, 4000, silicon, 8000, surgeAlloy, 6000));
+
+            unitType = JPUnits.HiveSentinel;
+            health = 16250;
+            itemCapacity = 25000;
+            size = 6;
+            thrusterLength = 34/4f;
+
+            unitCapModifier = 48;
+            researchCostMultiplier = 0.15f;
         }};
 }};

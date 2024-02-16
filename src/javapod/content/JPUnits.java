@@ -1054,7 +1054,9 @@ public class JPUnits {
             speed = 1f;
             hitSize = 27f;
             health = 6000;
-            range = 150f;      
+            range = 150f;    
+            legCount = 4;
+            legLength = 25f; 
             weapons.add(new Weapon("Mouh"){{
                 reload = 200f;
                 shootY = 8f;
@@ -1086,14 +1088,17 @@ public class JPUnits {
             health = 35000;
             armor = 10;
             range = 125f;
-            legCount = 4;            
+            legCount = 4;     
+            legLength = 30f;
+            legExtension = -15f;
+            legBaseOffset = 10f;       
             weapons.add(new Weapon("Le gun"){{
                 reload = 400f;
                 x = 0f;
                 y = 0f;
                 mirror = false;
                 targetAir = false;
-                bullet = new ArtilleryBulletType(2.5f, 9){{
+                bullet = new BasicBulletType(2.5f, 9){{
                     speed = 7f;
                     height = 50f;
                     width = 35f;
