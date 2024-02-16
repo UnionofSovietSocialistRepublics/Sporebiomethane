@@ -79,10 +79,10 @@ VCAwall,Sporecore,Hive,Nydusaecore;
             unitCapModifier = 32;
             researchCostMultiplier = 0.25f;
         }};
-        Nydusaecore = new CoreBlock("Hive"){{
+        Nydusaecore = new CoreBlock("Nydusaecore"){{
             requirements(Category.effect, with(JPItem.Biomass, 12000, JPItem.Nanitealloy, 8000, JPItem.VCA, 4000, silicon, 8000, surgeAlloy, 6000));
 
-            unitType = JPUnits.HiveSentinel;
+            unitType = JPUnits.Sporophage;
             health = 16250;
             itemCapacity = 25000;
             size = 6;
