@@ -13,6 +13,7 @@ import mindustry.world.blocks.units.UnitFactory;
 import mindustry.type.*;
 import jp.content.*;
 import mindustry.content.*;
+import mindustry.world.blocks.units.*;
 
 import static mindustry.Vars.*;
 import static mindustry.type.ItemStack.*;
@@ -22,7 +23,8 @@ import static mindustry.content.Items.*;
 
 public class JPUnitFactory{
     public static UnitFactory
-        pool,Synapsetower,Assembler,Gestator;
+        pool,Synapsetower,Assembler,Gestator,
+        ApollyonAssembler;
 
         public static void load(){
         pool = new UnitFactory("pool"){{
