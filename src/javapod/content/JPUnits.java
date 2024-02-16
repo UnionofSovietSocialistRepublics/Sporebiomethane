@@ -955,17 +955,14 @@ public class JPUnits {
 
             Zeta = new UnitType("Zeta"){{
             controller = u -> new AssemblerAI();
-            this.constructor = UnitEntity::create;
+            //this.constructor = UnitEntity::create;
             speed = 1f;
-            hitSize = 18f;
+            hitSize = 11f;
             health = 400;
             range = 50f;    
             flying = true;
-            engineOffset = 12f;
+            engineOffset = 7f;
             engineSize = 4f;
-            mineSpeed = 3f;
-            buildSpeed = 0.75f;
-            mineTier = 3;
             drag = 0.05f;
             accel = 0.11f;
             targetable = false;
@@ -983,7 +980,7 @@ public class JPUnits {
             this.constructor = UnitEntity::create;
             speed = 1f;
             hitSize = 18f;
-            health = 650;
+            health = 200;
             range = 125f;      
             flying = true;
             engineOffset = 12f;
@@ -1097,7 +1094,6 @@ public class JPUnits {
                 x = 0f;
                 y = 0f;
                 mirror = false;
-                targetAir = false;
                 bullet = new BasicBulletType(2.5f, 9){{
                     speed = 7f;
                     height = 50f;
