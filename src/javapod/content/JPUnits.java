@@ -24,6 +24,7 @@ import mindustry.type.weapons.*;
 import mindustry.entities.abilities.UnitSpawnAbility;
 import mindustry.world.meta.*;
 import jp.content.*;
+import mindustry.entities.*;
 
 
 import static arc.graphics.g2d.Draw.*;
@@ -955,7 +956,7 @@ public class JPUnits {
 
             Zeta = new UnitType("Zeta"){{
             controller = u -> new AssemblerAI();
-            //this.constructor = UnitEntity::create;
+            this.constructor = UnitEntity::create;
             speed = 1f;
             hitSize = 11f;
             health = 400;
