@@ -26,7 +26,7 @@ public class JPUnitAssembler{
         public static void load(){
 
         ApollyonAssembler = new UnitAssembler("ApollyonAssembler"){{
-            requirements(Category.units, with(Items.thorium, 500, Items.oxide, 150, Items.carbide, 80, Items.silicon, 500));
+            requirements(Category.units, with(Items.silicon, 1000, JPItem.VCA, 250, JPItem.Nanitealloy, 750, JPItem.Biomass, 800));
             size = 6;
             droneType = JPUnits.Zeta;
             plans.add(
