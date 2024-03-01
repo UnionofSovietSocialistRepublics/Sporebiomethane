@@ -1,5 +1,6 @@
 package jp.content;
 
+import arc.func.Prov;
 import arc.graphics.*;
 import arc.graphics.g2d.*;
 import arc.math.*;
@@ -43,8 +44,47 @@ public class JPUnits {
     //Le tether
     Zeta,
     //Outcast
-    Gragoth;
+    Gragoth, Slasher, Curbork, Sinrak;
+    private static final ObjectMap.Entry<Class<? extends Entityc>, Prov<? extends Entityc>>[] types = new ObjectMap.Entry[]{
+            prov(JPCopterUnitEntity.class, JPCopterUnitEntity::new)
+    };
+
     private static final ObjectIntMap<Class<? extends Entityc>> idMap = new ObjectIntMap<>();
+
+    /**
+     * Internal function to flatmap {@code Class -> Prov} into an {@link ObjectMap.Entry}.
+     * @author GlennFolker
+     */
+    private static <T extends Entityc> ObjectMap.Entry<Class<T>, Prov<T>> prov(Class<T> type, Prov<T> prov) {
+        ObjectMap.Entry<Class<T>, Prov<T>> entry = new ObjectMap.Entry<>();
+        entry.key = type;
+        entry.value = prov;
+        return entry;
+    }
+
+    /**
+     * Setups all entity IDs and maps them into {@link EntityMapping}.
+     * <p>
+     * Put this inside load()
+     * </p>
+     * @author GlennFolker
+     */
+    private static void setupID() {
+        for (
+                int i = 0,
+                j = 0,
+                len = EntityMapping.idMap.length;
+                i < len;
+                i++
+        ) {
+            if (EntityMapping.idMap[i] == null) {
+                idMap.put(types[j].key, i);
+                EntityMapping.idMap[i] = types[j].value;
+                if (++j >= types.length) break;
+            }
+        }
+    }
+
     /**
      * Retrieves the class ID for a certain entity type.
      * @author GlennFolker
@@ -54,7 +94,9 @@ public class JPUnits {
     }
 
 
+
         public static void load(){
+            setupID();
 
         DeathImp = new UnitType("DeathImp"){{
             this.constructor = UnitEntity::create;
@@ -228,7 +270,7 @@ public class JPUnits {
             }});
             immunities.add(StatusEffects.burning);
             immunities.add(StatusEffects.melting);
-            abilities.add(new RegenAbility(){{percentAmount = 1f / (70f * 60f) * 100f;}});
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};
         Thera = new UnitType("Thera"){{
@@ -912,8 +954,10 @@ public class JPUnits {
                 bladeBlurAlphaMultiplier = 0.5f;
                 //bladeLayer = -1f;
             }});
+            healColor = Color.valueOf("590e14");
             outlineColor = Color.valueOf("303a45");
-            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (70f * 60f) * 100f;}});
+            abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};
             Drone = new UnitType("Drone"){{
             controller = u -> new MinerAI();
@@ -1077,7 +1121,7 @@ public class JPUnits {
                 }};
             }});
             outlineColor = Color.valueOf("303a45");
-            abilities.add(new RegenAbility(){{percentAmount = 1f / (100f * 60f) * 100f;}});
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});
         }};
             Basilisk = new UnitType("Basilisk"){{
             this.constructor = LegsUnit::create;
@@ -1118,5 +1162,163 @@ public class JPUnits {
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (240f * 60f) * 100f;}});
+        }};
+            Slasher = new JPCopterUnitType("Slasher"){{
+            speed = 0.75f;
+            armor = 6;
+            hitSize = 18f;
+            health = 2700;
+            range = 125f;    
+            flying = true;
+            drag = 0.05f;
+            accel = 0.11f;
+            engineSize = 0f;
+
+            weapons.add(new Weapon(name + "-Invis"){{
+                mirror = false;
+                shoot.shots = 10;
+                shoot.shotDelay = 5f;
+                reload = 200f;
+                recoil = 6f;
+                x = 0f;
+                y = 8f;
+                layerOffset = -1f;
+                mirror = false;
+                bullet = new MissileBulletType(3.7f, 18){{
+                    width = 8f;
+                    height = 8f;
+                    splashDamageRadius = 25f;
+                    splashDamage = 65f;
+                    hitEffect = Fx.blastExplosion;
+                    despawnEffect = Fx.blastExplosion;
+                }};
+            }});
+            blade.add(
+                new Blade(name + "-wing1"){{
+                y = -1f; x = 10f;
+                bladeMoveSpeed = 80f;
+                bladeBlurAlphaMultiplier = 0.5f;
+                //bladeLayer = -1f;
+            }});
+            parts.add(new RegionPart("-Heart"){{
+                mirror = false;
+                progress = PartProgress.warmup;
+                layerOffset= -0.0001f;
+                under = true;
+                x = 0f;
+                y = 0f;
+                //moveX = -1.5f;
+                moveY = 8f;
+                moveRot = 0f;
+            }});
+            parts.add(new RegionPart("-blade"){{
+                mirror = true;
+                progress = PartProgress.warmup;
+                layerOffset= -0.0001f;
+                under = true;
+                x = 3f;
+                y = 3f;
+                moveX = 1.5f;
+                moveY = 1.25f;
+                moveRot = -10f;
+            }});
+            healColor = Color.valueOf("590e14");
+            outlineColor = Color.valueOf("303a45");
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});
+            abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
+        }};
+            Sinrak = new JPCopterUnitType("Sinrak"){{
+            speed = 1.25f;
+            armor = 6;
+            hitSize = 9f;
+            health = 720;
+            range = 125f;    
+            flying = true;
+            drag = 0.05f;
+            accel = 0.11f;
+            engineSize = 0f;
+
+            weapons.add(new Weapon("Sinrack"){{
+                mirror = false;
+                reload = 10f;
+                x = 0f;
+                y = 0f;
+                layerOffset = -1f;
+                mirror = false;
+                bullet = new BasicBulletType(3.7f, 18){{
+                    backColor = Color.valueOf("8B73C7");
+                    frontColor = Color.valueOf("8B73C7");
+                    lightColor = Color.valueOf("8B73C7");
+                    buildingDamageMultiplier = 0.75f;
+                    width = 8f;
+                    height = 8f;
+                    damage = 45f;
+                    hitEffect = Fx.blastExplosion;
+                    despawnEffect = Fx.blastExplosion;
+                }};
+            }});
+            blade.add(
+                new Blade(name + "-wing1"){{
+                y = -1f; x = 5f;
+                bladeMoveSpeed = 80f;
+                bladeBlurAlphaMultiplier = 0.5f;
+                //bladeLayer = -1f;
+            }});
+            healColor = Color.valueOf("590e14");
+            outlineColor = Color.valueOf("303a45");
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (90f * 60f) * 100f;}});
+            abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
+            abilities.add(new RepairFieldAbility(35f, 60f * 8, 50f){{
+                lightColor = Color.valueOf("8B73C7");
+            }});
+            abilities.add(new StatusFieldAbility(StatusEffects.overclock, 60f * 6, 60f * 4f, 60f));
+            abilities.add(new ShieldRegenFieldAbility(25f, 250f, 60f * 6, 60f));
+        }};
+            Curbork = new JPCopterUnitType("Curbork"){{
+            speed = 1.25f;
+            armor = 6;
+            hitSize = 9f;
+            health = 650;
+            range = 125f;    
+            flying = true;
+            drag = 0.05f;
+            accel = 0.11f;
+            engineSize = 0f;
+            weapons.add(new Weapon("Copperballs"){{
+                mirror = false;
+                reload = 10f;
+                x = 0f;
+                y = 0f;
+                layerOffset = -1f;
+                mirror = false;
+                bullet = new BasicBulletType(3.7f, 18){{
+                    statusDuration = 60f * 4;
+                    status = StatusEffects.electrified;
+                    backColor = Color.valueOf("8B73C7");
+                    frontColor = Color.valueOf("8B73C7");
+                    lightColor = Color.valueOf("8B73C7");
+                    width = 8f;
+                    height = 8f;
+                    damage = 40f;
+                    buildingDamageMultiplier = 1.5f;
+                    hitEffect = Fx.blastExplosion;
+                    despawnEffect = Fx.blastExplosion;
+                }};
+            }});
+            blade.add(
+                new Blade(name + "-wing1"){{
+                y = -1f; x = 5f;
+                bladeMoveSpeed = 80f;
+                bladeBlurAlphaMultiplier = 0.5f;
+                //bladeLayer = -1f;
+            }});
+            healColor = Color.valueOf("590e14");
+            outlineColor = Color.valueOf("303a45");
+            abilities.add(new SuppressionFieldAbility(){{
+                particleColor = Color.valueOf("8B73C7");
+                orbRadius = 0.1f;
+            }});
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (90f * 60f) * 100f;}});
+            abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};
 }}

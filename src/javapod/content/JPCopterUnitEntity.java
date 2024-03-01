@@ -17,7 +17,7 @@ public class JPCopterUnitEntity extends UnitEntity {
     public long drawSeed = 0;
     @Override
     public String toString() {
-        return "StriCopterUnit#" + id;
+        return "JPCopterUnit#" + id;
     }
 
     @Override

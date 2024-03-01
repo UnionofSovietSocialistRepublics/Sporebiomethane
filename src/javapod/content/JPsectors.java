@@ -13,7 +13,7 @@ public class JPsectors{
         //region serpulo
         Frost = new SectorPreset("Frost", serpulo, 111){{
             difficulty = 69;
-            captureWave = 20;
+            captureWave = 30;
             alwaysUnlocked = true;
         }};
     }
