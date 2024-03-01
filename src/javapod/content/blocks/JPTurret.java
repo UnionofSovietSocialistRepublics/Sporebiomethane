@@ -222,7 +222,7 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
                     damage = 40f;
                     speed = 5f;
                     fragBullets = 6;
-                    lifetime = 25f;
+                    lifetime = 45f;
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
                     lightColor = Color.valueOf("8B73C7");
