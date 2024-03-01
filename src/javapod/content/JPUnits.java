@@ -1252,7 +1252,7 @@ public class JPUnits {
                     buildingDamageMultiplier = 0.75f;
                     width = 8f;
                     height = 8f;
-                    damage = 45f;
+                    damage = 25f;
                     hitEffect = Fx.blastExplosion;
                     despawnEffect = Fx.blastExplosion;
                 }};
@@ -1299,7 +1299,7 @@ public class JPUnits {
                     lightColor = Color.valueOf("8B73C7");
                     width = 8f;
                     height = 8f;
-                    damage = 40f;
+                    damage = 15f;
                     buildingDamageMultiplier = 1.5f;
                     hitEffect = Fx.blastExplosion;
                     despawnEffect = Fx.blastExplosion;
