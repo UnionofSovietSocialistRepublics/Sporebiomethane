@@ -204,7 +204,7 @@ public class JPUnits {
                 }};
             }});
             outlineColor = Color.valueOf("303a45");
-            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
             }};
             Autus = new UnitType("Autus"){{
             this.constructor = LegsUnit::create;
@@ -268,7 +268,7 @@ public class JPUnits {
             }});
             immunities.add(StatusEffects.burning);
             immunities.add(StatusEffects.melting);
-            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};
         Thera = new UnitType("Thera"){{
@@ -328,7 +328,7 @@ public class JPUnits {
             }});
             healColor = Color.valueOf("590e14");
             outlineColor = Color.valueOf("303a45");
-            abilities.add(new RegenAbility(){{percentAmount = 1f / (70f * 60f) * 100f;}});
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (70f * 60f * 2f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};  
             Carci = new UnitType("Carci"){{
@@ -367,7 +367,7 @@ public class JPUnits {
             }});
             healColor = Color.valueOf("590e14");
             outlineColor = Color.valueOf("303a45");
-            abilities.add(new RegenAbility(){{percentAmount = 1f / (70f * 60f) * 100f;}});
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (70f * 60f * 2f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};
             Lobber = new UnitType("Lobber"){{
@@ -401,7 +401,7 @@ public class JPUnits {
                 }};
             }});
             outlineColor = Color.valueOf("303a45");
-            abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f) * 100f;}});
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f * 2f) * 100f;}});
         }};
             Behomoth = new UnitType("Behomoth"){{
             this.constructor = LegsUnit::create;
@@ -456,7 +456,7 @@ public class JPUnits {
 
             }});
             outlineColor = Color.valueOf("303a45");
-            abilities.add(new RegenAbility(){{percentAmount = 1f / (200f * 60f) * 100f;}});
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (200f * 60f * 2f) * 100f;}});
             abilities.add(new UnitSpawnAbility(Lobber,550f,0f,-7f));
             }};
 
@@ -502,7 +502,7 @@ public class JPUnits {
                 shootSound = Sounds.artillery;
             }});
             outlineColor = Color.valueOf("303a45");
-            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
         }};
             Scarabid = new UnitType("Scarabid"){{
             this.constructor = LegsUnit::create;
@@ -542,7 +542,7 @@ public class JPUnits {
                 shootSound = Sounds.artillery;
             }});
             outlineColor = Color.valueOf("303a45");
-            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
         }};
             Breacher = new UnitType("Breacher"){{
             this.constructor = LegsUnit::create;
@@ -599,7 +599,7 @@ public class JPUnits {
 
             }});
             outlineColor = Color.valueOf("303a45");
-            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
         }};
             Frost = new UnitType("Frost"){{
             this.constructor = LegsUnit::create;
@@ -698,7 +698,7 @@ public class JPUnits {
             immunities.add(StatusEffects.burning);
             immunities.add(StatusEffects.melting);
             immunities.add(StatusEffects.freezing);
-            abilities.add(new RegenAbility(){{percentAmount = 1f / (800f * 60f) * 100f;}});
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (800f * 60f * 2f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.cryofluid;}});
             abilities.add(new StatusFieldAbility(JPStatus.Frostshield, 60f * 3, 60f * 9f, 60f));
         }};
@@ -737,7 +737,7 @@ public class JPUnits {
                 shootSound = Sounds.artillery;
             }});
             outlineColor = Color.valueOf("303a45");
-            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
         }};
             Purger = new UnitType("Purger"){{
             this.constructor = LegsUnit::create;
@@ -791,7 +791,7 @@ public class JPUnits {
             immunities.add(StatusEffects.burning);
             immunities.add(StatusEffects.melting);
             outlineColor = Color.valueOf("303a45");
-            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
         }};
             Hivedefender = new UnitType("Hivedefender"){{
             this.constructor = UnitEntity::create;
@@ -829,8 +829,8 @@ public class JPUnits {
                     collidesTiles = true;
                 }};
             }});
-            outlineColor = Color.valueOf("303a45");
-            abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f) * 100f;}});
+            outlineColor = Color.valueOf("303a45"); 
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f * 2f) * 100f;}});
         }};
             HiveSentinel = new UnitType("HiveSentinel"){{
             this.constructor = UnitEntity::create;
@@ -869,7 +869,7 @@ public class JPUnits {
                 }};
             }});
             outlineColor = Color.valueOf("303a45");
-            abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f) * 100f;}});
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f * 2f) * 100f;}});
         }};
             Gragoth = new JPCopterUnitType("Gragoth"){{
             //this.constructor = JPCopterUnitEntity::create;
@@ -965,7 +965,7 @@ public class JPUnits {
             }});
             healColor = Color.valueOf("590e14");
             outlineColor = Color.valueOf("303a45");
-            abilities.add(new RegenAbility(){{percentAmount = 1f / (70f * 60f) * 100f;}});
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (70f * 60f * 2f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};
             Drone = new UnitType("Drone"){{
@@ -1004,7 +1004,7 @@ public class JPUnits {
                 }};
             }});
             outlineColor = Color.valueOf("303a45");
-            abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f) * 100f;}});
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f * 2f) * 100f;}});
             }};
 
             Zeta = new UnitType("Zeta"){{
@@ -1060,7 +1060,7 @@ public class JPUnits {
                 }};
             }});
             outlineColor = Color.valueOf("303a45");
-            abilities.add(new RegenAbility(){{percentAmount = 1f / (90f * 60f) * 100f;}});
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (90f * 60f * 2f) * 100f;}});
         }};
             Sporophage = new UnitType("Sporophage"){{
             this.constructor = UnitEntity::create;
@@ -1098,7 +1098,7 @@ public class JPUnits {
                 }};
             }});
             outlineColor = Color.valueOf("303a45");
-            abilities.add(new RegenAbility(){{percentAmount = 1f / (75f * 60f) * 100f;}});
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (75f * 60f * 2f) * 100f;}});
         }};
             Gorgon = new UnitType("Gorgon"){{
             this.constructor = LegsUnit::create;
@@ -1130,7 +1130,7 @@ public class JPUnits {
                 }};
             }});
             outlineColor = Color.valueOf("303a45");
-            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
         }};
             Basilisk = new UnitType("Basilisk"){{
             this.constructor = LegsUnit::create;
@@ -1170,7 +1170,7 @@ public class JPUnits {
                 shootSound = Sounds.artillery;
             }});
             outlineColor = Color.valueOf("303a45");
-            abilities.add(new RegenAbility(){{percentAmount = 1f / (240f * 60f) * 100f;}});
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (240f * 60f * 2f) * 100f;}});
         }};
             Slasher = new JPCopterUnitType("Slasher"){{
             speed = 0.75f;
@@ -1238,7 +1238,7 @@ public class JPUnits {
             }});
             healColor = Color.valueOf("590e14");
             outlineColor = Color.valueOf("303a45");
-            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};
             Sinrak = new JPCopterUnitType("Sinrak"){{
@@ -1280,7 +1280,7 @@ public class JPUnits {
             }});
             healColor = Color.valueOf("590e14");
             outlineColor = Color.valueOf("303a45");
-            abilities.add(new RegenAbility(){{percentAmount = 1f / (90f * 60f) * 100f;}});
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (90f * 60f * 2f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
             abilities.add(new RepairFieldAbility(35f, 60f * 8, 50f){{
                 lightColor = Color.valueOf("8B73C7");
@@ -1335,7 +1335,7 @@ public class JPUnits {
                 particleColor = Color.valueOf("8B73C7");
                 orbRadius = 0.1f;
             }});
-            abilities.add(new RegenAbility(){{percentAmount = 1f / (90f * 60f) * 100f;}});
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (90f * 60f * 2f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};
 }}

@@ -38,6 +38,8 @@ import mindustry.world.meta.*;
 //import jp.content.jpAC;
 import jp.content.*;
 import mindustry.content.*;
+import jp.content.OreCrafter;
+import jp.content.blocks.*;
 
 import static mindustry.Vars.*;
 import static mindustry.type.ItemStack.*;
@@ -184,6 +186,16 @@ public class JPProduction{
             heatOutput = 5f;
             consumePower(5f);
             consumeItems(with(JPItem.Vanadium, 5,JPItem.BioSil, 3));
+        }};
+        ZincExtractor = new OreCrafter("ZincExtractor"){{
+            requirements(Category.power, with(silicon, 175,JPItem.Vanadium, 125,JPItem.Biomass, 50));
+            health = 625;
+            baseEfficiency = 1f;
+            consumePower(5f);
+            consumeItems(with(JPItem.Biomass, 5,JPItem.Vanadium, 2));
+            outputItem = new ItemStack(JPItem.Zinc, 1);
+            ores.put(JPEnv.ZincOre, 1f);
+            size = 2;
         }};
         Lotus = new SolarGenerator("Lotus-panel"){{
             requirements(Category.power, with(silicon, 175,JPItem.Vanadium, 125,JPItem.Biomass, 50));
