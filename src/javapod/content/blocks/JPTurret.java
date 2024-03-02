@@ -335,6 +335,9 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
                     moveRot = -10f;
             }});
         }};
+        shootSound = Sounds.none;
+        loopSoundVolume = 1f;
+        loopSound = Sounds.minebeam;
         consumeLiquid(Liquids.water, 15f / 60f);
         consumePower(7f);
         }};

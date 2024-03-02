@@ -25,8 +25,6 @@ import mindustry.type.weapons.*;
 import mindustry.entities.abilities.UnitSpawnAbility;
 import mindustry.world.meta.*;
 import jp.content.*;
-import mindustry.entities.*;
-
 
 import static arc.graphics.g2d.Draw.*;
 import static arc.graphics.g2d.Lines.*;
@@ -323,11 +321,12 @@ public class JPUnits {
                             splashDamage = 145f;
                             splashDamageRadius = 30f;
                     }};}});
-                    healColor = Color.valueOf("590e14");
                     outlineColor = Color.valueOf("303a45");
                     }};
                 }};
+                shootSound = Sounds.missileSmall;
             }});
+            healColor = Color.valueOf("590e14");
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (70f * 60f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
@@ -418,21 +417,24 @@ public class JPUnits {
                 reload = 200f;
                 x = 0f;
                 y = -23f;
-                recoil = 4f;
+                recoil = 6f;
                 mirror = false;
+                ejectEffect = Fx.casing1;
+                shootSound = Sounds.shootBig;
                 bullet = new BasicBulletType(2.5f, 9){{
-                    hitEffect = Fx.sapExplosion;
                     width = 15f;
                     height = 30f;
                     speed = 6f;
                     lifetime = 50f;
                     splashDamage = 150f;
                     splashDamageRadius = 25f;
-                    statusDuration = 60f * 4;
                     status = StatusEffects.slow;
+                    statusDuration = 60f * 4;
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
                     lightColor = Color.valueOf("8B73C7");
+                    shootEffect = Fx.shootBig;
+                    hitEffect = Fx.sapExplosion;
                 }};
 
             }});
@@ -442,7 +444,6 @@ public class JPUnits {
                 y = -23f;
                 mirror = true;
                 bullet = new BasicBulletType(2.5f, 9){{
-                    hitEffect = Fx.sapExplosion;
                     collidesTiles = false;
                     width = 15f;
                     height = 15f;
@@ -477,12 +478,12 @@ public class JPUnits {
                 x = 11f;
                 y = 4f;
                 mirror = true;
+                recoil = 6f;
                 layerOffset = -0.01f;
                 bullet = new BasicBulletType(2.5f, 9){{
+                    recoil = 1f;
                     speed = 3f;
                     height = width = 15f;
-                    shootEffect = Fx.shootBig;
-                    smokeEffect = Fx.shootBigSmoke;
                     damage = 145f;
                     splashDamage = 30f;
                     splashDamageRadius = 5f;
@@ -495,7 +496,10 @@ public class JPUnits {
                     collidesTiles = true;
                     trailLength = 6;
                     trailColor = Color.valueOf("bbfe6b");
+                    shootEffect = Fx.shootBig;
+                    smokeEffect = Fx.shootBigSmoke;
                 }};
+                shootSound = Sounds.artillery;
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});
@@ -520,8 +524,6 @@ public class JPUnits {
                 bullet = new ArtilleryBulletType(2.5f, 9){{
                     speed = 6f;
                     height = width = 20f;
-                    shootEffect = Fx.shootBig;
-                    smokeEffect = Fx.shootBigSmoke;
                     damage = 90f;
                     splashDamage = 125f;
                     splashDamageRadius = 17f;
@@ -534,6 +536,8 @@ public class JPUnits {
                     collidesTiles = true;
                     trailLength = 3;
                     trailColor = Color.valueOf("bbfe6b");
+                    shootEffect = Fx.shootBig;
+                    smokeEffect = Fx.shootBigSmoke;
                 }};
                 shootSound = Sounds.artillery;
             }});
@@ -575,6 +579,8 @@ public class JPUnits {
                     trailLength = 3;
                     trailColor = Color.valueOf("bbfe6b");
                 }};
+                shootSound = Sounds.missile;
+            }});
             weapons.add(new Weapon(name + "-thestorm"){{
                 reload = 5f;
                 x = -11f;
@@ -591,7 +597,6 @@ public class JPUnits {
                     frontColor = Color.valueOf("CBC3E3");
                 }};
 
-            }});
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});
@@ -755,6 +760,8 @@ public class JPUnits {
                 recoil = 0f;
                 shootSound = Sounds.flame;
                 ejectEffect = Fx.none;
+                rotate = true;
+                rotateSpeed = 3f;
                 bullet = new BasicBulletType(2.5f, 9){{
                     collidesAir = true;
                     speed = 6f;
@@ -886,8 +893,6 @@ public class JPUnits {
                     speed = 3f;
                     height = 15f;
                     width = 30f;
-                    shootEffect = Fx.shootBig;
-                    smokeEffect = Fx.shootBigSmoke;
                     pierce = true;
                     pierceBuilding = true;
                     pierceCap = 7;
@@ -939,7 +944,11 @@ public class JPUnits {
                     lightning = 8;
                     lightningLength = 2;
                     lightningLengthRand = 8;
+                    despawnSound = Sounds.spark;
+                    shootEffect = Fx.shootBig;
+                    smokeEffect = Fx.shootBigSmoke;
                 }};
+                shootSound = Sounds.shockBlast;
             }});
             blade.add(
                 new Blade(name + "-wing"){{
@@ -1176,8 +1185,10 @@ public class JPUnits {
 
             weapons.add(new Weapon(name + "-Invis"){{
                 mirror = false;
-                shoot.shots = 10;
                 shoot.shotDelay = 5f;
+                shoot = new ShootSpread(10, 5f);
+                velocityRnd = 0.4f;
+                inaccuracy = 7f;
                 reload = 200f;
                 recoil = 6f;
                 x = 0f;
@@ -1191,7 +1202,10 @@ public class JPUnits {
                     splashDamage = 65f;
                     hitEffect = Fx.blastExplosion;
                     despawnEffect = Fx.blastExplosion;
+                    weaveScale = 8f;
+                    weaveMag = 2f;
                 }};
+                shootSound = Sounds.missile;
             }});
             blade.add(
                 new Blade(name + "-wing1"){{
@@ -1252,7 +1266,7 @@ public class JPUnits {
                     buildingDamageMultiplier = 0.75f;
                     width = 8f;
                     height = 8f;
-                    damage = 25f;
+                    damage = 15f;
                     hitEffect = Fx.blastExplosion;
                     despawnEffect = Fx.blastExplosion;
                 }};
@@ -1286,12 +1300,13 @@ public class JPUnits {
             engineSize = 0f;
             weapons.add(new Weapon("Copperballs"){{
                 mirror = false;
-                reload = 10f;
+                reload = 50f;
                 x = 0f;
                 y = 0f;
                 layerOffset = -1f;
                 mirror = false;
                 bullet = new BasicBulletType(3.7f, 18){{
+                    recoil = 4f;
                     statusDuration = 60f * 4;
                     status = StatusEffects.electrified;
                     backColor = Color.valueOf("8B73C7");
@@ -1299,7 +1314,9 @@ public class JPUnits {
                     lightColor = Color.valueOf("8B73C7");
                     width = 8f;
                     height = 8f;
-                    damage = 15f;
+                    damage = 65f;
+                    splashDamageRadius = 20f;
+                    splashDamage = 45f;
                     buildingDamageMultiplier = 1.5f;
                     hitEffect = Fx.blastExplosion;
                     despawnEffect = Fx.blastExplosion;
