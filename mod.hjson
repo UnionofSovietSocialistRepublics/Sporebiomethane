@@ -3,6 +3,6 @@ name: "jp"
 author: "Water white"
 main: "jp.Unloader"
 description: "A java port of the hit mindustry mod spore biomechs\n Now with flies and mosquitoes!"
-version: 0.3
+version: 0.5
 minGameVersion: 145
 java: true
