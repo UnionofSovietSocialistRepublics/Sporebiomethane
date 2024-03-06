@@ -130,7 +130,7 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
             rotateSpeed = 2f;
             range = 225f;
             reload = 180f;
-            recoil = 2f;
+            recoil = 5f;
             shootCone = 10f;
             ammoPerShot = 3;
             ammoUseEffect = Fx.casing1;
@@ -153,6 +153,7 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
                     shootEffect = Fx.shootSmall;
                     smokeEffect = Fx.shootSmallSmoke;
                     collidesGround = true;
+                    despawnEffect = Fx.blastExplosion;
                 }});
                 coolantMultiplier = 0.5f;
                 coolant = consumeCoolant(0.5f);
@@ -247,7 +248,7 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
 
                shootType = new BasicBulletType(){{
                     height = width = 15F;
-                    damage = 55f;
+                    damage = 75f;
                     speed = 5f;
                     fragBullets = 6;
                     backColor = Color.valueOf("8B73C7");
@@ -259,7 +260,7 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
                         backColor = Color.valueOf("8B73C7");
                         frontColor = Color.valueOf("8B73C7");
                         lightColor = Color.valueOf("8B73C7");
-                        damage = 5f;
+                        damage = 25f;
                         lifetime = 25f;
                         backColor = Pal.gray;
                         frontColor = Color.white;
