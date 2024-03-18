@@ -147,6 +147,7 @@ public class JPUnits {
                     splashDamage = 175f;
                     splashDamageRadius = 60f;
                     killShooter = true;
+                    collidesAir = true;
                 }};
             }});
             immunities.add(StatusEffects.burning);
@@ -175,9 +176,12 @@ public class JPUnits {
                     width = 0f;
                     height = 0f;
                     lifetime = 10f;
+                    statusDuration = 60f * 2;
+                    status = JPStatus.Dissolving;
                     splashDamage = 200f;
                     splashDamageRadius = 60f;
                     killShooter = true;
+                    collidesAir = true;
                 }};
             }});
             outlineColor = Color.valueOf("303a45");
@@ -480,7 +484,7 @@ public class JPUnits {
                 mirror = true;
                 recoil = 6f;
                 layerOffset = -0.01f;
-                bullet = new BasicBulletType(2.5f, 9){{
+                bullet = new ArtilleryBulletType(2.5f, 9){{
                     recoil = 1f;
                     speed = 3f;
                     height = width = 15f;
