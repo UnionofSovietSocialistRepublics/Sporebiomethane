@@ -123,6 +123,7 @@ public class JPUnits {
                     splashDamage = 175f;
                     splashDamageRadius = 60f;
                     killShooter = true;
+                    collidesAir = true;
                 }};
             }});
             outlineColor = Color.valueOf("303a45");
