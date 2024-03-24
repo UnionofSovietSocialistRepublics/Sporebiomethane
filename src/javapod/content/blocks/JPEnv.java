@@ -51,15 +51,15 @@ public class JPEnv {
         wall = new StaticWall("wall"){{
 			variants = 1;
 		}};
-        mossy = new Floor("mossy"){{
-			variants = 2;
+        siltMoss = new Floor("silt-moss"){{
+			variants = 3;
 		}};
         Fluoresiltile = new Floor("Fluoresiltile"){{
 			variants = 4;
 			itemDrop = JPItem.Fluoresilt;
 		}};
-        VS = new Floor("VS"){{
-			variants = 2;
+        silt = new Floor("silt"){{
+			variants = 4;
 		}};
         tile = new Floor("tile"){{
 			variants = 2;
