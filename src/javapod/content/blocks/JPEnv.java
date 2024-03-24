@@ -20,13 +20,15 @@ import static mindustry.type.ItemStack.with;
 
 public class JPEnv {
     public static Block
+	//define the block name
+	//for the love of god rename those if you want to rename the block below
     ZincOre, VanadiumOre,AzuriteOre,
     wall,
-	mossy,Fluoresiltile,VS,tile,
+	siltMoss,Fluoresiltile,silt,tile,
 	blackboulder;
 
     public static void load() {
-
+	//block part
 		ZincOre = new OreBlock("ZincOre"){{
 			oreDefault = true;
 			variants = 1;
