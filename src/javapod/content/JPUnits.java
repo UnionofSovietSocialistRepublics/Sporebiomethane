@@ -245,7 +245,10 @@ public class JPUnits {
                     hitEffect = Fx.flakExplosion;
                     shootEffect = Fx.none;
                     smokeEffect = Fx.none;
-                    splashDamage = 100f;
+                    splashDamage = 25f;
+                    backColor = Color.valueOf("8FFE09");
+                    frontColor = Color.valueOf("8FFE09");
+                    lightColor = Color.valueOf("8FFE09");
                     splashDamageRadius = 32f;
                     status = StatusEffects.blasted;
                     statusDuration = 60f;
