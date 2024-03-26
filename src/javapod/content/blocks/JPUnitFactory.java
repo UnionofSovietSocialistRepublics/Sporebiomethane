@@ -47,7 +47,8 @@ public class JPUnitFactory{
             plans = Seq.with(
                 new UnitPlan( JPUnits.Drone, 60f * 15, with(silicon, 15, JPItem.Biomass,10,lead, 25)),
                 new UnitPlan( JPUnits.Interceptor, 60f * 10, with(silicon, 45, JPItem.Biomass,10)),
-                new UnitPlan( JPUnits.Guardian, 60f * 40, with(silicon, 125, JPItem.Biomass,65))
+                new UnitPlan( JPUnits.Guardian, 60f * 40, with(silicon, 125, JPItem.Biomass,65)),
+                new UnitPlan( JPUnits.Rizomorph, 60f * 25, with(silicon, 150, JPItem.Biomass,45))
             );
             health = 500;
             size = 3;
