@@ -38,7 +38,7 @@ public class JPUnits {
     //missiles
     Bomb,
     //Floaty
-    Guardian,Thera,DeathImp,Drone,Interceptor,Hivedefender,HiveSentinel,Sporophage,
+    Guardian,Thera,DeathImp,Drone,Interceptor,Hivedefender,HiveSentinel,Sporophage,Rizomorph,
     //Le tether
     Zeta,
     //Outcast
@@ -160,7 +160,7 @@ public class JPUnits {
             abilities.add(new RegenAbility(){{percentAmount = 1f / (70f * 60f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};
-                Baneling = new UnitType("Baneling"){{
+            Baneling = new UnitType("Baneling"){{
             this.constructor = LegsUnit::create;
             speed = 1.25f;
             hitSize = 8f;
@@ -206,6 +206,49 @@ public class JPUnits {
                     speed = 3f;
                     lifetime = 75f;
                     damage = 25f;
+                }};
+            }});
+            outlineColor = Color.valueOf("303a45");
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
+            }};
+            Rizomorph = new UnitType("Rizomorph"){{
+            this.constructor = UnitEntity::create;
+            speed = 1.65f;
+            accel = 0.08f;
+            drag = 0.016f;
+            flying = true;
+            hitSize = 10f;
+            hitSize = 8f;
+            engineSize = 5f;
+            health = 925;
+            targetAir = false;
+            engineOffset = 7.8f;
+            range = 140f;
+            faceTarget = false;
+            circleTarget = true;
+            weapons.add(new Weapon("Ambutakam"){{
+                minShootVelocity = 0.75f;
+                x = 0;
+                y = 5;
+                shootY = 0f;
+                reload = 12f;
+                shootCone = 180f;
+                ejectEffect = Fx.none;
+                inaccuracy = 15f;
+                ignoreRotation = true;
+                shoot.shots = 3;
+                shoot.shotDelay = 10f;
+                shootSound = Sounds.none;
+                bullet = new BombBulletType(27f, 25f){{
+                    width = 10f;
+                    height = 14f;
+                    hitEffect = Fx.flakExplosion;
+                    shootEffect = Fx.none;
+                    smokeEffect = Fx.none;
+                    splashDamage = 100f;
+                    splashDamageRadius = 32f;
+                    status = StatusEffects.blasted;
+                    statusDuration = 60f;
                 }};
             }});
             outlineColor = Color.valueOf("303a45");
