@@ -110,12 +110,12 @@ public class JPUnits {
             hitSize = 9f;
             drag = 0.05f;
             accel = 0.11f;
-            shootOnDeath = true;
             weapons.add(new Weapon("kys"){{
                 reload = 5f;
                 x = 0f;
                 y = 0f;
                 top = false;
+                shootOnDeath = true;
                 bullet = new BombBulletType(2.5f, 9){{
                     rangeOverride = 30f;
                     width = 0f;
