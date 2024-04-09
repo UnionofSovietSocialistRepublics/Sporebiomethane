@@ -110,6 +110,7 @@ public class JPUnits {
             hitSize = 9f;
             drag = 0.05f;
             accel = 0.11f;
+            shootOnDeath = true;
             weapons.add(new Weapon("kys"){{
                 reload = 5f;
                 x = 0f;
@@ -140,6 +141,7 @@ public class JPUnits {
                 x = 0f;
                 y = 0f;
                 top = false;
+                shootOnDeath = true;
                 bullet = new BombBulletType(2.5f, 9){{
                     rangeOverride = 30f;
                     width = 0f;
@@ -172,6 +174,7 @@ public class JPUnits {
                 x = 0f;
                 y = 0f;
                 top = false;
+                shootOnDeath = true;
                 bullet = new BombBulletType(2.5f, 9){{
                     rangeOverride = 30f;
                     width = 0f;
@@ -1294,9 +1297,9 @@ public class JPUnits {
         }};
             Sinrak = new JPCopterUnitType("Sinrak"){{
             speed = 1.25f;
-            armor = 6;
+            armor = 4;
             hitSize = 9f;
-            health = 720;
+            health = 800;
             range = 125f;    
             flying = true;
             drag = 0.05f;
@@ -1318,8 +1321,8 @@ public class JPUnits {
                     width = 8f;
                     height = 8f;
                     damage = 15f;
-                    hitEffect = Fx.blastExplosion;
-                    despawnEffect = Fx.blastExplosion;
+                    //hitEffect = Fx.blastExplosion;
+                    //despawnEffect = Fx.blastExplosion;
                 }};
             }});
             blade.add(
@@ -1341,9 +1344,9 @@ public class JPUnits {
         }};
             Curbork = new JPCopterUnitType("Curbork"){{
             speed = 1.25f;
-            armor = 6;
+            armor = 2;
             hitSize = 9f;
-            health = 650;
+            health = 450;
             range = 125f;    
             flying = true;
             drag = 0.05f;
@@ -1365,7 +1368,7 @@ public class JPUnits {
                     lightColor = Color.valueOf("8B73C7");
                     width = 8f;
                     height = 8f;
-                    damage = 65f;
+                    damage = 75f;
                     splashDamageRadius = 20f;
                     splashDamage = 45f;
                     buildingDamageMultiplier = 1.5f;
