@@ -84,14 +84,14 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
         }};
         Flakaccelerator = new ItemTurret("Flakaccelerator"){{
             requirements(Category.turret, with(graphite, 125, silicon, 100, JPItem.Biomass, 75));
-            health = 1500;
+            health = 1000;
             size = 3;
             rotateSpeed = 2f;
-            range = 225f;
+            range = 250f;
             reload = 35f;
             recoil = 2f;
             shootCone = 2f;
-            shootY = -2;
+            shootY = 2;
             ammoUseEffect = Fx.casing1;
             targetGround = false;
             shoot.shots = 2;
@@ -114,6 +114,7 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
                         frontColor = Color.valueOf("8B73C7");
                         lightColor = Color.valueOf("8B73C7");
                         splashDamage = 15f;
+                        splashDamageRadius = 15f;
                         damage = 15f;
                         lifetime = 20f;
                         backColor = Pal.gray;
@@ -154,6 +155,7 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
                     smokeEffect = Fx.shootSmallSmoke;
                     collidesGround = true;
                     despawnEffect = Fx.blastExplosion;
+                    pierceArmor = true;
                 }});
                 coolantMultiplier = 0.5f;
                 coolant = consumeCoolant(0.5f);
@@ -231,7 +233,7 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
                 coolant = consumeCoolant(0.2f);
                 consumePower(7f);
         }};
-        Mitocannon = new PowerTurret("Mitocannon"){{
+        Mitocannon = new LaserTurret("Mitocannon"){{
             requirements(Category.turret, with(graphite, 300, JPItem.Neocells, 240, JPItem.Biomass, 175));
             health = 1500;
             size = 2;
@@ -268,7 +270,7 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
                         collidesGround = false;
                     }};
                 }};
-                consumeLiquid(Liquids.water, 25f / 60f);
+                coolant = consumeCoolant(0.225f);
                 consumePower(7f);
         }};
         Suppressor = new ItemTurret("Suppressor"){{
@@ -291,7 +293,8 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
                JPItem.Biomass, new BasicBulletType(){{
                     
                     lifetime = 45f;
-                    splashDamage = 25f;
+                    damage = 50f;
+                    splashDamage = 15f;
                     splashDamageRadius = 7f;
                     speed = 5f;
                     backColor = Color.valueOf("8B73C7");
@@ -324,6 +327,7 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
 	            collidesTeam = true;
 	            damage = 65;
                 hitColor = Color.valueOf("fda981");
+                pierceArmor = true;
             }};
             drawer = new DrawTurret("-bottom"){{
                 parts.add(new RegionPart("-bottom"){{
