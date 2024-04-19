@@ -53,7 +53,7 @@ VCAwall,Sporecore,Hive,Nydusaecore;
         VCAwall = new Wall("Vanadiumcarbidewall"){{
             requirements(Category.defense, with(JPItem.VCA, 40));
             size = 2;
-            health = 8500;
+            health = 6500;
         }};
         Sporecore = new CoreBlock("Sporecore"){{
             requirements(Category.effect, with(JPItem.Biomass, 3000, JPItem.Nanitealloy, 2000, silicon, 4000));

@@ -226,11 +226,11 @@ public class JPProduction{
         }};
         Extractor = new Drill("Extractor"){{
             requirements(Category.production, with(silicon, 25,graphite, 30));
-            health = 320;
+            health = 300;
             tier = 4;
             size = 2;
             hasLiquids = true;
-            drillTime = 250f;
+            drillTime = 200f;
             itemCapacity = 40;
             drillMultipliers.put(Items.copper, 0f);
             drillMultipliers.put(Items.lead, 0f);

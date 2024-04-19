@@ -77,6 +77,7 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
                     buildingDamageMultiplier = 0.25f;
                     speed = 500f;
                     ammoMultiplier = 1.5f;
+                    pierceArmor = true;
                 }});
             coolantMultiplier = 0.2f;
             coolant = consumeCoolant(2f);
@@ -234,13 +235,13 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
                 consumePower(7f);
         }};
         Mitocannon = new LaserTurret("Mitocannon"){{
-            requirements(Category.turret, with(graphite, 300, JPItem.Neocells, 240, JPItem.Biomass, 175));
+            requirements(Category.turret, with(graphite, 300, JPItem.Neocells, 240, JPItem.Nanitealloy, 150));
             health = 1500;
             size = 2;
             rotateSpeed = 2f;
             range = 225f;
             liquidCapacity = 200F;
-            reload = 35f;
+            reload = 25f;
             recoil = 2f;
             shootCone = 2f;
             ammoUseEffect = Fx.casing1;
@@ -250,7 +251,7 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
 
                shootType = new BasicBulletType(){{
                     height = width = 15F;
-                    damage = 75f;
+                    damage = 80f;
                     speed = 5f;
                     fragBullets = 6;
                     backColor = Color.valueOf("8B73C7");
@@ -274,7 +275,7 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
                 consumePower(7f);
         }};
         Suppressor = new ItemTurret("Suppressor"){{
-            requirements(Category.turret, with(graphite, 675, JPItem.Nanitealloy, 250, JPItem.Biomass, 150));
+            requirements(Category.turret, with(graphite, 225, JPItem.Nanitealloy, 25, JPItem.Biomass, 45));
             health = 850;
             size = 3;
             rotateSpeed = 2f;
@@ -309,7 +310,7 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
                 coolant = consumeCoolant(0.5f);
         }};
         Sentinel = new ContinuousTurret("Sentinel"){{
-            requirements(Category.turret, with(graphite, 675, JPItem.Nanitealloy, 250, JPItem.Biomass, 150));
+            requirements(Category.turret, with(graphite, 675, JPItem.Nanitealloy, 250, JPItem.Neocells, 150));
             health = 1500;
             size = 2;
             rotateSpeed = 1.5f;
@@ -325,7 +326,7 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
             shootType = new PointLaserBulletType(){{
 	            //sprite = "Sentinellaser";
 	            collidesTeam = true;
-	            damage = 65;
+	            damage = 115;
                 hitColor = Color.valueOf("fda981");
                 pierceArmor = true;
             }};

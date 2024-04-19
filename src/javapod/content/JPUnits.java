@@ -265,7 +265,7 @@ public class JPUnits {
             speed = 1f;
             hitSize = 8f;
             health = 1500;
-            armor = 4;
+            armor = 7;
             range = 40f;
             legCount = 4;
             legLength = 13f;
@@ -331,6 +331,7 @@ public class JPUnits {
             hitSize = 8f;
             health = 1150;
             range = 75f;
+            armor = 3;
             engineOffset = 5f;
             engineSize = 4f;
             rotateSpeed = 7f;
@@ -391,7 +392,7 @@ public class JPUnits {
             targetAir = false;
             hitSize = 8f;
             health = 875;
-            armor = 2;
+            armor = 4;
             range = 50f;
             legCount = 4;
             legLength = 8f;
@@ -461,6 +462,7 @@ public class JPUnits {
             this.constructor = LegsUnit::create;
             speed = 0.65f;
             hitSize = 44f;
+            armor = 11;
             health = 9000;
             range = 50f;
             legCount = 4;
@@ -519,7 +521,7 @@ public class JPUnits {
             speed = 1f;
             hitSize = 18f;
             health = 1500;
-            armor = 4;
+            armor = 7;
             range = 175f;
             flying = true;
             targetAir = false;
@@ -567,13 +569,13 @@ public class JPUnits {
             range = 125f;
             legCount = 4;            
             weapons.add(new Weapon(name + "-Cannon"){{
-                reload = 125f;
+                reload = 75f;
                 x = 0f;
                 y = -8f;
                 mirror = false;
                 targetAir = false;
                 shoot.shots = 4;
-                inaccuracy = 7f;
+                inaccuracy = 0.1f;
                 velocityRnd = 0.2f;
                 bullet = new ArtilleryBulletType(2.5f, 9){{
                     speed = 6f;
@@ -659,8 +661,8 @@ public class JPUnits {
             this.constructor = LegsUnit::create;
             speed = 0.25f;
             hitSize = 8f;
-            health = 30000;
-            armor = 5;
+            health = 35000;
+            armor = 30;
             range = 80f;
             legCount = 4;
             legLength = 13f;
@@ -761,7 +763,7 @@ public class JPUnits {
             speed = 1f;
             hitSize = 18f;
             health = 650;
-            armor = 4;
+            armor = 5;
             range = 125f;
             legCount = 4;            
             weapons.add(new Weapon(name + "-gun"){{
@@ -798,7 +800,7 @@ public class JPUnits {
             speed = 1f;
             hitSize = 8f;
             health = 650;
-            armor = 2;
+            armor = 4;
             range = 45f;
             legCount = 4;
             legLength = 13f;
@@ -850,6 +852,7 @@ public class JPUnits {
             Hivedefender = new UnitType("Hivedefender"){{
             this.constructor = UnitEntity::create;
             speed = 1f;
+            armor = 1;
             hitSize = 18f;
             health = 175;
             range = 125f;    
@@ -875,7 +878,7 @@ public class JPUnits {
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
                     damage = 15f;
-                    buildingDamageMultiplier = 0.15f;
+                    buildingDamageMultiplier = 0.05f;
                     lifetime = 50f;
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
@@ -889,6 +892,7 @@ public class JPUnits {
             HiveSentinel = new UnitType("HiveSentinel"){{
             this.constructor = UnitEntity::create;
             speed = 1f;
+            armor = 2;
             hitSize = 18f;
             health = 400;
             range = 125f;    
@@ -914,7 +918,7 @@ public class JPUnits {
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
                     damage = 30f;
-                    buildingDamageMultiplier = 0.15f;
+                    buildingDamageMultiplier = 0.05f;
                     lifetime = 50f;
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
@@ -1119,6 +1123,7 @@ public class JPUnits {
             Sporophage = new UnitType("Sporophage"){{
             this.constructor = UnitEntity::create;
             speed = 2f;
+            armor = 3;
             hitSize = 17f;
             health = 425;
             range = 125f;      
@@ -1146,9 +1151,10 @@ public class JPUnits {
                     lifetime = 125f;
                     damage = 45f;
                     lifetime = 50f;
-                    healPercent = 1f;
+                    healPercent = 0.5f;
                     collidesTeam = true;
                     colors = new Color[]{Color.valueOf("8B73C7"), Color.valueOf("A865C9"), Color.valueOf("A865C9"), Color.valueOf("ffffff")};
+                    buildingDamageMultiplier = 0.10f;
                 }};
             }});
             outlineColor = Color.valueOf("303a45");
