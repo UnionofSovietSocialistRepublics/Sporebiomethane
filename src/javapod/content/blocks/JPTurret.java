@@ -102,6 +102,7 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
 
             ammo(
                JPItem.Biomass, new FlakBulletType(){{
+                    lifetime = 40f;
                     damage = 30f;
                     speed = 5f;
                     fragBullets = 6;
@@ -130,7 +131,7 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
             requirements(Category.turret, with(graphite, 675, JPItem.Nanitealloy, 250, JPItem.Biomass, 150));
             size = 3;
             rotateSpeed = 2f;
-            range = 225f;
+            range = 260f;
             reload = 180f;
             recoil = 5f;
             shootCone = 10f;
@@ -234,7 +235,7 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
                 coolant = consumeCoolant(0.2f);
                 consumePower(7f);
         }};
-        Mitocannon = new LaserTurret("Mitocannon"){{
+        Mitocannon = new PowerTurret("Mitocannon"){{
             requirements(Category.turret, with(graphite, 300, JPItem.Neocells, 240, JPItem.Nanitealloy, 150));
             health = 1500;
             size = 2;
