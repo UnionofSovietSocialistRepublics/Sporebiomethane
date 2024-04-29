@@ -276,7 +276,7 @@ public class JPUnits {
                 top = true;
                 reload = 5f;
                 x = 0f;
-                y = -3f;
+                y = 7f;
                 mirror = false;
                 recoil = 0f;
                 shootStatus = StatusEffects.shielded;
@@ -931,7 +931,7 @@ public class JPUnits {
         }};
             Gragoth = new JPCopterUnitType("Gragoth"){{
             //this.constructor = JPCopterUnitEntity::create;
-            speed = 1f;
+            speed = 1.55f;
             armor = 3;
             hitSize = 18f;
             health = 2400;
@@ -948,6 +948,7 @@ public class JPUnits {
                 layerOffset = -1f;
                 mirror = false;
                 bullet = new BasicBulletType(2.5f, 9){{
+                    recoil = 4f;
                     speed = 3f;
                     height = 15f;
                     width = 30f;
@@ -1233,7 +1234,7 @@ public class JPUnits {
             abilities.add(new RegenAbility(){{percentAmount = 1f / (240f * 60f * 2f) * 100f;}});
         }};
             Slasher = new JPCopterUnitType("Slasher"){{
-            speed = 0.75f;
+            speed = 1.75f;
             armor = 6;
             hitSize = 18f;
             health = 2700;
