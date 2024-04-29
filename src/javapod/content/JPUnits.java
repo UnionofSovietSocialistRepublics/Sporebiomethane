@@ -276,7 +276,8 @@ public class JPUnits {
                 top = true;
                 reload = 5f;
                 x = 0f;
-                y = 7f;
+                y = -3f;
+                shootY = 7f;
                 mirror = false;
                 recoil = 0f;
                 shootStatus = StatusEffects.shielded;
