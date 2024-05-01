@@ -542,7 +542,7 @@ public class JPUnits {
                     speed = 3f;
                     height = width = 15f;
                     damage = 145f;
-                    splashDamage = 30f;
+                    splashDamage = 145f;
                     splashDamageRadius = 5f;
                     lifetime = 110f;
                     statusDuration = 60f * 4;
@@ -550,6 +550,7 @@ public class JPUnits {
                     backColor = Color.valueOf("8FFE09");
                     frontColor = Color.valueOf("8FFE09");
                     lightColor = Color.valueOf("8FFE09");
+                    collides = true;
                     collidesTiles = true;
                     trailLength = 6;
                     trailColor = Color.valueOf("bbfe6b");
