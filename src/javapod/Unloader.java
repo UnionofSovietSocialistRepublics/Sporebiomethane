@@ -60,6 +60,7 @@ public class Unloader extends Mod{
         JPUnits.load();
         Log.info("Loading blocks");
         JPBlockLoader.load();
+        JPtechtree.load();
     }
 
 }
