@@ -1069,7 +1069,7 @@ public class JPUnits {
 
             Zeta = new UnitType("Zeta"){{
             controller = u -> new AssemblerAI();
-            this.constructor = UnitEntity::create;
+            this.constructor = BuildingTetherPayloadUnit::create;
             speed = 1f;
             hitSize = 11f;
             health = 400;
