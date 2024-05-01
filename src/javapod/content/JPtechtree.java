@@ -35,9 +35,18 @@ public class JPtechtree {
                     
                 });
     });
+            
             node(JPProduction.Nanoprocessor, Seq.with(new SectorComplete(JPsectors.Ski)), () -> {
-                node(JPOther.Hive, () -> {
-                    node(JPOther.Nydusaecore);
+                node(JPProduction.Vanadicarbide);
+                node(JPProduction.Gaschamber);
+                node(JPProduction.FR);
+                node(JPProduction.Masscultivator);
+                node(JPProduction.BioSynthesizer, () -> {
+                    node(JPProduction.Naniteinfuser, () -> {
+                        node(JPProduction.CCB, () -> {
+                            node(JPProduction.Neostabilizer);
+                        });
+                    });
                 });
             });
             node(JPUnitFactory.pool, Seq.with(new SectorComplete(JPsectors.Ski)), () -> {
@@ -48,14 +57,16 @@ public class JPtechtree {
                     node(JPUnitFactory.Gestator);
                 });
             });
-            node(JPProduction.Extractor);
-            node(JPProduction.Nanoprocessor, () -> {
-                node(JPOther.Hive, () -> {
-                    node(JPOther.Nydusaecore);
+            node(JPProduction.Lotus, () -> {
+                node(JPProduction.Biomassreactor, () -> { 
+                    node(JPProduction.Neocell);
                 });
             });
+            node(JPProduction.Extractor);
+            node(JPOther.VCAwall);
             node(JPsectors.Ski, Seq.with(new SectorComplete(frozenForest)), () -> {
                 node(JPsectors.Frost);
             });
+            
     }
 );}};
