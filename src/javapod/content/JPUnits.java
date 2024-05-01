@@ -1108,7 +1108,7 @@ public class JPUnits {
                 mirror = false;
                 bullet = new BasicBulletType(2.5f, 9){{
                     speed = 6f;
-                    height = width = 20f;
+                    height = width = 10f;
                     damage = 45f;
                     lifetime = 50f;
                     backColor = Color.valueOf("8FFE09");
