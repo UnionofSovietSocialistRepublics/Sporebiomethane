@@ -21,7 +21,7 @@ import static mindustry.content.Items.*;
 
 public class JPUnitAssembler{
     public static UnitAssembler
-        ApollyonAssembler;
+        ApollyonAssembler, Acidifier;
 
         public static void load(){
 
@@ -38,5 +38,5 @@ public class JPUnitAssembler{
 
             consumePower(15f);
         }};
-
         }};
+

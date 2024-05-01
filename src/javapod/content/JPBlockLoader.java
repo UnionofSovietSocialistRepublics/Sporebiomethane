@@ -11,5 +11,6 @@ public class JPBlockLoader {
         JPOther.load();
         JPTurret.load();
         JPDistribution.load();
+        JPModules.load();
     }
 }
