@@ -11,7 +11,7 @@ public class JPsectors{
 
     public static void load(){
         //region serpulo
-        Ski = new SectorPreset("Above the skies", serpulo, 174){{
+        Ski = new SectorPreset("Ski", serpulo, 174){{
             difficulty = 3;
             captureWave = 20;
             //alwaysUnlocked = true;
