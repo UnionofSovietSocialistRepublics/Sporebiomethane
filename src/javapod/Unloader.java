@@ -60,7 +60,16 @@ public class Unloader extends Mod{
         JPUnits.load();
         Log.info("Loading blocks");
         JPBlockLoader.load();
-        JPtechtree.load();
+        JPsectors.load();
+        // switch(Core.settings.getInt("HM")){
+        // case 1:
+        // JPsectors.load();
+        // case 2:
+        // JPsectorsHM.load();
+        // default:
+
+        //}
+
     }
 
 }
