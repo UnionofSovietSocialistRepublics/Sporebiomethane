@@ -234,6 +234,15 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
                 }};
                 coolant = consumeCoolant(0.2f);
                 consumePower(7f);
+            drawer = new DrawTurret("-bottom"){{
+                parts.add(new RegionPart("-bottom"){{
+            }});
+                parts.add(new RegionPart("-prongs"){{
+                    progress = PartProgress.recoil;
+                    moveX = 0f;
+                    moveY = -3f;
+            }});
+        }};
         }};
         Mitocannon = new PowerTurret("Mitocannon"){{
             requirements(Category.turret, with(graphite, 300, JPItem.Neocells, 240, JPItem.Nanitealloy, 150));
@@ -332,8 +341,6 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
                 pierceArmor = true;
             }};
             drawer = new DrawTurret("-bottom"){{
-                parts.add(new RegionPart("-bottom"){{
-                }});
                 parts.add(new RegionPart("-prongs"){{
                     progress = PartProgress.warmup;
                     mirror = true;
@@ -341,6 +348,9 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
                     moveY = 1.25f;
                     moveRot = -10f;
             }});
+                parts.add(new RegionPart("-bottom"){{
+            }});
+
         }};
         shootSound = Sounds.none;
         loopSoundVolume = 1f;

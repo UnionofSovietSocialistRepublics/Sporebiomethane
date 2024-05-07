@@ -47,7 +47,6 @@ public class JPUnitFactory{
             plans = Seq.with(
                 new UnitPlan( JPUnits.Drone, 60f * 15, with(silicon, 15, JPItem.Biomass,10,lead, 25)),
                 new UnitPlan( JPUnits.Interceptor, 60f * 10, with(silicon, 45, JPItem.Biomass,10)),
-                new UnitPlan( JPUnits.Guardian, 60f * 40, with(silicon, 125, JPItem.Biomass,65)),
                 new UnitPlan( JPUnits.Rizomorph, 60f * 25, with(silicon, 150, JPItem.Biomass,45))
             );
             health = 500;
@@ -70,11 +69,11 @@ public class JPUnitFactory{
 
         }};
         Assembler = new UnitFactory("Assembler"){{
-            requirements(Category.units, with(silicon,250,JPItem.Biomass,75));
+            requirements(Category.units, with(silicon,675,JPItem.Nanitealloy,75,JPItem.Biomass,225));
             plans = Seq.with(
                 new UnitPlan( JPUnits.Breacher, 60f * 15, with( silicon, 350, JPItem.Biomass,75)),
                 new UnitPlan( JPUnits.Guardian, 60f * 10, with( silicon, 300, JPItem.Biomass,75)),
-                new UnitPlan( JPUnits.Behomoth, 60f * 40, with( silicon, 850, JPItem.Biomass,400, JPItem.Nanitealloy,400)),
+                new UnitPlan( JPUnits.Behomoth, 60f * 50, with( silicon, 850, JPItem.Biomass,400, JPItem.Nanitealloy,400)),
                 new UnitPlan( JPUnits.Scarabid, 60f * 40, with( silicon, 300, plastanium, 90, JPItem.Biomass,25))
             );
             health = 1750;

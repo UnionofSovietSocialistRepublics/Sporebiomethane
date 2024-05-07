@@ -242,10 +242,10 @@ public class JPProduction{
             consumeLiquid(Liquids.water, 0.05f).boost();
         }};
         Oilburner = new ConsumeGenerator("Oil-burner"){{
-            requirements(Category.power, with(silicon, 100,graphite, 75,JPItem.Biomass, 25));
+            requirements(Category.power, with(silicon, 175,graphite, 225,JPItem.Biomass, 45));
             health = 180;
             size = 1;
-            powerProduction = 5.75f;
+            powerProduction = 5.5f;
             liquidCapacity = 25f;
             consumeLiquid(Liquids.oil, 0.2f);
             ambientSound = Sounds.smelter;

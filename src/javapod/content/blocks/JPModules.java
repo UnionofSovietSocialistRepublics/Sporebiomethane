@@ -28,6 +28,7 @@ public class JPModules{
             requirements(Category.units, with(Items.silicon, 400, JPItem.Nanitealloy,50, JPItem.Biomass, 250));
             consumePower(5f);
             size = 3;
+            health = 475;
         }};
         }};
 

@@ -540,7 +540,8 @@ public class JPUnits {
                 bullet = new ArtilleryBulletType(2.5f, 9){{
                     recoil = 1f;
                     speed = 3f;
-                    height = width = 15f;
+                    height = 15f;
+                    width = 7f;
                     damage = 145f;
                     splashDamage = 145f;
                     splashDamageRadius = 5f;
@@ -553,6 +554,7 @@ public class JPUnits {
                     collides = true;
                     collidesTiles = true;
                     trailLength = 6;
+                    trailWidth = 2.8f;
                     trailColor = Color.valueOf("bbfe6b");
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
