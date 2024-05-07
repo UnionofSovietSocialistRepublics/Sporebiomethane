@@ -237,7 +237,7 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
             drawer = new DrawTurret("-bottom"){{
                 parts.add(new RegionPart("-bottom"){{
             }});
-                parts.add(new RegionPart("-prongs"){{
+                parts.add(new RegionPart("-gun"){{
                     progress = PartProgress.recoil;
                     moveX = 0f;
                     moveY = -3f;
