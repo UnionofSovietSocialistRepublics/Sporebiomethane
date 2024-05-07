@@ -226,7 +226,6 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
                     height = width = 15f;
                     damage = 40f;
                     speed = 5f;
-                    fragBullets = 6;
                     lifetime = 45f;
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
@@ -240,7 +239,7 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
                 parts.add(new RegionPart("-gun"){{
                     progress = PartProgress.recoil;
                     moveX = 0f;
-                    moveY = -3f;
+                    moveY = -1.5f;
             }});
         }};
         }};
