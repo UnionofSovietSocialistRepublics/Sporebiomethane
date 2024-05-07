@@ -130,14 +130,14 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
                 parts.add(new RegionPart("-canright"){{
                     progress = PartProgress.recoil;
                     under = true;
-                    moveY = -1.5f;
-                    moveX = -1.5f;
+                    moveY = -4f;
+                    moveX = -4f;
                 }});
                 parts.add(new RegionPart("-canleft"){{
                     progress = PartProgress.recoil;
                     under = true;
-                    moveY = 1.5f;
-                    moveX = -1.5f;
+                    moveY = 4f;
+                    moveX = 4f;
                 }});
             }};
         }};
