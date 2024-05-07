@@ -206,7 +206,8 @@ public class JPProduction{
             requirements(Category.power, with(silicon, 225,JPItem.Vanadium, 75,JPItem.Neocells, 95));
             health = 650;
             size = 2;
-            powerProduction = 10f;
+            powerProduction = 11.5f;
+            itemDuration = 275f;
             consumeItem(JPItem.Neocells);
         }};
         Biomassreactor = new ImpactReactor("Biomassreactor"){{
@@ -244,7 +245,8 @@ public class JPProduction{
             requirements(Category.power, with(silicon, 100,graphite, 75,JPItem.Biomass, 25));
             health = 180;
             size = 1;
-            powerProduction = 6f;
+            powerProduction = 5.75f;
+            liquidCapacity = 25f;
             consumeLiquid(Liquids.oil, 0.2f);
             ambientSound = Sounds.smelter;
             ambientSoundVolume = 0.03f;
@@ -255,7 +257,7 @@ public class JPProduction{
             requirements(Category.power, with(silicon, 225,JPItem.Nanitealloy, 145,JPItem.Biomass, 95));
             health = 450;
             size = 2;
-            powerProduction = 12.5f;
+            powerProduction = 12.25f;
             itemDuration = 110f;
             consumeItem(JPItem.Voltaicgas);
             ambientSound = Sounds.smelter;
