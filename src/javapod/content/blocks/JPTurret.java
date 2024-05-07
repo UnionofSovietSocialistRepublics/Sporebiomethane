@@ -127,11 +127,17 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
                 }});
                 coolant = consumeCoolant(0.1f);
                 drawer = new DrawTurret(){{
-                parts.add(new RegionPart("-can"){{
+                parts.add(new RegionPart("-canright"){{
                     progress = PartProgress.recoil;
                     under = true;
-                    moveY = -2f;
-                    moveX = -2f;
+                    moveY = -1.5f;
+                    moveX = -1.5f;
+                }});
+                parts.add(new RegionPart("-canleft"){{
+                    progress = PartProgress.recoil;
+                    under = true;
+                    moveY = -1.5f;
+                    moveX = -1.5f;
                 }});
             }};
         }};
