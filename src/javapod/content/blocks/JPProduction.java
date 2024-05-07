@@ -51,7 +51,7 @@ public class JPProduction{
         Extractor,ZincExtractor,
         Masscultivator,
         Nanoprocessor,Naniteinfuser,CCB,FR,Gaschamber,BioSynthesizer,Vanadicarbide,Neostabilizer,
-        Biomassreactor,Neocell,Lotus;
+        Biomassreactor,Neocell,Lotus,Oilburner,Voltaicburner;
 
         public static void load(){
 
@@ -176,7 +176,6 @@ public class JPProduction{
         Vanadicarbide = new HeatProducer("Vanadicarbide"){{
             health = 750;
             requirements(Category.crafting, with(silicon, 270,JPItem.Biomass, 125,JPItem.Vanadium, 450));
-
             craftEffect = Fx.pulverizeMedium;
             outputItem = new ItemStack(JPItem.VCA, 1);
             craftTime = 50f;
@@ -241,6 +240,28 @@ public class JPProduction{
             drillMultipliers.put(Items.tungsten, 0f);
             consumeLiquid(Liquids.water, 0.05f).boost();
         }};
-
+        Oilburner = new ConsumeGenerator("Oil-burner"){{
+            requirements(Category.power, with(silicon, 100,graphite, 75,JPItem.Biomass, 25));
+            health = 180;
+            size = 2;
+            powerProduction = 6f;
+            consumeLiquid(Liquids.oil, 0.2f);
+            ambientSound = Sounds.smelter;
+            ambientSoundVolume = 0.03f;
+            generateEffect = Fx.generatespark;
+            drawer = new DrawMulti(new DrawDefault(), new DrawFlame(Color.valueOf("8B73C7")));
+        }};
+        Voltaicburner = new ConsumeGenerator("Voltatic-burner"){{
+            requirements(Category.power, with(silicon, 225,JPItem.Nanitealloy, 145,JPItem.Biomass, 95));
+            health = 450;
+            size = 2;
+            powerProduction = 12.5f;
+            itemDuration = 110f;
+            consumeItem(JPItem.Voltaicgas);
+            ambientSound = Sounds.smelter;
+            ambientSoundVolume = 0.06f;
+            generateEffect = Fx.generatespark;
+            drawer = new DrawMulti(new DrawDefault(), new DrawFlame(Color.valueOf("8B73C7")));
+        }};
         }};
 

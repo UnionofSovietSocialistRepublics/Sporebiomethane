@@ -52,21 +52,19 @@ public class Unloader extends Mod{
         Log.info("Ah shit here we go again. Another mod, another load.");
         JPStatus.load();
         JPAttribute.load();
+        
         Log.info("Loading items");
         JPItem.load();
         Log.info("Loading units");
         JPUnits.load();
         Log.info("Loading blocks");
         JPBlockLoader.load();
-        switch(Core.settings.getInt("HM")){
-        case 1:
-        JPsectors.load();
-        case 2:
-        JPsectorsHM.load();
-        default:
+        if(Core.settings.getBool("HM") == true){
+        JPsectorsHM.load();}
+        else{
         JPsectors.load();
         }
-
+        JPtechtree.load();
     }
 
 }

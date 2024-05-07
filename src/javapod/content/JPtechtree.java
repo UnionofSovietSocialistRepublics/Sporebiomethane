@@ -23,72 +23,15 @@ import static mindustry.content.SectorPresets.*;
 
 public class JPtechtree {
     public static void load(){
-        switch(Core.settings.getInt("HM")){
-        case 1:
-        nodeRoot("Spore biomechs", coreShard, false, () -> {
-            //Above the skies is the currently the placeholder for now, the required sector will changes later.
-            node(JPOther.Sporecore, Seq.with(new SectorComplete(JPsectors.Ski)), () -> {
-                node(JPOther.Hive, () -> {
-                    node(JPOther.Nydusaecore);
-                });
-            });
-            node(JPTurret.Sporegarrison, Seq.with(new SectorComplete(JPsectors.Ski)), () -> {
-                node(JPTurret.Flakaccelerator, () -> {
-                    node(JPTurret.Suppressor);
-                 });
-                node(JPTurret.Mitocannon);
-                node(JPTurret.Oarch, () -> {
-                    node(JPTurret.Artilleryturret, () -> { 
-                        node(JPTurret.Impalercannon);
-                        node(JPTurret.Sentinel);
-                    });
-                    
-                });
-    });
-            
-            node(JPProduction.Nanoprocessor, Seq.with(new SectorComplete(JPsectors.Ski)), () -> {
-                node(JPProduction.Vanadicarbide);
-                node(JPProduction.Gaschamber);
-                node(JPProduction.FR);
-                node(JPProduction.Masscultivator);
-                node(JPProduction.BioSynthesizer, () -> {
-                    node(JPProduction.Naniteinfuser, () -> {
-                        node(JPProduction.CCB, () -> {
-                            node(JPProduction.Neostabilizer);
-                        });
-                    });
-                });
-            });
-            node(JPUnitFactory.pool, Seq.with(new SectorComplete(JPsectors.Ski)), () -> {
-                node(JPUnitFactory.Synapsetower, () -> {
-                    node(JPUnitFactory.Assembler, () -> {
-                        node(JPUnitAssembler.ApollyonAssembler);
-                    });
-                    node(JPUnitFactory.Gestator);
-                });
-            });
-            node(JPProduction.Lotus, () -> {
-                node(JPProduction.Biomassreactor, () -> { 
-                    node(JPProduction.Neocell);
-                });
-            });
-            node(JPProduction.Extractor);
-            node(JPOther.VCAwall);
-             node(JPsectors.Ski, Seq.with(new SectorComplete(frozenForest)), () -> {
-                node(JPsectors.Frost);
-             });
-            
-    }
-);
-        case 2:
+        if(Core.settings.getBool("HM") == true){
         nodeRoot("Spore biomechs Hardmode", coreShard, false, () -> {
             //Above the skies is the currently the placeholder for now, the required sector will changes later.
-            node(JPOther.Sporecore, Seq.with(new SectorComplete(JPsectors.Ski)), () -> {
+            node(JPOther.Sporecore, Seq.with(new SectorComplete(JPsectorsHM.DS)), () -> {
                 node(JPOther.Hive, () -> {
                     node(JPOther.Nydusaecore);
                 });
             });
-            node(JPTurret.Sporegarrison, Seq.with(new SectorComplete(JPsectors.Ski)), () -> {
+            node(JPTurret.Sporegarrison, Seq.with(new SectorComplete(JPsectorsHM.DS)), () -> {
                 node(JPTurret.Flakaccelerator, () -> {
                     node(JPTurret.Suppressor);
                  });
@@ -102,7 +45,7 @@ public class JPtechtree {
                 });
     });
             
-            node(JPProduction.Nanoprocessor, Seq.with(new SectorComplete(JPsectors.Ski)), () -> {
+            node(JPProduction.Nanoprocessor, Seq.with(new SectorComplete(JPsectorsHM.DS)), () -> {
                 node(JPProduction.Vanadicarbide);
                 node(JPProduction.Gaschamber);
                 node(JPProduction.FR);
@@ -115,7 +58,7 @@ public class JPtechtree {
                     });
                 });
             });
-            node(JPUnitFactory.pool, Seq.with(new SectorComplete(JPsectors.Ski)), () -> {
+            node(JPUnitFactory.pool, Seq.with(new SectorComplete(JPsectorsHM.DS)), () -> {
                 node(JPUnitFactory.Synapsetower, () -> {
                     node(JPUnitFactory.Assembler, () -> {
                         node(JPUnitAssembler.ApollyonAssembler);
@@ -123,9 +66,12 @@ public class JPtechtree {
                     node(JPUnitFactory.Gestator);
                 });
             });
-            node(JPProduction.Lotus, () -> {
-                node(JPProduction.Biomassreactor, () -> { 
-                    node(JPProduction.Neocell);
+            node(JPProduction.Oilburner, () -> {
+                node(JPProduction.Lotus);
+                node(JPProduction.Voltaicburner, () -> {
+                    node(JPProduction.Biomassreactor, () -> { 
+                        node(JPProduction.Neocell);
+                    });
                 });
             });
             node(JPProduction.Extractor);
@@ -133,13 +79,9 @@ public class JPtechtree {
              node(JPsectorsHM.DS, Seq.with(new SectorComplete(frozenForest)), () -> {
                 node(JPsectorsHM.Frosted);
              });
-            
-    }
-
-
-        
-);        default:
-        nodeRoot("Spore biomechs", coreShard, false, () -> {
+            });
+}else {
+            nodeRoot("Spore biomechs", coreShard, false, () -> {
             //Above the skies is the currently the placeholder for now, the required sector will changes later.
             node(JPOther.Sporecore, Seq.with(new SectorComplete(JPsectors.Ski)), () -> {
                 node(JPOther.Hive, () -> {
@@ -181,9 +123,12 @@ public class JPtechtree {
                     node(JPUnitFactory.Gestator);
                 });
             });
-            node(JPProduction.Lotus, () -> {
-                node(JPProduction.Biomassreactor, () -> { 
-                    node(JPProduction.Neocell);
+            node(JPProduction.Oilburner, () -> {
+                node(JPProduction.Lotus);
+                node(JPProduction.Voltaicburner, () -> {
+                    node(JPProduction.Biomassreactor, () -> { 
+                        node(JPProduction.Neocell);
+                    });
                 });
             });
             node(JPProduction.Extractor);
@@ -191,7 +136,6 @@ public class JPtechtree {
              node(JPsectors.Ski, Seq.with(new SectorComplete(frozenForest)), () -> {
                 node(JPsectors.Frost);
              });
-            
+            });
     }
-);
-}}};
+}};
