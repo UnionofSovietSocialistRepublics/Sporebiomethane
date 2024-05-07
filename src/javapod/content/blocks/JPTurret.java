@@ -126,6 +126,14 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
                     }};
                 }});
                 coolant = consumeCoolant(0.1f);
+                drawer = new DrawTurret(){{
+                parts.add(new RegionPart("-can"){{
+                    progress = PartProgress.recoil;
+                    under = true;
+                    moveY = -2f;
+                    moveX = -2f;
+                }});
+            }};
         }};
         Artilleryturret = new ItemTurret("Artilleryturret"){{
             requirements(Category.turret, with(graphite, 675, JPItem.Nanitealloy, 250, JPItem.Biomass, 150));
@@ -233,15 +241,13 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
                 }};
                 coolant = consumeCoolant(0.2f);
                 consumePower(7f);
-            drawer = new DrawTurret("-bottom"){{
-                parts.add(new RegionPart("-bottom"){{
-            }});
-                parts.add(new RegionPart("-gun"){{
+                drawer = new DrawTurret(){{
+                parts.add(new RegionPart("-barrel"){{
                     progress = PartProgress.recoil;
-                    moveX = 0f;
+                    under = true;
                     moveY = -1.5f;
-            }});
-        }};
+                }});
+            }};
         }};
         Mitocannon = new PowerTurret("Mitocannon"){{
             requirements(Category.turret, with(graphite, 300, JPItem.Neocells, 240, JPItem.Nanitealloy, 150));
