@@ -64,9 +64,9 @@ public class JPtechtree {
             });
             node(JPProduction.Extractor);
             node(JPOther.VCAwall);
-            node(JPsectors.Ski, Seq.with(new SectorComplete(frozenForest)), () -> {
+             node(JPsectors.Ski, Seq.with(new SectorComplete(frozenForest)), () -> {
                 node(JPsectors.Frost);
-            });
+             });
             
     }
 );}};

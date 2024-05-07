@@ -9,7 +9,6 @@ import mindustry.gen.*;
 import mindustry.mod.*;
 import mindustry.ui.dialogs.*;
 import jp.content.*;
-
 public class Unloader extends Mod{
 
     public Unloader(){
@@ -60,7 +59,7 @@ public class Unloader extends Mod{
         JPUnits.load();
         Log.info("Loading blocks");
         JPBlockLoader.load();
-        JPsectors.load();
+        //JPsectors.load();
         // switch(Core.settings.getInt("HM")){
         // case 1:
         // JPsectors.load();

@@ -6,7 +6,7 @@ import static mindustry.content.Planets.*;
 
 public class JPsectors{
     public static SectorPreset
-    Frost, Ski;
+    Frost, Sky;
 
 
     public static void load(){
