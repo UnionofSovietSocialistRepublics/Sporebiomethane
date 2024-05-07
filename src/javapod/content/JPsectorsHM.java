@@ -4,21 +4,21 @@ import mindustry.type.*;
 
 import static mindustry.content.Planets.*;
 
-public class JPsectors{
+public class JPsectorsHM{
     public static SectorPreset
-    Frost, Ski;
+    Frosted, DS;
 
 
     public static void load(){
         //region serpulo
-        Ski = new SectorPreset("Ski", serpulo, 241){{
-            difficulty = 3;
-            captureWave = 20;
+        DS = new SectorPreset("DS", serpulo, 241){{
+            difficulty = 5;
+            captureWave = 30;
             //alwaysUnlocked = true;
         }};
-        Frost = new SectorPreset("Frost", serpulo, 111){{
+        Frosted = new SectorPreset("Frost", serpulo, 111){{
             difficulty = 69;
-            captureWave = 30;
+            captureWave = 45;
            // alwaysUnlocked = true;
         }};
     }

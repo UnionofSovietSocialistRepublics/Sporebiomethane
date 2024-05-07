@@ -51,7 +51,6 @@ public class Unloader extends Mod{
     public void loadContent(){
         Log.info("Ah shit here we go again. Another mod, another load.");
         JPStatus.load();
-        JPsectors.load();
         JPAttribute.load();
         Log.info("Loading items");
         JPItem.load();
@@ -59,15 +58,14 @@ public class Unloader extends Mod{
         JPUnits.load();
         Log.info("Loading blocks");
         JPBlockLoader.load();
-        //JPsectors.load();
-        // switch(Core.settings.getInt("HM")){
-        // case 1:
-        // JPsectors.load();
-        // case 2:
-        // JPsectorsHM.load();
-        // default:
-
-        //}
+        switch(Core.settings.getInt("HM")){
+        case 1:
+        JPsectors.load();
+        case 2:
+        JPsectorsHM.load();
+        default:
+        JPsectors.load();
+        }
 
     }
 
