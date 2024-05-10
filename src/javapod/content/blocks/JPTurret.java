@@ -44,10 +44,9 @@ import static mindustry.Vars.*;
 import static mindustry.type.ItemStack.*;
 import static mindustry.content.Items.*;
 
-
 public class JPTurret{
     public static Block
-Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Suppressor,Sentinel;
+    Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Suppressor,Sentinel;
 
         public static void load(){
 
@@ -82,6 +81,9 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
             coolantMultiplier = 0.2f;
             coolant = consumeCoolant(2f);
             consumePower(7f);
+            unitSort = UnitSorts.strongest;
+            ammoUseEffect = Fx.casing3Double;
+            shootSound = Sounds.railgun;
         }};
         Flakaccelerator = new ItemTurret("Flakaccelerator"){{
             requirements(Category.turret, with(graphite, 125, silicon, 100, JPItem.Biomass, 75));
@@ -131,7 +133,7 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
                     progress = PartProgress.recoil;
                     under = true;
                     moveX = 4f;
-                    moveRot = 20f;
+                    moveRot = -20f;
                 }});
                 parts.add(new RegionPart("-canleft"){{
                     progress = PartProgress.recoil;
@@ -151,7 +153,7 @@ Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Sup
             shootCone = 10f;
             ammoPerShot = 3;
             ammoUseEffect = Fx.casing1;
-            shootSound = Sounds.artillery;
+            shootSound = JPSounds.Arty;
             health = 1500;
             shoot.shots = 4;
             shoot.shotDelay = 10f;

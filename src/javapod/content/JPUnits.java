@@ -439,6 +439,7 @@ public class JPUnits {
                 x = 0f;
                 y = -5f;
                 mirror = false;
+                shootSound = Sounds.artillery;
                 bullet = new BasicBulletType(2.5f, 9){{
                     speed = 3f;
                     shootEffect = Fx.shootBig;
@@ -477,7 +478,7 @@ public class JPUnits {
                 recoil = 6f;
                 mirror = false;
                 ejectEffect = Fx.casing1;
-                shootSound = Sounds.shootBig;
+                shootSound = JPSounds.ArtyBig;
                 bullet = new BasicBulletType(2.5f, 9){{
                     width = 15f;
                     height = 30f;
@@ -500,8 +501,8 @@ public class JPUnits {
                 x = -15f;
                 y = -23f;
                 mirror = true;
+                shootSound = Sounds.shootBig;
                 bullet = new BasicBulletType(2.5f, 9){{
-                    collidesTiles = false;
                     width = 15f;
                     height = 15f;
                     speed = 3f;
@@ -509,6 +510,8 @@ public class JPUnits {
                     damage = 45f;
                     backColor = Color.valueOf("CBC3E3");
                     frontColor = Color.valueOf("CBC3E3");
+                    collides = true;
+                    collidesTiles = true;
                 }};
 
             }});

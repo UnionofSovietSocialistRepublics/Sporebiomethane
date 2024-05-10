@@ -52,13 +52,14 @@ public class Unloader extends Mod{
         Log.info("Ah shit here we go again. Another mod, another load.");
         JPStatus.load();
         JPAttribute.load();
-        
+        JPSounds.load();
         Log.info("Loading items");
         JPItem.load();
         Log.info("Loading units");
         JPUnits.load();
         Log.info("Loading blocks");
         JPBlockLoader.load();
+        Log.info("Loading Techcub- I mean Techtree");
         if(Core.settings.getBool("HM") == true){
         JPsectorsHM.load();}
         else{

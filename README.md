@@ -37,3 +37,7 @@ This is a java port of our mod, for the hjson/js one please check [here](https:/
 #### Evacuation
 - Stopping the zerg from spreading to another planet by killing them on the spot.
 - Yes, they will still invades erekir.
+
+# List of contributors
+- Twcash01 For some resprites
+- Dyrehm for some turret sound
