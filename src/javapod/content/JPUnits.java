@@ -542,13 +542,13 @@ public class JPUnits {
                 layerOffset = -0.01f;
                 bullet = new ArtilleryBulletType(2.5f, 9){{
                     recoil = 1f;
-                    speed = 3f;
+                    speed = 4.5f;
                     height = 15f;
                     width = 7f;
                     damage = 145f;
                     splashDamage = 145f;
                     splashDamageRadius = 5f;
-                    lifetime = 110f;
+                    lifetime = 75f;
                     statusDuration = 60f * 4;
                     status = JPStatus.Dissolving;
                     backColor = Color.valueOf("8FFE09");
@@ -596,6 +596,7 @@ public class JPUnits {
                     backColor = Color.valueOf("8FFE09");
                     frontColor = Color.valueOf("8FFE09");
                     lightColor = Color.valueOf("8FFE09");
+                    collides = true;
                     collidesTiles = true;
                     trailLength = 3;
                     trailColor = Color.valueOf("bbfe6b");
@@ -649,13 +650,14 @@ public class JPUnits {
                 x = -11f;
                 y = 2f;
                 mirror = true;
+                layerOffset = -0.01f;
                 bullet = new BasicBulletType(2.5f, 9){{
                     collidesTiles = true;
                     width = 15f;
                     height = 15f;
                     speed = 3f;
-                    lifetime = 45f;
-                    damage = 25f;
+                    lifetime = 30f;
+                    damage = 10f;
                     backColor = Color.valueOf("CBC3E3");
                     frontColor = Color.valueOf("CBC3E3");
                 }};
@@ -728,7 +730,7 @@ public class JPUnits {
                 recoil = 0f;
                 shootStatus = JPStatus.Frostshield;
                 shootStatusDuration = 360f;
-                shootSound = Sounds.flame;
+                shootSound = Sounds.none;
                 ejectEffect = Fx.none;
                 bullet = new BasicBulletType(2.5f, 9){{
                     rangeOverride = 1f;
@@ -779,6 +781,7 @@ public class JPUnits {
                 y = 0f;
                 mirror = true;
                 targetAir = false;
+                layerOffset = -0.01f;
                 bullet = new ArtilleryBulletType(2.5f, 9){{
                     speed = 6f;
                     height = width = 20f;
@@ -1149,6 +1152,8 @@ public class JPUnits {
                 x = 0f;
                 y = 0f;
                 continuous = true;
+                chargeSound = Sounds.lasercharge2;
+                shootSound = Sounds.beam;
                 shoot.firstShotDelay = Fx.greenLaserChargeSmall.lifetime - 1f;
                 mirror = false;
                 bullet = new ContinuousLaserBulletType(){{
@@ -1183,6 +1188,8 @@ public class JPUnits {
                 y = 0f;
                 continuous = true;
                 shoot.firstShotDelay = Fx.greenLaserChargeSmall.lifetime - 1f;
+                chargeSound = Sounds.lasercharge2;
+                shootSound = Sounds.beam;
                 mirror = false;
                 bullet = new ContinuousLaserBulletType(){{
                     width = 2f;

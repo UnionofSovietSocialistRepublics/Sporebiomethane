@@ -153,7 +153,6 @@ public class JPTurret{
             shootCone = 10f;
             ammoPerShot = 3;
             ammoUseEffect = Fx.casing1;
-            shootSound = JPSounds.Arty;
             health = 1500;
             shoot.shots = 4;
             shoot.shotDelay = 10f;
@@ -175,6 +174,7 @@ public class JPTurret{
                     despawnEffect = Fx.blastExplosion;
                     pierceArmor = true;
                 }});
+                shootSound = JPSounds.Arty;
                 coolantMultiplier = 0.5f;
                 coolant = consumeCoolant(0.5f);
         }};
@@ -223,6 +223,7 @@ public class JPTurret{
                         collidesAir = true;
                     }};
                 }});
+                shootSound = JPSounds.Arty;
                 coolant = consumeCoolant(0.15f);
         }};
         Sporegarrison = new PowerTurret("Sporegarrison"){{
@@ -294,6 +295,7 @@ public class JPTurret{
                         collidesGround = false;
                     }};
                 }};
+                shootSound = Sounds.shootBig;
                 coolant = consumeCoolant(0.225f);
                 consumePower(7f);
         }};
