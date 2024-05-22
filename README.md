@@ -8,7 +8,7 @@ Spaghetti code made by Me (Water molecules#8835) and Dryehm_#8501
 # Important stuff:
 This is a java port of our mod, for the hjson/js one please check [here](https://github.com/UnionofSovietSocialistRepublics/Spore-Biomechs).
 
-# To do list
+# To do list (Thing may or may not change in the future)
 ### campaign progression (sector)
 #### Above the sky 
 - Unlocks after the crater
