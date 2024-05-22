@@ -193,7 +193,7 @@ public class JPTurret{
 
             ammo(
                JPItem.Biomass, new FlakBulletType(){{
-                    lifetime = 75f;
+                    lifetime = 50f;
                     damage = 75f;
                     splashDamage = 25f;
                     splashDamageRadius = 15f;

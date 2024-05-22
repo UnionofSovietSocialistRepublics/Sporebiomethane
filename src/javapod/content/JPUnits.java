@@ -633,7 +633,7 @@ public class JPUnits {
                     damage = 85f;
                     splashDamage = 10f;
                     splashDamageRadius = 5f;
-                    lifetime = 55f;
+                    lifetime = 25f;
                     homingPower = 0.1f;
                     homingRange = 60f;
                     backColor = Color.valueOf("8FFE09");
@@ -650,14 +650,13 @@ public class JPUnits {
                 x = -11f;
                 y = 2f;
                 mirror = true;
-                layerOffset = -0.01f;
                 bullet = new BasicBulletType(2.5f, 9){{
                     collidesTiles = true;
                     width = 15f;
                     height = 15f;
                     speed = 3f;
-                    lifetime = 30f;
-                    damage = 10f;
+                    lifetime = 45f;
+                    damage = 20f;
                     backColor = Color.valueOf("CBC3E3");
                     frontColor = Color.valueOf("CBC3E3");
                 }};
@@ -781,7 +780,6 @@ public class JPUnits {
                 y = 0f;
                 mirror = true;
                 targetAir = false;
-                layerOffset = -0.01f;
                 bullet = new ArtilleryBulletType(2.5f, 9){{
                     speed = 6f;
                     height = width = 20f;
