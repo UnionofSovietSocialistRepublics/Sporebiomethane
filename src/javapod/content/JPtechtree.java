@@ -83,21 +83,21 @@ public class JPtechtree {
                     node(JPsectorsHM.Frosted);
                 });
             });
-            node(JPItem.Biomass, () -> {
-                node(JPItem.Vanadium, () -> {
-                    node(JPItem.VCA);
-                    node(JPItem.Azurite);
+            nodeProduce(JPItem.Biomass, () -> {
+                nodeProduce(JPItem.Vanadium, () -> {
+                    nodeProduce(JPItem.VCA);
+                    nodeProduce(JPItem.Azurite);
                 });
-                node(JPItem.Zinc);
-                node(JPItem.BioSil, () -> {
-                    node(JPItem.Nanitealloy, () -> {
-                        node(JPItem.Carbinecomposite, () -> {
-                            node(JPItem.Neocells);
+                nodeProduce(JPItem.Zinc);
+                nodeProduce(JPItem.BioSil, () -> {
+                    nodeProduce(JPItem.Nanitealloy, () -> {
+                        nodeProduce(JPItem.Carbinecomposite, () -> {
+                            nodeProduce(JPItem.Neocells);
                         });
                     });
                 });
-                node(JPItem.Fluoresilt, () -> {
-                    node(JPItem.Fluorite);
+                nodeProduce(JPItem.Fluoresilt, () -> {
+                    nodeProduce(JPItem.Fluorite);
                 });
             });
             });
@@ -162,21 +162,21 @@ public class JPtechtree {
                     node(JPsectors.Frost);
                 });
             });
-            node(JPItem.Biomass, () -> {
-                node(JPItem.Vanadium, () -> {
-                    node(JPItem.VCA);
-                    node(JPItem.Azurite);
+            nodeProduce(JPItem.Biomass, () -> {
+                nodeProduce(JPItem.Vanadium, () -> {
+                    nodeProduce(JPItem.VCA);
+                    nodeProduce(JPItem.Azurite);
                 });
-                node(JPItem.Zinc);
-                node(JPItem.BioSil, () -> {
-                    node(JPItem.Nanitealloy, () -> {
-                        node(JPItem.Carbinecomposite, () -> {
-                            node(JPItem.Neocells);
+                nodeProduce(JPItem.Zinc);
+                nodeProduce(JPItem.BioSil, () -> {
+                    nodeProduce(JPItem.Nanitealloy, () -> {
+                        nodeProduce(JPItem.Carbinecomposite, () -> {
+                            nodeProduce(JPItem.Neocells);
                         });
                     });
                 });
-                node(JPItem.Fluoresilt, () -> {
-                    node(JPItem.Fluorite);
+                nodeProduce(JPItem.Fluoresilt, () -> {
+                    nodeProduce(JPItem.Fluorite);
                 });
             });
 });}}};
