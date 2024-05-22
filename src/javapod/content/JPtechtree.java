@@ -15,7 +15,6 @@ import mindustry.game.Objectives.*;
 import mindustry.type.ItemStack;
 import jp.content.*;
 import jp.content.blocks.*;
-
 import static mindustry.content.Blocks.*;
 import static mindustry.content.TechTree.*;
 import static mindustry.content.UnitTypes.*;
@@ -26,12 +25,12 @@ public class JPtechtree {
         if(Core.settings.getBool("HM") == true){
         nodeRoot("Spore biomechs Hardmode", coreShard, false, () -> {
             //Above the skies is the currently the placeholder for now, the required sector will changes later.
-            node(JPOther.Sporecore, Seq.with(new SectorComplete(JPsectorsHM.DS)), () -> {
+            node(JPOther.Sporecore, Seq.with(new SectorComplete(JPsectorsHM.SkiHM)), () -> {
                 node(JPOther.Hive, () -> {
                     node(JPOther.Nydusaecore);
                 });
             });
-            node(JPTurret.Sporegarrison, Seq.with(new SectorComplete(JPsectorsHM.DS)), () -> {
+            node(JPTurret.Sporegarrison, Seq.with(new SectorComplete(JPsectorsHM.SkiHM)), () -> {
                 node(JPTurret.Flakaccelerator, () -> {
                     node(JPTurret.Suppressor);
                  });
@@ -45,7 +44,7 @@ public class JPtechtree {
                 });
     });
             
-            node(JPProduction.Nanoprocessor, Seq.with(new SectorComplete(JPsectorsHM.DS)), () -> {
+            node(JPProduction.Nanoprocessor, Seq.with(new SectorComplete(JPsectorsHM.SkiHM)), () -> {
                 node(JPProduction.Vanadicarbide);
                 node(JPProduction.Gaschamber);
                 node(JPProduction.FR);
@@ -58,7 +57,7 @@ public class JPtechtree {
                     });
                 });
             });
-            node(JPUnitFactory.pool, Seq.with(new SectorComplete(JPsectorsHM.DS)), () -> {
+            node(JPUnitFactory.pool, Seq.with(new SectorComplete(JPsectorsHM.SkiHM)), () -> {
                 node(JPUnitFactory.Synapsetower, () -> {
                     node(JPUnitFactory.Assembler, () -> {
                         node(JPUnitAssembler.ApollyonAssembler);
@@ -76,9 +75,11 @@ public class JPtechtree {
             });
             node(JPProduction.Extractor);
             node(JPOther.VCAwall);
-             node(JPsectorsHM.DS, Seq.with(new SectorComplete(frozenForest)), () -> {
-                node(JPsectorsHM.Frosted);
-             });
+             node(JPsectorsHM.SkiHM, Seq.with(new SectorComplete(frozenForest)), () -> {
+                node(JPsectorsHM.DigHM, Seq.with(new SectorComplete(JPsectorsHM.SkiHM)), () -> {
+                    node(JPsectorsHM.Frosted);
+                });
+            });
             });
 }else {
             nodeRoot("Spore biomechs", coreShard, false, () -> {
@@ -134,8 +135,8 @@ public class JPtechtree {
             node(JPProduction.Extractor);
             node(JPOther.VCAwall);
              node(JPsectors.Ski, Seq.with(new SectorComplete(frozenForest)), () -> {
-                node(JPsectors.Frost);
-             });
+                node(JPsectors.Dig, Seq.with(new SectorComplete(JPsectors.Ski)), () -> {
+                    node(JPsectors.Frost);
+                });
             });
-    }
-}};
+});}}};

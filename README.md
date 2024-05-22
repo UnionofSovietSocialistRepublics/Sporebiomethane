@@ -13,14 +13,14 @@ This is a java port of our mod, for the hjson/js one please check [here](https:/
 #### Above the sky 
 - Unlocks after the crater
 - Introduction to zerg units
-#### name undecided 
+#### Dig Site
 - Unlocked after above the sky
 - unlocks vanadium
 #### Birth
 - First attack sector
 - unlock incubator
 #### Alamka
-- A short attack map with brutal waves to test the player strength
+- A short survival map with brutal waves to test the player strength
 - unlock azurite
 #### Name undecided
 - Introduces baslisk unit which will be used alot of after this map

@@ -207,7 +207,7 @@ public class JPUnits {
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
                     speed = 3f;
-                    lifetime = 75f;
+                    lifetime = 45f;
                     damage = 25f;
                 }};
             }});
