@@ -73,11 +73,31 @@ public class JPtechtree {
                     });
                 });
             });
-            node(JPProduction.Extractor);
+            node(JPProduction.Extractor, () -> {
+                node(JPProduction.ZincExtractor, Seq.with(new SectorComplete(JPsectorsHM.DigHM)), () -> {
+            });
+            });
             node(JPOther.VCAwall);
              node(JPsectorsHM.SkiHM, Seq.with(new SectorComplete(frozenForest)), () -> {
                 node(JPsectorsHM.DigHM, Seq.with(new SectorComplete(JPsectorsHM.SkiHM)), () -> {
                     node(JPsectorsHM.Frosted);
+                });
+            });
+            node(JPItem.Biomass, () -> {
+                node(JPItem.Vanadium, () -> {
+                    node(JPItem.VCA);
+                    node(JPItem.Azurite);
+                });
+                node(JPItem.Zinc);
+                node(JPItem.BioSil, () -> {
+                    node(JPItem.Nanitealloy, () -> {
+                        node(JPItem.Carbinecomposite, () -> {
+                            node(JPItem.Neocells);
+                        });
+                    });
+                });
+                node(JPItem.Fluoresilt, () -> {
+                    node(JPItem.Fluorite);
                 });
             });
             });
@@ -132,11 +152,31 @@ public class JPtechtree {
                     });
                 });
             });
-            node(JPProduction.Extractor);
+            node(JPProduction.Extractor, () -> {
+                node(JPProduction.ZincExtractor, Seq.with(new SectorComplete(JPsectors.Dig)), () -> {
+            });
+            });
             node(JPOther.VCAwall);
              node(JPsectors.Ski, Seq.with(new SectorComplete(frozenForest)), () -> {
                 node(JPsectors.Dig, Seq.with(new SectorComplete(JPsectors.Ski)), () -> {
                     node(JPsectors.Frost);
+                });
+            });
+            node(JPItem.Biomass, () -> {
+                node(JPItem.Vanadium, () -> {
+                    node(JPItem.VCA);
+                    node(JPItem.Azurite);
+                });
+                node(JPItem.Zinc);
+                node(JPItem.BioSil, () -> {
+                    node(JPItem.Nanitealloy, () -> {
+                        node(JPItem.Carbinecomposite, () -> {
+                            node(JPItem.Neocells);
+                        });
+                    });
+                });
+                node(JPItem.Fluoresilt, () -> {
+                    node(JPItem.Fluorite);
                 });
             });
 });}}};

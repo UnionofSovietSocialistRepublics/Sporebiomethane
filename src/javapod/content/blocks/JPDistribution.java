@@ -52,7 +52,7 @@ public class JPDistribution{
         requirements(Category.distribution, with(titanium, 2, silicon, 2, metaglass,4, JPItem.Biomass,1));
         health = 300;
         size = 1;
-        speed = 3.5f;
+        speed = 3f;
     }};
 
 

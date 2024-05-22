@@ -29,16 +29,17 @@ public class JPEnv {
 
     public static void load() {
 	//block part
-		ZincOre = new OreBlock("ZincOre"){{
-			oreDefault = true;
-			variants = 1;
-			oreThreshold = 0.95F;
-			oreScale = 20.380953F;
-			itemDrop = JPItem.Zinc;
-			attributes.set(JPAttribute.Zinc, 1.5f);
-			mapColor.set(itemDrop.color);
-			useColor = true;
-		}};
+		//Official removal of zinc ore (rip bozo)
+		// ZincOre = new OreBlock("ZincOre"){{
+		// 	oreDefault = true;
+		// 	variants = 1;
+		// 	oreThreshold = 0.95F;
+		// 	oreScale = 20.380953F;
+		// 	itemDrop = JPItem.Zinc;
+		// 	attributes.set(JPAttribute.Zinc, 1.5f);
+		// 	mapColor.set(itemDrop.color);
+		// 	useColor = true;
+		// }};
 
         VanadiumOre = new OreBlock("VanadiumOre") {{
         itemDrop = JPItem.Vanadium;
