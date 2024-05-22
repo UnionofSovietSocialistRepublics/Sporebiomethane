@@ -85,19 +85,19 @@ public class JPtechtree {
             });
             nodeProduce(JPItem.Biomass, () -> {
                 nodeProduce(JPItem.Vanadium, () -> {
-                    nodeProduce(JPItem.VCA);
-                    nodeProduce(JPItem.Azurite);
+                    nodeProduce(JPItem.VCA, () -> {});
+                    nodeProduce(JPItem.Azurite, () -> {});
                 });
-                nodeProduce(JPItem.Zinc);
+                nodeProduce(JPItem.Zinc, () -> {});
                 nodeProduce(JPItem.BioSil, () -> {
                     nodeProduce(JPItem.Nanitealloy, () -> {
                         nodeProduce(JPItem.Carbinecomposite, () -> {
-                            nodeProduce(JPItem.Neocells);
+                            nodeProduce(JPItem.Neocells, () -> {});
                         });
                     });
                 });
                 nodeProduce(JPItem.Fluoresilt, () -> {
-                    nodeProduce(JPItem.Fluorite);
+                    nodeProduce(JPItem.Fluorite, () -> {});
                 });
             });
             });
@@ -164,19 +164,19 @@ public class JPtechtree {
             });
             nodeProduce(JPItem.Biomass, () -> {
                 nodeProduce(JPItem.Vanadium, () -> {
-                    nodeProduce(JPItem.VCA);
-                    nodeProduce(JPItem.Azurite);
+                    nodeProduce(JPItem.VCA, () -> {});
+                    nodeProduce(JPItem.Azurite, () -> {});
                 });
-                nodeProduce(JPItem.Zinc);
+                nodeProduce(JPItem.Zinc, () -> {});
                 nodeProduce(JPItem.BioSil, () -> {
                     nodeProduce(JPItem.Nanitealloy, () -> {
                         nodeProduce(JPItem.Carbinecomposite, () -> {
-                            nodeProduce(JPItem.Neocells);
+                            nodeProduce(JPItem.Neocells, () -> {});
                         });
                     });
                 });
                 nodeProduce(JPItem.Fluoresilt, () -> {
-                    nodeProduce(JPItem.Fluorite);
+                    nodeProduce(JPItem.Fluorite, () -> {});
                 });
             });
 });}}};
