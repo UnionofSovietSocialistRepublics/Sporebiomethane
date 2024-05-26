@@ -110,7 +110,7 @@ public class JPTurret{
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
                     lightColor = Color.valueOf("8B73C7");
-                }}
+                }};
                JPItem.Biomass, new FlakBulletType(){{
                     lifetime = 40f;
                     damage = 30f;
@@ -134,7 +134,7 @@ public class JPTurret{
                         despawnEffect = Fx.none;
                         collidesGround = false;
                     }};
-                }});
+                }};);
                 coolant = consumeCoolant(0.1f);
                 drawer = new DrawTurret(){{
                 parts.add(new RegionPart("-canright"){{
@@ -178,7 +178,7 @@ public class JPTurret{
                     shootEffect = Fx.shootSmall;
                     smokeEffect = Fx.shootSmallSmoke;
                     collidesGround = true;
-                }}
+                }};
                JPItem.Biomass, new BasicBulletType(){{
                     lifetime = 75f;
                     damage = 225f;
@@ -192,7 +192,7 @@ public class JPTurret{
                     collidesGround = true;
                     despawnEffect = Fx.blastExplosion;
                     pierceArmor = true;
-                }});
+                }};);
                 shootSound = JPSounds.Arty;
                 coolantMultiplier = 0.5f;
                 coolant = consumeCoolant(0.5f);
