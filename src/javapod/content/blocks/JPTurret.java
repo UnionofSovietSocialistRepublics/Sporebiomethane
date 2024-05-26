@@ -103,6 +103,14 @@ public class JPTurret{
             rotateSpeed = 10f;
 
             ammo(
+                sporePod, new FlakBulletType(){{
+                    lifetime = 40f;
+                    damage = 50f;
+                    speed = 5f;
+                    backColor = Color.valueOf("8B73C7");
+                    frontColor = Color.valueOf("8B73C7");
+                    lightColor = Color.valueOf("8B73C7");
+                }}
                JPItem.Biomass, new FlakBulletType(){{
                     lifetime = 40f;
                     damage = 30f;
@@ -158,8 +166,19 @@ public class JPTurret{
             shoot.shotDelay = 10f;
             inaccuracy = 2f;
             rotateSpeed = 10f;
-
             ammo(
+                sporePod, new FlakBulletType(){{
+                    lifetime = 75f;
+                    damage = 100f;
+                    speed = 4f;
+                    backColor = Color.valueOf("8B73C7");
+                    frontColor = Color.valueOf("8B73C7");
+                    lightColor = Color.valueOf("8B73C7");
+                    width = height = 15f;
+                    shootEffect = Fx.shootSmall;
+                    smokeEffect = Fx.shootSmallSmoke;
+                    collidesGround = true;
+                }}
                JPItem.Biomass, new BasicBulletType(){{
                     lifetime = 75f;
                     damage = 225f;
@@ -190,8 +209,37 @@ public class JPTurret{
             health = 750;
             inaccuracy = 2f;
             rotateSpeed = 10f;
-
             ammo(
+                sporePod, new FlakBulletType(){{
+                    lifetime = 50f;
+                    damage = 25f;
+                    splashDamage = 5f;
+                    splashDamageRadius = 15f;
+                    speed = 5f;
+                    height = width = 15f;
+                    fragBullets = 5;
+                    statusDuration = 60f * 3;
+                    status = StatusEffects.slow;
+                    backColor = Color.valueOf("8B73C7");
+                    frontColor = Color.valueOf("8B73C7");
+                    lightColor = Color.valueOf("8B73C7");
+                    collidesGround = true;
+                    collidesAir = true;
+                    fragBullet = new BasicBulletType(3f, 5){{
+                        width = 5f;
+                        height = 5f;
+                        backColor = Color.valueOf("8B73C7");
+                        frontColor = Color.valueOf("8B73C7");
+                        lightColor = Color.valueOf("8B73C7");
+                        damage = 5f;
+                        lifetime = 20f;
+                        backColor = Pal.gray;
+                        frontColor = Color.white;
+                        despawnEffect = Fx.none;
+                        collidesGround = true;
+                        collidesAir = true;
+                    }};
+                }}
                JPItem.Biomass, new FlakBulletType(){{
                     lifetime = 50f;
                     damage = 75f;
@@ -199,7 +247,7 @@ public class JPTurret{
                     splashDamageRadius = 15f;
                     speed = 5f;
                     height = width = 15f;
-                    fragBullets = 10;
+                    fragBullets = 7;
                     statusDuration = 60f * 5;
                     status = StatusEffects.slow;
                     //sprite = "ExplodingTNT";
@@ -275,7 +323,7 @@ public class JPTurret{
 
                shootType = new BasicBulletType(){{
                     height = width = 15F;
-                    damage = 80f;
+                    damage = 150f;
                     speed = 5f;
                     fragBullets = 6;
                     backColor = Color.valueOf("8B73C7");

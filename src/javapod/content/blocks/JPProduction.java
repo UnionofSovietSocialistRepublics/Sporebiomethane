@@ -182,7 +182,7 @@ public class JPProduction{
             consumeItems(with(JPItem.Vanadium, 5,JPItem.BioSil, 3));
         }};
         ZincExtractor = new GenericCrafter("ZincExtractor"){{
-            requirements(Category.power, with(silicon, 175,JPItem.Vanadium, 125,JPItem.Biomass, 50));
+            requirements(Category.production, with(silicon, 175,JPItem.Vanadium, 125,JPItem.Biomass, 50));
             health = 625;
             size = 2;
             outputItem = new ItemStack(JPItem.Zinc, 1);
