@@ -104,8 +104,8 @@ public class JPTurret{
 
             ammo(
                 sporePod, new FlakBulletType(){{
-                    lifetime = 40f;
-                    damage = 115f;
+                    lifetime = 65f;
+                    damage = 145f;
                     splashDamage = 5f;
                     splashDamageRadius = 15f;
                     speed = 5f;
@@ -114,12 +114,12 @@ public class JPTurret{
                     lightColor = Color.valueOf("8B73C7");
                 }},
                JPItem.Biomass, new FlakBulletType(){{
-                    lifetime = 40f;
+                    lifetime = 65f;
                     damage = 25f;
                     speed = 5f;
                     fragBullets = 6;
-                    splashDamage = 55f;
-                    splashDamageRadius = 25f;
+                    splashDamage = 50f;
+                    splashDamageRadius = 35f;
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
                     lightColor = Color.valueOf("8B73C7");
@@ -218,13 +218,13 @@ public class JPTurret{
             ammo(
                 sporePod, new FlakBulletType(){{
                     lifetime = 50f;
-                    damage = 25f;
+                    damage = 15f;
                     splashDamage = 5f;
-                    splashDamageRadius = 15f;
+                    splashDamageRadius = 35f;
                     speed = 5f;
                     height = width = 15f;
-                    fragBullets = 5;
-                    statusDuration = 60f * 3;
+                    fragBullets = 2;
+                    statusDuration = 60f * 7;
                     status = StatusEffects.slow;
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
@@ -250,7 +250,7 @@ public class JPTurret{
                     lifetime = 50f;
                     damage = 75f;
                     splashDamage = 25f;
-                    splashDamageRadius = 15f;
+                    splashDamageRadius = 30f;
                     speed = 5f;
                     height = width = 15f;
                     fragBullets = 7;
@@ -337,13 +337,13 @@ public class JPTurret{
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
                     lightColor = Color.valueOf("8B73C7");
+                    ammoMultiplier = 1f;
                     fragBullet = new BasicBulletType(3f, 5){{
                         width = 5f;
                         height = 5f;
                         backColor = Color.valueOf("8B73C7");
                         frontColor = Color.valueOf("8B73C7");
                         lightColor = Color.valueOf("8B73C7");
-                        ammoMultiplier = 1f;
                         damage = 25f;
                         lifetime = 25f;
                         backColor = Pal.gray;
@@ -373,11 +373,11 @@ public class JPTurret{
             rotateSpeed = 10f;
 
             ammo(
-               JPItem.Biomass, new BasicBulletType(){{
+               sporePod, new BasicBulletType(){{
                     lifetime = 45f;
                     damage = 15f;
                     splashDamage = 65f;
-                    splashDamageRadius = 20f;
+                    splashDamageRadius = 35f;
                     speed = 5f;
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
