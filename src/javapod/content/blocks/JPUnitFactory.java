@@ -23,11 +23,11 @@ import static mindustry.content.Items.*;
 
 public class JPUnitFactory{
     public static UnitFactory
-        pool,Synapsetower,Assembler,Gestator,
+        Pool,Synapsetower,Assembler,Gestator,
         ApollyonAssembler;
 
         public static void load(){
-        pool = new UnitFactory("pool"){{
+        Pool = new UnitFactory("Pool"){{
             requirements(Category.units, with(silicon,150,JPItem.Biomass,45));
             plans = Seq.with(
                 new UnitPlan( JPUnits.Zergling, 15 * 60f, with(silicon, 65,JPItem.Biomass,10)),
