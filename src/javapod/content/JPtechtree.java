@@ -57,7 +57,7 @@ public class JPtechtree {
                     });
                 });
             });
-            node(JPUnitFactory.pool, Seq.with(new SectorComplete(JPsectorsHM.SkiHM)), () -> {
+            node(JPUnitFactory.Pool, Seq.with(new SectorComplete(JPsectorsHM.SkiHM)), () -> {
                 node(JPUnitFactory.Synapsetower, () -> {
                     node(JPUnitFactory.Assembler, () -> {
                         node(JPUnitAssembler.ApollyonAssembler);
@@ -136,7 +136,7 @@ public class JPtechtree {
                     });
                 });
             });
-            node(JPUnitFactory.pool, Seq.with(new SectorComplete(JPsectors.Ski)), () -> {
+            node(JPUnitFactory.Pool, Seq.with(new SectorComplete(JPsectors.Ski)), () -> {
                 node(JPUnitFactory.Synapsetower, () -> {
                     node(JPUnitFactory.Assembler, () -> {
                         node(JPUnitAssembler.ApollyonAssembler);
