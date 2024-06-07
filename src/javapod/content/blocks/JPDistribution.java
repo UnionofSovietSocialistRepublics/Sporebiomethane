@@ -44,11 +44,11 @@ import static mindustry.content.Items.*;
 
 public class JPDistribution{
     public static Block
-    itempipe;
+    Itempipe;
 
     public static void load(){
     
-    itempipe = new Duct("item-pipe"){{
+    Itempipe = new Duct("Item-pipe"){{
         requirements(Category.distribution, with(titanium, 2, silicon, 2, metaglass,4, JPItem.Biomass,1));
         health = 300;
         size = 1;

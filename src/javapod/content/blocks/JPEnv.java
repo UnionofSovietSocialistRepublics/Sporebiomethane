@@ -23,9 +23,9 @@ public class JPEnv {
 	//define the block name
 	//for the love of god rename those if you want to rename the block below
     ZincOre, VanadiumOre,AzuriteOre,
-    wall,
-	siltMoss,Fluoresiltile,silt,tile,
-	blackboulder;
+    Wall,
+	SiltMoss,Fluoresiltile,Silt,Tile,
+	Blackboulder;
 
     public static void load() {
 	//block part
@@ -51,23 +51,23 @@ public class JPEnv {
 		variants = 3;
         }};
 
-        wall = new StaticWall("wall"){{
+        Wall = new StaticWall("Wall"){{
 			variants = 1;
 		}};
-        siltMoss = new Floor("silt-moss"){{
+        SiltMoss = new Floor("Silt-moss"){{
 			variants = 3;
 		}};
         Fluoresiltile = new Floor("Fluoresiltile"){{
 			variants = 4;
 			itemDrop = JPItem.Fluoresilt;
 		}};
-        silt = new Floor("silt"){{
+        Silt = new Floor("Silt"){{
 			variants = 4;
 		}};
-        tile = new Floor("tile"){{
+        Tile = new Floor("Tile"){{
 			variants = 2;
 		}};
-        blackboulder = new Prop("blackboulder"){{
+        Blackboulder = new Prop("Blackboulder"){{
 			variants = 1;
 		}};
     }
