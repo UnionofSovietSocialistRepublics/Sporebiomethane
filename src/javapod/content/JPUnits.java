@@ -262,7 +262,7 @@ public class JPUnits {
             }};
             Autus = new UnitType("Autus"){{
             this.constructor = LegsUnit::create;
-            speed = 1f;
+            speed = 0.75f;
             hitSize = 8f;
             health = 1500;
             armor = 7;
