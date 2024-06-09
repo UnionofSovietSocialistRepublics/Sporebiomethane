@@ -52,13 +52,15 @@ public class JPTurret{
 
         Impalercannon= new ItemTurret("Impalercannon"){{
             requirements(Category.turret, with(surgeAlloy, 750, JPItem.Nanitealloy, 500,thorium, 500,silicon, 450));
-            health = 3600;
+            health = 3000;
             size = 4;
             range = 300f;
             rotateSpeed = 2f;
             reload = 160f;
-            recoil = 2f;
+            recoil = 4f;
+            shake = 4f;
             shootCone = 2f;
+            maxAmmo = 60;
             ammoPerShot = 5;
             ammoUseEffect = Fx.casing1;
             inaccuracy = 2f;
@@ -77,7 +79,9 @@ public class JPTurret{
                     speed = 500f;
                     ammoMultiplier = 1.5f;
                     pierceArmor = true;
-                }});
+                    hitShake = 6f;
+            }});
+            rotateSpeed = 2.5f;
             coolantMultiplier = 0.2f;
             coolant = consumeCoolant(2f);
             consumePower(7f);

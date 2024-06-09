@@ -125,12 +125,14 @@ public class JPUnits {
                     splashDamageRadius = 60f;
                     killShooter = true;
                     collidesAir = true;
+                    hitSound = Sounds.explosion;
                 }};
+                shootSound = Sounds.explosion;
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};        
-                Imp = new UnitType("Imp"){{
+            Imp = new UnitType("Imp"){{
             this.constructor = LegsUnit::create;
             speed = 1.5f;
             hitSize = 8f;
@@ -147,11 +149,14 @@ public class JPUnits {
                     width = 0f;
                     height = 0f;
                     lifetime = 10f;
-                    splashDamage = 175f;
+                    splashDamage = 150f;
                     splashDamageRadius = 60f;
                     killShooter = true;
                     collidesAir = true;
+                    buildingDamageMultiplier = 1.75f;
+                    hitSound = Sounds.explosion;
                 }};
+                shootSound = Sounds.explosion;
             }});
             immunities.add(StatusEffects.burning);
             immunities.add(StatusEffects.melting);
@@ -186,7 +191,10 @@ public class JPUnits {
                     splashDamageRadius = 60f;
                     killShooter = true;
                     collidesAir = true;
+                    buildingDamageMultiplier = 1.25f;
+                    hitSound = Sounds.explosion;
                 }};
+                shootSound = Sounds.explosion;
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});
@@ -234,7 +242,7 @@ public class JPUnits {
                 x = 0;
                 y = 5;
                 shootY = 0f;
-                reload = 12f;
+                reload = 25f;
                 shootCone = 180f;
                 ejectEffect = Fx.none;
                 inaccuracy = 15f;
@@ -286,7 +294,7 @@ public class JPUnits {
                 ejectEffect = Fx.none;
                 bullet = new BasicBulletType(2.5f, 9){{
                     collidesAir = true;
-                    damage = 65f;
+                    damage = 50f;
                     lifetime = 15f;
                     lightColor = Color.valueOf("8B73C7");
                     pierce = true;
@@ -376,6 +384,7 @@ public class JPUnits {
                             collidesAir = true;
                             splashDamage = 145f;
                             splashDamageRadius = 30f;
+                            buildingDamageMultiplier = 0.5f;
                     }};}});
                     outlineColor = Color.valueOf("303a45");
                     }};
@@ -446,7 +455,7 @@ public class JPUnits {
                     smokeEffect = Fx.shootBigSmoke;
                     splashDamage = 30f;
                     splashDamageRadius = 25f;
-                    lifetime = 50f;
+                    lifetime = 75f;
                     //statusDuration = 60f * 4;
                     //status = StatusEffects.slow;
                     backColor = Color.valueOf("8B73C7");
@@ -547,7 +556,7 @@ public class JPUnits {
                     width = 7f;
                     damage = 145f;
                     splashDamage = 145f;
-                    splashDamageRadius = 5f;
+                    splashDamageRadius = 25f;
                     lifetime = 75f;
                     statusDuration = 60f * 4;
                     status = JPStatus.Dissolving;
@@ -582,7 +591,7 @@ public class JPUnits {
                 mirror = false;
                 targetAir = false;
                 shoot.shots = 4;
-                inaccuracy = 0.1f;
+                inaccuracy = 12f;
                 velocityRnd = 0.2f;
                 bullet = new ArtilleryBulletType(2.5f, 9){{
                     speed = 6f;
@@ -788,7 +797,7 @@ public class JPUnits {
                     damage = 90f;
                     splashDamage = 90f;
                     splashDamageRadius = 17f;
-                    lifetime = 50f;
+                    lifetime = 25f;
                     statusDuration = 60f * 4;
                     status = JPStatus.Dissolving;
                     backColor = Color.valueOf("8FFE09");
@@ -829,14 +838,14 @@ public class JPUnits {
                 bullet = new BasicBulletType(2.5f, 9){{
                     collidesAir = true;
                     speed = 6f;
-                    damage = 35f;
+                    damage = 65f;
                     lifetime = 15f;
                     width = height = 0.1f;
                     despawnEffect = Fx.none;
                     lightColor = Color.valueOf("8B73C7");
                     pierce = true;
                     pierceBuilding = true;
-                    pierceCap = 3;
+                    pierceCap = 2;
                     shootEffect = new ParticleEffect() {{
                     particles = 190;
                     sizeFrom = 5f;
