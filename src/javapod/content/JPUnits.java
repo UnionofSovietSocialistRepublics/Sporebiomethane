@@ -797,7 +797,7 @@ public class JPUnits {
                     damage = 90f;
                     splashDamage = 90f;
                     splashDamageRadius = 17f;
-                    lifetime = 25f;
+                    lifetime = 40f;
                     statusDuration = 60f * 4;
                     status = JPStatus.Dissolving;
                     backColor = Color.valueOf("8FFE09");
@@ -838,7 +838,7 @@ public class JPUnits {
                 bullet = new BasicBulletType(2.5f, 9){{
                     collidesAir = true;
                     speed = 6f;
-                    damage = 65f;
+                    damage = 75f;
                     lifetime = 15f;
                     width = height = 0.1f;
                     despawnEffect = Fx.none;

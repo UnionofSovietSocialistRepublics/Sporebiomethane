@@ -54,7 +54,7 @@ public class JPTurret{
             requirements(Category.turret, with(surgeAlloy, 750, JPItem.Nanitealloy, 500,thorium, 500,silicon, 450));
             health = 3000;
             size = 4;
-            range = 300f;
+            range = 325f;
             rotateSpeed = 2f;
             reload = 160f;
             recoil = 4f;
