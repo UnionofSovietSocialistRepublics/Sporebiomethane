@@ -34,7 +34,7 @@ import static mindustry.Vars.*;
 public class JPUnits {
     public static UnitType
     //Legs
-    Carci,Imp, Basilisk, Autus, Baneling, Zergling, Behomoth, Lobber, Breacher, Scarabid, Frost, Roach, Purger, Gorgon,
+    Carci,Imp, Basilisk, Autus, Baneling, Zergling, Behomoth, Lobber, Breacher, Scarabid, Frost, Roach, Purger, Gorgon, Raptor,
     //missiles
     Bomb,
     //Floaty
@@ -218,6 +218,41 @@ public class JPUnits {
                     lifetime = 45f;
                     damage = 25f;
                 }};
+            }});
+            outlineColor = Color.valueOf("303a45");
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
+            }};
+
+            Raptor = new UnitType("Raptor"){{
+            this.constructor = LegsUnit::create;
+            speed = 2f;
+            armor = 2f;
+            hitSize = 8f;
+            health = 450;
+            range = 50f;
+            legCount = 4;
+            weapons.add(new Weapon("claws"){{
+                reload = 20f;
+                x = 0f;
+                mirror = false;
+                y = 0f;
+                bullet = new BasicBulletType(2.5f, 9){{
+                    backColor = Color.valueOf("8B73C7");
+                    frontColor = Color.valueOf("8B73C7");
+                    speed = 3f;
+                    lifetime = 45f;
+                    damage = 35f;
+                }};
+            }});
+            parts.add(new RegionPart("-wing"){{
+                mirror = true;
+                progress = PartProgress.recoil;
+                // layerOffset= -0.0001f;
+                x = 3.5f;
+                y = -6f;
+                // moveX = 1.5f;
+                // moveY = -1.25f;
+                // moveRot = 10f;
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
