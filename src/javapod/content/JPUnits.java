@@ -516,7 +516,7 @@ public class JPUnits {
             legExtension = -15f;
             legBaseOffset = 10f;
             weapons.add(new Weapon(name + "-gun"){{
-                reload = 200f;
+                reload = 160f;
                 x = 0f;
                 y = -23f;
                 recoil = 6f;
@@ -528,7 +528,7 @@ public class JPUnits {
                     height = 30f;
                     speed = 6f;
                     lifetime = 50f;
-                    splashDamage = 150f;
+                    splashDamage = 100f;
                     splashDamageRadius = 25f;
                     status = StatusEffects.slow;
                     statusDuration = 60f * 4;
@@ -541,7 +541,7 @@ public class JPUnits {
 
             }});
             weapons.add(new Weapon(name + "-mini"){{
-                reload = 10f;
+                reload = 5f;
                 x = -15f;
                 y = -23f;
                 mirror = true;
@@ -549,9 +549,9 @@ public class JPUnits {
                 bullet = new BasicBulletType(2.5f, 9){{
                     width = 15f;
                     height = 15f;
-                    speed = 3f;
-                    lifetime = 65f;
-                    damage = 45f;
+                    speed = 4.5f;
+                    lifetime = 70f;
+                    damage = 50f;
                     backColor = Color.valueOf("CBC3E3");
                     frontColor = Color.valueOf("CBC3E3");
                     collides = true;
@@ -561,7 +561,7 @@ public class JPUnits {
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (200f * 60f * 2f) * 100f;}});
-            abilities.add(new UnitSpawnAbility(Lobber,550f,0f,-7f));
+            abilities.add(new UnitSpawnAbility(Lobber,475f,0f,-7f));
             }};
 
             Guardian = new UnitType("Guardian"){{
