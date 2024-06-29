@@ -509,7 +509,7 @@ public class JPUnits {
             speed = 0.65f;
             hitSize = 44f;
             armor = 6;
-            health = 9000;
+            health = 14000;
             range = 50f;
             legCount = 4;
             legLength = 30f;
@@ -1220,15 +1220,15 @@ public class JPUnits {
             this.constructor = LegsUnit::create;
             speed = 1f;
             hitSize = 27f;
-            health = 6000;
+            health = 12000;
             range = 150f;    
             legCount = 4;
             legLength = 25f; 
             weapons.add(new Weapon("Mouh"){{
-                reload = 200f;
+                reload = 300f;
                 shootY = 8f;
                 x = 0f;
-                y = 0f;
+                y = 26f;
                 continuous = true;
                 shoot.firstShotDelay = Fx.greenLaserChargeSmall.lifetime - 1f;
                 chargeSound = Sounds.lasercharge2;
@@ -1237,9 +1237,9 @@ public class JPUnits {
                 bullet = new ContinuousLaserBulletType(){{
                     width = 2f;
                     damage = 65f;
-                    length = 125f;
-                    drawSize = 100f;
-                    lifetime = 125f;
+                    length = 180f;
+                    drawSize = 420f;
+                    lifetime = 160f;
                     damage = 45f;
                     lifetime = 50f;
                     healPercent = 1f;
