@@ -1244,6 +1244,7 @@ public class JPUnits {
                     lifetime = 50f;
                     healPercent = 1f;
                     collidesTeam = true;
+                    chargeEffect = Fx.greenLaserChargeSmall;
                     colors = new Color[]{Color.valueOf("8B73C7"), Color.valueOf("A865C9"), Color.valueOf("A865C9"), Color.valueOf("ffffff")};
                 }};
             }});
@@ -1303,7 +1304,7 @@ public class JPUnits {
 
             weapons.add(new Weapon(name + "-Invis"){{
                 mirror = false;
-                shoot.shotDelay = 5f;
+                shoot.firstShotDelay = 125f;
                 shoot = new ShootSpread(10, 5f);
                 velocityRnd = 0.4f;
                 inaccuracy = 7f;
