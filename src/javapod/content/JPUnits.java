@@ -41,8 +41,8 @@ public class JPUnits {
     Guardian,Thera,DeathImp,Drone,Interceptor,Hivedefender,HiveSentinel,Sporophage,Rizomorph,
     //Le tether
     Zeta,
-    //Outcast
-    Gragoth, Slasher, Curbork, Sinrak;
+    //Winged
+    Gragoth, Slasher, Saboteur, Protectorate, Spawner;
     private static final ObjectMap.Entry<Class<? extends Entityc>, Prov<? extends Entityc>>[] types = new ObjectMap.Entry[]{
             prov(JPCopterUnitEntity.class, JPCopterUnitEntity::new)
     };
@@ -508,7 +508,7 @@ public class JPUnits {
             this.constructor = LegsUnit::create;
             speed = 0.65f;
             hitSize = 44f;
-            armor = 11;
+            armor = 6;
             health = 9000;
             range = 50f;
             legCount = 4;
@@ -516,6 +516,7 @@ public class JPUnits {
             legExtension = -15f;
             legBaseOffset = 10f;
             weapons.add(new Weapon(name + "-gun"){{
+                layerOffset = 1f;
                 reload = 160f;
                 x = 0f;
                 y = -23f;
@@ -1358,7 +1359,7 @@ public class JPUnits {
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};
-            Sinrak = new JPCopterUnitType("Sinrak"){{
+            Protectorate = new JPCopterUnitType("Protectorate"){{
             speed = 1.25f;
             armor = 4;
             hitSize = 9f;
@@ -1405,7 +1406,7 @@ public class JPUnits {
             abilities.add(new StatusFieldAbility(StatusEffects.overclock, 60f * 6, 60f * 4f, 60f));
             abilities.add(new ShieldRegenFieldAbility(25f, 250f, 60f * 6, 60f));
         }};
-            Curbork = new JPCopterUnitType("Curbork"){{
+            Saboteur = new JPCopterUnitType("Saboteur"){{
             speed = 1.25f;
             armor = 2;
             hitSize = 9f;
