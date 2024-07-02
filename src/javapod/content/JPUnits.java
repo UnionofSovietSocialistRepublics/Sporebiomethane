@@ -1547,7 +1547,6 @@ public class JPUnits {
                         // backColor = Pal.gray;
                         // frontColor = Color.white;
                         despawnEffect = Fx.none;
-                        collidesGround = false;
                     }};
                 }};
             }});
