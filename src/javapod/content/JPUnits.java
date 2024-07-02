@@ -42,7 +42,7 @@ public class JPUnits {
     //Le tether
     Zeta,
     //Winged
-    Gragoth, Slasher, Saboteur, Protectorate, Spawner, Spitter;
+    Gragoth, Slasher, Saboteur, Protectorate, Carrier, Spitter;
     private static final ObjectMap.Entry<Class<? extends Entityc>, Prov<? extends Entityc>>[] types = new ObjectMap.Entry[]{
             prov(JPCopterUnitEntity.class, JPCopterUnitEntity::new)
     };
@@ -1492,11 +1492,9 @@ public class JPUnits {
             abilities.add(new RegenAbility(){{percentAmount = 1f / (90f * 60f * 2f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};
-            Spawner = new JPCopterUnitType("Spawner"){{
-            armor = 2;
+            Carrier = new JPCopterUnitType("Carrier"){{
             speed = 1.65f;
-            // accel = 0.08f;
-            // drag = 0.016f;
+            armor = 2;
             flying = true;
             hitSize = 10f;
             hitSize = 8f;
