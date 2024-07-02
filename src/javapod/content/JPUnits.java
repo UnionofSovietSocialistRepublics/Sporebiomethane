@@ -1457,4 +1457,111 @@ public class JPUnits {
             abilities.add(new RegenAbility(){{percentAmount = 1f / (90f * 60f * 2f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};
+            Spawner = new JPCopterUnitType("Spawner"){{
+            speed = 1.65f;
+            // accel = 0.08f;
+            // drag = 0.016f;
+            flying = true;
+            hitSize = 10f;
+            hitSize = 8f;
+            health = 980;
+            targetAir = false;
+            range = 140f;
+            faceTarget = false;
+            circleTarget = true;
+            weapons.add(new Weapon("Eggspawner"){{
+                x = 6f;
+                y = 6f;
+                mirror = true;
+                reload = 300f;
+                top = false;
+                alwaysShooting = true;
+                shootEffect = Fx.none;
+                shootSound = Sounds.none;
+                bullet = new BasicBulletType(2.5f, 9){{
+                    collidesAir = false;
+                    width = 0f;
+                    height = 0f;
+                    lifetime = 10f;
+                    damage = 0f;
+                    spawnUnit = new MissileUnitType("egg"){{
+                    flying = false;
+                    speed = 0f;
+                    useUnitCap = false;
+                    lifetime = 123f;
+                    health = 600f;
+                    hitSize = 3f;
+                    hidden = true;
+                    drawCell = false;
+                    outlineColor = Color.valueOf("303a45");
+                    abilities.add(new UnitSpawnAbility(Protectorate,120f,0f,0f));
+                    abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * -500f;}});
+                    }};
+                }};
+            }});
+            weapons.add(new Weapon("Ambutakam"){{
+                minShootVelocity = 0.75f;
+                x = 0;
+                y = 5;
+                shootY = 0f;
+                reload = 100f;
+                shootCone = 180f;
+                ejectEffect = Fx.none;
+                inaccuracy = 15f;
+                ignoreRotation = true;
+                shoot.shots = 3;
+                shoot.shotDelay = 10f;
+                shootSound = Sounds.none;
+                bullet = new BombBulletType(27f, 25f){{
+                    fragBullets = 3;
+                    width = 10f;
+                    height = 14f;
+                    hitEffect = Fx.flakExplosion;
+                    shootEffect = Fx.none;
+                    smokeEffect = Fx.none;
+                    splashDamage = 45f;
+                    // backColor = Color.valueOf("8FFE09");
+                    // frontColor = Color.valueOf("8FFE09");
+                    // lightColor = Color.valueOf("8FFE09");
+                    backColor = Color.valueOf("8B73C7");
+                    frontColor = Color.valueOf("8B73C7");
+                    lightColor = Color.valueOf("8B73C7");
+                    splashDamageRadius = 32f;
+                    status = StatusEffects.blasted;
+                    statusDuration = 60f;
+                    fragBullet = new BombBulletType(27f, 25f){{
+                        shrinkX = 0f;
+                        shrinkY = 0f;
+                        spin = 4.6f;
+                        damage = 15f;
+                        speed = 6;
+                        damage = 45f;
+                        splashDamage = 25f;
+                        splashDamageRadius = 32f;
+                        width = 10f;
+                        height = 7f;
+                        backColor = Color.valueOf("8B73C7");
+                        frontColor = Color.valueOf("8B73C7");
+                        lightColor = Color.valueOf("8B73C7");
+                        lifetime = 75f;
+                        // backColor = Pal.gray;
+                        // frontColor = Color.white;
+                        despawnEffect = Fx.none;
+                        collidesGround = false;
+                    }};
+                }};
+            }});
+            blade.add(
+                new Blade(name + "-wing1"){{
+                y = -1f; x = 4f;
+                bladeMoveSpeed = 80f;
+                bladeBlurAlphaMultiplier = 0.5f;
+                //bladeLayer = -1f;
+            }});
+            outlineColor = Color.valueOf("303a45");
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
+            abilities.add(new SpawnDeathAbility(Saboteur, 2, 11f));
+            abilities.add(new SpawnDeathAbility(Protectorate, 2, 11f));
+            abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
+            }};
 }}
