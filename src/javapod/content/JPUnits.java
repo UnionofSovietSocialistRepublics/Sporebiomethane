@@ -1476,9 +1476,9 @@ public class JPUnits {
                 reload = 300f;
                 top = false;
                 alwaysShooting = true;
-                shootEffect = Fx.none;
                 shootSound = Sounds.none;
                 bullet = new BasicBulletType(2.5f, 9){{
+                    shootEffect = Fx.none;
                     collidesAir = false;
                     width = 0f;
                     height = 0f;
