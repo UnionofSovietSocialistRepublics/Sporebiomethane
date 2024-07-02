@@ -42,7 +42,7 @@ public class JPUnits {
     //Le tether
     Zeta,
     //Winged
-    Gragoth, Slasher, Saboteur, Protectorate, Spawner;
+    Gragoth, Slasher, Saboteur, Protectorate, Spawner, Spitter;
     private static final ObjectMap.Entry<Class<? extends Entityc>, Prov<? extends Entityc>>[] types = new ObjectMap.Entry[]{
             prov(JPCopterUnitEntity.class, JPCopterUnitEntity::new)
     };
@@ -1418,12 +1418,10 @@ public class JPUnits {
             accel = 0.11f;
             engineSize = 0f;
             weapons.add(new Weapon("Copperballs"){{
-                mirror = false;
                 reload = 50f;
                 x = 0f;
                 y = 0f;
                 layerOffset = -1f;
-                mirror = false;
                 bullet = new BasicBulletType(3.7f, 18){{
                     recoil = 4f;
                     statusDuration = 60f * 4;
@@ -1457,7 +1455,45 @@ public class JPUnits {
             abilities.add(new RegenAbility(){{percentAmount = 1f / (90f * 60f * 2f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};
+            Spitter = new JPCopterUnitType("Spitter"){{
+            speed = 1.5f;
+            armor = 3;
+            hitSize = 9f;
+            health = 600;
+            flying = true;
+            targetAir = false;
+            targetFlags = new BlockFlag[]{BlockFlag.extinguisher, null};
+            weapons.add(new Weapon(name + "-Gun"){{
+                recoil = 1f;
+                reload = 5f;
+                x = 0f;
+                y = 4f;
+                layerOffset = -1f;
+                shootSound = Sounds.flame;
+                bullet = new LiquidBulletType(Liquids.neoplasm){{
+                    lifetime = 47f;
+                    damage = 25f;
+                    splashDamage = 25f;
+                    splashDamageRadius = 25f;
+                    collidesAir = false;
+                    // hitEffect = Fx.blastExplosion;
+                    // despawnEffect = Fx.blastExplosion;
+                }};
+            }});
+            blade.add(
+                new Blade(name + "-wing"){{
+                y = -1f; x = 5f;
+                bladeMoveSpeed = 80f;
+                bladeBlurAlphaMultiplier = 0.5f;
+                //bladeLayer = -1f;
+            }});
+            healColor = Color.valueOf("590e14");
+            outlineColor = Color.valueOf("303a45");
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (90f * 60f * 2f) * 100f;}});
+            abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
+        }};
             Spawner = new JPCopterUnitType("Spawner"){{
+            armor = 2;
             speed = 1.65f;
             // accel = 0.08f;
             // drag = 0.016f;
@@ -1473,6 +1509,7 @@ public class JPUnits {
                 x = 6f;
                 y = 6f;
                 mirror = true;
+                shoot.firstShotDelay = 200f;
                 reload = 400f;
                 top = false;
                 alwaysShooting = true;
@@ -1557,6 +1594,7 @@ public class JPUnits {
                 bladeBlurAlphaMultiplier = 0.5f;
                 //bladeLayer = -1f;
             }});
+            healColor = Color.valueOf("590e14");
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
             abilities.add(new SpawnDeathAbility(Saboteur, 1, 11f));
