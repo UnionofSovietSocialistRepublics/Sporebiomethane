@@ -1473,7 +1473,7 @@ public class JPUnits {
                 x = 6f;
                 y = 6f;
                 mirror = true;
-                reload = 300f;
+                reload = 400f;
                 top = false;
                 alwaysShooting = true;
                 shootSound = Sounds.none;
@@ -1560,8 +1560,8 @@ public class JPUnits {
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
-            abilities.add(new SpawnDeathAbility(Saboteur, 2, 11f));
-            abilities.add(new SpawnDeathAbility(Protectorate, 2, 11f));
+            abilities.add(new SpawnDeathAbility(Saboteur, 1, 11f));
+            abilities.add(new SpawnDeathAbility(Protectorate, 1, 11f));
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
             }};
 }}
