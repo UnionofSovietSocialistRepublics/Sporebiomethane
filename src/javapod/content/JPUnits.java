@@ -1586,7 +1586,7 @@ public class JPUnits {
                 }};
             }});
             blade.add(
-                new Blade(name + "-wing1"){{
+                new Blade(name + "-wing"){{
                 y = -1f; x = 4f;
                 bladeMoveSpeed = 80f;
                 bladeBlurAlphaMultiplier = 0.5f;
