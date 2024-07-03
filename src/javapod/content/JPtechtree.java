@@ -80,7 +80,11 @@ public class JPtechtree {
             node(JPOther.VCAwall);
              node(JPsectorsHM.SkiHM, Seq.with(new SectorComplete(frozenForest)), () -> {
                 node(JPsectorsHM.DigHM, Seq.with(new SectorComplete(JPsectorsHM.SkiHM)), () -> {
-                    node(JPsectorsHM.Frosted);
+                    node(JPsectorsHM.BirthHM, Seq.with(new SectorComplete(JPsectorsHM.DigHM)), () -> {
+                        node(JPsectorsHM.MagmaHM, Seq.with(new SectorComplete(JPsectorsHM.BirthHM)), () -> {
+                            node(JPsectorsHM.Frosted);
+                            });
+                        });
                 });
             });
             nodeProduce(JPItem.Biomass, () -> {
@@ -159,7 +163,11 @@ public class JPtechtree {
             node(JPOther.VCAwall);
              node(JPsectors.Ski, Seq.with(new SectorComplete(frozenForest)), () -> {
                 node(JPsectors.Dig, Seq.with(new SectorComplete(JPsectors.Ski)), () -> {
-                    node(JPsectors.Frost);
+                    node(JPsectors.Birth, Seq.with(new SectorComplete(JPsectors.Dig)), () -> {
+                        node(JPsectors.Magma, Seq.with(new SectorComplete(JPsectors.Birth)), () -> {
+                            node(JPsectors.Frost);
+                            });
+                        });
                 });
             });
             nodeProduce(JPItem.Biomass, () -> {
