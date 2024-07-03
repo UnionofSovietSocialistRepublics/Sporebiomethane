@@ -23,23 +23,23 @@ public class Unloader extends Mod{
         //replace subtitle with author with funky thing
         switch(rand){
         case 1:
-        Vars.mods.locateMod("jp").meta.author="Walter white";
+        Vars.mods.locateMod("jp").meta.author="Coffee molecules";
         Vars.mods.locateMod("jp").meta.subtitle="Now with extra coffee";
         break;
         case 2:
-        Vars.mods.locateMod("jp").meta.author="Not water molecules";
-        Vars.mods.locateMod("jp").meta.subtitle="Now with mosquitoes and fly";
+        Vars.mods.locateMod("jp").meta.author="Neoplasm";
+        Vars.mods.locateMod("jp").meta.subtitle="The dance of the nightbugs!";
         break;
         case 3:
         Vars.mods.locateMod("jp").meta.author="Moonupper";
         Vars.mods.locateMod("jp").meta.subtitle="Red sun is now over paradise";
         break;
         case 4:
-        Vars.mods.locateMod("jp").meta.author="Water molecules";
+        Vars.mods.locateMod("jp").meta.author="Ice molecules";
         Vars.mods.locateMod("jp").meta.subtitle="Extra frosty editon"; //boss (Frost) reference
         break;
         case 5:
-        Vars.mods.locateMod("jp").meta.author="Horizon";
+        Vars.mods.locateMod("jp").meta.author="Duke";
         Vars.mods.locateMod("jp").meta.subtitle="The javafication shall begun";
         break;
         default:
