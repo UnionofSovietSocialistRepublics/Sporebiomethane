@@ -5,10 +5,6 @@ A mod inspired by Starcraft. plan to add zerg units into Mindustry. <br>
 [![GitHub Repo stars](https://img.shields.io/github/stars/UnionofSovietSocialistRepublics/Sporebiomethane?style=for-the-badge&logo=github&logoColor=7665c9&labelColor=4d3ba7&color=b0b1f5)](https://github.com/UnionofSovietSocialistRepublics/Sporebiomethane/stargazers) 
 [![GitHub Release](https://img.shields.io/github/v/release/UnionofSovietSocialistRepublics/Sporebiomethane?include_prereleases&style=for-the-badge&logo=github&logoColor=7665c9&labelColor=4d3ba7&color=b0b1f5)](https://github.com/UnionofSovietSocialistRepublics/Sporebiomethane/releases) 
 
-
-
-
-
 Sprite made by Hydrobrass
 
 Spaghetti code made by Me (Water molecules#8835) and Dryehm_#8501
@@ -27,7 +23,7 @@ This is a java port of our mod, for the hjson/js one please check [here](https:/
 #### Birth
 - First attack sector
 - unlock incubator
-#### Alamka
+#### Magma
 - A short survival map with brutal waves to test the player strength
 - unlock azurite
 #### Name undecided
