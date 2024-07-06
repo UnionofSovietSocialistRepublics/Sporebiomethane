@@ -1327,7 +1327,7 @@ public class JPUnits {
                 shootSound = Sounds.missile;
             }});
             blade.add(
-                new Blade(name + "-wing1"){{
+                new Blade(name + "-wing"){{
                 y = -1f; x = 10f;
                 bladeMoveSpeed = 80f;
                 bladeBlurAlphaMultiplier = 0.5f;
@@ -1371,7 +1371,7 @@ public class JPUnits {
             accel = 0.11f;
             engineSize = 0f;
 
-            weapons.add(new Weapon("Sinrack"){{
+            weapons.add(new Weapon("Mouh"){{
                 mirror = false;
                 reload = 10f;
                 x = 0f;
@@ -1391,7 +1391,7 @@ public class JPUnits {
                 }};
             }});
             blade.add(
-                new Blade(name + "-wing1"){{
+                new Blade(name + "-wing"){{
                 y = -1f; x = 5f;
                 bladeMoveSpeed = 80f;
                 bladeBlurAlphaMultiplier = 0.5f;
@@ -1417,7 +1417,7 @@ public class JPUnits {
             drag = 0.05f;
             accel = 0.11f;
             engineSize = 0f;
-            weapons.add(new Weapon("Copperballs"){{
+            weapons.add(new Weapon("Mouh"){{
                 reload = 50f;
                 x = 0f;
                 y = 0f;
@@ -1440,7 +1440,7 @@ public class JPUnits {
                 }};
             }});
             blade.add(
-                new Blade(name + "-wing1"){{
+                new Blade(name + "-wing"){{
                 y = -1f; x = 5f;
                 bladeMoveSpeed = 80f;
                 bladeBlurAlphaMultiplier = 0.5f;
@@ -1503,6 +1503,7 @@ public class JPUnits {
             range = 140f;
             faceTarget = false;
             circleTarget = true;
+            
             weapons.add(new Weapon("Eggspawner"){{
                 x = 6f;
                 y = 6f;
