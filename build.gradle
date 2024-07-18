@@ -16,7 +16,7 @@ java{
 }
 
  dependencies {
-    implementation 'com.github.liplum:MultiCrafterLib:v1.7'
+    implementation 'com.github.liplum:MultiCrafterLib:v1.8'
 }
 
 ext{
