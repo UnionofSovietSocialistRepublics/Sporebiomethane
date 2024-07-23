@@ -257,6 +257,7 @@ public class JPProduction{
             ambientSoundVolume = 0.06f;
             generateEffect = Fx.generatespark;
             drawer = new DrawMulti(new DrawDefault(), new DrawFlame(Color.valueOf("8B73C7")));
+            
         }};
         }};
 
