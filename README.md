@@ -14,16 +14,16 @@ This is a java port of our mod, for the hjson/js one please check [here](https:/
 
 # To do list (Thing may or may not change in the future)
 ### campaign progression (sector)
-#### Above the sky 
+#### Above the sky (done)
 - Unlocks after the crater
 - Introduction to zerg units
-#### Dig Site
+#### Dig Site (done)
 - Unlocked after above the sky
 - unlocks vanadium
-#### Birth
+#### Birth(45%)
 - First attack sector
 - unlock incubator
-#### Magma
+#### Magma (done)
 - A short survival map with brutal waves to test the player strength
 - unlock azurite
 #### Name undecided
@@ -38,9 +38,9 @@ This is a java port of our mod, for the hjson/js one please check [here](https:/
 #### Frosted
 - The near final map
 - Fight against frost, the frozen autus.
-#### Evacuation
-- Stopping the zerg from spreading to another planet by killing them on the spot.
-- Yes, they will still invades erekir.
+#### Desolation
+- Repel the zerg on serpulo
+- Unlocks campaign map on erekir.
 
 # List of contributors
 - Twcash01 For some resprites
