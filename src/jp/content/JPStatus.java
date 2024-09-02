@@ -1,11 +1,6 @@
 package jp.content;
 
-import arc.graphics.Color;
-import arc.graphics.g2d.Fill;
-import mindustry.content.Fx;
-import mindustry.entities.Effect;
 import mindustry.type.StatusEffect;
-import mindustry.game.Team;
 
 public class JPStatus {
     public static StatusEffect

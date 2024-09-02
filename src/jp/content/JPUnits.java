@@ -2,14 +2,9 @@ package jp.content;
 
 import arc.func.Prov;
 import arc.graphics.*;
-import arc.graphics.g2d.*;
-import arc.math.*;
-import arc.math.geom.*;
 import arc.struct.*;
-import arc.util.*;
 import mindustry.ai.*;
 import mindustry.ai.types.*;
-import mindustry.entities.*;
 import mindustry.entities.abilities.*;
 import mindustry.entities.bullet.*;
 import mindustry.entities.effect.*;
@@ -19,17 +14,10 @@ import mindustry.gen.*;
 import mindustry.graphics.*;
 import mindustry.type.*;
 import mindustry.content.*;
-import mindustry.type.ammo.*;
 import mindustry.type.unit.*;
-import mindustry.type.weapons.*;
 import mindustry.entities.abilities.UnitSpawnAbility;
 import mindustry.world.meta.*;
-import jp.content.*;
 
-import static arc.graphics.g2d.Draw.*;
-import static arc.graphics.g2d.Lines.*;
-import static arc.math.Angles.*;
-import static mindustry.Vars.*;
 
 public class JPUnits {
     public static UnitType

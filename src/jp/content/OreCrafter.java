@@ -2,25 +2,12 @@ package jp.content;
 
 import arc.*;
 import mindustry.game.*;
-import mindustry.graphics.*;
-import mindustry.ui.*;
 import mindustry.world.*;
 import mindustry.world.meta.*;
-import arc.graphics.*;
-import arc.graphics.g2d.*;
-import arc.math.*;
 import arc.struct.*;
 import arc.util.*;
-import mindustry.content.*;
-import mindustry.entities.*;
-import mindustry.game.*;
-import mindustry.graphics.*;
-import mindustry.world.*;
-import mindustry.world.blocks.power.*;
-import mindustry.world.meta.*;
 import mindustry.world.blocks.production.*;
 
-import static arc.Core.atlas;
 import static mindustry.Vars.world;
 
 

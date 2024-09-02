@@ -1,19 +1,8 @@
 package jp.content;
 
 import arc.Core;
-import arc.graphics.g2d.Draw;
 import arc.graphics.g2d.TextureRegion;
-import arc.math.Angles;
-import arc.math.Mathf;
-import arc.math.geom.Vec2;
-import arc.util.Nullable;
-import arc.util.Time;
-import arc.util.Tmp;
-import mindustry.gen.Unit;
-import mindustry.graphics.Layer;
 import mindustry.io.JsonIO;
-import mindustry.type.UnitType;
-import jp.content.*;
 
 public class Blade {
     public final String name;

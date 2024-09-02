@@ -1,7 +1,6 @@
 package jp.content;
 
 import arc.graphics.*;
-import arc.struct.*;
 import mindustry.type.*;
 
 public class JPItem{
