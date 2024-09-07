@@ -1,7 +1,7 @@
 # Spore biometh(ane)
 A mod inspired by Starcraft. plan to add zerg units into Mindustry. <br>
 [![Discord](https://img.shields.io/discord/1262382199999692903?style=for-the-badge&logo=discord&logoColor=7665c9&label=Discord&labelColor=4d3ba7&color=b0b1f5)
-](https://discord.gg/GKdb9vmH) 
+](https://discord.gg/U4VnyDHgQZ) 
 [![GitHub Repo stars](https://img.shields.io/github/stars/UnionofSovietSocialistRepublics/Sporebiomethane?style=for-the-badge&logo=github&logoColor=7665c9&labelColor=4d3ba7&color=b0b1f5)](https://github.com/UnionofSovietSocialistRepublics/Sporebiomethane/stargazers) 
 [![GitHub Release](https://img.shields.io/github/v/release/UnionofSovietSocialistRepublics/Sporebiomethane?include_prereleases&style=for-the-badge&logo=github&logoColor=7665c9&labelColor=4d3ba7&color=b0b1f5)](https://github.com/UnionofSovietSocialistRepublics/Sporebiomethane/releases) 
 
