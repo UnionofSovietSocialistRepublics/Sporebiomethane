@@ -1276,7 +1276,7 @@ public class JPUnits {
                 bullet = new BasicBulletType(4f, 10){{
                     hitEffect = Fx.blastExplosion;
                     knockback = 1f;
-                    lifetime = 60f;
+                    lifetime = 40f;
                     width = height = 14f;
                     collides = true;
                     collidesTiles = true;
@@ -1285,7 +1285,7 @@ public class JPUnits {
                 parts.add(new RegionPart("-barrel"){{
                     mirror = true;
                     progress = PartProgress.recoil;
-                    layerOffset= -0.01f;
+                    layerOffset= -0.1f;
                     under = true;
                     y = 1.5f;
                     moveY = -2f;
@@ -1293,8 +1293,8 @@ public class JPUnits {
                 }});
             weapons.add(new Weapon(name + "-mini-body"){{
                 reload = 40f;
-                x = -15f;
-                y = 18f;
+                x = 15f;
+                y = -18f;
                 mirror = true;
                 controllable = false;
                 autoTarget = true;
@@ -1302,7 +1302,7 @@ public class JPUnits {
                 bullet = new BasicBulletType(4f, 10){{
                     hitEffect = Fx.blastExplosion;
                     knockback = 1f;
-                    lifetime = 60f;
+                    lifetime = 40f;
                     width = height = 14f;
                     collides = true;
                     collidesTiles = true;
@@ -1311,7 +1311,7 @@ public class JPUnits {
                     parts.add(new RegionPart("-barrel"){{
                         mirror = true;
                         progress = PartProgress.recoil;
-                        layerOffset= -0.01f;
+                        layerOffset= -0.1f;
                         under = true;
                         y = 1.5f;
                         moveY = -2f;
