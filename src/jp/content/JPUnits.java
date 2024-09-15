@@ -1252,7 +1252,7 @@ public class JPUnits {
                 y = 0f;
                 mirror = false;
                 bullet = new ArtilleryBulletType(3f, 120){{
-                    hitEffect = Fx.blastExplosion;
+                    hitEffect = Fx.sapExplosion;
                     knockback = 0.8f;
                     lifetime = 120f;
                     width = height = 30f;
@@ -1262,6 +1262,28 @@ public class JPUnits {
                     splashDamage = 650f;
                     status = JPStatus.Dissolving;
                     statusDuration = 60f * 6;
+                    backColor = Color.valueOf("8B73C7");
+                    frontColor = Color.valueOf("8B73C7");
+                    lightColor = Color.valueOf("8B73C7");
+                    fragBullets = 6;
+                    fragBullet = new ArtilleryBulletType(2.3f, 30){{
+                        hitEffect = Fx.sapExplosion;
+                        knockback = 0.8f;
+                        lifetime = 90f;
+                        width = height = 20f;
+                        collidesTiles = false;
+                        splashDamageRadius = 70f;
+                        splashDamage = 40f;
+                        backColor = Color.valueOf("8B73C7");
+                        frontColor = Color.valueOf("8B73C7");
+                        lightning = 2;
+                        lightningLength = 5;
+                        smokeEffect = Fx.shootBigSmoke2;
+                        hitShake = 5f;
+                        lightRadius = 30f;
+                        lightColor = Color.valueOf("8B73C7");
+                        lightOpacity = 0.5f;
+                    }};
                 }};
                 shootSound = Sounds.artillery;
             }});
@@ -1280,6 +1302,8 @@ public class JPUnits {
                     width = height = 14f;
                     collides = true;
                     collidesTiles = true;
+                    backColor = Color.valueOf("8B73C7");
+                    frontColor = Color.valueOf("8B73C7");
                     }};
                     shootSound = Sounds.artillery;
                 parts.add(new RegionPart("-barrel"){{
@@ -1306,12 +1330,14 @@ public class JPUnits {
                     width = height = 14f;
                     collides = true;
                     collidesTiles = true;
+                    backColor = Color.valueOf("8B73C7");
+                    frontColor = Color.valueOf("8B73C7");
                     }};
                     shootSound = Sounds.artillery;
                     parts.add(new RegionPart("-barrel"){{
                         mirror = true;
                         progress = PartProgress.recoil;
-                        layerOffset= -0.1f;
+//                        layerOffset= -0.1f;
                         under = true;
                         y = 1.5f;
                         moveY = -2f;
