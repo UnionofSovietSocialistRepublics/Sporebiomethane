@@ -1285,7 +1285,7 @@ public class JPUnits {
                 parts.add(new RegionPart("-barrel"){{
                     mirror = true;
                     progress = PartProgress.recoil;
-                    layerOffset= -0.1f;
+//                    layerOffset= -0.1f;
                     under = true;
                     y = 1.5f;
                     moveY = -2f;
