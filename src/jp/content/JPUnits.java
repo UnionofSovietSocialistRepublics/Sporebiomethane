@@ -1269,7 +1269,7 @@ public class JPUnits {
                     fragBullet = new ArtilleryBulletType(2.3f, 30){{
                         hitEffect = Fx.sapExplosion;
                         knockback = 0.8f;
-                        lifetime = 90f;
+                        lifetime = 30f;
                         width = height = 20f;
                         collidesTiles = false;
                         splashDamageRadius = 70f;
