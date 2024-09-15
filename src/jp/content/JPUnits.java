@@ -1267,8 +1267,8 @@ public class JPUnits {
             }});
             weapons.add(new Weapon(name + "-mini-body"){{
                 reload = 60f;
-                x = 10f;
-                y = 10f;
+                x = 15f;
+                y = 18f;
                 mirror = true;
                 bullet = new BasicBulletType(4f, 10){{
                     hitEffect = Fx.blastExplosion;
@@ -1283,9 +1283,9 @@ public class JPUnits {
                     mirror = true;
                     progress = PartProgress.recoil;
 //                    layerOffset= -0.0001f;
-                    under = true;
+                    under = false;
+                    y = 5f;
                     moveY = -2f;
-                    moveRot = 0f;
                 }});
                 }});
 
