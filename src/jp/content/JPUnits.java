@@ -702,7 +702,7 @@ public class JPUnits {
             this.constructor = LegsUnit::create;
             speed = 0.25f;
             hitSize = 8f;
-            health = 35000;
+            health = 58000;
             armor = 30;
             range = 80f;
             legCount = 4;
@@ -1301,7 +1301,6 @@ public class JPUnits {
                 x = 0f;
                 y = 8f;
                 layerOffset = -1f;
-                mirror = false;
                 bullet = new MissileBulletType(3.7f, 18){{
                     width = 8f;
                     height = 8f;
@@ -1365,7 +1364,6 @@ public class JPUnits {
                 x = 0f;
                 y = 0f;
                 layerOffset = -1f;
-                mirror = false;
                 bullet = new BasicBulletType(3.7f, 18){{
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
