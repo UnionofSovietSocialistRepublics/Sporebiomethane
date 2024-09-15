@@ -1189,12 +1189,10 @@ public class JPUnits {
                 mirror = false;
                 bullet = new ContinuousLaserBulletType(){{
                     width = 2f;
-                    damage = 25f;
+                    damage = 50f;
                     length = 75f;
                     drawSize = 100f;
                     lifetime = 125f;
-                    damage = 45f;
-                    lifetime = 50f;
                     healPercent = 0.5f;
                     collidesTeam = true;
                     colors = new Color[]{Color.valueOf("8B73C7"), Color.valueOf("A865C9"), Color.valueOf("A865C9"), Color.valueOf("ffffff")};
@@ -1228,8 +1226,6 @@ public class JPUnits {
                     length = 180f;
                     drawSize = 420f;
                     lifetime = 160f;
-                    damage = 45f;
-                    lifetime = 50f;
                     healPercent = 1f;
                     collidesTeam = true;
                     chargeEffect = Fx.greenLaserChargeSmall;
@@ -1250,32 +1246,49 @@ public class JPUnits {
             legLength = 30f;
             legExtension = -15f;
             legBaseOffset = 10f;       
-            weapons.add(new Weapon("Le gun"){{
+            weapons.add(new Weapon("Superarty"){{
                 reload = 400f;
                 x = 0f;
                 y = 0f;
                 mirror = false;
-                bullet = new BasicBulletType(2.5f, 9){{
-                    speed = 7f;
-                    height = 50f;
-                    width = 35f;
-                    shootEffect = Fx.shootBig;
-                    smokeEffect = Fx.shootBigSmoke;
-                    damage = 650f;
-                    splashDamage = 250f;
-                    splashDamageRadius = 17f;
-                    lifetime = 60f;
-                    statusDuration = 600f * 4;
-                    status = JPStatus.Dissolving;
-                    backColor = Color.valueOf("8FFE09");
-                    frontColor = Color.valueOf("8FFE09");
-                    lightColor = Color.valueOf("8FFE09");
+                bullet = new ArtilleryBulletType(3f, 120){{
+                    hitEffect = Fx.blastExplosion;
+                    knockback = 0.8f;
+                    lifetime = 120f;
+                    width = height = 30f;
+                    collides = true;
                     collidesTiles = true;
-                    trailLength = 3;
-                    trailColor = Color.valueOf("bbfe6b");
+                    splashDamageRadius = 65f;
+                    splashDamage = 650f;
+                    status = JPStatus.Dissolving;
+                    statusDuration = 60f * 6;
                 }};
                 shootSound = Sounds.artillery;
             }});
+            weapons.add(new Weapon(name + "-mini-body"){{
+                reload = 60f;
+                x = 10f;
+                y = 10f;
+                mirror = true;
+                bullet = new BasicBulletType(4f, 10){{
+                    hitEffect = Fx.blastExplosion;
+                    knockback = 0.8f;
+                    lifetime = 60f;
+                    width = height = 14f;
+                    collides = true;
+                    collidesTiles = true;
+                    }};
+                    shootSound = Sounds.artillery;
+                parts.add(new RegionPart(name + "-mini-barrel"){{
+                    mirror = true;
+                    progress = PartProgress.recoil;
+//                    layerOffset= -0.0001f;
+                    under = true;
+                    moveY = -2f;
+                    moveRot = 0f;
+                }});
+                }});
+
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (240f * 60f * 2f) * 100f;}});
         }};
