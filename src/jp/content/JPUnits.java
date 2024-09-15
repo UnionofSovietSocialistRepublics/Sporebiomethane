@@ -1279,10 +1279,10 @@ public class JPUnits {
                     collidesTiles = true;
                     }};
                     shootSound = Sounds.artillery;
-                parts.add(new RegionPart(name + "-mini-barrel"){{
+                parts.add(new RegionPart(name + "-barrel"){{
                     mirror = true;
                     progress = PartProgress.recoil;
-//                    layerOffset= -0.0001f;
+                    layerOffset= -0.0001f;
                     under = false;
                     y = 5f;
                     moveY = -2f;
