@@ -1266,13 +1266,16 @@ public class JPUnits {
                 shootSound = Sounds.artillery;
             }});
             weapons.add(new Weapon(name + "-mini-body"){{
-                reload = 60f;
+                reload = 40f;
                 x = 15f;
                 y = 18f;
                 mirror = true;
+                controllable = false;
+                autoTarget = true;
+                rotate = true;
                 bullet = new BasicBulletType(4f, 10){{
                     hitEffect = Fx.blastExplosion;
-                    knockback = 0.8f;
+                    knockback = 1f;
                     lifetime = 60f;
                     width = height = 14f;
                     collides = true;
@@ -1282,10 +1285,37 @@ public class JPUnits {
                 parts.add(new RegionPart("-barrel"){{
                     mirror = true;
                     progress = PartProgress.recoil;
-                    under = false;
-                    y = 5f;
+                    layerOffset= -0.01f;
+                    under = true;
+                    y = 1.5f;
                     moveY = -2f;
                 }});
+                }});
+            weapons.add(new Weapon(name + "-mini-body"){{
+                reload = 40f;
+                x = -15f;
+                y = 18f;
+                mirror = true;
+                controllable = false;
+                autoTarget = true;
+                rotate = true;
+                bullet = new BasicBulletType(4f, 10){{
+                    hitEffect = Fx.blastExplosion;
+                    knockback = 1f;
+                    lifetime = 60f;
+                    width = height = 14f;
+                    collides = true;
+                    collidesTiles = true;
+                    }};
+                    shootSound = Sounds.artillery;
+                    parts.add(new RegionPart("-barrel"){{
+                        mirror = true;
+                        progress = PartProgress.recoil;
+                        layerOffset= -0.01f;
+                        under = true;
+                        y = 1.5f;
+                        moveY = -2f;
+                    }});
                 }});
 
             outlineColor = Color.valueOf("303a45");
