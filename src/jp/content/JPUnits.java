@@ -1272,8 +1272,8 @@ public class JPUnits {
                         lifetime = 30f;
                         width = height = 20f;
                         collidesTiles = false;
-                        splashDamageRadius = 70f;
-                        splashDamage = 40f;
+                        splashDamageRadius = 65f;
+                        splashDamage = 250f;
                         backColor = Color.valueOf("8B73C7");
                         frontColor = Color.valueOf("8B73C7");
                         lightning = 2;
@@ -1295,9 +1295,9 @@ public class JPUnits {
                 controllable = false;
                 autoTarget = true;
                 rotate = true;
-                bullet = new BasicBulletType(4f, 10){{
+                bullet = new BasicBulletType(4f, 50){{
                     hitEffect = Fx.blastExplosion;
-                    knockback = 1f;
+                    knockback = 2.5f;
                     lifetime = 40f;
                     width = height = 14f;
                     collides = true;
