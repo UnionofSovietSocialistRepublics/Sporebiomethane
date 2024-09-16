@@ -1288,7 +1288,7 @@ public class JPUnits {
                 shootSound = Sounds.artillery;
             }});
             weapons.add(new Weapon(name + "-mini-body"){{
-                reload = 40f;
+                reload = 30f;
                 x = 15f;
                 y = 18f;
                 mirror = true;
@@ -1316,16 +1316,16 @@ public class JPUnits {
                 }});
                 }});
             weapons.add(new Weapon(name + "-mini-body"){{
-                reload = 40f;
+                reload = 30f;
                 x = 15f;
                 y = -18f;
                 mirror = true;
                 controllable = false;
                 autoTarget = true;
                 rotate = true;
-                bullet = new BasicBulletType(4f, 10){{
+                bullet = new BasicBulletType(4f, 50){{
                     hitEffect = Fx.blastExplosion;
-                    knockback = 1f;
+                    knockback = 2.5f;
                     lifetime = 40f;
                     width = height = 14f;
                     collides = true;
