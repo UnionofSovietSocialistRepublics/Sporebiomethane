@@ -1,5 +1,5 @@
 # Spore biometh(ane)
-A mod inspired by Starcraft. plan to add zerg units into Mindustry. <br>
+A mod inspired by Starcraft. Adds zerggy stuff into mindustry. <br>
 [![Discord](https://img.shields.io/discord/1262382199999692903?style=for-the-badge&logo=discord&logoColor=7665c9&label=Discord&labelColor=4d3ba7&color=b0b1f5)
 ](https://discord.gg/U4VnyDHgQZ) 
 [![GitHub Repo stars](https://img.shields.io/github/stars/UnionofSovietSocialistRepublics/Sporebiomethane?style=for-the-badge&logo=github&logoColor=7665c9&labelColor=4d3ba7&color=b0b1f5)](https://github.com/UnionofSovietSocialistRepublics/Sporebiomethane/stargazers) 
@@ -7,7 +7,7 @@ A mod inspired by Starcraft. plan to add zerg units into Mindustry. <br>
 
 Sprite made by Hydrobrass
 
-Spaghetti code made by Me (Water molecules#8835) and Dryehm_#8501
+Spaghetti code made by Me (watermolecules) and dryehm_
 
 # Important stuff:
 This is a java port of our mod, for the hjson/js one please check [here](https://github.com/UnionofSovietSocialistRepublics/Spore-Biomechs).
