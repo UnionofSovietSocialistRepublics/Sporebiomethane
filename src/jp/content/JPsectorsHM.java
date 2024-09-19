@@ -13,7 +13,7 @@ public class JPsectorsHM{
         //region serpulo
         SkiHM = new SectorPreset("SkiHM", serpulo, 241){{
             difficulty = 4;
-            captureWave = 25;
+            captureWave = 20;
         }};
         DigHM = new SectorPreset("DigHM", serpulo, 198){{
             difficulty = 5;
