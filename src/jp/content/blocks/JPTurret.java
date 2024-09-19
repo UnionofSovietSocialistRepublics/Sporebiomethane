@@ -64,7 +64,6 @@ public class JPTurret{
             ammoPerShot = 5;
             ammoUseEffect = Fx.casing1;
             inaccuracy = 2f;
-            rotateSpeed = 10f;
             ammo(
                JPItem.Biomass, new PointBulletType(){{
                     shootEffect = Fx.instShoot;
@@ -93,7 +92,7 @@ public class JPTurret{
             requirements(Category.turret, with(graphite, 125, silicon, 100, JPItem.Biomass, 75));
             health = 1000;
             size = 3;
-            rotateSpeed = 2f;
+            rotateSpeed = 10f;
             range = 250f;
             reload = 35f;
             recoil = 2f;
@@ -104,23 +103,17 @@ public class JPTurret{
             shoot.shots = 2;
             shoot.shotDelay = 10f;
             inaccuracy = 2f;
-            rotateSpeed = 10f;
 
             ammo(
-                sporePod, new FlakBulletType(){{
+                sporePod, new FlakBulletType(5f, 650f){{
                     lifetime = 65f;
-                    damage = 145f;
-                    splashDamage = 5f;
-                    splashDamageRadius = 15f;
-                    speed = 5f;
-                    backColor = Color.valueOf("8B73C7");
-                    frontColor = Color.valueOf("8B73C7");
-                    lightColor = Color.valueOf("8B73C7");
+                    reloadMultiplier = 0.5f;
+                    backColor = Color.valueOf("7457ce");
+                    frontColor = Color.valueOf("7457ce");
+                    lightColor = Color.valueOf("7457ce");
                 }},
-               JPItem.Biomass, new FlakBulletType(){{
+               JPItem.Biomass, new FlakBulletType(5f, 25f){{
                     lifetime = 65f;
-                    damage = 25f;
-                    speed = 5f;
                     fragBullets = 6;
                     splashDamage = 50f;
                     splashDamageRadius = 35f;
@@ -163,7 +156,7 @@ public class JPTurret{
         Artilleryturret = new ItemTurret("Artilleryturret"){{
             requirements(Category.turret, with(graphite, 675, JPItem.Nanitealloy, 250, JPItem.Biomass, 150));
             size = 3;
-            rotateSpeed = 2f;
+            rotateSpeed = 10f;
             range = 260f;
             reload = 180f;
             recoil = 5f;
@@ -174,7 +167,6 @@ public class JPTurret{
             shoot.shots = 4;
             shoot.shotDelay = 10f;
             inaccuracy = 2f;
-            rotateSpeed = 10f;
             ammo(
                 sporePod, new BasicBulletType(){{
                     lifetime = 45f;
@@ -211,7 +203,7 @@ public class JPTurret{
         Oarch = new ItemTurret("Oarch"){{
             requirements(Category.turret, with(graphite, 200, silicon, 125, JPItem.Nanitealloy, 95));
             size = 2;
-            rotateSpeed = 2f;
+            rotateSpeed = 10f;
             range = 250f;
             reload = 40f;
             recoil = 2f;
@@ -219,7 +211,6 @@ public class JPTurret{
             ammoUseEffect = Fx.casing1;
             health = 750;
             inaccuracy = 2f;
-            rotateSpeed = 10f;
             ammo(
                 sporePod, new FlakBulletType(5f, 15f){{
                     lifetime = 50f;
@@ -273,14 +264,13 @@ public class JPTurret{
             requirements(Category.turret, with(graphite, 125, silicon, 145, JPItem.Biomass, 95));
             health = 1000;
             size = 2;
-            rotateSpeed = 2f;
+            rotateSpeed = 10f;
             range = 225f;
             reload = 35f;
             recoil = 2f;
             shootCone = 2f;
             ammoUseEffect = Fx.casing1;
             inaccuracy = 2f;
-            rotateSpeed = 10f;
 
                shootType = new BasicBulletType(){{
                     height = width = 15f;
@@ -306,7 +296,7 @@ public class JPTurret{
             requirements(Category.turret, with(graphite, 300, JPItem.Neocells, 240, JPItem.Nanitealloy, 150));
             health = 1500;
             size = 2;
-            rotateSpeed = 2f;
+            rotateSpeed = 10f;
             range = 225f;
             liquidCapacity = 200F;
             reload = 25f;
@@ -315,30 +305,27 @@ public class JPTurret{
             ammoUseEffect = Fx.casing1;
             hasPower = true;
             inaccuracy = 2f;
-            rotateSpeed = 10f;
 
                shootType = new BasicBulletType(){{
                     height = width = 15F;
                     damage = 150f;
                     speed = 5f;
-                    fragBullets = 6;
+                    fragBullets = 5;
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
                     lightColor = Color.valueOf("8B73C7");
                     ammoMultiplier = 1f;
-                    fragBullet = new BasicBulletType(3f, 5){{
-                        width = 5f;
-                        height = 5f;
-                        backColor = Color.valueOf("8B73C7");
-                        frontColor = Color.valueOf("8B73C7");
-                        lightColor = Color.valueOf("8B73C7");
-                        damage = 25f;
-                        lifetime = 25f;
-                        backColor = Pal.gray;
-                        frontColor = Color.white;
-                        despawnEffect = Fx.none;
-                        collidesGround = false;
-                    }};
+                   fragBullet = new BasicBulletType(3f, 5){{
+                       width = 5f;
+                       height = 5f;
+                       backColor = Color.valueOf("8B73C7");
+                       frontColor = Color.valueOf("8B73C7");
+                       lightColor = Color.valueOf("8B73C7");
+                       damage = 25f;
+                       lifetime = 25f;
+                       despawnEffect = Fx.none;
+                       collidesGround = false;
+                   }};
                 }};
                 shootSound = Sounds.shootBig;
                 coolant = consumeCoolant(0.225f);
@@ -348,7 +335,7 @@ public class JPTurret{
             requirements(Category.turret, with(graphite, 225, JPItem.Nanitealloy, 25, JPItem.Biomass, 45));
             health = 850;
             size = 3;
-            rotateSpeed = 2f;
+            rotateSpeed = 10f;
             range = 200f;
             reload = 10f;
             recoil = 1f;
@@ -358,22 +345,45 @@ public class JPTurret{
             }};
             shootSound = Sounds.shootBig;
             ammoUseEffect = Fx.casing1;
-            rotateSpeed = 10f;
-
             ammo(
-               sporePod, new BasicBulletType(){{
+               sporePod, new BasicBulletType(5f, 5f){{
                     lifetime = 45f;
-                    damage = 15f;
-                    splashDamage = 65f;
-                    splashDamageRadius = 35f;
-                    speed = 5f;
-                    backColor = Color.valueOf("8B73C7");
-                    frontColor = Color.valueOf("8B73C7");
-                    lightColor = Color.valueOf("8B73C7");
+                    splashDamage = 45f;
+                    splashDamageRadius = 40f;
+                    reloadMultiplier = 0.5f;
+                    backColor = Color.valueOf("7457ce");
+                    frontColor = Color.valueOf("7457ce");
+                    lightColor = Color.valueOf("7457ce");
                     width = height = 15f;
                     shootEffect = Fx.shootSmall;
                     smokeEffect = Fx.shootSmallSmoke;
                     collidesGround = true;
+                    despawnEffect = Fx.blastExplosion;
+                    fragBullets = 6;
+                    fragBullet = new BasicBulletType(4f, 5){{
+                        width = height = 10f;
+                        splashDamage = 15f;
+                        splashDamageRadius = 40f;
+                        backColor = Color.valueOf("7457ce");
+                        frontColor = Color.valueOf("7457ce");
+                        lightColor = Color.valueOf("7457ce");
+                        lifetime = 30f;
+                        collidesGround = true;
+                        collidesAir = true;
+                        despawnEffect = Fx.blastExplosion;
+                        fragBullets = 6;
+                        fragBullet = new BasicBulletType(3f, 2.5f){{
+                            width = height = 5f;
+                            splashDamage = 5f;
+                            splashDamageRadius = 40f;
+                            backColor = Color.valueOf("7457ce");
+                            frontColor = Color.valueOf("7457ce");
+                            lightColor = Color.valueOf("7457ce");
+                            lifetime = 20f;
+                            despawnEffect = Fx.none;
+                            collidesGround = false;
+                        }};
+                    }};
                 }},
                JPItem.Biomass, new BasicBulletType(){{
                     lifetime = 45f;
