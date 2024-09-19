@@ -271,8 +271,7 @@ public class JPTurret{
             shootCone = 2f;
             ammoUseEffect = Fx.casing1;
             inaccuracy = 2f;
-
-               shootType = new BasicBulletType(){{
+            shootType = new BasicBulletType(){{
                     height = width = 15f;
                     damage = 40f;
                     speed = 5f;
@@ -350,7 +349,7 @@ public class JPTurret{
                     lifetime = 45f;
                     splashDamage = 45f;
                     splashDamageRadius = 40f;
-                    reloadMultiplier = 0.5f;
+                    reloadMultiplier = 0.3f;
                     backColor = Color.valueOf("7457ce");
                     frontColor = Color.valueOf("7457ce");
                     lightColor = Color.valueOf("7457ce");
@@ -385,12 +384,10 @@ public class JPTurret{
                         }};
                     }};
                 }},
-               JPItem.Biomass, new BasicBulletType(){{
+               JPItem.Biomass, new BasicBulletType(5f, 60f){{
                     lifetime = 45f;
-                    damage = 50f;
                     splashDamage = 15f;
                     splashDamageRadius = 15f;
-                    speed = 5f;
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
                     lightColor = Color.valueOf("8B73C7");

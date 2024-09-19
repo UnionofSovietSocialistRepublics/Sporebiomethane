@@ -4,7 +4,7 @@ author: "Water white"
 main: "jp.Unloader"
 description: "A java port of the hit mindustry mod spore biomechs\n We have:\n - Hardmode and normal mode \n - Campain map for serpulo \n - A bunch of zerggy unit and structure\n - Lore (real!??!?1)"
 subtitle: "V0.5.1"
-version: 0.5.1
+version: 0.5.2
 minGameVersion: 145
 java: true
 repo: UnionofSovietSocialistRepublics/Sporebiomethane
