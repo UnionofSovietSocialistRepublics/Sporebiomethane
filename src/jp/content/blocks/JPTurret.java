@@ -177,13 +177,14 @@ public class JPTurret{
             rotateSpeed = 10f;
             ammo(
                 sporePod, new BasicBulletType(){{
-                    lifetime = 75f;
+                    lifetime = 45f;
                     damage = 100f;
-                    speed = 4f;
-                    backColor = Color.valueOf("8B73C7");
-                    frontColor = Color.valueOf("8B73C7");
-                    lightColor = Color.valueOf("8B73C7");
+                    speed = 8f;
+                    backColor = Color.valueOf("7457ce");
+                    frontColor = Color.valueOf("7457ce");
+                    lightColor = Color.valueOf("7457ce");
                     width = height = 15f;
+                    ammoMultiplier = 4f;
                     shootEffect = Fx.shootSmall;
                     smokeEffect = Fx.shootSmallSmoke;
                     collidesGround = true;
@@ -220,37 +221,22 @@ public class JPTurret{
             inaccuracy = 2f;
             rotateSpeed = 10f;
             ammo(
-                sporePod, new FlakBulletType(){{
+                sporePod, new FlakBulletType(5f, 15f){{
                     lifetime = 50f;
-                    damage = 15f;
+                    reloadMultiplier = 0.5f;
                     splashDamage = 5f;
-                    splashDamageRadius = 35f;
-                    speed = 5f;
+                    splashDamageRadius = 45f;
+                    knockback = 4f;
                     height = width = 15f;
-                    fragBullets = 2;
-                    statusDuration = 60f * 7;
-                    status = StatusEffects.slow;
-                    backColor = Color.valueOf("8B73C7");
-                    frontColor = Color.valueOf("8B73C7");
-                    lightColor = Color.valueOf("8B73C7");
+                    status = StatusEffects.sporeSlowed;
+                    statusDuration = 60f * 14;
+                    backColor = Color.valueOf("7457ce");
+                    frontColor = Color.valueOf("7457ce");
+                    lightColor = Color.valueOf("7457ce");
                     collidesGround = true;
                     collidesAir = true;
-                    fragBullet = new BasicBulletType(3f, 5){{
-                        width = 5f;
-                        height = 5f;
-                        backColor = Color.valueOf("8B73C7");
-                        frontColor = Color.valueOf("8B73C7");
-                        lightColor = Color.valueOf("8B73C7");
-                        damage = 5f;
-                        lifetime = 20f;
-                        backColor = Pal.gray;
-                        frontColor = Color.white;
-                        despawnEffect = Fx.none;
-                        collidesGround = true;
-                        collidesAir = true;
-                    }};
                 }},
-               JPItem.Biomass, new FlakBulletType(){{
+               JPItem.Biomass, new FlakBulletType(5f, 75f){{
                     lifetime = 50f;
                     damage = 75f;
                     splashDamage = 25f;
@@ -258,8 +244,8 @@ public class JPTurret{
                     speed = 5f;
                     height = width = 15f;
                     fragBullets = 7;
-                    statusDuration = 60f * 5;
                     status = StatusEffects.slow;
+                    statusDuration = 60f * 5;
                     //sprite = "ExplodingTNT";
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
@@ -267,16 +253,14 @@ public class JPTurret{
                     ammoMultiplier = 1f;
                     collidesGround = true;
                     collidesAir = true;
-                    fragBullet = new BasicBulletType(3f, 5){{
-                        width = 5f;
-                        height = 5f;
+                    fragBullet = new BasicBulletType(2.5f, 45){{
+                        width = height = 5f;
+                        status = StatusEffects.slow;
+                        statusDuration = 60f * 7;
                         backColor = Color.valueOf("8B73C7");
                         frontColor = Color.valueOf("8B73C7");
                         lightColor = Color.valueOf("8B73C7");
-                        damage = 5f;
                         lifetime = 20f;
-                        backColor = Pal.gray;
-                        frontColor = Color.white;
                         despawnEffect = Fx.none;
                         collidesGround = true;
                         collidesAir = true;
