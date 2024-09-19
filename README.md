@@ -27,8 +27,8 @@ This is a java port of our mod, for the hjson/js one please check [here](https:/
 - A short survival map with brutal waves to test the player strength
 - unlock azurite
 #### Name undecided
-- Introduces baslisk unit which will be used alot of after this map
-- Unlock apllon assembler (still requires you to unlock assembler first)
+- Introduces basilisk unit which will be used alot of after this map
+- Unlock apollon assembler (still requires you to unlock assembler first)
 #### Name undecided
 - A mix of armored Air and ground unit.
 - Unlocks zinc
@@ -44,4 +44,4 @@ This is a java port of our mod, for the hjson/js one please check [here](https:/
 
 # List of contributors
 - Twcash01 For some resprites
-- Dyrehm for some turret sound
+- Dyrehm_ for some turret sound
