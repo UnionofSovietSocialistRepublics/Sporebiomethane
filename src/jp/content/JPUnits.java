@@ -1684,7 +1684,7 @@ public class JPUnits {
                         clipSize = 250f;
                         sprite = "circle-bullet";
                         splashDamage = 1800f;
-                        splashDamageRadius = 69;
+                        splashDamageRadius = 69f;
                         hitShake = 4f;
                         pierce = true;
                         splashDamagePierce = true;
@@ -1695,6 +1695,7 @@ public class JPUnits {
                             sizeTo = 0f;
                             lifetime = 90f;
                             strokeFrom = 0f;
+                            strokeTo = 10f;
                         }},
                         new WaveEffect(){{
                             colorFrom = colorTo = Color.valueOf("87ceeb");
@@ -1702,6 +1703,7 @@ public class JPUnits {
                             sizeTo = 0f;
                             lifetime = 120f;
                             strokeFrom = 0f;
+                            strokeTo = 12f;
                         }},
                         new WaveEffect(){{
                             colorFrom = colorTo = Color.valueOf("87ceeb");
@@ -1709,6 +1711,7 @@ public class JPUnits {
                             sizeTo = 0f;
                             lifetime = 180f;
                             strokeFrom = 0f;
+                            strokeTo = 15f;
                         }}
                     );
                     }};
@@ -1724,7 +1727,7 @@ public class JPUnits {
                     y = 3f;
                     moveX = 1.5f;
                     moveY = 1.25f;
-                    moveRot = 10f;
+                    moveRot = -10f;
                 }});
                 immunities.add(StatusEffects.burning);
                 immunities.add(StatusEffects.melting);
