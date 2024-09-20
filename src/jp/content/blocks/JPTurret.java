@@ -364,7 +364,7 @@ public class JPTurret{
                         lifetime = 30f;
                         collidesGround = true;
                         collidesAir = true;
-                        despawnEffect = Fx.blastExplosion;
+                        despawnEffect = JPFx.bulletexplosion;
                         fragBullets = 6;
                         fragBullet = new BasicBulletType(3f, 2.5f){{
                             width = height = 5f;

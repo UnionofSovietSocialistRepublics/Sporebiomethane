@@ -1692,6 +1692,7 @@ public class JPUnits {
                         trailLength = 175;
                         trailWidth = 65;
                         trailColor = Color.valueOf("87ceeb");
+                        despawnEffect = Fx.reactorExplosion;
                         intervalBullet = new LightningBulletType(){{
                             damage = 800;
                             collidesAir = false;
