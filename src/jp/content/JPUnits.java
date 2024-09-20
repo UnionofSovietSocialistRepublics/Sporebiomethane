@@ -1689,12 +1689,14 @@ public class JPUnits {
                         hitShake = 8f;
                         pierce = true;
                         splashDamagePierce = true;
+                        trailLength = 41;
+                        trailColor = Color.valueOf("87ceeb");
                         intervalBullet = new LightningBulletType(){{
                             damage = 800;
                             collidesAir = false;
                             lightningColor = Color.valueOf("87ceeb");
-                            lightningLength = 8;
-                            lightningLengthRand = 9;
+                            lightningLength = 24;
+                            lightningLengthRand = 25;
 
                             //for visual stats only.
                             buildingDamageMultiplier = 0.25f;
