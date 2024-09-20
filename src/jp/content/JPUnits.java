@@ -1574,6 +1574,7 @@ public class JPUnits {
                     lifetime = 10f;
                     spawnUnit = new MissileUnitType("egg"){{
                     flying = false;
+                    speed = 0f;
                     useUnitCap = false;
                     lifetime = 123f;
                     health = 600f;
@@ -1682,11 +1683,12 @@ public class JPUnits {
                         lightRadius = 70f;
                         clipSize = 250f;
                         sprite = "circle-bullet";
-                        speed = 1.5f;
                         splashDamage = 90f;
                         splashDamageRadius = 50;
                         hitShake = 4f;
                         splashDamagePierce = true;
+                    }};
+                }});
                 healColor = Color.valueOf("87ceeb");
                 outlineColor = Color.valueOf("747474");
                 parts.add(new RegionPart("-hand"){{
@@ -1700,14 +1702,11 @@ public class JPUnits {
                     moveY = -1.25f;
                     moveRot = 10f;
                 }});
-                
                 immunities.add(StatusEffects.burning);
                 immunities.add(StatusEffects.melting);
                 immunities.add(StatusEffects.freezing);
                 abilities.add(new RegenAbility(){{percentAmount = 1f / (800f * 60f * 2f) * 100f;}});
                 abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.cryofluid;}});
                 abilities.add(new StatusFieldAbility(JPStatus.Frostshield, 60f * 3, 60f * 9f, 60f));
-                }};
-            }});
             }};
 }}
