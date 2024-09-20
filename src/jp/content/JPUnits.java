@@ -1689,7 +1689,7 @@ public class JPUnits {
                         hitShake = 8f;
                         pierce = true;
                         splashDamagePierce = true;
-                        trailLength = 41;
+                        trailLength = 175;
                         trailColor = Color.valueOf("87ceeb");
                         intervalBullet = new LightningBulletType(){{
                             damage = 800;
