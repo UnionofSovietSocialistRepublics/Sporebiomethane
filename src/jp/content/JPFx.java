@@ -19,10 +19,11 @@ public class JPFx {
         stroke(e.fin() * 2f);
         Lines.circle(e.x, e.y, e.fout() * 50f);
     }).followParent(true).rotWithParent(true),
-        bulletexplosion = new Effect(30, 500f, b -> {
-        float intensity = 6.8f;
-        float baseLifetime = 25f + intensity * 11f;
-        b.lifetime = 50f + intensity * 65f;
+            bulletExplosion = new Effect(30, 500f, b -> {
+                float intensity = 6.8f;
+                float baseLifetime = 25f + intensity * 11f;
+                b.lifetime = 50f + intensity * 65f;
+
                 color(Color.valueOf("87ceeb"));
                 alpha(0.7f);
                 for(int i = 0; i < 4; i++){
@@ -40,5 +41,22 @@ public class JPFx {
                     });
                 }
 
-});
+                b.scaled(baseLifetime, e -> {
+                    Draw.color();
+                    e.scaled(5 + intensity * 2f, i -> {
+                        stroke((3.1f + intensity/5f) * i.fout());
+                        Lines.circle(e.x, e.y, (3f + i.fin() * 14f) * intensity);
+                        Drawf.light(e.x, e.y, i.fin() * 14f * 2f * intensity, Color.white, 0.9f * e.fout());
+                    });
+
+                    color(Pal.lighterOrange, Color.valueOf("87ceeb"), e.fin());
+                    stroke((2f * e.fout()));
+
+                    Draw.z(Layer.effect + 0.001f);
+                    randLenVectors(e.id + 1, e.finpow() + 0.001f, (int)(8 * intensity), 28f * intensity, (x, y, in, out) -> {
+                        lineAngle(e.x + x, e.y + y, Mathf.angle(x, y), 1f + out * 4 * (4f + intensity));
+                        Drawf.light(e.x + x, e.y + y, (out * 4 * (3f + intensity)) * 3.5f, Draw.getColor(), 0.8f);
+                    });
+                });
+            });
 }
