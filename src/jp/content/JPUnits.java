@@ -1666,7 +1666,8 @@ public class JPUnits {
                     rotate = false;
                     x = 0;
                     y = 0;
-                    bullet = new ArtilleryBulletType(0.5f, 1500f) {{
+                    shootSound = JPSounds.ArtyBig;
+                    bullet = new BasicBulletType(0.5f, 1500f) {{
                         chargeEffect = Fx.none;
                         shootStatus = StatusEffects.unmoving;
                         despawnEffect = Fx.blastExplosion;
@@ -1679,15 +1680,25 @@ public class JPUnits {
                         lightColor = Color.valueOf("87ceeb");
                         shrinkX = 0;
                         shrinkY = 0;
-                        lifetime = 500f;
+                        lifetime = 1800f;
                         lightRadius = 70f;
                         clipSize = 250f;
                         sprite = "circle-bullet";
                         splashDamage = 1800f;
-                        splashDamageRadius = 69f;
-                        hitShake = 4f;
+                        splashDamageRadius = 100f;
+                        hitShake = 8f;
                         pierce = true;
                         splashDamagePierce = true;
+                        intervalBullet = new LightningBulletType(){{
+                            damage = 800;
+                            collidesAir = false;
+                            lightningColor = Color.valueOf("87ceeb");
+                            lightningLength = 8;
+                            lightningLengthRand = 9;
+
+                            //for visual stats only.
+                            buildingDamageMultiplier = 0.25f;
+                        }};
                         chargeEffect = new MultiEffect(
                         new WaveEffect(){{
                             colorFrom = colorTo = Color.valueOf("87ceeb");
