@@ -22,7 +22,7 @@ import mindustry.world.meta.*;
 public class JPUnits {
     public static UnitType
     //Legs
-    Carci,Imp, Basilisk, Autus, Baneling, Zergling, Behomoth, Lobber, Breacher, Scarabid, Frost, Roach, Purger, Gorgon, Raptor,
+    Carci,Imp, Basilisk, Autus, Baneling, Zergling, Behomoth, Lobber, Breacher, Scarabid, Frost, Roach, Purger, Gorgon, Raptor, FrostC,
     //missiles
     Bomb,
     //Floaty
@@ -1551,7 +1551,6 @@ public class JPUnits {
             armor = 2;
             flying = true;
             hitSize = 10f;
-            hitSize = 8f;
             health = 980;
             targetAir = false;
             range = 140f;
@@ -1567,16 +1566,14 @@ public class JPUnits {
                 top = false;
                 alwaysShooting = true;
                 shootSound = Sounds.none;
-                bullet = new BasicBulletType(2.5f, 9){{
+                bullet = new BasicBulletType(0f, 0f){{
                     shootEffect = Fx.none;
                     collidesAir = false;
                     width = 0f;
                     height = 0f;
                     lifetime = 10f;
-                    damage = 0f;
                     spawnUnit = new MissileUnitType("egg"){{
                     flying = false;
-                    speed = 0f;
                     useUnitCap = false;
                     lifetime = 123f;
                     health = 600f;
@@ -1602,36 +1599,31 @@ public class JPUnits {
                 shoot.shots = 3;
                 shoot.shotDelay = 10f;
                 shootSound = Sounds.none;
-                bullet = new BombBulletType(27f, 25f){{
+                bullet = new BombBulletType(25f, 25f){{
                     fragBullets = 3;
                     width = 10f;
                     height = 14f;
                     hitEffect = Fx.flakExplosion;
                     shootEffect = Fx.none;
                     smokeEffect = Fx.none;
-                    splashDamage = 45f;
-                    // backColor = Color.valueOf("8FFE09");
-                    // frontColor = Color.valueOf("8FFE09");
-                    // lightColor = Color.valueOf("8FFE09");
+                    splashDamage = 15f;
                     backColor = Color.valueOf("8B73C7");
-                    frontColor = Color.valueOf("8B73C7");
+                    frontColor = Color.white;
                     lightColor = Color.valueOf("8B73C7");
                     splashDamageRadius = 32f;
                     status = StatusEffects.blasted;
                     statusDuration = 60f;
-                    fragBullet = new BombBulletType(27f, 25f){{
+                    fragBullet = new BombBulletType(25f, 25f){{
                         shrinkX = 0f;
                         shrinkY = 0f;
                         spin = 4.6f;
-                        damage = 15f;
                         speed = 6;
-                        damage = 45f;
-                        splashDamage = 25f;
+                        splashDamage = 15f;
                         splashDamageRadius = 32f;
                         width = 10f;
                         height = 7f;
                         backColor = Color.valueOf("8B73C7");
-                        frontColor = Color.valueOf("8B73C7");
+                        frontColor = Color.white;
                         lightColor = Color.valueOf("8B73C7");
                         lifetime = 75f;
                         // backColor = Pal.gray;
@@ -1653,5 +1645,69 @@ public class JPUnits {
             abilities.add(new SpawnDeathAbility(Saboteur, 1, 11f));
             abilities.add(new SpawnDeathAbility(Protectorate, 1, 11f));
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
+            }};
+            FrostC = new UnitType("FrostC"){{
+                this.constructor = LegsUnit::create;
+                speed = 0.25f;
+                hitSize = 8f;
+                health = 58000;
+                armor = 30;
+                range = 80f;
+                legCount = 4;
+                legLength = 13f;
+                legExtension = 7f;
+                legBaseOffset = 6f;
+                weapons.add(new Weapon() {{
+                    shoot.firstShotDelay = 180;
+                    reload = 750;
+                    recoil = 12;
+                    mirror = false;
+                    rotate = false;
+                    x = 0;
+                    y = 0;
+                    bullet = new BasicBulletType(0f, 1500f) {{
+                        chargeEffect = Fx.none;
+                        shootStatus = StatusEffects.unmoving;
+                        despawnEffect = Fx.blastExplosion;
+                        shootStatusDuration = 210f;
+                        hittable = false;
+                        width = 69;
+                        height = 69;
+                        backColor = Color.valueOf("8B73C7");
+                        frontColor = Color.white;
+                        lightColor = Color.valueOf("8B73C7");
+                        shrinkX = 0;
+                        shrinkY = 0;
+                        lifetime = 500f;
+                        lightRadius = 70f;
+                        clipSize = 250f;
+                        sprite = "circle-bullet";
+                        speed = 1.5f;
+                        splashDamage = 90f;
+                        splashDamageRadius = 50;
+                        hitShake = 4f;
+                        splashDamagePierce = true;
+                healColor = Color.valueOf("87ceeb");
+                outlineColor = Color.valueOf("747474");
+                parts.add(new RegionPart("-hand"){{
+                    mirror = true;
+                    progress = PartProgress.warmup;
+                    layerOffset= -0.0001f;
+                    under = true;
+                    x = 3f;
+                    y = 3f;
+                    moveX = -1.5f;
+                    moveY = -1.25f;
+                    moveRot = 10f;
+                }});
+                
+                immunities.add(StatusEffects.burning);
+                immunities.add(StatusEffects.melting);
+                immunities.add(StatusEffects.freezing);
+                abilities.add(new RegenAbility(){{percentAmount = 1f / (800f * 60f * 2f) * 100f;}});
+                abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.cryofluid;}});
+                abilities.add(new StatusFieldAbility(JPStatus.Frostshield, 60f * 3, 60f * 9f, 60f));
+                }};
+            }});
             }};
 }}
