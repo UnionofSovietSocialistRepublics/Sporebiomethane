@@ -1666,14 +1666,14 @@ public class JPUnits {
                     rotate = false;
                     x = 0;
                     y = 0;
-                    bullet = new BasicBulletType(0f, 1500f) {{
+                    bullet = new ArtilleryBulletType(0.5f, 1500f) {{
                         chargeEffect = Fx.none;
                         shootStatus = StatusEffects.unmoving;
                         despawnEffect = Fx.blastExplosion;
                         shootStatusDuration = 210f;
                         hittable = false;
-                        width = 69;
-                        height = 69;
+                        width = 145;
+                        height = 145;
                         backColor = Color.valueOf("87ceeb");
                         frontColor = Color.white;
                         lightColor = Color.valueOf("87ceeb");
