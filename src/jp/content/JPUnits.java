@@ -1688,6 +1688,29 @@ public class JPUnits {
                         hitShake = 4f;
                         pierce = true;
                         splashDamagePierce = true;
+                        chargeEffect = new MultiEffect(
+                        new WaveEffect(){{
+                            colorFrom = colorTo = Color.valueOf("87ceeb");
+                            sizeFrom = 160f;
+                            sizeTo = 0f;
+                            lifetime = 90f;
+                            strokeFrom = 0f;
+                        }},
+                        new WaveEffect(){{
+                            colorFrom = colorTo = Color.valueOf("87ceeb");
+                            sizeFrom = 200f;
+                            sizeTo = 0f;
+                            lifetime = 120f;
+                            strokeFrom = 0f;
+                        }},
+                        new WaveEffect(){{
+                            colorFrom = colorTo = Color.valueOf("87ceeb");
+                            sizeFrom = 280f;
+                            sizeTo = 0f;
+                            lifetime = 180f;
+                            strokeFrom = 0f;
+                        }}
+                    );
                     }};
                 }});
                 healColor = Color.valueOf("87ceeb");
