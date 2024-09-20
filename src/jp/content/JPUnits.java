@@ -1675,6 +1675,7 @@ public class JPUnits {
                         hittable = false;
                         width = 145;
                         height = 145;
+                        rangeOverride = 80f;
                         backColor = Color.valueOf("87ceeb");
                         frontColor = Color.white;
                         lightColor = Color.valueOf("87ceeb");
