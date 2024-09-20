@@ -1668,6 +1668,7 @@ public class JPUnits {
                     y = 0;
                     shootSound = JPSounds.ArtyBig;
                     bullet = new BasicBulletType(0.5f, 1500f) {{
+                        rangeOverride = 50f;
                         chargeEffect = Fx.none;
                         shootStatus = StatusEffects.unmoving;
                         despawnEffect = Fx.blastExplosion;
@@ -1675,7 +1676,6 @@ public class JPUnits {
                         hittable = false;
                         width = 145;
                         height = 145;
-                        rangeOverride = 80f;
                         backColor = Color.valueOf("87ceeb");
                         frontColor = Color.white;
                         lightColor = Color.valueOf("87ceeb");
