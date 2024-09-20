@@ -1674,6 +1674,7 @@ public class JPUnits {
                         hittable = false;
                         width = 69;
                         height = 69;
+                        pierce = true;
                         backColor = Color.valueOf("8B73C7");
                         frontColor = Color.white;
                         lightColor = Color.valueOf("8B73C7");
