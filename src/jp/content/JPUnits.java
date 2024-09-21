@@ -1632,7 +1632,7 @@ public class JPUnits {
                     }};
                 }});
                 healColor = Color.valueOf("87ceeb");
-                outlineColor = Color.valueOf("747474");
+                outlineColor = Color.valueOf("303a45");
                 parts.add(new RegionPart("-hand"){{
                     mirror = true;
                     progress = PartProgress.warmup;
@@ -1650,7 +1650,6 @@ public class JPUnits {
                 immunities.add(StatusEffects.freezing);
                 immunities.add(StatusEffects.sporeSlowed);
                 immunities.add(StatusEffects.slow);
-                outlineColor = Color.valueOf("303a45");
                 abilities.add(new RegenAbility(){{percentAmount = 1f / (800f * 60f * 2f) * 100f;}});
                 abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.cryofluid;}});
                 abilities.add(new StatusFieldAbility(JPStatus.Frostshield, 60f * 3, 60f * 5f, 60f));
@@ -1736,7 +1735,7 @@ public class JPUnits {
 
                 }});
                 healColor = Color.valueOf("87ceeb");
-                outlineColor = Color.valueOf("747474");
+                outlineColor = Color.valueOf("303a45");
                 parts.add(new RegionPart("-hand"){{
                     mirror = true;
                     progress = PartProgress.warmup;
