@@ -698,108 +698,6 @@ public class JPUnits {
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
         }};
-            Frost = new UnitType("Frost"){{
-            this.constructor = LegsUnit::create;
-            speed = 0.25f;
-            hitSize = 8f;
-            health = 58000;
-            armor = 30;
-            range = 80f;
-            legCount = 4;
-            legLength = 13f;
-            legExtension = 7f;
-            legBaseOffset = 6f;
-            weapons.add(new Weapon("I AM THE STORM THAT IS APPROACHING"){{
-
-                top = true;
-                reload = 5f;
-                x = 0f;
-                y = 7f;
-                mirror = false;
-                recoil = 0f;
-                shootStatus = JPStatus.Frostshield;
-                shootStatusDuration = 80f;
-                shootSound = Sounds.flame;
-                ejectEffect = Fx.none;
-                bullet = new BasicBulletType(2.5f, 9){{
-                    statusDuration = 60f * 4;
-                    status = StatusEffects.freezing;
-                    collidesAir = true;
-                    shootEffect = Fx.none;
-                    speed = 6f;
-                    width = 0.1f;
-                    height = 0.1f;
-                    damage = 250f;
-                    lifetime = 25f;
-                    pierce = true;
-                    pierceBuilding = true;
-                    despawnEffect = Fx.none;
-                    pierceCap = 5;
-                    hittable = false;
-                    reflectable = false;
-                    shootEffect = new ParticleEffect() {{
-                    particles = 360;
-                    sizeFrom = 4f;
-                    sizeTo = 0f;
-                    length = 200f;
-                    lifetime = 30f;
-                    lightColor = Color.valueOf("87ceeb");
-                    colorFrom = Color.valueOf("87ceeb");
-                    colorTo = Color.valueOf("87ceeb");
-                    cone = 10f;
-                }};
-                }};
-
-            }});
-            weapons.add(new Weapon("Autus generator"){{
-                range = 10f;
-                top = true;
-                reload = 2500f;
-                x = 0f;
-                y = 0f;
-                mirror = false;
-                alwaysShooting = true;
-                recoil = 0f;
-                shootStatus = JPStatus.Frostshield;
-                shootStatusDuration = 360f;
-                shootSound = Sounds.none;
-                ejectEffect = Fx.none;
-                bullet = new BasicBulletType(2.5f, 9){{
-                    rangeOverride = 1f;
-                    collidesAir = false;
-                    width = 0f;
-                    height = 0f;
-                    lifetime = 1f;
-                    damage = 0f;
-                    alternate = true;
-                    shoot.shots = 4;
-                    shoot.shotDelay = 50f;
-                    spawnUnit =  JPUnits.Autus;
-                }};
-
-            }});
-            healColor = Color.valueOf("87ceeb");
-            outlineColor = Color.valueOf("747474");
-            parts.add(new RegionPart("-hand"){{
-                mirror = true;
-                progress = PartProgress.warmup;
-                layerOffset= -0.0001f;
-                under = true;
-                x = 3f;
-                y = 3f;
-                moveX = -1.5f;
-                moveY = -1.25f;
-                moveRot = 10f;
-            }});
-            deathExplosionEffect = JPFx.bulletExplosion;
-            immunities.add(StatusEffects.burning);
-            immunities.add(StatusEffects.melting);
-            immunities.add(StatusEffects.freezing);
-            abilities.add(new SpawnDeathAbility(FrostC, 1, 11f));
-            abilities.add(new RegenAbility(){{percentAmount = 1f / (800f * 60f * 2f) * 100f;}});
-            abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.cryofluid;}});
-            abilities.add(new StatusFieldAbility(JPStatus.Frostshield, 60f * 3, 60f * 9f, 60f));
-        }};
             Roach = new UnitType("Roach"){{
             this.constructor = LegsUnit::create;
             speed = 1f;
@@ -1750,6 +1648,108 @@ public class JPUnits {
                 immunities.add(StatusEffects.melting);
                 immunities.add(StatusEffects.freezing);
                 outlineColor = Color.valueOf("303a45");
+                abilities.add(new RegenAbility(){{percentAmount = 1f / (800f * 60f * 2f) * 100f;}});
+                abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.cryofluid;}});
+                abilities.add(new StatusFieldAbility(JPStatus.Frostshield, 60f * 3, 60f * 9f, 60f));
+            }};
+            Frost = new UnitType("Frost"){{
+                this.constructor = LegsUnit::create;
+                speed = 0.25f;
+                hitSize = 8f;
+                health = 58000;
+                armor = 30;
+                range = 80f;
+                legCount = 4;
+                legLength = 13f;
+                legExtension = 7f;
+                legBaseOffset = 6f;
+                weapons.add(new Weapon("I AM THE STORM THAT IS APPROACHING"){{
+
+                    top = true;
+                    reload = 5f;
+                    x = 0f;
+                    y = 7f;
+                    mirror = false;
+                    recoil = 0f;
+                    shootStatus = JPStatus.Frostshield;
+                    shootStatusDuration = 80f;
+                    shootSound = Sounds.flame;
+                    ejectEffect = Fx.none;
+                    bullet = new BasicBulletType(2.5f, 9){{
+                        statusDuration = 60f * 4;
+                        status = StatusEffects.freezing;
+                        collidesAir = true;
+                        shootEffect = Fx.none;
+                        speed = 6f;
+                        width = 0.1f;
+                        height = 0.1f;
+                        damage = 250f;
+                        lifetime = 25f;
+                        pierce = true;
+                        pierceBuilding = true;
+                        despawnEffect = Fx.none;
+                        pierceCap = 5;
+                        hittable = false;
+                        reflectable = false;
+                        shootEffect = new ParticleEffect() {{
+                            particles = 360;
+                            sizeFrom = 4f;
+                            sizeTo = 0f;
+                            length = 200f;
+                            lifetime = 30f;
+                            lightColor = Color.valueOf("87ceeb");
+                            colorFrom = Color.valueOf("87ceeb");
+                            colorTo = Color.valueOf("87ceeb");
+                            cone = 10f;
+                        }};
+                    }};
+
+                }});
+                weapons.add(new Weapon("Autus generator"){{
+                    range = 10f;
+                    top = true;
+                    reload = 2500f;
+                    x = 0f;
+                    y = 0f;
+                    mirror = false;
+                    alwaysShooting = true;
+                    recoil = 0f;
+                    shootStatus = JPStatus.Frostshield;
+                    shootStatusDuration = 360f;
+                    shootSound = Sounds.none;
+                    ejectEffect = Fx.none;
+                    bullet = new BasicBulletType(2.5f, 9){{
+                        rangeOverride = 1f;
+                        collidesAir = false;
+                        width = 0f;
+                        height = 0f;
+                        lifetime = 1f;
+                        damage = 0f;
+                        alternate = true;
+                        shoot.shots = 4;
+                        shoot.shotDelay = 50f;
+                        spawnUnit =  JPUnits.Autus;
+                    }};
+
+                }});
+                healColor = Color.valueOf("87ceeb");
+                outlineColor = Color.valueOf("747474");
+                parts.add(new RegionPart("-hand"){{
+                    mirror = true;
+                    progress = PartProgress.warmup;
+                    layerOffset= -0.0001f;
+                    under = true;
+                    x = 3f;
+                    y = 3f;
+                    moveX = -1.5f;
+                    moveY = -1.25f;
+                    moveRot = 10f;
+                }});
+                deathExplosionEffect = JPFx.bulletExplosion;
+                immunities.add(StatusEffects.burning);
+                immunities.add(StatusEffects.melting);
+                immunities.add(StatusEffects.freezing);
+                abilities.add(new SpawnDeathAbility(FrostC, 1, 0f));
                 abilities.add(new RegenAbility(){{percentAmount = 1f / (800f * 60f * 2f) * 100f;}});
                 abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.cryofluid;}});
                 abilities.add(new StatusFieldAbility(JPStatus.Frostshield, 60f * 3, 60f * 9f, 60f));
