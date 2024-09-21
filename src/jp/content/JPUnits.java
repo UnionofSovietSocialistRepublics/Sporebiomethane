@@ -791,10 +791,11 @@ public class JPUnits {
                 moveY = -1.25f;
                 moveRot = 10f;
             }});
-            
+            deathExplosionEffect = JPFx.bulletExplosion;
             immunities.add(StatusEffects.burning);
             immunities.add(StatusEffects.melting);
             immunities.add(StatusEffects.freezing);
+            abilities.add(new SpawnDeathAbility(FrostC, 1, 11f));
             abilities.add(new RegenAbility(){{percentAmount = 1f / (800f * 60f * 2f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.cryofluid;}});
             abilities.add(new StatusFieldAbility(JPStatus.Frostshield, 60f * 3, 60f * 9f, 60f));
@@ -1668,7 +1669,7 @@ public class JPUnits {
                     y = 0;
                     shootSound = JPSounds.ArtyBig;
                     bullet = new BasicBulletType(0.5f, 1500f) {{
-                        rangeOverride = 50f;
+                        rangeOverride = 100f;
                         chargeEffect = Fx.none;
                         shootStatus = StatusEffects.unmoving;
                         despawnEffect = Fx.blastExplosion;
