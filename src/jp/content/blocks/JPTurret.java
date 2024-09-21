@@ -217,7 +217,7 @@ public class JPTurret{
                     reloadMultiplier = 0.5f;
                     splashDamage = 5f;
                     splashDamageRadius = 45f;
-                    knockback = 4f;
+                    knockback = 1.5f;
                     height = width = 15f;
                     status = StatusEffects.sporeSlowed;
                     statusDuration = 60f * 14;
