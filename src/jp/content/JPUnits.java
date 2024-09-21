@@ -1641,17 +1641,19 @@ public class JPUnits {
                     x = 3f;
                     y = 3f;
                     moveX = 1.5f;
-                    moveY = 1.25f;
+                    moveY = 2f;
                     moveRot = -10f;
                 }});
                 hidden = true;
                 immunities.add(StatusEffects.burning);
                 immunities.add(StatusEffects.melting);
                 immunities.add(StatusEffects.freezing);
+                immunities.add(StatusEffects.sporeSlowed);
+                immunities.add(StatusEffects.slow);
                 outlineColor = Color.valueOf("303a45");
                 abilities.add(new RegenAbility(){{percentAmount = 1f / (800f * 60f * 2f) * 100f;}});
                 abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.cryofluid;}});
-                abilities.add(new StatusFieldAbility(JPStatus.Frostshield, 60f * 3, 60f * 9f, 60f));
+                abilities.add(new StatusFieldAbility(JPStatus.Frostshield, 60f * 3, 60f * 5f, 60f));
             }};
             Frost = new UnitType("Frost"){{
                 this.constructor = LegsUnit::create;
