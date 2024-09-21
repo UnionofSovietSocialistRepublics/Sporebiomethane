@@ -1644,6 +1644,7 @@ public class JPUnits {
                     moveY = 1.25f;
                     moveRot = -10f;
                 }});
+                hidden = true;
                 immunities.add(StatusEffects.burning);
                 immunities.add(StatusEffects.melting);
                 immunities.add(StatusEffects.freezing);
