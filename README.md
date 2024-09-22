@@ -14,16 +14,16 @@ This is a java port of our mod, for the hjson/js one please check [here](https:/
 
 # To do list (Thing may or may not change in the future)
 ### campaign progression (sector)
-#### Above the sky (done)
+#### Above the sky (revamped, done)
 - Unlocks after the crater
 - Introduction to zerg units
-#### Dig Site (done)
+#### Dig Site (revamping in progress)
 - Unlocked after above the sky
 - unlocks vanadium
-#### Birth(45%)
+#### Birth(back to 0%, revamping in progress)
 - First attack sector
 - unlock incubator
-#### Magma (done)
+#### Magma (revamping in progress)
 - A short survival map with brutal waves to test the player strength
 - unlock azurite
 #### Name undecided
@@ -35,7 +35,7 @@ This is a java port of our mod, for the hjson/js one please check [here](https:/
 #### Name undecided
 - A fortified fortress that show the true might of the zerg.
 - Unlock assembler
-#### Frosted
+#### Frosted (revamping in progress)
 - The near final map
 - Fight against frost, the frozen autus.
 #### Desolation
