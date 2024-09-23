@@ -13,7 +13,7 @@ public class JPtechtree {
     public static void load(){
         if(Core.settings.getBool("HM") == true){
         nodeRoot("Spore biomechs Hardmode", coreShard, false, () -> {
-            //Above the skies is the currently the placeholder for now, the required sector will changes later.
+            //Above the skies is currently the placeholder for now, the required sector will change later.
             node(JPOther.Sporecore, Seq.with(new SectorComplete(JPsectorsHM.SkiHM)), () -> {
                 node(JPOther.Hive, () -> {
                     node(JPOther.Nydusaecore);
@@ -96,7 +96,7 @@ public class JPtechtree {
             });
 }else {
             nodeRoot("Spore biomechs", coreShard, false, () -> {
-            //Above the skies is the currently the placeholder for now, the required sector will changes later.
+            //Above the skies is currently the placeholder for now, the required sector will change later.
             node(JPOther.Sporecore, Seq.with(new SectorComplete(JPsectors.Ski)), () -> {
                 node(JPOther.Hive, () -> {
                     node(JPOther.Nydusaecore);
