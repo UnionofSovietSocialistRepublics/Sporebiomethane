@@ -8,8 +8,8 @@ import mindustry.world.meta.*;
 public class JPSettings {
     public static void init() {
         //Each you turn on or off those setting you need to restart the game for it to take effect. (They're not by default.)
-        Vars.ui.settings.addCategory(Core.bundle.get("Spore Biomechs Settings"), "jp-sporeset", cruxs -> {
-            cruxs.checkPref("HM", false);
+        Vars.ui.settings.addCategory(Core.bundle.get("jpsettings"), "jp-sporeset", jp -> {
+            jp.checkPref("jp-HM", false);
         });
 
     }
