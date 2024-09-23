@@ -45,7 +45,12 @@ public class Unloader extends Mod{
         }
         });
     }
-
+    @Override
+    public void init() {
+        // Idk what super and init does but settings only work when init
+        super.init();
+        JPSettings.init();
+    }
     @Override
     public void loadContent(){
         Log.info("Ah shit here we go again. Another mod, another load.");
@@ -65,7 +70,6 @@ public class Unloader extends Mod{
         JPsectors.load();
         }
         JPtechtree.load();
-        JPSettings.init();
     }
 
 }
