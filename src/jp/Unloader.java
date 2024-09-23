@@ -65,6 +65,7 @@ public class Unloader extends Mod{
         JPsectors.load();
         }
         JPtechtree.load();
+        JPSettings.init();
     }
 
 }
