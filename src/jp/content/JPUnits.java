@@ -235,11 +235,11 @@ public class JPUnits {
                 x = 0f;
                 mirror = false;
                 y = 0f;
-                recoil = -8f;
                 bullet = new BasicBulletType(0f, 9){{
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
                     lifetime = 1f;
+                    recoil = -8f;
                 }};
             }});
             parts.add(new RegionPart("-wing"){{
