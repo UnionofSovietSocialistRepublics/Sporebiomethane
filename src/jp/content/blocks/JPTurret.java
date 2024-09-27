@@ -327,7 +327,7 @@ public class JPTurret{
         }};
         Suppressor = new ItemTurret("Suppressor"){{
             requirements(Category.turret, with(graphite, 225, JPItem.Nanitealloy, 25, JPItem.Biomass, 45));
-            health = 850;
+            health = 1850;
             size = 3;
             rotateSpeed = 10f;
             range = 200f;

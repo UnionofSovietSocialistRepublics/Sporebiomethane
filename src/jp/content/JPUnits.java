@@ -234,7 +234,7 @@ public class JPUnits {
                 }};
             }});
             weapons.add(new Weapon("grapplinghook"){{
-                reload = 198400f;
+                reload = 645f;
                 x = 0f;
                 mirror = false;
                 y = 0f;
@@ -266,6 +266,9 @@ public class JPUnits {
                 progress = PartProgress.recoil;
                 x = 3.5f;
                 y = -6f;
+                moveX = 1.5f;
+                moveY = 2f;
+                moveRot = -10f;
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
@@ -281,6 +284,8 @@ public class JPUnits {
             health = 925;
             targetAir = false;
             engineOffset = 7.8f;
+
+
             range = 140f;
             faceTarget = false;
             circleTarget = true;
