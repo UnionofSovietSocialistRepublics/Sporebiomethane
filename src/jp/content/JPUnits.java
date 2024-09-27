@@ -243,12 +243,10 @@ public class JPUnits {
                     frontColor = Color.valueOf("8B73C7");
                     lifetime = 15f;
                     recoil = -12f;
-                    trailEffect = new Effect(16f, e -> {
-                        color(Color.valueOf("8B73C7"));
-                        for(int s : Mathf.signs){
-                            Drawf.tri(e.x, e.y, 4f, 30f * e.fslope(), e.rotation + 90f*s);
-                        }
-                    });
+                    trailLength = 10;
+                    trailWidth = 4f;
+                    trailColor = Color.valueOf("8B73C7");
+                    trailInterval = 3f;
                 }};
             }});
             parts.add(new RegionPart("-wing"){{
