@@ -224,12 +224,22 @@ public class JPUnits {
                 x = 0f;
                 mirror = false;
                 y = 0f;
-                bullet = new BasicBulletType(2.5f, 9){{
+                bullet = new BasicBulletType(3f, 35){{
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
-                    speed = 3f;
                     lifetime = 45f;
-                    damage = 35f;
+                }};
+            }});
+            weapons.add(new Weapon("grapplinghook"){{
+                reload = 198400f;
+                x = 0f;
+                mirror = false;
+                y = 0f;
+                recoil = -8f;
+                bullet = new BasicBulletType(0f, 9){{
+                    backColor = Color.valueOf("8B73C7");
+                    frontColor = Color.valueOf("8B73C7");
+                    lifetime = 1f;
                 }};
             }});
             parts.add(new RegionPart("-wing"){{
