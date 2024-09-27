@@ -244,7 +244,7 @@ public class JPUnits {
                     lifetime = 13.5f;
                     splashDamage = 200f;
                     splashDamageRadius = 25.5f;
-                    recoil = -12f;
+                    recoil = -15.5f;
                     trailLength = 10;
                     trailWidth = 4f;
                     trailColor = Color.valueOf("8B73C7");
