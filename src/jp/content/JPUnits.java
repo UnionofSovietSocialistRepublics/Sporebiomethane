@@ -241,12 +241,24 @@ public class JPUnits {
                 bullet = new BasicBulletType(9f, 180){{
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
-                    lifetime = 15f;
+                    lifetime = 14.5f;
+                    splashDamage = 200f;
+                    splashDamageRadius = 25.5f;
                     recoil = -12f;
                     trailLength = 10;
                     trailWidth = 4f;
                     trailColor = Color.valueOf("8B73C7");
                     trailInterval = 3f;
+                    hitEffect = new MultiEffect(
+                            new WaveEffect(){{
+                                colorFrom = colorTo = Color.valueOf("8B73C7");
+                                sizeFrom = 0f;
+                                sizeTo = 30f;
+                                lifetime = 20f;
+                                strokeFrom = 0f;
+                                strokeTo = 5.5f;
+                            }}
+                    );
                 }};
             }});
             parts.add(new RegionPart("-wing"){{
