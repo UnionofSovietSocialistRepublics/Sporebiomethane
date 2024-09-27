@@ -11,7 +11,7 @@ import static mindustry.content.SectorPresets.*;
 
 public class JPtechtree {
     public static void load(){
-        if(Core.settings.getBool("HM") == true){
+        if(Core.settings.getBool("HM")){
         nodeRoot("Spore biomechs Hardmode", coreShard, false, () -> {
             //Above the skies is currently the placeholder for now, the required sector will change later.
             node(JPOther.Sporecore, Seq.with(new SectorComplete(JPsectorsHM.SkiHM)), () -> {
