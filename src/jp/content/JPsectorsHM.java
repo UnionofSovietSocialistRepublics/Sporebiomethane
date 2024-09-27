@@ -6,7 +6,7 @@ import static mindustry.content.Planets.*;
 
 public class JPsectorsHM{
     public static SectorPreset
-    SkiHM, DigHM, BirthHM, MagmaHM, Frosted;
+    SkiHM, DigHM, BirthHM, MagmaHM, Frosted, Biomass;
 
 
     public static void load(){
@@ -15,9 +15,14 @@ public class JPsectorsHM{
             difficulty = 4;
             captureWave = 20;
         }};
+        Biomass = new SectorPreset("Biomass", serpulo, 81){{
+            difficulty = 3;
+            captureWave = 20;
+            alwaysUnlocked = true;
+        }};
         DigHM = new SectorPreset("DigHM", serpulo, 198){{
             difficulty = 5;
-            captureWave = 30;
+            captureWave = 25;
         }};
         BirthHM = new SectorPreset("BirthHM", serpulo, 263){{
             difficulty = 6;
