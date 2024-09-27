@@ -2,9 +2,11 @@ package jp.content;
 
 import arc.func.Prov;
 import arc.graphics.*;
+import arc.math.Mathf;
 import arc.struct.*;
 import mindustry.ai.*;
 import mindustry.ai.types.*;
+import mindustry.entities.Effect;
 import mindustry.entities.abilities.*;
 import mindustry.entities.bullet.*;
 import mindustry.entities.effect.*;
@@ -18,13 +20,15 @@ import mindustry.type.unit.*;
 import mindustry.entities.abilities.UnitSpawnAbility;
 import mindustry.world.meta.*;
 
+import static arc.graphics.g2d.Draw.color;
+
 
 public class JPUnits {
     public static UnitType
     //Legs
     Carci,Imp, Basilisk, Autus, Baneling, Zergling, Behomoth, Lobber, Breacher, Scarabid, Frost, Roach, Purger, Gorgon, Raptor, FrostC,
     //missiles
-    Bomb,
+    //Bomb,
     //Floaty
     Guardian,Thera,DeathImp,Drone,Interceptor,Hivedefender,HiveSentinel,Sporophage,Rizomorph,
     //Le tether
@@ -87,7 +91,6 @@ public class JPUnits {
         DeathImp = new UnitType("DeathImp"){{
             this.constructor = UnitEntity::create;
             speed = 1.75f;
-            hitSize = 8f;
             health = 215;
             range = 50f;
             engineOffset = 5f;
@@ -240,18 +243,19 @@ public class JPUnits {
                     frontColor = Color.valueOf("8B73C7");
                     lifetime = 15f;
                     recoil = -12f;
-                    rangeOverride = 250f;
+                    trailEffect = new Effect(16f, e -> {
+                        color(Color.valueOf("8B73C7"));
+                        for(int s : Mathf.signs){
+                            Drawf.tri(e.x, e.y, 4f, 30f * e.fslope(), e.rotation + 90f*s);
+                        }
+                    });
                 }};
             }});
             parts.add(new RegionPart("-wing"){{
                 mirror = true;
                 progress = PartProgress.recoil;
-                // layerOffset= -0.0001f;
                 x = 3.5f;
                 y = -6f;
-                // moveX = 1.5f;
-                // moveY = -1.25f;
-                // moveRot = 10f;
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
@@ -263,7 +267,6 @@ public class JPUnits {
             drag = 0.016f;
             flying = true;
             hitSize = 10f;
-            hitSize = 8f;
             engineSize = 5f;
             health = 925;
             targetAir = false;
@@ -379,7 +382,6 @@ public class JPUnits {
             engineSize = 4f;
             rotateSpeed = 7f;
             flying = true;
-            hitSize = 9f;
             drag = 0.05f;
             accel = 0.11f;
             weapons.add(new Weapon("balls"){{
@@ -490,8 +492,7 @@ public class JPUnits {
                     splashDamage = 30f;
                     splashDamageRadius = 25f;
                     lifetime = 75f;
-                    //statusDuration = 60f * 4;
-                    //status = StatusEffects.slow;
+
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
                     lightColor = Color.valueOf("8B73C7");
@@ -1350,8 +1351,6 @@ public class JPUnits {
                     width = 8f;
                     height = 8f;
                     damage = 15f;
-                    //hitEffect = Fx.blastExplosion;
-                    //despawnEffect = Fx.blastExplosion;
                 }};
             }});
             blade.add(
@@ -1440,8 +1439,6 @@ public class JPUnits {
                     splashDamage = 25f;
                     splashDamageRadius = 25f;
                     collidesAir = false;
-                    // hitEffect = Fx.blastExplosion;
-                    // despawnEffect = Fx.blastExplosion;
                 }};
             }});
             blade.add(
@@ -1537,8 +1534,6 @@ public class JPUnits {
                         frontColor = Color.white;
                         lightColor = Color.valueOf("8B73C7");
                         lifetime = 75f;
-                        // backColor = Pal.gray;
-                        // frontColor = Color.white;
                         despawnEffect = Fx.none;
                     }};
                 }};
