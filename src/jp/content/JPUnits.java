@@ -238,9 +238,9 @@ public class JPUnits {
                 bullet = new BasicBulletType(9f, 180){{
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
-                    lifetime = 25f;
+                    lifetime = 15f;
                     recoil = -12f;
-                    rangeOverride = 100f;
+                    rangeOverride = 250f;
                 }};
             }});
             parts.add(new RegionPart("-wing"){{
