@@ -268,7 +268,7 @@ public class JPUnits {
                 y = -6f;
                 moveX = 1.5f;
                 moveY = 2f;
-                moveRot = -10f;
+                moveRot = 10;
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
