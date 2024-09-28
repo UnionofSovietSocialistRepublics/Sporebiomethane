@@ -17,7 +17,7 @@ This is a java port of our mod, for the hjson/js one please check [here](https:/
 #### Above the sky (revamped, done)
 - Unlocks after the crater
 - Introduction to zerg units
-#### Dig Site (revamping in progress)
+#### Dig Site (revamped, done)
 - Unlocked after above the sky
 - unlocks vanadium
 #### Birth(back to 0%, revamping in progress)
