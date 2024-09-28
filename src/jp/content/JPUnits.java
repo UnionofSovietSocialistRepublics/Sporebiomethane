@@ -2,11 +2,9 @@ package jp.content;
 
 import arc.func.Prov;
 import arc.graphics.*;
-import arc.math.Mathf;
 import arc.struct.*;
 import mindustry.ai.*;
 import mindustry.ai.types.*;
-import mindustry.entities.Effect;
 import mindustry.entities.abilities.*;
 import mindustry.entities.bullet.*;
 import mindustry.entities.effect.*;
@@ -20,7 +18,6 @@ import mindustry.type.unit.*;
 import mindustry.entities.abilities.UnitSpawnAbility;
 import mindustry.world.meta.*;
 
-import static arc.graphics.g2d.Draw.color;
 
 
 public class JPUnits {
