@@ -720,7 +720,7 @@ public class JPUnits {
                     homingRange = 60f;
                     backColor = Color.valueOf("8FFE09");
                     frontColor = Color.valueOf("8FFE09");
-                    lightColor = Color.valueOf("8FFE09");
+                    lightColor = Color.white;
                     collidesTiles = true;
                     trailLength = 3;
                     trailColor = Color.valueOf("bbfe6b");
@@ -739,8 +739,9 @@ public class JPUnits {
                     speed = 3f;
                     lifetime = 45f;
                     damage = 20f;
-                    backColor = Color.valueOf("CBC3E3");
-                    frontColor = Color.valueOf("CBC3E3");
+                    backColor = Color.valueOf("8FFE09");
+                    frontColor = Color.valueOf("8FFE09");
+                    lightColor = Color.valueOf("8FFE09");
                 }};
 
             }});
@@ -1132,9 +1133,9 @@ public class JPUnits {
                 x = 0f;
                 y = 0f;
                 continuous = true;
+                shoot.firstShotDelay = JPFx.purpleLaserChargeSmall.lifetime -1f;
                 chargeSound = Sounds.lasercharge2;
                 shootSound = Sounds.beam;
-                shoot.firstShotDelay = Fx.greenLaserChargeSmall.lifetime - 1f;
                 mirror = false;
                 bullet = new ContinuousLaserBulletType(){{
                     width = 2f;
@@ -1165,13 +1166,13 @@ public class JPUnits {
                 x = 0f;
                 y = 26f;
                 continuous = true;
-                shoot.firstShotDelay = Fx.greenLaserChargeSmall.lifetime - 1f;
+                shoot.firstShotDelay = JPFx.purpleLaserChargeSmall.lifetime -1f;
                 chargeSound = Sounds.lasercharge2;
                 shootSound = Sounds.beam;
                 mirror = false;
                 bullet = new ContinuousLaserBulletType(){{
-                    width = 2f;
                     damage = 65f;
+                    width = 40f;
                     length = 180f;
                     drawSize = 420f;
                     lifetime = 160f;
@@ -1554,7 +1555,7 @@ public class JPUnits {
                     smokeEffect = Fx.none;
                     splashDamage = 15f;
                     backColor = Color.valueOf("8B73C7");
-                    frontColor = Color.white;
+                    frontColor = Color.valueOf("8B73C7");
                     lightColor = Color.valueOf("8B73C7");
                     splashDamageRadius = 32f;
                     status = StatusEffects.blasted;
