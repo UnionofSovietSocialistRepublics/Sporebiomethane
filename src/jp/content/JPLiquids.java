@@ -2,6 +2,7 @@ package jp.content;
 
 import arc.graphics.Color;
 import jp.content.*;
+import mindustry.content.StatusEffects;
 import mindustry.type.Liquid;
 
 public class JPLiquids {
@@ -12,7 +13,7 @@ public class JPLiquids {
 
         liquidSpore = new Liquid("liquidSpore", Color.valueOf("8B73C7")){{
             coolant = false;
-            effect = JPStatus.Dissolving;
+            effect = StatusEffects.corroded;
             hidden = true;
             capPuddles = false;
         }};
