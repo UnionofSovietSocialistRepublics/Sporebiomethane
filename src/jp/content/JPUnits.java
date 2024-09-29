@@ -319,9 +319,9 @@ public class JPUnits {
                     shootEffect = Fx.none;
                     smokeEffect = Fx.none;
                     splashDamage = 25f;
-                    backColor = Color.valueOf("8B73C7");
-                    frontColor = Color.valueOf("8B73C7");
-                    lightColor = Color.white;
+                    backColor = Color.valueOf("8b73c7");
+                    frontColor = Color.valueOf("7357cf");
+                    lightColor = Color.valueOf("8b73c7");
                     splashDamageRadius = 32f;
                     status = StatusEffects.blasted;
                     statusDuration = 60f;
@@ -1549,9 +1549,9 @@ public class JPUnits {
                     shootEffect = Fx.none;
                     smokeEffect = Fx.none;
                     splashDamage = 15f;
-                    backColor = Color.valueOf("8B73C7");
-                    frontColor = Color.valueOf("8B73C7");
-                    lightColor = Color.white;
+                    backColor = Color.valueOf("8b73c7");
+                    frontColor = Color.valueOf("7357cf");
+                    lightColor = Color.valueOf("8b73c7");
                     splashDamageRadius = 32f;
                     status = StatusEffects.blasted;
                     statusDuration = 60f;
@@ -1564,9 +1564,9 @@ public class JPUnits {
                         splashDamageRadius = 32f;
                         width = 10f;
                         height = 7f;
-                        backColor = Color.valueOf("8B73C7");
-                        frontColor = Color.valueOf("8B73C7");
-                        lightColor = Color.valueOf("8B73C7");
+                        backColor = Color.valueOf("8b73c7");
+                        frontColor = Color.valueOf("7357cf");
+                        lightColor = Color.valueOf("8b73c7");
                         lifetime = 75f;
                         despawnEffect = Fx.none;
                     }};
