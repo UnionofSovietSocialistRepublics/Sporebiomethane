@@ -181,6 +181,17 @@ public class JPUnits {
                     collidesAir = true;
                     buildingDamageMultiplier = 1.25f;
                     hitSound = Sounds.explosion;
+                    fragBullets = 6;
+                    fragBullet = new LiquidBulletType(JPLiquids.liquidSpore){{
+                        lifetime = 20f;
+                        speed = 3f;
+                        knockback = 1.7f;
+                        puddleSize = 8f;
+                        orbSize = 4f;
+                        statusDuration = 60f * 4f;
+                        damage = 40f;
+                        layer = Layer.bullet - 2f;
+                    }};
                 }};
                 shootSound = Sounds.explosion;
             }});

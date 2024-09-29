@@ -54,6 +54,7 @@ public class Unloader extends Mod{
     @Override
     public void loadContent(){
         Log.info("Ah shit here we go again. Another mod, another load.");
+        JPLiquids.load();
         JPStatus.load();
         JPAttribute.load();
         JPSounds.load();
@@ -64,7 +65,7 @@ public class Unloader extends Mod{
         Log.info("Loading blocks");
         JPBlockLoader.load();
         Log.info("Loading Techcub- I mean Techtree");
-        if(Core.settings.getBool("HM") == true){
+        if(Core.settings.getBool("HM")){
         JPsectorsHM.load();}
         else{
         JPsectors.load();

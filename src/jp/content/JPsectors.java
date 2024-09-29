@@ -19,7 +19,7 @@ public class JPsectors{
         Biomass = new SectorPreset("Biomass", serpulo, 81){{
             difficulty = 3;
             captureWave = 20;
-            alwaysUnlocked = true;
+//            alwaysUnlocked = true;
         }};
         Dig = new SectorPreset("Dig", serpulo, 198){{
             difficulty = 3;

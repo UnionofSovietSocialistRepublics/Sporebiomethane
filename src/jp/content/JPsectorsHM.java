@@ -18,7 +18,7 @@ public class JPsectorsHM{
         Biomass = new SectorPreset("Biomass", serpulo, 81){{
             difficulty = 3;
             captureWave = 20;
-            alwaysUnlocked = true;
+//            alwaysUnlocked = true;
         }};
         DigHM = new SectorPreset("DigHM", serpulo, 198){{
             difficulty = 5;
