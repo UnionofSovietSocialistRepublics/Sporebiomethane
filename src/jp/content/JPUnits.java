@@ -259,6 +259,7 @@ public class JPUnits {
                     trailWidth = 4f;
                     trailColor = Color.valueOf("8B73C7");
                     trailInterval = 3f;
+                    despawnSound = Sounds.spark;
                     hitEffect = new MultiEffect(
                             new WaveEffect(){{
                                 colorFrom = colorTo = Color.valueOf("8B73C7");
@@ -1030,6 +1031,7 @@ public class JPUnits {
             mineTier = 3;
             drag = 0.05f;
             accel = 0.11f;
+            itemCapacity = 10;
             weapons.add(new Weapon("laser"){{
                 reload = 65f;
                 x = 0f;

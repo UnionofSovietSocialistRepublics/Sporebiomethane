@@ -66,11 +66,11 @@ public class JPTurret{
             inaccuracy = 2f;
             ammo(
                JPItem.Biomass, new PointBulletType(){{
-                    shootEffect = Fx.instShoot;
-                    hitEffect = Fx.instHit;
+                    shootEffect = JPFx.fsinsShoot;
+                    hitEffect = JPFx.fsinsHit;
                     smokeEffect = Fx.smokeCloud;
-                    trailEffect = Fx.instTrail;
-                    despawnEffect =  Fx.instBomb;
+                    trailEffect = JPFx.fsinsTrail;
+                    despawnEffect =  JPFx.fsinsBomb;
                     trailLength = 20;
                     trailColor = Color.valueOf("8B73C7");
                     damage = 2000f;
