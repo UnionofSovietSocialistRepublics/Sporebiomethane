@@ -319,9 +319,9 @@ public class JPUnits {
                     shootEffect = Fx.none;
                     smokeEffect = Fx.none;
                     splashDamage = 25f;
-                    backColor = Color.valueOf("8FFE09");
-                    frontColor = Color.valueOf("8FFE09");
-                    lightColor = Color.valueOf("8FFE09");
+                    backColor = Color.valueOf("8B73C7");
+                    frontColor = Color.valueOf("8B73C7");
+                    lightColor = Color.white;
                     splashDamageRadius = 32f;
                     status = StatusEffects.blasted;
                     statusDuration = 60f;
@@ -717,8 +717,8 @@ public class JPUnits {
                     homingPower = 0.1f;
                     homingRange = 60f;
                     backColor = Color.valueOf("8B73C7");
-                    frontColor = Color.valueOf("8B73C7");
-                    lightColor = Color.white;
+                    frontColor = Color.white;
+                    lightColor = Color.valueOf("8B73C7");
                     collidesTiles = true;
                     trailLength = 3;
                     trailColor = Color.valueOf("8B73C7");
@@ -736,8 +736,8 @@ public class JPUnits {
                     height = 15f;
                     lifetime = 45f;
                     backColor = Color.valueOf("8B73C7");
-                    frontColor = Color.valueOf("8B73C7");
-                    lightColor = Color.white;
+                    frontColor = Color.white;
+                    lightColor = Color.valueOf("8B73C7");
                 }};
 
             }});
@@ -1049,7 +1049,7 @@ public class JPUnits {
                     knockback = -1.24f;
                 }};
             }});
-            outlineColor = Color.valueOf("8B73C7");
+                outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f * 2f) * 100f;}});
             }};
 
@@ -1551,7 +1551,7 @@ public class JPUnits {
                     splashDamage = 15f;
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
-                    lightColor = Color.valueOf("8B73C7");
+                    lightColor = Color.white;
                     splashDamageRadius = 32f;
                     status = StatusEffects.blasted;
                     statusDuration = 60f;
@@ -1565,7 +1565,7 @@ public class JPUnits {
                         width = 10f;
                         height = 7f;
                         backColor = Color.valueOf("8B73C7");
-                        frontColor = Color.white;
+                        frontColor = Color.valueOf("8B73C7");
                         lightColor = Color.valueOf("8B73C7");
                         lifetime = 75f;
                         despawnEffect = Fx.none;
