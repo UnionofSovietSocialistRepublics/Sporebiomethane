@@ -183,10 +183,9 @@ public class JPUnits {
                     hitSound = Sounds.explosion;
                     fragBullets = 6;
                     fragBullet = new LiquidBulletType(JPLiquids.liquidSpore){{
-                        lifetime = 20f;
+                        lifetime = 17f;
                         speed = 3f;
-                        knockback = 1.7f;
-                        puddleSize = 8f;
+                        puddleSize = 20f;
                         orbSize = 4f;
                         status = JPStatus.Dissolving;
                         statusDuration = 60f * 4f;
@@ -196,8 +195,9 @@ public class JPUnits {
                 }};
                 shootSound = Sounds.explosion;
             }});
+            immunities.add(JPStatus.Dissolving);
             outlineColor = Color.valueOf("303a45");
-            abilities.add(new LiquidExplodeAbility(){{liquid = JPLiquids.liquidSpore; amount = 600f;}});
+            abilities.add(new LiquidExplodeAbility(){{liquid = JPLiquids.liquidSpore; amount = 250f;}});
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});
         }};
             Zergling = new UnitType("Zergling"){{
@@ -747,6 +747,7 @@ public class JPUnits {
                 reload = 75f;
                 x = -10f;
                 y = 0f;
+                recoil = 6;
                 mirror = true;
                 targetAir = false;
                 bullet = new ArtilleryBulletType(2.5f, 9){{
@@ -764,7 +765,7 @@ public class JPUnits {
                     frontColor = Color.valueOf("8FFE09");
                     lightColor = Color.valueOf("8FFE09");
                     collidesTiles = true;
-                    trailLength = 3;
+//                    trailLength = 3;
                     trailColor = Color.valueOf("bbfe6b");
                 }};
                 shootSound = Sounds.artillery;
