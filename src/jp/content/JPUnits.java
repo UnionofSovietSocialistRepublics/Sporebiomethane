@@ -706,13 +706,11 @@ public class JPUnits {
                 shoot.shots = 8;
                 shoot.shotDelay = 5f;
                 recoil = 5;
-                bullet = new MissileBulletType(2.5f, 9){{
-                    speed = 6f;
+                bullet = new MissileBulletType(6f, 85){{
                     height = width = 10f;
                     hitEffect = Fx.sapExplosion;
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
-                    damage = 85f;
                     splashDamage = 10f;
                     splashDamageRadius = 5f;
                     lifetime = 25f;
@@ -723,7 +721,7 @@ public class JPUnits {
                     lightColor = Color.white;
                     collidesTiles = true;
                     trailLength = 3;
-                    trailColor = Color.valueOf("bbfe6b");
+                    trailColor = Color.valueOf("8B73C7");
                 }};
                 shootSound = Sounds.missile;
             }});
@@ -732,13 +730,11 @@ public class JPUnits {
                 x = -11f;
                 y = 2f;
                 mirror = true;
-                bullet = new BasicBulletType(2.5f, 9){{
+                bullet = new BasicBulletType(3f, 20f){{
                     collidesTiles = true;
                     width = 15f;
                     height = 15f;
-                    speed = 3f;
                     lifetime = 45f;
-                    damage = 20f;
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
                     lightColor = Color.white;
@@ -1019,9 +1015,9 @@ public class JPUnits {
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};
             Drone = new UnitType("Drone"){{
+            this.constructor = UnitEntity::create;
             controller = u -> new MinerAI();
             defaultCommand = UnitCommand.mineCommand;
-            this.constructor = UnitEntity::create;
             speed = 1f;
             hitSize = 10f;
             health = 400;
@@ -1034,7 +1030,7 @@ public class JPUnits {
             mineTier = 3;
             drag = 0.05f;
             accel = 0.11f;
-            weapons.add(new Weapon("sus"){{
+            weapons.add(new Weapon("laser"){{
                 reload = 65f;
                 x = 0f;
                 y = 0f;
@@ -1043,23 +1039,23 @@ public class JPUnits {
                 mirror = false;
                 bullet = new SapBulletType(){{
                     sapStrength = 0.5f;
-                    length = 75;
-                    speed = 5f;
-                    width = 0.4f;
-                    shootEffect = Fx.shootBig;
-                    smokeEffect = Fx.shootBigSmoke;
-                    damage = 15f;
-                    lifetime = 20f;
-                    color = Color.valueOf("FFE70F");
+                    length = 75f;
+                    damage = 15;
+                    shootEffect = Fx.shootSmall;
+                    hitColor = color = Color.valueOf("8B73C7");
+                    despawnEffect = Fx.none;
+                    width = 0.54f;
+                    lifetime = 35f;
+                    knockback = -1.24f;
                 }};
             }});
-            outlineColor = Color.valueOf("303a45");
+            outlineColor = Color.valueOf("8B73C7");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f * 2f) * 100f;}});
             }};
 
             Zeta = new UnitType("Zeta"){{
-            controller = u -> new AssemblerAI();
             this.constructor = BuildingTetherPayloadUnit::create;
+            controller = u -> new AssemblerAI();
             speed = 1f;
             hitSize = 11f;
             health = 400;
@@ -1171,7 +1167,7 @@ public class JPUnits {
                 shootSound = Sounds.beam;
                 mirror = false;
                 bullet = new ContinuousLaserBulletType(65f){{
-                    width = 20f;
+                    width = 10f;
                     length = 180f;
                     drawSize = 420f;
                     lifetime = 160f;
