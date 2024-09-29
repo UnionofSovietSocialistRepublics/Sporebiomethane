@@ -328,6 +328,9 @@ public class JPUnits {
                 }};
             }});
             outlineColor = Color.valueOf("303a45");
+            abilities.add(new MoveEffectAbility(-3f, -7f, Pal.sapBulletBack, Fx.missileTrailShort, 4f){{
+                teamColor = true;
+            }});
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
             }};
             Autus = new UnitType("Autus"){{
@@ -454,6 +457,9 @@ public class JPUnits {
             }});
             healColor = Color.valueOf("590e14");
             outlineColor = Color.valueOf("303a45");
+            abilities.add(new MoveEffectAbility(-3f, -7f, Pal.sapBulletBack, Fx.missileTrailShort, 4f){{
+                teamColor = true;
+            }});
             abilities.add(new RegenAbility(){{percentAmount = 1f / (70f * 60f * 2f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};  
