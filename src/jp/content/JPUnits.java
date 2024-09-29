@@ -188,6 +188,7 @@ public class JPUnits {
                         knockback = 1.7f;
                         puddleSize = 8f;
                         orbSize = 4f;
+                        status = JPStatus.Dissolving;
                         statusDuration = 60f * 4f;
                         damage = 40f;
                         layer = Layer.bullet - 2f;
@@ -196,6 +197,7 @@ public class JPUnits {
                 shootSound = Sounds.explosion;
             }});
             outlineColor = Color.valueOf("303a45");
+            abilities.add(new LiquidExplodeAbility(){{liquid = JPLiquids.liquidSpore; amount = 600f;}});
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});
         }};
             Zergling = new UnitType("Zergling"){{
