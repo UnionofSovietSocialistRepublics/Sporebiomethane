@@ -718,8 +718,8 @@ public class JPUnits {
                     lifetime = 25f;
                     homingPower = 0.1f;
                     homingRange = 60f;
-                    backColor = Color.valueOf("8FFE09");
-                    frontColor = Color.valueOf("8FFE09");
+                    backColor = Color.valueOf("8B73C7");
+                    frontColor = Color.valueOf("8B73C7");
                     lightColor = Color.white;
                     collidesTiles = true;
                     trailLength = 3;
@@ -739,9 +739,9 @@ public class JPUnits {
                     speed = 3f;
                     lifetime = 45f;
                     damage = 20f;
-                    backColor = Color.valueOf("8FFE09");
-                    frontColor = Color.valueOf("8FFE09");
-                    lightColor = Color.valueOf("8FFE09");
+                    backColor = Color.valueOf("8B73C7");
+                    frontColor = Color.valueOf("8B73C7");
+                    lightColor = Color.white;
                 }};
 
             }});
@@ -776,7 +776,7 @@ public class JPUnits {
                     status = JPStatus.Dissolving;
                     backColor = Color.valueOf("8FFE09");
                     frontColor = Color.valueOf("8FFE09");
-                    lightColor = Color.valueOf("8FFE09");
+                    lightColor = Color.white;
                     collidesTiles = true;
 //                    trailLength = 3;
                     trailColor = Color.valueOf("bbfe6b");
@@ -1137,16 +1137,16 @@ public class JPUnits {
                 chargeSound = Sounds.lasercharge2;
                 shootSound = Sounds.beam;
                 mirror = false;
-                bullet = new ContinuousLaserBulletType(){{
+                bullet = new ContinuousLaserBulletType(50f){{
                     width = 2f;
-                    damage = 50f;
                     length = 75f;
                     drawSize = 100f;
                     lifetime = 125f;
                     healPercent = 0.5f;
                     collidesTeam = true;
-                    colors = new Color[]{Color.valueOf("8B73C7"), Color.valueOf("A865C9"), Color.valueOf("A865C9"), Color.valueOf("ffffff")};
                     buildingDamageMultiplier = 0.10f;
+                    colors = new Color[]{Color.valueOf("8B73C7"), Color.valueOf("A865C9"), Color.valueOf("A865C9"), Color.valueOf("ffffff")};
+                    chargeEffect = JPFx.purpleLaserChargeSmall;
                 }};
             }});
             outlineColor = Color.valueOf("303a45");
@@ -1170,15 +1170,14 @@ public class JPUnits {
                 chargeSound = Sounds.lasercharge2;
                 shootSound = Sounds.beam;
                 mirror = false;
-                bullet = new ContinuousLaserBulletType(){{
-                    damage = 65f;
-                    width = 40f;
+                bullet = new ContinuousLaserBulletType(65f){{
+                    width = 20f;
                     length = 180f;
                     drawSize = 420f;
                     lifetime = 160f;
                     healPercent = 1f;
                     collidesTeam = true;
-                    chargeEffect = Fx.greenLaserChargeSmall;
+                    chargeEffect = JPFx.purpleLaserChargeSmall;
                     colors = new Color[]{Color.valueOf("8B73C7"), Color.valueOf("A865C9"), Color.valueOf("A865C9"), Color.valueOf("ffffff")};
                 }};
             }});
