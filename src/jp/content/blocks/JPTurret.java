@@ -212,7 +212,7 @@ public class JPTurret{
             health = 750;
             inaccuracy = 2f;
             ammo(
-                sporePod, new FlakBulletType(5f, 15f){{
+                sporePod, new BasicBulletType(5f, 15f, "-bullet"){{
                     lifetime = 50f;
                     reloadMultiplier = 0.5f;
                     splashDamage = 5f;
@@ -227,7 +227,7 @@ public class JPTurret{
                     collidesGround = true;
                     collidesAir = true;
                 }},
-               JPItem.Biomass, new FlakBulletType(5f, 25f){{
+               JPItem.Biomass, new BasicBulletType(5f, 25f, "-bullet"){{
                     height = width = 15f;
                     lifetime = 50f;
                     splashDamage = 25f;
@@ -235,7 +235,6 @@ public class JPTurret{
                     fragBullets = 7;
                     status = StatusEffects.slow;
                     statusDuration = 60f * 5;
-                    //sprite = "ExplodingTNT";
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
                     lightColor = Color.valueOf("8B73C7");
