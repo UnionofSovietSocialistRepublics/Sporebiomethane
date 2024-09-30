@@ -227,8 +227,8 @@ public class JPTurret{
                     collidesGround = true;
                     collidesAir = true;
                 }},
-               JPItem.Biomass, new BasicBulletType(5f, 25f, "-bullet"){{
-                    height = width = 15f;
+               JPItem.Biomass, new BasicBulletType(5f, 25f, "Oarch-bullet"){{
+                    height = width = 10f;
                     lifetime = 50f;
                     splashDamage = 25f;
                     splashDamageRadius = 30f;
