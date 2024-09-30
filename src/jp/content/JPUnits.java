@@ -1134,6 +1134,8 @@ public class JPUnits {
                 shoot.firstShotDelay = JPFx.purpleLaserChargeSmall.lifetime -1f;
                 chargeSound = Sounds.lasercharge2;
                 shootSound = Sounds.beam;
+                shootStatus = StatusEffects.slow;
+                shootStatusDuration = 60f * 3;
                 mirror = false;
                 bullet = new ContinuousLaserBulletType(50f){{
                     width = 2f;
