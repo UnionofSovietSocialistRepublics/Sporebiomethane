@@ -212,7 +212,7 @@ public class JPTurret{
             health = 750;
             inaccuracy = 2f;
             ammo(
-                sporePod, new BasicBulletType(5f, 15f, "-bullet"){{
+                sporePod, new BasicBulletType(5f, 15f){{
                     lifetime = 50f;
                     reloadMultiplier = 0.5f;
                     splashDamage = 5f;
@@ -227,7 +227,7 @@ public class JPTurret{
                     collidesGround = true;
                     collidesAir = true;
                 }},
-               JPItem.Biomass, new BasicBulletType(5f, 25f, "Oarch-bullet"){{
+               JPItem.Biomass, new BasicBulletType(5f, 25f){{
                     height = width = 10f;
                     lifetime = 50f;
                     splashDamage = 25f;
