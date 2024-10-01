@@ -395,7 +395,7 @@ public class JPTurret{
             drawer = new DrawTurret("-bottom"){{
                 parts.add(new RegionPart("-bottom"){
                 });
-                parts.add(new RegionPart("-prongs"){{
+                parts.add(new RegionPart("-barrel"){{
                     progress = PartProgress.recoil;
                     mirror = true;
                     moveY = -1.25f;
