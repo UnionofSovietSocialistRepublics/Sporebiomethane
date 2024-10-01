@@ -392,6 +392,16 @@ public class JPTurret{
                 }});
                 coolantMultiplier = 0.75f;
                 coolant = consumeCoolant(0.5f);
+            drawer = new DrawTurret("-bottom"){{
+                parts.add(new RegionPart("-bottom"){
+                });
+                parts.add(new RegionPart("-prongs"){{
+                    progress = PartProgress.recoil;
+                    mirror = true;
+                    moveY = -1.25f;
+                }});
+
+            }};
         }};
         Sentinel = new ContinuousTurret("Sentinel"){{
             requirements(Category.turret, with(graphite, 675, JPItem.Nanitealloy, 250, JPItem.Neocells, 150));
@@ -423,8 +433,8 @@ public class JPTurret{
                     moveY = 1.25f;
                     moveRot = -10f;
             }});
-                parts.add(new RegionPart("-bottom"){{
-            }});
+                parts.add(new RegionPart("-bottom"){
+                });
 
         }};
         shootSound = Sounds.none;
