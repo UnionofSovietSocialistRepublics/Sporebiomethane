@@ -393,14 +393,14 @@ public class JPTurret{
                 coolantMultiplier = 0.75f;
                 coolant = consumeCoolant(0.5f);
             drawer = new DrawTurret("-bottom"){{
-                parts.add(new RegionPart("-bottom"){
-                });
                 parts.add(new RegionPart("-barrel"){{
                     progress = PartProgress.recoil;
                     mirror = true;
                     moveY = -1.25f;
+                    under = true;
                 }});
-
+                parts.add(new RegionPart("-bottom"){
+                });
             }};
         }};
         Sentinel = new ContinuousTurret("Sentinel"){{
