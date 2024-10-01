@@ -279,8 +279,8 @@ public class JPTurret{
                 }};
                 coolant = consumeCoolant(0.2f);
                 consumePower(7f);
-                drawer = new DrawTurret(){{
-                parts.add(new RegionPart("-gun"){{
+            drawer = new DrawTurret(){{
+                parts.add(new RegionPart("-barrel"){{
                     progress = PartProgress.recoil;
                     under = true;
                     moveY = -1.5f;
@@ -392,15 +392,17 @@ public class JPTurret{
                 }});
                 coolantMultiplier = 0.75f;
                 coolant = consumeCoolant(0.5f);
-            drawer = new DrawTurret("-bottom"){{
-                parts.add(new RegionPart("-barrel"){{
+            drawer = new DrawTurret(){{
+                parts.add(new RegionPart("-barrel-l"){{
                     progress = PartProgress.recoil;
-                    mirror = true;
                     moveY = -1.25f;
                     under = true;
                 }});
-                parts.add(new RegionPart("-bottom"){
-                });
+                parts.add(new RegionPart("-barrel-r"){{
+                    progress = PartProgress.recoil;
+                    moveY = -1.25f;
+                    under = true;
+                }});
             }};
         }};
         Sentinel = new ContinuousTurret("Sentinel"){{
