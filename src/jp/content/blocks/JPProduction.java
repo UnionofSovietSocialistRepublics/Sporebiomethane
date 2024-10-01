@@ -188,7 +188,7 @@ public class JPProduction{
             outputItem = new ItemStack(JPItem.Zinc, 1);
             consumePower(5f);
             consumeItems(with(JPItem.Biomass, 2));
-            drawer = new DrawMulti(new DrawDefault(), new DrawRegion("-rotator"){{
+            drawer = new DrawMulti(new DrawDefault(), new DrawRegion("-rotator"), new DrawRegion("-top"){{
                 spinSprite = true;
                 rotateSpeed = 2f;
             }});

@@ -623,15 +623,14 @@ public class JPUnits {
                 mirror = true;
                 recoil = 6f;
                 layerOffset = -0.01f;
-                bullet = new ArtilleryBulletType(2.5f, 9){{
+                bullet = new ArtilleryBulletType(4.5f, 75){{
                     recoil = 1f;
                     speed = 4.5f;
                     height = 15f;
                     width = 7f;
-                    damage = 145f;
-                    splashDamage = 145f;
+                    splashDamage = 125f;
                     splashDamageRadius = 25f;
-                    lifetime = 75f;
+                    lifetime = 60f;
                     statusDuration = 60f * 4;
                     status = JPStatus.Dissolving;
                     backColor = Color.valueOf("8FFE09");
@@ -1089,16 +1088,14 @@ public class JPUnits {
             engineSize = 5f;
             drag = 0.05f;
             accel = 0.11f;
-            weapons.add(new Weapon("Mouh"){{
+            weapons.add(new Weapon("-Mouh"){{
                 reload = 75f;
                 x = 0f;
                 y = 0f;
                 mirror = false;
-                bullet = new BasicBulletType(2.5f, 9){{
-                    speed = 6f;
+                bullet = new BasicBulletType(6f, 45){{
                     height = width = 10f;
-                    damage = 45f;
-                    lifetime = 50f;
+                    lifetime = 30f;
                     backColor = Color.valueOf("8FFE09");
                     frontColor = Color.valueOf("8FFE09");
                     lightColor = Color.valueOf("8FFE09");
@@ -1160,7 +1157,7 @@ public class JPUnits {
             range = 150f;    
             legCount = 4;
             legLength = 25f; 
-            weapons.add(new Weapon("Mouh"){{
+            weapons.add(new Weapon("-Mouh"){{
                 reload = 300f;
                 shootY = 8f;
                 x = 0f;
