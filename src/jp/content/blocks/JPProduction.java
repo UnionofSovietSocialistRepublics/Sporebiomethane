@@ -188,10 +188,11 @@ public class JPProduction{
             outputItem = new ItemStack(JPItem.Zinc, 1);
             consumePower(5f);
             consumeItems(with(JPItem.Biomass, 2));
-            drawer = new DrawMulti(new DrawDefault(), new DrawRegion("-rotator"), new DrawRegion("-top"){{
+            drawer = new DrawMulti(new DrawDefault(), new DrawRegion("-rotator"){{
                 spinSprite = true;
                 rotateSpeed = 2f;
-            }});
+            }},
+            new DrawRegion("-top"));
         }};
         Lotus = new SolarGenerator("Lotus-panel"){{
             requirements(Category.power, with(silicon, 175,JPItem.Vanadium, 125,JPItem.Biomass, 50));

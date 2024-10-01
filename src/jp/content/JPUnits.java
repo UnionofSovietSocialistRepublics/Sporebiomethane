@@ -1122,7 +1122,7 @@ public class JPUnits {
             engineSize = 4f;
             drag = 0.05f;
             accel = 0.11f;
-            weapons.add(new Weapon("Mouh"){{
+            weapons.add(new Weapon("-Mouh"){{
                 reload = 75f;
                 shootY = 8f;
                 x = 0f;
