@@ -396,12 +396,14 @@ public class JPTurret{
             drawer = new DrawTurret(){{
                 parts.add(new RegionPart("-barrel-l"){{
                     progress = PartProgress.recoil;
+                    heatProgress = PartProgress.recoil;
                     recoilIndex = 0;
                     moveY = -2f;
                     under = true;
                 }});
                 parts.add(new RegionPart("-barrel-r"){{
                     progress = PartProgress.recoil;
+                    heatProgress = PartProgress.recoil;
                     recoilIndex = 1;
                     moveY = -2f;
                     under = true;
