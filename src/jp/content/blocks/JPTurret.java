@@ -139,30 +139,18 @@ public class JPTurret{
                 }});
                 coolant = consumeCoolant(0.1f);
                 drawer = new DrawTurret(){{
-                parts.add(new RegionPart("-canr"){{
-                    progress = PartProgress.recoil;
-                    recoilIndex = 0;
-                    under = true;
-                    moveX = 4f;
-                    moveRot = -20f;
-                }});
                 parts.add(new RegionPart("-canl"){{
                     progress = PartProgress.recoil;
-                    recoilIndex = 1;
-                    under = true;
-                    moveX = -4f;
-                    moveRot = 20f;
-                }});
-                parts.add(new RegionPart("-canrs"){{
-                    progress = PartProgress.recoil;
                     recoilIndex = 0;
+                    mirror = true;
                     under = true;
                     moveX = 4f;
                     moveRot = -20f;
                 }});
-                parts.add(new RegionPart("-canls"){{
+                parts.add(new RegionPart("-canr"){{
                     progress = PartProgress.recoil;
                     recoilIndex = 1;
+                    mirror = true;
                     under = true;
                     moveX = -4f;
                     moveRot = 20f;
