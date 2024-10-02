@@ -397,13 +397,13 @@ public class JPTurret{
                 parts.add(new RegionPart("-barrel-l"){{
                     progress = PartProgress.recoil;
                     recoilIndex = 0;
-                    moveY = -1.25f;
+                    moveY = -2f;
                     under = true;
                 }});
                 parts.add(new RegionPart("-barrel-r"){{
                     progress = PartProgress.recoil;
                     recoilIndex = 1;
-                    moveY = -1.25f;
+                    moveY = -2f;
                     under = true;
                 }});
             }};

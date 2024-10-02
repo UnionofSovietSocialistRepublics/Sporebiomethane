@@ -838,7 +838,7 @@ public class JPUnits {
         }};
             Hivedefender = new UnitType("Hivedefender"){{
             this.constructor = UnitEntity::create;
-            speed = 1f;
+            speed = 2.75f;
             armor = 1;
             hitSize = 18f;
             health = 175;
@@ -859,12 +859,11 @@ public class JPUnits {
                 mirror = true;
                 shoot.shots = 2;
                 shoot.shotDelay = 5f;
-                bullet = new BasicBulletType(2.5f, 9){{
-                    speed = 5f;
+                recoil = 2.5f;
+                bullet = new BasicBulletType(5f, 15){{
                     height = width = 10f;
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
-                    damage = 15f;
                     buildingDamageMultiplier = 0.05f;
                     lifetime = 50f;
                     backColor = Color.valueOf("8B73C7");
@@ -878,7 +877,7 @@ public class JPUnits {
         }};
             HiveSentinel = new UnitType("HiveSentinel"){{
             this.constructor = UnitEntity::create;
-            speed = 1f;
+            speed = 2.5f;
             armor = 2;
             hitSize = 18f;
             health = 400;
@@ -899,12 +898,11 @@ public class JPUnits {
                 mirror = true;
                 shoot.shots = 4;
                 shoot.shotDelay = 5f;
-                bullet = new BasicBulletType(2.5f, 9){{
-                    speed = 5f;
+                recoil = 4f;
+                bullet = new BasicBulletType(4.5f, 25){{
                     height = width = 15f;
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
-                    damage = 30f;
                     buildingDamageMultiplier = 0.05f;
                     lifetime = 50f;
                     backColor = Color.valueOf("8B73C7");
