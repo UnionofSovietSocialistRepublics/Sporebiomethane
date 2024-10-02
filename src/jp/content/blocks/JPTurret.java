@@ -144,16 +144,16 @@ public class JPTurret{
                     recoilIndex = 0;
                     mirror = true;
                     under = true;
-                    moveX = 4f;
-                    moveRot = -20f;
+                    moveX = -4f;
+                    moveRot = 20f;
                 }});
-                parts.add(new RegionPart("-canr"){{
+                parts.add(new RegionPart("-cans"){{
                     progress = PartProgress.recoil;
                     recoilIndex = 1;
                     mirror = true;
                     under = true;
-                    moveX = -4f;
-                    moveRot = 20f;
+                    moveX = 4f;
+                    moveRot = -20f;
                 }});
             }};
         }};
