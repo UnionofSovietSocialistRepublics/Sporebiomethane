@@ -121,6 +121,7 @@ public class JPTurret{
                     frontColor = Color.valueOf("8B73C7");
                     lightColor = Color.valueOf("8B73C7");
                     ammoMultiplier = 1f;
+                    recoils = 2;
                     fragBullet = new BasicBulletType(3f, 5){{
                         damage = 15f;
                         splashDamage = 25f;
@@ -139,14 +140,30 @@ public class JPTurret{
                 }});
                 coolant = consumeCoolant(0.1f);
                 drawer = new DrawTurret(){{
-                parts.add(new RegionPart("-canright"){{
+                parts.add(new RegionPart("-canr"){{
                     progress = PartProgress.recoil;
+                    recoilIndex = 0;
                     under = true;
                     moveX = 4f;
                     moveRot = -20f;
                 }});
-                parts.add(new RegionPart("-canleft"){{
+                parts.add(new RegionPart("-canl"){{
                     progress = PartProgress.recoil;
+                    recoilIndex = 1;
+                    under = true;
+                    moveX = -4f;
+                    moveRot = 20f;
+                }});
+                parts.add(new RegionPart("-canrs"){{
+                    progress = PartProgress.recoil;
+                    recoilIndex = 0;
+                    under = true;
+                    moveX = 4f;
+                    moveRot = -20f;
+                }});
+                parts.add(new RegionPart("-canls"){{
+                    progress = PartProgress.recoil;
+                    recoilIndex = 1;
                     under = true;
                     moveX = -4f;
                     moveRot = 20f;
