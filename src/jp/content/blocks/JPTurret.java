@@ -98,16 +98,17 @@ public class JPTurret{
             recoil = 2f;
             shootCone = 2f;
             shootY = 2;
+            recoils = 2;
             ammoUseEffect = Fx.casing1;
             targetGround = false;
             shoot.shots = 2;
             shoot.shotDelay = 10f;
             inaccuracy = 2f;
-            recoils = 2;
             ammo(
                 sporePod, new FlakBulletType(5f, 450f){{
                     lifetime = 65f;
                     reloadMultiplier = 0.5f;
+                    recoils = 2;
                     backColor = Color.valueOf("7457ce");
                     frontColor = Color.valueOf("7457ce");
                     lightColor = Color.valueOf("7457ce");
@@ -117,6 +118,7 @@ public class JPTurret{
                     fragBullets = 6;
                     splashDamage = 50f;
                     splashDamageRadius = 35f;
+                    recoils = 2;
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
                     lightColor = Color.valueOf("8B73C7");
