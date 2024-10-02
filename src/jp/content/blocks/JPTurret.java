@@ -353,6 +353,7 @@ public class JPTurret{
                     collidesGround = true;
                     despawnEffect = Fx.blastExplosion;
                     fragBullets = 6;
+                    recoils = 2;
                     fragBullet = new BasicBulletType(4f, 5f){{
                         width = height = 10f;
                         splashDamage = 5f;
