@@ -87,6 +87,7 @@ public class JPTurret{
             unitSort = UnitSorts.strongest;
             ammoUseEffect = Fx.casing3Double;
             shootSound = Sounds.railgun;
+            outlineColor = Color.valueOf("19171b");
         }};
         Flakaccelerator = new ItemTurret("Flakaccelerator"){{
             requirements(Category.turret, with(graphite, 125, silicon, 100, JPItem.Biomass, 75));
@@ -159,6 +160,7 @@ public class JPTurret{
                     moveX = -4f;
                     moveRot = 20f;
                 }});
+                outlineColor = Color.valueOf("19171b");
             }};
         }};
         Artilleryturret = new ItemTurret("Artilleryturret"){{
@@ -204,9 +206,10 @@ public class JPTurret{
                     despawnEffect = Fx.blastExplosion;
                     pierceArmor = true;
                 }});
-                shootSound = JPSounds.Arty;
-                coolantMultiplier = 0.5f;
-                coolant = consumeCoolant(0.5f);
+            shootSound = JPSounds.Arty;
+            coolantMultiplier = 0.5f;
+            coolant = consumeCoolant(0.5f);
+            outlineColor = Color.valueOf("19171b");
         }};
         Oarch = new ItemTurret("Oarch"){{
             requirements(Category.turret, with(graphite, 200, silicon, 125, JPItem.Nanitealloy, 95));
@@ -263,8 +266,9 @@ public class JPTurret{
                         collidesAir = true;
                     }};
                 }});
-                shootSound = JPSounds.Arty;
-                coolant = consumeCoolant(0.15f);
+            shootSound = JPSounds.Arty;
+            coolant = consumeCoolant(0.15f);
+            outlineColor = Color.valueOf("19171b");
         }};
         Sporegarrison = new PowerTurret("Sporegarrison"){{
             requirements(Category.turret, with(graphite, 125, silicon, 145, JPItem.Biomass, 95));
@@ -328,9 +332,10 @@ public class JPTurret{
                        collidesGround = false;
                    }};
                 }};
-                shootSound = Sounds.shootBig;
-                coolant = consumeCoolant(0.225f);
-                consumePower(7f);
+            shootSound = Sounds.shootBig;
+            coolant = consumeCoolant(0.225f);
+            consumePower(7f);
+            outlineColor = Color.valueOf("19171b");
         }};
         Suppressor = new ItemTurret("Suppressor"){{
             requirements(Category.turret, with(graphite, 225, JPItem.Nanitealloy, 25, JPItem.Biomass, 45));
@@ -416,6 +421,7 @@ public class JPTurret{
                     moveY = -2f;
                     under = true;
                 }});
+                outlineColor = Color.valueOf("19171b");
             }};
         }};
         Sentinel = new ContinuousTurret("Sentinel"){{
@@ -457,6 +463,7 @@ public class JPTurret{
         loopSound = Sounds.minebeam;
         consumeLiquid(Liquids.water, 15f / 60f);
         consumePower(7f);
+        outlineColor = Color.valueOf("19171b");
         }};
 
 }};
