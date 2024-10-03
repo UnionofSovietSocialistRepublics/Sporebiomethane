@@ -93,7 +93,7 @@ public class JPTurret{
             health = 1000;
             size = 3;
             rotateSpeed = 10f;
-            range = 250f;
+            range = 260f;
             reload = 15f;
             recoil = 2f;
             shootCone = 2f;
@@ -108,7 +108,7 @@ public class JPTurret{
             }};
             ammo(
                 sporePod, new FlakBulletType(5f, 450f){{
-                    lifetime = 65f;
+                    lifetime = 55f;
                     reloadMultiplier = 0.5f;
                     recoils = 2;
                     backColor = Color.valueOf("7457ce");
@@ -116,7 +116,7 @@ public class JPTurret{
                     lightColor = Color.valueOf("7457ce");
                 }},
                JPItem.Biomass, new FlakBulletType(5f, 25f){{
-                    lifetime = 65f;
+                    lifetime = 55f;
                     fragBullets = 6;
                     splashDamage = 50f;
                     splashDamageRadius = 35f;
