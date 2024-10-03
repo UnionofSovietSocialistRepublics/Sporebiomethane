@@ -432,7 +432,7 @@ public class JPTurret{
             rotateSpeed = 1.5f;
             liquidCapacity = 200F;
             range = 225f;
-            reload = 180f;
+            reload = 60f;
             recoil = 2f;
             shootCone = 10f;
             minWarmup = 0.94f;
@@ -440,7 +440,6 @@ public class JPTurret{
             shootY = -1f;
             ammoUseEffect = Fx.casing1;
             shootType = new PointLaserBulletType(){{
-	            //sprite = "Sentinellaser";
 	            collidesTeam = true;
 	            damage = 115;
                 hitColor = Color.valueOf("fda981");
