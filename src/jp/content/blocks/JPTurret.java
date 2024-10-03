@@ -104,6 +104,9 @@ public class JPTurret{
             shoot.shots = 2;
             shoot.shotDelay = 10f;
             inaccuracy = 2f;
+            shoot = new ShootAlternate(){{
+                barrels = 2;
+            }};
             ammo(
                 sporePod, new FlakBulletType(5f, 450f){{
                     lifetime = 65f;
