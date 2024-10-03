@@ -94,7 +94,7 @@ public class JPTurret{
             size = 3;
             rotateSpeed = 10f;
             range = 250f;
-            reload = 35f;
+            reload = 15f;
             recoil = 2f;
             shootCone = 2f;
             shootY = 2;
@@ -104,8 +104,7 @@ public class JPTurret{
             inaccuracy = 2f;
             shoot = new ShootAlternate(){{
                 barrels = 2;
-                shoot.shots = 2;
-                shoot.shotDelay = 10f;
+                spread = 0f;
             }};
             ammo(
                 sporePod, new FlakBulletType(5f, 450f){{
@@ -158,7 +157,7 @@ public class JPTurret{
                     mirror = true;
                     under = true;
                     moveX = -4f;
-                    moveRot = -20f;
+                    moveRot = 20f;
                 }});
             }};
         }};
