@@ -298,6 +298,7 @@ public class JPTurret{
                     moveY = -1.5f;
                 }});
             }};
+            outlineColor = Color.valueOf("19171b");
         }};
         Mitocannon = new PowerTurret("Mitocannon"){{
             requirements(Category.turret, with(graphite, 300, JPItem.Neocells, 240, JPItem.Nanitealloy, 150));
