@@ -130,7 +130,6 @@ public class JPProduction{
             craftTime = 80f;
             hasItems = true;
             hasPower = true;
-            hasLiquids = true;
             consumePower(5f);
             consumeItems(with(JPItem.Biomass, 3,silicon, 2,graphite, 2));
         }};
