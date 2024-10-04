@@ -44,7 +44,7 @@ public class Unloader extends Mod{
         break;
         }
         //Nothing suspicious around here, trust me bro
-        if (Vars.mods.locateMod("Aquarion") != null){
+        if (Vars.mods.locateMod("aquarion") != null){
             Log.info("Bro got caught lackin");
             Vars.mods.locateMod("aquarion").meta.name="Aquarium";
             Vars.mods.locateMod("aquarion").meta.author="Twmoney";
