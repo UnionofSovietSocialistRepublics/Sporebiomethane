@@ -228,7 +228,7 @@ public class JPProduction{
             tier = 4;
             size = 2;
             hasLiquids = true;
-            drillTime = 200f;
+            drillTime = 150f;
             itemCapacity = 40;
             drillMultipliers.put(Items.copper, 0f);
             drillMultipliers.put(Items.lead, 0f);
