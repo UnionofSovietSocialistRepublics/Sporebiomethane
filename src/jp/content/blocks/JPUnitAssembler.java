@@ -30,7 +30,7 @@ public class JPUnitAssembler{
             size = 6;
             droneType = JPUnits.Zeta;
             plans.add(
-            new AssemblerUnitPlan(JPUnits.Gorgon, 60f * 60f, PayloadStack.list(UnitTypes.vela, 1, JPUnits.Roach, 5, JPUnits.Zergling, 10)),
+            new AssemblerUnitPlan(JPUnits.Gorgon, 60f * 60f, PayloadStack.list(UnitTypes.vela, 1, JPUnits.Roach, 3, JPUnits.Zergling, 10)),
             new AssemblerUnitPlan(JPUnits.Basilisk, 180f * 60f, PayloadStack.list(JPUnits.Behomoth, 2, JPUnits.Baneling, 10, JPUnits.Guardian, 5, UnitTypes.toxopid, 1))
             );
             areaSize = 13;

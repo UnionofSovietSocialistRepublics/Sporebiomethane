@@ -30,10 +30,10 @@ public class JPUnitFactory{
         Pool = new UnitFactory("Pool"){{
             requirements(Category.units, with(silicon,150,JPItem.Biomass,45));
             plans = Seq.with(
-                new UnitPlan( JPUnits.Zergling, 15 * 60f, with(silicon, 65,JPItem.Biomass,10)),
-                new UnitPlan( JPUnits.Baneling, 10 * 60f, with(silicon, 45,JPItem.Biomass,5, coal, 30)),
-                new UnitPlan( JPUnits.Roach, 20 * 60f, with(silicon, 95,JPItem.Biomass,25)),
-                new UnitPlan( JPUnits.Purger, 25 * 60f, with(silicon, 115,JPItem.Biomass,45))
+                new UnitPlan( JPUnits.Zergling, 15 * 60f, with(silicon, 35,JPItem.Biomass,10)),
+                new UnitPlan( JPUnits.Baneling, 10 * 60f, with(silicon, 15,JPItem.Biomass,5, coal, 15)),
+                new UnitPlan( JPUnits.Roach, 20 * 60f, with(silicon, 65,JPItem.Biomass,35)),
+                new UnitPlan( JPUnits.Purger, 25 * 60f, with(silicon, 95,JPItem.Biomass,45))
             );
             health = 500;
             size = 3;
@@ -46,7 +46,7 @@ public class JPUnitFactory{
             requirements(Category.units, with(silicon,250,JPItem.Biomass,75));
             plans = Seq.with(
                 new UnitPlan( JPUnits.Drone, 60f * 15, with(silicon, 15, JPItem.Biomass,10,lead, 25)),
-                new UnitPlan( JPUnits.Interceptor, 60f * 10, with(silicon, 45, JPItem.Biomass,10)),
+                new UnitPlan( JPUnits.Interceptor, 60f * 10, with(silicon, 35, JPItem.Biomass,10)),
                 new UnitPlan( JPUnits.Rizomorph, 60f * 25, with(silicon, 150, JPItem.Biomass,45))
             );
             health = 500;
@@ -60,7 +60,7 @@ public class JPUnitFactory{
                 new UnitPlan( JPUnits.Carci, 60f * 25, with( silicon, 150, thorium, 75, JPItem.Neocells, 30)),
                 new UnitPlan( JPUnits.Autus, 60f * 35, with( silicon, 200, JPItem.Biomass,75,pyratite,45, JPItem.Neocells, 75)),
                 new UnitPlan( JPUnits.Thera, 60f * 25, with( silicon, 175, JPItem.Biomass,75, JPItem.Neocells, 75)),
-                new UnitPlan( JPUnits.Imp, 60f * 15, with( silicon, 45, pyratite, 15, JPItem.Biomass,5, JPItem.Neocells, 15))
+                new UnitPlan( JPUnits.Imp, 60f * 15, with( silicon, 35, pyratite, 15, JPItem.Biomass,5, JPItem.Neocells, 15))
             );
             health = 2500;
             size = 3;
@@ -71,10 +71,10 @@ public class JPUnitFactory{
         Assembler = new UnitFactory("Assembler"){{
             requirements(Category.units, with(silicon,675,JPItem.Nanitealloy,75,JPItem.Biomass,225));
             plans = Seq.with(
-                new UnitPlan( JPUnits.Breacher, 60f * 15, with( silicon, 350, JPItem.Biomass,75)),
-                new UnitPlan( JPUnits.Guardian, 60f * 10, with( silicon, 300, JPItem.Biomass,75)),
+                new UnitPlan( JPUnits.Breacher, 60f * 15, with( silicon, 175, JPItem.Biomass,55, JPItem.Nanitealloy,45)),
+                new UnitPlan( JPUnits.Guardian, 60f * 10, with( silicon, 195, JPItem.Biomass,65, JPItem.Nanitealloy,65)),
                 new UnitPlan( JPUnits.Behomoth, 60f * 50, with( silicon, 850, JPItem.Biomass,400, JPItem.Nanitealloy,400)),
-                new UnitPlan( JPUnits.Scarabid, 60f * 40, with( silicon, 300, plastanium, 90, JPItem.Biomass,25))
+                new UnitPlan( JPUnits.Scarabid, 60f * 40, with( silicon, 225, plastanium, 90, JPItem.Biomass,25))
             );
             health = 1750;
             size = 4;
