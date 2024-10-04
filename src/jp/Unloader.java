@@ -46,9 +46,10 @@ public class Unloader extends Mod{
         //Nothing suspicious around here, trust me bro
         if (Vars.mods.locateMod("aquarion") != null){
             Log.info("Bro got caught lackin");
-            Vars.mods.locateMod("aquarion").meta.name="Aquarium";
+            Vars.mods.locateMod("aquarion").meta.displayName="Aquarium";
             Vars.mods.locateMod("aquarion").meta.author="Twmoney";
 //            Vars.mods.locateMod("aquarion").meta.description="Aquarium.";
+            Vars.mods.locateMod("aquarion").meta.subtitle="Aquarium 3.0 is now.";
         }
         });
     }
