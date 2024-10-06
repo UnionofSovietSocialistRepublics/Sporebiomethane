@@ -118,7 +118,7 @@ public class JPUnits {
                 shootSound = Sounds.explosion;
             }});
             outlineColor = Color.valueOf("303a45");
-            abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
+            abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm; amount = 210f;}});
         }};        
             Imp = new UnitType("Imp"){{
             this.constructor = LegsUnit::create;
@@ -137,12 +137,17 @@ public class JPUnits {
                     width = 0f;
                     height = 0f;
                     lifetime = 10f;
+                    status = StatusEffects.burning;
+                    statusDuration = 60f* 4.5f;
                     splashDamage = 150f;
                     splashDamageRadius = 60f;
                     killShooter = true;
                     collidesAir = true;
                     buildingDamageMultiplier = 1.75f;
                     hitSound = Sounds.explosion;
+                    incendChance = 100f;
+                    incendSpread = 25f;
+                    incendAmount = 25;
                 }};
                 shootSound = Sounds.explosion;
             }});
@@ -153,7 +158,7 @@ public class JPUnits {
             outlineColor = Color.valueOf("303a45");
             abilities.add(new SpawnDeathAbility(DeathImp, 1, 11f));
             abilities.add(new RegenAbility(){{percentAmount = 1f / (70f * 60f) * 100f;}});
-            abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
+            abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm; amount = 75f;}});
         }};
             Baneling = new UnitType("Baneling"){{
             this.constructor = LegsUnit::create;

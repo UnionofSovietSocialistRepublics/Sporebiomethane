@@ -2,6 +2,7 @@ package jp.content;
 
 import arc.*;
 import arc.struct.*;
+import mindustry.content.SectorPresets;
 import mindustry.game.Objectives.*;
 import jp.content.blocks.*;
 
@@ -62,14 +63,20 @@ public class JPtechtree {
                     });
                 });
             });
-            node(JPProduction.Extractor, () -> {
+            node(JPProduction.Extractor, Seq.with(new SectorComplete(JPsectorsHM.DigHM)),() -> {
                 node(JPProduction.ZincExtractor, Seq.with(new SectorComplete(JPsectorsHM.DigHM)), () -> {
             });
             });
             node(JPOther.VCAwall);
              node(JPsectorsHM.SkiHM, Seq.with(new SectorComplete(frozenForest)), () -> {
-                node(JPsectorsHM.DigHM, Seq.with(new SectorComplete(JPsectorsHM.SkiHM)), () -> {
-                    node(JPsectorsHM.BirthHM, Seq.with(new SectorComplete(JPsectorsHM.DigHM)), () -> {
+                node(JPsectorsHM.DigHM, Seq.with(
+                        new SectorComplete(JPsectorsHM.SkiHM),
+                        new SectorComplete(SectorPresets.craters)
+                ), () -> {
+                    node(JPsectorsHM.BirthHM, Seq.with(
+                            new SectorComplete(JPsectorsHM.DigHM),
+                            new SectorComplete(fungalPass)
+                    ), () -> {
                         node(JPsectorsHM.MagmaHM, Seq.with(new SectorComplete(JPsectorsHM.BirthHM)), () -> {
                             node(JPsectorsHM.Frosted);
                             });
@@ -97,7 +104,7 @@ public class JPtechtree {
 }else {
             nodeRoot("Spore biomechs", coreShard, false, () -> {
             //Above the skies is currently the placeholder for now, the required sector will change later.
-            node(JPOther.Sporecore, Seq.with(new SectorComplete(JPsectors.Ski)), () -> {
+            node(JPOther.Sporecore, Seq.with(new SectorComplete(JPsectors.Birth)), () -> {
                 node(JPOther.Hive, () -> {
                     node(JPOther.Nydusaecore);
                 });
@@ -145,14 +152,20 @@ public class JPtechtree {
                     });
                 });
             });
-            node(JPProduction.Extractor, () -> {
+            node(JPProduction.Extractor, Seq.with(new SectorComplete(JPsectors.Dig)), () -> {
                 node(JPProduction.ZincExtractor, Seq.with(new SectorComplete(JPsectors.Dig)), () -> {
             });
             });
             node(JPOther.VCAwall);
              node(JPsectors.Ski, Seq.with(new SectorComplete(frozenForest)), () -> {
-                node(JPsectors.Dig, Seq.with(new SectorComplete(JPsectors.Ski)), () -> {
-                    node(JPsectors.Birth, Seq.with(new SectorComplete(JPsectors.Dig)), () -> {
+                 node(JPsectors.Dig, Seq.with(
+                         new SectorComplete(JPsectors.Ski),
+                         new SectorComplete(SectorPresets.craters)
+                 ), () -> {
+                     node(JPsectors.Birth, Seq.with(
+                             new SectorComplete(JPsectors.Dig),
+                             new SectorComplete(fungalPass)
+                     ), () -> {
                         node(JPsectors.Magma, Seq.with(new SectorComplete(JPsectors.Birth)), () -> {
                             node(JPsectors.Frost);
                             });
