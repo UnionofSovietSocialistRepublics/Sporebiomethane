@@ -1811,16 +1811,15 @@ public class JPUnits {
                 legExtension = 7f;
                 legBaseOffset = 6f;
                 weapons.add(new Weapon(name + "-laser"){{
-                    reload = 30f;
+                    reload = 75f;
                     x = 8f;
                     mirror = true;
                     y = -2f;
                     shoot.shots = 3;
                     bullet = new LaserBulletType(140){{
-                        colors = new Color[]{Pal.lancerLaser.cpy().a(0.4f), Color.valueOf("8B73C7"), Color.white};
+                        colors = new Color[]{Color.valueOf("8B73C7").cpy().a(0.4f), Color.valueOf("8B73C7"), Color.white};
                         //TODO merge
                         chargeEffect = new MultiEffect(Fx.lancerLaserCharge, Fx.lancerLaserChargeBegin);
-                        speed = 5f;
                         lifetime = 16f;
                         damage = 25f;
                         buildingDamageMultiplier = 1.75f;
