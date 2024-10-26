@@ -1818,12 +1818,37 @@ public class JPUnits {
                     mirror = true;
                     shoot.shots = 3;
                     shoot.shotDelay = 25f;
-                    bullet = new LaserBulletType(140){{
+                    recoil = 8;
+                    bullet = new LaserBulletType(45){{
                         colors = new Color[]{Color.valueOf("8B73C7").cpy().a(0.4f), Color.valueOf("8B73C7"), Color.white};
-                        chargeEffect = new MultiEffect(Fx.lancerLaserCharge, Fx.lancerLaserChargeBegin);
+//                        chargeEffect = new MultiEffect(Fx.lancerLaserCharge, Fx.lancerLaserChargeBegin);
+                        chargeEffect = JPFx.purpleLaserChargeSmall;
                         lifetime = 16f;
                         buildingDamageMultiplier = 1.75f;
                     }};
+                }});
+                weapons.add(new Weapon(name + "-missile"){{
+                    mirror = true;
+                    shoot.firstShotDelay = 125f;
+                    shoot = new ShootSpread(10, 5f);
+                    velocityRnd = 0.4f;
+                    inaccuracy = 7f;
+                    reload = 200f;
+                    recoil = 6f;
+                    x = -4f;
+                    y = -4f;
+                    layerOffset = -1f;
+                    bullet = new MissileBulletType(3.7f, 18){{
+                        width = 8f;
+                        height = 8f;
+                        splashDamageRadius = 25f;
+                        splashDamage = 65f;
+                        hitEffect = Fx.blastExplosion;
+                        despawnEffect = Fx.blastExplosion;
+                        weaveScale = 8f;
+                        weaveMag = 2f;
+                    }};
+                    shootSound = Sounds.missile;
                 }});
                 healColor = Color.valueOf("590e14");
                 outlineColor = Color.valueOf("303a45");
