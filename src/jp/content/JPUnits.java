@@ -1807,11 +1807,14 @@ public class JPUnits {
                 health = 6200;
                 range = 50f;
                 legCount = 4;
-                weapons.add(new Weapon("Demolisher-laser"){{
+                legLength = 13f;
+                legExtension = 7f;
+                legBaseOffset = 6f;
+                weapons.add(new Weapon("-laser"){{
                     reload = 30f;
-                    x = 0f;
+                    x = 6f;
                     mirror = false;
-                    y = 4f;
+                    y = 0f;
                     bullet = new BasicBulletType(2.5f, 9){{
                         backColor = Color.valueOf("8B73C7");
                         frontColor = Color.valueOf("8B73C7");
