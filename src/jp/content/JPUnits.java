@@ -1831,8 +1831,8 @@ public class JPUnits {
                     mirror = true;
                     shoot.firstShotDelay = 125f;
                     shoot = new ShootSpread(10, 5f);
-                    velocityRnd = 0.4f;
-                    inaccuracy = 7f;
+                    velocityRnd = 0.025f;
+                    inaccuracy = 3.5f;
                     reload = 200f;
                     recoil = 6f;
                     x = -4f;
