@@ -1812,13 +1812,13 @@ public class JPUnits {
                 legBaseOffset = 6f;
                 weapons.add(new Weapon(name + "-laser"){{
                     reload = 75f;
+                    layerOffset = -0.01f;
                     x = 8f;
-                    mirror = true;
                     y = -2f;
+                    mirror = true;
                     shoot.shots = 3;
                     bullet = new LaserBulletType(140){{
                         colors = new Color[]{Color.valueOf("8B73C7").cpy().a(0.4f), Color.valueOf("8B73C7"), Color.white};
-                        //TODO merge
                         chargeEffect = new MultiEffect(Fx.lancerLaserCharge, Fx.lancerLaserChargeBegin);
                         lifetime = 16f;
                         damage = 25f;
