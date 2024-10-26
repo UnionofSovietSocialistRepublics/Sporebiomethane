@@ -1802,7 +1802,7 @@ public class JPUnits {
             }};
             Demolisher = new UnitType("Demolisher"){{
                 this.constructor = LegsUnit::create;
-                speed = 1.45f;
+                speed = 0.75f;
                 hitSize = 8f;
                 health = 6200;
                 range = 50f;
