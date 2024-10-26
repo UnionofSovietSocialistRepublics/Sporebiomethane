@@ -23,7 +23,7 @@ import mindustry.world.meta.*;
 public class JPUnits {
     public static UnitType
     //Legs
-    Carci,Imp, Basilisk, Autus, Baneling, Zergling, Behomoth, Lobber, Breacher, Scarabid, Frost, Roach, Purger, Gorgon, Raptor, FrostC,
+    Carci,Imp, Basilisk, Autus, Baneling, Zergling, Behomoth, Lobber, Breacher, Scarabid, Frost, Roach, Purger, Gorgon, Raptor, FrostC, Demolisher,
     //missiles
     //Bomb,
     //Floaty
@@ -1799,5 +1799,31 @@ public class JPUnits {
                 abilities.add(new RegenAbility(){{percentAmount = 1f / (800f * 60f * 2f) * 100f;}});
                 abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.cryofluid;}});
                 abilities.add(new StatusFieldAbility(JPStatus.Frostshield, 60f * 3, 60f * 9f, 60f));
+            }};
+            Demolisher = new UnitType("Demolisher"){{
+                this.constructor = LegsUnit::create;
+                speed = 1.45f;
+                hitSize = 8f;
+                health = 6200;
+                range = 50f;
+                legCount = 4;
+                weapons.add(new Weapon("Demolisher-laser"){{
+                    reload = 30f;
+                    x = 0f;
+                    mirror = false;
+                    y = 4f;
+                    bullet = new BasicBulletType(2.5f, 9){{
+                        backColor = Color.valueOf("8B73C7");
+                        frontColor = Color.valueOf("8B73C7");
+                        speed = 3f;
+                        lifetime = 45f;
+                        damage = 25f;
+                        buildingDamageMultiplier = 1.75f;
+                    }};
+                }});
+                healColor = Color.valueOf("590e14");
+                outlineColor = Color.valueOf("303a45");
+                abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
+                abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
             }};
 }}
