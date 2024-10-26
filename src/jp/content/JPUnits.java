@@ -1811,17 +1811,17 @@ public class JPUnits {
                 legExtension = 7f;
                 legBaseOffset = 6f;
                 weapons.add(new Weapon(name + "-laser"){{
-                    reload = 75f;
+                    reload = 225f;
                     layerOffset = -0.01f;
-                    x = 8f;
+                    x = 12f;
                     y = -2f;
                     mirror = true;
                     shoot.shots = 3;
+                    shoot.shotDelay = 25f;
                     bullet = new LaserBulletType(140){{
                         colors = new Color[]{Color.valueOf("8B73C7").cpy().a(0.4f), Color.valueOf("8B73C7"), Color.white};
                         chargeEffect = new MultiEffect(Fx.lancerLaserCharge, Fx.lancerLaserChargeBegin);
                         lifetime = 16f;
-                        damage = 25f;
                         buildingDamageMultiplier = 1.75f;
                     }};
                 }});
