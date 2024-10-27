@@ -1875,6 +1875,9 @@ public class JPUnits {
                     mirror = true;
                     reload = 600f;
                     recoil = 5.5f;
+                    continuous = true;
+                    minWarmup = 0.94f;
+                    shootWarmupSpeed = 0.05f;
                     bullet = new PointLaserBulletType(){{
                         damage = 50f;
                         hitEffect = Fx.blastExplosion; 
@@ -1884,7 +1887,13 @@ public class JPUnits {
                         fragBullets = 5;
                         buildingDamageMultiplier = 1.5f;
                     }};
-                    shootSound = Sounds.missile;
+                    parts.add(new RegionPart("-cover"){{
+                        progress = PartProgress.warmup;
+                        mirror = true;
+                        moveX = 1.5f;
+                        moveY = 1.25f;
+                        moveRot = -10f;
+                }});
                 }});
                 healColor = Color.valueOf("590e14");
                 outlineColor = Color.valueOf("303a45");
