@@ -1837,7 +1837,6 @@ public class JPUnits {
                     recoil = 6f;
                     x = -4f;
                     y = -4f;
-                    layerOffset = -1f;
                     bullet = new MissileBulletType(3.7f, 18){{
                         width = 8f;
                         height = 8f;
