@@ -1880,6 +1880,8 @@ public class JPUnits {
                     bullet = new MissileBulletType(){{
                         damage = 50f;
                         buildingDamageMultiplier = 1.5f;
+                        homingPower = 0.1f;
+                        homingRange = 5f;
                     }};
                     parts.add(new RegionPart("-cover"){{
                         progress = PartProgress.warmup;
