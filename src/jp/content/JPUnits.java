@@ -1890,6 +1890,7 @@ public class JPUnits {
                         moveY = 1.25f;
                         moveRot = -10f;
                 }});
+                    shootSound = Sounds.missile;
                 }});
                 healColor = Color.valueOf("590e14");
                 outlineColor = Color.valueOf("303a45");
