@@ -1830,9 +1830,9 @@ public class JPUnits {
                 weapons.add(new Weapon(name + "-missile"){{
                     mirror = true;
                     shoot.firstShotDelay = 125f;
-                    shoot = new ShootSpread(10, 5f);
-                    velocityRnd = 0.025f;
-                    inaccuracy = 3.5f;
+                    shoot = new ShootSpread(10, 1.5f);
+                    velocityRnd = 0.05f;
+                    inaccuracy = 2f;
                     reload = 200f;
                     recoil = 6f;
                     x = -4f;
