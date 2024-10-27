@@ -1877,7 +1877,7 @@ public class JPUnits {
                     recoil = 2.5f;
                     minWarmup = 0.94f;
                     shootWarmupSpeed = 0.05f;
-                    bullet = new MissileBulletType(5f, 50f){{
+                    bullet = new MissileBulletType(3.5f, 50f){{
                         buildingDamageMultiplier = 1.5f;
                         homingPower = 0.1f;
                         homingRange = 5f;
