@@ -1827,8 +1827,8 @@ public class JPUnits {
                     }};
                 }});
                 weapons.add(new Weapon(name + "-missile"){{
-                    x = -5f;
-                    y = -8f;
+                    x = -2.5f;
+                    y = -10f;
                     mirror = false;
                     reload = 600f;
                     recoil = 5.5f;
