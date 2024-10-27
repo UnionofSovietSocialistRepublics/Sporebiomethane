@@ -1827,7 +1827,7 @@ public class JPUnits {
                     }};
                 }});
                 weapons.add(new Weapon(name + "-missile"){{
-                    x = -2f;
+                    x = -1.5f;
                     y = -10f;
                     mirror = false;
                     reload = 600f;
@@ -1851,13 +1851,13 @@ public class JPUnits {
                         weaveMag = 2f;
                         fragBullets = 5;
                         buildingDamageMultiplier = 1.5f;
-                        fragBullet = new MissileBulletType(3.5f, 2.5f){{
+                        fragBullet = new MissileBulletType(4.5f, 5f){{
                             width = 8f;
                             height = 8f;
                             velocityRnd = 0.05f;
                             inaccuracy = 2f;
                             splashDamageRadius = 25f;
-                            splashDamage = 5f;
+                            splashDamage = 10f;
                             hitEffect = Fx.blastExplosion;
                             despawnEffect = Fx.blastExplosion;
                             weaveScale = 8f;
