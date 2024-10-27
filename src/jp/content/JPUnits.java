@@ -1801,7 +1801,7 @@ public class JPUnits {
             }};
             Demolisher = new UnitType("Demolisher"){{
                 this.constructor = LegsUnit::create;
-                speed = 0.75f;
+                speed = 0.6f;
                 hitSize = 8f;
                 armor = 6;
                 health = 6200;
@@ -1843,8 +1843,8 @@ public class JPUnits {
                         height = 14f;
                         velocityRnd = 0.05f;
                         inaccuracy = 2f;
-                        splashDamageRadius = 25f;
-                        splashDamage = 25f;
+                        splashDamageRadius = 35f;
+                        splashDamage = 65f;
                         shootStatus = StatusEffects.unmoving;
                         shootStatusDuration = 4 * 60f;
                         hitEffect = Fx.blastExplosion; 
@@ -1870,18 +1870,14 @@ public class JPUnits {
                     shootSound = Sounds.missile;
                 }});
                 weapons.add(new Weapon(name + "-beam"){{
-                    x = -5f;
+                    x = -7f;
                     y = -7f;
                     mirror = true;
-                    reload = 600f;
-                    recoil = 5.5f;
-                    continuous = true;
-                    alwaysContinuous = true;
-                    parentizeEffects = true;
+                    reload = 75f;
+                    recoil = 2.5f;
                     minWarmup = 0.94f;
                     shootWarmupSpeed = 0.05f;
-                    bullet = new PointLaserBulletType(){{
-                        collidesTeam = true;
+                    bullet = new MissileBulletType(){{
                         damage = 50f;
                         buildingDamageMultiplier = 1.5f;
                     }};
