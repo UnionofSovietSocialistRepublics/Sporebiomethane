@@ -1881,6 +1881,7 @@ public class JPUnits {
                     minWarmup = 0.94f;
                     shootWarmupSpeed = 0.05f;
                     bullet = new PointLaserBulletType(){{
+                        collidesTeam = true;
                         damage = 50f;
                         buildingDamageMultiplier = 1.5f;
                     }};
