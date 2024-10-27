@@ -1817,7 +1817,7 @@ public class JPUnits {
                     y = -2f;
                     mirror = true;
                     shoot.shots = 3;
-                    shoot.shotDelay = 25f;
+                    shoot.shotDelay = 10f;
                     recoil = 8;
                     bullet = new LaserBulletType(45){{
                         colors = new Color[]{Color.valueOf("8B73C7").cpy().a(0.4f), Color.valueOf("8B73C7"), Color.white};
@@ -1828,15 +1828,18 @@ public class JPUnits {
                     }};
                 }});
                 weapons.add(new Weapon(name + "-missile"){{
+                    x = -6f;
+                    y = -6f;
                     mirror = true;
-                    shoot.firstShotDelay = 125f;
-                    shoot = new ShootSpread(10, 1.5f);
                     velocityRnd = 0.05f;
                     inaccuracy = 2f;
-                    reload = 200f;
+                    reload = 600f;
                     recoil = 6f;
-                    x = -4f;
-                    y = -4f;
+                    alternate = true;
+                    shoot.firstShotDelay = 125f;
+                    shoot.shots = 4;
+                    shoot.shotDelay = 35f;
+                    shoot = new ShootSpread(10, 1.5f);
                     bullet = new MissileBulletType(3.7f, 18){{
                         width = 8f;
                         height = 8f;
