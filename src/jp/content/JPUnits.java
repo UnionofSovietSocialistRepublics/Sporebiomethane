@@ -1771,7 +1771,6 @@ public class JPUnits {
                         height = 0f;
                         lifetime = 1f;
                         damage = 0f;
-                        alternate = true;
                         shoot.shots = 4;
                         shoot.shotDelay = 50f;
                         spawnUnit =  JPUnits.Autus;
@@ -1828,12 +1827,11 @@ public class JPUnits {
                     }};
                 }});
                 weapons.add(new Weapon(name + "-missile"){{
-                    x = -6f;
-                    y = -6f;
-                    mirror = true;
+                    x = -5f;
+                    y = -8f;
+                    mirror = false;
                     reload = 600f;
                     recoil = 5.5f;
-                    alternate = true;
 //                    shoot.firstShotDelay = 125f;
 //                    shoot = new ShootSpread(5, 1.5f);
                     shoot.shots = 6;
@@ -1852,15 +1850,13 @@ public class JPUnits {
                         weaveScale = 8f;
                         weaveMag = 2f;
                         fragBullets = 5;
-                        fragBullet = new MissileBulletType(3.5f, 20){{
-                            width = 14f;
-                            height = 14f;
+                        fragBullet = new MissileBulletType(3.5f, 2.5f){{
+                            width = 8f;
+                            height = 8f;
                             velocityRnd = 0.05f;
                             inaccuracy = 2f;
                             splashDamageRadius = 25f;
-                            splashDamage = 25f;
-                            shootStatus = StatusEffects.unmoving;
-                            shootStatusDuration = 4 * 60f;
+                            splashDamage = 5f;
                             hitEffect = Fx.blastExplosion;
                             despawnEffect = Fx.blastExplosion;
                             weaveScale = 8f;
