@@ -1,22 +1,8 @@
 package jp.content.blocks;
 
-import arc.graphics.Color;
-import mindustry.content.Fx;
-import mindustry.content.Items;
-import mindustry.content.Liquids;
-import mindustry.entities.bullet.BasicBulletType;
-import mindustry.entities.bullet.LiquidBulletType;
-import mindustry.gen.Sounds;
-import mindustry.graphics.CacheLayer;
-import mindustry.type.Category;
 import mindustry.world.Block;
-import mindustry.world.blocks.defense.Wall;
 import mindustry.world.blocks.environment.*;
-import mindustry.world.meta.Attribute;
-import mindustry.world.meta.BuildVisibility;
 import jp.content.*;
-import mindustry.content.*;
-import static mindustry.type.ItemStack.with;
 
 public class JPEnv {
     public static Block

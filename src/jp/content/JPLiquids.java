@@ -2,7 +2,6 @@ package jp.content;
 
 import arc.graphics.Color;
 import jp.content.*;
-import mindustry.content.StatusEffects;
 import mindustry.type.Liquid;
 
 public class JPLiquids {

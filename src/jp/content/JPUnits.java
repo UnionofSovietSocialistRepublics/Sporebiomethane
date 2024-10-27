@@ -9,13 +9,13 @@ import mindustry.entities.abilities.*;
 import mindustry.entities.bullet.*;
 import mindustry.entities.effect.*;
 import mindustry.entities.part.*;
+import mindustry.entities.part.DrawPart.PartProgress;
 import mindustry.entities.pattern.*;
 import mindustry.gen.*;
 import mindustry.graphics.*;
 import mindustry.type.*;
 import mindustry.content.*;
 import mindustry.type.unit.*;
-import mindustry.entities.abilities.UnitSpawnAbility;
 import mindustry.world.meta.*;
 
 
@@ -1803,6 +1803,7 @@ public class JPUnits {
                 this.constructor = LegsUnit::create;
                 speed = 0.75f;
                 hitSize = 8f;
+                armor = 6;
                 health = 6200;
                 range = 50f;
                 legCount = 4;
@@ -1818,16 +1819,17 @@ public class JPUnits {
                     shoot.shots = 3;
                     shoot.shotDelay = 10f;
                     recoil = 8;
-                    bullet = new LaserBulletType(45){{
+                    bullet = new LaserBulletType(75f){{
                         colors = new Color[]{Color.valueOf("8B73C7").cpy().a(0.4f), Color.valueOf("8B73C7"), Color.white};
 //                        chargeEffect = new MultiEffect(Fx.lancerLaserCharge, Fx.lancerLaserChargeBegin);
                         chargeEffect = JPFx.purpleLaserChargeSmall;
                         lifetime = 16f;
-                        buildingDamageMultiplier = 1.75f;
+                        buildingDamageMultiplier = 1.5f;
                     }};
+                    shootSound = Sounds.laser;
                 }});
                 weapons.add(new Weapon(name + "-missile"){{
-                    x = -1.5f;
+                    x = 0f;
                     y = -10f;
                     mirror = false;
                     reload = 600f;
@@ -1845,7 +1847,7 @@ public class JPUnits {
                         splashDamage = 25f;
                         shootStatus = StatusEffects.unmoving;
                         shootStatusDuration = 4 * 60f;
-                        hitEffect = Fx.blastExplosion;
+                        hitEffect = Fx.blastExplosion; 
                         despawnEffect = Fx.blastExplosion;
                         weaveScale = 8f;
                         weaveMag = 2f;
@@ -1864,6 +1866,23 @@ public class JPUnits {
                             weaveMag = 2f;
                             buildingDamageMultiplier = 3f;
                         }};
+                    }};
+                    shootSound = Sounds.missile;
+                }});
+                weapons.add(new Weapon(name + "-beam"){{
+                    x = -5f;
+                    y = -7f;
+                    mirror = true;
+                    reload = 600f;
+                    recoil = 5.5f;
+                    bullet = new PointLaserBulletType(){{
+                        damage = 50f;
+                        hitEffect = Fx.blastExplosion; 
+                        despawnEffect = Fx.blastExplosion;
+                        weaveScale = 8f;
+                        weaveMag = 2f;
+                        fragBullets = 5;
+                        buildingDamageMultiplier = 1.5f;
                     }};
                     shootSound = Sounds.missile;
                 }});
