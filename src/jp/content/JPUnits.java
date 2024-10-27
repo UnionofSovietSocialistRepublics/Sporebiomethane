@@ -1850,6 +1850,7 @@ public class JPUnits {
                         weaveScale = 8f;
                         weaveMag = 2f;
                         fragBullets = 5;
+                        buildingDamageMultiplier = 1.5f;
                         fragBullet = new MissileBulletType(3.5f, 2.5f){{
                             width = 8f;
                             height = 8f;
@@ -1861,6 +1862,7 @@ public class JPUnits {
                             despawnEffect = Fx.blastExplosion;
                             weaveScale = 8f;
                             weaveMag = 2f;
+                            buildingDamageMultiplier = 3f;
                         }};
                     }};
                     shootSound = Sounds.missile;
