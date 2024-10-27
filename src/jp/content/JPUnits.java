@@ -1876,20 +1876,18 @@ public class JPUnits {
                     reload = 600f;
                     recoil = 5.5f;
                     continuous = true;
+                    alwaysContinuous = true;
+                    parentizeEffects = true;
                     minWarmup = 0.94f;
                     shootWarmupSpeed = 0.05f;
                     bullet = new PointLaserBulletType(){{
                         damage = 50f;
-                        hitEffect = Fx.blastExplosion; 
-                        despawnEffect = Fx.blastExplosion;
-                        weaveScale = 8f;
-                        weaveMag = 2f;
-                        fragBullets = 5;
                         buildingDamageMultiplier = 1.5f;
                     }};
                     parts.add(new RegionPart("-cover"){{
                         progress = PartProgress.warmup;
                         mirror = true;
+                        y = -1f;
                         moveX = 1.5f;
                         moveY = 1.25f;
                         moveRot = -10f;
