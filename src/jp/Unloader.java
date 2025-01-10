@@ -49,7 +49,7 @@ public class Unloader extends Mod{
             Vars.mods.locateMod("aquarion").meta.displayName="Aquarium";
             Vars.mods.locateMod("aquarion").meta.author="Twmoney";
 //            Vars.mods.locateMod("aquarion").meta.description="Aquarium.";
-            Vars.mods.locateMod("aquarion").meta.subtitle="Aquarium 3.0 is now.";
+            Vars.mods.locateMod("aquarion").meta.subtitle="Aquarium";
         }
         });
     }
