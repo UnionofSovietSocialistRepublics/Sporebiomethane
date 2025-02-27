@@ -21,7 +21,7 @@ public class JPProduction{
         Extractor,ZincExtractor,
         Masscultivator,
         Nanoprocessor,Naniteinfuser,CCB,FR,Gaschamber,BioSynthesizer,Vanadicarbide,Neostabilizer,
-        Biomassreactor,Neocell,Lotus,Oilburner,Voltaicburner;
+        Biomassreactor,Neocell,Lotus,Oilburner,Voltaicburner,test;
 
         public static void load(){
 
@@ -232,6 +232,21 @@ public class JPProduction{
             ambientSoundVolume = 0.06f;
             generateEffect = Fx.generatespark;
             drawer = new DrawMulti(new DrawDefault(), new DrawFlame(Color.valueOf("8B73C7")));
+            
+        }};
+        test = new NuclearReactor("test"){{
+            requirements(Category.power, with(Items.lead, 300, Items.silicon, 200, Items.graphite, 150, Items.thorium, 150, Items.metaglass, 50));
+            ambientSound = Sounds.hum;
+            ambientSoundVolume = 0.24f;
+            size = 3;
+            health = 700;
+            itemDuration = 360f;
+            powerProduction = 0f;
+            heating = 0.02f;
+            outputItem = new ItemStack(JPItem.Biomass, 1);
+            consumeItems(with(JPItem.Biomass, 5,JPItem.BioSil,5,silicon,10));
+            consumeLiquid(Liquids.neoplasm, 6f / 60f);
+            consumeLiquid(Liquids.cryofluid, heating / coolantPower).update(false);
             
         }};
         }};
