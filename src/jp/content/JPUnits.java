@@ -1698,6 +1698,104 @@ public class JPUnits {
                 abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.cryofluid;}});
                 abilities.add(new StatusFieldAbility(JPStatus.Frostshield, 60f * 3, 60f * 5f, 60f));
             }};
+            Demolisher = new UnitType("Demolisher"){{
+                this.constructor = LegsUnit::create;
+                speed = 0.6f;
+                hitSize = 8f;
+                armor = 6;
+                health = 6200;
+                range = 50f;
+                legCount = 4;
+                legLength = 17f;
+                legExtension = 7f;
+                legBaseOffset = 6f;
+                weapons.add(new Weapon(name + "-laser"){{
+                    reload = 225f;
+                    layerOffset = -0.01f;
+                    x = 12f;
+                    y = -2f;
+                    mirror = true;
+                    shoot.shots = 3;
+                    shoot.shotDelay = 10f;
+                    recoil = 8;
+                    bullet = new LaserBulletType(75f){{
+                        colors = new Color[]{Color.valueOf("8B73C7").cpy().a(0.4f), Color.valueOf("8B73C7"), Color.white};
+//                        chargeEffect = new MultiEffect(Fx.lancerLaserCharge, Fx.lancerLaserChargeBegin);
+                        chargeEffect = JPFx.purpleLaserChargeSmall;
+                        lifetime = 16f;
+                        buildingDamageMultiplier = 1.5f;
+                    }};
+                    shootSound = Sounds.laser;
+                }});
+                weapons.add(new Weapon(name + "-missile"){{
+                    x = 0f;
+                    y = -10f;
+                    mirror = false;
+                    reload = 600f;
+                    recoil = 5.5f;
+//                    shoot.firstShotDelay = 125f;
+//                    shoot = new ShootSpread(5, 1.5f);
+                    shoot.shots = 6;
+                    shoot.shotDelay = 30f;
+                    bullet = new MissileBulletType(3.5f, 20){{
+                        width = 14f;
+                        height = 14f;
+                        velocityRnd = 0.05f;
+                        inaccuracy = 2f;
+                        splashDamageRadius = 35f;
+                        splashDamage = 65f;
+                        shootStatus = StatusEffects.unmoving;
+                        shootStatusDuration = 4 * 60f;
+                        hitEffect = Fx.blastExplosion; 
+                        despawnEffect = Fx.blastExplosion;
+                        weaveScale = 8f;
+                        weaveMag = 2f;
+                        fragBullets = 5;
+                        buildingDamageMultiplier = 1.5f;
+                        fragBullet = new MissileBulletType(4.5f, 5f){{
+                            width = 8f;
+                            height = 8f;
+                            velocityRnd = 0.05f;
+                            inaccuracy = 2f;
+                            splashDamageRadius = 25f;
+                            splashDamage = 10f;
+                            hitEffect = Fx.blastExplosion;
+                            despawnEffect = Fx.blastExplosion;
+                            weaveScale = 8f;
+                            weaveMag = 2f;
+                            buildingDamageMultiplier = 3f;
+                        }};
+                    }};
+                    shootSound = Sounds.missile;
+                }});
+                weapons.add(new Weapon(name + "-beam"){{
+                    x = -7f;
+                    y = -7f;
+                    mirror = true;
+                    reload = 75f;
+                    recoil = 2.5f;
+                    minWarmup = 0.94f;
+                    shootWarmupSpeed = 0.05f;
+                    bullet = new MissileBulletType(3.5f, 50f){{
+                        buildingDamageMultiplier = 1.5f;
+                        homingPower = 0.1f;
+                        homingRange = 5f;
+                    }};
+                    parts.add(new RegionPart("-cover"){{
+                        progress = PartProgress.warmup;
+                        mirror = true;
+                        y = -1f;
+                        moveX = 1.5f;
+                        moveY = 1.25f;
+                        moveRot = -10f;
+                }});
+                    shootSound = Sounds.missile;
+                }});
+                healColor = Color.valueOf("590e14");
+                outlineColor = Color.valueOf("303a45");
+                abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
+                abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
+            }};
             Frost = new UnitType("Frost"){{
                 this.constructor = LegsUnit::create;
                 speed = 0.25f;
@@ -1798,103 +1896,5 @@ public class JPUnits {
                 abilities.add(new RegenAbility(){{percentAmount = 1f / (800f * 60f * 2f) * 100f;}});
                 abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.cryofluid;}});
                 abilities.add(new StatusFieldAbility(JPStatus.Frostshield, 60f * 3, 60f * 9f, 60f));
-            }};
-            Demolisher = new UnitType("Demolisher"){{
-                this.constructor = LegsUnit::create;
-                speed = 0.6f;
-                hitSize = 8f;
-                armor = 6;
-                health = 6200;
-                range = 50f;
-                legCount = 4;
-                legLength = 17f;
-                legExtension = 7f;
-                legBaseOffset = 6f;
-                weapons.add(new Weapon(name + "-laser"){{
-                    reload = 225f;
-                    layerOffset = -0.01f;
-                    x = 12f;
-                    y = -2f;
-                    mirror = true;
-                    shoot.shots = 3;
-                    shoot.shotDelay = 10f;
-                    recoil = 8;
-                    bullet = new LaserBulletType(75f){{
-                        colors = new Color[]{Color.valueOf("8B73C7").cpy().a(0.4f), Color.valueOf("8B73C7"), Color.white};
-//                        chargeEffect = new MultiEffect(Fx.lancerLaserCharge, Fx.lancerLaserChargeBegin);
-                        chargeEffect = JPFx.purpleLaserChargeSmall;
-                        lifetime = 16f;
-                        buildingDamageMultiplier = 1.5f;
-                    }};
-                    shootSound = Sounds.laser;
-                }});
-                weapons.add(new Weapon(name + "-missile"){{
-                    x = 0f;
-                    y = -10f;
-                    mirror = false;
-                    reload = 600f;
-                    recoil = 5.5f;
-//                    shoot.firstShotDelay = 125f;
-//                    shoot = new ShootSpread(5, 1.5f);
-                    shoot.shots = 6;
-                    shoot.shotDelay = 30f;
-                    bullet = new MissileBulletType(3.5f, 20){{
-                        width = 14f;
-                        height = 14f;
-                        velocityRnd = 0.05f;
-                        inaccuracy = 2f;
-                        splashDamageRadius = 35f;
-                        splashDamage = 65f;
-                        shootStatus = StatusEffects.unmoving;
-                        shootStatusDuration = 4 * 60f;
-                        hitEffect = Fx.blastExplosion; 
-                        despawnEffect = Fx.blastExplosion;
-                        weaveScale = 8f;
-                        weaveMag = 2f;
-                        fragBullets = 5;
-                        buildingDamageMultiplier = 1.5f;
-                        fragBullet = new MissileBulletType(4.5f, 5f){{
-                            width = 8f;
-                            height = 8f;
-                            velocityRnd = 0.05f;
-                            inaccuracy = 2f;
-                            splashDamageRadius = 25f;
-                            splashDamage = 10f;
-                            hitEffect = Fx.blastExplosion;
-                            despawnEffect = Fx.blastExplosion;
-                            weaveScale = 8f;
-                            weaveMag = 2f;
-                            buildingDamageMultiplier = 3f;
-                        }};
-                    }};
-                    shootSound = Sounds.missile;
-                }});
-                weapons.add(new Weapon(name + "-beam"){{
-                    x = -7f;
-                    y = -7f;
-                    mirror = true;
-                    reload = 75f;
-                    recoil = 2.5f;
-                    minWarmup = 0.94f;
-                    shootWarmupSpeed = 0.05f;
-                    bullet = new MissileBulletType(3.5f, 50f){{
-                        buildingDamageMultiplier = 1.5f;
-                        homingPower = 0.1f;
-                        homingRange = 5f;
-                    }};
-                    parts.add(new RegionPart("-cover"){{
-                        progress = PartProgress.warmup;
-                        mirror = true;
-                        y = -1f;
-                        moveX = 1.5f;
-                        moveY = 1.25f;
-                        moveRot = -10f;
-                }});
-                    shootSound = Sounds.missile;
-                }});
-                healColor = Color.valueOf("590e14");
-                outlineColor = Color.valueOf("303a45");
-                abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
-                abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
             }};
 }}
