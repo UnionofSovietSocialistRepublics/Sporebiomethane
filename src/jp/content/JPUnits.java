@@ -1901,7 +1901,7 @@ public class JPUnits {
                         lifetime = 1f;
                         damage = 0f;
                         fragBullets = 4;
-                        fragBullet = bullet = new ExplosionBulletType(0,0){{
+                        fragBullet = new ExplosionBulletType(0,0){{
                             collidesAir = false;
                             width = 20f;
                             height = 20f;
