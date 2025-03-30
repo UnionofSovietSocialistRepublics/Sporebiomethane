@@ -25,45 +25,177 @@ public class JPTurret{
 
         public static void load(){
 
-        Impalercannon= new ItemTurret("Impalercannon"){{
-            requirements(Category.turret, with(surgeAlloy, 750, JPItem.Nanitealloy, 500,thorium, 500,silicon, 450));
-            health = 3000;
-            size = 4;
-            range = 325f;
-            rotateSpeed = 2f;
-            reload = 160f;
-            recoil = 4f;
-            shake = 4f;
+        Sporegarrison = new PowerTurret("Sporegarrison"){{
+            requirements(Category.turret, with(graphite, 125, silicon, 95, JPItem.Biomass, 45));
+            health = 1000;
+            size = 2;
+            rotateSpeed = 10f;
+            range = 200f;
+            reload = 35f;
+            recoil = 2f;
             shootCone = 2f;
-            maxAmmo = 60;
-            ammoPerShot = 5;
             ammoUseEffect = Fx.casing1;
             inaccuracy = 2f;
-            ammo(
-               JPItem.Biomass, new PointBulletType(){{
-                    shootEffect = JPFx.fsinsShoot;
-                    hitEffect = JPFx.fsinsHit;
-                    smokeEffect = Fx.smokeCloud;
-                    trailEffect = JPFx.fsinsTrail;
-                    despawnEffect =  JPFx.fsinsBomb;
-                    trailLength = 20;
-                    trailColor = Color.valueOf("8B73C7");
-                    damage = 2000f;
-                    buildingDamageMultiplier = 0.25f;
-                    speed = 500f;
-                    ammoMultiplier = 1.5f;
-                    pierceArmor = true;
-                    hitShake = 6f;
-            }});
-            rotateSpeed = 2.5f;
-            coolantMultiplier = 0.2f;
-            coolant = consumeCoolant(2f);
-            consumePower(7f);
-            unitSort = UnitSorts.strongest;
-            ammoUseEffect = Fx.casing3Double;
-            shootSound = Sounds.railgun;
+            shootType = new BasicBulletType(5f, 40f){{
+                    height = width = 15f;
+                    lifetime = 45f;
+                    backColor = Color.valueOf("8B73C7");
+                    frontColor = Color.valueOf("8B73C7");
+                    lightColor = Color.valueOf("8B73C7");
+                    ammoMultiplier = 1f;
+                }};
+                coolant = consumeCoolant(0.2f);
+                consumePower(5f);
+            drawer = new DrawTurret(){{
+                parts.add(new RegionPart("-barrel"){{
+                    progress = PartProgress.recoil;
+                    under = true;
+                    moveY = -1.5f;
+                }});
+            }};
             outlineColor = Color.valueOf("19171b");
         }};
+
+        Oarch = new ItemTurret("Oarch"){{
+            requirements(Category.turret, with(graphite, 200, silicon, 125, JPItem.Nanitealloy, 95));
+            size = 2;
+            rotateSpeed = 10f;
+            range = 250f;
+            reload = 40f;
+            recoil = 2f;
+            shootCone = 2f;
+            ammoUseEffect = Fx.casing1;
+            health = 750;
+            inaccuracy = 2f;
+            shootY = -2.5f;
+            ammo(
+                sporePod, new BasicBulletType(5f, 15f){{
+                    lifetime = 50f;
+                    reloadMultiplier = 0.5f;
+                    splashDamage = 5f;
+                    splashDamageRadius = 45f;
+                    knockback = 1.5f;
+                    height = width = 15f;
+                    status = StatusEffects.sporeSlowed;
+                    statusDuration = 60f * 14;
+                    backColor = Color.valueOf("7457ce");
+                    frontColor = Color.valueOf("7457ce");
+                    lightColor = Color.valueOf("7457ce");
+                    collidesGround = true;
+                    collidesAir = true;
+                }},
+               JPItem.Biomass, new BasicBulletType(5f, 25f){{
+                    height = width = 10f;
+                    lifetime = 50f;
+                    splashDamage = 25f;
+                    splashDamageRadius = 30f;
+                    fragBullets = 7;
+                    status = StatusEffects.slow;
+                    statusDuration = 60f * 5;
+                    backColor = Color.valueOf("8B73C7");
+                    frontColor = Color.valueOf("8B73C7");
+                    lightColor = Color.valueOf("8B73C7");
+                    ammoMultiplier = 1f;
+                    collidesGround = true;
+                    collidesAir = true;
+                    fragBullet = new BasicBulletType(2.5f, 5){{
+                        width = height = 5f;
+                        lifetime = 20f;
+                        status = StatusEffects.slow;
+                        statusDuration = 60f * 7;
+                        backColor = Color.valueOf("8B73C7");
+                        frontColor = Color.valueOf("8B73C7");
+                        lightColor = Color.valueOf("8B73C7");
+
+                        despawnEffect = Fx.none;
+                        collidesGround = true;
+                        collidesAir = true;
+                    }};
+                }});
+            shootSound = JPSounds.Arty;
+            coolant = consumeCoolant(0.15f);
+            outlineColor = Color.valueOf("19171b");
+        }};
+        
+        Mitocannon = new PowerTurret("Mitocannon"){{
+            requirements(Category.turret, with(graphite, 300, JPItem.Neocells, 240, JPItem.Nanitealloy, 150));
+            health = 1500;
+            size = 2;
+            rotateSpeed = 10f;
+            range = 225f;
+            liquidCapacity = 200F;
+            reload = 25f;
+            recoil = 2f;
+            shootCone = 2f;
+            ammoUseEffect = Fx.casing1;
+            hasPower = true;
+            inaccuracy = 2f;
+            shootType = new BasicBulletType(5f, 150f){{
+                height = width = 15F;
+                backColor = Color.valueOf("8B73C7");
+                frontColor = Color.white;
+                lightColor = Color.valueOf("8B73C7");
+                fragBullets = 5;
+                ammoMultiplier = 1f;
+                fragBullet = new BasicBulletType(3f, 5){{
+                    width = 5f;
+                    height = 5f;
+                    backColor = Color.valueOf("8B73C7");
+                    frontColor = Color.white;
+                    lightColor = Color.valueOf("8B73C7");
+                    damage = 25f;
+                    lifetime = 25f;
+                    despawnEffect = Fx.none;
+                    collidesGround = false;
+                }};
+            }};
+            shootSound = Sounds.shootBig;
+            coolant = consumeCoolant(0.225f);
+            consumePower(7f);
+            outlineColor = Color.valueOf("19171b");
+        }};
+
+        Sentinel = new ContinuousTurret("Sentinel"){{
+            requirements(Category.turret, with(graphite, 200, JPItem.Nanitealloy, 75, JPItem.Neocells, 25));
+            health = 1000;
+            size = 2;
+            rotateSpeed = 1.25f;
+            liquidCapacity = 200F;
+            range = 225f;
+            reload = 60f;
+            recoil = 2f;
+            shootCone = 10f;
+            minWarmup = 0.94f;
+            shootWarmupSpeed = 0.05f;
+            shootY = -1f;
+            ammoUseEffect = Fx.casing1;
+            shootType = new PointLaserBulletType(){{
+	            collidesTeam = true;
+	            damage = 100;
+                hitColor = Color.valueOf("fda981");
+                ammoMultiplier = 1f;
+                pierceArmor = true;
+            }};
+            drawer = new DrawTurret("-bottom"){{
+                parts.add(new RegionPart("-prongs"){{
+                    progress = PartProgress.warmup;
+                    mirror = true;
+                    moveX = 1.5f;
+                    moveY = 1.25f;
+                    moveRot = -10f;
+            }});
+                parts.add(new RegionPart("-bottom"){
+                });
+
+        }};
+        shootSound = Sounds.none;
+        loopSoundVolume = 1f;
+        loopSound = Sounds.minebeam;
+        consumeLiquid(Liquids.water, 45f / 60f);
+        consumePower(10f);
+        outlineColor = Color.valueOf("19171b");
+        }};
+
         Flakaccelerator = new ItemTurret("Flakaccelerator"){{
             requirements(Category.turret, with(graphite, 125, silicon, 100, JPItem.Biomass, 75));
             health = 1000;
@@ -138,6 +270,7 @@ public class JPTurret{
                 outlineColor = Color.valueOf("19171b");
             }};
         }};
+
         Artilleryturret = new ItemTurret("Artilleryturret"){{
             requirements(Category.turret, with(graphite, 675, JPItem.Nanitealloy, 250, JPItem.Biomass, 150));
             size = 3;
@@ -187,136 +320,9 @@ public class JPTurret{
             coolant = consumeCoolant(0.5f);
             outlineColor = Color.valueOf("19171b");
         }};
-        Oarch = new ItemTurret("Oarch"){{
-            requirements(Category.turret, with(graphite, 200, silicon, 125, JPItem.Nanitealloy, 95));
-            size = 2;
-            rotateSpeed = 10f;
-            range = 250f;
-            reload = 40f;
-            recoil = 2f;
-            shootCone = 2f;
-            ammoUseEffect = Fx.casing1;
-            health = 750;
-            inaccuracy = 2f;
-            shootY = -2.5f;
-            ammo(
-                sporePod, new BasicBulletType(5f, 15f){{
-                    lifetime = 50f;
-                    reloadMultiplier = 0.5f;
-                    splashDamage = 5f;
-                    splashDamageRadius = 45f;
-                    knockback = 1.5f;
-                    height = width = 15f;
-                    status = StatusEffects.sporeSlowed;
-                    statusDuration = 60f * 14;
-                    backColor = Color.valueOf("7457ce");
-                    frontColor = Color.valueOf("7457ce");
-                    lightColor = Color.valueOf("7457ce");
-                    collidesGround = true;
-                    collidesAir = true;
-                }},
-               JPItem.Biomass, new BasicBulletType(5f, 25f){{
-                    height = width = 10f;
-                    lifetime = 50f;
-                    splashDamage = 25f;
-                    splashDamageRadius = 30f;
-                    fragBullets = 7;
-                    status = StatusEffects.slow;
-                    statusDuration = 60f * 5;
-                    backColor = Color.valueOf("8B73C7");
-                    frontColor = Color.valueOf("8B73C7");
-                    lightColor = Color.valueOf("8B73C7");
-                    ammoMultiplier = 1f;
-                    collidesGround = true;
-                    collidesAir = true;
-                    fragBullet = new BasicBulletType(2.5f, 5){{
-                        width = height = 5f;
-                        lifetime = 20f;
-                        status = StatusEffects.slow;
-                        statusDuration = 60f * 7;
-                        backColor = Color.valueOf("8B73C7");
-                        frontColor = Color.valueOf("8B73C7");
-                        lightColor = Color.valueOf("8B73C7");
 
-                        despawnEffect = Fx.none;
-                        collidesGround = true;
-                        collidesAir = true;
-                    }};
-                }});
-            shootSound = JPSounds.Arty;
-            coolant = consumeCoolant(0.15f);
-            outlineColor = Color.valueOf("19171b");
-        }};
-        Sporegarrison = new PowerTurret("Sporegarrison"){{
-            requirements(Category.turret, with(graphite, 125, silicon, 145, JPItem.Biomass, 95));
-            health = 1000;
-            size = 2;
-            rotateSpeed = 10f;
-            range = 200f;
-            reload = 35f;
-            recoil = 2f;
-            shootCone = 2f;
-            ammoUseEffect = Fx.casing1;
-            inaccuracy = 2f;
-            shootType = new BasicBulletType(5f, 40f){{
-                    height = width = 15f;
-                    lifetime = 45f;
-                    backColor = Color.valueOf("8B73C7");
-                    frontColor = Color.valueOf("8B73C7");
-                    lightColor = Color.valueOf("8B73C7");
-                    ammoMultiplier = 1f;
-                }};
-                coolant = consumeCoolant(0.2f);
-                consumePower(7f);
-            drawer = new DrawTurret(){{
-                parts.add(new RegionPart("-barrel"){{
-                    progress = PartProgress.recoil;
-                    under = true;
-                    moveY = -1.5f;
-                }});
-            }};
-            outlineColor = Color.valueOf("19171b");
-        }};
-        Mitocannon = new PowerTurret("Mitocannon"){{
-            requirements(Category.turret, with(graphite, 300, JPItem.Neocells, 240, JPItem.Nanitealloy, 150));
-            health = 1500;
-            size = 2;
-            rotateSpeed = 10f;
-            range = 225f;
-            liquidCapacity = 200F;
-            reload = 25f;
-            recoil = 2f;
-            shootCone = 2f;
-            ammoUseEffect = Fx.casing1;
-            hasPower = true;
-            inaccuracy = 2f;
-
-               shootType = new BasicBulletType(5f, 150f){{
-                    height = width = 15F;
-                    backColor = Color.valueOf("8B73C7");
-                    frontColor = Color.white;
-                    lightColor = Color.valueOf("8B73C7");
-                    fragBullets = 5;
-                    ammoMultiplier = 1f;
-                    fragBullet = new BasicBulletType(3f, 5){{
-                       width = 5f;
-                       height = 5f;
-                       backColor = Color.valueOf("8B73C7");
-                       frontColor = Color.white;
-                       lightColor = Color.valueOf("8B73C7");
-                       damage = 25f;
-                       lifetime = 25f;
-                       despawnEffect = Fx.none;
-                       collidesGround = false;
-                   }};
-                }};
-            shootSound = Sounds.shootBig;
-            coolant = consumeCoolant(0.225f);
-            consumePower(7f);
-            outlineColor = Color.valueOf("19171b");
-        }};
         Suppressor = new ItemTurret("Suppressor"){{
-            requirements(Category.turret, with(graphite, 225, JPItem.Nanitealloy, 25, JPItem.Biomass, 45));
+            requirements(Category.turret, with(graphite, 225, JPItem.Nanitealloy, 75, JPItem.Biomass, 95));
             health = 1850;
             size = 3;
             rotateSpeed = 10f;
@@ -402,45 +408,45 @@ public class JPTurret{
                 outlineColor = Color.valueOf("19171b");
             }};
         }};
-        Sentinel = new ContinuousTurret("Sentinel"){{
-            requirements(Category.turret, with(graphite, 200, JPItem.Nanitealloy, 75, JPItem.Neocells, 25));
-            health = 1000;
-            size = 2;
-            rotateSpeed = 1.25f;
-            liquidCapacity = 200F;
-            range = 225f;
-            reload = 60f;
-            recoil = 2f;
-            shootCone = 10f;
-            minWarmup = 0.94f;
-            shootWarmupSpeed = 0.05f;
-            shootY = -1f;
+
+        Impalercannon= new ItemTurret("Impalercannon"){{
+            requirements(Category.turret, with(surgeAlloy, 750, JPItem.Nanitealloy, 500,thorium, 500,silicon, 450));
+            health = 3000;
+            size = 4;
+            range = 325f;
+            rotateSpeed = 2f;
+            reload = 160f;
+            recoil = 4f;
+            shake = 4f;
+            shootCone = 2f;
+            maxAmmo = 60;
+            shootY = 3f;
+            ammoPerShot = 5;
             ammoUseEffect = Fx.casing1;
-            shootType = new PointLaserBulletType(){{
-	            collidesTeam = true;
-	            damage = 100;
-                hitColor = Color.valueOf("fda981");
-                ammoMultiplier = 1f;
-                pierceArmor = true;
-            }};
-            drawer = new DrawTurret("-bottom"){{
-                parts.add(new RegionPart("-prongs"){{
-                    progress = PartProgress.warmup;
-                    mirror = true;
-                    moveX = 1.5f;
-                    moveY = 1.25f;
-                    moveRot = -10f;
+            inaccuracy = 2f;
+            ammo(
+               JPItem.Biomass, new PointBulletType(){{
+                    shootEffect = JPFx.fsinsShoot;
+                    hitEffect = JPFx.fsinsHit;
+                    smokeEffect = Fx.smokeCloud;
+                    trailEffect = JPFx.fsinsTrail;
+                    despawnEffect =  JPFx.fsinsBomb;
+                    trailLength = 20;
+                    trailColor = Color.valueOf("8B73C7");
+                    damage = 2000f;
+                    buildingDamageMultiplier = 0.25f;
+                    speed = 500f;
+                    ammoMultiplier = 1.5f;
+                    pierceArmor = true;
+                    hitShake = 6f;
             }});
-                parts.add(new RegionPart("-bottom"){
-                });
-
+            rotateSpeed = 2.5f;
+            coolantMultiplier = 0.2f;
+            coolant = consumeCoolant(2f);
+            consumePower(7f);
+            unitSort = UnitSorts.strongest;
+            ammoUseEffect = Fx.casing3Double;
+            shootSound = Sounds.railgun;
+            outlineColor = Color.valueOf("19171b");
         }};
-        shootSound = Sounds.none;
-        loopSoundVolume = 1f;
-        loopSound = Sounds.minebeam;
-        consumeLiquid(Liquids.water, 15f / 60f);
-        consumePower(7f);
-        outlineColor = Color.valueOf("19171b");
-        }};
-
 }};
