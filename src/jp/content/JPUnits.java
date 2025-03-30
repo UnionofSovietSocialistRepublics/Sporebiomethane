@@ -1893,7 +1893,7 @@ public class JPUnits {
                     shootStatusDuration = 360f;
                     shootSound = Sounds.none;
                     ejectEffect = Fx.none;
-                    bullet = new BasicBulletType(0,0){{
+                    bullet = new BasicBulletType(5f,0){{
                         rangeOverride = 1f;
                         collidesAir = false;
                         width = 0f;
