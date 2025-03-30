@@ -1907,7 +1907,7 @@ public class JPUnits {
                             height = 20f;
                             shrinkX = shrinkY - 0.1f;
                             lifetime = 60f;
-                            sprite = "JP-Target"
+                            sprite = "JP-Target";
                             spawnUnit = JPUnits.Autus;
                             // spawnUnit = new MissileUnitType("Target"){{
                             //     flying = true;
