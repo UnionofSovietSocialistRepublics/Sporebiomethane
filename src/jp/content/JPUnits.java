@@ -1852,7 +1852,7 @@ public class JPUnits {
                     y = 7f;
                     recoil = 0f;
                     mirror = false;
-                    shootStatus = JPStatus.Reversion;
+                    shootStatus = JPStatus.ReversionD;
                     shootStatusDuration = 300f;
                     shoot.firstShotDelay = 301f;
                     ejectEffect = Fx.none;
@@ -1860,11 +1860,11 @@ public class JPUnits {
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
                     lifetime = 10f;
-                    splashDamage = 200f;
+                    splashDamage = 2000f;
                     splashDamageRadius = 25.5f;
-                    recoil = -24f;
-                    trailLength = 10;
-                    trailWidth = 4f;
+                    recoil = -60f;
+                    trailLength = 30;
+                    trailWidth = 5f;
                     trailColor = Color.valueOf("8B73C7");
                     trailInterval = 3f;
                     despawnSound = Sounds.spark;
