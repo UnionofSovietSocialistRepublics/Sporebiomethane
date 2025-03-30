@@ -1897,12 +1897,12 @@ public class JPUnits {
                         rangeOverride = 1f;
                         lifetime = 1f;
                         fragBullets = 4;
-                        fragBullet = new BasicBulletType(5f,250f){{
+                        fragBullet = new BasicBulletType(3f,250f){{
                             width = 20f;
                             height = 20f;
                             shrinkX = shrinkY = 0.1f;
-                            lifetime = 120f;
-                            sprite = "JP-Target";
+                            lifetime = 20f;
+                            sprite = "Target";
                             fragBullets = 1;
                             fragBullet = new BasicBulletType(0,0){{
                                 spawnUnit = JPUnits.Autus;
