@@ -1893,7 +1893,7 @@ public class JPUnits {
                     shootStatusDuration = 360f;
                     shootSound = Sounds.none;
                     ejectEffect = Fx.none;
-                    bullet = new ExplosionBulletType(5f,0){{
+                    bullet = new BasicBulletType(5f,0){{
                         rangeOverride = 1f;
                         lifetime = 1f;
                         fragBullets = 4;
@@ -1903,30 +1903,11 @@ public class JPUnits {
                             shrinkX = shrinkY = 0.1f;
                             lifetime = 120f;
                             sprite = "JP-Target";
-                            spawnUnit = JPUnits.Autus;
-                            // spawnUnit = new MissileUnitType("Target"){{
-                            //     flying = true;
-                            //     useUnitCap = false;
-                            //     lifetime = 60f;
-                            //     health = 1120f;
-                            //     hitSize = 3f;
-                            //     hidden = true;
-                            //     drawCell =false;
-                            //     weapons.add(new Weapon(){{
-                            //         shootCone = 360f;
-                            //         mirror = false;
-                            //         reload = 1f;
-                            //         shootOnDeath = true;
-                            //         bullet = new ExplosionBulletType(110f, 25f){{
-                            //             spawnUnit = JPUnits.Autus;
-                            //             shootEffect = Fx.massiveExplosion;
-                            //             collidesAir = true;
-                            //             splashDamage = 145f;
-                            //             splashDamageRadius = 30f;
-                            //             buildingDamageMultiplier = 0.5f;
-                            //     }};}});
-                            //     outlineColor = Color.valueOf("303a45");
-                            //     }};
+                            fragBullets = 1;
+                            fragBullet = new BasicBulletType(0,0){{
+                                spawnUnit = JPUnits.Autus;
+                            }}
+                            
                         }};
                     }};
 
