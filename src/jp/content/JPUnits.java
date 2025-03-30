@@ -1893,7 +1893,7 @@ public class JPUnits {
                     shootStatusDuration = 360f;
                     shootSound = Sounds.none;
                     ejectEffect = Fx.none;
-                    bullet = new ExplosionBulletType(0,0){{
+                    bullet = new BasicBulletType(0,0){{
                         rangeOverride = 1f;
                         collidesAir = false;
                         width = 0f;
@@ -1901,7 +1901,7 @@ public class JPUnits {
                         lifetime = 1f;
                         damage = 0f;
                         fragBullets = 4;
-                        fragBullet = new ExplosionBulletType(0,0){{
+                        fragBullet = new BasicBulletType(0,0){{
                             collidesAir = false;
                             width = 20f;
                             height = 20f;
