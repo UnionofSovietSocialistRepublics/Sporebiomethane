@@ -1807,14 +1807,12 @@ public class JPUnits {
                 legLength = 13f;
                 legExtension = 7f;
                 legBaseOffset = 6f;
-                weapons.add(new Weapon("I AM THE STORM THAT IS APPROACHING"){{
-
-                    top = true;
+                weapons.add(new Weapon("Flamethrowar"){{
                     reload = 5f;
                     x = 0f;
                     y = 7f;
-                    mirror = false;
                     recoil = 0f;
+                    mirror = false;
                     shootStatus = JPStatus.Frostshield;
                     shootStatusDuration = 80f;
                     shootSound = Sounds.flame;
@@ -1847,11 +1845,43 @@ public class JPUnits {
                             cone = 10f;
                         }};
                     }};
-
+                }});
+                weapons.add(new Weapon("Thingy"){{
+                    reload = 198419841984f;
+                    x = 0f;
+                    y = 7f;
+                    recoil = 0f;
+                    mirror = false;
+                    shootStatus = JPStatus.Reversion;
+                    shootStatusDuration = 300f;
+                    shoot.firstShotDelay = 301f;
+                    ejectEffect = Fx.none;
+                bullet = new BasicBulletType(9f, 180){{
+                    backColor = Color.valueOf("8B73C7");
+                    frontColor = Color.valueOf("8B73C7");
+                    lifetime = 10f;
+                    splashDamage = 200f;
+                    splashDamageRadius = 25.5f;
+                    recoil = -24f;
+                    trailLength = 10;
+                    trailWidth = 4f;
+                    trailColor = Color.valueOf("8B73C7");
+                    trailInterval = 3f;
+                    despawnSound = Sounds.spark;
+                    hitEffect = new MultiEffect(
+                        new WaveEffect(){{
+                            colorFrom = colorTo = Color.valueOf("8B73C7");
+                            sizeFrom = 0f;
+                            sizeTo = 30f;
+                            lifetime = 20f;
+                            strokeFrom = 0f;
+                            strokeTo = 5.5f;
+                        }}
+                    );
+                }};
                 }});
                 weapons.add(new Weapon("Autus generator"){{
                     range = 10f;
-                    top = true;
                     reload = 2500f;
                     x = 0f;
                     y = 0f;
