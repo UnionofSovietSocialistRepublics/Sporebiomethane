@@ -1906,11 +1906,9 @@ public class JPUnits {
                             fragBullets = 1;
                             fragBullet = new BasicBulletType(0,0){{
                                 spawnUnit = JPUnits.Autus;
-                            }}
-                            
+                            }};
                         }};
                     }};
-
                 }});
                 healColor = Color.valueOf("87ceeb");
                 outlineColor = Color.valueOf("303a45");
