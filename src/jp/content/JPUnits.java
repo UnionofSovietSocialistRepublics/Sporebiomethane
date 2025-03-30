@@ -1847,7 +1847,7 @@ public class JPUnits {
                     }};
                 }});
                 weapons.add(new Weapon("Thingy"){{
-                    range = 260f;
+                    range = 300f;
                     reload = 198419841984f;
                     x = 0f;
                     y = 7f;
@@ -1860,10 +1860,10 @@ public class JPUnits {
                 bullet = new BasicBulletType(9f, 180){{
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
-                    lifetime = 20f;
+                    lifetime = 120f;
                     splashDamage = 2000f;
                     splashDamageRadius = 25.5f;
-                    recoil = -60f;
+                    recoil = -120f;
                     trailLength = 60;
                     trailWidth = 8f;
                     trailColor = Color.valueOf("8B73C7");
