@@ -1857,7 +1857,7 @@ public class JPUnits {
                     shootStatusDuration = 300f;
                     shoot.firstShotDelay = 301f;
                     ejectEffect = Fx.none;
-                bullet = new BasicBulletType(12f, 500){{
+                bullet = new BasicBulletType(20f, 500){{
                     rangeOverride = 200f;
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
