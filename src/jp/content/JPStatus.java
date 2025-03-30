@@ -4,7 +4,7 @@ import mindustry.type.StatusEffect;
 
 public class JPStatus {
     public static StatusEffect
-    Dissolving, Frostshield, Regen, Mindcontrol;
+    Dissolving, Frostshield, Regen, Mindcontrol, Reversion;
     public static void load(){
         Dissolving = new StatusEffect("Dissolving"){{
             damage = 60f / 60f;
@@ -14,5 +14,8 @@ public class JPStatus {
         }};
         Frostshield = new StatusEffect("Frostshield"){{
             healthMultiplier = 4f;
+        }};
+        Reversion = new StatusEffect("Reversion"){{
+            speedMultiplier = -1f;
         }};
     }};
