@@ -1857,11 +1857,11 @@ public class JPUnits {
                     shootStatusDuration = 300f;
                     shoot.firstShotDelay = 301f;
                     ejectEffect = Fx.none;
-                bullet = new BasicBulletType(20f, 500){{
+                bullet = new BasicBulletType(25f, 500){{
                     rangeOverride = 200f;
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
-                    lifetime = 20f;
+                    lifetime = 15f;
                     splashDamage = 2000f;
                     splashDamageRadius = 25.5f;
                     recoil = -125f;
@@ -1893,7 +1893,7 @@ public class JPUnits {
                     shootStatusDuration = 360f;
                     shootSound = Sounds.none;
                     ejectEffect = Fx.none;
-                    bullet = new BasicBulletType(0,0){{
+                    bullet = new ExplosionBulletType(0,0){{
                         rangeOverride = 1f;
                         collidesAir = false;
                         width = 0f;
@@ -1901,35 +1901,37 @@ public class JPUnits {
                         lifetime = 1f;
                         damage = 0f;
                         fragBullets = 4;
-                        fragBullet = bullet = new BasicBulletType(0,0){{
-                            rangeOverride = 1f;
+                        fragBullet = bullet = new ExplosionBulletType(0,0){{
                             collidesAir = false;
-                            width = 0f;
-                            height = 0f;
-                            lifetime = 1f;
-                            spawnUnit = new MissileUnitType("Target"){{
-                                flying = true;
-                                useUnitCap = false;
-                                lifetime = 60f;
-                                health = 1120f;
-                                hitSize = 3f;
-                                hidden = true;
-                                drawCell =false;
-                                weapons.add(new Weapon(){{
-                                    shootCone = 360f;
-                                    mirror = false;
-                                    reload = 1f;
-                                    shootOnDeath = true;
-                                    bullet = new ExplosionBulletType(110f, 25f){{
-                                        spawnUnit = JPUnits.Autus;
-                                        shootEffect = Fx.massiveExplosion;
-                                        collidesAir = true;
-                                        splashDamage = 145f;
-                                        splashDamageRadius = 30f;
-                                        buildingDamageMultiplier = 0.5f;
-                                }};}});
-                                outlineColor = Color.valueOf("303a45");
-                                }};
+                            width = 20f;
+                            height = 20f;
+                            shrinkX = shrinkY - 0.1f;
+                            lifetime = 60f;
+                            sprite = "JP-Target"
+                            spawnUnit = JPUnits.Autus;
+                            // spawnUnit = new MissileUnitType("Target"){{
+                            //     flying = true;
+                            //     useUnitCap = false;
+                            //     lifetime = 60f;
+                            //     health = 1120f;
+                            //     hitSize = 3f;
+                            //     hidden = true;
+                            //     drawCell =false;
+                            //     weapons.add(new Weapon(){{
+                            //         shootCone = 360f;
+                            //         mirror = false;
+                            //         reload = 1f;
+                            //         shootOnDeath = true;
+                            //         bullet = new ExplosionBulletType(110f, 25f){{
+                            //             spawnUnit = JPUnits.Autus;
+                            //             shootEffect = Fx.massiveExplosion;
+                            //             collidesAir = true;
+                            //             splashDamage = 145f;
+                            //             splashDamageRadius = 30f;
+                            //             buildingDamageMultiplier = 0.5f;
+                            //     }};}});
+                            //     outlineColor = Color.valueOf("303a45");
+                            //     }};
                         }};
                     }};
 
