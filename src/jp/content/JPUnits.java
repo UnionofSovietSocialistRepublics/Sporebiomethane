@@ -1912,7 +1912,7 @@ public class JPUnits {
                                 bullet = new ExplosionBulletType(0f,0f){{
                                     killShooter = true;
                                     fragBullets = 4;
-                                    fragBullet = spawnUnit = new MissileUnitType("Target"){{
+                                    fragBullet = new MissileUnitType("Target"){{
                                         flying = true;
                                         useUnitCap = false;
                                         lifetime = 60f;
