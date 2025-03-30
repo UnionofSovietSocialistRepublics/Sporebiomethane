@@ -1902,7 +1902,7 @@ public class JPUnits {
                             height = 20f;
                             shrinkX = shrinkY = 0.1f;
                             lifetime = 20f;
-                            sprite = "Target";
+                            sprite = "jp-Target";
                             fragBullets = 1;
                             fragBullet = new BasicBulletType(0,0){{
                                 spawnUnit = JPUnits.Autus;

@@ -73,7 +73,7 @@ public class JPTurret{
             reload = 15f;
             recoil = 2f;
             shootCone = 2f;
-            shootY = 2.5f;
+            shootY = 3f;
             recoils = 2;
             ammoUseEffect = Fx.casing1;
             targetGround = false;
