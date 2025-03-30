@@ -73,7 +73,7 @@ public class JPTurret{
             reload = 15f;
             recoil = 2f;
             shootCone = 2f;
-            shootY = 2;
+            shootY = 2.5;
             recoils = 2;
             ammoUseEffect = Fx.casing1;
             targetGround = false;
@@ -147,6 +147,7 @@ public class JPTurret{
             recoil = 5f;
             shootCone = 10f;
             ammoPerShot = 3;
+            shootY = -2.5;
             ammoUseEffect = Fx.casing1;
             health = 1500;
             shoot.shots = 4;
@@ -197,6 +198,7 @@ public class JPTurret{
             ammoUseEffect = Fx.casing1;
             health = 750;
             inaccuracy = 2f;
+            shootY = -2.5;
             ammo(
                 sporePod, new BasicBulletType(5f, 15f){{
                     lifetime = 50f;
@@ -401,10 +403,10 @@ public class JPTurret{
             }};
         }};
         Sentinel = new ContinuousTurret("Sentinel"){{
-            requirements(Category.turret, with(graphite, 675, JPItem.Nanitealloy, 250, JPItem.Neocells, 150));
-            health = 1500;
+            requirements(Category.turret, with(graphite, 200, JPItem.Nanitealloy, 75, JPItem.Neocells, 25));
+            health = 1000;
             size = 2;
-            rotateSpeed = 1.5f;
+            rotateSpeed = 1.25f;
             liquidCapacity = 200F;
             range = 225f;
             reload = 60f;
@@ -416,7 +418,7 @@ public class JPTurret{
             ammoUseEffect = Fx.casing1;
             shootType = new PointLaserBulletType(){{
 	            collidesTeam = true;
-	            damage = 115;
+	            damage = 100;
                 hitColor = Color.valueOf("fda981");
                 ammoMultiplier = 1f;
                 pierceArmor = true;
