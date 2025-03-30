@@ -1848,7 +1848,6 @@ public class JPUnits {
                 }});
                 weapons.add(new Weapon("Thingy"){{
                     range = 150f;
-                    rangeOverride = 150f;
                     reload = 198419841984f;
                     x = 0f;
                     y = 7f;
@@ -1859,6 +1858,7 @@ public class JPUnits {
                     shoot.firstShotDelay = 301f;
                     ejectEffect = Fx.none;
                 bullet = new BasicBulletType(9f, 180){{
+                    rangeOverride = 150f;
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
                     lifetime = 60f;

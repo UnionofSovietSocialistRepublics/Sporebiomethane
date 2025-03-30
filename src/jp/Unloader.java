@@ -32,7 +32,7 @@ public class Unloader extends Mod{
         break;
         case 4:
         Vars.mods.locateMod("jp").meta.author="Ice molecules";
-        Vars.mods.locateMod("jp").meta.subtitle="Extra frosty editon"; //boss (Frost) reference
+        Vars.mods.locateMod("jp").meta.subtitle="Extra frosty edition"; //boss (Frost) reference
         break;
         case 5:
         Vars.mods.locateMod("jp").meta.author="Duke";
