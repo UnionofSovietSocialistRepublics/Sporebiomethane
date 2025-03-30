@@ -1901,8 +1901,7 @@ public class JPUnits {
                         lifetime = 1f;
                         damage = 0f;
                         fragBullets = 4;
-                        fragBullet = new BasicBulletType(0,0){{
-                            collidesAir = false;
+                        fragBullet = new BasicBulletType(5f,250f){{
                             width = 20f;
                             height = 20f;
                             shrinkX = shrinkY - 0.1f;
