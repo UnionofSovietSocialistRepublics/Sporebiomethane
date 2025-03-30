@@ -1900,44 +1900,37 @@ public class JPUnits {
                         height = 0f;
                         lifetime = 1f;
                         damage = 0f;
-                        spawnUnit = new MissileUnitType("Dummy"){{
-                            useUnitCap = false;
-                            lifetime = 0f;
-                            health = 1120f;
-                            hitSize = 3f;
-                            hidden = true;
-                            drawCell =false;
-                            weapons.add(new Weapon(){{
-                                shootOnDeath = true;
-                                bullet = new ExplosionBulletType(0f,0f){{
-                                    killShooter = true;
-                                    fragBullets = 4;
-                                    fragBullet = new MissileUnitType("Target"){{
-                                        flying = true;
-                                        useUnitCap = false;
-                                        lifetime = 60f;
-                                        health = 1120f;
-                                        hitSize = 3f;
-                                        hidden = true;
-                                        drawCell =false;
-                                        weapons.add(new Weapon(){{
-                                            shootCone = 360f;
-                                            mirror = false;
-                                            reload = 1f;
-                                            shootOnDeath = true;
-                                            bullet = new ExplosionBulletType(110f, 25f){{
-                                                spawnUnit = JPUnits.Autus;
-                                                shootEffect = Fx.massiveExplosion;
-                                                collidesAir = true;
-                                                splashDamage = 145f;
-                                                splashDamageRadius = 30f;
-                                                buildingDamageMultiplier = 0.5f;
-                                        }};}});
-                                        outlineColor = Color.valueOf("303a45");
-                                        }};
-                            }};}});
-                            outlineColor = Color.valueOf("303a45");
-                            }};
+                        fragBullets = 4;
+                        fragBullet = bullet = new BasicBulletType(0,0){{
+                            rangeOverride = 1f;
+                            collidesAir = false;
+                            width = 0f;
+                            height = 0f;
+                            lifetime = 1f;
+                            spawnUnit = new MissileUnitType("Target"){{
+                                flying = true;
+                                useUnitCap = false;
+                                lifetime = 60f;
+                                health = 1120f;
+                                hitSize = 3f;
+                                hidden = true;
+                                drawCell =false;
+                                weapons.add(new Weapon(){{
+                                    shootCone = 360f;
+                                    mirror = false;
+                                    reload = 1f;
+                                    shootOnDeath = true;
+                                    bullet = new ExplosionBulletType(110f, 25f){{
+                                        spawnUnit = JPUnits.Autus;
+                                        shootEffect = Fx.massiveExplosion;
+                                        collidesAir = true;
+                                        splashDamage = 145f;
+                                        splashDamageRadius = 30f;
+                                        buildingDamageMultiplier = 0.5f;
+                                }};}});
+                                outlineColor = Color.valueOf("303a45");
+                                }};
+                        }};
                     }};
 
                 }});
