@@ -1847,6 +1847,7 @@ public class JPUnits {
                     }};
                 }});
                 weapons.add(new Weapon("Thingy"){{
+                    range = 260f;
                     reload = 198419841984f;
                     x = 0f;
                     y = 7f;
@@ -1859,12 +1860,12 @@ public class JPUnits {
                 bullet = new BasicBulletType(9f, 180){{
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
-                    lifetime = 10f;
+                    lifetime = 20f;
                     splashDamage = 2000f;
                     splashDamageRadius = 25.5f;
                     recoil = -60f;
-                    trailLength = 30;
-                    trailWidth = 5f;
+                    trailLength = 60;
+                    trailWidth = 8f;
                     trailColor = Color.valueOf("8B73C7");
                     trailInterval = 3f;
                     despawnSound = Sounds.spark;
@@ -1872,8 +1873,8 @@ public class JPUnits {
                         new WaveEffect(){{
                             colorFrom = colorTo = Color.valueOf("8B73C7");
                             sizeFrom = 0f;
-                            sizeTo = 30f;
-                            lifetime = 20f;
+                            sizeTo = 60f;
+                            lifetime = 25f;
                             strokeFrom = 0f;
                             strokeTo = 5.5f;
                         }}
