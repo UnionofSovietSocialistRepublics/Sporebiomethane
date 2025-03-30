@@ -465,6 +465,39 @@ public class JPUnits {
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
         }};
 
+        Gorgon = new UnitType("Gorgon"){{
+            this.constructor = LegsUnit::create;
+            speed = 1f;
+            hitSize = 27f;
+            health = 12000;
+            range = 150f;    
+            legCount = 4;
+            legLength = 25f; 
+            weapons.add(new Weapon("-Mouh"){{
+                reload = 300f;
+                shootY = 8f;
+                x = 0f;
+                y = 26f;
+                continuous = true;
+                shoot.firstShotDelay = JPFx.purpleLaserChargeSmall.lifetime -1f;
+                chargeSound = Sounds.lasercharge2;
+                shootSound = Sounds.beam;
+                mirror = false;
+                bullet = new ContinuousLaserBulletType(65f){{
+                    width = 10f;
+                    length = 180f;
+                    drawSize = 420f;
+                    lifetime = 160f;
+                    healPercent = 1f;
+                    collidesTeam = true;
+                    chargeEffect = JPFx.purpleLaserChargeSmall;
+                    colors = new Color[]{Color.valueOf("8B73C7"), Color.valueOf("A865C9"), Color.valueOf("A865C9"), Color.valueOf("ffffff")};
+                }};
+            }});
+            outlineColor = Color.valueOf("303a45");
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
+        }};
+
         Behomoth = new UnitType("Behomoth"){{
             this.constructor = LegsUnit::create;
             speed = 0.65f;
@@ -1488,39 +1521,6 @@ public class JPUnits {
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (70f * 60f * 2f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
-        }};
-
-        Gorgon = new UnitType("Gorgon"){{
-            this.constructor = LegsUnit::create;
-            speed = 1f;
-            hitSize = 27f;
-            health = 12000;
-            range = 150f;    
-            legCount = 4;
-            legLength = 25f; 
-            weapons.add(new Weapon("-Mouh"){{
-                reload = 300f;
-                shootY = 8f;
-                x = 0f;
-                y = 26f;
-                continuous = true;
-                shoot.firstShotDelay = JPFx.purpleLaserChargeSmall.lifetime -1f;
-                chargeSound = Sounds.lasercharge2;
-                shootSound = Sounds.beam;
-                mirror = false;
-                bullet = new ContinuousLaserBulletType(65f){{
-                    width = 10f;
-                    length = 180f;
-                    drawSize = 420f;
-                    lifetime = 160f;
-                    healPercent = 1f;
-                    collidesTeam = true;
-                    chargeEffect = JPFx.purpleLaserChargeSmall;
-                    colors = new Color[]{Color.valueOf("8B73C7"), Color.valueOf("A865C9"), Color.valueOf("A865C9"), Color.valueOf("ffffff")};
-                }};
-            }});
-            outlineColor = Color.valueOf("303a45");
-            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
         }};
 
         Slasher = new JPCopterUnitType("Slasher"){{
