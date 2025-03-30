@@ -73,7 +73,7 @@ public class JPTurret{
             reload = 15f;
             recoil = 2f;
             shootCone = 2f;
-            shootY = 2.5;
+            shootY = 2.5f;
             recoils = 2;
             ammoUseEffect = Fx.casing1;
             targetGround = false;
@@ -147,7 +147,7 @@ public class JPTurret{
             recoil = 5f;
             shootCone = 10f;
             ammoPerShot = 3;
-            shootY = -2.5;
+            shootY = -2.5f;
             ammoUseEffect = Fx.casing1;
             health = 1500;
             shoot.shots = 4;
@@ -198,7 +198,7 @@ public class JPTurret{
             ammoUseEffect = Fx.casing1;
             health = 750;
             inaccuracy = 2f;
-            shootY = -2.5;
+            shootY = -2.5f;
             ammo(
                 sporePod, new BasicBulletType(5f, 15f){{
                     lifetime = 50f;
