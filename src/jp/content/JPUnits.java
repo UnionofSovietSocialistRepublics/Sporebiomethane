@@ -1861,7 +1861,7 @@ public class JPUnits {
                     rangeOverride = 200f;
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
-                    lifetime = 40f;
+                    lifetime = 20f;
                     splashDamage = 2000f;
                     splashDamageRadius = 25.5f;
                     recoil = -125f;
@@ -1882,8 +1882,7 @@ public class JPUnits {
                     );
                 }};
                 }});
-                weapons.add(new Weapon("Autus generator"){{
-                    range = 10f;
+                weapons.add(new Weapon("AG"){{
                     reload = 2500f;
                     x = 0f;
                     y = 0f;
@@ -1894,16 +1893,51 @@ public class JPUnits {
                     shootStatusDuration = 360f;
                     shootSound = Sounds.none;
                     ejectEffect = Fx.none;
-                    bullet = new BasicBulletType(2.5f, 9){{
+                    bullet = new BasicBulletType(0,0){{
                         rangeOverride = 1f;
                         collidesAir = false;
                         width = 0f;
                         height = 0f;
                         lifetime = 1f;
                         damage = 0f;
-                        shoot.shots = 4;
-                        shoot.shotDelay = 50f;
-                        spawnUnit =  JPUnits.Autus;
+                        spawnUnit = new MissileUnitType("Dummy"){{
+                            useUnitCap = false;
+                            lifetime = 0f;
+                            health = 1120f;
+                            hitSize = 3f;
+                            hidden = true;
+                            drawCell =false;
+                            weapons.add(new Weapon(){{
+                                shootOnDeath = true;
+                                bullet = new ExplosionBulletType(0f,0f){{
+                                    killShooter = true;
+                                    fragBullets = 4;
+                                    fragBullet = spawnUnit = new MissileUnitType("Target"){{
+                                        flying = true;
+                                        useUnitCap = false;
+                                        lifetime = 60f;
+                                        health = 1120f;
+                                        hitSize = 3f;
+                                        hidden = true;
+                                        drawCell =false;
+                                        weapons.add(new Weapon(){{
+                                            shootCone = 360f;
+                                            mirror = false;
+                                            reload = 1f;
+                                            shootOnDeath = true;
+                                            bullet = new ExplosionBulletType(110f, 25f){{
+                                                spawnUnit = JPUnits.Autus;
+                                                shootEffect = Fx.massiveExplosion;
+                                                collidesAir = true;
+                                                splashDamage = 145f;
+                                                splashDamageRadius = 30f;
+                                                buildingDamageMultiplier = 0.5f;
+                                        }};}});
+                                        outlineColor = Color.valueOf("303a45");
+                                        }};
+                            }};}});
+                            outlineColor = Color.valueOf("303a45");
+                            }};
                     }};
 
                 }});
