@@ -281,7 +281,7 @@ public class JPUnits {
             }});
             parts.add(new RegionPart("-sac-glow"){{
                 color = Color.valueOf("8B73C7");
-                progress = PartProgress.warmup;
+                heatProgress = PartProgress.warmup;
                 blending = Blending.additive;
                 layerOffset= -0.0001f;
                 outline = false;
