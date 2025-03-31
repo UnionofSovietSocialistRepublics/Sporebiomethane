@@ -241,6 +241,7 @@ public class JPUnits {
                 y = 0f;
                 top = false;
                 shootOnDeath = true;
+                shoot.firstShotDelay = 120f;
                 bullet = new BombBulletType(2.5f, 9){{
                     rangeOverride = 30f;
                     width = 0f;
@@ -267,6 +268,16 @@ public class JPUnits {
                     }};
                 }};
                 shootSound = Sounds.explosion;
+            }});
+            parts.add(new RegionPart("-sac"){{
+                mirror = false;
+                progress = PartProgress.warmup;
+                layerOffset= -0.0001f;
+                under = true;
+                x = 0f;
+                y = 0f;
+                growX = 1f;
+                // growY = -1.25f;
             }});
             immunities.add(JPStatus.Dissolving);
             outlineColor = Color.valueOf("303a45");
