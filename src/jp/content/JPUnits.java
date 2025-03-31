@@ -276,8 +276,8 @@ public class JPUnits {
                 under = true;
                 x = 0f;
                 y = 0f;
-                growX = 0.20f;
-                // growY = 0.2f;
+                growX = 0.15f;
+                growY = 0.1f;
             }});
             immunities.add(JPStatus.Dissolving);
             outlineColor = Color.valueOf("303a45");
