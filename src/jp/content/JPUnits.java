@@ -273,7 +273,7 @@ public class JPUnits {
             parts.add(new RegionPart("-sac"){{
                 mirror = false;
                 progress = PartProgress.warmup;
-                layerOffset= -0.0001f;
+                layerOffset= -1f;
                 under = true;
                 x = 0f;
                 y = 0f;
@@ -281,13 +281,11 @@ public class JPUnits {
                 growY = 0.1f;
             }});
             parts.add(new RegionPart("-sac-glow"){{
-                mirror = false;
+                color = Color.valueOf("8B73C7");
                 progress = PartProgress.warmup;
-                // layerOffset= -0.0001f;
-                under = true;
+                blending = Blending.additive;
+                layerOffset= -1f;
                 outline = false;
-                x = 0f;
-                y = 0f;
             }});
             immunities.add(JPStatus.Dissolving);
             outlineColor = Color.valueOf("303a45");
