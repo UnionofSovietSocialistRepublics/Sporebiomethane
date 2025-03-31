@@ -269,6 +269,7 @@ public class JPUnits {
                 }};
                 shootSound = Sounds.explosion;
             }});
+
             parts.add(new RegionPart("-sac"){{
                 mirror = false;
                 progress = PartProgress.warmup;
@@ -278,6 +279,16 @@ public class JPUnits {
                 y = 0f;
                 growX = 0.15f;
                 growY = 0.1f;
+            }});
+            parts.add(new RegionPart("-sac-glow"){{
+                mirror = false;
+                progress = PartProgress.warmup;
+                // layerOffset= -0.0001f;
+                blending = additive;
+                under = true;
+                outline = false;
+                x = 0f;
+                y = 0f;
             }});
             immunities.add(JPStatus.Dissolving);
             outlineColor = Color.valueOf("303a45");
