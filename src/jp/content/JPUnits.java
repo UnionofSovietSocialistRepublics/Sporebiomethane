@@ -241,7 +241,7 @@ public class JPUnits {
                 y = 0f;
                 top = false;
                 shootOnDeath = true;
-                shoot.firstShotDelay = 25f;
+                shoot.firstShotDelay = 30f;
                 bullet = new BombBulletType(0f, 100f){{
                     rangeOverride = 30f;
                     width = 0f;
@@ -275,7 +275,7 @@ public class JPUnits {
                 progress = PartProgress.warmup;
                 heatProgress = PartProgress.warmup;
                 heatColor = Color.valueOf("8B73C7");
-                heatLayerOffset = -0.00001f;
+                heatLayerOffset = 0.1f;
                 layerOffset = -0.0001f;
                 x = 0f;
                 y = 0f;
