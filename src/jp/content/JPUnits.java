@@ -273,20 +273,22 @@ public class JPUnits {
             parts.add(new RegionPart("-sac"){{
                 mirror = false;
                 progress = PartProgress.warmup;
+                heatProgress = PartProgress.warmup;
+                heatColor = Color.valueOf("8B73C7");
                 layerOffset= -0.0001f;
                 x = 0f;
                 y = 0f;
                 growX = 0.15f;
                 growY = 0.1f;
             }});
-            parts.add(new RegionPart("-sac-glow"){{
-                color = Color.valueOf("8B73C7");
-                heatProgress = PartProgress.warmup;
-                blending = Blending.additive;
-                layerOffset= -0.0001f;
-                outline = false;
-                under = true;
-            }});
+            // parts.add(new RegionPart("-sac-glow"){{
+            //     color = Color.valueOf("8B73C7");
+            //     heatProgress = PartProgress.warmup;
+            //     blending = Blending.additive;
+            //     layerOffset= -0.0001f;
+            //     outline = false;
+            //     under = true;
+            // }});
             immunities.add(JPStatus.Dissolving);
             outlineColor = Color.valueOf("303a45");
             abilities.add(new LiquidExplodeAbility(){{liquid = JPLiquids.liquidSpore; amount = 250f;}});
