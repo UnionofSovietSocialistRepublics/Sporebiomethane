@@ -284,7 +284,6 @@ public class JPUnits {
                 mirror = false;
                 progress = PartProgress.warmup;
                 // layerOffset= -0.0001f;
-                blending = additive;
                 under = true;
                 outline = false;
                 x = 0f;
