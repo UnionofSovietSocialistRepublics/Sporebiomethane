@@ -273,7 +273,7 @@ public class JPUnits {
             parts.add(new RegionPart("-sac"){{
                 mirror = false;
                 progress = PartProgress.warmup;
-                layerOffset= -1f;
+                layerOffset= -0.0001f;
                 under = true;
                 x = 0f;
                 y = 0f;
