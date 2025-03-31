@@ -274,7 +274,6 @@ public class JPUnits {
                 mirror = false;
                 progress = PartProgress.warmup;
                 layerOffset= -0.0001f;
-                under = true;
                 x = 0f;
                 y = 0f;
                 growX = 0.15f;
@@ -286,6 +285,7 @@ public class JPUnits {
                 blending = Blending.additive;
                 layerOffset= -0.0001f;
                 outline = false;
+                under = true;
             }});
             immunities.add(JPStatus.Dissolving);
             outlineColor = Color.valueOf("303a45");
