@@ -241,7 +241,7 @@ public class JPUnits {
                 y = 0f;
                 top = false;
                 shootOnDeath = true;
-                shoot.firstShotDelay = 60f;
+                shoot.firstShotDelay = 45f;
                 bullet = new BombBulletType(2.5f, 9){{
                     rangeOverride = 30f;
                     width = 0f;
