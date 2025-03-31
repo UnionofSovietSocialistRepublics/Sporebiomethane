@@ -276,7 +276,7 @@ public class JPUnits {
                 under = true;
                 x = 0f;
                 y = 0f;
-                growX = 0.5f;
+                growX = 0.25f;
                 // growY = -1.25f;
             }});
             immunities.add(JPStatus.Dissolving);
