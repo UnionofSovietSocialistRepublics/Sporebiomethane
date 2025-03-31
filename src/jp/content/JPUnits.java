@@ -284,7 +284,7 @@ public class JPUnits {
                 color = Color.valueOf("8B73C7");
                 progress = PartProgress.warmup;
                 blending = Blending.additive;
-                layerOffset= -1f;
+                layerOffset= -0.0001f;
                 outline = false;
             }});
             immunities.add(JPStatus.Dissolving);
