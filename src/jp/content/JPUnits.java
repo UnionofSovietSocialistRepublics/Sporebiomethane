@@ -451,7 +451,7 @@ public class JPUnits {
                 top = true;
                 x = 11f;
                 y = 1f;
-                mirror = false;
+                mirror = true;
                 recoil = 0.5f;
                 shootSound = Sounds.torch;
                 ejectEffect = Fx.none;
