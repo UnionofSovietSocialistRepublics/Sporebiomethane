@@ -477,7 +477,7 @@ public class JPUnits {
                     mirror = false;
                     progress = PartProgress.recoil;
                     heatProgress = PartProgress.warmup;
-                    heatColor = Color.valueOf("590e14");
+                    heatColor = Color.valueOf("8B73C7");
                     heatLayerOffset = 0.1f;
                     growX = 0.15f;
                     growY = 0.1f;
