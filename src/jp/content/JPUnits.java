@@ -455,6 +455,7 @@ public class JPUnits {
                 recoil = 0.5f;
                 shootSound = Sounds.torch;
                 ejectEffect = Fx.none;
+                alternate = false;
                 continuous = true;
                 alwaysContinuous = true;
                 bullet = new ContinuousFlameBulletType() {{
