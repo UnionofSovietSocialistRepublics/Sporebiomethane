@@ -458,6 +458,8 @@ public class JPUnits {
                 alternate = false;
                 continuous = true;
                 alwaysContinuous = true;
+                rotate = true;
+                rotationLimit = 90;
                 bullet = new ContinuousFlameBulletType() {{
                     lightStroke = 35;
                     divisions = 40;
@@ -468,7 +470,7 @@ public class JPUnits {
                     pierceBuilding = true;
                     pierceArmor = false;
                     pierceCap = 3;
-                    damage = 25;
+                    damage = 35;
                     damageInterval = 10;
                     hitColor = Color.valueOf("8B73C7");
                     colors = new Color[]{Color.valueOf("8B73C7"), Color.valueOf("A865C9"), Color.valueOf("A865C9"), Color.valueOf("ffffff")};
