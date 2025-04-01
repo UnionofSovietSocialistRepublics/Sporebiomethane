@@ -942,7 +942,7 @@ public class JPUnits {
                 mirror = false;
                 progress = PartProgress.warmup;
                 heatProgress = PartProgress.warmup;
-                heatColor = Color.valueOf("c69789");
+                heatColor = Color.valueOf("590e14");
                 heatLayerOffset = 0.1f;
                 layerOffset = -0.0001f;
                 growX = 0.15f;
