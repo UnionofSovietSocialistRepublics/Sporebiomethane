@@ -916,11 +916,9 @@ public class JPUnits {
             range = 50f;
             weapons.add(new Weapon("kys"){{
                 reload = 5f;
-                x = 0f;
-                y = 0f;
                 top = false;
                 shootOnDeath = true;
-                shoot.shotDelay = 90f;
+                shoot.firstShotDelay = 90f;
                 bullet = new BombBulletType(0,50f){{
                     rangeOverride = 30f;
                     width = 0f;
