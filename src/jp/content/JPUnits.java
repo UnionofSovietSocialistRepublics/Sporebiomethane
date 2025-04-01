@@ -920,7 +920,8 @@ public class JPUnits {
                 y = 0f;
                 top = false;
                 shootOnDeath = true;
-                bullet = new BombBulletType(2.5f, 9){{
+                shoot.shotDelay = 90f;
+                bullet = new BombBulletType(0,50f){{
                     rangeOverride = 30f;
                     width = 0f;
                     height = 0f;
@@ -938,6 +939,16 @@ public class JPUnits {
                     incendAmount = 25;
                 }};
                 shootSound = Sounds.explosion;
+            }});
+            parts.add(new RegionPart("-sac"){{
+                mirror = false;
+                progress = PartProgress.warmup;
+                heatProgress = PartProgress.warmup;
+                heatColor = Color.valueOf("c69789");
+                heatLayerOffset = 0.1f;
+                layerOffset = -0.0001f;
+                growX = 0.15f;
+                growY = 0.1f;
             }});
             immunities.add(StatusEffects.burning);
             immunities.add(StatusEffects.melting);
