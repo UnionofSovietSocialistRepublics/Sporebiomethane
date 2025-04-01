@@ -487,7 +487,7 @@ public class JPUnits {
             }});
             immunities.add(StatusEffects.burning);
             immunities.add(StatusEffects.melting);
-            outlineColor = Color.valueOf("303a45");
+            outlineColor = Color.valueOf("8B73C7");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
         }};
 
