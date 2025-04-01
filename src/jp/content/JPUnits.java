@@ -470,7 +470,7 @@ public class JPUnits {
                     pierceCap = 3;
                     damage = 25;
                     damageInterval = 10;
-                    hitColor = Color.valueOf("c69789");
+                    hitColor = Color.valueOf("8B73C7");
                     colors = new Color[]{Color.valueOf("8B73C7"), Color.valueOf("A865C9"), Color.valueOf("A865C9"), Color.valueOf("ffffff")};
                 }};
 
@@ -487,7 +487,7 @@ public class JPUnits {
             }});
             immunities.add(StatusEffects.burning);
             immunities.add(StatusEffects.melting);
-            outlineColor = Color.valueOf("8B73C7");
+            outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
         }};
 
