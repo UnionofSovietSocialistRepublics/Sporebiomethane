@@ -1001,7 +1001,7 @@ public class JPUnits {
                 y = -3f;
                 shootY = 7f;
                 mirror = false;
-                recoil = 0.25f;
+                recoil = 0.5f;
                 shootStatus = StatusEffects.shielded;
                 shootStatusDuration = 80f;
                 shootSound = Sounds.flame;
@@ -1019,7 +1019,7 @@ public class JPUnits {
                     pierceCap = 3;
                     damage = 50;
                     damageInterval = 10;
-                    colors = new Color[]{Color.valueOf("52090f"), Color.valueOf("78252b"), Color.valueOf("9e3736"), Color.valueOf("cc603f")};
+                    colors = new Color[]{Color.valueOf("edc6ba"), Color.valueOf("c69789"), Color.valueOf("cc603f"), Color.valueOf("9e3736")};
                 }};
 
                 parts.add(new RegionPart("-flesh"){{
