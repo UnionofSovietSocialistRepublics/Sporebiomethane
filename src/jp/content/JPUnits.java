@@ -463,7 +463,7 @@ public class JPUnits {
                     divisions = 40;
                     width = 3.8f;
                     drawFlare = false;
-                    length = 70;
+                    length = 130;
                     pierce = true;
                     pierceBuilding = true;
                     pierceArmor = false;
