@@ -241,7 +241,7 @@ public class JPUnits {
                 y = 0f;
                 top = false;
                 shootOnDeath = true;
-                shoot.firstShotDelay = 30f;
+                shoot.firstShotDelay = 120f;
                 bullet = new BombBulletType(0f, 100f){{
                     rangeOverride = 30f;
                     width = 0f;
@@ -254,6 +254,8 @@ public class JPUnits {
                     killShooter = true;
                     collidesAir = true;
                     buildingDamageMultiplier = 1.25f;
+                    shootStatus = StatusEffects.unmoving;
+                    statusDuration = 180f;
                     hitSound = Sounds.explosion;
                     fragBullets = 6;
                     fragBullet = new LiquidBulletType(JPLiquids.liquidSpore){{
