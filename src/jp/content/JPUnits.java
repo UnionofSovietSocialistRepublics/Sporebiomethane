@@ -165,7 +165,7 @@ public class JPUnits {
                 parts.add(new RegionPart("-barrel"){{
                     progress = PartProgress.recoil;
                     mirror = false;
-                    moveY = -1f;
+                    moveY = -2.5f;
                 }});
             }});
             outlineColor = Color.valueOf("303a45");
@@ -289,6 +289,7 @@ public class JPUnits {
                 growX = 0.15f;
                 growY = 0.1f;
             }});
+
             immunities.add(JPStatus.Dissolving);
             outlineColor = Color.valueOf("303a45");
             abilities.add(new LiquidExplodeAbility(){{liquid = JPLiquids.liquidSpore; amount = 250f;}});
@@ -994,7 +995,6 @@ public class JPUnits {
             legExtension = 7f;
             legBaseOffset = 6f;
             weapons.add(new Weapon(name + "-flamer"){{
-
                 top = true;
                 reload = 5f;
                 x = 0f;
@@ -1027,8 +1027,21 @@ public class JPUnits {
                     cone = 10f;
                     hittable = false;
                     reflectable = false;
+                    }};
+
                 }};
-                }};
+
+                parts.add(new RegionPart("-flesh"){{
+                    mirror = false;
+                    progress = PartProgress.warmup;
+                    heatProgress = PartProgress.warmup;
+                    heatColor = Color.valueOf("590e14");
+                    heatLayerOffset = 0.1f;
+                    layerOffset = -0.0001f;
+                    growX = 0.15f;
+                    growY = 0.1f;
+                }});
+
             }});
             healColor = Color.valueOf("590e14");
             outlineColor = Color.valueOf("303a45");
