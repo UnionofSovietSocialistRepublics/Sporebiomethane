@@ -1016,10 +1016,11 @@ public class JPUnits {
                     length = 70;
                     pierce = true;
                     pierceBuilding = true;
+                    pierceArmor = false;
                     pierceCap = 3;
                     damage = 50;
                     damageInterval = 10;
-                    colors = new Color[]{Color.valueOf("edc6ba"), Color.valueOf("c69789"), Color.valueOf("cc603f"), Color.valueOf("9e3736")};
+                    colors = new Color[]{Color.valueOf("9e3736"), Color.valueOf("cc603f"), Color.valueOf("c69789"), Color.valueOf("edc6ba")};
                 }};
 
                 parts.add(new RegionPart("-flesh"){{
