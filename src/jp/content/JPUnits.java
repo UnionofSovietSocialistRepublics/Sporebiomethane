@@ -1008,29 +1008,19 @@ public class JPUnits {
                 shootSound = Sounds.flame;
                 ejectEffect = Fx.none;
                 continuous = true;
-                bullet = new BasicBulletType(2.5f, 9){{
-                    collidesAir = true;
-                    damage = 50f;
-                    lifetime = 15f;
-                    lightColor = Color.valueOf("8B73C7");
+                alwaysContinuous = true;
+                bullet = new ContinuousFlameBulletType() {{
+                    lightStroke = 35;
+                    divisions = 40;
+                    width = 3.8f;
+                    drawFlare = false;
+                    length = 70;
                     pierce = true;
                     pierceBuilding = true;
                     pierceCap = 3;
-                    despawnEffect = Fx.none;
-                    shootEffect = new ParticleEffect() {{
-                    particles = 30;
-                    sizeFrom = 5f;
-                    sizeTo = 0f;
-                    length = 80f;
-                    lifetime = 25f;
-                    lightColor = Color.valueOf("8B73C7");
-                    colorFrom = Color.valueOf("8B73C7");
-                    colorTo = Color.valueOf("8B73C7");
-                    cone = 10f;
-                    hittable = false;
-                    reflectable = false;
-                    }};
-
+                    damage = 50;
+                    damageInterval = 10;
+                    colors = new Color[]{Color.valueOf("cc603f"), Color.valueOf("9e3736"), Color.valueOf("78252b"), Color.valueOf("52090f")};
                 }};
 
                 parts.add(new RegionPart("-flesh"){{
