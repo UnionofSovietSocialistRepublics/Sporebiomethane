@@ -166,7 +166,7 @@ public class JPUnits {
                     progress = PartProgress.recoil;
                     mirror = false;
                     moveY = -2.5f;
-                    layerOffset = -0.00001f;
+                    layerOffset = -0.00009f;
                 }});
             }});
             outlineColor = Color.valueOf("303a45");
