@@ -1037,7 +1037,7 @@ public class JPUnits {
                     heatProgress = PartProgress.warmup;
                     heatColor = Color.valueOf("590e14");
                     heatLayerOffset = 0.1f;
-                    layerOffset = -0.0001f;
+                    // layerOffset = -0.0001f;
                     growX = 0.15f;
                     growY = 0.1f;
                 }});
