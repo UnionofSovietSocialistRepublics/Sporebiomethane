@@ -1001,7 +1001,7 @@ public class JPUnits {
                 y = -3f;
                 shootY = 7f;
                 mirror = false;
-                recoil = 1f;
+                recoil = 0.25f;
                 shootStatus = StatusEffects.shielded;
                 shootStatusDuration = 80f;
                 shootSound = Sounds.flame;
@@ -1021,7 +1021,7 @@ public class JPUnits {
                     damageInterval = 10;
                     colors = new Color[]{Color.valueOf("52090f"), Color.valueOf("78252b"), Color.valueOf("9e3736"), Color.valueOf("cc603f")};
                 }};
-                
+
                 parts.add(new RegionPart("-flesh"){{
                     mirror = false;
                     progress = PartProgress.recoil;
