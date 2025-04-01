@@ -1004,7 +1004,9 @@ public class JPUnits {
                 recoil = 0.5f;
                 shootStatus = StatusEffects.shielded;
                 shootStatusDuration = 80f;
-                shootSound = Sounds.flame;
+                loopSound = Sounds.torch;
+                shootSound = Sounds.none;
+                loopSoundVolume = 1f;
                 ejectEffect = Fx.none;
                 continuous = true;
                 alwaysContinuous = true;
