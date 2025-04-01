@@ -1004,7 +1004,7 @@ public class JPUnits {
                 recoil = 0.5f;
                 shootStatus = StatusEffects.shielded;
                 shootStatusDuration = 80f;
-                shootSound = Sounds.none;
+                shootSound = Sounds.torch;
                 ejectEffect = Fx.none;
                 continuous = true;
                 alwaysContinuous = true;
@@ -1020,8 +1020,6 @@ public class JPUnits {
                     pierceCap = 3;
                     damage = 50;
                     damageInterval = 10;
-                    loopSound = Sounds.torch;
-                    loopSoundVolume = 1f;
                     hitColor = Color.valueOf("c69789");
                     colors = new Color[]{Color.valueOf("9e3736"), Color.valueOf("cc603f"), Color.valueOf("c69789"), Color.valueOf("edc6ba")};
                 }};
