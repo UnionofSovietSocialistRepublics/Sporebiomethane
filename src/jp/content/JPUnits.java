@@ -304,7 +304,8 @@ public class JPUnits {
             health = 650;
             armor = 5;
             range = 125f;
-            legCount = 4;            
+            legCount = 4;
+            stepShake = 0f;      
             weapons.add(new Weapon(name + "-gun"){{
                 reload = 75f;
                 x = -10f;
@@ -343,7 +344,8 @@ public class JPUnits {
             health = 1150;
             armor = 4;
             range = 125f;
-            legCount = 4;            
+            legCount = 4;
+            stepShake = 0.15f;       
             weapons.add(new Weapon(name + "-Cannon"){{
                 reload = 75f;
                 x = 0f;
@@ -353,6 +355,7 @@ public class JPUnits {
                 shoot.shots = 4;
                 inaccuracy = 12f;
                 velocityRnd = 0.2f;
+                recoil = 2;
                 bullet = new ArtilleryBulletType(2.5f, 9){{
                     speed = 6f;
                     height = width = 20f;
@@ -445,42 +448,41 @@ public class JPUnits {
             legExtension = 7f;
             legBaseOffset = 6f;
             weapons.add(new Weapon(name + "-flamer"){{
-
                 top = true;
-                reload = 5f;
                 x = 11f;
                 y = 1f;
-                mirror = true;
-                recoil = 0f;
-                shootSound = Sounds.flame;
+                mirror = false;
+                recoil = 0.5f;
+                shootSound = Sounds.torch;
                 ejectEffect = Fx.none;
-                rotate = true;
-                rotateSpeed = 3f;
-                bullet = new BasicBulletType(2.5f, 9){{
-                    collidesAir = true;
-                    speed = 6f;
-                    damage = 75f;
-                    lifetime = 15f;
-                    width = height = 0.1f;
-                    despawnEffect = Fx.none;
-                    lightColor = Color.valueOf("8B73C7");
+                continuous = true;
+                alwaysContinuous = true;
+                bullet = new ContinuousFlameBulletType() {{
+                    lightStroke = 35;
+                    divisions = 40;
+                    width = 3.8f;
+                    drawFlare = false;
+                    length = 70;
                     pierce = true;
                     pierceBuilding = true;
-                    pierceCap = 2;
-                    shootEffect = new ParticleEffect() {{
-                    particles = 190;
-                    sizeFrom = 5f;
-                    sizeTo = 0f;
-                    length = 140f;
-                    lifetime = 25f;
-                    lightColor = Color.valueOf("8B73C7");
-                    colorFrom = Color.valueOf("8B73C7");
-                    colorTo = Color.valueOf("8B73C7");
-                    cone = 10f;
-                    hittable = false;
-                    reflectable = false;
+                    pierceArmor = false;
+                    pierceCap = 3;
+                    damage = 25;
+                    damageInterval = 10;
+                    hitColor = Color.valueOf("c69789");
+                    colors = new Color[]{Color.valueOf("8B73C7"), Color.valueOf("A865C9"), Color.valueOf("A865C9"), Color.valueOf("ffffff")};
                 }};
-                }};
+
+                parts.add(new RegionPart("-fuel"){{
+                    mirror = false;
+                    progress = PartProgress.recoil;
+                    heatProgress = PartProgress.warmup;
+                    heatColor = Color.valueOf("590e14");
+                    heatLayerOffset = 0.1f;
+                    growX = 0.15f;
+                    growY = 0.1f;
+                }});
+
             }});
             immunities.add(StatusEffects.burning);
             immunities.add(StatusEffects.melting);

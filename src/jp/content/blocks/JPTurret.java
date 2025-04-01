@@ -163,7 +163,7 @@ public class JPTurret{
             liquidCapacity = 200F;
             range = 225f;
             reload = 60f;
-            recoil = 2f;
+            recoil = 0.5f;
             shootCone = 10f;
             minWarmup = 0.94f;
             shootWarmupSpeed = 0.05f;
