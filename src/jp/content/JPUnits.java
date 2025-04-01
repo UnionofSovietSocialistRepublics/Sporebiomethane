@@ -1007,6 +1007,7 @@ public class JPUnits {
                 shootStatusDuration = 80f;
                 shootSound = Sounds.flame;
                 ejectEffect = Fx.none;
+                continuous = true;
                 bullet = new BasicBulletType(2.5f, 9){{
                     collidesAir = true;
                     damage = 50f;
