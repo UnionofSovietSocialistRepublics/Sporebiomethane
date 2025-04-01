@@ -1002,7 +1002,7 @@ public class JPUnits {
                 y = -3f;
                 shootY = 7f;
                 mirror = false;
-                recoil = 0f;
+                recoil = 2f;
                 shootStatus = StatusEffects.shielded;
                 shootStatusDuration = 80f;
                 shootSound = Sounds.flame;
@@ -1034,11 +1034,11 @@ public class JPUnits {
 
                 parts.add(new RegionPart("-flesh"){{
                     mirror = false;
-                    progress = PartProgress.warmup;
+                    progress = PartProgress.recoil;
                     heatProgress = PartProgress.warmup;
                     heatColor = Color.valueOf("590e14");
                     heatLayerOffset = 0.1f;
-                    // layerOffset = -0.0001f;
+                    moveY = -1.25f;
                     growX = 0.15f;
                     growY = 0.1f;
                 }});
