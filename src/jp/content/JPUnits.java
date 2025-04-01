@@ -1010,7 +1010,6 @@ public class JPUnits {
                 ejectEffect = Fx.none;
                 continuous = true;
                 alwaysContinuous = true;
-                hitColor = Color.valueOf("c69789");
                 bullet = new ContinuousFlameBulletType() {{
                     lightStroke = 35;
                     divisions = 40;
@@ -1023,6 +1022,7 @@ public class JPUnits {
                     pierceCap = 3;
                     damage = 50;
                     damageInterval = 10;
+                    hitColor = Color.valueOf("c69789");
                     colors = new Color[]{Color.valueOf("9e3736"), Color.valueOf("cc603f"), Color.valueOf("c69789"), Color.valueOf("edc6ba")};
                 }};
 
