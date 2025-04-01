@@ -1010,6 +1010,7 @@ public class JPUnits {
                 ejectEffect = Fx.none;
                 continuous = true;
                 alwaysContinuous = true;
+                hitColor = Color.valueOf("c69789");
                 bullet = new ContinuousFlameBulletType() {{
                     lightStroke = 35;
                     divisions = 40;
