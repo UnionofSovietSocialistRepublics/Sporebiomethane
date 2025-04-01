@@ -997,7 +997,6 @@ public class JPUnits {
             legBaseOffset = 6f;
             weapons.add(new Weapon(name + "-flamer"){{
                 top = true;
-                reload = 5f;
                 x = 0f;
                 y = -3f;
                 shootY = 7f;
