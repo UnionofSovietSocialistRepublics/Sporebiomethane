@@ -162,6 +162,11 @@ public class JPUnits {
                     trailLength = 5;
                     trailColor = Color.valueOf("8B73C7");
                 }};
+                parts.add(new RegionPart("-barrel"){{
+                    progress = PartProgress.recoil;
+                    mirror = false;
+                    moveY = -1f;
+                }});
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f * 2f) * 100f;}});
@@ -241,7 +246,7 @@ public class JPUnits {
                 y = 0f;
                 top = false;
                 shootOnDeath = true;
-                shoot.firstShotDelay = 120f;
+                shoot.firstShotDelay = 90f;
                 bullet = new BombBulletType(0f, 100f){{
                     rangeOverride = 30f;
                     width = 0f;
@@ -1134,7 +1139,7 @@ public class JPUnits {
                         moveX = 1.5f;
                         moveY = 1.25f;
                         moveRot = -10f;
-                }});
+                    }});
                     shootSound = Sounds.missile;
                 }});
                 healColor = Color.valueOf("590e14");
