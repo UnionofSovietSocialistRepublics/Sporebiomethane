@@ -756,6 +756,12 @@ public class JPUnits {
                 x = 0f;
                 y = 0f;
                 mirror = false;
+                shoot = new ShootAlternate(){{
+                    shots = 12;
+                    shotDelay = 2f;
+                    spread = 8f;
+                    barrels = 1;
+                }};
                 bullet = new BasicBulletType(6f, 45){{
                     height = width = 10f;
                     lifetime = 30f;
