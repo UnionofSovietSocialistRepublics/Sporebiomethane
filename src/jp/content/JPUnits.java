@@ -711,7 +711,7 @@ public class JPUnits {
             flying = true;
             engineOffset = 5f;
             engineSize = 4f;
-            mineSpeed = 3f;
+            mineSpeed = 3.5f;
             buildSpeed = 0.75f;
             mineTier = 3;
             drag = 0.05f;
