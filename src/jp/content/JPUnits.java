@@ -950,6 +950,8 @@ public class JPUnits {
                     width = 0f;
                     height = 0f;
                     lifetime = 10f;
+                    shootStatus = StatusEffects.unmoving;
+                    shootStatusDuration = 91f;
                     status = StatusEffects.burning;
                     statusDuration = 60f* 4.5f;
                     splashDamage = 150f;
