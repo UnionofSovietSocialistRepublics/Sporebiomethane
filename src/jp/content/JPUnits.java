@@ -1063,7 +1063,7 @@ public class JPUnits {
                     pierceBuilding = true;
                     pierceArmor = false;
                     pierceCap = 3;
-                    damage = 50;
+                    damage = 80;
                     damageInterval = 10;
                     hitColor = Color.valueOf("c69789");
                     colors = new Color[]{Color.valueOf("9e3736"), Color.valueOf("cc603f"), Color.valueOf("c69789"), Color.valueOf("edc6ba")};
