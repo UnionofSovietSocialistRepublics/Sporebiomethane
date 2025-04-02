@@ -902,6 +902,7 @@ public class JPUnits {
                     lifetime = 1f;
                     // width = 10f;
                     // height = 14f;
+                    hitEffect = Fx.none;
                     shootEffect = Fx.none;
                     smokeEffect = Fx.none;
                     backColor = Color.valueOf("8b73c7");
