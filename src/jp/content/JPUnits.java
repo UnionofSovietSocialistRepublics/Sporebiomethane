@@ -904,7 +904,7 @@ public class JPUnits {
                     // height = 14f;
                     despawnEffect = Fx.none;
                     hitEffect = Fx.none;
-                    hitSound = Fx.none;
+                    hitSound = Sounds.none;
                     shootEffect = Fx.none;
                     smokeEffect = Fx.none;
                     backColor = Color.valueOf("8b73c7");
