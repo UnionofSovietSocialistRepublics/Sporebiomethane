@@ -782,8 +782,6 @@ public class JPUnits {
             health = 925;
             targetAir = false;
             engineOffset = 7.8f;
-
-
             range = 140f;
             faceTarget = false;
             circleTarget = true;
@@ -815,6 +813,7 @@ public class JPUnits {
                     statusDuration = 60f;
                 }};
             }});
+
             outlineColor = Color.valueOf("303a45");
             abilities.add(new MoveEffectAbility(-7f, -7f, Pal.sapBulletBack, Fx.missileTrailShort, 4f){{
                 teamColor = true;
@@ -885,6 +884,34 @@ public class JPUnits {
             hitSize = 9f;
             drag = 0.05f;
             accel = 0.11f;
+            weapons.add(new Weapon("Ambutakam"){{
+                minShootVelocity = 0.75f;
+                x = 0;
+                y = 0;
+                shootY = 0f;
+                reload = 25f;
+                shootCone = 180f;
+                ejectEffect = Fx.none;
+                // inaccuracy = 15f;
+                alwaysShooting = true;
+                ignoreRotation = true;
+                shootSound = Sounds.none;
+                bullet = new BombBulletType(1f,1f){{
+                    lifetime = 1f;
+                    // width = 10f;
+                    // height = 14f;
+                    hitEffect = Fx.flakExplosion;
+                    shootEffect = Fx.none;
+                    smokeEffect = Fx.none;
+                    splashDamage = 25f;
+                    backColor = Color.valueOf("8b73c7");
+                    frontColor = Color.valueOf("7357cf");
+                    lightColor = Color.valueOf("8b73c7");
+                    incendChance = 100f;
+                    incendSpread = 1f;
+                    incendAmount = 1;
+                }};
+            }});
             weapons.add(new Weapon("kys"){{
                 reload = 5f;
                 x = 0f;
@@ -901,6 +928,7 @@ public class JPUnits {
                     killShooter = true;
                     collidesAir = true;
                     hitSound = Sounds.explosion;
+
                 }};
                 shootSound = Sounds.explosion;
             }});
