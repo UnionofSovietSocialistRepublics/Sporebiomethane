@@ -167,7 +167,7 @@ public class JPTurret{
             shootCone = 10f;
             minWarmup = 0.94f;
             shootWarmupSpeed = 0.05f;
-            // shootY = -0.25f;
+            shootY = 0f;
             ammoUseEffect = Fx.casing1;
             shootType = new PointLaserBulletType(){{
 	            collidesTeam = true;
