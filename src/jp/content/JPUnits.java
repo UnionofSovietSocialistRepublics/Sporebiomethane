@@ -885,8 +885,8 @@ public class JPUnits {
             drag = 0.05f;
             accel = 0.11f;
             weapons.add(new Weapon("Ambutakam"){{
-                minShootVelocity = 0.75f;
-                x = 1;
+                minShootVelocity = 0.25f;
+                x = 2;
                 y = 0;
                 shootY = 0f;
                 reload = 10f;
