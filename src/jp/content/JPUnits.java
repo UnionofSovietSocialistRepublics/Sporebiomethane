@@ -758,7 +758,7 @@ public class JPUnits {
                 mirror = false;
                 shoot.shots = 12;
                 shoot.shotDelay = 10f;
-                shoot.spread = 12f;
+                inaccuracy = 15f;
                 bullet = new BasicBulletType(6f, 45){{
                     height = width = 10f;
                     lifetime = 30f;
