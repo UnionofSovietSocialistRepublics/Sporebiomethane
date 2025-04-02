@@ -161,13 +161,13 @@ public class JPTurret{
             size = 2;
             rotateSpeed = 1.25f;
             liquidCapacity = 200F;
-            range = 225f;
+            range = 175f;
             reload = 60f;
             recoil = 1f;
             shootCone = 10f;
             minWarmup = 0.94f;
             shootWarmupSpeed = 0.05f;
-            shootY = -0.5f;
+            shootY = -0.25f;
             ammoUseEffect = Fx.casing1;
             shootType = new PointLaserBulletType(){{
 	            collidesTeam = true;
