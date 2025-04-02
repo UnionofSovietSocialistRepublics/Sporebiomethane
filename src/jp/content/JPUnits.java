@@ -886,13 +886,15 @@ public class JPUnits {
             accel = 0.11f;
             weapons.add(new Weapon("Ambutakam"){{
                 minShootVelocity = 0.75f;
-                x = 0;
+                x = 1;
                 y = 0;
                 shootY = 0f;
-                reload = 25f;
+                reload = 10f;
                 shootCone = 180f;
                 ejectEffect = Fx.none;
                 // inaccuracy = 15f;
+                mirror = true;
+                alternate = false;
                 alwaysShooting = true;
                 ignoreRotation = true;
                 shootSound = Sounds.none;
@@ -900,10 +902,8 @@ public class JPUnits {
                     lifetime = 1f;
                     // width = 10f;
                     // height = 14f;
-                    hitEffect = Fx.flakExplosion;
                     shootEffect = Fx.none;
                     smokeEffect = Fx.none;
-                    splashDamage = 25f;
                     backColor = Color.valueOf("8b73c7");
                     frontColor = Color.valueOf("7357cf");
                     lightColor = Color.valueOf("8b73c7");
@@ -918,7 +918,7 @@ public class JPUnits {
                 y = 0f;
                 top = false;
                 shootOnDeath = true;
-                bullet = new BombBulletType(2.5f, 9){{
+                bullet = new BombBulletType(1f, 50){{
                     rangeOverride = 30f;
                     width = 0f;
                     height = 0f;
