@@ -752,13 +752,13 @@ public class JPUnits {
             drag = 0.05f;
             accel = 0.11f;
             weapons.add(new Weapon("-Mouh"){{
-                reload = 200f;
+                reload = 360f;
                 x = 0f;
                 y = 0f;
                 mirror = false;
-                shoot.shots = 12;
+                shoot.shots = 22;
                 shoot.shotDelay = 1.5f;
-                inaccuracy = 15f;
+                inaccuracy = 17f;
                 bullet = new BasicBulletType(6f, 45){{
                     height = width = 10f;
                     lifetime = 30f;
