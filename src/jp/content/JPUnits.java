@@ -751,6 +751,7 @@ public class JPUnits {
             engineSize = 5f;
             drag = 0.05f;
             accel = 0.11f;
+            forceMultiTarget = true;
             weapons.add(new Weapon("Antiground"){{
                 reload = 10f;
                 x = 0f;
