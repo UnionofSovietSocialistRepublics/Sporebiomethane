@@ -757,6 +757,7 @@ public class JPUnits {
                 x = 0f;
                 y = 0f;
                 mirror = false;
+                targetGround = true;
                 targetAir = false;
                 shoot.firstShotDelay = 300f;
                 shoot.shots = 7;
