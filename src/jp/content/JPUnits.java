@@ -776,12 +776,12 @@ public class JPUnits {
                 }};
             }});
             weapons.add(new Weapon("Antiair"){{
-                reload = 80f;
+                reload = 90f;
                 x = 0f;
                 y = 0f;
                 mirror = false;
                 targetGround = false;
-                inaccuracy = 3f;
+                // inaccuracy = 3f;
                 bullet = new MissileBulletType(6f, 110){{
                     height = width = 10f;
                     lifetime = 30f;
@@ -791,8 +791,10 @@ public class JPUnits {
                     collidesTiles = true;
                     collidesGround = false;
                     velocityRnd = 0.5f;
-                    weaveScale = 10f;
-                    weaveMag = 4f;
+                    weaveScale = 7f;
+                    weaveMag = 2f;
+                    homingPower = 0.1f;
+                    homingRange = 60f;
                     trailLength = 3;
                     trailColor = Color.valueOf("bbfe6b");
                 }};
