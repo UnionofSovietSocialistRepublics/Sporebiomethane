@@ -744,28 +744,49 @@ public class JPUnits {
             this.constructor = UnitEntity::create;
             speed = 1f;
             hitSize = 18f;
-            health = 200;
+            health = 620;
             range = 125f;      
             flying = true;
             engineOffset = 12f;
             engineSize = 5f;
             drag = 0.05f;
             accel = 0.11f;
-            weapons.add(new Weapon("-Mouh"){{
-                reload = 360f;
+            weapons.add(new Weapon("Antiground"){{
+                reload = 20f;
                 x = 0f;
                 y = 0f;
                 mirror = false;
-                shoot.shots = 22;
+                targetAir = false;
+                shoot.firstShotDelay = 420f;
+                shoot.shots = 7;
                 shoot.shotDelay = 1.5f;
-                inaccuracy = 17f;
-                bullet = new BasicBulletType(6f, 45){{
+                inaccuracy = 10f;
+                bullet = new BasicBulletType(6f, 25){{
                     height = width = 10f;
                     lifetime = 30f;
                     backColor = Color.valueOf("8FFE09");
                     frontColor = Color.valueOf("8FFE09");
                     lightColor = Color.valueOf("8FFE09");
                     collidesTiles = true;
+                    collidesAir = false;
+                    trailLength = 3;
+                    trailColor = Color.valueOf("bbfe6b");
+                }};
+            }});
+            weapons.add(new Weapon("Antiair"){{
+                reload = 80f;
+                x = 0f;
+                y = 0f;
+                mirror = false;
+                targetGround = false;
+                bullet = new MissileBulletType(6f, 110){{
+                    height = width = 10f;
+                    lifetime = 30f;
+                    backColor = Color.valueOf("8FFE09");
+                    frontColor = Color.valueOf("8FFE09");
+                    lightColor = Color.valueOf("8FFE09");
+                    collidesTiles = true;
+                    collidesGround = false;
                     trailLength = 3;
                     trailColor = Color.valueOf("bbfe6b");
                 }};
