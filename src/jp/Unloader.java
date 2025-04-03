@@ -19,28 +19,28 @@ public class Unloader extends Mod{
         //replace subtitle with author with funky thing
         switch(rand){
         case 1:
-        Vars.mods.locateMod("jp").meta.author="Coffee molecules";
+        Vars.mods.locateMod("jp").meta.author="Hydroabyss & Coffee molecules";
         Vars.mods.locateMod("jp").meta.subtitle="Now with extra coffee";
         break;
         case 2:
-        Vars.mods.locateMod("jp").meta.author="Neoplasm";
-        Vars.mods.locateMod("jp").meta.subtitle="The dance of the nightbugs!";
+        Vars.mods.locateMod("jp").meta.author="Hydroabyss & Neoplasm Molecule";
+        Vars.mods.locateMod("jp").meta.subtitle="Red sun over serpulo";
         break;
         case 3:
-        Vars.mods.locateMod("jp").meta.author="Moonupper";
-        Vars.mods.locateMod("jp").meta.subtitle="Red sun is now over paradise";
+        Vars.mods.locateMod("jp").meta.author="ssybaordyH & seluceloM retaW";
+        Vars.mods.locateMod("jp").meta.subtitle="...gnorw si gnihtemoS ?gnorw gnihtemos sI";
         break;
         case 4:
-        Vars.mods.locateMod("jp").meta.author="Ice molecules";
-        Vars.mods.locateMod("jp").meta.subtitle="Extra frosty edition"; //boss (Frost) reference
+        Vars.mods.locateMod("jp").meta.author="Hydrogen & Oxygen";
+        Vars.mods.locateMod("jp").meta.subtitle="2 H2 + O2 = 2 H2O!";
         break;
         case 5:
-        Vars.mods.locateMod("jp").meta.author="Duke";
-        Vars.mods.locateMod("jp").meta.subtitle="The javafication shall begun";
+        Vars.mods.locateMod("jp").meta.author="Abyss & Duke";
+        Vars.mods.locateMod("jp").meta.subtitle="Json has fallen, billion must java.";
         break;
         default:
-        Vars.mods.locateMod("jp").meta.author="Hardmode water";
-        Vars.mods.locateMod("jp").meta.subtitle="Now with extra difficulty spike"; //frozen farland reference!111!111 (frozen farland difficulty spike is so unreal I cant even) Also commented out because too long
+        Vars.mods.locateMod("jp").meta.author="Hydroabyssal & Germanium";
+        Vars.mods.locateMod("jp").meta.subtitle="For the Deutschland!";
         break;
         }
         //Nothing suspicious around here, trust me bro

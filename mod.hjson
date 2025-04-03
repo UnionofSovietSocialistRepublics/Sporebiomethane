@@ -2,7 +2,7 @@ displayName: "Spore biomethane"
 name: "jp"
 author: "Watermolecules and Hydroabyss"
 main: "jp.Unloader"
-description: "A java port of the hit mindustry mod spore biomechs\n We have:\n - Hardmode and normal mode \n - Campain map for serpulo \n - A bunch of zerggy unit and structure\n - Lore (real!??!?1)"
+description: "A java port of the hit mindustry mod spore biomechs\n We have:\n - Hardmode and normal mode \n - Campain map for serpulo \n - A bunch of zerggy unit and structure\n - Lore"
 subtitle: "V0.6"
 version: 0.6
 minGameVersion: 145
