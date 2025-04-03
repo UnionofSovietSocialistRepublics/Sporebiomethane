@@ -782,7 +782,7 @@ public class JPUnits {
                 mirror = false;
                 targetGround = false;
                 // inaccuracy = 3f;
-                bullet = new MissileBulletType(6f, 110){{
+                bullet = new MissileBulletType(6.5f, 110){{
                     height = width = 10f;
                     lifetime = 30f;
                     backColor = Color.valueOf("8FFE09");
@@ -790,10 +790,9 @@ public class JPUnits {
                     lightColor = Color.valueOf("8FFE09");
                     collidesTiles = true;
                     collidesGround = false;
-                    velocityRnd = 0.5f;
                     weaveScale = 7f;
-                    weaveMag = 2f;
-                    homingPower = 0.1f;
+                    weaveMag = 3f;
+                    homingPower = 0.2f;
                     homingRange = 60f;
                     trailLength = 3;
                     trailColor = Color.valueOf("bbfe6b");
