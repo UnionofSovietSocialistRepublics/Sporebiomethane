@@ -742,7 +742,7 @@ public class JPUnits {
 
         Interceptor = new UnitType("Interceptor"){{
             this.constructor = UnitEntity::create;
-            speed = 1f;
+            speed = 1.3f;
             hitSize = 18f;
             health = 620;
             range = 125f;      
@@ -752,25 +752,25 @@ public class JPUnits {
             drag = 0.05f;
             accel = 0.11f;
             weapons.add(new Weapon("Antiground"){{
-                reload = 20f;
+                reload = 10f;
                 x = 0f;
                 y = 0f;
                 mirror = false;
                 targetAir = false;
                 shoot.firstShotDelay = 420f;
                 shoot.shots = 7;
-                shoot.shotDelay = 1.5f;
+                shoot.shotDelay = 1f;
                 inaccuracy = 10f;
-                bullet = new BasicBulletType(6f, 25){{
+                bullet = new BasicBulletType(5.5f, 25){{
                     height = width = 10f;
-                    lifetime = 30f;
+                    lifetime = 25f;
                     backColor = Color.valueOf("8FFE09");
                     frontColor = Color.valueOf("8FFE09");
                     lightColor = Color.valueOf("8FFE09");
                     collidesTiles = true;
                     collidesAir = false;
-                    trailLength = 3;
-                    trailColor = Color.valueOf("bbfe6b");
+                    // trailLength = 3;
+                    // trailColor = Color.valueOf("bbfe6b");
                 }};
             }});
             weapons.add(new Weapon("Antiair"){{
@@ -788,6 +788,7 @@ public class JPUnits {
                     collidesTiles = true;
                     collidesGround = false;
                     trailLength = 3;
+                    velocityRnd = 0.4f;
                     trailColor = Color.valueOf("bbfe6b");
                 }};
             }});
