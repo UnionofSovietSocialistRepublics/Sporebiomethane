@@ -760,6 +760,8 @@ public class JPUnits {
                 shoot.firstShotDelay = 420f;
                 shoot.shots = 7;
                 shoot.shotDelay = 1f;
+                shootStatus = StatusEffects.unmoving;
+                shootStatusDuration = 421f;
                 inaccuracy = 10f;
                 bullet = new BasicBulletType(5.5f, 25){{
                     height = width = 10f;
@@ -769,8 +771,6 @@ public class JPUnits {
                     lightColor = Color.valueOf("8FFE09");
                     collidesTiles = true;
                     collidesAir = false;
-                    // trailLength = 3;
-                    // trailColor = Color.valueOf("bbfe6b");
                 }};
             }});
             weapons.add(new Weapon("Antiair"){{
@@ -789,6 +789,8 @@ public class JPUnits {
                     collidesGround = false;
                     trailLength = 3;
                     velocityRnd = 0.4f;
+                    weaveScale = 8f;
+                    weaveMag = 2f;
                     trailColor = Color.valueOf("bbfe6b");
                 }};
             }});
