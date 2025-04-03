@@ -752,6 +752,7 @@ public class JPUnits {
             drag = 0.05f;
             accel = 0.11f;
             forceMultiTarget = true;
+            targetFlags = new BlockFlag[]{BlockFlag.turret, null};
             weapons.add(new Weapon("Antiground"){{
                 reload = 10f;
                 x = 0f;
