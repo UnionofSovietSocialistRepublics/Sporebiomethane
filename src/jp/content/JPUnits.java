@@ -757,11 +757,11 @@ public class JPUnits {
                 y = 0f;
                 mirror = false;
                 targetAir = false;
-                shoot.firstShotDelay = 420f;
+                shoot.firstShotDelay = 300f;
                 shoot.shots = 7;
                 shoot.shotDelay = 1f;
                 shootStatus = StatusEffects.unmoving;
-                shootStatusDuration = 421f;
+                shootStatusDuration = 301f;
                 inaccuracy = 10f;
                 bullet = new BasicBulletType(5.5f, 25){{
                     height = width = 10f;
