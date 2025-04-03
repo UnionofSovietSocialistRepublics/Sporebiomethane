@@ -764,13 +764,15 @@ public class JPUnits {
                 shootStatusDuration = 301f;
                 inaccuracy = 10f;
                 bullet = new BasicBulletType(5.5f, 25){{
-                    height = width = 10f;
+                    height = width = 5f;
                     lifetime = 25f;
                     backColor = Color.valueOf("8FFE09");
                     frontColor = Color.valueOf("8FFE09");
                     lightColor = Color.valueOf("8FFE09");
                     collidesTiles = true;
                     collidesAir = false;
+                    trailLength = 3;
+                    trailColor = Color.valueOf("bbfe6b");
                 }};
             }});
             weapons.add(new Weapon("Antiair"){{
@@ -779,6 +781,7 @@ public class JPUnits {
                 y = 0f;
                 mirror = false;
                 targetGround = false;
+                inaccuracy = 3f;
                 bullet = new MissileBulletType(6f, 110){{
                     height = width = 10f;
                     lifetime = 30f;
@@ -787,10 +790,10 @@ public class JPUnits {
                     lightColor = Color.valueOf("8FFE09");
                     collidesTiles = true;
                     collidesGround = false;
+                    velocityRnd = 0.5f;
+                    weaveScale = 10f;
+                    weaveMag = 4f;
                     trailLength = 3;
-                    velocityRnd = 0.4f;
-                    weaveScale = 8f;
-                    weaveMag = 2f;
                     trailColor = Color.valueOf("bbfe6b");
                 }};
             }});
