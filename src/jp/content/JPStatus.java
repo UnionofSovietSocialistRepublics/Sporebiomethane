@@ -23,8 +23,10 @@ public class JPStatus {
             disarm = true;
         }};
         Hellspawn = new StatusEffect("Hellspawn"){{
-           damage = 6f / 60f;
-           speedMultiplier = 1.25f;
-           damageMultiplier = 1.25f;
+            effect = Fx.burning;
+            color = Color.valueOf("ffc455");
+            damage = 6f / 60f;
+            speedMultiplier = 1.25f;
+            damageMultiplier = 1.25f;
         }};
     }};
