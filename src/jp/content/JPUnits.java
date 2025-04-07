@@ -32,6 +32,7 @@ public class JPUnits {
     Zeta,
     //Winged
     Gragoth, Slasher, Saboteur, Protectorate, Carrier, Spitter;
+    
     private static final ObjectMap.Entry<Class<? extends Entityc>, Prov<? extends Entityc>>[] types = new ObjectMap.Entry[]{
             prov(JPCopterUnitEntity.class, JPCopterUnitEntity::new)
     };
@@ -905,6 +906,129 @@ public class JPUnits {
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
         }};
 
+        Hivedefender = new UnitType("Hivedefender"){{
+            this.constructor = UnitEntity::create;
+            speed = 2.75f;
+            armor = 1;
+            hitSize = 18f;
+            health = 175;
+            range = 125f;    
+            flying = true;
+            engineOffset = 7f;
+            engineSize = 4f;
+            mineSpeed = 2f;
+            buildSpeed = 1;
+            mineTier = 3;
+            drag = 0.05f;
+            accel = 0.11f;
+            weapons.add(new Weapon(name + "-gun"){{
+                reload = 75f;
+                x = -6f;
+                y = 2f;
+                layerOffset = -1f;
+                mirror = true;
+                shoot.shots = 2;
+                shoot.shotDelay = 5f;
+                recoil = 2.5f;
+                bullet = new BasicBulletType(5f, 15){{
+                    height = width = 10f;
+                    shootEffect = Fx.shootBig;
+                    smokeEffect = Fx.shootBigSmoke;
+                    buildingDamageMultiplier = 0.05f;
+                    lifetime = 50f;
+                    backColor = Color.valueOf("8B73C7");
+                    frontColor = Color.valueOf("8B73C7");
+                    lightColor = Color.valueOf("8B73C7");
+                    collidesTiles = true;
+                }};
+            }});
+            outlineColor = Color.valueOf("303a45"); 
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f * 2f) * 100f;}});
+        }};
+
+        HiveSentinel = new UnitType("HiveSentinel"){{
+            this.constructor = UnitEntity::create;
+            speed = 2.5f;
+            armor = 2;
+            hitSize = 18f;
+            health = 400;
+            range = 125f;    
+            flying = true;
+            engineOffset = 12f;
+            engineSize = 4f;
+            mineSpeed = 3f;
+            buildSpeed = 2;
+            mineTier = 4;
+            drag = 0.05f;
+            accel = 0.11f;
+            weapons.add(new Weapon(name + "-gun"){{
+                reload = 65f;
+                x = -9f;
+                y = 5f;
+                layerOffset = -1f;
+                mirror = true;
+                shoot.shots = 4;
+                shoot.shotDelay = 5f;
+                recoil = 4f;
+                bullet = new BasicBulletType(4.5f, 25){{
+                    height = width = 15f;
+                    shootEffect = Fx.shootBig;
+                    smokeEffect = Fx.shootBigSmoke;
+                    buildingDamageMultiplier = 0.05f;
+                    lifetime = 50f;
+                    backColor = Color.valueOf("8B73C7");
+                    frontColor = Color.valueOf("8B73C7");
+                    lightColor = Color.valueOf("8B73C7");
+                    collidesTiles = true;
+                }};
+            }});
+            outlineColor = Color.valueOf("303a45");
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f * 2f) * 100f;}});
+        }};
+
+        Sporophage = new UnitType("Sporophage"){{
+            this.constructor = UnitEntity::create;
+            speed = 2f;
+            armor = 3;
+            hitSize = 17f;
+            health = 425;
+            range = 125f;      
+            flying = true;
+            mineSpeed = 3.5f;
+            buildSpeed = 2.5f;
+            mineTier = 6;
+            engineOffset = 12f;
+            engineSize = 4f;
+            drag = 0.05f;
+            accel = 0.11f;
+            weapons.add(new Weapon("-Mouh"){{
+                reload = 75f;
+                shootY = 8f;
+                x = 0f;
+                y = 0f;
+                continuous = true;
+                shoot.firstShotDelay = JPFx.purpleLaserChargeSmall.lifetime -1f;
+                chargeSound = Sounds.lasercharge2;
+                shootSound = Sounds.beam;
+                shootStatus = StatusEffects.slow;
+                shootStatusDuration = 60f * 3;
+                mirror = false;
+                bullet = new ContinuousLaserBulletType(50f){{
+                    width = 2f;
+                    length = 75f;
+                    drawSize = 100f;
+                    lifetime = 125f;
+                    healPercent = 0.5f;
+                    collidesTeam = true;
+                    buildingDamageMultiplier = 0.10f;
+                    colors = new Color[]{Color.valueOf("8B73C7"), Color.valueOf("A865C9"), Color.valueOf("A865C9"), Color.valueOf("ffffff")};
+                    chargeEffect = JPFx.purpleLaserChargeSmall;
+                }};
+            }});
+            outlineColor = Color.valueOf("303a45");
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (75f * 60f * 2f) * 100f;}});
+        }};
+
         DeathImp = new UnitType("DeathImp"){{
             this.constructor = UnitEntity::create;
             speed = 1.75f;
@@ -1155,7 +1279,7 @@ public class JPUnits {
 //                        chargeEffect = new MultiEffect(Fx.lancerLaserCharge, Fx.lancerLaserChargeBegin);
                         chargeEffect = JPFx.purpleLaserChargeSmall;
                         lifetime = 16f;
-                        buildingDamageMultiplier = 1.5f;
+                        buildingDamageMultiplier = 2f;
                     }};
                     shootSound = Sounds.laser;
                 }});
@@ -1183,7 +1307,7 @@ public class JPUnits {
                         weaveScale = 8f;
                         weaveMag = 2f;
                         fragBullets = 5;
-                        buildingDamageMultiplier = 1.5f;
+                        buildingDamageMultiplier = 2f;
                         fragBullet = new MissileBulletType(4.5f, 5f){{
                             width = 8f;
                             height = 8f;
@@ -1209,7 +1333,7 @@ public class JPUnits {
                     minWarmup = 0.94f;
                     shootWarmupSpeed = 0.05f;
                     bullet = new MissileBulletType(3.5f, 50f){{
-                        buildingDamageMultiplier = 1.5f;
+                        buildingDamageMultiplier = 2f;
                         homingPower = 0.1f;
                         homingRange = 5f;
                     }};
@@ -1939,127 +2063,4 @@ public class JPUnits {
                 abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.cryofluid;}});
                 abilities.add(new StatusFieldAbility(JPStatus.Frostshield, 60f * 3, 60f * 9f, 60f));
             }};
-
-        Hivedefender = new UnitType("Hivedefender"){{
-            this.constructor = UnitEntity::create;
-            speed = 2.75f;
-            armor = 1;
-            hitSize = 18f;
-            health = 175;
-            range = 125f;    
-            flying = true;
-            engineOffset = 7f;
-            engineSize = 4f;
-            mineSpeed = 2f;
-            buildSpeed = 1;
-            mineTier = 3;
-            drag = 0.05f;
-            accel = 0.11f;
-            weapons.add(new Weapon(name + "-gun"){{
-                reload = 75f;
-                x = -6f;
-                y = 2f;
-                layerOffset = -1f;
-                mirror = true;
-                shoot.shots = 2;
-                shoot.shotDelay = 5f;
-                recoil = 2.5f;
-                bullet = new BasicBulletType(5f, 15){{
-                    height = width = 10f;
-                    shootEffect = Fx.shootBig;
-                    smokeEffect = Fx.shootBigSmoke;
-                    buildingDamageMultiplier = 0.05f;
-                    lifetime = 50f;
-                    backColor = Color.valueOf("8B73C7");
-                    frontColor = Color.valueOf("8B73C7");
-                    lightColor = Color.valueOf("8B73C7");
-                    collidesTiles = true;
-                }};
-            }});
-            outlineColor = Color.valueOf("303a45"); 
-            abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f * 2f) * 100f;}});
-        }};
-
-        HiveSentinel = new UnitType("HiveSentinel"){{
-            this.constructor = UnitEntity::create;
-            speed = 2.5f;
-            armor = 2;
-            hitSize = 18f;
-            health = 400;
-            range = 125f;    
-            flying = true;
-            engineOffset = 12f;
-            engineSize = 4f;
-            mineSpeed = 3f;
-            buildSpeed = 2;
-            mineTier = 4;
-            drag = 0.05f;
-            accel = 0.11f;
-            weapons.add(new Weapon(name + "-gun"){{
-                reload = 65f;
-                x = -9f;
-                y = 5f;
-                layerOffset = -1f;
-                mirror = true;
-                shoot.shots = 4;
-                shoot.shotDelay = 5f;
-                recoil = 4f;
-                bullet = new BasicBulletType(4.5f, 25){{
-                    height = width = 15f;
-                    shootEffect = Fx.shootBig;
-                    smokeEffect = Fx.shootBigSmoke;
-                    buildingDamageMultiplier = 0.05f;
-                    lifetime = 50f;
-                    backColor = Color.valueOf("8B73C7");
-                    frontColor = Color.valueOf("8B73C7");
-                    lightColor = Color.valueOf("8B73C7");
-                    collidesTiles = true;
-                }};
-            }});
-            outlineColor = Color.valueOf("303a45");
-            abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f * 2f) * 100f;}});
-        }};
-
-        Sporophage = new UnitType("Sporophage"){{
-            this.constructor = UnitEntity::create;
-            speed = 2f;
-            armor = 3;
-            hitSize = 17f;
-            health = 425;
-            range = 125f;      
-            flying = true;
-            mineSpeed = 3.5f;
-            buildSpeed = 2.5f;
-            mineTier = 6;
-            engineOffset = 12f;
-            engineSize = 4f;
-            drag = 0.05f;
-            accel = 0.11f;
-            weapons.add(new Weapon("-Mouh"){{
-                reload = 75f;
-                shootY = 8f;
-                x = 0f;
-                y = 0f;
-                continuous = true;
-                shoot.firstShotDelay = JPFx.purpleLaserChargeSmall.lifetime -1f;
-                chargeSound = Sounds.lasercharge2;
-                shootSound = Sounds.beam;
-                shootStatus = StatusEffects.slow;
-                shootStatusDuration = 60f * 3;
-                mirror = false;
-                bullet = new ContinuousLaserBulletType(50f){{
-                    width = 2f;
-                    length = 75f;
-                    drawSize = 100f;
-                    lifetime = 125f;
-                    healPercent = 0.5f;
-                    collidesTeam = true;
-                    buildingDamageMultiplier = 0.10f;
-                    colors = new Color[]{Color.valueOf("8B73C7"), Color.valueOf("A865C9"), Color.valueOf("A865C9"), Color.valueOf("ffffff")};
-                    chargeEffect = JPFx.purpleLaserChargeSmall;
-                }};
-            }});
-            outlineColor = Color.valueOf("303a45");
-            abilities.add(new RegenAbility(){{percentAmount = 1f / (75f * 60f * 2f) * 100f;}});
-        }};
 }}
