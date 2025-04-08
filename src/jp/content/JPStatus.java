@@ -1,5 +1,6 @@
 package jp.content;
 
+import mindustry.content.*;
 import mindustry.type.StatusEffect;
 
 public class JPStatus {
