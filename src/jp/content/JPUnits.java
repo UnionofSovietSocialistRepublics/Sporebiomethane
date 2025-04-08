@@ -1187,7 +1187,7 @@ public class JPUnits {
         Autus = new UnitType("Autus"){{
             this.constructor = LegsUnit::create;
             speed = 0.75f;
-            hitSize = 8f;
+            hitSize = 12f;
             health = 1500;
             armor = 7;
             range = 40f;
@@ -1257,7 +1257,7 @@ public class JPUnits {
             Demolisher = new UnitType("Demolisher"){{
                 this.constructor = LegsUnit::create;
                 speed = 0.6f;
-                hitSize = 8f;
+                hitSize = 16f;
                 armor = 6;
                 health = 6200;
                 range = 50f;
@@ -1821,7 +1821,7 @@ public class JPUnits {
             FrostC = new UnitType("FrostC"){{
                 this.constructor = LegsUnit::create;
                 speed = 0.25f;
-                hitSize = 8f;
+                hitSize = 12f;
                 health = 58000;
                 armor = 30;
                 range = 80f;
@@ -1930,7 +1930,7 @@ public class JPUnits {
             Frost = new UnitType("Frost"){{
                 this.constructor = LegsUnit::create;
                 speed = 0.25f;
-                hitSize = 8f;
+                hitSize = 12f;
                 health = 58000;
                 armor = 30;
                 range = 80f;
