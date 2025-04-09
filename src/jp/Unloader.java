@@ -14,9 +14,9 @@ public class Unloader extends Mod{
         Log.info("Unloading the storm");
         Events.on(ClientLoadEvent.class, e -> {
         double random = Math.floor(Math.random() * 5);
-        //undoable the random (java double are wacky, and they refuse to be inside switch case)
+        //undouble the random (java double are wacky, and they refuse to be inside switch case)
         int rand = (int) Math.round(random);
-        //replace subtitle with author with funky thing
+        //replace subtitle and author with funky thing
         switch(rand){
         case 1:
         Vars.mods.locateMod("jp").meta.author="Hydroabyss & Coffee molecules";
