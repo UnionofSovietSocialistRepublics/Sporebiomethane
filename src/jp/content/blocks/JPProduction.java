@@ -36,10 +36,20 @@ public class JPProduction{
             hasPower = true;
             consumePower(1f);
             consumeItem(sporePod, 5);
-
-            drawer = new DrawMulti(new DrawDefault(), new DrawWarmupRegion(){{
+            drawer = new DrawMulti(
+            new DrawDefault(),
+            new DrawWarmupRegion(){{
                 color = Color.valueOf("8B73C7");
-            }});
+            }},
+            new DrawRegion("-rotor"){{
+                rotateSpeed = 2f;
+            }},
+            new DrawRegion("-rotor"){{
+                rotateSpeed = -2f;
+                rotation = 45f;
+            }}
+            );
+
         }};
 
         Naniteinfuser = new GenericCrafter("Naniteinfuser"){{
@@ -54,19 +64,9 @@ public class JPProduction{
             consumePower(5f);
             consumeItems(with(JPItem.Biomass, 5,JPItem.BioSil,5,silicon,10));
 
-            drawer = new DrawMulti(
-            new DrawDefault(),
-            new DrawWarmupRegion(){{
+            drawer = new DrawMulti(new DrawDefault(), new DrawWarmupRegion(){{
                 color = Color.valueOf("8B73C7");
-            }},
-            new DrawRegion("-rotor"){{
-                rotateSpeed = 2f;
-            }},
-            new DrawRegion("-rotor"){{
-                rotateSpeed = -2f;
-                rotation = 45f;
-            }}
-            );
+            }});
         }};
 
         CCB = new GenericCrafter("Carbine-composite-smelter"){{
@@ -273,9 +273,9 @@ public class JPProduction{
             ambientSound = Sounds.pulse;
             ambientSoundVolume = 0.07f;
 
-            drawer = new DrawMulti(new DrawDefault(), new DrawWarmupRegion(){{
-                color = Color.valueOf("8B73C7");
-            }});
+            // drawer = new DrawMulti(new DrawDefault(), new DrawWarmupRegion(){{
+            //     color = Color.valueOf("8B73C7");
+            // }});
         }};
 
         }};
