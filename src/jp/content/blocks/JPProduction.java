@@ -36,7 +36,10 @@ public class JPProduction{
             hasPower = true;
             consumePower(1f);
             consumeItem(sporePod, 5);
+
+            drawer = new DrawMulti(new DrawDefault(), new DrawWarmupRegion(Color.valueOf("8B73C7")));
         }};
+
         Naniteinfuser = new GenericCrafter("Naniteinfuser"){{
             requirements(Category.crafting, with(silicon, 325, graphite, 275,JPItem.BioSil,95));
             health = 350;
@@ -48,7 +51,20 @@ public class JPProduction{
             hasItems = true;
             consumePower(5f);
             consumeItems(with(JPItem.Biomass, 5,JPItem.BioSil,5,silicon,10));
+
+            drawer = new DrawMulti(
+            new DrawDefault(),
+            new DrawWarmupRegion(Color.valueOf("8B73C7")),
+            new DrawRegion("-rotor"){{
+                rotateSpeed = 2f;
+            }},
+            new DrawRegion("-rotor"){{
+                rotateSpeed = -2f;
+                rotation = 45f;
+            }},
+            );
         }};
+
         CCB = new GenericCrafter("Carbine-composite-smelter"){{
             requirements(Category.crafting, with(JPItem.Vanadium,600,JPItem.BioSil, 450,JPItem.Nanitealloy, 425));
             health = 475;
@@ -63,6 +79,21 @@ public class JPProduction{
             consumePower(4f);
             consumeItems(with(JPItem.BioSil, 2,JPItem.Vanadium,4,JPItem.Nanitealloy, 3));
         }};
+
+        Vanadicarbide = new HeatProducer("Vanadicarbide"){{
+            requirements(Category.crafting, with(silicon, 270,JPItem.Biomass, 125,JPItem.Vanadium, 450));
+            health = 750;
+            size = 2;
+            craftEffect = Fx.pulverizeMedium;
+            outputItem = new ItemStack(JPItem.VCA, 1);
+            craftTime = 50f;
+            hasItems = true;
+            hasPower = true;
+            heatOutput = 5f;
+            consumePower(5f);
+            consumeItems(with(JPItem.Vanadium, 5,JPItem.BioSil, 3));
+        }};
+
         FR = new GenericCrafter("Fluoresilt-refinery"){{
             requirements(Category.crafting, with(JPItem.Biomass, 250,silicon, 150, graphite, 145));
             health = 120;
@@ -76,6 +107,7 @@ public class JPProduction{
             consumePower(1f);
             consumeItem(JPItem.Fluoresilt, 3);
         }};
+
         Gaschamber = new GenericCrafter("Voltaicchamber"){{
             requirements(Category.crafting, with(graphite, 475,titanium, 350, plastanium, 75));
             health = 360;
@@ -91,6 +123,7 @@ public class JPProduction{
             consumeItem(sporePod, 5);
             consumeLiquid(Liquids.water, 15f / 60f);
         }};
+
         BioSynthesizer = new GenericCrafter("BioSynthesizer"){{
             requirements(Category.crafting, with(JPItem.Biomass, 375,silicon, 150, graphite, 90));
             health = 360;
@@ -103,6 +136,7 @@ public class JPProduction{
             consumePower(5f);
             consumeItems(with(JPItem.Biomass, 3,silicon, 2,graphite, 2));
         }};
+
         Neostabilizer = new GenericCrafter("Neostabilizer"){{
             requirements(Category.crafting, with(JPItem.Biomass, 650,JPItem.Nanitealloy, 450,JPItem.Carbinecomposite, 450));
             health = 1000;
@@ -118,6 +152,7 @@ public class JPProduction{
             consumeItems(with(JPItem.Vanadium, 4,JPItem.Zinc, 2));
             consumeLiquid(Liquids.neoplasm, 6f / 60f);
         }};
+
         Masscultivator = new GenericCrafter("Masscultivator"){{
             requirements(Category.production, with(silicon, 650,JPItem.Biomass, 250,thorium, 450));
             health = 750;
@@ -138,19 +173,7 @@ public class JPProduction{
             consumePower(10f);
             consumeLiquid(Liquids.water, 18f / 60f);
         }};
-        Vanadicarbide = new HeatProducer("Vanadicarbide"){{
-            requirements(Category.crafting, with(silicon, 270,JPItem.Biomass, 125,JPItem.Vanadium, 450));
-            health = 750;
-            size = 2;
-            craftEffect = Fx.pulverizeMedium;
-            outputItem = new ItemStack(JPItem.VCA, 1);
-            craftTime = 50f;
-            hasItems = true;
-            hasPower = true;
-            heatOutput = 5f;
-            consumePower(5f);
-            consumeItems(with(JPItem.Vanadium, 5,JPItem.BioSil, 3));
-        }};
+
         ZincExtractor = new GenericCrafter("ZincExtractor"){{
             requirements(Category.production, with(silicon, 175,JPItem.Vanadium, 125,JPItem.Biomass, 50));
             health = 625;
@@ -164,34 +187,7 @@ public class JPProduction{
             }},
             new DrawRegion("-top"));
         }};
-        Lotus = new SolarGenerator("Lotus-panel"){{
-            requirements(Category.power, with(silicon, 175,JPItem.Vanadium, 125,JPItem.Biomass, 50));
-            health = 625;
-            size = 4;
-            powerProduction = 3f;
-        }};
-        Neocell = new ConsumeGenerator("Neocell-generator"){{
-            requirements(Category.power, with(silicon, 225,JPItem.Vanadium, 75,JPItem.Neocells, 95));
-            health = 650;
-            size = 2;
-            powerProduction = 11.5f;
-            itemDuration = 275f;
-            consumeItem(JPItem.Neocells);
-        }};
-        Biomassreactor = new ImpactReactor("Biomassreactor"){{
-            requirements(Category.power, with(silicon, 225,JPItem.Vanadium, 75,JPItem.Neocells, 95));
-            health = 1750;
-            size = 4;
-            hasLiquids = false;
-            consumePower(10f);
-            powerProduction = 40f;
-            consumeItem(JPItem.Biomass);
-            warmupSpeed = 0.0025f;
-            explosionRadius = 10;
-            explosionDamage = 4000;
-            ambientSound = Sounds.pulse;
-            ambientSoundVolume = 0.07f;
-        }};
+
         Extractor = new Drill("Extractor"){{
             requirements(Category.production, with(silicon, 25,graphite, 30));
             health = 300;
@@ -209,6 +205,9 @@ public class JPProduction{
             drillMultipliers.put(Items.tungsten, 0f);
             consumeLiquid(Liquids.water, 0.05f).boost();
         }};
+        
+        //Power blocks
+
         Oilburner = new ConsumeGenerator("Oil-burner"){{
             requirements(Category.power, with(silicon, 175,graphite, 225,JPItem.Biomass, 45));
             health = 180;
@@ -221,6 +220,7 @@ public class JPProduction{
             generateEffect = Fx.generatespark;
             drawer = new DrawMulti(new DrawDefault(), new DrawFlame(Color.valueOf("8B73C7")));
         }};
+
         Voltaicburner = new ConsumeGenerator("Voltatic-burner"){{
             requirements(Category.power, with(silicon, 225,JPItem.Nanitealloy, 145,JPItem.Biomass, 95));
             health = 450;
@@ -234,5 +234,41 @@ public class JPProduction{
             drawer = new DrawMulti(new DrawDefault(), new DrawFlame(Color.valueOf("8B73C7")));
             
         }};
+
+        Neocell = new ConsumeGenerator("Neocell-generator"){{
+            requirements(Category.power, with(silicon, 225,JPItem.Vanadium, 75,JPItem.Neocells, 95));
+            health = 650;
+            size = 2;
+            powerProduction = 11.5f;
+            itemDuration = 275f;
+            consumeItem(JPItem.Neocells);
+
+            drawer = new DrawMulti(new DrawDefault(), new DrawWarmupRegion(Color.valueOf("9e3736")));
+        }};
+
+        Lotus = new SolarGenerator("Lotus-panel"){{
+            requirements(Category.power, with(silicon, 175,JPItem.Vanadium, 125,JPItem.Biomass, 50));
+            health = 625;
+            size = 4;
+            powerProduction = 3f;
+        }};
+
+        Biomassreactor = new ImpactReactor("Biomassreactor"){{
+            requirements(Category.power, with(silicon, 225,JPItem.Vanadium, 75,JPItem.Neocells, 95));
+            health = 1750;
+            size = 4;
+            hasLiquids = false;
+            consumePower(10f);
+            powerProduction = 40f;
+            consumeItem(JPItem.Biomass);
+            warmupSpeed = 0.0025f;
+            explosionRadius = 10;
+            explosionDamage = 4000;
+            ambientSound = Sounds.pulse;
+            ambientSoundVolume = 0.07f;
+
+            drawer = new DrawMulti(new DrawDefault(), new DrawWarmupRegion(Color.valueOf("8B73C7")));
+        }};
+
         }};
 
