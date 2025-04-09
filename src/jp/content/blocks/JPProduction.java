@@ -61,7 +61,7 @@ public class JPProduction{
             new DrawRegion("-rotor"){{
                 rotateSpeed = -2f;
                 rotation = 45f;
-            }},
+            }}
             );
         }};
 
