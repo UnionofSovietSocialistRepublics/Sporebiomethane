@@ -37,7 +37,7 @@ public class JPProduction{
             consumePower(1f);
             consumeItem(sporePod, 5);
 
-            drawer = new DrawMulti(new DrawDefault(), new DrawWarmupRegion(Color.valueOf("8B73C7")));
+            drawer = new DrawMulti(new DrawDefault(), new DrawWarmupRegion(color = Color.valueOf("8B73C7")));
         }};
 
         Naniteinfuser = new GenericCrafter("Naniteinfuser"){{
@@ -54,7 +54,7 @@ public class JPProduction{
 
             drawer = new DrawMulti(
             new DrawDefault(),
-            new DrawWarmupRegion(Color.valueOf("8B73C7")),
+            new DrawWarmupRegion(color = Color.valueOf("8B73C7")),
             new DrawRegion("-rotor"){{
                 rotateSpeed = 2f;
             }},
@@ -243,7 +243,7 @@ public class JPProduction{
             itemDuration = 275f;
             consumeItem(JPItem.Neocells);
 
-            drawer = new DrawMulti(new DrawDefault(), new DrawWarmupRegion(Color.valueOf("9e3736")));
+            drawer = new DrawMulti(new DrawDefault(), new DrawWarmupRegion(color = Color.valueOf("9e3736")));
         }};
 
         Lotus = new SolarGenerator("Lotus-panel"){{
@@ -267,7 +267,7 @@ public class JPProduction{
             ambientSound = Sounds.pulse;
             ambientSoundVolume = 0.07f;
 
-            drawer = new DrawMulti(new DrawDefault(), new DrawWarmupRegion(Color.valueOf("8B73C7")));
+            drawer = new DrawMulti(new DrawDefault(), new DrawWarmupRegion(color = Color.valueOf("8B73C7")));
         }};
 
         }};
