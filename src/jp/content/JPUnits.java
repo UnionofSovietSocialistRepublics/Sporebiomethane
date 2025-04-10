@@ -312,7 +312,6 @@ public class JPUnits {
                 x = -10f;
                 y = 0f;
                 recoil = 6;
-                mirror = true;
                 targetAir = false;
                 bullet = new ArtilleryBulletType(2.5f, 9){{
                     speed = 6f;
@@ -421,7 +420,6 @@ public class JPUnits {
                 reload = 5f;
                 x = -11f;
                 y = 2f;
-                mirror = true;
                 bullet = new BasicBulletType(3f, 20f){{
                     collidesTiles = true;
                     width = 15f;
@@ -452,7 +450,6 @@ public class JPUnits {
                 top = true;
                 x = 11f;
                 y = 1f;
-                mirror = true;
                 recoil = 0.5f;
                 shootSound = Sounds.torch;
                 ejectEffect = Fx.none;
@@ -568,7 +565,6 @@ public class JPUnits {
                 reload = 5f;
                 x = -15f;
                 y = -23f;
-                mirror = true;
                 shootSound = Sounds.shootBig;
                 bullet = new BasicBulletType(2.5f, 9){{
                     width = 15f;
@@ -644,7 +640,6 @@ public class JPUnits {
                 reload = 30f;
                 x = 15f;
                 y = 18f;
-                mirror = true;
                 controllable = false;
                 autoTarget = true;
                 rotate = true;
@@ -672,7 +667,6 @@ public class JPUnits {
                 reload = 30f;
                 x = 15f;
                 y = -18f;
-                mirror = true;
                 controllable = false;
                 autoTarget = true;
                 rotate = true;
@@ -690,7 +684,6 @@ public class JPUnits {
                     parts.add(new RegionPart("-barrel"){{
                         mirror = true;
                         progress = PartProgress.recoil;
-//                        layerOffset= -0.1f;
                         under = true;
                         y = 1.5f;
                         moveY = -2f;
@@ -876,7 +869,6 @@ public class JPUnits {
                 reload = 125f;
                 x = 11f;
                 y = 4f;
-                mirror = true;
                 recoil = 6f;
                 layerOffset = -0.01f;
                 bullet = new ArtilleryBulletType(4.5f, 75){{
@@ -926,7 +918,6 @@ public class JPUnits {
                 x = -6f;
                 y = 2f;
                 layerOffset = -1f;
-                mirror = true;
                 shoot.shots = 2;
                 shoot.shotDelay = 5f;
                 recoil = 2.5f;
@@ -966,7 +957,6 @@ public class JPUnits {
                 x = -9f;
                 y = 5f;
                 layerOffset = -1f;
-                mirror = true;
                 shoot.shots = 4;
                 shoot.shotDelay = 5f;
                 recoil = 4f;
@@ -1049,7 +1039,6 @@ public class JPUnits {
                 reload = 1f;
                 shootCone = 180f;
                 ejectEffect = Fx.none;
-                mirror = true;
                 alternate = false;
                 alwaysShooting = true;
                 ignoreRotation = true;
@@ -1270,7 +1259,6 @@ public class JPUnits {
                     layerOffset = -0.01f;
                     x = 12f;
                     y = -2f;
-                    mirror = true;
                     shoot.shots = 3;
                     shoot.shotDelay = 10f;
                     recoil = 8;
@@ -1327,7 +1315,6 @@ public class JPUnits {
                 weapons.add(new Weapon(name + "-beam"){{
                     x = -7f;
                     y = -7f;
-                    mirror = true;
                     reload = 75f;
                     recoil = 2.5f;
                     minWarmup = 0.94f;
@@ -1497,7 +1484,6 @@ public class JPUnits {
             weapons.add(new Weapon("Eggspawner"){{
                 x = 6f;
                 y = 6f;
-                mirror = true;
                 shoot.firstShotDelay = 200f;
                 reload = 400f;
                 top = false;
@@ -1599,7 +1585,6 @@ public class JPUnits {
             weapons.add(new Weapon("balls"){{
                 x = 6f;
                 y = 6f;
-                mirror = true;
                 reload = 75f;
                 top = false;
                 bullet = new BasicBulletType(2.5f, 9){{
