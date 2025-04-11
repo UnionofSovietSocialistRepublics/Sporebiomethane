@@ -1,5 +1,6 @@
 package jp.content.blocks;
 
+import arc.Core;
 import arc.graphics.*;
 import mindustry.gen.*;
 import mindustry.type.*;
@@ -8,10 +9,10 @@ import mindustry.world.blocks.heat.*;
 import mindustry.world.blocks.power.*;
 import mindustry.world.blocks.production.*;
 import mindustry.world.draw.*;
-//import jp.content.jpAC;
 import jp.content.*;
 import mindustry.content.*;
 
+import static mindustry.content.UnitTypes.block;
 import static mindustry.type.ItemStack.*;
 import static mindustry.content.Items.*;
 
@@ -21,7 +22,7 @@ public class JPProduction{
         Extractor,ZincExtractor,
         Masscultivator,
         Nanoprocessor,Naniteinfuser,CCB,FR,Gaschamber,BioSynthesizer,Vanadicarbide,Neostabilizer,
-        Biomassreactor,Neocell,Lotus,Oilburner,Voltaicburner,test;
+        Biomassreactor,Neocell,Lotus,Oilburner,Voltaicburner;
 
         public static void load(){
 
@@ -280,5 +281,5 @@ public class JPProduction{
             }});
         }};
 
-        }};
+        }}
 

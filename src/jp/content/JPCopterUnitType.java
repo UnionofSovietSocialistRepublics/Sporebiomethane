@@ -8,9 +8,6 @@ import arc.struct.Seq;
 import mindustry.gen.Unit;
 import mindustry.graphics.Layer;
 import mindustry.type.UnitType;
-import jp.content.*;
-import jp.content.Blade;
-import jp.content.JPCopterUnitEntity;
 
 public class JPCopterUnitType extends UnitType {
     public final Seq<Blade> blade = new Seq<>();

@@ -1,16 +1,9 @@
 package jp.content;
 
 import mindustry.content.*;
-import arc.*;
 import arc.graphics.*;
-import arc.math.*;
-import mindustry.game.EventType.*;
-import mindustry.game.*;
-import mindustry.graphics.*;
-import mindustry.type.*;
 import mindustry.type.StatusEffect;
 
-import static mindustry.Vars.*;
 public class JPStatus {
     public static StatusEffect
     Dissolving, Frostshield, Regen, Mindcontrol, Reversion, ReversionD, Hellspawn;
@@ -38,4 +31,4 @@ public class JPStatus {
             speedMultiplier = 1.25f;
             damageMultiplier = 1.25f;
         }};
-    }};
+    }}

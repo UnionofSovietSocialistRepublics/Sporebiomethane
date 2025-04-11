@@ -2,8 +2,6 @@ package jp.content;
 
 import arc.Core;
 import mindustry.*;
-import mindustry.content.*;
-import mindustry.world.meta.*;
 
 public class JPSettings {
     public static void init() {

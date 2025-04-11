@@ -4,7 +4,6 @@ import mindustry.type.*;
 import mindustry.world.*;
 import mindustry.world.blocks.defense.*;
 import mindustry.world.blocks.storage.*;
-//import jp.content.jpAC;
 import jp.content.*;
 
 import static mindustry.type.ItemStack.*;
@@ -58,4 +57,4 @@ VCAwall,Sporecore,Hive,Nydusaecore;
             unitCapModifier = 48;
             researchCostMultiplier = 0.15f;
         }};
-}};
+}}
