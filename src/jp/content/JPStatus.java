@@ -6,25 +6,29 @@ import mindustry.type.StatusEffect;
 
 public class JPStatus {
     public static StatusEffect
-    Dissolving, Frostshield, Regen, Mindcontrol, Reversion, ReversionD, Hellspawn;
+    dissolving, frostshield, regen, mindcontrol, reversion, reversionD, hellspawn, stunned;
     public static void load(){
-        Dissolving = new StatusEffect("Dissolving"){{
+        dissolving = new StatusEffect("dissolving"){{
             damage = 60f / 60f;
         }};
-        Regen = new StatusEffect("Regen"){{
+        regen = new StatusEffect("regen"){{
             damage = -60f / 60f;
         }};
-        Frostshield = new StatusEffect("Frostshield"){{
+        frostshield = new StatusEffect("frostshield"){{
             healthMultiplier = 4f;
         }};
-        Reversion = new StatusEffect("Reversion"){{
+        reversion = new StatusEffect("reversion"){{
             speedMultiplier = -1f;
         }};
-        ReversionD = new StatusEffect("ReversionD"){{
+        reversionD = new StatusEffect("reversionD"){{
             speedMultiplier = -1f;
             disarm = true;
         }};
-        Hellspawn = new StatusEffect("Hellspawn"){{
+        stunned = new StatusEffect("stunned"){{
+            speedMultiplier = -1f;
+            disarm = true;
+        }};
+        hellspawn = new StatusEffect("hellspawn"){{
             effect = Fx.burning;
             color = Color.valueOf("ffc455");
             damage = 6f / 60f;

@@ -256,7 +256,7 @@ public class JPUnits {
                     height = 0f;
                     lifetime = 10f;
                     statusDuration = 60f * 2;
-                    status = JPStatus.Dissolving;
+                    status = JPStatus.dissolving;
                     splashDamage = 250f;
                     splashDamageRadius = 60f;
                     killShooter = true;
@@ -271,7 +271,7 @@ public class JPUnits {
                         speed = 3f;
                         puddleSize = 20f;
                         orbSize = 4f;
-                        status = JPStatus.Dissolving;
+                        status = JPStatus.dissolving;
                         statusDuration = 60f * 4f;
                         damage = 40f;
                         layer = Layer.bullet - 2f;
@@ -293,7 +293,7 @@ public class JPUnits {
                 growY = 0.1f;
             }});
 
-            immunities.add(JPStatus.Dissolving);
+            immunities.add(JPStatus.dissolving);
             outlineColor = Color.valueOf("303a45");
             abilities.add(new LiquidExplodeAbility(){{liquid = JPLiquids.liquidSpore; amount = 250f;}});
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});
@@ -324,7 +324,7 @@ public class JPUnits {
                     splashDamageRadius = 17f;
                     lifetime = 40f;
                     statusDuration = 60f * 4;
-                    status = JPStatus.Dissolving;
+                    status = JPStatus.dissolving;
                     backColor = Color.valueOf("8FFE09");
                     frontColor = Color.valueOf("8FFE09");
                     lightColor = Color.white;
@@ -365,7 +365,7 @@ public class JPUnits {
                     splashDamageRadius = 17f;
                     lifetime = 50f;
                     statusDuration = 60f * 4;
-                    status = JPStatus.Dissolving;
+                    status = JPStatus.dissolving;
                     backColor = Color.valueOf("8FFE09");
                     frontColor = Color.valueOf("8FFE09");
                     lightColor = Color.valueOf("8FFE09");
@@ -610,7 +610,7 @@ public class JPUnits {
                     collidesTiles = true;
                     splashDamageRadius = 65f;
                     splashDamage = 650f;
-                    status = JPStatus.Dissolving;
+                    status = JPStatus.dissolving;
                     statusDuration = 60f * 6;
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
@@ -881,7 +881,7 @@ public class JPUnits {
                     splashDamageRadius = 25f;
                     lifetime = 60f;
                     statusDuration = 60f * 4;
-                    status = JPStatus.Dissolving;
+                    status = JPStatus.dissolving;
                     backColor = Color.valueOf("8FFE09");
                     frontColor = Color.valueOf("8FFE09");
                     lightColor = Color.valueOf("8FFE09");
@@ -1044,7 +1044,7 @@ public class JPUnits {
                 alwaysShooting = true;
                 ignoreRotation = true;
                 shootSound = Sounds.none;
-                shootStatus = JPStatus.Hellspawn;
+                shootStatus = JPStatus.hellspawn;
                 shootStatusDuration = 666666f;
                 bullet = new BombBulletType(1f,1f){{
                     lifetime = 1f;;
@@ -1911,7 +1911,7 @@ public class JPUnits {
                 immunities.add(StatusEffects.slow);
                 abilities.add(new RegenAbility(){{percentAmount = 1f / (800f * 60f * 2f) * 100f;}});
                 abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.cryofluid;}});
-                abilities.add(new StatusFieldAbility(JPStatus.Frostshield, 60f * 3, 60f * 5f, 60f));
+                abilities.add(new StatusFieldAbility(JPStatus.frostshield, 60f * 3, 60f * 5f, 60f));
             }};
 
             Frost = new UnitType("Frost"){{
@@ -1931,7 +1931,7 @@ public class JPUnits {
                     y = 7f;
                     recoil = 0f;
                     mirror = false;
-                    shootStatus = JPStatus.Frostshield;
+                    shootStatus = JPStatus.frostshield;
                     shootStatusDuration = 80f;
                     shootSound = Sounds.flame;
                     ejectEffect = Fx.none;
@@ -1971,7 +1971,7 @@ public class JPUnits {
                     y = 7f;
                     recoil = 0f;
                     mirror = false;
-                    shootStatus = JPStatus.ReversionD;
+                    shootStatus = JPStatus.reversionD;
                     shootStatusDuration = 300f;
                     shoot.firstShotDelay = 301f;
                     ejectEffect = Fx.none;
@@ -2008,7 +2008,7 @@ public class JPUnits {
                     mirror = false;
                     alwaysShooting = true;
                     recoil = 0f;
-                    shootStatus = JPStatus.Frostshield;
+                    shootStatus = JPStatus.frostshield;
                     shootStatusDuration = 360f;
                     shootSound = Sounds.none;
                     ejectEffect = Fx.none;
@@ -2050,6 +2050,6 @@ public class JPUnits {
                 abilities.add(new SpawnDeathAbility(FrostC, 1, 0f));
                 abilities.add(new RegenAbility(){{percentAmount = 1f / (800f * 60f * 2f) * 100f;}});
                 abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.cryofluid;}});
-                abilities.add(new StatusFieldAbility(JPStatus.Frostshield, 60f * 3, 60f * 9f, 60f));
+                abilities.add(new StatusFieldAbility(JPStatus.frostshield, 60f * 3, 60f * 9f, 60f));
             }};
 }}

@@ -117,7 +117,7 @@ public class JPProduction{
         }};
 
         Gaschamber = new GenericCrafter("Voltaicchamber"){{
-            requirements(Category.crafting, with(graphite, 475,titanium, 350, plastanium, 75));
+            requirements(Category.crafting, with(graphite, 375,titanium, 250, plastanium, 75));
             health = 360;
             size = 3;
             craftEffect = Fx.pulverizeMedium;
@@ -217,7 +217,7 @@ public class JPProduction{
         //Power blocks
 
         Oilburner = new ConsumeGenerator("Oil-burner"){{
-            requirements(Category.power, with(silicon, 175,graphite, 225,JPItem.Biomass, 45));
+            requirements(Category.power, with(silicon, 75,graphite, 125,JPItem.Biomass, 45));
             health = 180;
             size = 1;
             powerProduction = 3.75f;
@@ -230,7 +230,7 @@ public class JPProduction{
         }};
 
         Voltaicburner = new ConsumeGenerator("Voltatic-burner"){{
-            requirements(Category.power, with(silicon, 225,JPItem.Nanitealloy, 145,JPItem.Biomass, 95));
+            requirements(Category.power, with(silicon, 125,JPItem.Nanitealloy, 65,JPItem.Biomass, 45));
             health = 450;
             size = 2;
             powerProduction = 12.25f;
