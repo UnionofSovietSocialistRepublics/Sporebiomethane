@@ -40,7 +40,7 @@ public class JPProduction{
             new DrawRegion("-bottom"),
             new DrawDefault(),
             new DrawWarmupRegion(){{
-                region = "-warmup"
+                region = "-warmup";
                 color = Color.valueOf("8B73C7");
             }},
             new DrawRegion("-rotor"){{
