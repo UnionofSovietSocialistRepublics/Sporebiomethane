@@ -204,6 +204,7 @@ public class JPUnits {
                     lifetime = 10f;
                     splashDamage = 200f;
                     splashDamageRadius = 25.5f;
+                    //recoil of the unit
                     recoil = -24f;
                     trailLength = 10;
                     trailWidth = 4f;
