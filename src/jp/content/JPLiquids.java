@@ -11,7 +11,7 @@ public class JPLiquids {
 
         liquidSpore = new Liquid("liquidSpore", Color.valueOf("8B73C7")){{
             coolant = false;
-            effect = JPStatus.Dissolving;
+            effect = JPStatus.dissolving;
             hidden = true;
             capPuddles = false;
         }};
