@@ -1489,6 +1489,7 @@ public class JPUnits {
                 top = false;
                 alwaysShooting = true;
                 shootSound = Sounds.none;
+                display = false;
                 bullet = new BasicBulletType(0f, 0f){{
                     shootEffect = Fx.none;
                     collidesAir = false;
@@ -1973,6 +1974,7 @@ public class JPUnits {
                     shootStatusDuration = 300f;
                     shoot.firstShotDelay = 301f;
                     ejectEffect = Fx.none;
+                    display = false;
                 bullet = new BasicBulletType(25f, 500){{
                     rangeOverride = 200f;
                     backColor = Color.valueOf("8B73C7");
@@ -2009,6 +2011,7 @@ public class JPUnits {
                     shootStatusDuration = 360f;
                     shootSound = Sounds.none;
                     ejectEffect = Fx.none;
+                    display = false;
                     bullet = new BasicBulletType(5f,0){{
                         rangeOverride = 1f;
                         lifetime = 1f;

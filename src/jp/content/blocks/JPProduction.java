@@ -37,8 +37,10 @@ public class JPProduction{
             consumePower(1f);
             consumeItem(sporePod, 5);
             drawer = new DrawMulti(
+            new DrawRegion("-bottom"),
             new DrawDefault(),
             new DrawWarmupRegion(){{
+                region = "-warmup"
                 color = Color.valueOf("8B73C7");
             }},
             new DrawRegion("-rotor"){{
@@ -47,7 +49,8 @@ public class JPProduction{
             new DrawRegion("-rotor"){{
                 rotateSpeed = -2f;
                 rotation = 45f;
-            }}
+            }},
+            new DrawRegion("-top")
             );
 
         }};
@@ -122,7 +125,7 @@ public class JPProduction{
             hasItems = true;
             hasPower = true;
             hasLiquids = true;
-            drawer = new DrawMulti(new DrawRegion("-bottom"), new DrawLiquidTile(Liquids.water){{drawLiquidLight = true;}}, new DrawDefault());
+            drawer = new DrawMulti(new DrawRegion("-bottom"), new DrawLiquidTile(Liquids.water, 9f){{drawLiquidLight = true;}}, new DrawDefault());
             consumePower(5f);
             consumeItem(sporePod, 5);
             consumeLiquid(Liquids.water, 15f / 60f);
@@ -272,10 +275,9 @@ public class JPProduction{
             explosionDamage = 4000;
             ambientSound = Sounds.pulse;
             ambientSoundVolume = 0.07f;
-
-            // drawer = new DrawMulti(new DrawDefault(), new DrawWarmupRegion(){{
-            //     color = Color.valueOf("8B73C7");
-            // }});
+            drawer = new DrawMulti(new DrawRegion("-bottom"), new DrawPlasma(), new DrawDefault(), new DrawWarmupRegion(){{
+                color = Color.valueOf("8B73C7");
+            }});
         }};
 
         }};
