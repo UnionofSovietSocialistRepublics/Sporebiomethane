@@ -126,7 +126,7 @@ public class JPProduction{
             hasItems = true;
             hasPower = true;
             hasLiquids = true;
-            drawer = new DrawMulti(new DrawRegion("-bottom"), new DrawLiquidTile(Liquids.water, 9f){{drawLiquidLight = true;}}, new DrawDefault());
+            drawer = new DrawMulti(new DrawRegion("-bottom"), new DrawLiquidTile(Liquids.water, 1f){{drawLiquidLight = true;}}, new DrawDefault());
             consumePower(5f);
             consumeItem(sporePod, 5);
             consumeLiquid(Liquids.water, 15f / 60f);
