@@ -80,7 +80,7 @@ public class JPTurret{
                     statusDuration = 60f * 14;
                     backColor = Color.valueOf("7457ce");
                     frontColor = Color.valueOf("7457ce");
-                    lightColor = Color.valueOf("7457ce");
+//                    lightColor = Color.valueOf("7457ce");
                     collidesGround = true;
                     collidesAir = true;
                 }},
@@ -94,7 +94,7 @@ public class JPTurret{
                     statusDuration = 60f * 5;
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
-                    lightColor = Color.valueOf("8B73C7");
+//                    lightColor = Color.valueOf("8B73C7");
                     ammoMultiplier = 1f;
                     collidesGround = true;
                     collidesAir = true;
@@ -105,20 +105,20 @@ public class JPTurret{
                         statusDuration = 60f * 7;
                         backColor = Color.valueOf("8B73C7");
                         frontColor = Color.valueOf("8B73C7");
-                        lightColor = Color.valueOf("8B73C7");
+//                        lightColor = Color.valueOf("8B73C7");
                         despawnEffect = Fx.none;
                         collidesGround = true;
                         collidesAir = true;
                     }};
                 }},
-                JPItem.VCA, new BasicBulletType(5f, 25f){{
+                JPItem.VCA, new BasicBulletType(5f, 95f){{
                     height = width = 10f;
                     lifetime = 50f;
                     status = JPStatus.stunned;
                     statusDuration = 60f * 15;
                     backColor = Color.valueOf("303a45");
                     frontColor = Color.valueOf("303a45");
-                    lightColor = Color.valueOf("303a45");
+//                    lightColor = Color.valueOf("303a45");
                     ammoMultiplier = 1f;
                     collidesGround = true;
                     collidesAir = true;
@@ -305,7 +305,7 @@ public class JPTurret{
                     speed = 8f;
                     backColor = Color.valueOf("7457ce");
                     frontColor = Color.valueOf("7457ce");
-                    lightColor = Color.valueOf("7457ce");
+//                    lightColor = Color.valueOf("7457ce");
                     width = height = 15f;
                     ammoMultiplier = 4f;
                     shootEffect = Fx.shootSmall;
@@ -318,7 +318,7 @@ public class JPTurret{
                     speed = 4f;
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
-                    lightColor = Color.valueOf("8B73C7");
+//                    lightColor = Color.valueOf("8B73C7");
                     ammoMultiplier = 1f;
                     width = height = 15f;
                     shootEffect = Fx.shootSmall;
@@ -355,7 +355,7 @@ public class JPTurret{
                     reloadMultiplier = 0.3f;
                     backColor = Color.valueOf("7457ce");
                     frontColor = Color.valueOf("7457ce");
-                    lightColor = Color.valueOf("7457ce");
+//                    lightColor = Color.valueOf("7457ce");
                     width = height = 15f;
                     shootEffect = Fx.shootSmall;
                     smokeEffect = Fx.shootSmallSmoke;
@@ -369,7 +369,7 @@ public class JPTurret{
                         splashDamageRadius = 40f;
                         backColor = Color.valueOf("7457ce");
                         frontColor = Color.valueOf("7457ce");
-                        lightColor = Color.valueOf("7457ce");
+//                        lightColor = Color.valueOf("7457ce");
                         lifetime = 30f;
                         collidesGround = true;
                         collidesAir = true;
@@ -438,6 +438,9 @@ public class JPTurret{
             inaccuracy = 2f;
             ammo(
                 JPItem.Biomass, new PointBulletType(){{
+                    speed = 500f;
+                    damage = 2000f;
+                    buildingDamageMultiplier = 0.25f;
                     shootEffect = JPFx.fsinsShoot;
                     hitEffect = JPFx.fsinsHit;
                     smokeEffect = Fx.smokeCloud;
@@ -445,14 +448,15 @@ public class JPTurret{
                     despawnEffect =  JPFx.fsinsBomb;
                     trailLength = 20;
                     trailColor = Color.valueOf("8B73C7");
-                    damage = 2000f;
-                    buildingDamageMultiplier = 0.25f;
-                    speed = 500f;
                     ammoMultiplier = 1f;
                     pierceArmor = true;
                     hitShake = 6f;
             }},
                 JPItem.VCA, new PointBulletType(){{
+                    speed = 500f;
+                    damage = 8000f;
+                    reloadMultiplier = 0.5f;
+                    buildingDamageMultiplier = 0.25f;
                     shootEffect = JPFx.fsinsShoot;
                     hitEffect = JPFx.fsinsHit;
                     smokeEffect = Fx.smokeCloud;
@@ -460,14 +464,10 @@ public class JPTurret{
                     despawnEffect =  JPFx.fsinsBomb;
                     trailLength = 20;
                     trailColor = Color.valueOf("303a45");
-                    damage = 8000f;
-                    reloadMultiplier = 0.5f;
-                    buildingDamageMultiplier = 0.25f;
-                    speed = 500f;
-                    ammoMultiplier = 2f;
+                    ammoMultiplier = 1f;
                     pierceArmor = true;
                     hitShake = 6f;
-                }});
+            }});
             rotateSpeed = 2.5f;
             coolantMultiplier = 0.2f;
             coolant = consumeCoolant(2f);
