@@ -25,7 +25,7 @@ public class JPStatus {
             disarm = true;
         }};
         stunned = new StatusEffect("stunned"){{
-            speedMultiplier = -1f;
+            speedMultiplier = 0f;
             disarm = true;
         }};
         hellspawn = new StatusEffect("hellspawn"){{
