@@ -116,7 +116,7 @@ public class JPTurret{
                     height = width = 10f;
                     lifetime = 50f;
                     status = JPStatus.stunned;
-                    statusDuration = 60f * 15;
+                    statusDuration = 60f * 2f;
                     backColor = Color.valueOf("303a45");
 //                    frontColor = Color.valueOf("303a45");
 //                    lightColor = Color.valueOf("303a45");
