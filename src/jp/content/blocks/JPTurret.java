@@ -111,7 +111,7 @@ public class JPTurret{
                         collidesAir = true;
                     }};
                 }},
-                JPItem.VCA, new BasicBulletType(5f, 25f){{
+                JPItem.VCA, new BasicBulletType(5f, 95f){{
                     reloadMultiplier = 0.5f;
                     height = width = 10f;
                     lifetime = 50f;
