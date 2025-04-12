@@ -1263,7 +1263,6 @@ public class JPUnits {
                     shoot.shots = 3;
                     shoot.shotDelay = 10f;
                     recoil = 8;
-                    shootOnDeath = true;
                     bullet = new LaserBulletType(75f){{
                         colors = new Color[]{Color.valueOf("8B73C7").cpy().a(0.4f), Color.valueOf("8B73C7"), Color.white};
 //                        chargeEffect = new MultiEffect(Fx.lancerLaserCharge, Fx.lancerLaserChargeBegin);
