@@ -21,6 +21,7 @@ public class JPELF extends GenericCrafter {
     public boolean explodeOnFull = false;
     public float baseLightRadius = 65f;
     public @Nullable Liquid explosionPuddleLiquid;
+    public float updateEffectSpread = 4f;
 
     public JPELF(String name) {
         super(name);
@@ -40,11 +41,40 @@ public class JPELF extends GenericCrafter {
     public class JPELFBuild extends GenericCrafterBuild {
 
         @Override
-        public void updateTile() {
-            if (explodeOnFull && liquids.get(outputLiquid.liquid) >= liquidCapacity - 0.01f) {
-                kill();
-                Events.fire(new GeneratorPressureExplodeEvent(this));
+        public void updateTile(){
+            if(efficiency > 0){
+
+                if (explodeOnFull && liquids.get(outputLiquid.liquid) >= liquidCapacity - 0.01f) {
+                    kill();
+                    Events.fire(new GeneratorPressureExplodeEvent(this));
+                }
+
+                progress += getProgressIncrease(craftTime);
+                warmup = Mathf.approachDelta(warmup, warmupTarget(), warmupSpeed);
+
+                //continuously output based on efficiency
+                if(outputLiquids != null){
+                    float inc = getProgressIncrease(1f);
+                    for(var output : outputLiquids){
+                        handleLiquid(this, output.liquid, Math.min(output.amount * inc, liquidCapacity - liquids.get(output.liquid)));
+                    }
+                }
+
+                if(wasVisible && Mathf.chanceDelta(updateEffectChance)){
+                    updateEffect.at(x + Mathf.range(size * updateEffectSpread), y + Mathf.range(size * updateEffectSpread));
+                }
+            }else{
+                warmup = Mathf.approachDelta(warmup, 0f, warmupSpeed);
             }
+
+
+            totalProgress += warmup * Time.delta;
+
+            if(progress >= 1f){
+                craft();
+            }
+
+            dumpOutputs();
         }
     }
 }

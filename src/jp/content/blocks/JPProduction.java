@@ -174,8 +174,7 @@ public class JPProduction{
             hasLiquids = true;
             consumePower(25f);
             consumeItem(JPItem.Neocells, 1);
-            consumeItems(with(JPItem.Vanadium, 4,JPItem.Zinc, 2));
-            outputLiquid = new LiquidStack(Liquids.cyanogen, 6f / 60f);
+            outputLiquid = new LiquidStack(Liquids.neoplasm, 6f / 60f);
         }};
 
         Masscultivator = new GenericCrafter("Masscultivator"){{
