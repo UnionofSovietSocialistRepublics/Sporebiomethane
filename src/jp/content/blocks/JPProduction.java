@@ -12,6 +12,7 @@ import mindustry.world.draw.*;
 import jp.content.*;
 import mindustry.content.*;
 
+
 import static mindustry.content.UnitTypes.block;
 import static mindustry.type.ItemStack.*;
 import static mindustry.content.Items.*;
@@ -161,18 +162,18 @@ public class JPProduction{
             consumeLiquid(Liquids.neoplasm, 6f / 60f);
         }};
 
-        Packageopener = new GenericCrafter("Package-opener"){{
+        Packageopener = new JPELF("Package-opener"){{
             requirements(Category.crafting, with(JPItem.Biomass, 650,JPItem.Nanitealloy, 450,JPItem.Carbinecomposite, 450));
             health = 2400;
             size = 3;
             craftEffect = Fx.pulverizeMedium;
-            inputItem = new ItemStack(JPItem.Neocells, 1);
+            
             craftTime = 60f;
             hasItems = true;
             hasPower = true;
             hasLiquids = true;
-            explodeOnFull = true;
             consumePower(25f);
+            consumeItem(JPItem.Neocells, 1);
             consumeItems(with(JPItem.Vanadium, 4,JPItem.Zinc, 2));
             outputLiquid = new LiquidStack(Liquids.cyanogen, 6f / 60f);
         }};
