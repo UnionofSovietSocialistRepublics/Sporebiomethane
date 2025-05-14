@@ -1,13 +1,12 @@
 package jp.content;
 
-import arc.*;
-import arc.math.*;
-import mindustry.graphics.*;
-import mindustry.ui.*;
-import mindustry.world.blocks.heat.*;
-import mindustry.world.meta.*;
+import mindustry.world.blocks.production.*;
 
-/** Factory with explodeOnFull because anuke havent add explodeonfull to factories yet */
+/** Factory with explodeOnFull because Anuke haven't added explodeonfull to factories yet */
 public class JPELF extends GenericCrafter{
     public boolean explodeOnFull = false;
+
+    public JPELF(String name) {
+        super(name);
+    }
 }
