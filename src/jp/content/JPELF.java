@@ -1,4 +1,4 @@
-package mindustry.world.blocks.power;
+package jp.content;
 
 import arc.*;
 import arc.graphics.*;
