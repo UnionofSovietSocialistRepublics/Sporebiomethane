@@ -43,12 +43,6 @@ public class JPELF extends GenericCrafter {
         @Override
         public void updateTile(){
             if(efficiency > 0){
-
-                if (explodeOnFull && liquids.get(outputLiquid.liquid) >= liquidCapacity - 0.01f) {
-                    kill();
-                    Events.fire(new GeneratorPressureExplodeEvent(this));
-                }
-
                 progress += getProgressIncrease(craftTime);
                 warmup = Mathf.approachDelta(warmup, warmupTarget(), warmupSpeed);
 
@@ -57,6 +51,10 @@ public class JPELF extends GenericCrafter {
                     float inc = getProgressIncrease(1f);
                     for(var output : outputLiquids){
                         handleLiquid(this, output.liquid, Math.min(output.amount * inc, liquidCapacity - liquids.get(output.liquid)));
+                    }
+                    if (explodeOnFull && liquids.get(outputLiquid.liquid) >= liquidCapacity - 0.01f) {
+                        kill();
+                        Events.fire(new GeneratorPressureExplodeEvent(this));
                     }
                 }
 
