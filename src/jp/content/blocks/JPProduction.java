@@ -161,6 +161,22 @@ public class JPProduction{
             consumeLiquid(Liquids.neoplasm, 6f / 60f);
         }};
 
+        PackageOpener = new GenericCrafter("PackageOpener"){{
+            requirements(Category.crafting, with(JPItem.Biomass, 650,JPItem.Nanitealloy, 450,JPItem.Carbinecomposite, 450));
+            health = 2400;
+            size = 3;
+            craftEffect = Fx.pulverizeMedium;
+            inputItem = new ItemStack(JPItem.Neocells, 1);
+            craftTime = 60f;
+            hasItems = true;
+            hasPower = true;
+            hasLiquids = true;
+            explodeOnFull = true;
+            consumePower(25f);
+            consumeItems(with(JPItem.Vanadium, 4,JPItem.Zinc, 2));
+            outputLiquid = new LiquidStack(Liquids.cyanogen, 6f / 60f);
+        }};
+
         Masscultivator = new GenericCrafter("Masscultivator"){{
             requirements(Category.production, with(silicon, 650,JPItem.Biomass, 250,thorium, 450));
             health = 750;
