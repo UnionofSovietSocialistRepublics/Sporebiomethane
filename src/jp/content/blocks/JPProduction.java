@@ -21,7 +21,7 @@ public class JPProduction{
     public static Block
         Extractor,ZincExtractor,
         Masscultivator,
-        Nanoprocessor,Naniteinfuser,CCB,FR,Gaschamber,BioSynthesizer,Vanadicarbide,Neostabilizer,
+        Nanoprocessor,Naniteinfuser,CCB,FR,Gaschamber,BioSynthesizer,Vanadicarbide,Neostabilizer,Packageopener,
         Biomassreactor,Neocell,Lotus,Oilburner,Voltaicburner;
 
         public static void load(){
@@ -161,7 +161,7 @@ public class JPProduction{
             consumeLiquid(Liquids.neoplasm, 6f / 60f);
         }};
 
-        PackageOpener = new GenericCrafter("PackageOpener"){{
+        Packageopener = new GenericCrafter("Package-opener"){{
             requirements(Category.crafting, with(JPItem.Biomass, 650,JPItem.Nanitealloy, 450,JPItem.Carbinecomposite, 450));
             health = 2400;
             size = 3;
