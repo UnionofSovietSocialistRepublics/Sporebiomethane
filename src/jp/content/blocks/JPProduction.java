@@ -14,6 +14,7 @@ import jp.content.*;
 import mindustry.content.*;
 
 
+import static mindustry.Vars.tilesize;
 import static mindustry.content.UnitTypes.block;
 import static mindustry.type.ItemStack.*;
 import static mindustry.content.Items.*;
@@ -175,7 +176,9 @@ public class JPProduction{
             consumePower(25f);
             consumeItem(JPItem.Neocells, 1);
             outputLiquid = new LiquidStack(Liquids.neoplasm, 6f / 60f);
-            drawer = new DrawMulti(new DrawRegion("-bottom"), new DrawAdvancedPistons(){{
+            drawer = new DrawMulti(new DrawRegion("-bottom"),
+            new DrawLiquidTile(Liquids.neoplasm),
+            new DrawAdvancedPistons(){{
                 suffix = "-p";
                 sinMag = 2f;
                 sinScl = 10f;
@@ -193,6 +196,15 @@ public class JPProduction{
                 spinSprite = true;
                 rotateSpeed = 2f;
             }});
+            ambientSound = Sounds.bioLoop;
+            ambientSoundVolume = 0.2f;
+
+            explosionPuddles = 80;
+            explosionPuddleRange = tilesize * 7f;
+            explosionPuddleLiquid = Liquids.neoplasm;
+            explosionPuddleAmount = 200f;
+            explosionMinWarmup = 0.5f;
+
         }};
 
         Masscultivator = new GenericCrafter("Masscultivator"){{
@@ -206,10 +218,10 @@ public class JPProduction{
             hasPower = true;
             hasLiquids = true;
             drawer = new DrawMulti(
-            new DrawRegion("-bottom"), 
-            new DrawLiquidTile(Liquids.water), 
-            new DrawDefault(),
+            new DrawLiquidTile(Liquids.water),
+            new DrawRegion("-bottom"),
             new DrawCultivator(),
+            new DrawDefault(),
             new DrawRegion("-top")
             );
             consumePower(10f);
