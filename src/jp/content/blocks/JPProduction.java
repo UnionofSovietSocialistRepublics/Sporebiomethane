@@ -166,7 +166,7 @@ public class JPProduction{
         packageOpener = new JPELF("package-opener"){{
             requirements(Category.crafting, with(JPItem.Biomass, 650,JPItem.Nanitealloy, 450,JPItem.Carbinecomposite, 450));
             health = 2400;
-            size = 3;
+            size = 4;
             craftEffect = Fx.pulverizeMedium;
             craftTime = 60f;
             hasItems = true;
