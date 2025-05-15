@@ -180,6 +180,9 @@ public class JPProduction{
             consumeItem(JPItem.Neocells, 1);
             outputLiquid = new LiquidStack(Liquids.neoplasm, 6f / 60f);
             drawer = new DrawMulti(new DrawRegion("-bottom"),
+            new DrawLiquidRegion(Liquids.neoplasm){{
+                suffix = "-bottom";
+            }},
             new DrawAdvancedPistons(){{
                 suffix = "-p";
                 sinMag = 2f;
@@ -194,9 +197,6 @@ public class JPProduction{
                 sideOffset = Mathf.PI / 2f;
             }},
             new DrawDefault(),
-            new DrawLiquidRegion(Liquids.neoplasm){{
-                suffix = "-bottom";
-            }},
             new DrawRegion("-rotor"){{
                 spinSprite = true;
                 rotateSpeed = 2f;
