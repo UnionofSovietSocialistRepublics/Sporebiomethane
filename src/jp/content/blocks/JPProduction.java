@@ -2,6 +2,7 @@ package jp.content.blocks;
 
 import arc.Core;
 import arc.graphics.*;
+import arc.math.Mathf;
 import mindustry.gen.*;
 import mindustry.type.*;
 import mindustry.world.*;
@@ -22,7 +23,7 @@ public class JPProduction{
     public static Block
         Extractor,ZincExtractor,
         Masscultivator,
-        Nanoprocessor,Naniteinfuser,CCB,FR,Gaschamber,BioSynthesizer,Vanadicarbide,Neostabilizer,Packageopener,
+        Nanoprocessor,Naniteinfuser,CCB,FR,Gaschamber,BioSynthesizer,Vanadicarbide,Neostabilizer,packageOpener,
         Biomassreactor,Neocell,Lotus,Oilburner,Voltaicburner;
 
         public static void load(){
@@ -162,12 +163,11 @@ public class JPProduction{
             consumeLiquid(Liquids.neoplasm, 6f / 60f);
         }};
 
-        Packageopener = new JPELF("Package-opener"){{
+        packageOpener = new JPELF("package-opener"){{
             requirements(Category.crafting, with(JPItem.Biomass, 650,JPItem.Nanitealloy, 450,JPItem.Carbinecomposite, 450));
             health = 2400;
             size = 3;
             craftEffect = Fx.pulverizeMedium;
-            
             craftTime = 60f;
             hasItems = true;
             hasPower = true;
@@ -175,6 +175,13 @@ public class JPProduction{
             consumePower(25f);
             consumeItem(JPItem.Neocells, 1);
             outputLiquid = new LiquidStack(Liquids.neoplasm, 6f / 60f);
+            drawer = new DrawMulti(new DrawRegion("-bottom"), new DrawPistons(){{
+                suffix = "-p";
+                sinMag = 2.75f;
+                sinScl = 5f;
+                sides = 4;
+                sideOffset = Mathf.PI / 2f;
+            }});
         }};
 
         Masscultivator = new GenericCrafter("Masscultivator"){{
