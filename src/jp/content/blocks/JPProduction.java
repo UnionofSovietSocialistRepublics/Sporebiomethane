@@ -171,10 +171,11 @@ public class JPProduction{
             health = 2400;
             size = 4;
             craftEffect = Fx.pulverizeMedium;
-            craftTime = 60f;
+            craftTime = 55f;
             hasItems = true;
             hasPower = true;
             hasLiquids = true;
+            liquidCapacity = 300f;
             consumePower(25f);
             consumeItem(JPItem.Neocells, 1);
             outputLiquid = new LiquidStack(Liquids.neoplasm, 6f / 60f);
@@ -226,6 +227,7 @@ public class JPProduction{
             itemCapacity = 50;
             hasPower = true;
             hasLiquids = true;
+            liquidCapacity = 300f;
             drawer = new DrawMulti(
             new DrawRegion("-bottom"),
             new DrawLiquidRegion(Liquids.water){{
