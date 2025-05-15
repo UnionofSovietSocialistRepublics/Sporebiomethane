@@ -181,7 +181,6 @@ public class JPProduction{
             outputLiquid = new LiquidStack(Liquids.neoplasm, 6f / 60f);
             drawer = new DrawMulti(new DrawRegion("-bottom"),
             new DrawLiquidRegion(Liquids.neoplasm){{
-                suffix = "-bottom";
                 drawLiquidLight = true;
             }},
             new DrawAdvancedPistons(){{
