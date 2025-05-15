@@ -3,6 +3,8 @@ package jp.content.blocks;
 import arc.Core;
 import arc.graphics.*;
 import arc.math.Mathf;
+import mindustry.entities.effect.MultiEffect;
+import mindustry.entities.effect.WrapEffect;
 import mindustry.gen.*;
 import mindustry.type.*;
 import mindustry.world.*;
@@ -177,7 +179,9 @@ public class JPProduction{
             consumeItem(JPItem.Neocells, 1);
             outputLiquid = new LiquidStack(Liquids.neoplasm, 6f / 60f);
             drawer = new DrawMulti(new DrawRegion("-bottom"),
-            new DrawLiquidTile(Liquids.neoplasm),
+            new DrawLiquidRegion(Liquids.neoplasm){{
+                suffix = "-bottom";
+            }},
             new DrawAdvancedPistons(){{
                 suffix = "-p";
                 sinMag = 2f;
@@ -199,10 +203,15 @@ public class JPProduction{
             ambientSound = Sounds.bioLoop;
             ambientSoundVolume = 0.2f;
 
-            explosionPuddles = 80;
-            explosionPuddleRange = tilesize * 7f;
+
+            explosionRadius = 5;
+            explosionDamage = 500;
+            explodeEffect = new MultiEffect(Fx.bigShockwave, new WrapEffect(Fx.titanSmoke, Liquids.neoplasm.color), Fx.neoplasmSplat);
+            explodeSound = Sounds.largeExplosion;
+            explosionPuddles = 40;
+            explosionPuddleRange = tilesize * 3f;
             explosionPuddleLiquid = Liquids.neoplasm;
-            explosionPuddleAmount = 200f;
+            explosionPuddleAmount = 60f;
             explosionMinWarmup = 0.5f;
 
         }};
@@ -218,8 +227,10 @@ public class JPProduction{
             hasPower = true;
             hasLiquids = true;
             drawer = new DrawMulti(
-            new DrawLiquidTile(Liquids.water),
             new DrawRegion("-bottom"),
+            new DrawLiquidRegion(Liquids.water){{
+                suffix = "-bottom";
+            }},
             new DrawCultivator(),
             new DrawDefault(),
             new DrawRegion("-top")
