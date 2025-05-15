@@ -175,13 +175,14 @@ public class JPProduction{
             consumePower(25f);
             consumeItem(JPItem.Neocells, 1);
             outputLiquid = new LiquidStack(Liquids.neoplasm, 6f / 60f);
-            drawer = new DrawMulti(new DrawRegion("-bottom"), new DrawPistons(){{
+            drawer = new DrawMulti(new DrawRegion("-bottom"), new DrawAdvancedPistons(){{
                 suffix = "-p";
                 sinMag = 2.75f;
                 sinScl = 5f;
                 sides = 4;
                 sideOffset = Mathf.PI / 2f;
-            }});
+            }},
+            new DrawDefault());
         }};
 
         Masscultivator = new GenericCrafter("Masscultivator"){{
