@@ -177,9 +177,9 @@ public class JPProduction{
             outputLiquid = new LiquidStack(Liquids.neoplasm, 6f / 60f);
             drawer = new DrawMulti(new DrawRegion("-bottom"), new DrawAdvancedPistons(){{
                 suffix = "-p";
-//                sinMag = 2f;
-//                sinScl = 10f;
-//                sideOffset = Mathf.pi * 2;
+                sinMag = 2f;
+                sinScl = 10f;
+                sideOffset = Mathf.pi * 2;
             }},
             new DrawDefault());
         }};
