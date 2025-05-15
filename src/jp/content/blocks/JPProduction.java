@@ -179,10 +179,8 @@ public class JPProduction{
             consumePower(25f);
             consumeItem(JPItem.Neocells, 1);
             outputLiquid = new LiquidStack(Liquids.neoplasm, 6f / 60f);
-            drawer = new DrawMulti(new DrawRegion("-bottom"),
-            new DrawLiquidRegion(Liquids.neoplasm){{
-                drawLiquidLight = true;
-            }},
+            drawer = new DrawMulti(new DrawRegion("-bottom"),new DrawRegion("-liquid"),
+            new DrawLiquidRegion(Liquids.neoplasm),
             new DrawAdvancedPistons(){{
                 suffix = "-p";
                 sinMag = 2f;
