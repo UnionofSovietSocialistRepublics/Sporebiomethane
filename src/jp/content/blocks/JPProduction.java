@@ -181,6 +181,17 @@ public class JPProduction{
                 sinScl = 10f;
                 sideOffset = Mathf.pi * 2;
             }},
+            new DrawPistons(){{
+                suffix = "-ep";
+                sinMag = 2.75f;
+                sinScl = 5f;
+                sides = 4;
+                sideOffset = Mathf.PI / 2f;
+            }},
+            new DrawRegion("-rotor"){{
+                spinSprite = true;
+                rotateSpeed = 2f;
+            }},
             new DrawDefault());
         }};
 
