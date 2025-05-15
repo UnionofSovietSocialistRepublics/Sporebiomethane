@@ -182,6 +182,7 @@ public class JPProduction{
             drawer = new DrawMulti(new DrawRegion("-bottom"),
             new DrawLiquidRegion(Liquids.neoplasm){{
                 suffix = "-bottom";
+                drawLiquidLight = true;
             }},
             new DrawAdvancedPistons(){{
                 suffix = "-p";
