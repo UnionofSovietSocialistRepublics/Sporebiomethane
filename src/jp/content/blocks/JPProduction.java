@@ -188,11 +188,11 @@ public class JPProduction{
                 sides = 4;
                 sideOffset = Mathf.PI / 2f;
             }},
+            new DrawDefault(),
             new DrawRegion("-rotor"){{
                 spinSprite = true;
                 rotateSpeed = 2f;
-            }},
-            new DrawDefault());
+            }});
         }};
 
         Masscultivator = new GenericCrafter("Masscultivator"){{
