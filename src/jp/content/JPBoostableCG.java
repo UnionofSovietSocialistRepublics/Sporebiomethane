@@ -1,5 +1,6 @@
 package jp.content;
 
+import arc.math.Mathf;
 import mindustry.world.blocks.power.*;
 import mindustry.world.consumers.*;
 import mindustry.world.meta.*;
@@ -31,10 +32,10 @@ public class JPBoostableCG extends ConsumeGenerator {
 
     public class JPBoostableCGBuild extends ConsumeGeneratorBuild{
 
-//        @Override
-//        public void updateEfficiencyMultiplier(){
-//            efficiencyMultiplier = 1f * liquidBoostIntensity;
-//        }
+        @Override
+        public void updateEfficiencyMultiplier(){
+            efficiencyMultiplier = Mathf.lerp(1f, liquidBoostIntensity, optionalEfficiency) * efficiency;
+        }
 
         }
     }
