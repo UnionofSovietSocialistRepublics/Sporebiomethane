@@ -166,55 +166,6 @@ public class JPProduction{
             consumeLiquid(Liquids.neoplasm, 6f / 60f);
         }};
 
-        packageOpener = new JPELF("package-opener"){{
-            requirements(Category.crafting, with(JPItem.Biomass, 650,JPItem.Nanitealloy, 450,JPItem.Carbinecomposite, 450));
-            health = 2400;
-            size = 4;
-            craftEffect = Fx.pulverizeMedium;
-            craftTime = 55f;
-            hasItems = true;
-            hasPower = true;
-            hasLiquids = true;
-            liquidCapacity = 300f;
-            consumePower(25f);
-            consumeItem(JPItem.Neocells, 1);
-            outputLiquid = new LiquidStack(Liquids.neoplasm, 6f / 60f);
-            drawer = new DrawMulti(new DrawRegion("-bottom"),
-            new DrawLiquidRegion(Liquids.neoplasm),
-            new DrawAdvancedPistons(){{
-                suffix = "-p";
-                sinMag = 2f;
-                sinScl = 10f;
-                sideOffset = Mathf.pi * 2;
-            }},
-            new DrawPistons(){{
-                suffix = "-ep";
-                sinMag = 2.75f;
-                sinScl = 5f;
-                sides = 4;
-                sideOffset = Mathf.PI / 2f;
-            }},
-            new DrawDefault(),
-            new DrawRegion("-rotor"){{
-                spinSprite = true;
-                rotateSpeed = 2f;
-            }});
-            ambientSound = Sounds.bioLoop;
-            ambientSoundVolume = 0.2f;
-
-
-            explosionRadius = 5;
-            explosionDamage = 500;
-            explodeEffect = new MultiEffect(Fx.bigShockwave, new WrapEffect(Fx.titanSmoke, Liquids.neoplasm.color), Fx.neoplasmSplat);
-            explodeSound = Sounds.largeExplosion;
-            explosionPuddles = 40;
-            explosionPuddleRange = tilesize * 3f;
-            explosionPuddleLiquid = Liquids.neoplasm;
-            explosionPuddleAmount = 60f;
-            explosionMinWarmup = 0.5f;
-
-        }};
-
         Masscultivator = new GenericCrafter("Masscultivator"){{
             requirements(Category.production, with(silicon, 650,JPItem.Biomass, 250,thorium, 450));
             health = 750;
@@ -237,6 +188,55 @@ public class JPProduction{
             );
             consumePower(10f);
             consumeLiquid(Liquids.water, 18f / 60f);
+        }};
+
+        packageOpener = new JPELF("package-opener"){{
+            requirements(Category.crafting, with(JPItem.Biomass, 650,JPItem.Nanitealloy, 450,JPItem.Carbinecomposite, 450));
+            health = 2400;
+            size = 4;
+            craftEffect = Fx.pulverizeMedium;
+            craftTime = 55f;
+            hasItems = true;
+            hasPower = true;
+            hasLiquids = true;
+            liquidCapacity = 300f;
+            consumePower(25f);
+            consumeItem(JPItem.Neocells, 1);
+            outputLiquid = new LiquidStack(Liquids.neoplasm, 6f / 60f);
+            drawer = new DrawMulti(new DrawRegion("-bottom"),
+                    new DrawLiquidRegion(Liquids.neoplasm),
+                    new DrawAdvancedPistons(){{
+                        suffix = "-p";
+                        sinMag = 2f;
+                        sinScl = 10f;
+                        sideOffset = Mathf.pi * 2;
+                    }},
+                    new DrawPistons(){{
+                        suffix = "-ep";
+                        sinMag = 2.75f;
+                        sinScl = 5f;
+                        sides = 4;
+                        sideOffset = Mathf.PI / 2f;
+                    }},
+                    new DrawDefault(),
+                    new DrawRegion("-rotor"){{
+                        spinSprite = true;
+                        rotateSpeed = 2f;
+                    }});
+            ambientSound = Sounds.bioLoop;
+            ambientSoundVolume = 0.2f;
+
+
+            explosionRadius = 5;
+            explosionDamage = 500;
+            explodeEffect = new MultiEffect(Fx.bigShockwave, new WrapEffect(Fx.titanSmoke, Liquids.neoplasm.color), Fx.neoplasmSplat);
+            explodeSound = Sounds.largeExplosion;
+            explosionPuddles = 40;
+            explosionPuddleRange = tilesize * 3f;
+            explosionPuddleLiquid = Liquids.neoplasm;
+            explosionPuddleAmount = 60f;
+            explosionMinWarmup = 0.5f;
+
         }};
 
         ZincExtractor = new GenericCrafter("ZincExtractor"){{
@@ -300,13 +300,16 @@ public class JPProduction{
             
         }};
 
-        Neocell = new ConsumeGenerator("Neocell-generator"){{
+        Neocell = new JPBoostableCG("Neocell-generator"){{
             requirements(Category.power, with(silicon, 225,JPItem.Vanadium, 75,JPItem.Neocells, 95));
             health = 650;
             size = 2;
             powerProduction = 11.5f;
             itemDuration = 275f;
             consumeItem(JPItem.Neocells);
+            //troll emoji
+            liquidBoostIntensity = 3f;
+            consumeLiquid(Liquids.neoplasm, 18f / 60f).boost();
 
             drawer = new DrawMulti(new DrawDefault(), new DrawWarmupRegion(){{
                 color = Color.valueOf("9e3736");
