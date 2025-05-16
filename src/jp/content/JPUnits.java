@@ -23,7 +23,7 @@ import mindustry.world.meta.*;
 public class JPUnits {
     public static UnitType
     //Legs
-    Carci,Imp, Basilisk, Autus, Baneling, Zergling, Behomoth, Lobber, Breacher, Scarabid, Frost, Roach, Purger, Gorgon, Raptor, FrostC, Demolisher,
+    carci,Imp, Basilisk, autus, baneling, zergling, Behomoth, Lobber, Breacher, Scarabid, Frost, Roach, Purger, Gorgon, raptor, FrostC, Demolisher,
     //missiles
     //Bomb,
     //Floaty
@@ -110,7 +110,7 @@ public class JPUnits {
             outlineColor = Color.valueOf("303a45");
         }};
 
-        Zergling = new UnitType("Zergling"){{
+        zergling = new UnitType("zergling"){{
             this.constructor = LegsUnit::create;
             speed = 1.45f;
             hitSize = 8f;
@@ -174,7 +174,7 @@ public class JPUnits {
             abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f * 2f) * 100f;}});
         }};
 
-        Raptor = new UnitType("Raptor"){{
+        raptor = new UnitType("raptor"){{
             this.constructor = LegsUnit::create;
             speed = 2f;
             armor = 2f;
@@ -236,7 +236,7 @@ public class JPUnits {
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
             }};
 
-        Baneling = new UnitType("Baneling"){{
+        baneling = new UnitType("baneling"){{
             this.constructor = LegsUnit::create;
             speed = 1.25f;
             hitSize = 8f;
@@ -1134,7 +1134,7 @@ public class JPUnits {
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm; amount = 75f;}});
         }};
 
-        Carci = new UnitType("Carci"){{
+        carci = new UnitType("carci"){{
             this.constructor = LegsUnit::create;
             speed = 0.65f;
             targetAir = false;
@@ -1174,7 +1174,7 @@ public class JPUnits {
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};
 
-        Autus = new UnitType("Autus"){{
+        autus = new UnitType("autus"){{
             this.constructor = LegsUnit::create;
             speed = 0.75f;
             hitSize = 12f;
@@ -2025,7 +2025,7 @@ public class JPUnits {
                             sprite = "jp-Target";
                             fragBullets = 1;
                             fragBullet = new BasicBulletType(0,0){{
-                                spawnUnit = JPUnits.Autus;
+                                spawnUnit = JPUnits.autus;
                             }};
                         }};
                     }};

@@ -26,7 +26,7 @@ public class JPProduction{
     public static Block
         Extractor,ZincExtractor,
         Masscultivator,
-        Nanoprocessor,Naniteinfuser,CCB,FR,Gaschamber,BioSynthesizer,Vanadicarbide,Neostabilizer,packageOpener,
+        Nanoprocessor,Naniteinfuser,CCB,FR,Gaschamber,BioSynthesizer,Vanadicarbide,neostabilizer,packageOpener,
         Biomassreactor,Neocell,Lotus,Oilburner,Voltaicburner;
 
         public static void load(){
@@ -150,13 +150,13 @@ public class JPProduction{
             consumeItems(with(JPItem.Biomass, 3,silicon, 2,graphite, 2));
         }};
 
-        Neostabilizer = new GenericCrafter("Neostabilizer"){{
+        neostabilizer = new GenericCrafter("neostabilizer"){{
             requirements(Category.crafting, with(JPItem.Biomass, 650,JPItem.Nanitealloy, 450,JPItem.Carbinecomposite, 450));
             health = 1000;
             size = 3;
             craftEffect = Fx.pulverizeMedium;
             outputItem = new ItemStack(JPItem.Neocells, 1);
-            craftTime = 60f;
+            craftTime = 45f;
             hasItems = true;
             hasPower = true;
             hasLiquids = true;
