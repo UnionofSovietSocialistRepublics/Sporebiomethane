@@ -4,7 +4,6 @@ import mindustry.world.blocks.power.*;
 import mindustry.world.consumers.*;
 import mindustry.world.meta.*;
 
-
 public class JPBoostableCG extends ConsumeGenerator {
 
     public float useTime = 400f;
@@ -20,12 +19,12 @@ public class JPBoostableCG extends ConsumeGenerator {
         stats.timePeriod = useTime;
 
 
-        if(liquidBoostIntensity != 1 && findConsumer(f -> f instanceof ConsumeLiquidBase && f.booster) instanceof ConsumeLiquidBase consBase){
+        if(liquidBoostIntensity != 1 && findConsumer(f -> f instanceof ConsumeLiquidBase && f.booster) instanceof JPConsumeLiquidBase consBase){
             stats.remove(Stat.booster);
             stats.add(Stat.booster,
                     StatValues.speedBoosters("{0}" + StatUnit.timesSpeed.localized(),
                             consBase.amount,
-                            liquidBoostIntensity * liquidBoostIntensity, false, consBase::consumes)
+                            liquidBoostIntensity, false, consBase::consumes)
             );
         }
     }
