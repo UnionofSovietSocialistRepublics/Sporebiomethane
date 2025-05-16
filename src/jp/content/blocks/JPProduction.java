@@ -192,15 +192,15 @@ public class JPProduction{
 
         packageOpener = new JPELF("package-opener"){{
             requirements(Category.crafting, with(JPItem.Biomass, 650,JPItem.Nanitealloy, 450,JPItem.Carbinecomposite, 450));
-            health = 2400;
+            health = 1150;
             size = 4;
             craftEffect = Fx.pulverizeMedium;
-            craftTime = 55f;
+            craftTime = 60f;
             hasItems = true;
             hasPower = true;
             hasLiquids = true;
-            liquidCapacity = 300f;
-            consumePower(25f);
+            liquidCapacity = 200f;
+            consumePower(5f);
             consumeItem(JPItem.Neocells, 1);
             outputLiquid = new LiquidStack(Liquids.neoplasm, 6f / 60f);
             drawer = new DrawMulti(new DrawRegion("-bottom"),
@@ -227,8 +227,8 @@ public class JPProduction{
             ambientSoundVolume = 0.2f;
 
 
-            explosionRadius = 5;
-            explosionDamage = 500;
+            explosionRadius = 7;
+            explosionDamage = 1500;
             explodeEffect = new MultiEffect(Fx.bigShockwave, new WrapEffect(Fx.titanSmoke, Liquids.neoplasm.color), Fx.neoplasmSplat);
             explodeSound = Sounds.largeExplosion;
             explosionPuddles = 40;

@@ -69,6 +69,17 @@ public class JPELF extends GenericCrafter {
     public class JPELFBuild extends GenericCrafterBuild {
 
         @Override
+        public void draw(){
+            drawer.draw(this);
+        }
+
+        @Override
+        public void drawLight(){
+            super.drawLight();
+            drawer.drawLight(this);
+        }
+
+        @Override
         public void updateTile(){
             if(efficiency > 0){
                 progress += getProgressIncrease(craftTime);
