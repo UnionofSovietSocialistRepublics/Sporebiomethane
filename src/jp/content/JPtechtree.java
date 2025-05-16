@@ -42,7 +42,7 @@ public class JPtechtree {
                 node(JPProduction.BioSynthesizer, () -> {
                     node(JPProduction.Naniteinfuser, () -> {
                         node(JPProduction.CCB, () -> {
-                            node(JPProduction.Neostabilizer);
+                            node(JPProduction.neostabilizer);
                         });
                     });
                 });
@@ -131,7 +131,7 @@ public class JPtechtree {
                 node(JPProduction.BioSynthesizer, () -> {
                     node(JPProduction.Naniteinfuser, () -> {
                         node(JPProduction.CCB, () -> {
-                            node(JPProduction.Neostabilizer);
+                            node(JPProduction.neostabilizer);
                         });
                     });
                 });

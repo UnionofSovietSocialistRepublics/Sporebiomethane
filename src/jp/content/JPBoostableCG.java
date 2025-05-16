@@ -3,6 +3,27 @@ package jp.content;
 import mindustry.world.blocks.power.*;
 import mindustry.world.consumers.*;
 import mindustry.world.meta.*;
+import arc.*;
+import arc.graphics.*;
+import arc.graphics.g2d.*;
+import arc.math.*;
+import arc.struct.*;
+import arc.util.*;
+import arc.util.io.*;
+import mindustry.annotations.Annotations.*;
+import mindustry.content.*;
+import mindustry.entities.*;
+import mindustry.entities.units.*;
+import mindustry.game.*;
+import mindustry.gen.*;
+import mindustry.graphics.*;
+import mindustry.logic.*;
+import mindustry.type.*;
+import mindustry.ui.*;
+import mindustry.world.*;
+import mindustry.world.blocks.environment.*;
+import mindustry.world.consumers.*;
+import mindustry.world.meta.*;
 
 public class JPBoostableCG extends ConsumeGenerator {
 
@@ -15,9 +36,7 @@ public class JPBoostableCG extends ConsumeGenerator {
 
     public class JPBoostableCGBuild extends ConsumeGeneratorBuild{
 
-        @Override
         public void setStats() {
-            super.setStats();
             stats.timePeriod = useTime;
 
 
