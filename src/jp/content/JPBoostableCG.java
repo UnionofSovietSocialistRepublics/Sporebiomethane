@@ -31,10 +31,10 @@ public class JPBoostableCG extends ConsumeGenerator {
 
     public class JPBoostableCGBuild extends ConsumeGeneratorBuild{
 
-        @Override
-        public void updateEfficiencyMultiplier(){
-            efficiencyMultiplier = 1f * liquidBoostIntensity;
-        }
+//        @Override
+//        public void updateEfficiencyMultiplier(){
+//            efficiencyMultiplier = 1f * liquidBoostIntensity;
+//        }
 
         }
     }
