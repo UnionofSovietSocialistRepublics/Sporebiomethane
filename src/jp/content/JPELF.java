@@ -104,7 +104,6 @@ public class JPELF extends GenericCrafter {
                 warmup = Mathf.approachDelta(warmup, 0f, warmupSpeed);
             }
 
-
             totalProgress += warmup * Time.delta;
 
             if(progress >= 1f){

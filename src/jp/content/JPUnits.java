@@ -314,7 +314,7 @@ public class JPUnits {
                 y = 0f;
                 recoil = 6;
                 targetAir = false;
-                bullet = new ArtilleryBulletType(2.5f, 9){{
+                bullet = new SpawnerArtyBulletType(2.5f, 9){{
                     speed = 6f;
                     height = width = 20f;
                     shootEffect = Fx.shootBig;
