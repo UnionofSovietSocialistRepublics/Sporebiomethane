@@ -9,10 +9,10 @@ import static mindustry.type.ItemStack.*;
 
 public class JPModules{
     public static UnitAssemblerModule
-        Acidifier;
+        acidifierModule;
 
         public static void load(){
-        Acidifier = new UnitAssemblerModule("AcidifierModule"){{
+        acidifierModule = new UnitAssemblerModule("acidifier-module"){{
             requirements(Category.units, with(Items.silicon, 400, JPItem.Nanitealloy,50, JPItem.Biomass, 250));
             consumePower(5f);
             size = 3;

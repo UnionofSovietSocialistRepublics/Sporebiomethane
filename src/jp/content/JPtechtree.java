@@ -47,12 +47,12 @@ public class JPtechtree {
                     });
                 });
             });
-            node(JPUnitFactory.Pool, Seq.with(new SectorComplete(JPsectorsHM.SkiHM)), () -> {
-                node(JPUnitFactory.Synapsetower, () -> {
-                    node(JPUnitFactory.Assembler, () -> {
-                        node(JPUnitAssembler.ApollyonAssembler);
+            node(JPUnitFactory.pool, Seq.with(new SectorComplete(JPsectorsHM.SkiHM)), () -> {
+                node(JPUnitFactory.synapseTower, () -> {
+                    node(JPUnitFactory.assembler, () -> {
+                        node(JPUnitAssembler.apollyonAssembler);
                     });
-                    node(JPUnitFactory.Gestator);
+                    node(JPUnitFactory.gestator);
                 });
             });
             node(JPProduction.Oilburner, () -> {
@@ -136,12 +136,12 @@ public class JPtechtree {
                     });
                 });
             });
-            node(JPUnitFactory.Pool, Seq.with(new SectorComplete(JPsectors.Ski)), () -> {
-                node(JPUnitFactory.Synapsetower, () -> {
-                    node(JPUnitFactory.Assembler, () -> {
-                        node(JPUnitAssembler.ApollyonAssembler);
+            node(JPUnitFactory.pool, Seq.with(new SectorComplete(JPsectors.Ski)), () -> {
+                node(JPUnitFactory.synapseTower, () -> {
+                    node(JPUnitFactory.assembler, () -> {
+                        node(JPUnitAssembler.apollyonAssembler);
                     });
-                    node(JPUnitFactory.Gestator);
+                    node(JPUnitFactory.gestator);
                 });
             });
             node(JPProduction.Oilburner, () -> {

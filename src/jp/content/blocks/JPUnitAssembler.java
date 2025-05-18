@@ -10,11 +10,11 @@ import static mindustry.type.ItemStack.*;
 
 public class JPUnitAssembler{
     public static UnitAssembler
-        ApollyonAssembler, Acidifier;
+        apollyonAssembler, Acidifier;
 
         public static void load(){
 
-        ApollyonAssembler = new UnitAssembler("ApollyonAssembler"){{
+        apollyonAssembler = new UnitAssembler("apollyon-assembler"){{
             requirements(Category.units, with(Items.silicon, 1000, JPItem.VCA, 250, JPItem.Nanitealloy, 750, JPItem.Biomass, 800));
             size = 6;
             droneType = JPUnits.Zeta;

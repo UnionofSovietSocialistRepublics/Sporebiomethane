@@ -13,15 +13,15 @@ import static mindustry.content.Items.*;
 
 public class JPUnitFactory{
     public static UnitFactory
-        Pool,Synapsetower,Assembler,Gestator,
+        pool,synapseTower,assembler,gestator,
         ApollyonAssembler;
 
         public static void load(){
-        Pool = new UnitFactory("Pool"){{
+        pool = new UnitFactory("pool"){{
             requirements(Category.units, with(silicon,150,JPItem.Biomass,45));
             plans = Seq.with(
-                new UnitPlan( JPUnits.zergling, 15 * 60f, with(silicon, 35,JPItem.Biomass,10)),
-                new UnitPlan( JPUnits.baneling, 10 * 60f, with(silicon, 15,JPItem.Biomass,5, coal, 15)),
+                new UnitPlan( JPUnits.zergling, 15 * 60f, with(silicon, 25,JPItem.Biomass,5)),
+                new UnitPlan( JPUnits.baneling, 10 * 60f, with(silicon, 15,JPItem.Biomass,5)),
                 new UnitPlan( JPUnits.Roach, 20 * 60f, with(silicon, 65,JPItem.Biomass,35)),
                 new UnitPlan( JPUnits.Purger, 25 * 60f, with(silicon, 95,JPItem.Biomass,45))
             );
@@ -32,7 +32,7 @@ public class JPUnitFactory{
         }};
 
         
-        Synapsetower = new UnitFactory("Synapse-tower"){{
+        synapseTower = new UnitFactory("synapse-tower"){{
             requirements(Category.units, with(silicon,250,JPItem.Biomass,75));
             plans = Seq.with(
                 new UnitPlan( JPUnits.Drone, 60f * 15, with(silicon, 15, JPItem.Biomass,10,lead, 25)),
@@ -44,7 +44,7 @@ public class JPUnitFactory{
             consumePower(1.5f);
 
         }};
-        Gestator = new UnitFactory("Gestator"){{
+        gestator = new UnitFactory("gestator"){{
             requirements(Category.units, with(silicon,750,JPItem.Nanitealloy,500,JPItem.Biomass,250,JPItem.Neocells,75));
             plans = Seq.with(
                 new UnitPlan( JPUnits.carci, 60f * 25, with( silicon, 150, thorium, 75, JPItem.Neocells, 30)),
@@ -58,7 +58,7 @@ public class JPUnitFactory{
             consumeLiquid(Liquids.neoplasm, 15f / 60f);
 
         }};
-        Assembler = new UnitFactory("Assembler"){{
+        assembler = new UnitFactory("assembler"){{
             requirements(Category.units, with(silicon,675,JPItem.Nanitealloy,75,JPItem.Biomass,225));
             plans = Seq.with(
                 new UnitPlan( JPUnits.Breacher, 60f * 15, with( silicon, 175, JPItem.Biomass,55, JPItem.Nanitealloy,45)),
