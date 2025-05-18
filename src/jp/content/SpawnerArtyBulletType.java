@@ -9,7 +9,7 @@ import mindustry.gen.*;
 
 
 //Mechanic: Spawn 2 roach if target unit hp < 10% of target unit max hp (and insta-kill the targeted unit).
-public class SpawnerArtyBulletType extends ArtilleryBulletType {
+public class SpawnerArtyBulletType extends BasicBulletType {
 
     public SpawnerArtyBulletType(float speed, float damage){
         super(speed, damage);
