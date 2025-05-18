@@ -23,21 +23,23 @@ public class SpawnerArtyBulletType extends ArtilleryBulletType {
         if(other instanceof Unit unit){
             Tmp.v3.set(unit).sub(b.x, b.y).nor().scl(knockback * 80f);
             unit.impulse(Tmp.v3);
-            if(unit.hasEffect(StatusEffects.boss)) return;
-            if(!Vars.net.client() && (unit.healthf() <= (unit.maxHealth*1))){
+            if(unit.hasEffect(StatusEffects.boss)) {
+                return;
+            }
+//            if(!Vars.net.client() && (unit.health() <= (unit.maxHealth*1))){
+//                Infest(b, unit);
+//            }
+            if(true){
                 Infest(b, unit);
-                Log.info("Debugging.png");
             }
         }
     }
 
     public void Infest(Bullet b, Unit u){
-        Log.info("Debugging.exe");
         for (int i = 0; i < 2; i++) {
-            var unit = JPUnits.Roach.create(b.team);
+            var unit = JPUnits.Roach.create(Team.sharded);
             unit.set(u.x, u.y);
             unit.add();
-            Log.info("Debugging.pdf");
         }
         u.kill();
 
