@@ -1,10 +1,8 @@
 package jp.content;
 
 import mindustry.entities.bullet.*;
-import mindustry.game.Team;
 import mindustry.gen.Bullet;
 import arc.util.*;
-import mindustry.content.*;
 import mindustry.gen.*;
 
 
@@ -20,17 +18,17 @@ public class SpawnerArtyBulletType extends BasicBulletType {
         if(other instanceof Unit unit){
             Tmp.v3.set(unit).sub(b.x, b.y).nor().scl(knockback * 80f);
             unit.impulse(Tmp.v3);
-            if(unit.hasEffect(StatusEffects.boss)) return;
             unit.apply(JPStatus.dissolving, 120f);
-            Infest(b, unit);
+            if (unit.type == JPUnits.Roach) return;
+            if(unit.health <= (unit.maxHealth*0.25)){
+                Infest(b, unit);
+            }
         }
     }
 
     public void Infest(Bullet b, Unit u){
-        var unit = JPUnits.Roach.create(Team.sharded);
-        u.health = 69f;
+        var unit = JPUnits.Roach.create(b.team);
         unit.set(u.x, u.y);
-        unit.add();
         unit.add();
         u.kill();
 
