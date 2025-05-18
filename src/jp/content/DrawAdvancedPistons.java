@@ -10,8 +10,7 @@ import mindustry.world.*;
 import mindustry.world.draw.DrawBlock;
 
 //Burrowed code from aquarion because im too lazy :troll:
-//Credit to @
-
+//Credit to @twcash
 public class DrawAdvancedPistons extends DrawBlock {
     public float sinMag = 4f, sinScl = 6f, sinOffset = 50f, sideOffset = 0f, lenOffset = -1f, horiOffset = 0f, angleOffset = 0f;
     public int sides = 4;

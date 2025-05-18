@@ -6,7 +6,7 @@ import mindustry.type.StatusEffect;
 
 public class JPStatus {
     public static StatusEffect
-    dissolving, frostshield, regen, mindcontrol, reversion, reversionD, hellspawn, stunned;
+    dissolving, frostshield, regen, mindcontrol, reversion, reversionD, hellspawn, stunned, infested;
     public static void load(){
         dissolving = new StatusEffect("dissolving"){{
             damage = 60f / 60f;
@@ -34,5 +34,7 @@ public class JPStatus {
             damage = 6f / 60f;
             speedMultiplier = 1.25f;
             damageMultiplier = 1.25f;
+        }};
+        infested = new StatusEffect("infested"){{
         }};
     }}
