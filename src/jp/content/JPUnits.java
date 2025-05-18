@@ -138,8 +138,8 @@ public class JPUnits {
             this.constructor = LegsUnit::create;
             speed = 1f;
             hitSize = 8f;
-            health = 215;
-            armor = 2;
+            health = 345;
+            armor = 3;
             range = 60f;
             legCount = 4;
             weapons.add(new Weapon(name + "-gun"){{
@@ -155,10 +155,7 @@ public class JPUnits {
                     splashDamage = 30f;
                     splashDamageRadius = 25f;
                     lifetime = 75f;
-
-                    backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
-                    lightColor = Color.valueOf("8B73C7");
                     collidesTiles = true;
                     trailLength = 5;
                     trailColor = Color.valueOf("8B73C7");
@@ -315,7 +312,8 @@ public class JPUnits {
                 recoil = 6;
                 targetAir = false;
                 bullet = new InfestationBulletType(6f, 45){{
-                    height = width = 20f;
+                    height = 20f;
+                    width = 10f;
                     collidesTiles = true;
                     collidesAir = false;
                     splashDamage = 110f;
@@ -323,9 +321,9 @@ public class JPUnits {
                     lifetime = 40f;
                     statusDuration = 60f * 4;
                     status = JPStatus.dissolving;
+                    frontColor = Color.valueOf("8FFE09");
                     trailLength = 3;
                     trailColor = Color.valueOf("bbfe6b");
-                    frontColor = Color.valueOf("8FFE09");
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
                 }};
@@ -354,18 +352,14 @@ public class JPUnits {
                 inaccuracy = 12f;
                 velocityRnd = 0.2f;
                 recoil = 2;
-                bullet = new ArtilleryBulletType(2.5f, 9){{
-                    speed = 6f;
+                bullet = new ArtilleryBulletType(6f, 90){{
                     height = width = 20f;
-                    damage = 90f;
                     splashDamage = 125f;
                     splashDamageRadius = 17f;
                     lifetime = 50f;
                     statusDuration = 60f * 4;
                     status = JPStatus.dissolving;
-                    backColor = Color.valueOf("8FFE09");
                     frontColor = Color.valueOf("8FFE09");
-                    lightColor = Color.valueOf("8FFE09");
                     collides = true;
                     collidesTiles = true;
                     trailLength = 3;
