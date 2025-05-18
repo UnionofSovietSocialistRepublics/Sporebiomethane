@@ -3,8 +3,8 @@ name: "jp"
 author: "Watermolecules and Hydroabyss"
 main: "jp.Unloader"
 description: "Adds New sector, units and buildings to the game, all zerg flavored.\nWhat does this mod offer?\n - Hardmode and normal mode \n - Campain map for serpulo\n - Possibly a new planet?\n - A bunch of zerggy unit and structure\n - Lore\nRemember to star the mod on github if you enjoy it!"
-subtitle: "V0.6"
-version: 0.6
-minGameVersion: 146
+subtitle: "V0.61"
+version: 0.61
+minGameVersion: 147
 java: true
 repo: UnionofSovietSocialistRepublics/Sporebiomethane
