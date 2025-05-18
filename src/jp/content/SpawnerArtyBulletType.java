@@ -26,21 +26,15 @@ public class SpawnerArtyBulletType extends ArtilleryBulletType {
             if(unit.hasEffect(StatusEffects.boss)) {
                 return;
             }
-//            if(!Vars.net.client() && (unit.health() <= (unit.maxHealth*1))){
-//                Infest(b, unit);
-//            }
-            if(true){
-                Infest(b, unit);
-            }
+            Infest(b, unit);
         }
     }
 
     public void Infest(Bullet b, Unit u){
-        for (int i = 0; i < 2; i++) {
-            var unit = JPUnits.Roach.create(Team.sharded);
-            unit.set(u.x, u.y);
-            unit.add();
-        }
+        var unit = JPUnits.Roach.create(Team.sharded);
+        unit.set(u.x, u.y);
+        unit.add();
+        unit.add();
         u.kill();
 
     }
