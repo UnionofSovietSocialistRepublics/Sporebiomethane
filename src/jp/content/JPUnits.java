@@ -323,8 +323,8 @@ public class JPUnits {
                     splashDamage = 90f;
                     splashDamageRadius = 17f;
                     lifetime = 40f;
-                    statusDuration = 60f * 4;
-                    status = JPStatus.dissolving;
+//                    statusDuration = 60f * 4;
+//                    status = JPStatus.dissolving;
                     backColor = Color.valueOf("8FFE09");
                     frontColor = Color.valueOf("8FFE09");
                     lightColor = Color.white;

@@ -4,12 +4,9 @@ import mindustry.entities.bullet.*;
 import mindustry.game.Team;
 import mindustry.gen.Bullet;
 import arc.util.*;
-import mindustry.*;
 import mindustry.content.*;
 import mindustry.gen.*;
 
-import static mindustry.game.Team.*;
-import static mindustry.gen.Nulls.unit;
 
 //Mechanic: Spawn 2 roach if target unit hp < 10% of target unit max hp (and insta-kill the targeted unit).
 public class SpawnerArtyBulletType extends ArtilleryBulletType {
@@ -23,15 +20,15 @@ public class SpawnerArtyBulletType extends ArtilleryBulletType {
         if(other instanceof Unit unit){
             Tmp.v3.set(unit).sub(b.x, b.y).nor().scl(knockback * 80f);
             unit.impulse(Tmp.v3);
-            if(unit.hasEffect(StatusEffects.boss)) {
-                return;
-            }
+            if(unit.hasEffect(StatusEffects.boss)) return;
+            unit.apply(JPStatus.dissolving, 120f);
             Infest(b, unit);
         }
     }
 
     public void Infest(Bullet b, Unit u){
         var unit = JPUnits.Roach.create(Team.sharded);
+        u.health = 69f;
         unit.set(u.x, u.y);
         unit.add();
         unit.add();
