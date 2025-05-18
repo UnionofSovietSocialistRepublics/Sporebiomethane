@@ -24,7 +24,7 @@ public class InfestationBulletType extends BasicBulletType {
             if( (unit.health <= (unit.maxHealth*0.25)) || (unit.health <= 100f || (unit.getDuration(JPStatus.infested)) > 0) ){
                 Infest(b, unit);
             }
-            if((unit.health <= (unit.maxHealth*0.5))) {
+            if((unit.health <= (unit.maxHealth*0.45))) {
                 unit.apply(JPStatus.infested, 200f);
             }
         }
