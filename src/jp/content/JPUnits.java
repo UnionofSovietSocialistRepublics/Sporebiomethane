@@ -314,23 +314,20 @@ public class JPUnits {
                 y = 0f;
                 recoil = 6;
                 targetAir = false;
-                bullet = new SpawnerArtyBulletType(2.5f, 9){{
-                    speed = 6f;
+                bullet = new InfestationBulletType(6f, 45){{
                     height = width = 20f;
+                    collidesTiles = true;
+                    collidesAir = false;
+                    splashDamage = 110f;
+                    splashDamageRadius = 23f;
+                    lifetime = 40f;
+                    statusDuration = 60f * 4;
+                    status = JPStatus.dissolving;
+                    trailLength = 3;
+                    trailColor = Color.valueOf("bbfe6b");
+                    frontColor = Color.valueOf("8FFE09");
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
-                    damage = 90f;
-                    splashDamage = 90f;
-                    splashDamageRadius = 17f;
-                    lifetime = 40f;
-//                    statusDuration = 60f * 4;
-//                    status = JPStatus.dissolving;
-                    backColor = Color.valueOf("8FFE09");
-                    frontColor = Color.valueOf("8FFE09");
-                    lightColor = Color.white;
-                    collidesTiles = true;
-//                    trailLength = 3;
-                    trailColor = Color.valueOf("bbfe6b");
                 }};
                 shootSound = Sounds.artillery;
             }});
