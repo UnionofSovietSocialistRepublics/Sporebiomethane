@@ -299,7 +299,7 @@ public class JPUnits {
 
         Roach = new UnitType("Roach"){{
             this.constructor = LegsUnit::create;
-            aiController = FlyingAI::new;
+            aiController = JPSeekerAI::new;
             speed = 1f;
             hitSize = 18f;
             health = 650;
