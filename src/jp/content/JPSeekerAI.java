@@ -25,8 +25,8 @@ public class JPSeekerAI extends FlyingAI {
             if(unit.type.circleTarget){
                 circleAttack(120f);
             }else if (Followedtarget != null){
-                moveTo(target, unit.type.range * 0.8f);
-                unit.lookAt(target);
+                moveTo(Followedtarget, unit.type.range * 0.8f);
+                unit.lookAt(Followedtarget);
             }else if (target != null){
                 moveTo(target, unit.type.range * 0.8f);
                 unit.lookAt(target);
