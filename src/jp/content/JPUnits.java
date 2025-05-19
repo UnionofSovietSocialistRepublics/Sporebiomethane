@@ -235,6 +235,7 @@ public class JPUnits {
 
         baneling = new UnitType("baneling"){{
             this.constructor = LegsUnit::create;
+            aiController = SuicideAI::new;
             speed = 1.25f;
             hitSize = 8f;
             health = 225;
@@ -298,6 +299,7 @@ public class JPUnits {
 
         Roach = new UnitType("Roach"){{
             this.constructor = LegsUnit::create;
+            aiController = FlyingAI::new;
             speed = 1f;
             hitSize = 18f;
             health = 650;
@@ -1013,6 +1015,7 @@ public class JPUnits {
 
         DeathImp = new UnitType("DeathImp"){{
             this.constructor = UnitEntity::create;
+            aiController = SuicideAI::new;
             speed = 1.75f;
             health = 215;
             range = 50f;
@@ -1075,6 +1078,7 @@ public class JPUnits {
         
         Imp = new UnitType("Imp"){{
             this.constructor = LegsUnit::create;
+            aiController = SuicideAI::new;
             speed = 1.5f;
             hitSize = 8f;
             health = 450;
