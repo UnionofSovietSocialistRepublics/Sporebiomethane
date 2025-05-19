@@ -26,8 +26,7 @@ public class JPSeekerAI extends FlyingAI {
             if(unit.type.circleTarget) {
                 circleAttack(120f);
             }else if (Followedtarget != null){
-                moveTo(Followedtarget, unit.type.range * 0.8f);
-                unit.lookAt(Followedtarget);
+                circleAttack(120f);
             }else if (target != null){
                 moveTo(target, unit.type.range * 0.8f);
                 unit.lookAt(target);
@@ -38,7 +37,7 @@ public class JPSeekerAI extends FlyingAI {
             moveTo(getClosestSpawner(), state.rules.dropZoneRadius + 130f);
         }
         if(timer.get(timerTarget3, 30f)){
-            Followedtarget = Units.closestTarget(unit.team, unit.x, unit.y, Math.max(unit.type.range, 600f), u -> !u.isFlying());
+            Followedtarget = Units.closestTarget(unit.team, unit.x, unit.y, Math.max(unit.type.range, 600f), u -> !u.dead());
         }
     }
 
