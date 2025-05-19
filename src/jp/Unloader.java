@@ -36,7 +36,7 @@ public class Unloader extends Mod{
         break;
         case 5:
         Vars.mods.locateMod("jp").meta.author="Abyss & Duke";
-        Vars.mods.locateMod("jp").meta.subtitle="Json has fallen, billion must java.";
+        Vars.mods.locateMod("jp").meta.subtitle="Json has fallen, billion must java!!!";
         break;
         default:
         Vars.mods.locateMod("jp").meta.author="Hydroabyssal & Germanium";
