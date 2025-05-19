@@ -16,6 +16,7 @@ public class JPSeekerAI extends FlyingAI {
     final static Rand rand = new Rand();
     final static BlockFlag[] randomTargets = {core, storage, generator, launchPad, factory, repair, battery, reactor, drill};
     protected @Nullable Teamc Followedtarget;
+    protected @Nullable Teamc ClosestBuilding;
 
     @Override
     public void updateMovement(){
@@ -24,6 +25,9 @@ public class JPSeekerAI extends FlyingAI {
         if(Followedtarget != null && unit.hasWeapons()){
             if(unit.type.circleTarget){
                 circleAttack(120f);
+            }else if (ClosestBuilding != null){
+                moveTo(ClosestBuilding, unit.type.range * 0.8f);
+                unit.lookAt(ClosestBuilding);
             }else if (Followedtarget != null){
                 moveTo(Followedtarget, unit.type.range * 0.8f);
                 unit.lookAt(Followedtarget);
@@ -37,8 +41,8 @@ public class JPSeekerAI extends FlyingAI {
             moveTo(getClosestSpawner(), state.rules.dropZoneRadius + 130f);
         }
         if(timer.get(timerTarget3, 30f)){
-//            Followedtarget = Units.closestEnemy(unit.team, unit.x, unit.y, Math.max(unit.type.range, 800f), u -> !u.dead());
-            Followedtarget = Units.closestTarget(unit.team, unit.x, unit.y, Math.max(unit.type.range, 800f), u -> !u.dead());
+            ClosestBuilding = Units.closestTarget(unit.team, unit.x, unit.y, Math.max(unit.type.range, 400f), u -> !u.isFlying(), t -> true);
+            Followedtarget = Units.closestTarget(unit.team, unit.x, unit.y, Math.max(unit.type.range, 400f), u -> !u.isFlying(), t -> false);
         }
     }
 
