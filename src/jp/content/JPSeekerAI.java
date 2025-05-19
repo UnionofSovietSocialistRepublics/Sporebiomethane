@@ -34,7 +34,7 @@ public class JPSeekerAI extends FlyingAI {
             moveTo(getClosestSpawner(), state.rules.dropZoneRadius + 130f);
         }
         if(timer.get(timerTarget3, 30f)){
-            Followedtarget = Units.closest(unit.team, unit.x, unit.y, Math.max(unit.type.range, 400f), u -> !u.dead());
+            Followedtarget = Units.closestEnemy(unit.team, unit.x, unit.y, Math.max(unit.type.range, 800f), u -> !u.dead());
         }
     }
 
