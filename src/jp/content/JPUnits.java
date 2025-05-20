@@ -23,7 +23,7 @@ import mindustry.world.meta.*;
 public class JPUnits {
     public static UnitType
     //Legs
-    carci,Imp, Basilisk, autus, baneling, zergling, Behomoth, Lobber, Breacher, Scarabid, Frost, Roach, Purger, Gorgon, raptor, FrostC, Demolisher,
+    carci,Imp, Basilisk, autus, baneling, zergling, Behomoth, Lobber, Breacher, Scarabid, Frost, roach, Purger, Gorgon, raptor, FrostC, Demolisher,
     //missiles
     //Bomb,
     //Floaty
@@ -31,7 +31,7 @@ public class JPUnits {
     //Le tether
     Zeta,
     //Winged
-    Gragoth, Slasher, Saboteur, Protectorate, Carrier, Spitter;
+    Gragoth, Slasher, saboteur, protectorate, carrier, spitter;
     
     private static final ObjectMap.Entry<Class<? extends Entityc>, Prov<? extends Entityc>>[] types = new ObjectMap.Entry[]{
             prov(JPCopterUnitEntity.class, JPCopterUnitEntity::new)
@@ -297,9 +297,9 @@ public class JPUnits {
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});
         }};
 
-        Roach = new UnitType("Roach"){{
+        roach = new UnitType("roach"){{
             this.constructor = LegsUnit::create;
-            aiController = JPSeekerAI::new;
+//            aiController = JPSeekerAI::new;
             speed = 1f;
             hitSize = 18f;
             health = 650;
@@ -1336,7 +1336,7 @@ public class JPUnits {
                 abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
             }};
 
-        Protectorate = new JPCopterUnitType("Protectorate"){{
+        protectorate = new JPCopterUnitType("protectorate"){{
             speed = 1.25f;
             armor = 4;
             hitSize = 9f;
@@ -1381,7 +1381,7 @@ public class JPUnits {
             abilities.add(new ShieldRegenFieldAbility(25f, 250f, 60f * 6, 60f));
         }};
 
-        Saboteur = new JPCopterUnitType("Saboteur"){{
+        saboteur = new JPCopterUnitType("saboteur"){{
             speed = 1.25f;
             armor = 2;
             hitSize = 9f;
@@ -1430,7 +1430,7 @@ public class JPUnits {
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};
 
-        Spitter = new JPCopterUnitType("Spitter"){{
+        spitter = new JPCopterUnitType("spitter"){{
             speed = 1.5f;
             armor = 3;
             hitSize = 9f;
@@ -1466,7 +1466,7 @@ public class JPUnits {
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};
 
-        Carrier = new JPCopterUnitType("Carrier"){{
+        carrier = new JPCopterUnitType("carrier"){{
             speed = 1.65f;
             armor = 2;
             flying = true;
@@ -1502,7 +1502,7 @@ public class JPUnits {
                     hidden = true;
                     drawCell = false;
                     outlineColor = Color.valueOf("303a45");
-                    abilities.add(new UnitSpawnAbility(Protectorate,120f,0f,0f));
+                    abilities.add(new UnitSpawnAbility(protectorate,120f,0f,0f));
                     abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * -500f;}});
                     }};
                 }};
@@ -1561,8 +1561,8 @@ public class JPUnits {
             healColor = Color.valueOf("590e14");
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
-            abilities.add(new SpawnDeathAbility(Saboteur, 1, 11f));
-            abilities.add(new SpawnDeathAbility(Protectorate, 1, 11f));
+            abilities.add(new SpawnDeathAbility(saboteur, 1, 11f));
+            abilities.add(new SpawnDeathAbility(protectorate, 1, 11f));
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};
 

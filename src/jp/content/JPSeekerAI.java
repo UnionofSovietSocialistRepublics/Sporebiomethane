@@ -12,6 +12,9 @@ import mindustry.world.meta.*;
 import static mindustry.Vars.*;
 import static mindustry.world.meta.BlockFlag.*;
 
+//temporarily disabled until I can create real java code
+//Strange behavior: Staring at air units
+// Expected behavior: Target defenses before units, doesnt target air.
 public class JPSeekerAI extends FlyingAI {
     final static Rand rand = new Rand();
     final static BlockFlag[] randomTargets = {core, storage, generator, launchPad, factory, repair, battery, reactor, drill};
