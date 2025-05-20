@@ -23,7 +23,7 @@ import mindustry.world.meta.*;
 public class JPUnits {
     public static UnitType
     //Legs
-    carci,Imp, Basilisk, autus, baneling, zergling, Behomoth, Lobber, Breacher, Scarabid, Frost, roach, Purger, Gorgon, raptor, FrostC, Demolisher,
+    carci,Imp, Basilisk, autus, baneling, zergling, Behomoth, Lobber, Breacher, Scarabid, Frost, roach, Purger, Gorgon, raptor, FrostC, demolisher,
     //missiles
     //Bomb,
     //Floaty
@@ -1239,7 +1239,7 @@ public class JPUnits {
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};
 
-            Demolisher = new UnitType("Demolisher"){{
+            demolisher = new UnitType("demolisher"){{
                 this.constructor = LegsUnit::create;
                 speed = 0.6f;
                 hitSize = 16f;
@@ -1316,6 +1316,8 @@ public class JPUnits {
                     minWarmup = 0.94f;
                     shootWarmupSpeed = 0.05f;
                     bullet = new MissileBulletType(3.5f, 50f){{
+                        weaveScale = 4;
+                        weaveMag = 10;
                         buildingDamageMultiplier = 2f;
                         homingPower = 0.1f;
                         homingRange = 5f;
