@@ -1315,6 +1315,7 @@ public class JPUnits {
                     recoil = 2.5f;
                     minWarmup = 0.94f;
                     shootWarmupSpeed = 0.05f;
+                    shoot.shots = 2;
                     bullet = new MissileBulletType(3.5f, 50f){{
                         weaveScale = 4;
                         weaveMag = 10;
