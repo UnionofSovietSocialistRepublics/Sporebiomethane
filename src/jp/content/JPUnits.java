@@ -1317,8 +1317,8 @@ public class JPUnits {
                     shootWarmupSpeed = 0.05f;
                     shoot.shots = 2;
                     bullet = new MissileBulletType(3.5f, 50f){{
-                        weaveScale = 4;
-                        weaveMag = 10;
+                        weaveScale = 10;
+                        weaveMag = 6;
                         buildingDamageMultiplier = 2f;
                         homingPower = 0.1f;
                         homingRange = 5f;
