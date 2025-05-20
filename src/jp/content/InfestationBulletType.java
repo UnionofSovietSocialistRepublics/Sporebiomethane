@@ -20,7 +20,7 @@ public class InfestationBulletType extends BasicBulletType {
             Tmp.v3.set(unit).sub(b.x, b.y).nor().scl(knockback * 80f);
             unit.impulse(Tmp.v3);
             //Unit that cannot be infested
-            if (unit.type == JPUnits.Roach || unit.type == JPUnits.Frost || unit.type == JPUnits.FrostC) return;
+            if (unit.type == JPUnits.roach || unit.type == JPUnits.Frost || unit.type == JPUnits.FrostC) return;
             if( (unit.health <= (unit.maxHealth*0.25)) || (unit.health <= 100f || (unit.getDuration(JPStatus.infested)) > 0) ){
                 Infest(b, unit);
             }
