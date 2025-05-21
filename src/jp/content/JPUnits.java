@@ -1335,7 +1335,7 @@ public class JPUnits {
                 }});
                 weapons.add(new Weapon(name + "-beam"){{
                     x = 7f;
-                    y = 7f;
+                    y = -7f;
                     reload = 75f;
                     recoil = 2.5f;
                     minWarmup = 0.94f;
