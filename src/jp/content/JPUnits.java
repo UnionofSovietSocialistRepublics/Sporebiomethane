@@ -1315,7 +1315,32 @@ public class JPUnits {
                     recoil = 2.5f;
                     minWarmup = 0.94f;
                     shootWarmupSpeed = 0.05f;
-                    shoot.shots = 2;
+                    mirror = false;
+                    bullet = new MissileBulletType(3.5f, 50f){{
+                        weaveScale = 10;
+                        weaveMag = 6;
+                        buildingDamageMultiplier = 2f;
+                        homingPower = 0.1f;
+                        homingRange = 5f;
+                    }};
+                    parts.add(new RegionPart("-cover"){{
+                        progress = PartProgress.warmup;
+                        mirror = true;
+                        y = -1f;
+                        moveX = 1.5f;
+                        moveY = 1.25f;
+                        moveRot = -10f;
+                    }});
+                    shootSound = Sounds.missile;
+                }});
+                weapons.add(new Weapon(name + "-beam"){{
+                    x = -7f;
+                    y = -7f;
+                    reload = 75f;
+                    recoil = 2.5f;
+                    minWarmup = 0.94f;
+                    shootWarmupSpeed = 0.05f;
+                    mirror = false;
                     bullet = new MissileBulletType(3.5f, 50f){{
                         weaveScale = 10;
                         weaveMag = 6;
