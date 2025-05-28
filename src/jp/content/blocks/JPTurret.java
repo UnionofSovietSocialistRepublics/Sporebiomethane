@@ -36,9 +36,9 @@ public class JPTurret{
             shootCone = 2f;
             ammoUseEffect = Fx.casing1;
             inaccuracy = 2f;
-            shootType = new BasicBulletType(5.5f, 75f){{
+            shootType = new BasicBulletType(4f, 75f){{
                     height = width = 15f;
-                    lifetime = 45f;
+                    lifetime = 60f;
                     status = StatusEffects.electrified;
                     statusDuration = 60f * 3;
                     pierce = true;
@@ -49,7 +49,7 @@ public class JPTurret{
                     frontColor = Color.valueOf("a9d8ff");
                     ammoMultiplier = 1f;
                     intervalBullet = new LightningBulletType(){{
-                        damage = 16;
+                        damage = 8;
                         collidesAir = false;
                         ammoMultiplier = 1f;
                         lightningColor = Pal.sapBullet;
