@@ -26,26 +26,48 @@ public class JPTurret{
         public static void load(){
 
         Sporegarrison = new PowerTurret("Sporegarrison"){{
-            requirements(Category.turret, with(graphite, 125, silicon, 95, JPItem.Biomass, 45));
-            health = 1000;
+            requirements(Category.turret, with(graphite, 125, silicon, 95, JPItem.Biomass, 65));
+            health = 720;
             size = 2;
             rotateSpeed = 10f;
             range = 200f;
-            reload = 35f;
+            reload = 45f;
             recoil = 2f;
             shootCone = 2f;
             ammoUseEffect = Fx.casing1;
             inaccuracy = 2f;
-            shootType = new BasicBulletType(5f, 40f){{
+            shootType = new BasicBulletType(5.5f, 75f){{
                     height = width = 15f;
                     lifetime = 45f;
-                    backColor = Color.valueOf("8B73C7");
-                    frontColor = Color.valueOf("8B73C7");
-                    lightColor = Color.valueOf("8B73C7");
+                    status = StatusEffects.electrified;
+                    statusDuration = 60f * 3;
+                    pierce = true;
+                    pierceBuilding = true;
+                    pierceArmor = false;
+                    pierceCap = 3;
+                    backColor = Color.valueOf("a9d8ff");
+                    frontColor = Color.valueOf("a9d8ff");
                     ammoMultiplier = 1f;
+                    intervalBullet = new LightningBulletType(){{
+                        damage = 16;
+                        collidesAir = false;
+                        ammoMultiplier = 1f;
+                        lightningColor = Pal.sapBullet;
+                        lightningLength = 3;
+                        lightningLengthRand = 6;
+                        buildingDamageMultiplier = 0.25f;
+
+                        lightningType = new BulletType(0.0001f, 0f){{
+                            lifetime = Fx.lightning.lifetime;
+                            hitEffect = Fx.hitLancer;
+                            despawnEffect = Fx.none;
+                            hittable = false;
+                            lightColor = Color.white;
+                            buildingDamageMultiplier = 0.25f;
+                            }};}};
                 }};
                 coolant = consumeCoolant(0.2f);
-                consumePower(5f);
+                consumePower(2f);
             drawer = new DrawTurret(){{
                 parts.add(new RegionPart("-barrel"){{
                     progress = PartProgress.recoil;
@@ -170,7 +192,7 @@ public class JPTurret{
 
         Sentinel = new ContinuousTurret("Sentinel"){{
             requirements(Category.turret, with(graphite, 200, JPItem.Nanitealloy, 75, JPItem.Neocells, 25));
-            health = 1000;
+            health = 975;
             size = 2;
             rotateSpeed = 1.25f;
             liquidCapacity = 200F;
@@ -211,7 +233,7 @@ public class JPTurret{
 
         Flakaccelerator = new ItemTurret("Flakaccelerator"){{
             requirements(Category.turret, with(graphite, 125, silicon, 100, JPItem.Biomass, 75));
-            health = 1000;
+            health = 1250;
             size = 3;
             rotateSpeed = 10f;
             range = 220f;
@@ -424,7 +446,7 @@ public class JPTurret{
 
         Impalercannon= new ItemTurret("Impalercannon"){{
             requirements(Category.turret, with(surgeAlloy, 750, JPItem.Nanitealloy, 500,thorium, 500,silicon, 450));
-            health = 3000;
+            health = 4250;
             size = 4;
             range = 325f;
             rotateSpeed = 2f;
