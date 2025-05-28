@@ -26,12 +26,12 @@ public class JPTurret{
         public static void load(){
 
         Sporegarrison = new PowerTurret("Sporegarrison"){{
-            requirements(Category.turret, with(graphite, 125, silicon, 95, JPItem.Biomass, 65));
+            requirements(Category.turret, with(graphite, 125, silicon, 95, JPItem.Biomass, 75));
             health = 720;
             size = 2;
             rotateSpeed = 10f;
             range = 200f;
-            reload = 45f;
+            reload = 60f;
             recoil = 2f;
             shootCone = 2f;
             ammoUseEffect = Fx.casing1;
@@ -52,7 +52,7 @@ public class JPTurret{
                         damage = 8;
                         collidesAir = false;
                         ammoMultiplier = 1f;
-                        lightningColor = Pal.sapBullet;
+                        lightningColor = Color.valueOf("a9d8ff");
                         lightningLength = 3;
                         lightningLengthRand = 6;
                         buildingDamageMultiplier = 0.25f;
@@ -67,7 +67,7 @@ public class JPTurret{
                             }};}};
                 }};
                 coolant = consumeCoolant(0.2f);
-                consumePower(2f);
+                consumePower(4f);
             drawer = new DrawTurret(){{
                 parts.add(new RegionPart("-barrel"){{
                     progress = PartProgress.recoil;
