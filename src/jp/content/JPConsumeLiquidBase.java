@@ -4,7 +4,7 @@ import mindustry.type.*;
 import mindustry.world.*;
 import mindustry.world.consumers.ConsumeLiquidBase;
 
-//Hello, why consume no work?? Hello, modding help department???
+//Why consume no work?? Hello, modding help department???
 public abstract class JPConsumeLiquidBase extends ConsumeLiquidBase {
 
     public float amount;
