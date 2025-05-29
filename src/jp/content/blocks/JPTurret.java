@@ -16,6 +16,7 @@ import jp.content.*;
 import mindustry.content.Fx;
 import mindustry.content.*;
 
+import static mindustry.content.Liquids.*;
 import static mindustry.type.ItemStack.*;
 import static mindustry.content.Items.*;
 
@@ -161,7 +162,7 @@ public class JPTurret{
             rotateSpeed = 10f;
             range = 225f;
             liquidCapacity = 200F;
-            reload = 25f;
+            reload = 115f;
             recoil = 2f;
             shootCone = 2f;
             ammoUseEffect = Fx.casing1;
@@ -199,7 +200,7 @@ public class JPTurret{
                     }};}};
             }};
             shootSound = Sounds.shootBig;
-            coolant = consumeCoolant(0.225f);
+            consumeLiquid(water,0.225f);
             consumePower(7f);
             outlineColor = Color.valueOf("19171b");
         }};
@@ -240,7 +241,7 @@ public class JPTurret{
         shootSound = Sounds.none;
         loopSoundVolume = 1f;
         loopSound = Sounds.minebeam;
-        consumeLiquid(Liquids.water, 45f / 60f);
+        consumeLiquid(water, 45f / 60f);
         consumePower(10f);
         outlineColor = Color.valueOf("19171b");
         }};
