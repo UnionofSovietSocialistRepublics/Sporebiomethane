@@ -38,8 +38,8 @@ public class JPTurret{
             ammoUseEffect = Fx.casing1;
             inaccuracy = 2f;
             shootType = new BasicBulletType(4f, 75f){{
-                height = 10f;
-                width = 15f;
+                height = 7f;
+                width = 20f;
                 lifetime = 60f;
                 status = StatusEffects.electrified;
                 statusDuration = 60f * 3;
