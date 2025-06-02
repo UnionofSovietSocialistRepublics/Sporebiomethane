@@ -42,7 +42,7 @@ public class JPTurret{
                 width = 7f;
                 sprite = "large-orb";
                 lifetime = 60f;
-                lightning = 4;
+                lightning = 2;
                 lightningLength = 11;
                 lightningColor = Color.valueOf("bf92f9");
                 status = StatusEffects.electrified;
