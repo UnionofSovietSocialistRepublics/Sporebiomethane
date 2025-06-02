@@ -39,7 +39,7 @@ public class JPTurret{
             inaccuracy = 2f;
             shootType = new BasicBulletType(4f, 75f){{
                 height = 10f;
-                width = 10f;
+                width = 7f;
                 sprite = "large-orb";
                 lifetime = 60f;
                 status = StatusEffects.electrified;
