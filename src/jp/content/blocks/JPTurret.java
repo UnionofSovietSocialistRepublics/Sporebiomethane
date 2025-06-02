@@ -169,7 +169,7 @@ public class JPTurret{
             ammoUseEffect = Fx.casing1;
             hasPower = true;
             inaccuracy = 2f;
-            shootType = new BasicBulletType(7f, 315f){{
+            shootType = new BasicBulletType(7f, 145f){{
                 height = 10f;
                 width = 5f;
                 lifetime = 30f;
