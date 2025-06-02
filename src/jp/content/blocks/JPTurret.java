@@ -42,6 +42,8 @@ public class JPTurret{
                 width = 7f;
                 sprite = "large-orb";
                 lifetime = 60f;
+                lightning = 4;
+                lightningLength = 11;
                 status = StatusEffects.electrified;
                 statusDuration = 60f * 3;
                 pierce = true;
