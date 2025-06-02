@@ -44,6 +44,7 @@ public class JPTurret{
                 lifetime = 60f;
                 lightning = 4;
                 lightningLength = 11;
+                lightningColor = Color.valueOf("bf92f9");
                 status = StatusEffects.electrified;
                 statusDuration = 60f * 3;
                 pierce = true;
