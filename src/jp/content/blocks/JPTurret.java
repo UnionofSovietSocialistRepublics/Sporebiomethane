@@ -40,14 +40,13 @@ public class JPTurret{
             shootType = new BasicBulletType(4f, 75f){{
                 height = width = 15f;;
                 lifetime = 20f;
-                lightning = 2;
-                lightningLength = 7;
                 lightningColor = Color.valueOf("bf92f9");
                 backColor = Color.valueOf("bf92f9");
                 frontColor = Color.valueOf("bf92f9");
                 status = StatusEffects.electrified;
                 statusDuration = 60f * 3;
                 fragBullets = 1;
+                fragRandomSpread = fragAngle = 0;
                 ammoMultiplier = 1f;
                 buildingDamageMultiplier = 0.25f;
                 intervalBullet = new LightningBulletType(){{
@@ -70,14 +69,13 @@ public class JPTurret{
                 fragBullet = new BasicBulletType(4f, 75f){{
                     height = width = 15f;;
                     lifetime = 20f;
-                    lightning = 2;
-                    lightningLength = 7;
                     lightningColor = Color.valueOf("bf92f9");
                     backColor = Color.valueOf("bf92f9");
                     frontColor = Color.valueOf("bf92f9");
                     status = StatusEffects.electrified;
                     statusDuration = 60f * 3;
                     fragBullets = 1;
+                    fragRandomSpread = fragAngle = 0;
                     ammoMultiplier = 1f;
                     buildingDamageMultiplier = 0.25f;
                     intervalBullet = new LightningBulletType(){{
@@ -107,7 +105,6 @@ public class JPTurret{
                         frontColor = Color.valueOf("bf92f9");
                         status = StatusEffects.electrified;
                         statusDuration = 60f * 3;
-                        fragBullets = 1;
                         ammoMultiplier = 1f;
                         buildingDamageMultiplier = 0.25f;
                         intervalBullet = new LightningBulletType(){{
