@@ -119,13 +119,11 @@ public class JPUnits {
             legCount = 4;
             weapons.add(new Weapon("claws"){{
                 reload = 30f;
-                x = 0f;
+                x = y = 0f;
                 mirror = false;
-                y = 0f;
-                bullet = new BasicBulletType(2.5f, 9){{
+                bullet = new BasicBulletType(3f, 25f){{
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
-                    speed = 3f;
                     lifetime = 45f;
                     damage = 25f;
                 }};
@@ -148,8 +146,7 @@ public class JPUnits {
                 y = -5f;
                 mirror = false;
                 shootSound = Sounds.artillery;
-                bullet = new BasicBulletType(2.5f, 9){{
-                    speed = 3f;
+                bullet = new BasicBulletType(3f, 75){{
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
                     splashDamage = 30f;
@@ -201,7 +198,6 @@ public class JPUnits {
                     lifetime = 10f;
                     splashDamage = 200f;
                     splashDamageRadius = 25.5f;
-                    //recoil of the unit
                     recoil = -24f;
                     trailLength = 10;
                     trailWidth = 4f;
@@ -250,8 +246,7 @@ public class JPUnits {
                 shoot.firstShotDelay = 90f;
                 bullet = new BombBulletType(0f, 100f){{
                     rangeOverride = 30f;
-                    width = 0f;
-                    height = 0f;
+                    width = height = 0f;
                     lifetime = 10f;
                     statusDuration = 60f * 2;
                     status = JPStatus.dissolving;
@@ -318,7 +313,7 @@ public class JPUnits {
                     width = 10f;
                     collidesTiles = true;
                     collidesAir = false;
-                    splashDamage = 110f;
+                    splashDamage = 30f;
                     splashDamageRadius = 23f;
                     lifetime = 40f;
                     statusDuration = 60f * 4;
@@ -356,7 +351,7 @@ public class JPUnits {
                 recoil = 2;
                 bullet = new ArtilleryBulletType(6f, 90){{
                     height = width = 20f;
-                    splashDamage = 125f;
+                    splashDamage = 45f;
                     splashDamageRadius = 17f;
                     lifetime = 50f;
                     statusDuration = 60f * 4;
@@ -538,12 +533,11 @@ public class JPUnits {
                 mirror = false;
                 ejectEffect = Fx.casing1;
                 shootSound = JPSounds.ArtyBig;
-                bullet = new BasicBulletType(2.5f, 9){{
+                bullet = new BasicBulletType(6f, 195){{
                     width = 15f;
                     height = 30f;
-                    speed = 6f;
                     lifetime = 50f;
-                    splashDamage = 100f;
+                    splashDamage = 75f;
                     splashDamageRadius = 25f;
                     status = StatusEffects.slow;
                     statusDuration = 60f * 4;
@@ -560,12 +554,10 @@ public class JPUnits {
                 x = -15f;
                 y = -23f;
                 shootSound = Sounds.shootBig;
-                bullet = new BasicBulletType(2.5f, 9){{
-                    width = 15f;
-                    height = 15f;
-                    speed = 4.5f;
+                bullet = new BasicBulletType(4.5f, 50){{
+                    width = height = 15f;
+
                     lifetime = 70f;
-                    damage = 50f;
                     backColor = Color.valueOf("CBC3E3");
                     frontColor = Color.valueOf("CBC3E3");
                     collides = true;
@@ -591,10 +583,9 @@ public class JPUnits {
             legBaseOffset = 10f;       
             weapons.add(new Weapon("Superarty"){{
                 reload = 400f;
-                x = 0f;
-                y = 0f;
+                x = y = 0f;
                 mirror = false;
-                bullet = new ArtilleryBulletType(3f, 120){{
+                bullet = new ArtilleryBulletType(3f, 725){{
                     hitEffect = Fx.sapExplosion;
                     knockback = 0.8f;
                     lifetime = 120f;
@@ -602,7 +593,7 @@ public class JPUnits {
                     collides = true;
                     collidesTiles = true;
                     splashDamageRadius = 65f;
-                    splashDamage = 650f;
+                    splashDamage = 450f;
                     status = JPStatus.dissolving;
                     statusDuration = 60f * 6;
                     backColor = Color.valueOf("8B73C7");
@@ -1678,27 +1669,22 @@ public class JPUnits {
                 y = 8f;
                 layerOffset = -1f;
                 mirror = false;
-                bullet = new BasicBulletType(2.5f, 9){{
+                bullet = new BasicBulletType(3f, 250f){{
                     recoil = 4f;
-                    speed = 3f;
-                    height = 15f;
-                    width = 30f;
+                    width = height = 15f;
                     pierce = true;
                     pierceBuilding = true;
                     pierceCap = 7;
-                    damage = 250f;
                     lifetime = 95f;
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
-                    lightColor = Color.valueOf("8B73C7");
+//                    lightColor = Color.valueOf("8B73C7");
                     collidesTiles = true;
                     trailEffect = Fx.missileTrail;
                     trailInterval = 3f;
                     trailParam = 4f;
-                    speed = 3f;
                     damage = 75f;
                     lifetime = 60f;
-                    width = height = 15f;
                     shrinkX = shrinkY = 0f;
                     trailColor = Color.valueOf("8B73C7");
                     trailLength = 12;

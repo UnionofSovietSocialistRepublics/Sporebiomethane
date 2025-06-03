@@ -38,12 +38,11 @@ public class JPTurret{
             ammoUseEffect = Fx.casing1;
             inaccuracy = 2f;
             shootType = new BasicBulletType(4f, 75f){{
-                height = 10f;
-                width = 7f;
-                sprite = "large-orb";
+                height = 15f;
+                width = 15f;
                 lifetime = 60f;
-                lightning = 2;
-                lightningLength = 11;
+                lightning = 1;
+                lightningLength = 7;
                 lightningColor = Color.valueOf("bf92f9");
                 status = StatusEffects.electrified;
                 statusDuration = 60f * 3;
