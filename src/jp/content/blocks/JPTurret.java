@@ -76,6 +76,7 @@ public class JPTurret{
                     statusDuration = 60f * 3;
                     fragBullets = 1;
                     fragRandomSpread = fragAngle = 0;
+                    fragVelocityMin = fragLifeMin = 0.8f;
                     ammoMultiplier = 1f;
                     buildingDamageMultiplier = 0.25f;
                     lightningColor = Color.valueOf("bf92f9");
@@ -234,7 +235,7 @@ public class JPTurret{
             ammoUseEffect = Fx.casing1;
             hasPower = true;
             inaccuracy = 2f;
-            shootType = new BasicBulletType(7f, 145f){{
+            shootType = new BasicBulletType(7f, 215f){{
                 height = 10f;
                 width = 5f;
                 lifetime = 30f;
