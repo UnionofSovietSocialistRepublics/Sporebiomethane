@@ -37,7 +37,7 @@ public class JPTurret{
             shootCone = 2f;
             ammoUseEffect = Fx.casing1;
             inaccuracy = 2f;
-            shootType = new BasicBulletType(4f, 75f){{
+            shootType = new BasicBulletType(4f, 35f){{
                 height = width = 15f;;
                 lifetime = 20f;
                 status = StatusEffects.electrified;
@@ -67,8 +67,9 @@ public class JPTurret{
                         hittable = false;
                         lightColor = Color.white;
                         buildingDamageMultiplier = 0.25f;
-                        }};}};
-                fragBullet = new BasicBulletType(4f, 75f){{
+                        }};
+                }};
+                fragBullet = new BasicBulletType(4f, 35f){{
                     height = width = 15f;;
                     lifetime = 20f;
                     status = StatusEffects.electrified;
@@ -97,8 +98,9 @@ public class JPTurret{
                             hittable = false;
                             lightColor = Color.white;
                             buildingDamageMultiplier = 0.25f;
-                        }};}};
-                    fragBullet = new BasicBulletType(4f, 75f){{
+                        }};
+                    }};
+                    fragBullet = new BasicBulletType(4f, 35f){{
                         height = width = 15f;;
                         lifetime = 20f;
                         lightning = 2;
@@ -127,7 +129,8 @@ public class JPTurret{
 //                                hittable = false;
 //                                lightColor = Color.white;
 //                                buildingDamageMultiplier = 0.25f;
-//                            }};}};
+//                            }};
+//                        }};
 
                     }};
                 }};
@@ -225,7 +228,7 @@ public class JPTurret{
             rotateSpeed = 10f;
             range = 225f;
             liquidCapacity = 200F;
-            reload = 115f;
+            reload = 60f;
             recoil = 2f;
             shootCone = 2f;
             ammoUseEffect = Fx.casing1;
