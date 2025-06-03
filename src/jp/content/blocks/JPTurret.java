@@ -38,20 +38,16 @@ public class JPTurret{
             ammoUseEffect = Fx.casing1;
             inaccuracy = 2f;
             shootType = new BasicBulletType(4f, 75f){{
-                height = 15f;
-                width = 15f;
-                lifetime = 60f;
-                lightning = 1;
+                height = width = 15f;;
+                lifetime = 20f;
+                lightning = 2;
                 lightningLength = 7;
                 lightningColor = Color.valueOf("bf92f9");
-                status = StatusEffects.electrified;
-                statusDuration = 60f * 3;
-                pierce = true;
-                pierceBuilding = true;
-                pierceArmor = false;
-                pierceCap = 6;
                 backColor = Color.valueOf("bf92f9");
                 frontColor = Color.valueOf("bf92f9");
+                status = StatusEffects.electrified;
+                statusDuration = 60f * 3;
+                fragBullets = 1;
                 ammoMultiplier = 1f;
                 buildingDamageMultiplier = 0.25f;
                 intervalBullet = new LightningBulletType(){{
@@ -71,9 +67,72 @@ public class JPTurret{
                         lightColor = Color.white;
                         buildingDamageMultiplier = 0.25f;
                         }};}};
+                fragBullet = new BasicBulletType(4f, 75f){{
+                    height = width = 15f;;
+                    lifetime = 20f;
+                    lightning = 2;
+                    lightningLength = 7;
+                    lightningColor = Color.valueOf("bf92f9");
+                    backColor = Color.valueOf("bf92f9");
+                    frontColor = Color.valueOf("bf92f9");
+                    status = StatusEffects.electrified;
+                    statusDuration = 60f * 3;
+                    fragBullets = 1;
+                    ammoMultiplier = 1f;
+                    buildingDamageMultiplier = 0.25f;
+                    intervalBullet = new LightningBulletType(){{
+                        damage = 8;
+                        collidesAir = false;
+                        ammoMultiplier = 1f;
+                        lightningColor = Color.valueOf("bf92f9");
+                        lightningLength = 3;
+                        lightningLengthRand = 6;
+                        buildingDamageMultiplier = 0.25f;
+
+                        lightningType = new BulletType(0.0001f, 0f){{
+                            lifetime = Fx.lightning.lifetime;
+                            hitEffect = Fx.hitLancer;
+                            despawnEffect = Fx.none;
+                            hittable = false;
+                            lightColor = Color.white;
+                            buildingDamageMultiplier = 0.25f;
+                        }};}};
+                    fragBullet = new BasicBulletType(4f, 75f){{
+                        height = width = 15f;;
+                        lifetime = 20f;
+                        lightning = 2;
+                        lightningLength = 7;
+                        lightningColor = Color.valueOf("bf92f9");
+                        backColor = Color.valueOf("bf92f9");
+                        frontColor = Color.valueOf("bf92f9");
+                        status = StatusEffects.electrified;
+                        statusDuration = 60f * 3;
+                        fragBullets = 1;
+                        ammoMultiplier = 1f;
+                        buildingDamageMultiplier = 0.25f;
+                        intervalBullet = new LightningBulletType(){{
+                            damage = 8;
+                            collidesAir = false;
+                            ammoMultiplier = 1f;
+                            lightningColor = Color.valueOf("bf92f9");
+                            lightningLength = 3;
+                            lightningLengthRand = 6;
+                            buildingDamageMultiplier = 0.25f;
+
+                            lightningType = new BulletType(0.0001f, 0f){{
+                                lifetime = Fx.lightning.lifetime;
+                                hitEffect = Fx.hitLancer;
+                                despawnEffect = Fx.none;
+                                hittable = false;
+                                lightColor = Color.white;
+                                buildingDamageMultiplier = 0.25f;
+                            }};}};
+
+                    }};
                 }};
-                coolant = consumeCoolant(0.2f);
-                consumePower(4f);
+                }};
+            coolant = consumeCoolant(0.2f);
+            consumePower(4f);
             drawer = new DrawTurret(){{
                 parts.add(new RegionPart("-barrel"){{
                     progress = PartProgress.recoil;
