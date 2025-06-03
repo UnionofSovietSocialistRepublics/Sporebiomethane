@@ -40,15 +40,17 @@ public class JPTurret{
             shootType = new BasicBulletType(4f, 75f){{
                 height = width = 15f;;
                 lifetime = 20f;
-                lightningColor = Color.valueOf("bf92f9");
-                backColor = Color.valueOf("bf92f9");
-                frontColor = Color.valueOf("bf92f9");
                 status = StatusEffects.electrified;
                 statusDuration = 60f * 3;
                 fragBullets = 1;
                 fragRandomSpread = fragAngle = 0;
+                fragVelocityMin = fragLifeMin = 0.8f;
                 ammoMultiplier = 1f;
                 buildingDamageMultiplier = 0.25f;
+                lightningColor = Color.valueOf("bf92f9");
+                backColor = Color.valueOf("bf92f9");
+                frontColor = Color.valueOf("bf92f9");
+                despawnEffect = Fx.hitBulletColor;
                 intervalBullet = new LightningBulletType(){{
                     damage = 8;
                     collidesAir = false;
@@ -69,15 +71,16 @@ public class JPTurret{
                 fragBullet = new BasicBulletType(4f, 75f){{
                     height = width = 15f;;
                     lifetime = 20f;
-                    lightningColor = Color.valueOf("bf92f9");
-                    backColor = Color.valueOf("bf92f9");
-                    frontColor = Color.valueOf("bf92f9");
                     status = StatusEffects.electrified;
                     statusDuration = 60f * 3;
                     fragBullets = 1;
                     fragRandomSpread = fragAngle = 0;
                     ammoMultiplier = 1f;
                     buildingDamageMultiplier = 0.25f;
+                    lightningColor = Color.valueOf("bf92f9");
+                    backColor = Color.valueOf("bf92f9");
+                    frontColor = Color.valueOf("bf92f9");
+                    despawnEffect = Fx.hitBulletColor;
                     intervalBullet = new LightningBulletType(){{
                         damage = 8;
                         collidesAir = false;
@@ -100,30 +103,31 @@ public class JPTurret{
                         lifetime = 20f;
                         lightning = 2;
                         lightningLength = 7;
-                        lightningColor = Color.valueOf("bf92f9");
-                        backColor = Color.valueOf("bf92f9");
-                        frontColor = Color.valueOf("bf92f9");
                         status = StatusEffects.electrified;
                         statusDuration = 60f * 3;
                         ammoMultiplier = 1f;
                         buildingDamageMultiplier = 0.25f;
-                        intervalBullet = new LightningBulletType(){{
-                            damage = 8;
-                            collidesAir = false;
-                            ammoMultiplier = 1f;
-                            lightningColor = Color.valueOf("bf92f9");
-                            lightningLength = 3;
-                            lightningLengthRand = 6;
-                            buildingDamageMultiplier = 0.25f;
-
-                            lightningType = new BulletType(0.0001f, 0f){{
-                                lifetime = Fx.lightning.lifetime;
-                                hitEffect = Fx.hitLancer;
-                                despawnEffect = Fx.none;
-                                hittable = false;
-                                lightColor = Color.white;
-                                buildingDamageMultiplier = 0.25f;
-                            }};}};
+                        lightningColor = Color.valueOf("bf92f9");
+                        backColor = Color.valueOf("bf92f9");
+                        frontColor = Color.valueOf("bf92f9");
+                        despawnEffect = Fx.hitBulletColor;
+//                        intervalBullet = new LightningBulletType(){{
+//                            damage = 8;
+//                            collidesAir = false;
+//                            ammoMultiplier = 1f;
+//                            lightningColor = Color.valueOf("bf92f9");
+//                            lightningLength = 3;
+//                            lightningLengthRand = 6;
+//                            buildingDamageMultiplier = 0.25f;
+//
+//                            lightningType = new BulletType(0.0001f, 0f){{
+//                                lifetime = Fx.lightning.lifetime;
+//                                hitEffect = Fx.hitLancer;
+//                                despawnEffect = Fx.none;
+//                                hittable = false;
+//                                lightColor = Color.white;
+//                                buildingDamageMultiplier = 0.25f;
+//                            }};}};
 
                     }};
                 }};
