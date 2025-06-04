@@ -16,6 +16,10 @@ import jp.content.*;
 import mindustry.content.Fx;
 import mindustry.content.*;
 
+import static arc.graphics.g2d.Draw.*;
+import static arc.graphics.g2d.Lines.*;
+import static arc.math.Angles.*;
+import static mindustry.Vars.*;
 import static mindustry.content.Liquids.*;
 import static mindustry.type.ItemStack.*;
 import static mindustry.content.Items.*;
