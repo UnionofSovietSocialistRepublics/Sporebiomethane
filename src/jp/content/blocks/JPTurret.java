@@ -246,9 +246,8 @@ public class JPTurret{
                 height = 10f;
                 width = 5f;
                 lifetime = 30f;
-                status = StatusEffects.electrified;
+                status = StatusEffects.wet;
                 statusDuration = 60f * 3;
-                pierce = true;
                 pierceBuilding = true;
                 pierceArmor = true;
                 backColor = Color.valueOf("bf92f9");
@@ -298,9 +297,7 @@ public class JPTurret{
                         float offset = Mathf.randomSeed(e.id, 360f);
                         for(int i = 0; i < points; i++){
                             float angle = i* 360f / points + offset;
-                            //for(int s : Mathf.zeroOne){
-                                Drawf.tri(e.x + Angles.trnsx(angle, rad), e.y + Angles.trnsy(angle, rad), 6f, 50f * e.fout(), angle/* + s*180f*/);
-                            //}
+                                Drawf.tri(e.x + Angles.trnsx(angle, rad), e.y + Angles.trnsy(angle, rad), 6f, 25f * e.fout(), angle/* + s*180f*/);
                         }
 
                         Fill.circle(e.x, e.y, 12f * e.fout());
