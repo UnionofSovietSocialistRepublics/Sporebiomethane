@@ -236,19 +236,18 @@ public class JPTurret{
             rotateSpeed = 10f;
             range = 225f;
             liquidCapacity = 200F;
-            reload = 60f;
+            reload = 115f;
             recoil = 2f;
             shootCone = 2f;
             ammoUseEffect = Fx.casing1;
             hasPower = true;
             inaccuracy = 2f;
-            shootType = new BasicBulletType(7f, 215f){{
+            shootType = new BasicBulletType(7f, 75f){{
                 height = 10f;
                 width = 5f;
                 lifetime = 30f;
                 status = StatusEffects.wet;
                 statusDuration = 60f * 3;
-                pierceBuilding = true;
                 pierceArmor = true;
                 backColor = Color.valueOf("bf92f9");
                 frontColor = Color.valueOf("bf92f9");
@@ -281,7 +280,7 @@ public class JPTurret{
                     healPercent = 0f;
                     timeIncrease = 0f;
                     lifetime = 1;
-                    splashDamage = 70f;
+                    splashDamage = 215f;
                     status = StatusEffects.shocked;
                     hitEffect = new Effect(50f, 100f, e -> {
                         e.scaled(7f, b -> {
