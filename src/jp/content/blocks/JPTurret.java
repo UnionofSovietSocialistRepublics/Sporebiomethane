@@ -248,6 +248,7 @@ public class JPTurret{
                 lifetime = 30f;
                 status = StatusEffects.wet;
                 statusDuration = 60f * 3;
+                pierce = true;
                 pierceBuilding = true;
                 pierceArmor = true;
                 backColor = Color.valueOf("bf92f9");
