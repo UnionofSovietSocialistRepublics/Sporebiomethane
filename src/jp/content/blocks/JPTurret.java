@@ -302,7 +302,7 @@ public class JPTurret{
                         Drawf.light(e.x, e.y, rad * 1.6f, JPPal.sporeBullet, e.fout());
                     });
 
-                }}
+                }};
             }};
             shootSound = Sounds.shootBig;
             consumeLiquid(water,0.225f);
