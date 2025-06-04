@@ -42,9 +42,6 @@ public class JPTurret{
                 lifetime = 20f;
                 status = StatusEffects.electrified;
                 statusDuration = 60f * 3;
-                fragBullets = 1;
-                fragRandomSpread = fragAngle = 0;
-                fragVelocityMin = fragLifeMin = 0.8f;
                 ammoMultiplier = 1f;
                 buildingDamageMultiplier = 0.25f;
                 lightningColor = Color.valueOf("bf92f9");
@@ -69,14 +66,14 @@ public class JPTurret{
                         buildingDamageMultiplier = 0.25f;
                         }};
                 }};
+                fragBullets = 1;
+                fragRandomSpread = fragAngle = 0;
+                fragVelocityMin = fragLifeMin = 0.8f;
                 fragBullet = new BasicBulletType(4f, 35f){{
                     height = width = 15f;;
                     lifetime = 20f;
                     status = StatusEffects.electrified;
                     statusDuration = 60f * 3;
-                    fragBullets = 1;
-                    fragRandomSpread = fragAngle = 0;
-                    fragVelocityMin = fragLifeMin = 0.8f;
                     ammoMultiplier = 1f;
                     buildingDamageMultiplier = 0.25f;
                     lightningColor = Color.valueOf("bf92f9");
@@ -101,6 +98,9 @@ public class JPTurret{
                             buildingDamageMultiplier = 0.25f;
                         }};
                     }};
+                    fragBullets = 1;
+                    fragRandomSpread = fragAngle = 0;
+                    fragVelocityMin = fragLifeMin = 0.8f;
                     fragBullet = new BasicBulletType(4f, 35f){{
                         height = width = 15f;;
                         lifetime = 20f;
@@ -265,6 +265,44 @@ public class JPTurret{
                         lightColor = Color.white;
                         buildingDamageMultiplier = 0.25f;
                     }};}};
+                fragBullets = 1;
+                fragRandomSpread = fragAngle = 0;
+                fragVelocityMin = fragLifeMin = 0.8f;
+                fragBullet = new EMPBulletType(){{
+                    float rad = splashDamageRadius = 40;
+                    scaleLife = false;
+                    lightOpacity = 0.7f;
+                    healPercent = 0f;
+                    timeIncrease = 0f;
+                    lifetime = 1;
+                    splashDamage = 70f;
+                    status = StatusEffects.shocked;
+                    hitEffect = new Effect(50f, 100f, e -> {
+                        e.scaled(7f, b -> {
+                            color(Color.valueOf("bf92f9");, b.fout());
+                            Fill.circle(e.x, e.y, rad);
+                        });
+
+                        color(Color.valueOf("bf92f9"););
+                        stroke(e.fout() * 3f);
+                        Lines.circle(e.x, e.y, rad);
+
+                        int points = 10;
+                        float offset = Mathf.randomSeed(e.id, 360f);
+                        for(int i = 0; i < points; i++){
+                            float angle = i* 360f / points + offset;
+                            //for(int s : Mathf.zeroOne){
+                                Drawf.tri(e.x + Angles.trnsx(angle, rad), e.y + Angles.trnsy(angle, rad), 6f, 50f * e.fout(), angle/* + s*180f*/);
+                            //}
+                        }
+
+                        Fill.circle(e.x, e.y, 12f * e.fout());
+                        color();
+                        Fill.circle(e.x, e.y, 6f * e.fout());
+                        Drawf.light(e.x, e.y, rad * 1.6f, Color.valueOf("bf92f9");, e.fout());
+                    });
+
+                }}
             }};
             shootSound = Sounds.shootBig;
             consumeLiquid(water,0.225f);
