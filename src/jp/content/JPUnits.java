@@ -137,7 +137,7 @@ public class JPUnits {
             speed = 1f;
             hitSize = 8f;
             health = 345;
-            armor = 3;
+            armor = 2;
             range = 60f;
             legCount = 4;
             weapons.add(new Weapon(name + "-gun"){{
@@ -171,7 +171,7 @@ public class JPUnits {
         raptor = new UnitType("raptor"){{
             this.constructor = LegsUnit::create;
             speed = 2f;
-            armor = 2f;
+            armor = 3f;
             hitSize = 8f;
             health = 450;
             range = 50f;
@@ -298,7 +298,7 @@ public class JPUnits {
             speed = 1f;
             hitSize = 18f;
             health = 650;
-            armor = 5;
+            armor = 4;
             range = 125f;
             legCount = 4;
             stepShake = 0f;      
@@ -429,7 +429,7 @@ public class JPUnits {
             speed = 1f;
             hitSize = 8f;
             health = 650;
-            armor = 4;
+            armor = 3;
             range = 45f;
             legCount = 4;
             legLength = 13f;
@@ -485,6 +485,7 @@ public class JPUnits {
             speed = 1f;
             hitSize = 27f;
             health = 12000;
+            armor = 14;
             range = 150f;    
             legCount = 4;
             legLength = 25f; 
@@ -517,7 +518,7 @@ public class JPUnits {
             this.constructor = LegsUnit::create;
             speed = 0.65f;
             hitSize = 44f;
-            armor = 6;
+            armor = 11;
             health = 14000;
             range = 50f;
             legCount = 4;
@@ -575,7 +576,7 @@ public class JPUnits {
             speed = 0.55f;
             hitSize = 44f;
             health = 35000;
-            armor = 10;
+            armor = 23;
             range = 125f;
             legCount = 4;     
             legLength = 30f;
