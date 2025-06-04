@@ -248,7 +248,6 @@ public class JPTurret{
                 lifetime = 30f;
                 status = StatusEffects.wet;
                 statusDuration = 60f * 3;
-                pierce = true;
                 pierceBuilding = true;
                 pierceArmor = true;
                 backColor = Color.valueOf("bf92f9");
@@ -332,6 +331,8 @@ public class JPTurret{
             shootType = new PointLaserBulletType(){{
 	            collidesTeam = true;
 	            damage = 100;
+                status = StatusEffects.sapped;
+                statusDuration = 60f * 3;
                 hitColor = Color.valueOf("fda981");
                 ammoMultiplier = 1f;
                 pierceArmor = true;
