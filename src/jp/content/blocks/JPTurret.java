@@ -23,8 +23,6 @@ import mindustry.content.*;
 
 import static arc.graphics.g2d.Draw.*;
 import static arc.graphics.g2d.Lines.*;
-import static arc.math.Angles.*;
-import static mindustry.Vars.*;
 import static mindustry.content.Liquids.*;
 import static mindustry.type.ItemStack.*;
 import static mindustry.content.Items.*;
@@ -277,7 +275,7 @@ public class JPTurret{
                 fragBullets = 1;
                 fragRandomSpread = fragAngle = 0;
                 fragVelocityMin = fragLifeMin = 0.8f;
-                fragBullet = new EMPBulletType(){{
+                fragBullet = new EmpBulletType(){{
                     float rad = splashDamageRadius = 40;
                     scaleLife = false;
                     lightOpacity = 0.7f;
