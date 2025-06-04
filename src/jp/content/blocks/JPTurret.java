@@ -279,11 +279,11 @@ public class JPTurret{
                     status = StatusEffects.shocked;
                     hitEffect = new Effect(50f, 100f, e -> {
                         e.scaled(7f, b -> {
-                            color(Color.valueOf("bf92f9");, b.fout());
+                            color((Color.valueOf("bf92f9"));, b.fout());
                             Fill.circle(e.x, e.y, rad);
                         });
 
-                        color(Color.valueOf("bf92f9"););
+                        color((Color.valueOf("bf92f9")););
                         stroke(e.fout() * 3f);
                         Lines.circle(e.x, e.y, rad);
 
@@ -299,7 +299,7 @@ public class JPTurret{
                         Fill.circle(e.x, e.y, 12f * e.fout());
                         color();
                         Fill.circle(e.x, e.y, 6f * e.fout());
-                        Drawf.light(e.x, e.y, rad * 1.6f, Color.valueOf("bf92f9");, e.fout());
+                        Drawf.light(e.x, e.y, rad * 1.6f, (Color.valueOf("bf92f9"));, e.fout());
                     });
 
                 }}
