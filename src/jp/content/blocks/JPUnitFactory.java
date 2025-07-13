@@ -19,6 +19,7 @@ public class JPUnitFactory{
         public static void load(){
         pool = new UnitFactory("pool"){{
             requirements(Category.units, with(silicon,150,JPItem.Biomass,45));
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             plans = Seq.with(
                 new UnitPlan( JPUnits.zergling, 15 * 60f, with(silicon, 25,JPItem.Biomass,5)),
                 new UnitPlan( JPUnits.baneling, 10 * 60f, with(silicon, 15,JPItem.Biomass,5)),
@@ -34,6 +35,7 @@ public class JPUnitFactory{
         
         synapseTower = new UnitFactory("synapse-tower"){{
             requirements(Category.units, with(silicon,250,JPItem.Biomass,75));
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             plans = Seq.with(
                 new UnitPlan( JPUnits.Drone, 60f * 15, with(silicon, 15, JPItem.Biomass,10,lead, 25)),
                 new UnitPlan( JPUnits.Interceptor, 60f * 10, with(silicon, 35, JPItem.Biomass,10)),
@@ -46,6 +48,7 @@ public class JPUnitFactory{
         }};
         gestator = new UnitFactory("gestator"){{
             requirements(Category.units, with(silicon,750,JPItem.Nanitealloy,500,JPItem.Biomass,250,JPItem.Neocells,75));
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             plans = Seq.with(
                 new UnitPlan( JPUnits.carci, 60f * 25, with( silicon, 150, thorium, 75, JPItem.Neocells, 30)),
                 new UnitPlan( JPUnits.autus, 60f * 35, with( silicon, 200, JPItem.Biomass,75,pyratite,45, JPItem.Neocells, 75)),
@@ -60,6 +63,7 @@ public class JPUnitFactory{
         }};
         assembler = new UnitFactory("assembler"){{
             requirements(Category.units, with(silicon,675,JPItem.Nanitealloy,75,JPItem.Biomass,225));
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             plans = Seq.with(
                 new UnitPlan( JPUnits.Breacher, 60f * 15, with( silicon, 175, JPItem.Biomass,55, JPItem.Nanitealloy,45)),
                 new UnitPlan( JPUnits.Guardian, 60f * 10, with( silicon, 195, JPItem.Biomass,65, JPItem.Nanitealloy,65)),

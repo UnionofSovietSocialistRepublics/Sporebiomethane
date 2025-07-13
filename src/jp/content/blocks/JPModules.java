@@ -14,6 +14,7 @@ public class JPModules{
         public static void load(){
         acidifierModule = new UnitAssemblerModule("acidifier-module"){{
             requirements(Category.units, with(Items.silicon, 400, JPItem.Nanitealloy,50, JPItem.Biomass, 250));
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             consumePower(5f);
             size = 3;
             health = 475;

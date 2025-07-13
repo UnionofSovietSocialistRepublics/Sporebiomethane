@@ -89,6 +89,7 @@ public class JPUnits {
         Zeta = new UnitType("Zeta"){{
             this.constructor = BuildingTetherPayloadUnit::create;
             controller = u -> new AssemblerAI();
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1f;
             hitSize = 11f;
             health = 400;
@@ -112,6 +113,7 @@ public class JPUnits {
 
         zergling = new UnitType("zergling"){{
             this.constructor = LegsUnit::create;
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.45f;
             hitSize = 8f;
             health = 250;
@@ -134,6 +136,7 @@ public class JPUnits {
 
         Lobber = new UnitType("Lobber"){{
             this.constructor = LegsUnit::create;
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1f;
             hitSize = 8f;
             health = 345;
@@ -170,6 +173,7 @@ public class JPUnits {
 
         raptor = new UnitType("raptor"){{
             this.constructor = LegsUnit::create;
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 2f;
             armor = 3f;
             hitSize = 8f;
@@ -232,6 +236,7 @@ public class JPUnits {
         baneling = new UnitType("baneling"){{
             this.constructor = LegsUnit::create;
             aiController = SuicideAI::new;
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.25f;
             hitSize = 8f;
             health = 225;
@@ -295,6 +300,7 @@ public class JPUnits {
         roach = new UnitType("roach"){{
             this.constructor = LegsUnit::create;
 //            aiController = JPSeekerAI::new;
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1f;
             hitSize = 18f;
             health = 650;
@@ -332,6 +338,7 @@ public class JPUnits {
 
         Scarabid = new UnitType("Scarabid"){{
             this.constructor = LegsUnit::create;
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1f;
             hitSize = 18f;
             health = 1150;
@@ -372,6 +379,7 @@ public class JPUnits {
 
         Breacher = new UnitType("Breacher"){{
             this.constructor = LegsUnit::create;
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1f;
             hitSize = 18f;
             health = 1150;
@@ -426,6 +434,7 @@ public class JPUnits {
 
         Purger = new UnitType("Purger"){{
             this.constructor = LegsUnit::create;
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1f;
             hitSize = 8f;
             health = 650;
@@ -482,6 +491,7 @@ public class JPUnits {
 
         Gorgon = new UnitType("Gorgon"){{
             this.constructor = LegsUnit::create;
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1f;
             hitSize = 27f;
             health = 12000;
@@ -516,6 +526,7 @@ public class JPUnits {
 
         Behomoth = new UnitType("Behomoth"){{
             this.constructor = LegsUnit::create;
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 0.65f;
             hitSize = 44f;
             armor = 11;
@@ -573,6 +584,7 @@ public class JPUnits {
 
         Basilisk = new UnitType("Basilisk"){{
             this.constructor = LegsUnit::create;
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 0.55f;
             hitSize = 44f;
             health = 35000;
@@ -684,6 +696,7 @@ public class JPUnits {
             this.constructor = UnitEntity::create;
             controller = u -> new MinerAI();
             defaultCommand = UnitCommand.mineCommand;
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1f;
             hitSize = 10f;
             health = 400;
@@ -722,6 +735,7 @@ public class JPUnits {
 
         Interceptor = new UnitType("Interceptor"){{
             this.constructor = UnitEntity::create;
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.3f;
             hitSize = 18f;
             health = 620;
@@ -787,6 +801,7 @@ public class JPUnits {
 
         Rizomorph = new UnitType("Rizomorph"){{
             this.constructor = UnitEntity::create;
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.65f;
             accel = 0.08f;
             drag = 0.016f;
@@ -840,6 +855,7 @@ public class JPUnits {
 
         Guardian = new UnitType("Guardian"){{
             this.constructor = UnitEntity::create;
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1f;
             hitSize = 18f;
             health = 1500;
@@ -886,6 +902,7 @@ public class JPUnits {
 
         Hivedefender = new UnitType("Hivedefender"){{
             this.constructor = UnitEntity::create;
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 2.75f;
             armor = 1;
             hitSize = 18f;
@@ -925,6 +942,7 @@ public class JPUnits {
 
         HiveSentinel = new UnitType("HiveSentinel"){{
             this.constructor = UnitEntity::create;
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 2.5f;
             armor = 2;
             hitSize = 18f;
@@ -964,6 +982,7 @@ public class JPUnits {
 
         Sporophage = new UnitType("Sporophage"){{
             this.constructor = UnitEntity::create;
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 2f;
             armor = 3;
             hitSize = 17f;
@@ -989,7 +1008,7 @@ public class JPUnits {
                 shootStatus = StatusEffects.slow;
                 shootStatusDuration = 60f * 3;
                 mirror = false;
-                bullet = new ContinuousLaserBulletType(50f){{
+                bullet = new ContinuousLaserBulletType(20f){{
                     width = 2f;
                     length = 75f;
                     drawSize = 100f;
@@ -1008,6 +1027,7 @@ public class JPUnits {
         DeathImp = new UnitType("DeathImp"){{
             this.constructor = UnitEntity::create;
             aiController = SuicideAI::new;
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.75f;
             health = 215;
             range = 50f;
@@ -1071,6 +1091,7 @@ public class JPUnits {
         Imp = new UnitType("Imp"){{
             this.constructor = LegsUnit::create;
             aiController = SuicideAI::new;
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.5f;
             hitSize = 8f;
             health = 450;
@@ -1123,6 +1144,7 @@ public class JPUnits {
 
         carci = new UnitType("carci"){{
             this.constructor = LegsUnit::create;
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 0.65f;
             targetAir = false;
             hitSize = 8f;
@@ -1163,6 +1185,7 @@ public class JPUnits {
 
         autus = new UnitType("autus"){{
             this.constructor = LegsUnit::create;
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 0.75f;
             hitSize = 12f;
             health = 1500;
@@ -1231,132 +1254,134 @@ public class JPUnits {
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};
 
-            demolisher = new UnitType("demolisher"){{
-                this.constructor = LegsUnit::create;
-                speed = 0.6f;
-                hitSize = 16f;
-                armor = 6;
-                health = 6200;
-                range = 50f;
-                legCount = 4;
-                legLength = 17f;
-                legExtension = 7f;
-                legBaseOffset = 6f;
-                weapons.add(new Weapon(name + "-laser"){{
-                    reload = 225f;
-                    layerOffset = -0.01f;
-                    x = 12f;
-                    y = -2f;
-                    shoot.shots = 3;
-                    shoot.shotDelay = 10f;
-                    recoil = 8;
-                    bullet = new LaserBulletType(75f){{
-                        colors = new Color[]{Color.valueOf("8B73C7").cpy().a(0.4f), Color.valueOf("8B73C7"), Color.white};
+        demolisher = new UnitType("demolisher"){{
+            this.constructor = LegsUnit::create;
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            speed = 0.6f;
+            hitSize = 16f;
+            armor = 6;
+            health = 6200;
+            range = 50f;
+            legCount = 4;
+            legLength = 17f;
+            legExtension = 7f;
+            legBaseOffset = 6f;
+            weapons.add(new Weapon(name + "-laser"){{
+                reload = 225f;
+                layerOffset = -0.01f;
+                x = 12f;
+                y = -2f;
+                shoot.shots = 3;
+                shoot.shotDelay = 10f;
+                recoil = 8;
+                bullet = new LaserBulletType(75f){{
+                    colors = new Color[]{Color.valueOf("8B73C7").cpy().a(0.4f), Color.valueOf("8B73C7"), Color.white};
 //                        chargeEffect = new MultiEffect(Fx.lancerLaserCharge, Fx.lancerLaserChargeBegin);
-                        chargeEffect = JPFx.purpleLaserChargeSmall;
-                        lifetime = 16f;
-                        buildingDamageMultiplier = 2f;
-                    }};
-                    shootSound = Sounds.laser;
-                }});
-                weapons.add(new Weapon(name + "-missile"){{
-                    x = 0f;
-                    y = -10f;
-                    mirror = false;
-                    reload = 600f;
-                    recoil = 5.5f;
+                    chargeEffect = JPFx.purpleLaserChargeSmall;
+                    lifetime = 16f;
+                    buildingDamageMultiplier = 2f;
+                }};
+                shootSound = Sounds.laser;
+            }});
+            weapons.add(new Weapon(name + "-missile"){{
+                x = 0f;
+                y = -10f;
+                mirror = false;
+                reload = 600f;
+                recoil = 5.5f;
 //                    shoot.firstShotDelay = 125f;
 //                    shoot = new ShootSpread(5, 1.5f);
-                    shoot.shots = 6;
-                    shoot.shotDelay = 30f;
-                    bullet = new MissileBulletType(3.5f, 20){{
-                        width = 14f;
-                        height = 14f;
+                shoot.shots = 6;
+                shoot.shotDelay = 30f;
+                bullet = new MissileBulletType(3.5f, 20){{
+                    width = 14f;
+                    height = 14f;
+                    velocityRnd = 0.05f;
+                    inaccuracy = 2f;
+                    splashDamageRadius = 35f;
+                    splashDamage = 65f;
+                    shootStatus = StatusEffects.unmoving;
+                    shootStatusDuration = 4 * 60f;
+                    hitEffect = Fx.blastExplosion;
+                    despawnEffect = Fx.blastExplosion;
+                    weaveScale = 8f;
+                    weaveMag = 2f;
+                    fragBullets = 5;
+                    buildingDamageMultiplier = 2f;
+                    fragBullet = new MissileBulletType(4.5f, 5f){{
+                        width = 8f;
+                        height = 8f;
                         velocityRnd = 0.05f;
                         inaccuracy = 2f;
-                        splashDamageRadius = 35f;
-                        splashDamage = 65f;
-                        shootStatus = StatusEffects.unmoving;
-                        shootStatusDuration = 4 * 60f;
-                        hitEffect = Fx.blastExplosion; 
+                        splashDamageRadius = 25f;
+                        splashDamage = 10f;
+                        hitEffect = Fx.blastExplosion;
                         despawnEffect = Fx.blastExplosion;
                         weaveScale = 8f;
                         weaveMag = 2f;
-                        fragBullets = 5;
-                        buildingDamageMultiplier = 2f;
-                        fragBullet = new MissileBulletType(4.5f, 5f){{
-                            width = 8f;
-                            height = 8f;
-                            velocityRnd = 0.05f;
-                            inaccuracy = 2f;
-                            splashDamageRadius = 25f;
-                            splashDamage = 10f;
-                            hitEffect = Fx.blastExplosion;
-                            despawnEffect = Fx.blastExplosion;
-                            weaveScale = 8f;
-                            weaveMag = 2f;
-                            buildingDamageMultiplier = 3f;
-                        }};
+                        buildingDamageMultiplier = 3f;
                     }};
-                    shootSound = Sounds.missile;
+                }};
+                shootSound = Sounds.missile;
+            }});
+            weapons.add(new Weapon(name + "-beam"){{
+                x = -7f;
+                y = -7f;
+                reload = 75f;
+                recoil = 2.5f;
+                minWarmup = 0.94f;
+                shootWarmupSpeed = 0.05f;
+                mirror = false;
+                bullet = new MissileBulletType(3.5f, 50f){{
+                    weaveScale = 10;
+                    weaveMag = 6;
+                    buildingDamageMultiplier = 2f;
+                    homingPower = 0.1f;
+                    homingRange = 5f;
+                }};
+                parts.add(new RegionPart("-cover"){{
+                    progress = PartProgress.warmup;
+                    mirror = true;
+                    y = -1f;
+                    moveX = 1.5f;
+                    moveY = 1.25f;
+                    moveRot = -10f;
                 }});
-                weapons.add(new Weapon(name + "-beam"){{
-                    x = -7f;
-                    y = -7f;
-                    reload = 75f;
-                    recoil = 2.5f;
-                    minWarmup = 0.94f;
-                    shootWarmupSpeed = 0.05f;
-                    mirror = false;
-                    bullet = new MissileBulletType(3.5f, 50f){{
-                        weaveScale = 10;
-                        weaveMag = 6;
-                        buildingDamageMultiplier = 2f;
-                        homingPower = 0.1f;
-                        homingRange = 5f;
-                    }};
-                    parts.add(new RegionPart("-cover"){{
-                        progress = PartProgress.warmup;
-                        mirror = true;
-                        y = -1f;
-                        moveX = 1.5f;
-                        moveY = 1.25f;
-                        moveRot = -10f;
-                    }});
-                    shootSound = Sounds.missile;
+                shootSound = Sounds.missile;
+            }});
+            weapons.add(new Weapon(name + "-beam"){{
+                x = 7f;
+                y = -7f;
+                reload = 75f;
+                recoil = 2.5f;
+                minWarmup = 0.94f;
+                shootWarmupSpeed = 0.05f;
+                mirror = false;
+                bullet = new MissileBulletType(3.5f, 50f){{
+                    weaveScale = 10;
+                    weaveMag = 6;
+                    buildingDamageMultiplier = 2f;
+                    homingPower = 0.1f;
+                    homingRange = 5f;
+                }};
+                parts.add(new RegionPart("-cover"){{
+                    progress = PartProgress.warmup;
+                    mirror = true;
+                    y = -1f;
+                    moveX = 1.5f;
+                    moveY = 1.25f;
+                    moveRot = -10f;
                 }});
-                weapons.add(new Weapon(name + "-beam"){{
-                    x = 7f;
-                    y = -7f;
-                    reload = 75f;
-                    recoil = 2.5f;
-                    minWarmup = 0.94f;
-                    shootWarmupSpeed = 0.05f;
-                    mirror = false;
-                    bullet = new MissileBulletType(3.5f, 50f){{
-                        weaveScale = 10;
-                        weaveMag = 6;
-                        buildingDamageMultiplier = 2f;
-                        homingPower = 0.1f;
-                        homingRange = 5f;
-                    }};
-                    parts.add(new RegionPart("-cover"){{
-                        progress = PartProgress.warmup;
-                        mirror = true;
-                        y = -1f;
-                        moveX = 1.5f;
-                        moveY = 1.25f;
-                        moveRot = -10f;
-                    }});
-                    shootSound = Sounds.missile;
-                }});
-                healColor = Color.valueOf("590e14");
-                outlineColor = Color.valueOf("303a45");
-                abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
-                abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
-            }};
+                shootSound = Sounds.missile;
+            }});
+            healColor = Color.valueOf("590e14");
+            outlineColor = Color.valueOf("303a45");
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
+            abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
+        }};
 
         protectorate = new JPCopterUnitType("protectorate"){{
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.25f;
             armor = 4;
             hitSize = 9f;
@@ -1402,6 +1427,7 @@ public class JPUnits {
         }};
 
         saboteur = new JPCopterUnitType("saboteur"){{
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.25f;
             armor = 2;
             hitSize = 9f;
@@ -1451,6 +1477,7 @@ public class JPUnits {
         }};
 
         spitter = new JPCopterUnitType("spitter"){{
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.5f;
             armor = 3;
             hitSize = 9f;
@@ -1487,6 +1514,7 @@ public class JPUnits {
         }};
 
         carrier = new JPCopterUnitType("carrier"){{
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.65f;
             armor = 2;
             flying = true;
@@ -1588,6 +1616,7 @@ public class JPUnits {
 
         Thera = new UnitType("Thera"){{
             this.constructor = UnitEntity::create;
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.75f;
             hitSize = 8f;
             health = 1150;
@@ -1654,6 +1683,7 @@ public class JPUnits {
         }};  
 
         Gragoth = new JPCopterUnitType("Gragoth"){{
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.55f;
             armor = 3;
             hitSize = 18f;
@@ -1666,7 +1696,6 @@ public class JPUnits {
             weapons.add(new Weapon(name + "-railgun"){{
                 reload = 250f;
                 recoil = 6f;
-                x = 0f;
                 y = 8f;
                 layerOffset = -1f;
                 mirror = false;
@@ -1747,6 +1776,7 @@ public class JPUnits {
         }};
 
         Slasher = new JPCopterUnitType("Slasher"){{
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.75f;
             armor = 6;
             hitSize = 18f;
@@ -1765,7 +1795,6 @@ public class JPUnits {
                 inaccuracy = 7f;
                 reload = 200f;
                 recoil = 6f;
-                x = 0f;
                 y = 8f;
                 layerOffset = -1f;
                 bullet = new MissileBulletType(3.7f, 18){{
@@ -1792,8 +1821,6 @@ public class JPUnits {
                 progress = PartProgress.warmup;
                 layerOffset= -0.0001f;
                 under = true;
-                x = 0f;
-                y = 0f;
                 //moveX = -1.5f;
                 moveY = 8f;
                 moveRot = 0f;
@@ -1815,251 +1842,248 @@ public class JPUnits {
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};
             
-            FrostC = new UnitType("FrostC"){{
-                this.constructor = LegsUnit::create;
-                speed = 0.25f;
-                hitSize = 12f;
-                health = 58000;
-                armor = 30;
-                range = 80f;
-                legCount = 4;
-                legLength = 13f;
-                legExtension = 7f;
-                legBaseOffset = 6f;
-                weapons.add(new Weapon() {{
-                    shoot.firstShotDelay = 180;
-                    reload = 750;
-                    recoil = 12;
-                    mirror = false;
-                    rotate = false;
-                    x = 0;
-                    y = 0;
-                    shootSound = JPSounds.ArtyBig;
-                    bullet = new BasicBulletType(0.5f, 1500f) {{
-                        rangeOverride = 100f;
-                        chargeEffect = Fx.none;
-                        shootStatus = StatusEffects.unmoving;
-                        despawnEffect = Fx.blastExplosion;
-                        shootStatusDuration = 210f;
-                        hittable = false;
-                        width = 145;
-                        height = 145;
-                        backColor = Color.valueOf("87ceeb");
-                        frontColor = Color.white;
-                        lightColor = Color.valueOf("87ceeb");
-                        shrinkX = 0;
-                        shrinkY = 0;
-                        lifetime = 1800f;
-                        lightRadius = 70f;
-                        clipSize = 250f;
-                        sprite = "circle-bullet";
-                        splashDamage = 1800f;
-                        splashDamageRadius = 100f;
-                        hitShake = 8f;
-                        pierce = true;
-                        splashDamagePierce = true;
-                        trailLength = 175;
-                        trailWidth = 65;
-                        trailColor = Color.valueOf("87ceeb");
-                        hitEffect = despawnEffect = JPFx.bulletExplosion;
-                        intervalBullet = new LightningBulletType(){{
-                            damage = 800;
-                            collidesAir = false;
-                            lightningColor = Color.valueOf("87ceeb");
-                            lightningLength = 24;
-                            lightningLengthRand = 25;
+        FrostC = new UnitType("FrostC"){{
+            this.constructor = LegsUnit::create;
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            speed = 0.25f;
+            hitSize = 12f;
+            health = 58000;
+            armor = 30;
+            range = 80f;
+            legCount = 4;
+            legLength = 13f;
+            legExtension = 7f;
+            legBaseOffset = 6f;
+            weapons.add(new Weapon() {{
+                shoot.firstShotDelay = 180;
+                reload = 750;
+                recoil = 12;
+                mirror = false;
+                rotate = false;
+                shootSound = JPSounds.ArtyBig;
+                bullet = new BasicBulletType(0.5f, 1500f) {{
+                    rangeOverride = 100f;
+                    chargeEffect = Fx.none;
+                    shootStatus = StatusEffects.unmoving;
+                    despawnEffect = Fx.blastExplosion;
+                    shootStatusDuration = 210f;
+                    hittable = false;
+                    width = 145;
+                    height = 145;
+                    backColor = Color.valueOf("87ceeb");
+                    frontColor = Color.white;
+                    lightColor = Color.valueOf("87ceeb");
+                    shrinkX = 0;
+                    shrinkY = 0;
+                    lifetime = 1800f;
+                    lightRadius = 70f;
+                    clipSize = 250f;
+                    sprite = "circle-bullet";
+                    splashDamage = 1800f;
+                    splashDamageRadius = 100f;
+                    hitShake = 8f;
+                    pierce = true;
+                    splashDamagePierce = true;
+                    trailLength = 175;
+                    trailWidth = 65;
+                    trailColor = Color.valueOf("87ceeb");
+                    hitEffect = despawnEffect = JPFx.bulletExplosion;
+                    intervalBullet = new LightningBulletType(){{
+                        damage = 800;
+                        collidesAir = false;
+                        lightningColor = Color.valueOf("87ceeb");
+                        lightningLength = 24;
+                        lightningLengthRand = 25;
 
-                            //for visual stats only.
-                            buildingDamageMultiplier = 0.25f;
-                        }};
-                        chargeEffect = new MultiEffect(
-                        new WaveEffect(){{
-                            colorFrom = colorTo = Color.valueOf("87ceeb");
-                            sizeFrom = 160f;
-                            sizeTo = 0f;
-                            lifetime = 90f;
-                            strokeFrom = 0f;
-                            strokeTo = 10f;
-                        }},
-                        new WaveEffect(){{
-                            colorFrom = colorTo = Color.valueOf("87ceeb");
-                            sizeFrom = 200f;
-                            sizeTo = 0f;
-                            lifetime = 120f;
-                            strokeFrom = 0f;
-                            strokeTo = 12f;
-                        }},
-                        new WaveEffect(){{
-                            colorFrom = colorTo = Color.valueOf("87ceeb");
-                            sizeFrom = 280f;
-                            sizeTo = 0f;
-                            lifetime = 180f;
-                            strokeFrom = 0f;
-                            strokeTo = 15f;
-                        }}
-                    );
+                        //for visual stats only.
+                        buildingDamageMultiplier = 0.25f;
                     }};
-                }});
-                healColor = Color.valueOf("87ceeb");
-                outlineColor = Color.valueOf("303a45");
-                parts.add(new RegionPart("-hand"){{
-                    mirror = true;
-                    progress = PartProgress.warmup;
-                    layerOffset= -0.0001f;
-                    under = true;
-                    x = 3f;
-                    y = 3f;
-                    moveX = 1.5f;
-                    moveY = 2f;
-                    moveRot = -10f;
-                }});
-                hidden = true;
-                immunities.add(StatusEffects.burning);
-                immunities.add(StatusEffects.melting);
-                immunities.add(StatusEffects.freezing);
-                immunities.add(StatusEffects.sporeSlowed);
-                immunities.add(StatusEffects.slow);
-                abilities.add(new RegenAbility(){{percentAmount = 1f / (800f * 60f * 2f) * 100f;}});
-                abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.cryofluid;}});
-                abilities.add(new StatusFieldAbility(JPStatus.frostshield, 60f * 3, 60f * 5f, 60f));
-            }};
-
-            Frost = new UnitType("Frost"){{
-                this.constructor = LegsUnit::create;
-                speed = 0.25f;
-                hitSize = 12f;
-                health = 58000;
-                armor = 30;
-                range = 80f;
-                legCount = 4;
-                legLength = 13f;
-                legExtension = 7f;
-                legBaseOffset = 6f;
-                weapons.add(new Weapon("Flamethrowar"){{
-                    reload = 5f;
-                    x = 0f;
-                    y = 7f;
-                    recoil = 0f;
-                    mirror = false;
-                    shootStatus = JPStatus.frostshield;
-                    shootStatusDuration = 80f;
-                    shootSound = Sounds.flame;
-                    ejectEffect = Fx.none;
-                    bullet = new BasicBulletType(2.5f, 9){{
-                        statusDuration = 60f * 4;
-                        status = StatusEffects.freezing;
-                        collidesAir = true;
-                        shootEffect = Fx.none;
-                        speed = 6f;
-                        width = 0.1f;
-                        height = 0.1f;
-                        damage = 250f;
-                        lifetime = 25f;
-                        pierce = true;
-                        pierceBuilding = true;
-                        despawnEffect = Fx.none;
-                        pierceCap = 5;
-                        hittable = false;
-                        reflectable = false;
-                        shootEffect = new ParticleEffect() {{
-                            particles = 360;
-                            sizeFrom = 4f;
-                            sizeTo = 0f;
-                            length = 200f;
-                            lifetime = 30f;
-                            lightColor = Color.valueOf("87ceeb");
-                            colorFrom = Color.valueOf("87ceeb");
-                            colorTo = Color.valueOf("87ceeb");
-                            cone = 10f;
-                        }};
-                    }};
-                }});
-                weapons.add(new Weapon("Thingy"){{
-                    range = 150f;
-                    reload = 198419841984f;
-                    x = 0f;
-                    y = 7f;
-                    recoil = 0f;
-                    mirror = false;
-                    shootStatus = JPStatus.reversionD;
-                    shootStatusDuration = 300f;
-                    shoot.firstShotDelay = 301f;
-                    ejectEffect = Fx.none;
-                    display = false;
-                bullet = new BasicBulletType(25f, 500){{
-                    rangeOverride = 200f;
-                    backColor = Color.valueOf("8B73C7");
-                    frontColor = Color.valueOf("8B73C7");
-                    lifetime = 15f;
-                    splashDamage = 2000f;
-                    splashDamageRadius = 25.5f;
-                    recoil = -125f;
-                    trailLength = 60;
-                    trailWidth = 8f;
-                    trailColor = Color.valueOf("8B73C7");
-                    trailInterval = 3f;
-                    despawnSound = Sounds.spark;
-                    hitEffect = new MultiEffect(
-                        new WaveEffect(){{
-                            colorFrom = colorTo = Color.valueOf("8B73C7");
-                            sizeFrom = 0f;
-                            sizeTo = 90f;
-                            lifetime = 25f;
-                            strokeFrom = 0f;
-                            strokeTo = 5.5f;
-                        }}
-                    );
+                    chargeEffect = new MultiEffect(
+                    new WaveEffect(){{
+                        colorFrom = colorTo = Color.valueOf("87ceeb");
+                        sizeFrom = 160f;
+                        sizeTo = 0f;
+                        lifetime = 90f;
+                        strokeFrom = 0f;
+                        strokeTo = 10f;
+                    }},
+                    new WaveEffect(){{
+                        colorFrom = colorTo = Color.valueOf("87ceeb");
+                        sizeFrom = 200f;
+                        sizeTo = 0f;
+                        lifetime = 120f;
+                        strokeFrom = 0f;
+                        strokeTo = 12f;
+                    }},
+                    new WaveEffect(){{
+                        colorFrom = colorTo = Color.valueOf("87ceeb");
+                        sizeFrom = 280f;
+                        sizeTo = 0f;
+                        lifetime = 180f;
+                        strokeFrom = 0f;
+                        strokeTo = 15f;
+                    }}
+                );
                 }};
-                }});
-                weapons.add(new Weapon("AG"){{
-                    reload = 2500f;
-                    x = 0f;
-                    y = 0f;
-                    mirror = false;
-                    alwaysShooting = true;
-                    recoil = 0f;
-                    shootStatus = JPStatus.frostshield;
-                    shootStatusDuration = 360f;
-                    shootSound = Sounds.none;
-                    ejectEffect = Fx.none;
-                    display = false;
-                    bullet = new BasicBulletType(5f,0){{
-                        rangeOverride = 1f;
-                        lifetime = 1f;
-                        fragBullets = 4;
-                        fragBullet = new BasicBulletType(3f,250f){{
-                            width = 20f;
-                            height = 20f;
-                            shrinkX = shrinkY = 0.1f;
-                            lifetime = 20f;
-                            sprite = "jp-Target";
-                            fragBullets = 1;
-                            fragBullet = new BasicBulletType(0,0){{
-                                spawnUnit = JPUnits.autus;
-                            }};
+            }});
+            healColor = Color.valueOf("87ceeb");
+            outlineColor = Color.valueOf("303a45");
+            parts.add(new RegionPart("-hand"){{
+                mirror = true;
+                progress = PartProgress.warmup;
+                layerOffset= -0.0001f;
+                under = true;
+                x = 3f;
+                y = 3f;
+                moveX = 1.5f;
+                moveY = 2f;
+                moveRot = -10f;
+            }});
+            hidden = true;
+            immunities.add(StatusEffects.burning);
+            immunities.add(StatusEffects.melting);
+            immunities.add(StatusEffects.freezing);
+            immunities.add(StatusEffects.sporeSlowed);
+            immunities.add(StatusEffects.slow);
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (800f * 60f * 2f) * 100f;}});
+            abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.cryofluid;}});
+            abilities.add(new StatusFieldAbility(JPStatus.frostshield, 60f * 3, 60f * 5f, 60f));
+        }};
+
+        Frost = new UnitType("Frost"){{
+            this.constructor = LegsUnit::create;
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            speed = 0.25f;
+            hitSize = 12f;
+            health = 58000;
+            armor = 30;
+            range = 80f;
+            legCount = 4;
+            legLength = 13f;
+            legExtension = 7f;
+            legBaseOffset = 6f;
+            weapons.add(new Weapon("Flamethrowar"){{
+                reload = 5f;
+                x = 0f;
+                y = 7f;
+                recoil = 0f;
+                mirror = false;
+                shootStatus = JPStatus.frostshield;
+                shootStatusDuration = 80f;
+                shootSound = Sounds.flame;
+                ejectEffect = Fx.none;
+                bullet = new BasicBulletType(2.5f, 9){{
+                    statusDuration = 60f * 4;
+                    status = StatusEffects.freezing;
+                    collidesAir = true;
+                    shootEffect = Fx.none;
+                    speed = 6f;
+                    width = 0.1f;
+                    height = 0.1f;
+                    damage = 250f;
+                    lifetime = 25f;
+                    pierce = true;
+                    pierceBuilding = true;
+                    despawnEffect = Fx.none;
+                    pierceCap = 5;
+                    hittable = false;
+                    reflectable = false;
+                    shootEffect = new ParticleEffect() {{
+                        particles = 360;
+                        sizeFrom = 4f;
+                        sizeTo = 0f;
+                        length = 200f;
+                        lifetime = 30f;
+                        lightColor = Color.valueOf("87ceeb");
+                        colorFrom = Color.valueOf("87ceeb");
+                        colorTo = Color.valueOf("87ceeb");
+                        cone = 10f;
+                    }};
+                }};
+            }});
+            weapons.add(new Weapon("Thingy"){{
+                range = 150f;
+                reload = 198419841984f;
+                y = 7f;
+                recoil = 0f;
+                mirror = false;
+                shootStatus = JPStatus.reversionD;
+                shootStatusDuration = 300f;
+                shoot.firstShotDelay = 301f;
+                ejectEffect = Fx.none;
+                display = false;
+            bullet = new BasicBulletType(25f, 500){{
+                rangeOverride = 200f;
+                backColor = Color.valueOf("8B73C7");
+                frontColor = Color.valueOf("8B73C7");
+                lifetime = 15f;
+                splashDamage = 2000f;
+                splashDamageRadius = 25.5f;
+                recoil = -125f;
+                trailLength = 60;
+                trailWidth = 8f;
+                trailColor = Color.valueOf("8B73C7");
+                trailInterval = 3f;
+                despawnSound = Sounds.spark;
+                hitEffect = new MultiEffect(
+                    new WaveEffect(){{
+                        colorFrom = colorTo = Color.valueOf("8B73C7");
+                        sizeFrom = 0f;
+                        sizeTo = 90f;
+                        lifetime = 25f;
+                        strokeFrom = 0f;
+                        strokeTo = 5.5f;
+                    }}
+                );
+            }};
+            }});
+            weapons.add(new Weapon("AG"){{
+                reload = 2500f;
+                mirror = false;
+                alwaysShooting = true;
+                recoil = 0f;
+                shootStatus = JPStatus.frostshield;
+                shootStatusDuration = 360f;
+                shootSound = Sounds.none;
+                ejectEffect = Fx.none;
+                display = false;
+                bullet = new BasicBulletType(5f,0){{
+                    rangeOverride = 1f;
+                    lifetime = 1f;
+                    fragBullets = 4;
+                    fragBullet = new BasicBulletType(3f,250f){{
+                        width = 20f;
+                        height = 20f;
+                        shrinkX = shrinkY = 0.1f;
+                        lifetime = 20f;
+                        sprite = "jp-Target";
+                        fragBullets = 1;
+                        fragBullet = new BasicBulletType(0,0){{
+                            spawnUnit = JPUnits.autus;
                         }};
                     }};
-                }});
-                healColor = Color.valueOf("87ceeb");
-                outlineColor = Color.valueOf("303a45");
-                parts.add(new RegionPart("-hand"){{
-                    mirror = true;
-                    progress = PartProgress.warmup;
-                    layerOffset= -0.0001f;
-                    under = true;
-                    x = 3f;
-                    y = 3f;
-                    moveX = -1.5f;
-                    moveY = -1.25f;
-                    moveRot = 10f;
-                }});
-                deathExplosionEffect = JPFx.bulletExplosion;
-                immunities.add(StatusEffects.burning);
-                immunities.add(StatusEffects.melting);
-                immunities.add(StatusEffects.freezing);
-                abilities.add(new SpawnDeathAbility(FrostC, 1, 0f));
-                abilities.add(new RegenAbility(){{percentAmount = 1f / (800f * 60f * 2f) * 100f;}});
-                abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.cryofluid;}});
-                abilities.add(new StatusFieldAbility(JPStatus.frostshield, 60f * 3, 60f * 9f, 60f));
-            }};
+                }};
+            }});
+            healColor = Color.valueOf("87ceeb");
+            outlineColor = Color.valueOf("303a45");
+            parts.add(new RegionPart("-hand"){{
+                mirror = true;
+                progress = PartProgress.warmup;
+                layerOffset= -0.0001f;
+                under = true;
+                x = 3f;
+                y = 3f;
+                moveX = -1.5f;
+                moveY = -1.25f;
+                moveRot = 10f;
+            }});
+            deathExplosionEffect = JPFx.bulletExplosion;
+            immunities.add(StatusEffects.burning);
+            immunities.add(StatusEffects.melting);
+            immunities.add(StatusEffects.freezing);
+            abilities.add(new SpawnDeathAbility(FrostC, 1, 0f));
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (800f * 60f * 2f) * 100f;}});
+            abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.cryofluid;}});
+            abilities.add(new StatusFieldAbility(JPStatus.frostshield, 60f * 3, 60f * 9f, 60f));
+        }};
 }}

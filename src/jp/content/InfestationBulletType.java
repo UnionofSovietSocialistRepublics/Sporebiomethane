@@ -21,6 +21,7 @@ public class InfestationBulletType extends BasicBulletType {
             unit.impulse(Tmp.v3);
             //Unit that cannot be infested
             if (unit.type == JPUnits.roach || unit.type == JPUnits.Frost || unit.type == JPUnits.FrostC) return;
+            //Health check when bullet hits
             if( (unit.health <= (unit.maxHealth*0.25)) || (unit.health <= 100f || (unit.getDuration(JPStatus.infested)) > 0) ){
                 Infest(b, unit);
             }
