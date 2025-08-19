@@ -1786,28 +1786,15 @@ public class JPUnits {
             drag = 0.05f;
             accel = 0.11f;
             engineSize = 0f;
-
             weapons.add(new Weapon(name + "-Invis"){{
                 mirror = false;
-                shoot.firstShotDelay = 125f;
-                shoot = new ShootSpread(10, 5f);
-                velocityRnd = 0.4f;
-                inaccuracy = 7f;
-                reload = 200f;
-                recoil = 6f;
-                y = 8f;
-                layerOffset = -1f;
-                bullet = new MissileBulletType(3.7f, 18){{
-                    width = 8f;
-                    height = 8f;
-                    splashDamageRadius = 25f;
-                    splashDamage = 65f;
-                    hitEffect = Fx.blastExplosion;
-                    despawnEffect = Fx.blastExplosion;
-                    weaveScale = 8f;
-                    weaveMag = 2f;
+                shoot.firstShotDelay = 80f;
+                bullet = new ArtilleryBulletType(){{
+                    shootEffect = JPFx.dustcharge;
+                    sprite = "large-bomb";
+                    width = height = 120/4f;
                 }};
-                shootSound = Sounds.missile;
+
             }});
             blade.add(
                 new Blade(name + "-wing"){{
@@ -1815,15 +1802,6 @@ public class JPUnits {
                 bladeMoveSpeed = 80f;
                 bladeBlurAlphaMultiplier = 0.5f;
                 //bladeLayer = -1f;
-            }});
-            parts.add(new RegionPart("-Heart"){{
-                mirror = false;
-                progress = PartProgress.warmup;
-                layerOffset= -0.0001f;
-                under = true;
-                //moveX = -1.5f;
-                moveY = 8f;
-                moveRot = 0f;
             }});
             parts.add(new RegionPart("-blade"){{
                 mirror = true;

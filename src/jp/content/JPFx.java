@@ -93,6 +93,21 @@ public class JPFx {
         });
     }),
 
+    dustcharge = new Effect(80f, 100f, e -> {
+        color(Pal.heal);
+        stroke(e.fin() * 2f);
+
+        randLenVectors(e.id, 20, 40f * e.fout(), (x, y) -> {
+            Fill.circle(e.x + x, e.y + y, e.fin() * 5f);
+            Drawf.light(e.x + x, e.y + y, e.fin() * 15f, Pal.heal, 0.7f);
+        });
+
+        color();
+
+        Fill.circle(e.x, e.y, e.fin() * 10);
+        Drawf.light(e.x, e.y, e.fin() * 20f, Pal.heal, 0.7f);
+    }).followParent(true).rotWithParent(true),
+
     purpleLaserChargeSmall = new Effect(40f, 100f, e -> {
         color(Color.valueOf("8B73C7"));
         stroke(e.fin() * 2f);
