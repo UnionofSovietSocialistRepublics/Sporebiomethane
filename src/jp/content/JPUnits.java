@@ -1788,8 +1788,12 @@ public class JPUnits {
             engineSize = 0f;
             weapons.add(new Weapon(name + "-Invis"){{
                 mirror = false;
+                range = 300;
+                reload = 80;
                 shoot.firstShotDelay = 80f;
                 bullet = new ArtilleryBulletType(){{
+                    speed = 4.5f;
+                    lifetime = 300f;
                     shootEffect = JPFx.dustcharge;
                     sprite = "large-bomb";
                     width = height = 120/4f;
