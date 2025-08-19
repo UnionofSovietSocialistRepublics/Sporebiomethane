@@ -1794,7 +1794,7 @@ public class JPUnits {
                 bullet = new ArtilleryBulletType(){{
                     speed = 4.5f;
                     lifetime = 300f;
-                    shootEffect = JPFx.dustcharge;
+                    chargeEffect = JPFx.dustcharge;
                     sprite = "large-bomb";
                     width = height = 120/4f;
                 }};
