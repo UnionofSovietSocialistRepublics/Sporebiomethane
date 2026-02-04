@@ -1,5 +1,9 @@
 package jp.content;
 
+import arc.*;
+import arc.assets.*;
+import arc.assets.loaders.*;
+import arc.audio.*;
 import arc.func.Prov;
 import arc.graphics.*;
 import arc.struct.*;
@@ -17,7 +21,6 @@ import mindustry.type.*;
 import mindustry.content.*;
 import mindustry.type.unit.*;
 import mindustry.world.meta.*;
-
 
 
 public class JPUnits {
