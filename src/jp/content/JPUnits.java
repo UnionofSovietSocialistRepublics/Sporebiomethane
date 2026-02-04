@@ -148,7 +148,7 @@ public class JPUnits {
                 x = 0f;
                 y = -5f;
                 mirror = false;
-                shootSound = Sounds.artillery;
+                shootSound = Sounds.shootArtillery;
                 bullet = new BasicBulletType(3f, 75){{
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
@@ -330,7 +330,7 @@ public class JPUnits {
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
                 }};
-                shootSound = Sounds.artillery;
+                shootSound = Sounds.shootArtillery;
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
@@ -371,7 +371,7 @@ public class JPUnits {
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
                 }};
-                shootSound = Sounds.artillery;
+                shootSound = Sounds.shootArtillery;
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
@@ -632,7 +632,7 @@ public class JPUnits {
                         lightOpacity = 0.5f;
                     }};
                 }};
-                shootSound = Sounds.artillery;
+                shootSound = Sounds.shootArtillery;
             }});
             weapons.add(new Weapon(name + "-mini-body"){{
                 reload = 30f;
@@ -651,7 +651,7 @@ public class JPUnits {
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
                     }};
-                    shootSound = Sounds.artillery;
+                    shootSound = Sounds.shootArtillery;
                 parts.add(new RegionPart("-barrel"){{
                     mirror = true;
                     progress = PartProgress.recoil;
@@ -678,7 +678,7 @@ public class JPUnits {
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
                     }};
-                    shootSound = Sounds.artillery;
+                    shootSound = Sounds.shootArtillery;
                     parts.add(new RegionPart("-barrel"){{
                         mirror = true;
                         progress = PartProgress.recoil;
@@ -894,7 +894,7 @@ public class JPUnits {
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
                 }};
-                shootSound = Sounds.artillery;
+                shootSound = Sounds.shootArtillery;
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
@@ -1160,7 +1160,7 @@ public class JPUnits {
                 x = 0f;
                 y = 0f;
                 mirror = false;
-                shootSound = Sounds.artillery;
+                shootSound = Sounds.shootArtillery;
                 bullet = new ArtilleryBulletType(2.5f, 9){{
                     speed = 3f;
                     shootEffect = Fx.shootBig;
