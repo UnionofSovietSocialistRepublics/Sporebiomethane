@@ -7,6 +7,7 @@ import arc.audio.*;
 import arc.func.Prov;
 import arc.graphics.*;
 import arc.struct.*;
+import arc.util.*;
 import mindustry.ai.*;
 import mindustry.ai.types.*;
 import mindustry.entities.abilities.*;
@@ -15,13 +16,15 @@ import mindustry.entities.effect.*;
 import mindustry.entities.part.*;
 import mindustry.entities.part.DrawPart.PartProgress;
 import mindustry.entities.pattern.*;
-import mindustry.gen.Sounds;
+import mindustry.gen.*;
 import mindustry.graphics.*;
 import mindustry.type.*;
 import mindustry.content.*;
 import mindustry.type.unit.*;
+import mindustry.type.weapons.*;
 import mindustry.world.meta.*;
 
+import static mindustry.Vars.*;
 
 public class JPUnits {
     public static UnitType
