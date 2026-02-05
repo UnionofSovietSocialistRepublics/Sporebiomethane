@@ -86,8 +86,8 @@ public class JPUnits {
 
 
 
-        public static void load(){
-            setupID();
+    public static void load(){
+        setupID();
 
         Zeta = new UnitType("Zeta"){{
             this.constructor = BuildingTetherPayloadUnit::create;
@@ -151,7 +151,7 @@ public class JPUnits {
                 x = 0f;
                 y = -5f;
                 mirror = false;
-                shootSound = Sounds.shootArtillery;
+                shootSound = shootArtillery;
                 bullet = new BasicBulletType(3f, 75){{
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
@@ -302,7 +302,7 @@ public class JPUnits {
 
         roach = new UnitType("roach"){{
             this.constructor = LegsUnit::create;
-//            aiController = JPSeekerAI::new;
+        //            aiController = JPSeekerAI::new;
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1f;
             hitSize = 18f;
@@ -333,7 +333,7 @@ public class JPUnits {
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
                 }};
-                shootSound = Sounds.shootArtillery;
+                shootSound = shootArtillery;
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
@@ -374,7 +374,7 @@ public class JPUnits {
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
                 }};
-                shootSound = Sounds.shootArtillery;
+                shootSound = shootArtillery;
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
@@ -635,7 +635,7 @@ public class JPUnits {
                         lightOpacity = 0.5f;
                     }};
                 }};
-                shootSound = Sounds.shootArtillery;
+                shootSound = shootArtillery;
             }});
             weapons.add(new Weapon(name + "-mini-body"){{
                 reload = 30f;
@@ -654,11 +654,11 @@ public class JPUnits {
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
                     }};
-                    shootSound = Sounds.shootArtillery;
+                    shootSound = shootArtillery;
                 parts.add(new RegionPart("-barrel"){{
                     mirror = true;
                     progress = PartProgress.recoil;
-//                    layerOffset= -0.1f;
+        //                    layerOffset= -0.1f;
                     under = true;
                     y = 1.5f;
                     moveY = -2f;
@@ -681,7 +681,7 @@ public class JPUnits {
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
                     }};
-                    shootSound = Sounds.shootArtillery;
+                    shootSound = shootArtillery;
                     parts.add(new RegionPart("-barrel"){{
                         mirror = true;
                         progress = PartProgress.recoil;
@@ -897,7 +897,7 @@ public class JPUnits {
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
                 }};
-                shootSound = Sounds.shootArtillery;
+                shootSound = shootArtillery;
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
@@ -1090,7 +1090,7 @@ public class JPUnits {
             outlineColor = Color.valueOf("303a45");
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm; amount = 210f;}});
         }};        
-        
+
         Imp = new UnitType("Imp"){{
             this.constructor = LegsUnit::create;
             aiController = SuicideAI::new;
@@ -1163,7 +1163,7 @@ public class JPUnits {
                 x = 0f;
                 y = 0f;
                 mirror = false;
-                shootSound = Sounds.shootArtillery;
+                shootSound = shootArtillery;
                 bullet = new ArtilleryBulletType(2.5f, 9){{
                     speed = 3f;
                     shootEffect = Fx.shootBig;
@@ -1279,7 +1279,7 @@ public class JPUnits {
                 recoil = 8;
                 bullet = new LaserBulletType(75f){{
                     colors = new Color[]{Color.valueOf("8B73C7").cpy().a(0.4f), Color.valueOf("8B73C7"), Color.white};
-//                        chargeEffect = new MultiEffect(Fx.lancerLaserCharge, Fx.lancerLaserChargeBegin);
+        //                        chargeEffect = new MultiEffect(Fx.lancerLaserCharge, Fx.lancerLaserChargeBegin);
                     chargeEffect = JPFx.purpleLaserChargeSmall;
                     lifetime = 16f;
                     buildingDamageMultiplier = 2f;
@@ -1292,8 +1292,8 @@ public class JPUnits {
                 mirror = false;
                 reload = 600f;
                 recoil = 5.5f;
-//                    shoot.firstShotDelay = 125f;
-//                    shoot = new ShootSpread(5, 1.5f);
+        //                    shoot.firstShotDelay = 125f;
+        //                    shoot = new ShootSpread(5, 1.5f);
                 shoot.shots = 6;
                 shoot.shotDelay = 30f;
                 bullet = new MissileBulletType(3.5f, 20){{
@@ -1711,7 +1711,7 @@ public class JPUnits {
                     lifetime = 95f;
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
-//                    lightColor = Color.valueOf("8B73C7");
+        //                    lightColor = Color.valueOf("8B73C7");
                     collidesTiles = true;
                     trailEffect = Fx.missileTrail;
                     trailInterval = 3f;
