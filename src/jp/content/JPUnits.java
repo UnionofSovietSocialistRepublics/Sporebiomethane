@@ -455,7 +455,7 @@ public class JPUnits {
                 x = 11f;
                 y = 1f;
                 recoil = 0.5f;
-                shootSound = Sounds.torch;
+                shootSound = Sounds.shootSublimate;
                 ejectEffect = Fx.none;
                 alternate = false;
                 continuous = true;
@@ -513,7 +513,7 @@ public class JPUnits {
                 continuous = true;
                 shoot.firstShotDelay = JPFx.purpleLaserChargeSmall.lifetime -1f;
                 chargeSound = Sounds.chargeVela;
-                shootSound = Sounds.beam;
+                shootSound = Sounds.beamMeltdown;
                 mirror = false;
                 bullet = new ContinuousLaserBulletType(65f){{
                     width = 10f;
@@ -1010,7 +1010,7 @@ public class JPUnits {
                 continuous = true;
                 shoot.firstShotDelay = JPFx.purpleLaserChargeSmall.lifetime -1f;
                 chargeSound = Sounds.chargeVela;
-                shootSound = Sounds.beam;
+                shootSound = Sounds.beamMeltdown;
                 shootStatus = StatusEffects.slow;
                 shootStatusDuration = 60f * 3;
                 mirror = false;
@@ -1210,7 +1210,7 @@ public class JPUnits {
                 recoil = 0.5f;
                 shootStatus = StatusEffects.shielded;
                 shootStatusDuration = 80f;
-                shootSound = Sounds.torch;
+                shootSound = Sounds.shootSublimate;
                 ejectEffect = Fx.none;
                 continuous = true;
                 alwaysContinuous = true;
@@ -1287,7 +1287,7 @@ public class JPUnits {
                     lifetime = 16f;
                     buildingDamageMultiplier = 2f;
                 }};
-                shootSound = Sounds.laser;
+                shootSound = Sounds.shootLancer;
             }});
             weapons.add(new Weapon(name + "-missile"){{
                 x = 0f;

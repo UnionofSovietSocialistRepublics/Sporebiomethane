@@ -630,7 +630,7 @@ public class JPTurret{
             consumePower(7f);
             unitSort = UnitSorts.strongest;
             ammoUseEffect = Fx.casing3Double;
-            shootSound = Sounds.railgun;
+            shootSound = Sounds.shootForeshadow;
             outlineColor = Color.valueOf("19171b");
         }};
 }};
