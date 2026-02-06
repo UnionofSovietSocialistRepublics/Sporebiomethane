@@ -213,7 +213,7 @@ public class JPUnits {
                     trailWidth = 4f;
                     trailColor = Color.valueOf("8B73C7");
                     trailInterval = 3f;
-                    despawnSound = Sounds.spark;
+                    despawnSound = Sounds.shootArc;
                     hitEffect = new MultiEffect(
                             new WaveEffect(){{
                                 colorFrom = colorTo = Color.valueOf("8B73C7");
@@ -417,7 +417,7 @@ public class JPUnits {
                     trailLength = 3;
                     trailColor = Color.valueOf("8B73C7");
                 }};
-                shootSound = Sounds.missile;
+                shootSound = Sounds.shootMissile;
             }});
             weapons.add(new Weapon(name + "-thestorm"){{
                 reload = 5f;
@@ -512,7 +512,7 @@ public class JPUnits {
                 y = 26f;
                 continuous = true;
                 shoot.firstShotDelay = JPFx.purpleLaserChargeSmall.lifetime -1f;
-                chargeSound = Sounds.lasercharge2;
+                chargeSound = Sounds.chargeVela;
                 shootSound = Sounds.beam;
                 mirror = false;
                 bullet = new ContinuousLaserBulletType(65f){{
@@ -571,7 +571,7 @@ public class JPUnits {
                 reload = 5f;
                 x = -15f;
                 y = -23f;
-                shootSound = Sounds.shootBig;
+                shootSound = Sounds.shootSalvo;
                 bullet = new BasicBulletType(4.5f, 50){{
                     width = height = 15f;
 
@@ -1009,7 +1009,7 @@ public class JPUnits {
                 y = 0f;
                 continuous = true;
                 shoot.firstShotDelay = JPFx.purpleLaserChargeSmall.lifetime -1f;
-                chargeSound = Sounds.lasercharge2;
+                chargeSound = Sounds.chargeVela;
                 shootSound = Sounds.beam;
                 shootStatus = StatusEffects.slow;
                 shootStatusDuration = 60f * 3;
@@ -1328,7 +1328,7 @@ public class JPUnits {
                         buildingDamageMultiplier = 3f;
                     }};
                 }};
-                shootSound = Sounds.missile;
+                shootSound = Sounds.shootMissile;
             }});
             weapons.add(new Weapon(name + "-beam"){{
                 x = -7f;
@@ -1353,7 +1353,7 @@ public class JPUnits {
                     moveY = 1.25f;
                     moveRot = -10f;
                 }});
-                shootSound = Sounds.missile;
+                shootSound = Sounds.shootMissile;
             }});
             weapons.add(new Weapon(name + "-beam"){{
                 x = 7f;
@@ -1378,7 +1378,7 @@ public class JPUnits {
                     moveY = 1.25f;
                     moveRot = -10f;
                 }});
-                shootSound = Sounds.missile;
+                shootSound = Sounds.shootMissile;
             }});
             healColor = Color.valueOf("590e14");
             outlineColor = Color.valueOf("303a45");
@@ -1497,7 +1497,7 @@ public class JPUnits {
                 x = 0f;
                 y = 4f;
                 layerOffset = -1f;
-                shootSound = Sounds.flame;
+                shootSound = Sounds.shootFlame;
                 bullet = new LiquidBulletType(Liquids.neoplasm){{
                     lifetime = 47f;
                     damage = 25f;
@@ -1674,7 +1674,7 @@ public class JPUnits {
                     outlineColor = Color.valueOf("303a45");
                     }};
                 }};
-                shootSound = Sounds.missileSmall;
+                shootSound = Sounds.shootMissileSmall;
             }});
             healColor = Color.valueOf("590e14");
             outlineColor = Color.valueOf("303a45");
@@ -1756,11 +1756,11 @@ public class JPUnits {
                     lightning = 8;
                     lightningLength = 2;
                     lightningLengthRand = 8;
-                    despawnSound = Sounds.spark;
+                    despawnSound = Sounds.shootArc;
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
                 }};
-                shootSound = Sounds.shockBlast;
+                shootSound = Sounds.explosionObviate;
             }});
             blade.add(
                 new Blade(name + "-wing"){{
@@ -1960,7 +1960,7 @@ public class JPUnits {
                 mirror = false;
                 shootStatus = JPStatus.frostshield;
                 shootStatusDuration = 80f;
-                shootSound = Sounds.flame;
+                shootSound = Sounds.shootFlame;
                 ejectEffect = Fx.none;
                 bullet = new BasicBulletType(2.5f, 9){{
                     statusDuration = 60f * 4;
@@ -2014,7 +2014,7 @@ public class JPUnits {
                 trailWidth = 8f;
                 trailColor = Color.valueOf("8B73C7");
                 trailInterval = 3f;
-                despawnSound = Sounds.spark;
+                despawnSound = Sounds.shootArc;
                 hitEffect = new MultiEffect(
                     new WaveEffect(){{
                         colorFrom = colorTo = Color.valueOf("8B73C7");

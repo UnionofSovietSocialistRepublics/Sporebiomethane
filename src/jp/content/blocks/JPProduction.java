@@ -208,13 +208,13 @@ public class JPProduction{
                         spinSprite = true;
                         rotateSpeed = 2f;
                     }});
-            ambientSound = Sounds.bioLoop;
+            ambientSound = Sounds.loopBio;
             ambientSoundVolume = 0.2f;
 
             explosionRadius = 7;
             explosionDamage = 1500;
             explodeEffect = new MultiEffect(Fx.bigShockwave, new WrapEffect(Fx.titanSmoke, Liquids.neoplasm.color), Fx.neoplasmSplat);
-            explodeSound = Sounds.largeExplosion;
+            explodeSound = Sounds.explosionReactorNeoplasm;
             explosionPuddles = 40;
             explosionPuddleRange = tilesize * 3f;
             explosionPuddleLiquid = Liquids.neoplasm;
@@ -292,7 +292,7 @@ public class JPProduction{
             powerProduction = 3.75f;
             liquidCapacity = 25f;
             consumeLiquid(Liquids.oil, 0.2f);
-            ambientSound = Sounds.smelter;
+            ambientSound = Sounds.loopSmelter;
             ambientSoundVolume = 0.03f;
             generateEffect = Fx.generatespark;
             drawer = new DrawMulti(new DrawDefault(), new DrawFlame(Color.valueOf("8B73C7")));
@@ -306,7 +306,7 @@ public class JPProduction{
             powerProduction = 15f;
             itemDuration = 180f;
             consumeItem(JPItem.Voltaicgas);
-            ambientSound = Sounds.smelter;
+            ambientSound = Sounds.loopSmelter;
             ambientSoundVolume = 0.06f;
             generateEffect = Fx.generatespark;
             drawer = new DrawMulti(new DrawDefault(), new DrawFlame(Color.valueOf("8B73C7")));
@@ -350,7 +350,7 @@ public class JPProduction{
             warmupSpeed = 0.0025f;
             explosionRadius = 10;
             explosionDamage = 4000;
-            ambientSound = Sounds.pulse;
+            ambientSound = Sounds.loopPulse;
             ambientSoundVolume = 0.07f;
             drawer = new DrawMulti(new DrawRegion("-bottom"), new DrawPlasma(), new DrawDefault(), new DrawWarmupRegion(){{
                 color = Color.valueOf("8B73C7");

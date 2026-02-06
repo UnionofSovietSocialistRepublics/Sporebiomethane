@@ -310,7 +310,7 @@ public class JPTurret{
 
                 }};
             }};
-            shootSound = Sounds.shootBig;
+            shootSound = Sounds.shootSalvo;
             consumeLiquid(water,0.225f);
             consumePower(7f);
             outlineColor = Color.valueOf("19171b");
@@ -354,7 +354,7 @@ public class JPTurret{
         }};
         shootSound = Sounds.none;
         loopSoundVolume = 1f;
-        loopSound = Sounds.minebeam;
+        loopSound = Sounds.loopMineBeam;
         consumeLiquid(water, 45f / 60f);
         consumePower(10f);
         outlineColor = Color.valueOf("19171b");
@@ -500,7 +500,7 @@ public class JPTurret{
             shoot = new ShootAlternate(){{
                 barrels = 2;
             }};
-            shootSound = Sounds.shootBig;
+            shootSound = Sounds.shootSalvo;
             ammoUseEffect = Fx.casing1;
             ammo(
                sporePod, new BasicBulletType(5f, 10f){{
