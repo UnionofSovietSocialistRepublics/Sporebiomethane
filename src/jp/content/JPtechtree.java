@@ -167,7 +167,7 @@ public class JPtechtree {
                              new SectorComplete(fungalPass)
                      ), () -> {
                         node(JPsectors.Magma, Seq.with(new SectorComplete(JPsectors.Birth)), () -> {
-                            node(JPsectors.Frost);
+                            node(JPsectors.frost);
                             });
                         });
                 });

@@ -33,7 +33,7 @@ public class JPsectorsHM{
             captureWave = 30;
            // alwaysUnlocked = true;
         }};
-        Frosted = new SectorPreset("Frost", serpulo, 111){{
+        Frosted = new SectorPreset("frost", serpulo, 111){{
             difficulty = 69;
             captureWave = 45;
         }};

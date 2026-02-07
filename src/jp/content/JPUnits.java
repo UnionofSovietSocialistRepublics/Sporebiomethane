@@ -29,11 +29,11 @@ import static mindustry.Vars.*;
 public class JPUnits {
     public static UnitType
     //Legs
-    carci,imp, basilisk, autus, baneling, zergling, Behomoth, Lobber, breacher, Scarabid, Frost, roach, Purger, Gorgon, raptor, FrostC, demolisher,
+    carci,imp, basilisk, autus, baneling, zergling, behomoth, Lobber, breacher, Scarabid, frost, roach, Purger, Gorgon, raptor, frostC, demolisher,
     //missiles
     //Bomb,
     //Floaty
-    Guardian,Thera,impReincranation,Drone,Interceptor,Hivedefender,HiveSentinel,sporophage,Rizomorph,
+    Guardian,thera,impReincranation,drone,interceptor,Hivedefender,HiveSentinel,sporophage,Rizomorph,
     //Le tether
     Zeta,
     //Winged
@@ -530,7 +530,7 @@ public class JPUnits {
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
         }};
 
-        Behomoth = new UnitType("Behomoth"){{
+        behomoth = new UnitType("behomoth"){{
             this.constructor = LegsUnit::create;
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 0.65f;
@@ -698,7 +698,7 @@ public class JPUnits {
             abilities.add(new RegenAbility(){{percentAmount = 1f / (240f * 60f * 2f) * 100f;}});
         }};
 
-        Drone = new UnitType("Drone"){{
+        drone = new UnitType("drone"){{
             this.constructor = UnitEntity::create;
             controller = u -> new MinerAI();
             defaultCommand = UnitCommand.mineCommand;
@@ -739,7 +739,7 @@ public class JPUnits {
             abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f * 2f) * 100f;}});
         }};
 
-        Interceptor = new UnitType("Interceptor"){{
+        interceptor = new UnitType("interceptor"){{
             this.constructor = UnitEntity::create;
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.3f;
@@ -1620,7 +1620,7 @@ public class JPUnits {
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};
 
-        Thera = new UnitType("Thera"){{
+        thera = new UnitType("thera"){{
             this.constructor = UnitEntity::create;
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.75f;
@@ -1832,7 +1832,7 @@ public class JPUnits {
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};
             
-        FrostC = new UnitType("FrostC"){{
+        frostC = new UnitType("frostC"){{
             this.constructor = LegsUnit::create;
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 0.25f;
@@ -1940,7 +1940,7 @@ public class JPUnits {
             abilities.add(new StatusFieldAbility(JPStatus.frostshield, 60f * 3, 60f * 5f, 60f));
         }};
 
-        Frost = new UnitType("Frost"){{
+        frost = new UnitType("frost"){{
             this.constructor = LegsUnit::create;
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 0.25f;
@@ -2071,7 +2071,7 @@ public class JPUnits {
             immunities.add(StatusEffects.burning);
             immunities.add(StatusEffects.melting);
             immunities.add(StatusEffects.freezing);
-            abilities.add(new SpawnDeathAbility(FrostC, 1, 0f));
+            abilities.add(new SpawnDeathAbility(frostC, 1, 0f));
             abilities.add(new RegenAbility(){{percentAmount = 1f / (800f * 60f * 2f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.cryofluid;}});
             abilities.add(new StatusFieldAbility(JPStatus.frostshield, 60f * 3, 60f * 9f, 60f));

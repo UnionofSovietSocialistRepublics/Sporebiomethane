@@ -6,7 +6,7 @@ import static mindustry.content.Planets.*;
 
 public class JPsectors{
     public static SectorPreset
-    Ski, Biomass, Dig, Birth, Magma, Frost;
+    Ski, Biomass, Dig, Birth, Magma, frost;
 
 
     public static void load(){
@@ -35,7 +35,7 @@ public class JPsectors{
             captureWave = 30;
            // alwaysUnlocked = true;
         }};
-        Frost = new SectorPreset("Frost", serpulo, 111){{
+        frost = new SectorPreset("frost", serpulo, 111){{
             difficulty = 69;
             captureWave = 30;
            // alwaysUnlocked = true;
