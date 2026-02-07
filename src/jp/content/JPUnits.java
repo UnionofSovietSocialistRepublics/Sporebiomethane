@@ -35,7 +35,7 @@ public class JPUnits {
     //Floaty
     Guardian,thera,impReincranation,drone,interceptor,Hivedefender,HiveSentinel,sporophage,Rizomorph,
     //Le tether
-    Zeta,
+    zeta,
     //Winged
     Gragoth, Slasher, saboteur, protectorate, carrier, spitter;
     
@@ -92,7 +92,7 @@ public class JPUnits {
     public static void load(){
         setupID();
 
-        Zeta = new UnitType("Zeta"){{
+        zeta = new UnitType("zeta"){{
             this.constructor = BuildingTetherPayloadUnit::create;
             controller = u -> new AssemblerAI();
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
