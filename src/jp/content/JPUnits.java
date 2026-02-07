@@ -29,11 +29,11 @@ import static mindustry.Vars.*;
 public class JPUnits {
     public static UnitType
     //Legs
-    carci,Imp, Basilisk, autus, baneling, zergling, Behomoth, Lobber, Breacher, Scarabid, Frost, roach, Purger, Gorgon, raptor, FrostC, demolisher,
+    carci,imp, basilisk, autus, baneling, zergling, Behomoth, Lobber, breacher, Scarabid, Frost, roach, Purger, Gorgon, raptor, FrostC, demolisher,
     //missiles
     //Bomb,
     //Floaty
-    Guardian,Thera,DeathImp,Drone,Interceptor,Hivedefender,HiveSentinel,Sporophage,Rizomorph,
+    Guardian,Thera,impReincranation,Drone,Interceptor,Hivedefender,HiveSentinel,sporophage,Rizomorph,
     //Le tether
     Zeta,
     //Winged
@@ -383,7 +383,7 @@ public class JPUnits {
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
         }};
 
-        Breacher = new UnitType("Breacher"){{
+        breacher = new UnitType("breacher"){{
             this.constructor = LegsUnit::create;
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1f;
@@ -588,7 +588,7 @@ public class JPUnits {
             abilities.add(new UnitSpawnAbility(Lobber,475f,0f,-7f));
         }};
 
-        Basilisk = new UnitType("Basilisk"){{
+        basilisk = new UnitType("basilisk"){{
             this.constructor = LegsUnit::create;
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 0.55f;
@@ -986,7 +986,7 @@ public class JPUnits {
             abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f * 2f) * 100f;}});
         }};
 
-        Sporophage = new UnitType("Sporophage"){{
+        sporophage = new UnitType("sporophage"){{
             this.constructor = UnitEntity::create;
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 2f;
@@ -1030,7 +1030,7 @@ public class JPUnits {
             abilities.add(new RegenAbility(){{percentAmount = 1f / (75f * 60f * 2f) * 100f;}});
         }};
 
-        DeathImp = new UnitType("DeathImp"){{
+        impReincranation = new UnitType("impReincranation"){{
             this.constructor = UnitEntity::create;
             aiController = SuicideAI::new;
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
@@ -1094,7 +1094,7 @@ public class JPUnits {
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm; amount = 210f;}});
         }};        
 
-        Imp = new UnitType("Imp"){{
+        imp = new UnitType("imp"){{
             this.constructor = LegsUnit::create;
             aiController = SuicideAI::new;
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
@@ -1143,7 +1143,7 @@ public class JPUnits {
             immunities.add(StatusEffects.freezing);
             healColor = Color.valueOf("590e14");
             outlineColor = Color.valueOf("303a45");
-            abilities.add(new SpawnDeathAbility(DeathImp, 1, 11f));
+            abilities.add(new SpawnDeathAbility(impReincranation, 1, 11f));
             abilities.add(new RegenAbility(){{percentAmount = 1f / (70f * 60f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm; amount = 75f;}});
         }};

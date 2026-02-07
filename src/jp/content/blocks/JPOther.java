@@ -50,7 +50,7 @@ VCAwall,Sporecore,Hive,Nydusaecore;
         Nydusaecore = new CoreBlock("Nydusaecore"){{
             requirements(Category.effect, with(JPItem.Biomass, 12000, JPItem.Nanitealloy, 8000, JPItem.VCA, 4000, silicon, 8000, surgeAlloy, 6000));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
-            unitType = JPUnits.Sporophage;
+            unitType = JPUnits.sporophage;
             health = 16250;
             itemCapacity = 25000;
             size = 6;

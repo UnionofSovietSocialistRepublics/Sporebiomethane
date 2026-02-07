@@ -53,7 +53,7 @@ public class JPUnitFactory{
                 new UnitPlan( JPUnits.carci, 60f * 25, with( silicon, 150, thorium, 75, JPItem.Neocells, 30)),
                 new UnitPlan( JPUnits.autus, 60f * 35, with( silicon, 200, JPItem.Biomass,75,pyratite,45, JPItem.Neocells, 75)),
                 new UnitPlan( JPUnits.Thera, 60f * 25, with( silicon, 175, JPItem.Biomass,75, JPItem.Neocells, 75)),
-                new UnitPlan( JPUnits.Imp, 60f * 15, with( silicon, 35, pyratite, 15, JPItem.Biomass,5, JPItem.Neocells, 15))
+                new UnitPlan( JPUnits.imp, 60f * 15, with( silicon, 35, pyratite, 15, JPItem.Biomass,5, JPItem.Neocells, 15))
             );
             health = 2500;
             size = 3;
@@ -65,7 +65,7 @@ public class JPUnitFactory{
             requirements(Category.units, with(silicon,675,JPItem.Nanitealloy,75,JPItem.Biomass,225));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             plans = Seq.with(
-                new UnitPlan( JPUnits.Breacher, 60f * 15, with( silicon, 175, JPItem.Biomass,55, JPItem.Nanitealloy,45)),
+                new UnitPlan( JPUnits.breacher, 60f * 15, with( silicon, 175, JPItem.Biomass,55, JPItem.Nanitealloy,45)),
                 new UnitPlan( JPUnits.Guardian, 60f * 10, with( silicon, 195, JPItem.Biomass,65, JPItem.Nanitealloy,65)),
                 new UnitPlan( JPUnits.Behomoth, 60f * 50, with( silicon, 850, JPItem.Biomass,400, JPItem.Nanitealloy,400)),
                 new UnitPlan( JPUnits.Scarabid, 60f * 40, with( silicon, 225, plastanium, 90, JPItem.Biomass,25))
