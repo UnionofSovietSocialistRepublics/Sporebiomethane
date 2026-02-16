@@ -104,7 +104,7 @@ public class JPtechtree {
 }else {
             nodeRoot("Spore biomechs", coreShard, false, () -> {
             //Above the skies is currently the placeholder for now, the required sector will change later.
-            node(JPOther.Sporecore, Seq.with(new SectorComplete(JPsectors.Birth)), () -> {
+            node(JPOther.Sporecore, Seq.with(new SectorComplete(JPsectors.birth)), () -> {
                 node(JPOther.Hive, () -> {
                     node(JPOther.Nydusaecore);
                 });
@@ -162,11 +162,11 @@ public class JPtechtree {
                          new SectorComplete(JPsectors.ski),
                          new SectorComplete(SectorPresets.craters)
                  ), () -> {
-                     node(JPsectors.Birth, Seq.with(
+                     node(JPsectors.birth, Seq.with(
                              new SectorComplete(JPsectors.dig),
                              new SectorComplete(fungalPass)
                      ), () -> {
-                        node(JPsectors.magma, Seq.with(new SectorComplete(JPsectors.Birth)), () -> {
+                        node(JPsectors.magma, Seq.with(new SectorComplete(JPsectors.birth)), () -> {
                             node(JPsectors.frost);
                             });
                         });
