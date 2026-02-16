@@ -21,7 +21,7 @@ import static mindustry.Vars.*;
 // Hopefully this should be a tempeorary solution, will make a flexible version later
 public class JPRandSpawner extends Ability{
     public UnitType unit;
-    public Unit altUnit;
+    public UnitType altUnit;
     public float spawnTime = 60f, spawnX, spawnY;
     public Effect spawnEffect = Fx.spawn;
     public boolean parentizeEffects;
@@ -29,7 +29,7 @@ public class JPRandSpawner extends Ability{
     protected float timer;
     protected int rand;
 
-    public JPRandSpawner(UnitType unit, Unit altUnit, float spawnTime, float spawnX, float spawnY){
+    public JPRandSpawner(UnitType unit, UnitType altUnit, float spawnTime, float spawnX, float spawnY){
         this.unit = unit;
         this.altUnit = altUnit;
         this.spawnTime = spawnTime;
@@ -49,6 +49,8 @@ public class JPRandSpawner extends Ability{
     }
 
     @Override
+    public void update(Unit unit){}
+    
     public void update(Unit unit){
         // Should randomize between zero and one
         // float x;
