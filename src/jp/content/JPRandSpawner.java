@@ -55,18 +55,18 @@ public class JPRandSpawner extends Ability{
         // Should randomize between zero and one
         // float x;
         Unit u;
-        rand = (int)Math.random()*1;
+        rand = (int)Math.random()*5;
         timer += Time.delta * state.rules.unitBuildSpeed(unit.team);
 
         if(timer >= spawnTime){
             float x = unit.x + Angles.trnsx(unit.rotation, spawnY, -spawnX), y = unit.y + Angles.trnsy(unit.rotation, spawnY, -spawnX);
-            if(Units.canCreate(unit.team, this.unit)&&rand==0){
+            if(Units.canCreate(unit.team, this.unit)&&rand<=0){
                 
                 spawnEffect.at(x, y, 0f, parentizeEffects ? altUnit : null);
                 u = this.unit.create(unit.team);
                 u.rotation = unit.rotation;
                 u.set(x, y);
-                Events.fire(new UnitCreateEvent(u, null, unit));
+                Events.fire(new UnitCreateEvent(u, null, altUnit));
                 if(!Vars.net.client()){
                     u.add();
                     Units.notifyUnitSpawn(u);
@@ -74,7 +74,7 @@ public class JPRandSpawner extends Ability{
 
                 timer = 0f;
             }
-            else if(Units.canCreate(altUnit.team, this.altUnit)&&rand==1){
+            else if(Units.canCreate(altUnit.team, this.altUnit)&&rand>=1){
                 // x = altUnit.x + Angles.trnsx(altUnit.rotation, spawnY, -spawnX), y = altUnit.y + Angles.trnsy(altUnit.rotation, spawnY, -spawnX);
                 spawnEffect.at(x, y, 0f, parentizeEffects ? altUnit : null);
                 u = this.unit.create(altUnit.team);
