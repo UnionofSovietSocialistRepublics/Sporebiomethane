@@ -38,7 +38,7 @@ VCAwall,Sporecore,Hive,Nydusaecore;
         Hive = new CoreBlock("Hive"){{
             requirements(Category.effect, with(JPItem.Biomass, 6000, JPItem.Nanitealloy, 4000, silicon, 6000, surgeAlloy, 4000));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
-            unitType = JPUnits.HiveSentinel;
+            unitType = JPUnits.hiveSentinel;
             health = 9500;
             itemCapacity = 15000;
             size = 5;

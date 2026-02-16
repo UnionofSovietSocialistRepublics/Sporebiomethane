@@ -33,7 +33,7 @@ public class JPUnits {
     //missiles
     //Bomb,
     //Floaty
-    Guardian,thera,impReincranation,drone,interceptor,Hivedefender,HiveSentinel,sporophage,Rizomorph,
+    Guardian,thera,impReincranation,drone,interceptor,Hivedefender,hiveSentinel,sporophage,Rizomorph,
     //Le tether
     zeta,
     //Winged
@@ -893,11 +893,11 @@ public class JPUnits {
                     frontColor = Color.valueOf("8FFE09");
                     lightColor = Color.valueOf("8FFE09");
                     collides = true;
-                    collidesTiles = true;
+                            collidesTiles = true;
                     trailLength = 6;
                     trailWidth = 2.8f;
                     trailColor = Color.valueOf("bbfe6b");
-                    shootEffect = Fx.shootBig;
+                        shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
                 }};
                 shootSound = Sounds.shootArtillery;
@@ -935,7 +935,7 @@ public class JPUnits {
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
                     buildingDamageMultiplier = 0.05f;
-                    lifetime = 50f;
+                        lifetime = 50f;
                     backColor = Color.valueOf("8B73C7");
                     frontColor = Color.valueOf("8B73C7");
                     lightColor = Color.valueOf("8B73C7");
@@ -946,7 +946,7 @@ public class JPUnits {
             abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f * 2f) * 100f;}});
         }};
 
-        HiveSentinel = new UnitType("HiveSentinel"){{
+        hiveSentinel = new UnitType("hiveSentinel"){{
             this.constructor = UnitEntity::create;
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 2.5f;
@@ -1648,7 +1648,7 @@ public class JPUnits {
                     shoot.shots = 4;
                     alternate = true;
                     shoot.shotDelay = 5f;
-                    spawnUnit = new MissileUnitType("Bomb"){{
+                    spawnUnit = new MissileUnitType("bomb"){{
                     flying = true;
                     useUnitCap = false;
                     lifetime = 50f;
@@ -2046,7 +2046,7 @@ public class JPUnits {
                         height = 20f;
                         shrinkX = shrinkY = 0.1f;
                         lifetime = 20f;
-                        sprite = "jp-Target";
+                        sprite = "jp-target";
                         fragBullets = 1;
                         fragBullet = new BasicBulletType(0,0){{
                             spawnUnit = JPUnits.autus;
