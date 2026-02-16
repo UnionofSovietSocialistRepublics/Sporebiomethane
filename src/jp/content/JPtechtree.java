@@ -15,12 +15,12 @@ public class JPtechtree {
         if(Core.settings.getBool("HM")){
         nodeRoot("Spore biomechs Hardmode", coreShard, false, () -> {
             //Above the skies is currently the placeholder for now, the required sector will change later.
-            node(JPOther.Sporecore, Seq.with(new SectorComplete(JPsectorsHM.SkiHM)), () -> {
+            node(JPOther.Sporecore, Seq.with(new SectorComplete(JPsectorsHM.skiHM)), () -> {
                 node(JPOther.Hive, () -> {
                     node(JPOther.Nydusaecore);
                 });
             });
-            node(JPTurret.Sporegarrison, Seq.with(new SectorComplete(JPsectorsHM.SkiHM)), () -> {
+            node(JPTurret.Sporegarrison, Seq.with(new SectorComplete(JPsectorsHM.skiHM)), () -> {
                 node(JPTurret.Flakaccelerator, () -> {
                     node(JPTurret.Suppressor);
                  });
@@ -34,7 +34,7 @@ public class JPtechtree {
                 });
     });
             
-            node(JPProduction.Nanoprocessor, Seq.with(new SectorComplete(JPsectorsHM.SkiHM)), () -> {
+            node(JPProduction.Nanoprocessor, Seq.with(new SectorComplete(JPsectorsHM.skiHM)), () -> {
                 node(JPProduction.Vanadicarbide);
                 node(JPProduction.Gaschamber);
                 node(JPProduction.FR);
@@ -47,7 +47,7 @@ public class JPtechtree {
                     });
                 });
             });
-            node(JPUnitFactory.pool, Seq.with(new SectorComplete(JPsectorsHM.SkiHM)), () -> {
+            node(JPUnitFactory.pool, Seq.with(new SectorComplete(JPsectorsHM.skiHM)), () -> {
                 node(JPUnitFactory.synapseTower, () -> {
                     node(JPUnitFactory.assembler, () -> {
                         node(JPUnitAssembler.apollyonAssembler);
@@ -63,21 +63,21 @@ public class JPtechtree {
                     });
                 });
             });
-            node(JPProduction.Extractor, Seq.with(new SectorComplete(JPsectorsHM.DigHM)),() -> {
-                node(JPProduction.ZincExtractor, Seq.with(new SectorComplete(JPsectorsHM.DigHM)), () -> {
+            node(JPProduction.Extractor, Seq.with(new SectorComplete(JPsectorsHM.digHM)),() -> {
+                node(JPProduction.ZincExtractor, Seq.with(new SectorComplete(JPsectorsHM.digHM)), () -> {
             });
             });
             node(JPOther.VCAwall);
-             node(JPsectorsHM.SkiHM, Seq.with(new SectorComplete(frozenForest)), () -> {
-                node(JPsectorsHM.DigHM, Seq.with(
-                        new SectorComplete(JPsectorsHM.SkiHM),
+             node(JPsectorsHM.skiHM, Seq.with(new SectorComplete(frozenForest)), () -> {
+                node(JPsectorsHM.digHM, Seq.with(
+                        new SectorComplete(JPsectorsHM.skiHM),
                         new SectorComplete(SectorPresets.craters)
                 ), () -> {
-                    node(JPsectorsHM.BirthHM, Seq.with(
-                            new SectorComplete(JPsectorsHM.DigHM),
+                    node(JPsectorsHM.birthHM, Seq.with(
+                            new SectorComplete(JPsectorsHM.digHM),
                             new SectorComplete(fungalPass)
                     ), () -> {
-                        node(JPsectorsHM.MagmaHM, Seq.with(new SectorComplete(JPsectorsHM.BirthHM)), () -> {
+                        node(JPsectorsHM.magmaHM, Seq.with(new SectorComplete(JPsectorsHM.birthHM)), () -> {
                             node(JPsectorsHM.Frosted);
                             });
                         });
@@ -109,7 +109,7 @@ public class JPtechtree {
                     node(JPOther.Nydusaecore);
                 });
             });
-            node(JPTurret.Sporegarrison, Seq.with(new SectorComplete(JPsectors.Ski)), () -> {
+            node(JPTurret.Sporegarrison, Seq.with(new SectorComplete(JPsectors.ski)), () -> {
                 node(JPTurret.Flakaccelerator, () -> {
                     node(JPTurret.Suppressor);
                  });
@@ -123,7 +123,7 @@ public class JPtechtree {
                 });
     });
             
-            node(JPProduction.Nanoprocessor, Seq.with(new SectorComplete(JPsectors.Ski)), () -> {
+            node(JPProduction.Nanoprocessor, Seq.with(new SectorComplete(JPsectors.ski)), () -> {
                 node(JPProduction.Vanadicarbide);
                 node(JPProduction.Gaschamber);
                 node(JPProduction.FR);
@@ -136,7 +136,7 @@ public class JPtechtree {
                     });
                 });
             });
-            node(JPUnitFactory.pool, Seq.with(new SectorComplete(JPsectors.Ski)), () -> {
+            node(JPUnitFactory.pool, Seq.with(new SectorComplete(JPsectors.ski)), () -> {
                 node(JPUnitFactory.synapseTower, () -> {
                     node(JPUnitFactory.assembler, () -> {
                         node(JPUnitAssembler.apollyonAssembler);
@@ -152,21 +152,21 @@ public class JPtechtree {
                     });
                 });
             });
-            node(JPProduction.Extractor, Seq.with(new SectorComplete(JPsectors.Dig)), () -> {
-                node(JPProduction.ZincExtractor, Seq.with(new SectorComplete(JPsectors.Dig)), () -> {
+            node(JPProduction.Extractor, Seq.with(new SectorComplete(JPsectors.dig)), () -> {
+                node(JPProduction.ZincExtractor, Seq.with(new SectorComplete(JPsectors.dig)), () -> {
             });
             });
             node(JPOther.VCAwall);
-             node(JPsectors.Ski, Seq.with(new SectorComplete(frozenForest)), () -> {
-                 node(JPsectors.Dig, Seq.with(
-                         new SectorComplete(JPsectors.Ski),
+             node(JPsectors.ski, Seq.with(new SectorComplete(frozenForest)), () -> {
+                 node(JPsectors.dig, Seq.with(
+                         new SectorComplete(JPsectors.ski),
                          new SectorComplete(SectorPresets.craters)
                  ), () -> {
                      node(JPsectors.Birth, Seq.with(
-                             new SectorComplete(JPsectors.Dig),
+                             new SectorComplete(JPsectors.dig),
                              new SectorComplete(fungalPass)
                      ), () -> {
-                        node(JPsectors.Magma, Seq.with(new SectorComplete(JPsectors.Birth)), () -> {
+                        node(JPsectors.magma, Seq.with(new SectorComplete(JPsectors.Birth)), () -> {
                             node(JPsectors.frost);
                             });
                         });
