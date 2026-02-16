@@ -8,6 +8,7 @@ import arc.util.*;
 import mindustry.*;
 import mindustry.content.*;
 import mindustry.entities.*;
+import mindustry.entities.abilities.*;
 import mindustry.game.EventType.*;
 import mindustry.gen.*;
 import mindustry.graphics.*;
@@ -18,7 +19,7 @@ import static mindustry.Vars.*;
 
 // An extremely lazy version of a spawner ability that can spawn either one of two unit
 // Hopefully this should be a tempeorary solution, will make a flexible version later
-public class UnitSpawnAbility extends Ability{
+public class JPRandSpawner extends Ability{
     public UnitType unit;
     public float spawnTime = 60f, spawnX, spawnY;
     public Effect spawnEffect = Fx.spawn;
