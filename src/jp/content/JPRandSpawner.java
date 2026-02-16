@@ -48,9 +48,9 @@ public class JPRandSpawner extends Ability{
         t.add((unit.hasEmoji() ? unit.emoji() : "") + "[stat]" + unit.localizedName);
     }
 
-    @Override
-    public void update(Unit unit){}
-    
+    // @Override
+    // public void update(Unit unit){}
+
     public void update(Unit unit){
         // Should randomize between zero and one
         // float x;
