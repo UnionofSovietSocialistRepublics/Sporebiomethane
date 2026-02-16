@@ -299,7 +299,7 @@ public class JPUnits {
 
             immunities.add(JPStatus.dissolving);
             outlineColor = Color.valueOf("303a45");
-            abilities.add(new LiquidExplodeAbility(){{liquid = JPLiquids.liquidSpore; amount = 250f;}});
+            abilities.add(new LiquidExplodeAbility(){{liquid = JPLiquids.liquidSpore; amount = 1000f;}});
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});
         }};
 
@@ -1556,7 +1556,8 @@ public class JPUnits {
                     hidden = true;
                     drawCell = false;
                     outlineColor = Color.valueOf("303a45");
-                    abilities.add(new UnitSpawnAbility(protectorate,120f,0f,0f));
+                    abilities.add(new JPRandSpawner(protectorate,saboteur,120f,0f,0f));
+                    // abilities.add(new UnitSpawnAbility(protectorate,120f,0f,0f));
                     abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * -500f;}});
                     }};
                 }};
