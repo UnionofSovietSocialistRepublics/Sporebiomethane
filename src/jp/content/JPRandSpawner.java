@@ -51,7 +51,7 @@ public class JPRandSpawner extends Ability{
     // @Override
     // public void update(Unit unit){}
 
-    public void update(Unit unit){
+    public void update(Unit unit, Unit altUnit){
         // Should randomize between zero and one
         // float x;
         Unit u;
