@@ -49,14 +49,15 @@ public class UnitSpawnAbility extends Ability{
     @Override
     public void update(Unit unit){
         // Should randomize between zero and one
-        float x;
+        // float x;
         // Unit u;
         rand = (int)Math.random()*1;
         timer += Time.delta * state.rules.unitBuildSpeed(unit.team);
 
         if(timer >= spawnTime){
+            float x = unit.x + Angles.trnsx(unit.rotation, spawnY, -spawnX), y = unit.y + Angles.trnsy(unit.rotation, spawnY, -spawnX);
             if(Units.canCreate(unit.team, this.unit)&&rand==0){
-                x = unit.x + Angles.trnsx(unit.rotation, spawnY, -spawnX), y = unit.y + Angles.trnsy(unit.rotation, spawnY, -spawnX);
+                
                 spawnEffect.at(x, y, 0f, parentizeEffects ? altUnit : null);
                 u.rotation = unit.rotation;
                 u.set(x, y);
@@ -69,7 +70,7 @@ public class UnitSpawnAbility extends Ability{
                 timer = 0f;
             }
             else if(Units.canCreate(altUnit.team, this.altUnit)&&rand==1){
-                x = altUnit.x + Angles.trnsx(altUnit.rotation, spawnY, -spawnX), y = altUnit.y + Angles.trnsy(altUnit.rotation, spawnY, -spawnX);
+                // x = altUnit.x + Angles.trnsx(altUnit.rotation, spawnY, -spawnX), y = altUnit.y + Angles.trnsy(altUnit.rotation, spawnY, -spawnX);
                 spawnEffect.at(x, y, 0f, parentizeEffects ? altUnit : null);
                 u.rotation = altUnit.rotation;
                 u.set(x, y);
