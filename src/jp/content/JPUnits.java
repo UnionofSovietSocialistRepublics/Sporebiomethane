@@ -29,15 +29,15 @@ import static mindustry.Vars.*;
 public class JPUnits {
     public static UnitType
     //Legs
-    carci,imp, basilisk, autus, baneling, zergling, behomoth, Lobber, breacher, Scarabid, frost, roach, Purger, Gorgon, raptor, frostC, demolisher,
+    carci,imp, basilisk, autus, baneling, zergling, behomoth, lobber, breacher, Scarabid, frost, roach, purger, gorgon, raptor, frostC, demolisher,
     //missiles
     //Bomb,
     //Floaty
-    Guardian,thera,impReincranation,drone,interceptor,Hivedefender,hiveSentinel,sporophage,Rizomorph,
+    Guardian,thera,impReincranation,drone,interceptor,hiveDefender,hiveSentinel,sporophage,Rizomorph,
     //Le tether
     zeta,
     //Winged
-    Gragoth, Slasher, saboteur, protectorate, carrier, spitter;
+    gragoth, Slasher, saboteur, protectorate, carrier, spitter;
     
     private static final ObjectMap.Entry<Class<? extends Entityc>, Prov<? extends Entityc>>[] types = new ObjectMap.Entry[]{
             prov(JPCopterUnitEntity.class, JPCopterUnitEntity::new)
@@ -140,7 +140,7 @@ public class JPUnits {
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
             }};
 
-        Lobber = new UnitType("Lobber"){{
+        lobber = new UnitType("lobber"){{
             this.constructor = LegsUnit::create;
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1f;
@@ -438,7 +438,7 @@ public class JPUnits {
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
         }};
 
-        Purger = new UnitType("Purger"){{
+        purger = new UnitType("purger"){{
             this.constructor = LegsUnit::create;
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1f;
@@ -495,7 +495,7 @@ public class JPUnits {
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
         }};
 
-        Gorgon = new UnitType("Gorgon"){{
+        gorgon = new UnitType("gorgon"){{
             this.constructor = LegsUnit::create;
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1f;
@@ -585,7 +585,7 @@ public class JPUnits {
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (200f * 60f * 2f) * 100f;}});
-            abilities.add(new UnitSpawnAbility(Lobber,475f,0f,-7f));
+            abilities.add(new UnitSpawnAbility(lobber,475f,0f,-7f));
         }};
 
         basilisk = new UnitType("basilisk"){{
@@ -906,7 +906,7 @@ public class JPUnits {
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
         }};
 
-        Hivedefender = new UnitType("Hivedefender"){{
+        hiveDefender = new UnitType("hiveDefender"){{
             this.constructor = UnitEntity::create;
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 2.75f;
@@ -1688,7 +1688,7 @@ public class JPUnits {
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};  
 
-        Gragoth = new JPCopterUnitType("Gragoth"){{
+        gragoth = new JPCopterUnitType("gragoth"){{
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.55f;
             armor = 3;

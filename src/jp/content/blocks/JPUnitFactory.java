@@ -24,7 +24,7 @@ public class JPUnitFactory{
                 new UnitPlan( JPUnits.zergling, 15 * 60f, with(silicon, 25,JPItem.Biomass,5)),
                 new UnitPlan( JPUnits.baneling, 10 * 60f, with(silicon, 15,JPItem.Biomass,5)),
                 new UnitPlan( JPUnits.roach, 20 * 60f, with(silicon, 65,JPItem.Biomass,35)),
-                new UnitPlan( JPUnits.Purger, 25 * 60f, with(silicon, 95,JPItem.Biomass,45))
+                new UnitPlan( JPUnits.purger, 25 * 60f, with(silicon, 95,JPItem.Biomass,45))
             );
             health = 500;
             size = 3;

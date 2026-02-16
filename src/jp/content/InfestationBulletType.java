@@ -36,12 +36,12 @@ public class InfestationBulletType extends BasicBulletType {
     }
 
     public void Infest(Bullet b, Unit u){
-        //Lobber is placeholder, might or might not add roachling later.
+        //lobber is placeholder, might or might not add roachling later.
         // The math is uhhhh 2 lobber + round(unitmaxhp/30000*3*10)
         var maxSpawn = (2 + Math.round(u.maxHealth/30000f * 3f * 10f));
         for (int i = 0; i < maxSpawn; i++) {
             // create a unit lobber on team of the bullet (should be fairly obvious)
-            var unit = JPUnits.Lobber.create(b.team);
+            var unit = JPUnits.lobber.create(b.team);
             // on x and y position of the unit that got hit by the bullet.
             unit.set(u.x, u.y);
             // actually spawning the unit

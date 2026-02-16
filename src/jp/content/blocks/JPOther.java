@@ -26,7 +26,7 @@ VCAwall,Sporecore,Hive,Nydusaecore;
         Sporecore = new CoreBlock("Sporecore"){{
             requirements(Category.effect, with(JPItem.Biomass, 3000, JPItem.Nanitealloy, 2000, silicon, 4000));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
-            unitType = JPUnits.Hivedefender;
+            unitType = JPUnits.hiveDefender;
             health = 6500;
             itemCapacity = 11000;
             size = 4;
