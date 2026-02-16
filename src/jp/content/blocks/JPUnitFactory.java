@@ -39,7 +39,7 @@ public class JPUnitFactory{
             plans = Seq.with(
                 new UnitPlan( JPUnits.drone, 60f * 15, with(silicon, 15, JPItem.Biomass,10,lead, 25)),
                 new UnitPlan( JPUnits.interceptor, 60f * 10, with(silicon, 35, JPItem.Biomass,10)),
-                new UnitPlan( JPUnits.Rizomorph, 60f * 25, with(silicon, 150, JPItem.Biomass,45))
+                new UnitPlan( JPUnits.rizomorph, 60f * 25, with(silicon, 150, JPItem.Biomass,45))
             );
             health = 500;
             size = 3;
@@ -66,9 +66,9 @@ public class JPUnitFactory{
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             plans = Seq.with(
                 new UnitPlan( JPUnits.breacher, 60f * 15, with( silicon, 175, JPItem.Biomass,55, JPItem.Nanitealloy,45)),
-                new UnitPlan( JPUnits.Guardian, 60f * 10, with( silicon, 195, JPItem.Biomass,65, JPItem.Nanitealloy,65)),
+                new UnitPlan( JPUnits.guardian, 60f * 10, with( silicon, 195, JPItem.Biomass,65, JPItem.Nanitealloy,65)),
                 new UnitPlan( JPUnits.behomoth, 60f * 50, with( silicon, 850, JPItem.Biomass,400, JPItem.Nanitealloy,400)),
-                new UnitPlan( JPUnits.Scarabid, 60f * 40, with( silicon, 225, plastanium, 90, JPItem.Biomass,25))
+                new UnitPlan( JPUnits.scarabid, 60f * 40, with( silicon, 225, plastanium, 90, JPItem.Biomass,25))
             );
             health = 1750;
             size = 4;

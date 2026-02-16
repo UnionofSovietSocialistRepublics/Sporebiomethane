@@ -29,11 +29,11 @@ import static mindustry.Vars.*;
 public class JPUnits {
     public static UnitType
     //Legs
-    carci,imp, basilisk, autus, baneling, zergling, behomoth, lobber, breacher, Scarabid, frost, roach, purger, gorgon, raptor, frostC, demolisher,
+    carci,imp, basilisk, autus, baneling, zergling, behomoth, lobber, breacher, scarabid, frost, roach, purger, gorgon, raptor, frostC, demolisher,
     //missiles
     //Bomb,
     //Floaty
-    Guardian,thera,impReincranation,drone,interceptor,hiveDefender,hiveSentinel,sporophage,Rizomorph,
+    guardian,thera,impReincranation,drone,interceptor,hiveDefender,hiveSentinel,sporophage,rizomorph,
     //Le tether
     zeta,
     //Winged
@@ -342,7 +342,7 @@ public class JPUnits {
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
         }};
 
-        Scarabid = new UnitType("Scarabid"){{
+        scarabid = new UnitType("scarabid"){{
             this.constructor = LegsUnit::create;
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1f;
@@ -392,7 +392,7 @@ public class JPUnits {
             armor = 4;
             range = 125f;
             legCount = 4;            
-            weapons.add(new Weapon(name + "-gun"){{
+            weapons.add(new Weapon(name + "-missileLauncher"){{
                 reload = 250f;
                 x = 0f;
                 y = -10f;
@@ -419,7 +419,7 @@ public class JPUnits {
                 }};
                 shootSound = Sounds.shootMissile;
             }});
-            weapons.add(new Weapon(name + "-thestorm"){{
+            weapons.add(new Weapon(name + "-minigun"){{
                 reload = 5f;
                 x = -11f;
                 y = 2f;
@@ -505,7 +505,7 @@ public class JPUnits {
             range = 150f;    
             legCount = 4;
             legLength = 25f; 
-            weapons.add(new Weapon("-Mouh"){{
+            weapons.add(new Weapon("-mouh"){{
                 reload = 300f;
                 shootY = 8f;
                 x = 0f;
@@ -805,7 +805,7 @@ public class JPUnits {
             abilities.add(new RegenAbility(){{percentAmount = 1f / (90f * 60f * 2f) * 100f;}});
         }};
 
-        Rizomorph = new UnitType("Rizomorph"){{
+        rizomorph = new UnitType("rizomorph"){{
             this.constructor = UnitEntity::create;
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.65f;
@@ -859,7 +859,7 @@ public class JPUnits {
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
         }};
 
-        Guardian = new UnitType("Guardian"){{
+        guardian = new UnitType("guardian"){{
             this.constructor = UnitEntity::create;
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1f;
@@ -1002,7 +1002,7 @@ public class JPUnits {
             engineSize = 4f;
             drag = 0.05f;
             accel = 0.11f;
-            weapons.add(new Weapon("-Mouh"){{
+            weapons.add(new Weapon("-mouh"){{
                 reload = 75f;
                 shootY = 8f;
                 x = 0f;
@@ -1398,7 +1398,7 @@ public class JPUnits {
             accel = 0.11f;
             engineSize = 0f;
 
-            weapons.add(new Weapon("Mouh"){{
+            weapons.add(new Weapon("mouh"){{
                 mirror = false;
                 reload = 10f;
                 x = 0f;
@@ -1443,7 +1443,7 @@ public class JPUnits {
             drag = 0.05f;
             accel = 0.11f;
             engineSize = 0f;
-            weapons.add(new Weapon("Mouh"){{
+            weapons.add(new Weapon("mouh"){{
                 reload = 50f;
                 x = 0f;
                 y = 0f;
