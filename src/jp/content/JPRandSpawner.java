@@ -28,7 +28,7 @@ public class JPRandSpawner extends Ability{
     protected float timer;
     protected int rand;
 
-    public UnitSpawnAbility(UnitType unit, UnitType altUnit, float spawnTime, float spawnX, float spawnY){
+    public JPRandSpawner(UnitType unit, UnitType altUnit, float spawnTime, float spawnX, float spawnY){
         this.unit = unit;
         this.altUnit = altUnit;
         this.spawnTime = spawnTime;
@@ -36,7 +36,7 @@ public class JPRandSpawner extends Ability{
         this.spawnY = spawnY;
     }
 
-    public UnitSpawnAbility(){
+    public JPRandSpawner(){
     }
 
     @Override
