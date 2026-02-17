@@ -48,10 +48,8 @@ public class JPRandSpawner extends Ability{
         t.add((unit.hasEmoji() ? unit.emoji() : "") + "[stat]" + unit.localizedName);
     }
 
-    // @Override
-    // public void update(Unit unit){}
-
-    public void update(Unit unit, Unit altUnit){
+    @Override
+    public void update(Unit unit){
         // Should randomize between zero and one
         // float x;
         Unit u;
@@ -74,13 +72,12 @@ public class JPRandSpawner extends Ability{
 
                 timer = 0f;
             }
-            else if(Units.canCreate(altUnit.team, this.altUnit)&&rand>=1){
-                // x = altUnit.x + Angles.trnsx(altUnit.rotation, spawnY, -spawnX), y = altUnit.y + Angles.trnsy(altUnit.rotation, spawnY, -spawnX);
-                spawnEffect.at(x, y, 0f, parentizeEffects ? altUnit : null);
-                u = this.unit.create(altUnit.team);
-                u.rotation = altUnit.rotation;
+            else if(Units.canCreate(unit.team, this.altUnit)&&rand>=1){
+                spawnEffect.at(x, y, 0f, parentizeEffects ? unit : null);
+                u = this.altUnit.create(unit.team);
+                u.rotation = unit.rotation;
                 u.set(x, y);
-                Events.fire(new UnitCreateEvent(u, null, altUnit));
+                Events.fire(new UnitCreateEvent(u, null, unit));
                 if(!Vars.net.client()){
                     u.add();
                     Units.notifyUnitSpawn(u);
