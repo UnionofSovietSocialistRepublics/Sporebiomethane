@@ -299,7 +299,7 @@ public class JPUnits {
 
             immunities.add(JPStatus.dissolving);
             outlineColor = Color.valueOf("303a45");
-            abilities.add(new LiquidExplodeAbility(){{liquid = JPLiquids.liquidSpore; amount = 1000f;}});
+            abilities.add(new LiquidExplodeAbility(){{liquid = JPLiquids.liquidSpore; amount = 300f;}});
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});
         }};
 
@@ -1443,7 +1443,7 @@ public class JPUnits {
             drag = 0.05f;
             accel = 0.11f;
             engineSize = 0f;
-            targetFlags = new BlockFlag[]{BlockFlag.drill, null};
+            targetFlags = new BlockFlag[]{BlockFlag.drill, BlockFlag.turret, null};
             weapons.add(new Weapon("mouh"){{
                 reload = 50f;
                 x = 0f;
