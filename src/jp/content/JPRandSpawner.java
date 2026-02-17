@@ -33,6 +33,7 @@ public class JPRandSpawner extends Ability{
     public JPRandSpawner(UnitType unit, UnitType altUnit, UnitType altUnit2, float spawnTime, float spawnX, float spawnY){
         this.unit = unit;
         this.altUnit = altUnit;
+        this.altUnit2 = altUnit2;
         this.spawnTime = spawnTime;
         this.spawnX = spawnX;
         this.spawnY = spawnY;
