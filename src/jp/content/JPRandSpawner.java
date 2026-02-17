@@ -61,7 +61,7 @@ public class JPRandSpawner extends Ability{
             if(Units.canCreate(unit.team, this.unit)&&rand<=0){
                 
                 spawnEffect.at(x, y, 0f, parentizeEffects ? unit : null);
-                u = this.unit.create(unit.team);
+                u = this.altUnit.create(unit.team);
                 u.rotation = unit.rotation;
                 u.set(x, y);
                 Events.fire(new UnitCreateEvent(u, null, unit));
