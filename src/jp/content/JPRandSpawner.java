@@ -17,11 +17,12 @@ import mindustry.type.*;
 import static mindustry.Vars.*;
 
 
-// An extremely lazy version of a spawner ability that can spawn either one of two unit
+// An extremely lazy version of a spawner ability that can spawn either one of three unit
 // Hopefully this should be a tempeorary solution, will make a flexible version later
 public class JPRandSpawner extends Ability{
     public UnitType unit;
     public UnitType altUnit;
+    public UnitType altUnit2;
     public float spawnTime = 60f, spawnX, spawnY;
     public Effect spawnEffect = Fx.spawn;
     public boolean parentizeEffects;
@@ -29,7 +30,7 @@ public class JPRandSpawner extends Ability{
     protected float timer;
     protected int rand;
 
-    public JPRandSpawner(UnitType unit, UnitType altUnit, float spawnTime, float spawnX, float spawnY){
+    public JPRandSpawner(UnitType unit, UnitType altUnit, UnitType altUnit2, float spawnTime, float spawnX, float spawnY){
         this.unit = unit;
         this.altUnit = altUnit;
         this.spawnTime = spawnTime;
@@ -70,9 +71,22 @@ public class JPRandSpawner extends Ability{
 
                 timer = 0f;
             }
-            else if(Units.canCreate(unit.team, this.altUnit)){
+            else if(Units.canCreate(unit.team, this.altUnit)&&(unit.team.data().countType(this.altUnit)<unit.team.data().countType(this.altUnit2))){
                 spawnEffect.at(x, y, 0f, parentizeEffects ? unit : null);
                 u = this.altUnit.create(unit.team);
+                u.rotation = unit.rotation;
+                u.set(x, y);
+                Events.fire(new UnitCreateEvent(u, null, unit));
+                if(!Vars.net.client()){
+                    u.add();
+                    Units.notifyUnitSpawn(u);
+                }
+
+                timer = 0f;
+            }
+            else if(Units.canCreate(unit.team, this.altUnit2)){
+                spawnEffect.at(x, y, 0f, parentizeEffects ? unit : null);
+                u = this.altUnit2.create(unit.team);
                 u.rotation = unit.rotation;
                 u.set(x, y);
                 Events.fire(new UnitCreateEvent(u, null, unit));

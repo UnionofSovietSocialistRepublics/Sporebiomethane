@@ -1443,6 +1443,7 @@ public class JPUnits {
             drag = 0.05f;
             accel = 0.11f;
             engineSize = 0f;
+            targetFlags = new BlockFlag[]{BlockFlag.drill, null};
             weapons.add(new Weapon("mouh"){{
                 reload = 50f;
                 x = 0f;
@@ -1490,7 +1491,7 @@ public class JPUnits {
             health = 600;
             flying = true;
             targetAir = false;
-            targetFlags = new BlockFlag[]{BlockFlag.extinguisher, null};
+            targetFlags = new BlockFlag[]{BlockFlag.extinguisher, BlockFlag.turret, null};
             weapons.add(new Weapon(name + "-Gun"){{
                 recoil = 1f;
                 reload = 5f;
@@ -1556,7 +1557,7 @@ public class JPUnits {
                     hidden = true;
                     drawCell = false;
                     outlineColor = Color.valueOf("303a45");
-                    abilities.add(new JPRandSpawner(protectorate,saboteur,120f,0f,0f));
+                    abilities.add(new JPRandSpawner(protectorate,saboteur,spitter,100f,0f,0f));
                     // abilities.add(new UnitSpawnAbility(protectorate,120f,0f,0f));
                     abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * -500f;}});
                     }};
