@@ -145,7 +145,7 @@ public class JPUnits {
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1f;
             hitSize = 8f;
-            health = 345;
+            health = 325;
             armor = 2;
             range = 60f;
             legCount = 4;
@@ -155,7 +155,7 @@ public class JPUnits {
                 y = -5f;
                 mirror = false;
                 shootSound = Sounds.shootArtillery;
-                bullet = new BasicBulletType(3f, 75){{
+                bullet = new BasicBulletType(3f, 35){{
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
                     splashDamage = 30f;
