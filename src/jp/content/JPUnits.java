@@ -809,7 +809,7 @@ public class JPUnits {
             this.constructor = UnitEntity::create;
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.85f;
-            accel = 0.06f;
+            accel = 0.08f;
             drag = 0.08f;
             flying = true;
             hitSize = 10f;
@@ -817,7 +817,7 @@ public class JPUnits {
             targetAir = false;
             range = 140f;
             engineSize = 5f;
-            engineOffset = 8f;
+            engineOffset = 10f;
             faceTarget = false;
             circleTarget = true;
             weapons.add(new Weapon(){{
