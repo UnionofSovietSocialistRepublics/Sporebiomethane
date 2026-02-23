@@ -809,18 +809,18 @@ public class JPUnits {
             this.constructor = UnitEntity::create;
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.85f;
-            accel = 0.15f;
+            accel = 0.04f;
             drag = 0.08f;
             flying = true;
             hitSize = 10f;
-            engineSize = 5f;
             health = 925;
             targetAir = false;
-            engineOffset = 7.8f;
             range = 140f;
+            engineSize = 5f;
+            engineOffset = 8f;
             faceTarget = false;
             circleTarget = true;
-            weapons.add(new Weapon("Ambutakam"){{
+            weapons.add(new Weapon(){{
                 minShootVelocity = 0.75f;
                 x = 0;
                 y = 5;
