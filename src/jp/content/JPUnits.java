@@ -364,7 +364,7 @@ public class JPUnits {
                 recoil = 2;
                 bullet = new ArtilleryBulletType(6f, 90){{
                     height = width = 20f;
-                    splashDamage = 45f;
+                    splashDamage = 25f;
                     splashDamageRadius = 17f;
                     lifetime = 50f;
                     statusDuration = 60f * 4;
@@ -808,9 +808,9 @@ public class JPUnits {
         rizomorph = new UnitType("rizomorph"){{
             this.constructor = UnitEntity::create;
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
-            speed = 1.65f;
-            accel = 0.08f;
-            drag = 0.016f;
+            speed = 1.85f;
+            accel = 0.15f;
+            drag = 0.5f;
             flying = true;
             hitSize = 10f;
             engineSize = 5f;
@@ -839,12 +839,12 @@ public class JPUnits {
                     hitEffect = Fx.flakExplosion;
                     shootEffect = Fx.none;
                     smokeEffect = Fx.none;
-                    splashDamage = 25f;
+                    splashDamage = 80f;
+                    splashDamageRadius = 32f;
                     backColor = Color.valueOf("8b73c7");
                     frontColor = Color.valueOf("7357cf");
                     lightColor = Color.valueOf("8b73c7");
-                    splashDamageRadius = 32f;
-                    status = StatusEffects.blasted;
+                    status = StatusEffects.sporeSlowed;
                     statusDuration = 60f;
                 }};
             }});

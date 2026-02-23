@@ -14,7 +14,7 @@ public class JPLiquids {
             effect = JPStatus.dissolving;
             hidden = true;
             capPuddles = false;
-            viscosity = 0.85f;
+            viscosity = 0.925f;
         }};
 
 }}
