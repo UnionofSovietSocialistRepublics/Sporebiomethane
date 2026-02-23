@@ -809,7 +809,7 @@ public class JPUnits {
             this.constructor = UnitEntity::create;
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.85f;
-            accel = 0.04f;
+            accel = 0.06f;
             drag = 0.08f;
             flying = true;
             hitSize = 10f;
