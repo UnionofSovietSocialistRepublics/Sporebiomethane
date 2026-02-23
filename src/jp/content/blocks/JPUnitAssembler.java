@@ -14,7 +14,7 @@ public class JPUnitAssembler{
 
         public static void load(){
 
-        apollyonAssembler = new UnitAssembler("apollyon-assembler"){{
+        apollyonAssembler = new UnitAssembler("apollyonAssembler"){{
             requirements(Category.units, with(Items.silicon, 1000, JPItem.VCA, 250, JPItem.Nanitealloy, 750, JPItem.Biomass, 800));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             size = 6;
