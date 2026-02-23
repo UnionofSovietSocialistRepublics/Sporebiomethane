@@ -810,7 +810,7 @@ public class JPUnits {
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.85f;
             accel = 0.15f;
-            drag = 0.5f;
+            drag = 0.08f;
             flying = true;
             hitSize = 10f;
             engineSize = 5f;
