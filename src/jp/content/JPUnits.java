@@ -509,9 +509,8 @@ public class JPUnits {
                 reload = 300f;
                 shootY = 8f;
                 x = 0f;
-                y = 20f;
+                y = 28f;
                 continuous = true;
-                layerOffset = -0.01f;
                 shoot.firstShotDelay = JPFx.purpleLaserChargeSmall.lifetime -1f;
                 chargeSound = Sounds.chargeVela;
                 shootSound = Sounds.beamMeltdown;
