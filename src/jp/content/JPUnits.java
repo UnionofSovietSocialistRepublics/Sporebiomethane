@@ -509,8 +509,9 @@ public class JPUnits {
                 reload = 300f;
                 shootY = 8f;
                 x = 0f;
-                y = 26f;
+                y = 20f;
                 continuous = true;
+                layerOffset = -0.01f;
                 shoot.firstShotDelay = JPFx.purpleLaserChargeSmall.lifetime -1f;
                 chargeSound = Sounds.chargeVela;
                 shootSound = Sounds.beamMeltdown;
@@ -879,13 +880,13 @@ public class JPUnits {
                 y = 4f;
                 recoil = 6f;
                 layerOffset = -0.01f;
-                bullet = new ArtilleryBulletType(4.5f, 75){{
+                bullet = new ArtilleryBulletType(4.5f, 115){{
                     recoil = 1f;
                     speed = 4.5f;
                     height = 15f;
                     width = 7f;
-                    splashDamage = 125f;
-                    splashDamageRadius = 25f;
+                    splashDamage = 18f;
+                    splashDamageRadius = 35f;
                     lifetime = 60f;
                     statusDuration = 60f * 4;
                     status = JPStatus.dissolving;
@@ -893,7 +894,7 @@ public class JPUnits {
                     frontColor = Color.valueOf("8FFE09");
                     lightColor = Color.valueOf("8FFE09");
                     collides = true;
-                            collidesTiles = true;
+                    collidesTiles = true;
                     trailLength = 6;
                     trailWidth = 2.8f;
                     trailColor = Color.valueOf("bbfe6b");
