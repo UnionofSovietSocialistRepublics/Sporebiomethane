@@ -34,7 +34,7 @@ public class JPTurret{
         public static void load(){
 
         Sporegarrison = new PowerTurret("Sporegarrison"){{
-            requirements(Category.turret, with(graphite, 125, silicon, 95, JPItem.Biomass, 75));
+            requirements(Category.turret, with(graphite, 125, silicon, 95, JPItem.biomass, 75));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 720;
             size = 2;
@@ -185,7 +185,7 @@ public class JPTurret{
                     collidesGround = true;
                     collidesAir = true;
                 }},
-                JPItem.Biomass, new BasicBulletType(5f, 25f){{
+                JPItem.biomass, new BasicBulletType(5f, 25f){{
                     height = width = 10f;
                     lifetime = 50f;
                     splashDamage = 25f;
@@ -361,7 +361,7 @@ public class JPTurret{
         }};
 
         Flakaccelerator = new ItemTurret("Flakaccelerator"){{
-            requirements(Category.turret, with(graphite, 125, silicon, 100, JPItem.Biomass, 75));
+            requirements(Category.turret, with(graphite, 125, silicon, 100, JPItem.biomass, 75));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 1250;
             size = 3;
@@ -388,7 +388,7 @@ public class JPTurret{
                     frontColor = Color.valueOf("7457ce");
                     lightColor = Color.valueOf("7457ce");
                 }},
-               JPItem.Biomass, new FlakBulletType(5f, 25f){{
+               JPItem.biomass, new FlakBulletType(5f, 25f){{
                     lifetime = 45f;
                     fragBullets = 6;
                     splashDamage = 50f;
@@ -437,7 +437,7 @@ public class JPTurret{
         }};
 
         Artilleryturret = new ItemTurret("Artilleryturret"){{
-            requirements(Category.turret, with(graphite, 675, JPItem.naniteAlloy, 250, JPItem.Biomass, 150));
+            requirements(Category.turret, with(graphite, 675, JPItem.naniteAlloy, 250, JPItem.biomass, 150));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             size = 3;
             rotateSpeed = 10f;
@@ -466,7 +466,7 @@ public class JPTurret{
                     smokeEffect = Fx.shootSmallSmoke;
                     collidesGround = true;
                 }},
-               JPItem.Biomass, new BasicBulletType(){{
+               JPItem.biomass, new BasicBulletType(){{
                     lifetime = 75f;
                     damage = 225f;
                     speed = 4f;
@@ -488,7 +488,7 @@ public class JPTurret{
         }};
 
         Suppressor = new ItemTurret("Suppressor"){{
-            requirements(Category.turret, with(graphite, 225, JPItem.naniteAlloy, 75, JPItem.Biomass, 95));
+            requirements(Category.turret, with(graphite, 225, JPItem.naniteAlloy, 75, JPItem.biomass, 95));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 1850;
             size = 3;
@@ -542,7 +542,7 @@ public class JPTurret{
                         }};
                     }};
                 }},
-               JPItem.Biomass, new BasicBulletType(5f, 60f){{
+               JPItem.biomass, new BasicBulletType(5f, 60f){{
                     lifetime = 45f;
                     splashDamage = 15f;
                     splashDamageRadius = 15f;
@@ -593,7 +593,7 @@ public class JPTurret{
             ammoUseEffect = Fx.casing1;
             inaccuracy = 2f;
             ammo(
-                JPItem.Biomass, new PointBulletType(){{
+                JPItem.biomass, new PointBulletType(){{
                     speed = 500f;
                     damage = 2000f;
                     buildingDamageMultiplier = 0.25f;

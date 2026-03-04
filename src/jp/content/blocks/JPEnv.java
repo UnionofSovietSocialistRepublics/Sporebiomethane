@@ -13,17 +13,6 @@ public class JPEnv {
 
     public static void load() {
 	//block part
-		//Official removal of zinc ore (rip bozo)
-		// ZincOre = new OreBlock("ZincOre"){{
-		// 	oreDefault = true;
-		// 	variants = 1;
-		// 	oreThreshold = 0.95F;
-		// 	oreScale = 20.380953F;
-		// 	itemDrop = JPItem.zinc;
-		// 	attributes.set(JPAttribute.zinc, 1.5f);
-		// 	mapColor.set(itemDrop.color);
-		// 	useColor = true;
-		// }};
 
         vanadiumOre = new OreBlock("vanadiumOre") {{
         itemDrop = JPItem.vanadium;
@@ -43,7 +32,7 @@ public class JPEnv {
 		}};
         fluoresiltTile = new Floor("fluoresiltTile"){{
 			variants = 4;
-			itemDrop = JPItem.Fluoresilt;
+			itemDrop = JPItem.fluoresilt;
 		}};
         silt = new Floor("silt"){{
 			variants = 4;

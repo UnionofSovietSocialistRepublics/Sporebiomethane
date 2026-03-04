@@ -11,12 +11,12 @@ import static mindustry.content.Items.*;
 
 public class JPDistribution{
     public static Block
-    Itempipe;
+    itemPipe;
 
     public static void load(){
     
-    Itempipe = new Duct("Item-pipe"){{
-        requirements(Category.distribution, with(titanium, 2, silicon, 2, metaglass,4, JPItem.Biomass,1));
+    itemPipe = new Duct("itemPipe"){{
+        requirements(Category.distribution, with(titanium, 2, silicon, 2, metaglass,4, JPItem.biomass,1));
         shownPlanets.addAll(Planets.serpulo, Planets.erekir);
         health = 300;
         size = 1;

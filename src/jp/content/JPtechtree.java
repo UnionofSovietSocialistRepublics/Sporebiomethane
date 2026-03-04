@@ -38,7 +38,7 @@ public class JPtechtree {
                 node(JPProduction.Vanadicarbide);
                 node(JPProduction.Gaschamber);
                 node(JPProduction.FR);
-                node(JPProduction.Masscultivator);
+                node(JPProduction.massCultivator);
                 node(JPProduction.BioSynthesizer, () -> {
                     node(JPProduction.Naniteinfuser, () -> {
                         node(JPProduction.CCB, () -> {
@@ -63,7 +63,7 @@ public class JPtechtree {
                     });
                 });
             });
-            node(JPProduction.Extractor, Seq.with(new SectorComplete(JPsectorsHM.digHM)),() -> {
+            node(JPProduction.extractor, Seq.with(new SectorComplete(JPsectorsHM.digHM)),() -> {
                 node(JPProduction.ZincExtractor, Seq.with(new SectorComplete(JPsectorsHM.digHM)), () -> {
             });
             });
@@ -83,20 +83,20 @@ public class JPtechtree {
                         });
                 });
             });
-            nodeProduce(JPItem.Biomass, () -> {
+            nodeProduce(JPItem.biomass, () -> {
                 nodeProduce(JPItem.vanadium, () -> {
                     nodeProduce(JPItem.vca, () -> {});
                     nodeProduce(JPItem.azurite, () -> {});
                 });
                 nodeProduce(JPItem.zinc, () -> {});
-                nodeProduce(JPItem.BioSil, () -> {
+                nodeProduce(JPItem.biosil, () -> {
                     nodeProduce(JPItem.naniteAlloy, () -> {
                         nodeProduce(JPItem.Carbinecomposite, () -> {
                             nodeProduce(JPItem.neocell, () -> {});
                         });
                     });
                 });
-                nodeProduce(JPItem.Fluoresilt, () -> {
+                nodeProduce(JPItem.fluoresilt, () -> {
                     nodeProduce(JPItem.fluorite, () -> {});
                 });
             });
@@ -127,7 +127,7 @@ public class JPtechtree {
                 node(JPProduction.Vanadicarbide);
                 node(JPProduction.Gaschamber);
                 node(JPProduction.FR);
-                node(JPProduction.Masscultivator);
+                node(JPProduction.massCultivator);
                 node(JPProduction.BioSynthesizer, () -> {
                     node(JPProduction.Naniteinfuser, () -> {
                         node(JPProduction.CCB, () -> {
@@ -152,7 +152,7 @@ public class JPtechtree {
                     });
                 });
             });
-            node(JPProduction.Extractor, Seq.with(new SectorComplete(JPsectors.dig)), () -> {
+            node(JPProduction.extractor, Seq.with(new SectorComplete(JPsectors.dig)), () -> {
                 node(JPProduction.ZincExtractor, Seq.with(new SectorComplete(JPsectors.dig)), () -> {
             });
             });
@@ -172,20 +172,20 @@ public class JPtechtree {
                         });
                 });
             });
-            nodeProduce(JPItem.Biomass, () -> {
+            nodeProduce(JPItem.biomass, () -> {
                 nodeProduce(JPItem.vanadium, () -> {
                     nodeProduce(JPItem.vca, () -> {});
                     nodeProduce(JPItem.azurite, () -> {});
                 });
                 nodeProduce(JPItem.zinc, () -> {});
-                nodeProduce(JPItem.BioSil, () -> {
+                nodeProduce(JPItem.biosil, () -> {
                     nodeProduce(JPItem.naniteAlloy, () -> {
                         nodeProduce(JPItem.Carbinecomposite, () -> {
                             nodeProduce(JPItem.neocell, () -> {});
                         });
                     });
                 });
-                nodeProduce(JPItem.Fluoresilt, () -> {
+                nodeProduce(JPItem.fluoresilt, () -> {
                     nodeProduce(JPItem.fluorite, () -> {});
                 });
             });

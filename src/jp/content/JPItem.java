@@ -7,7 +7,7 @@ import mindustry.type.*;
 public class JPItem{
     public static Item
 
-    azurite,Biomass,BioSil,Carbinecomposite,Fluoresilt,
+    azurite,biomass,biosil,Carbinecomposite,fluoresilt,
     fluorite,naniteAlloy,neocell,vanadium,vca,
     voltaicGas,zinc,umbratechChip,voidStone;
     public static void load(){
@@ -17,13 +17,13 @@ public class JPItem{
             cost = 0.5f;
         }};
 
-        Biomass = new Item("Biomass", Color.valueOf("8B73C7")){{
+        biomass = new Item("biomass", Color.valueOf("8B73C7")){{
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             cost = 1f;
             flammability = 3.5f;
         }};
 
-        BioSil = new Item("BioSil", Color.valueOf("45368F")){{
+        biosil = new Item("biosil", Color.valueOf("45368F")){{
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             cost = 1.25f;
             flammability = 0.65f;
@@ -35,7 +35,7 @@ public class JPItem{
             flammability = 2f;
         }};
 
-        Fluoresilt = new Item("Fluoresilt", Color.valueOf("23DBDE")){{
+        fluoresilt = new Item("fluoresilt", Color.valueOf("23DBDE")){{
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             hardness = 1;
             cost = 1.5f;
