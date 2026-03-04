@@ -47,13 +47,13 @@ public class JPUnitFactory{
 
         }};
         gestator = new UnitFactory("gestator"){{
-            requirements(Category.units, with(silicon,750,JPItem.Nanitealloy,500,JPItem.Biomass,250,JPItem.Neocells,75));
+            requirements(Category.units, with(silicon,750,JPItem.Nanitealloy,500,JPItem.Biomass,250,JPItem.neocell,75));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             plans = Seq.with(
-                new UnitPlan( JPUnits.carci, 60f * 25, with( silicon, 150, thorium, 75, JPItem.Neocells, 30)),
-                new UnitPlan( JPUnits.autus, 60f * 35, with( silicon, 200, JPItem.Biomass,75,pyratite,45, JPItem.Neocells, 75)),
-                new UnitPlan( JPUnits.thera, 60f * 25, with( silicon, 175, JPItem.Biomass,75, JPItem.Neocells, 75)),
-                new UnitPlan( JPUnits.imp, 60f * 15, with( silicon, 35, pyratite, 15, JPItem.Biomass,5, JPItem.Neocells, 15))
+                new UnitPlan( JPUnits.carci, 60f * 25, with( silicon, 150, thorium, 75, JPItem.neocell, 30)),
+                new UnitPlan( JPUnits.autus, 60f * 35, with( silicon, 200, JPItem.Biomass,75,pyratite,45, JPItem.neocell, 75)),
+                new UnitPlan( JPUnits.thera, 60f * 25, with( silicon, 175, JPItem.Biomass,75, JPItem.neocell, 75)),
+                new UnitPlan( JPUnits.imp, 60f * 15, with( silicon, 35, pyratite, 15, JPItem.Biomass,5, JPItem.neocell, 15))
             );
             health = 2500;
             size = 3;

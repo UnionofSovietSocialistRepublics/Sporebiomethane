@@ -138,8 +138,8 @@ public class JPELF extends GenericCrafter {
                 if(explosionPuddleLiquid != null){
                     for(int i = 0; i < explosionPuddles; i++){
                         Tmp.v1.trns(Mathf.random(360f), Mathf.random(explosionPuddleRange));
-                        Tile tile = world.tileWorld(x + Tmp.v1.x, y + Tmp.v1.y);
-                        Puddles.deposit(tile, explosionPuddleLiquid, explosionPuddleAmount);
+                        Tile Tile = world.tileWorld(x + Tmp.v1.x, y + Tmp.v1.y);
+                        Puddles.deposit(Tile, explosionPuddleLiquid, explosionPuddleAmount);
                     }
                 }
 

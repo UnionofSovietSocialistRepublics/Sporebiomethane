@@ -6,11 +6,9 @@ import jp.content.*;
 
 public class JPEnv {
     public static Block
-	//define the block name
-	//for the love of god rename those if you want to rename the block below
-    ZincOre, VanadiumOre,AzuriteOre,
-    Wall,
-	SiltMoss,Fluoresiltile,Silt,Tile,
+    vanadiumOre, azuriteOre,
+    wall,
+	SiltMoss,Fluoresiltile,silt,tile,
 	Blackboulder;
 
     public static void load() {
@@ -21,36 +19,36 @@ public class JPEnv {
 		// 	variants = 1;
 		// 	oreThreshold = 0.95F;
 		// 	oreScale = 20.380953F;
-		// 	itemDrop = JPItem.Zinc;
-		// 	attributes.set(JPAttribute.Zinc, 1.5f);
+		// 	itemDrop = JPItem.zinc;
+		// 	attributes.set(JPAttribute.zinc, 1.5f);
 		// 	mapColor.set(itemDrop.color);
 		// 	useColor = true;
 		// }};
 
-        VanadiumOre = new OreBlock("VanadiumOre") {{
-        itemDrop = JPItem.Vanadium;
+        vanadiumOre = new OreBlock("vanadiumOre") {{
+        itemDrop = JPItem.vanadium;
 		variants = 3;
         }};
 
-        AzuriteOre = new OreBlock("AzuriteOre") {{
-        itemDrop = JPItem.Azurite;
+        azuriteOre = new OreBlock("azuriteOre") {{
+        itemDrop = JPItem.azurite;
 		variants = 3;
         }};
 
-        Wall = new StaticWall("Wall"){{
+        wall = new StaticWall("wall"){{
 			variants = 1;
 		}};
-        SiltMoss = new Floor("Silt-moss"){{
+        SiltMoss = new Floor("silt-moss"){{
 			variants = 3;
 		}};
         Fluoresiltile = new Floor("Fluoresiltile"){{
 			variants = 4;
 			itemDrop = JPItem.Fluoresilt;
 		}};
-        Silt = new Floor("Silt"){{
+        silt = new Floor("silt"){{
 			variants = 4;
 		}};
-        Tile = new Floor("Tile"){{
+        tile = new Floor("tile"){{
 			variants = 2;
 		}};
         Blackboulder = new Prop("Blackboulder"){{

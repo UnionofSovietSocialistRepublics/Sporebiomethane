@@ -212,7 +212,7 @@ public class JPTurret{
                         collidesAir = true;
                     }};
                 }},
-                JPItem.VCA, new BasicBulletType(5f, 95f){{
+                JPItem.vca, new BasicBulletType(5f, 95f){{
                     reloadMultiplier = 0.5f;
                     height = width = 10f;
                     lifetime = 50f;
@@ -232,7 +232,7 @@ public class JPTurret{
         }};
         
         Mitocannon = new PowerTurret("Mitocannon"){{
-            requirements(Category.turret, with(graphite, 300, JPItem.Neocells, 240, JPItem.Nanitealloy, 150));
+            requirements(Category.turret, with(graphite, 300, JPItem.neocell, 240, JPItem.Nanitealloy, 150));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 1500;
             size = 2;
@@ -317,7 +317,7 @@ public class JPTurret{
         }};
 
         Sentinel = new ContinuousTurret("Sentinel"){{
-            requirements(Category.turret, with(graphite, 200, JPItem.Nanitealloy, 75, JPItem.Neocells, 25));
+            requirements(Category.turret, with(graphite, 200, JPItem.Nanitealloy, 75, JPItem.neocell, 25));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 975;
             size = 2;
@@ -608,7 +608,7 @@ public class JPTurret{
                     pierceArmor = true;
                     hitShake = 6f;
             }},
-                JPItem.VCA, new PointBulletType(){{
+                JPItem.vca, new PointBulletType(){{
                     speed = 500f;
                     damage = 8000f;
                     reloadMultiplier = 0.5f;

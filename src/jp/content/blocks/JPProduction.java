@@ -81,7 +81,7 @@ public class JPProduction{
         }};
 
         CCB = new GenericCrafter("Carbine-composite-smelter"){{
-            requirements(Category.crafting, with(JPItem.Vanadium,300,JPItem.BioSil, 250,JPItem.Nanitealloy, 225));
+            requirements(Category.crafting, with(JPItem.vanadium,300,JPItem.BioSil, 250,JPItem.Nanitealloy, 225));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 475;
             size = 2;
@@ -93,22 +93,22 @@ public class JPProduction{
             hasItems = true;
 
             consumePower(4f);
-            consumeItems(with(JPItem.BioSil, 2,JPItem.Vanadium,4,JPItem.Nanitealloy, 3));
+            consumeItems(with(JPItem.BioSil, 2,JPItem.vanadium,4,JPItem.Nanitealloy, 3));
         }};
 
         Vanadicarbide = new HeatProducer("Vanadicarbide"){{
-            requirements(Category.crafting, with(silicon, 270,JPItem.Biomass, 125,JPItem.Vanadium, 450));
+            requirements(Category.crafting, with(silicon, 270,JPItem.Biomass, 125,JPItem.vanadium, 450));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 750;
             size = 2;
             craftEffect = Fx.pulverizeMedium;
-            outputItem = new ItemStack(JPItem.VCA, 1);
+            outputItem = new ItemStack(JPItem.vca, 1);
             craftTime = 50f;
             hasItems = true;
             hasPower = true;
             heatOutput = 5f;
             consumePower(5f);
-            consumeItems(with(JPItem.Vanadium, 5,JPItem.BioSil, 3));
+            consumeItems(with(JPItem.vanadium, 5,JPItem.BioSil, 3));
         }};
 
         FR = new GenericCrafter("Fluoresilt-refinery"){{
@@ -132,7 +132,7 @@ public class JPProduction{
             health = 360;
             size = 3;
             craftEffect = Fx.pulverizeMedium;
-            outputItem = new ItemStack(JPItem.Voltaicgas, 1);
+            outputItem = new ItemStack(JPItem.voltaicGas, 1);
             craftTime = 70f;
             hasItems = true;
             hasPower = true;
@@ -163,14 +163,14 @@ public class JPProduction{
             health = 1000;
             size = 3;
             craftEffect = Fx.pulverizeMedium;
-            outputItem = new ItemStack(JPItem.Neocells, 1);
+            outputItem = new ItemStack(JPItem.neocell, 1);
             craftTime = 45f;
             hasItems = true;
             hasPower = true;
             hasLiquids = true;
             drawer = new DrawMulti(new DrawRegion("-bottom"), new DrawLiquidTile(Liquids.water), new DrawLiquidTile(Liquids.neoplasm){{drawLiquidLight = true;}}, new DrawDefault());
             consumePower(10f);
-            consumeItems(with(JPItem.Vanadium, 4,JPItem.Zinc, 2));
+            consumeItems(with(JPItem.vanadium, 4,JPItem.zinc, 2));
             consumeLiquid(Liquids.neoplasm, 6f / 60f);
         }};
 
@@ -186,7 +186,7 @@ public class JPProduction{
             hasLiquids = true;
             liquidCapacity = 200f;
             consumePower(5f);
-            consumeItem(JPItem.Neocells, 1);
+            consumeItem(JPItem.neocell, 1);
             outputLiquid = new LiquidStack(Liquids.neoplasm, 6f / 60f);
             drawer = new DrawMulti(new DrawRegion("-bottom"),
                     new DrawLiquidRegion(Liquids.neoplasm),
@@ -243,11 +243,11 @@ public class JPProduction{
         }};
 
         ZincExtractor = new GenericCrafter("ZincExtractor"){{
-            requirements(Category.production, with(silicon, 45,JPItem.Biomass, 25,JPItem.Vanadium, 125));
+            requirements(Category.production, with(silicon, 45,JPItem.Biomass, 25,JPItem.vanadium, 125));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 625;
             size = 2;
-            outputItem = new ItemStack(JPItem.Zinc, 1);
+            outputItem = new ItemStack(JPItem.zinc, 1);
             consumePower(5f);
             consumeItems(with(JPItem.Biomass, 2));
             drawer = new DrawMulti(new DrawDefault(), new DrawRegion("-rotator"){{
@@ -305,7 +305,7 @@ public class JPProduction{
             size = 2;
             powerProduction = 15f;
             itemDuration = 180f;
-            consumeItem(JPItem.Voltaicgas);
+            consumeItem(JPItem.voltaicGas);
             ambientSound = Sounds.loopSmelter;
             ambientSoundVolume = 0.06f;
             generateEffect = Fx.generatespark;
@@ -314,13 +314,13 @@ public class JPProduction{
         }};
 
         Neocell = new JPBoostableCG("Neocell-generator"){{
-            requirements(Category.power, with(silicon, 225,JPItem.Vanadium, 75,JPItem.Neocells, 95));
+            requirements(Category.power, with(silicon, 225,JPItem.vanadium, 75,JPItem.neocell, 95));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 650;
             size = 2;
             powerProduction = 11.5f;
             itemDuration = 275f;
-            consumeItem(JPItem.Neocells);
+            consumeItem(JPItem.neocell);
             //troll emoji
             liquidBoostIntensity = 3f;
             consumeLiquid(Liquids.neoplasm, 18f / 60f).boost();
@@ -331,7 +331,7 @@ public class JPProduction{
         }};
 
         Lotus = new SolarGenerator("Lotus-panel"){{
-            requirements(Category.power, with(silicon, 175,JPItem.Vanadium, 125,JPItem.Biomass, 50));
+            requirements(Category.power, with(silicon, 175,JPItem.vanadium, 125,JPItem.Biomass, 50));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 625;
             size = 4;
@@ -339,7 +339,7 @@ public class JPProduction{
         }};
 
         Biomassreactor = new ImpactReactor("Biomassreactor"){{
-            requirements(Category.power, with(silicon, 225,JPItem.Vanadium, 75,JPItem.Neocells, 95));
+            requirements(Category.power, with(silicon, 225,JPItem.vanadium, 75,JPItem.neocell, 95));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 1750;
             size = 4;

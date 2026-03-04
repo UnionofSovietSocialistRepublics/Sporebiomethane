@@ -15,9 +15,9 @@ public class JPtechtree {
         if(Core.settings.getBool("HM")){
         nodeRoot("Spore biomechs Hardmode", coreShard, false, () -> {
             //Above the skies is currently the placeholder for now, the required sector will change later.
-            node(JPOther.Sporecore, Seq.with(new SectorComplete(JPsectorsHM.skiHM)), () -> {
-                node(JPOther.Hive, () -> {
-                    node(JPOther.Nydusaecore);
+            node(JPOther.hatchery, Seq.with(new SectorComplete(JPsectorsHM.skiHM)), () -> {
+                node(JPOther.hive, () -> {
+                    node(JPOther.nydusaecore);
                 });
             });
             node(JPTurret.Sporegarrison, Seq.with(new SectorComplete(JPsectorsHM.skiHM)), () -> {
@@ -84,15 +84,15 @@ public class JPtechtree {
                 });
             });
             nodeProduce(JPItem.Biomass, () -> {
-                nodeProduce(JPItem.Vanadium, () -> {
-                    nodeProduce(JPItem.VCA, () -> {});
-                    nodeProduce(JPItem.Azurite, () -> {});
+                nodeProduce(JPItem.vanadium, () -> {
+                    nodeProduce(JPItem.vca, () -> {});
+                    nodeProduce(JPItem.azurite, () -> {});
                 });
-                nodeProduce(JPItem.Zinc, () -> {});
+                nodeProduce(JPItem.zinc, () -> {});
                 nodeProduce(JPItem.BioSil, () -> {
                     nodeProduce(JPItem.Nanitealloy, () -> {
                         nodeProduce(JPItem.Carbinecomposite, () -> {
-                            nodeProduce(JPItem.Neocells, () -> {});
+                            nodeProduce(JPItem.neocell, () -> {});
                         });
                     });
                 });
@@ -104,9 +104,9 @@ public class JPtechtree {
 }else {
             nodeRoot("Spore biomechs", coreShard, false, () -> {
             //Above the skies is currently the placeholder for now, the required sector will change later.
-            node(JPOther.Sporecore, Seq.with(new SectorComplete(JPsectors.birth)), () -> {
-                node(JPOther.Hive, () -> {
-                    node(JPOther.Nydusaecore);
+            node(JPOther.hatchery, Seq.with(new SectorComplete(JPsectors.birth)), () -> {
+                node(JPOther.hive, () -> {
+                    node(JPOther.nydusaecore);
                 });
             });
             node(JPTurret.Sporegarrison, Seq.with(new SectorComplete(JPsectors.ski)), () -> {
@@ -173,15 +173,15 @@ public class JPtechtree {
                 });
             });
             nodeProduce(JPItem.Biomass, () -> {
-                nodeProduce(JPItem.Vanadium, () -> {
-                    nodeProduce(JPItem.VCA, () -> {});
-                    nodeProduce(JPItem.Azurite, () -> {});
+                nodeProduce(JPItem.vanadium, () -> {
+                    nodeProduce(JPItem.vca, () -> {});
+                    nodeProduce(JPItem.azurite, () -> {});
                 });
-                nodeProduce(JPItem.Zinc, () -> {});
+                nodeProduce(JPItem.zinc, () -> {});
                 nodeProduce(JPItem.BioSil, () -> {
                     nodeProduce(JPItem.Nanitealloy, () -> {
                         nodeProduce(JPItem.Carbinecomposite, () -> {
-                            nodeProduce(JPItem.Neocells, () -> {});
+                            nodeProduce(JPItem.neocell, () -> {});
                         });
                     });
                 });

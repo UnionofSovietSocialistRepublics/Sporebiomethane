@@ -4,9 +4,9 @@ import mindustry.world.meta.Attribute;
 
 public class JPAttribute {
     public static Attribute
-    Zinc;
+    zinc;
 
     public static void load() {
-        Zinc = Attribute.add("Zinc");
+        zinc = Attribute.add("zinc");
     }
 }

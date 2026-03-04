@@ -13,17 +13,17 @@ import static mindustry.content.Items.*;
 
 public class JPOther{
     public static Block
-VCAwall,Sporecore,Hive,Nydusaecore;
+VCAwall,hatchery,hive,nydusaecore;
 
         public static void load(){
         
         VCAwall = new Wall("Vanadiumcarbidewall"){{
-            requirements(Category.defense, with(JPItem.VCA, 40));
+            requirements(Category.defense, with(JPItem.vca, 40));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             size = 2;
             health = 6500;
         }};
-        Sporecore = new CoreBlock("Sporecore"){{
+        hatchery = new CoreBlock("hatchery"){{
             requirements(Category.effect, with(JPItem.Biomass, 3000, JPItem.Nanitealloy, 2000, silicon, 4000));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             unitType = JPUnits.hiveDefender;
@@ -35,7 +35,7 @@ VCAwall,Sporecore,Hive,Nydusaecore;
             unitCapModifier = 24;
             researchCostMultiplier = 0.5f;
         }};
-        Hive = new CoreBlock("Hive"){{
+        hive = new CoreBlock("hive"){{
             requirements(Category.effect, with(JPItem.Biomass, 6000, JPItem.Nanitealloy, 4000, silicon, 6000, surgeAlloy, 4000));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             unitType = JPUnits.hiveSentinel;
@@ -47,8 +47,8 @@ VCAwall,Sporecore,Hive,Nydusaecore;
             unitCapModifier = 32;
             researchCostMultiplier = 0.25f;
         }};
-        Nydusaecore = new CoreBlock("Nydusaecore"){{
-            requirements(Category.effect, with(JPItem.Biomass, 12000, JPItem.Nanitealloy, 8000, JPItem.VCA, 4000, silicon, 8000, surgeAlloy, 6000));
+        nydusaecore = new CoreBlock("nydusaecore"){{
+            requirements(Category.effect, with(JPItem.Biomass, 12000, JPItem.Nanitealloy, 8000, JPItem.vca, 4000, silicon, 8000, surgeAlloy, 6000));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             unitType = JPUnits.sporophage;
             health = 16250;
