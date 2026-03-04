@@ -8,8 +8,8 @@ public class JPEnv {
     public static Block
     vanadiumOre, azuriteOre,
     wall,
-	SiltMoss,Fluoresiltile,silt,tile,
-	Blackboulder;
+	SiltMoss,fluoresiltTile,silt,tile,
+	blackBoulder;
 
     public static void load() {
 	//block part
@@ -38,10 +38,10 @@ public class JPEnv {
         wall = new StaticWall("wall"){{
 			variants = 1;
 		}};
-        SiltMoss = new Floor("silt-moss"){{
+        SiltMoss = new Floor("siltMoss"){{
 			variants = 3;
 		}};
-        Fluoresiltile = new Floor("Fluoresiltile"){{
+        fluoresiltTile = new Floor("fluoresiltTile"){{
 			variants = 4;
 			itemDrop = JPItem.Fluoresilt;
 		}};
@@ -51,7 +51,7 @@ public class JPEnv {
         tile = new Floor("tile"){{
 			variants = 2;
 		}};
-        Blackboulder = new Prop("Blackboulder"){{
+        blackBoulder = new Prop("blackBoulder"){{
 			variants = 1;
 		}};
     }

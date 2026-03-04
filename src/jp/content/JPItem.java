@@ -8,7 +8,7 @@ public class JPItem{
     public static Item
 
     azurite,Biomass,BioSil,Carbinecomposite,Fluoresilt,
-    Fluorite,Nanitealloy,neocell,vanadium,vca,
+    fluorite,naniteAlloy,neocell,vanadium,vca,
     voltaicGas,zinc,umbratechChip,voidStone;
     public static void load(){
         azurite = new Item("azurite", Color.valueOf("245485")){{
@@ -29,7 +29,7 @@ public class JPItem{
             flammability = 0.65f;
         }};
 
-        Carbinecomposite = new Item("Carbine-composite", Color.valueOf("45368F")){{
+        Carbinecomposite = new Item("carbineComposite", Color.valueOf("45368F")){{
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             cost = 1.5f;
             flammability = 2f;
@@ -41,12 +41,12 @@ public class JPItem{
             cost = 1.5f;
         }};
 
-        Fluorite = new Item("Fluorite", Color.valueOf("23DBDE")){{
+        fluorite = new Item("fluorite", Color.valueOf("23DBDE")){{
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             cost = 1.75f;
         }};
 
-        Nanitealloy = new Item("Nanitealloy", Color.valueOf("45368F")){{
+        naniteAlloy = new Item("naniteAlloy", Color.valueOf("45368F")){{
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             cost = 1f;
             flammability = 2f;

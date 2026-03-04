@@ -90,14 +90,14 @@ public class JPtechtree {
                 });
                 nodeProduce(JPItem.zinc, () -> {});
                 nodeProduce(JPItem.BioSil, () -> {
-                    nodeProduce(JPItem.Nanitealloy, () -> {
+                    nodeProduce(JPItem.naniteAlloy, () -> {
                         nodeProduce(JPItem.Carbinecomposite, () -> {
                             nodeProduce(JPItem.neocell, () -> {});
                         });
                     });
                 });
                 nodeProduce(JPItem.Fluoresilt, () -> {
-                    nodeProduce(JPItem.Fluorite, () -> {});
+                    nodeProduce(JPItem.fluorite, () -> {});
                 });
             });
             });
@@ -179,14 +179,14 @@ public class JPtechtree {
                 });
                 nodeProduce(JPItem.zinc, () -> {});
                 nodeProduce(JPItem.BioSil, () -> {
-                    nodeProduce(JPItem.Nanitealloy, () -> {
+                    nodeProduce(JPItem.naniteAlloy, () -> {
                         nodeProduce(JPItem.Carbinecomposite, () -> {
                             nodeProduce(JPItem.neocell, () -> {});
                         });
                     });
                 });
                 nodeProduce(JPItem.Fluoresilt, () -> {
-                    nodeProduce(JPItem.Fluorite, () -> {});
+                    nodeProduce(JPItem.fluorite, () -> {});
                 });
             });
 });}}};

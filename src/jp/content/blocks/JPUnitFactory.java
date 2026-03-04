@@ -47,7 +47,7 @@ public class JPUnitFactory{
 
         }};
         gestator = new UnitFactory("gestator"){{
-            requirements(Category.units, with(silicon,750,JPItem.Nanitealloy,500,JPItem.Biomass,250,JPItem.neocell,75));
+            requirements(Category.units, with(silicon,750,JPItem.naniteAlloy,500,JPItem.Biomass,250,JPItem.neocell,75));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             plans = Seq.with(
                 new UnitPlan( JPUnits.carci, 60f * 25, with( silicon, 150, thorium, 75, JPItem.neocell, 30)),
@@ -62,12 +62,12 @@ public class JPUnitFactory{
 
         }};
         assembler = new UnitFactory("assembler"){{
-            requirements(Category.units, with(silicon,675,JPItem.Nanitealloy,75,JPItem.Biomass,225));
+            requirements(Category.units, with(silicon,675,JPItem.naniteAlloy,75,JPItem.Biomass,225));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             plans = Seq.with(
-                new UnitPlan( JPUnits.breacher, 60f * 15, with( silicon, 175, JPItem.Biomass,55, JPItem.Nanitealloy,45)),
-                new UnitPlan( JPUnits.guardian, 60f * 10, with( silicon, 195, JPItem.Biomass,65, JPItem.Nanitealloy,65)),
-                new UnitPlan( JPUnits.behomoth, 60f * 50, with( silicon, 850, JPItem.Biomass,400, JPItem.Nanitealloy,400)),
+                new UnitPlan( JPUnits.breacher, 60f * 15, with( silicon, 175, JPItem.Biomass,55, JPItem.naniteAlloy,45)),
+                new UnitPlan( JPUnits.guardian, 60f * 10, with( silicon, 195, JPItem.Biomass,65, JPItem.naniteAlloy,65)),
+                new UnitPlan( JPUnits.behomoth, 60f * 50, with( silicon, 850, JPItem.Biomass,400, JPItem.naniteAlloy,400)),
                 new UnitPlan( JPUnits.scarabid, 60f * 40, with( silicon, 225, plastanium, 90, JPItem.Biomass,25))
             );
             health = 1750;

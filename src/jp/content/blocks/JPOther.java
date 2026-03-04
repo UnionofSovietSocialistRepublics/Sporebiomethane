@@ -24,7 +24,7 @@ VCAwall,hatchery,hive,nydusaecore;
             health = 6500;
         }};
         hatchery = new CoreBlock("hatchery"){{
-            requirements(Category.effect, with(JPItem.Biomass, 3000, JPItem.Nanitealloy, 2000, silicon, 4000));
+            requirements(Category.effect, with(JPItem.Biomass, 3000, JPItem.naniteAlloy, 2000, silicon, 4000));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             unitType = JPUnits.hiveDefender;
             health = 6500;
@@ -36,7 +36,7 @@ VCAwall,hatchery,hive,nydusaecore;
             researchCostMultiplier = 0.5f;
         }};
         hive = new CoreBlock("hive"){{
-            requirements(Category.effect, with(JPItem.Biomass, 6000, JPItem.Nanitealloy, 4000, silicon, 6000, surgeAlloy, 4000));
+            requirements(Category.effect, with(JPItem.Biomass, 6000, JPItem.naniteAlloy, 4000, silicon, 6000, surgeAlloy, 4000));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             unitType = JPUnits.hiveSentinel;
             health = 9500;
@@ -48,7 +48,7 @@ VCAwall,hatchery,hive,nydusaecore;
             researchCostMultiplier = 0.25f;
         }};
         nydusaecore = new CoreBlock("nydusaecore"){{
-            requirements(Category.effect, with(JPItem.Biomass, 12000, JPItem.Nanitealloy, 8000, JPItem.vca, 4000, silicon, 8000, surgeAlloy, 6000));
+            requirements(Category.effect, with(JPItem.Biomass, 12000, JPItem.naniteAlloy, 8000, JPItem.vca, 4000, silicon, 8000, surgeAlloy, 6000));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             unitType = JPUnits.sporophage;
             health = 16250;

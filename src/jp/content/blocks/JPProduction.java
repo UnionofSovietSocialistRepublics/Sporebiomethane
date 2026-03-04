@@ -68,7 +68,7 @@ public class JPProduction{
             health = 350;
             size = 2;
             craftEffect = Fx.pulverizeMedium;
-            outputItem = new ItemStack(JPItem.Nanitealloy, 1);
+            outputItem = new ItemStack(JPItem.naniteAlloy, 1);
             craftTime = 50f;
             hasPower = true;
             hasItems = true;
@@ -80,8 +80,8 @@ public class JPProduction{
             }});
         }};
 
-        CCB = new GenericCrafter("Carbine-composite-smelter"){{
-            requirements(Category.crafting, with(JPItem.vanadium,300,JPItem.BioSil, 250,JPItem.Nanitealloy, 225));
+        CCB = new GenericCrafter("carbineComposite-smelter"){{
+            requirements(Category.crafting, with(JPItem.vanadium,300,JPItem.BioSil, 250,JPItem.naniteAlloy, 225));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 475;
             size = 2;
@@ -93,7 +93,7 @@ public class JPProduction{
             hasItems = true;
 
             consumePower(4f);
-            consumeItems(with(JPItem.BioSil, 2,JPItem.vanadium,4,JPItem.Nanitealloy, 3));
+            consumeItems(with(JPItem.BioSil, 2,JPItem.vanadium,4,JPItem.naniteAlloy, 3));
         }};
 
         Vanadicarbide = new HeatProducer("Vanadicarbide"){{
@@ -117,7 +117,7 @@ public class JPProduction{
             health = 120;
             size = 2;
             craftEffect = Fx.pulverizeMedium;
-            outputItem = new ItemStack(JPItem.Fluorite, 1);
+            outputItem = new ItemStack(JPItem.fluorite, 1);
             craftTime = 50f;
             hasPower = true;
             hasItems = true;
@@ -158,7 +158,7 @@ public class JPProduction{
         }};
 
         neostabilizer = new GenericCrafter("neostabilizer"){{
-            requirements(Category.crafting, with(JPItem.Biomass, 250,JPItem.Nanitealloy, 75,JPItem.Carbinecomposite, 75));
+            requirements(Category.crafting, with(JPItem.Biomass, 250,JPItem.naniteAlloy, 75,JPItem.Carbinecomposite, 75));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 1000;
             size = 3;
@@ -175,7 +175,7 @@ public class JPProduction{
         }};
 
         packageOpener = new JPELF("package-opener"){{
-            requirements(Category.crafting, with(JPItem.Biomass, 325,JPItem.Nanitealloy, 125,JPItem.Carbinecomposite, 125));
+            requirements(Category.crafting, with(JPItem.Biomass, 325,JPItem.naniteAlloy, 125,JPItem.Carbinecomposite, 125));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 1150;
             size = 4;
@@ -299,7 +299,7 @@ public class JPProduction{
         }};
 
         Voltaicburner = new ConsumeGenerator("Voltatic-burner"){{
-            requirements(Category.power, with(silicon, 125,JPItem.Nanitealloy, 65,JPItem.Biomass, 45));
+            requirements(Category.power, with(silicon, 125,JPItem.naniteAlloy, 65,JPItem.Biomass, 45));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 450;
             size = 2;

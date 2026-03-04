@@ -157,7 +157,7 @@ public class JPTurret{
         }};
 
         Oarch = new ItemTurret("Oarch"){{
-            requirements(Category.turret, with(graphite, 200, silicon, 125, JPItem.Nanitealloy, 95));
+            requirements(Category.turret, with(graphite, 200, silicon, 125, JPItem.naniteAlloy, 95));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             size = 2;
             rotateSpeed = 10f;
@@ -232,7 +232,7 @@ public class JPTurret{
         }};
         
         Mitocannon = new PowerTurret("Mitocannon"){{
-            requirements(Category.turret, with(graphite, 300, JPItem.neocell, 240, JPItem.Nanitealloy, 150));
+            requirements(Category.turret, with(graphite, 300, JPItem.neocell, 240, JPItem.naniteAlloy, 150));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 1500;
             size = 2;
@@ -317,7 +317,7 @@ public class JPTurret{
         }};
 
         Sentinel = new ContinuousTurret("Sentinel"){{
-            requirements(Category.turret, with(graphite, 200, JPItem.Nanitealloy, 75, JPItem.neocell, 25));
+            requirements(Category.turret, with(graphite, 200, JPItem.naniteAlloy, 75, JPItem.neocell, 25));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 975;
             size = 2;
@@ -437,7 +437,7 @@ public class JPTurret{
         }};
 
         Artilleryturret = new ItemTurret("Artilleryturret"){{
-            requirements(Category.turret, with(graphite, 675, JPItem.Nanitealloy, 250, JPItem.Biomass, 150));
+            requirements(Category.turret, with(graphite, 675, JPItem.naniteAlloy, 250, JPItem.Biomass, 150));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             size = 3;
             rotateSpeed = 10f;
@@ -488,7 +488,7 @@ public class JPTurret{
         }};
 
         Suppressor = new ItemTurret("Suppressor"){{
-            requirements(Category.turret, with(graphite, 225, JPItem.Nanitealloy, 75, JPItem.Biomass, 95));
+            requirements(Category.turret, with(graphite, 225, JPItem.naniteAlloy, 75, JPItem.Biomass, 95));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 1850;
             size = 3;
@@ -577,7 +577,7 @@ public class JPTurret{
         }};
 
         Impalercannon= new ItemTurret("Impalercannon"){{
-            requirements(Category.turret, with(surgeAlloy, 750, JPItem.Nanitealloy, 500,thorium, 500,silicon, 450));
+            requirements(Category.turret, with(surgeAlloy, 750, JPItem.naniteAlloy, 500,thorium, 500,silicon, 450));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 4250;
             size = 4;
