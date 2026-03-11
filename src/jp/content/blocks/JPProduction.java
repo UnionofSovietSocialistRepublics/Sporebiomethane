@@ -26,7 +26,7 @@ public class JPProduction{
     public static Block
         extractor,ZincExtractor,
         massCultivator,
-        Nanoprocessor,Naniteinfuser,CCB,FR,Gaschamber,BioSynthesizer,Vanadicarbide,neostabilizer,packageOpener,
+        Nanoprocessor,Naniteinfuser,CCB,fluoresiltRefinery,Gaschamber,BioSynthesizer,Vanadicarbide,neostabilizer,packageOpener,
         Biomassreactor,Neocell,Lotus,Oilburner,Voltaicburner;
 
         public static void load(){
@@ -111,7 +111,7 @@ public class JPProduction{
             consumeItems(with(JPItem.vanadium, 5,JPItem.biosil, 3));
         }};
 
-        FR = new GenericCrafter("fluoresilt-refinery"){{
+        fluoresiltRefinery = new GenericCrafter("fluoresiltRefinery"){{
             requirements(Category.crafting, with(JPItem.biomass, 45,silicon, 75, graphite, 125));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 120;

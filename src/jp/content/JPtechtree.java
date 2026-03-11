@@ -37,7 +37,7 @@ public class JPtechtree {
             node(JPProduction.Nanoprocessor, Seq.with(new SectorComplete(JPsectorsHM.skiHM)), () -> {
                 node(JPProduction.Vanadicarbide);
                 node(JPProduction.Gaschamber);
-                node(JPProduction.FR);
+                node(JPProduction.fluoresiltRefinery);
                 node(JPProduction.massCultivator);
                 node(JPProduction.BioSynthesizer, () -> {
                     node(JPProduction.Naniteinfuser, () -> {
@@ -126,7 +126,7 @@ public class JPtechtree {
             node(JPProduction.Nanoprocessor, Seq.with(new SectorComplete(JPsectors.ski)), () -> {
                 node(JPProduction.Vanadicarbide);
                 node(JPProduction.Gaschamber);
-                node(JPProduction.FR);
+                node(JPProduction.fluoresiltRefinery);
                 node(JPProduction.massCultivator);
                 node(JPProduction.BioSynthesizer, () -> {
                     node(JPProduction.Naniteinfuser, () -> {
