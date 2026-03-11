@@ -80,7 +80,7 @@ public class JPProduction{
             }});
         }};
 
-        CCB = new GenericCrafter("carbineComposite-smelter"){{
+        CCB = new GenericCrafter("carbideCompositeSmelter"){{
             requirements(Category.crafting, with(JPItem.vanadium,300,JPItem.biosil, 250,JPItem.naniteAlloy, 225));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 475;
@@ -174,7 +174,7 @@ public class JPProduction{
             consumeLiquid(Liquids.neoplasm, 6f / 60f);
         }};
 
-        packageOpener = new JPELF("package-opener"){{
+        packageOpener = new JPELF("neoplasmDestabilizer"){{
             requirements(Category.crafting, with(JPItem.biomass, 325,JPItem.naniteAlloy, 125,JPItem.Carbinecomposite, 125));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 1150;
