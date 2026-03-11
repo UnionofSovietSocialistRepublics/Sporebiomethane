@@ -8,7 +8,7 @@ public class JPItem{
     public static Item
 
     azurite,biomass,biosil,Carbinecomposite,fluoresilt,
-    fluorite,naniteAlloy,neocell,vanadium,vca,
+    fluorite,naniteAlloy,neocell,vanadium,vanadiumCarbideAlloy,
     voltaicGas,zinc,umbratechChip,voidStone;
     public static void load(){
         azurite = new Item("azurite", Color.valueOf("245485")){{
@@ -67,7 +67,7 @@ public class JPItem{
             cost = 1.5f;
         }};
 
-        vca = new Item("vca", Color.valueOf("303a45")){{
+        vanadiumCarbideAlloy = new Item("vanadiumCarbideAlloy", Color.valueOf("303a45")){{
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             cost = 2f;
         }};

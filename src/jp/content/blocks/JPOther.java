@@ -18,7 +18,7 @@ VCAwall,hatchery,hive,nydusaecore;
         public static void load(){
         
         VCAwall = new Wall("vanadiumCarbideWallLarge"){{
-            requirements(Category.defense, with(JPItem.vca, 40));
+            requirements(Category.defense, with(JPItem.vanadiumCarbideAlloy, 40));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             size = 2;
             health = 6500;
@@ -48,7 +48,7 @@ VCAwall,hatchery,hive,nydusaecore;
             researchCostMultiplier = 0.25f;
         }};
         nydusaecore = new CoreBlock("nydusaecore"){{
-            requirements(Category.effect, with(JPItem.biomass, 12000, JPItem.naniteAlloy, 8000, JPItem.vca, 4000, silicon, 8000, surgeAlloy, 6000));
+            requirements(Category.effect, with(JPItem.biomass, 12000, JPItem.naniteAlloy, 8000, JPItem.vanadiumCarbideAlloy, 4000, silicon, 8000, surgeAlloy, 6000));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             unitType = JPUnits.sporophage;
             health = 16250;

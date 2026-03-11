@@ -212,7 +212,7 @@ public class JPTurret{
                         collidesAir = true;
                     }};
                 }},
-                JPItem.vca, new BasicBulletType(5f, 95f){{
+                JPItem.vanadiumCarbideAlloy, new BasicBulletType(5f, 95f){{
                     reloadMultiplier = 0.5f;
                     height = width = 10f;
                     lifetime = 50f;
@@ -608,7 +608,7 @@ public class JPTurret{
                     pierceArmor = true;
                     hitShake = 6f;
             }},
-                JPItem.vca, new PointBulletType(){{
+                JPItem.vanadiumCarbideAlloy, new PointBulletType(){{
                     speed = 500f;
                     damage = 8000f;
                     reloadMultiplier = 0.5f;

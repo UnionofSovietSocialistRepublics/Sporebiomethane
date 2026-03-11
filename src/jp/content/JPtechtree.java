@@ -34,13 +34,13 @@ public class JPtechtree {
                 });
     });
             
-            node(JPProduction.Nanoprocessor, Seq.with(new SectorComplete(JPsectorsHM.skiHM)), () -> {
-                node(JPProduction.Vanadicarbide);
+            node(JPProduction.nanoProcessor, Seq.with(new SectorComplete(JPsectorsHM.skiHM)), () -> {
+                node(JPProduction.vanadiumCarbideAlloyer);
                 node(JPProduction.Gaschamber);
                 node(JPProduction.fluoresiltRefinery);
                 node(JPProduction.massCultivator);
-                node(JPProduction.BioSynthesizer, () -> {
-                    node(JPProduction.Naniteinfuser, () -> {
+                node(JPProduction.bioSynthesizer, () -> {
+                    node(JPProduction.naniteInfuser, () -> {
                         node(JPProduction.CCB, () -> {
                             node(JPProduction.neostabilizer);
                         });
@@ -58,13 +58,13 @@ public class JPtechtree {
             node(JPProduction.Oilburner, () -> {
                 node(JPProduction.Lotus);
                 node(JPProduction.Voltaicburner, () -> {
-                    node(JPProduction.Biomassreactor, () -> { 
+                    node(JPProduction.biomassReactor, () -> { 
                         node(JPProduction.Neocell);
                     });
                 });
             });
             node(JPProduction.extractor, Seq.with(new SectorComplete(JPsectorsHM.digHM)),() -> {
-                node(JPProduction.ZincExtractor, Seq.with(new SectorComplete(JPsectorsHM.digHM)), () -> {
+                node(JPProduction.zincExtractor, Seq.with(new SectorComplete(JPsectorsHM.digHM)), () -> {
             });
             });
             node(JPOther.VCAwall);
@@ -85,7 +85,7 @@ public class JPtechtree {
             });
             nodeProduce(JPItem.biomass, () -> {
                 nodeProduce(JPItem.vanadium, () -> {
-                    nodeProduce(JPItem.vca, () -> {});
+                    nodeProduce(JPItem.vanadiumCarbideAlloy, () -> {});
                     nodeProduce(JPItem.azurite, () -> {});
                 });
                 nodeProduce(JPItem.zinc, () -> {});
@@ -123,13 +123,13 @@ public class JPtechtree {
                 });
     });
             
-            node(JPProduction.Nanoprocessor, Seq.with(new SectorComplete(JPsectors.ski)), () -> {
-                node(JPProduction.Vanadicarbide);
+            node(JPProduction.nanoProcessor, Seq.with(new SectorComplete(JPsectors.ski)), () -> {
+                node(JPProduction.vanadiumCarbideAlloyer);
                 node(JPProduction.Gaschamber);
                 node(JPProduction.fluoresiltRefinery);
                 node(JPProduction.massCultivator);
-                node(JPProduction.BioSynthesizer, () -> {
-                    node(JPProduction.Naniteinfuser, () -> {
+                node(JPProduction.bioSynthesizer, () -> {
+                    node(JPProduction.naniteInfuser, () -> {
                         node(JPProduction.CCB, () -> {
                             node(JPProduction.neostabilizer);
                         });
@@ -147,13 +147,13 @@ public class JPtechtree {
             node(JPProduction.Oilburner, () -> {
                 node(JPProduction.Lotus);
                 node(JPProduction.Voltaicburner, () -> {
-                    node(JPProduction.Biomassreactor, () -> { 
+                    node(JPProduction.biomassReactor, () -> { 
                         node(JPProduction.Neocell);
                     });
                 });
             });
             node(JPProduction.extractor, Seq.with(new SectorComplete(JPsectors.dig)), () -> {
-                node(JPProduction.ZincExtractor, Seq.with(new SectorComplete(JPsectors.dig)), () -> {
+                node(JPProduction.zincExtractor, Seq.with(new SectorComplete(JPsectors.dig)), () -> {
             });
             });
             node(JPOther.VCAwall);
@@ -174,7 +174,7 @@ public class JPtechtree {
             });
             nodeProduce(JPItem.biomass, () -> {
                 nodeProduce(JPItem.vanadium, () -> {
-                    nodeProduce(JPItem.vca, () -> {});
+                    nodeProduce(JPItem.vanadiumCarbideAlloy, () -> {});
                     nodeProduce(JPItem.azurite, () -> {});
                 });
                 nodeProduce(JPItem.zinc, () -> {});
