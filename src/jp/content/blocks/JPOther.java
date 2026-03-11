@@ -17,7 +17,7 @@ VCAwall,hatchery,hive,nydusaecore;
 
         public static void load(){
         
-        VCAwall = new Wall("Vanadiumcarbidewall"){{
+        VCAwall = new Wall("vanadiumCarbideWallLarge"){{
             requirements(Category.defense, with(JPItem.vca, 40));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             size = 2;

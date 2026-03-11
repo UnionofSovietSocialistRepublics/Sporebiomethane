@@ -33,7 +33,7 @@ public class JPUnitFactory{
         }};
 
         
-        synapseTower = new UnitFactory("synapse-tower"){{
+        synapseTower = new UnitFactory("synapseTower"){{
             requirements(Category.units, with(silicon,250,JPItem.biomass,75));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             plans = Seq.with(

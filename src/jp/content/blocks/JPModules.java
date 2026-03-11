@@ -12,7 +12,7 @@ public class JPModules{
         acidifierModule;
 
         public static void load(){
-        acidifierModule = new UnitAssemblerModule("acidifier-module"){{
+        acidifierModule = new UnitAssemblerModule("acidifierModule"){{
             requirements(Category.units, with(Items.silicon, 400, JPItem.naniteAlloy,50, JPItem.biomass, 250));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             consumePower(5f);
