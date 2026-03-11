@@ -29,11 +29,11 @@ import static mindustry.content.Items.*;
 
 public class JPTurret{
     public static Block
-    Impalercannon,Flakaccelerator,Artilleryturret,Oarch,Sporegarrison,Mitocannon,Suppressor,Sentinel;
+    impalerCannon,flakAccelerator,artilleryTurret,Oarch,sporeGarrison,mitoCannon,suppressor,sentinel;
 
         public static void load(){
 
-        Sporegarrison = new PowerTurret("Sporegarrison"){{
+        sporeGarrison = new PowerTurret("sporeGarrison"){{
             requirements(Category.turret, with(graphite, 125, silicon, 95, JPItem.biomass, 75));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 720;
@@ -231,7 +231,7 @@ public class JPTurret{
             outlineColor = Color.valueOf("19171b");
         }};
         
-        Mitocannon = new PowerTurret("Mitocannon"){{
+        mitoCannon = new PowerTurret("mitoCannon"){{
             requirements(Category.turret, with(graphite, 300, JPItem.neocell, 240, JPItem.naniteAlloy, 150));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 1500;
@@ -316,7 +316,7 @@ public class JPTurret{
             outlineColor = Color.valueOf("19171b");
         }};
 
-        Sentinel = new ContinuousTurret("Sentinel"){{
+        sentinel = new ContinuousTurret("sentinel"){{
             requirements(Category.turret, with(graphite, 200, JPItem.naniteAlloy, 75, JPItem.neocell, 25));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 975;
@@ -360,7 +360,7 @@ public class JPTurret{
         outlineColor = Color.valueOf("19171b");
         }};
 
-        Flakaccelerator = new ItemTurret("Flakaccelerator"){{
+        flakAccelerator = new ItemTurret("flakAccelerator"){{
             requirements(Category.turret, with(graphite, 125, silicon, 100, JPItem.biomass, 75));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 1250;
@@ -436,7 +436,7 @@ public class JPTurret{
             }};
         }};
 
-        Artilleryturret = new ItemTurret("Artilleryturret"){{
+        artilleryTurret = new ItemTurret("artilleryTurret"){{
             requirements(Category.turret, with(graphite, 675, JPItem.naniteAlloy, 250, JPItem.biomass, 150));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             size = 3;
@@ -487,7 +487,7 @@ public class JPTurret{
             outlineColor = Color.valueOf("19171b");
         }};
 
-        Suppressor = new ItemTurret("Suppressor"){{
+        suppressor = new ItemTurret("suppressor"){{
             requirements(Category.turret, with(graphite, 225, JPItem.naniteAlloy, 75, JPItem.biomass, 95));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 1850;
@@ -576,7 +576,7 @@ public class JPTurret{
             }};
         }};
 
-        Impalercannon= new ItemTurret("Impalercannon"){{
+        impalerCannon= new ItemTurret("impalerCannon"){{
             requirements(Category.turret, with(surgeAlloy, 750, JPItem.naniteAlloy, 500,thorium, 500,silicon, 450));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 4250;

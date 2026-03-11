@@ -20,15 +20,15 @@ public class JPtechtree {
                     node(JPOther.nydusaecore);
                 });
             });
-            node(JPTurret.Sporegarrison, Seq.with(new SectorComplete(JPsectorsHM.skiHM)), () -> {
-                node(JPTurret.Flakaccelerator, () -> {
-                    node(JPTurret.Suppressor);
+            node(JPTurret.sporeGarrison, Seq.with(new SectorComplete(JPsectorsHM.skiHM)), () -> {
+                node(JPTurret.flakAccelerator, () -> {
+                    node(JPTurret.suppressor);
                  });
-                node(JPTurret.Mitocannon);
+                node(JPTurret.mitoCannon);
                 node(JPTurret.Oarch, () -> {
-                    node(JPTurret.Artilleryturret, () -> { 
-                        node(JPTurret.Impalercannon);
-                        node(JPTurret.Sentinel);
+                    node(JPTurret.artilleryTurret, () -> { 
+                        node(JPTurret.impalerCannon);
+                        node(JPTurret.sentinel);
                     });
                     
                 });
@@ -109,15 +109,15 @@ public class JPtechtree {
                     node(JPOther.nydusaecore);
                 });
             });
-            node(JPTurret.Sporegarrison, Seq.with(new SectorComplete(JPsectors.ski)), () -> {
-                node(JPTurret.Flakaccelerator, () -> {
-                    node(JPTurret.Suppressor);
+            node(JPTurret.sporeGarrison, Seq.with(new SectorComplete(JPsectors.ski)), () -> {
+                node(JPTurret.flakAccelerator, () -> {
+                    node(JPTurret.suppressor);
                  });
-                node(JPTurret.Mitocannon);
+                node(JPTurret.mitoCannon);
                 node(JPTurret.Oarch, () -> {
-                    node(JPTurret.Artilleryturret, () -> { 
-                        node(JPTurret.Impalercannon);
-                        node(JPTurret.Sentinel);
+                    node(JPTurret.artilleryTurret, () -> { 
+                        node(JPTurret.impalerCannon);
+                        node(JPTurret.sentinel);
                     });
                     
                 });
