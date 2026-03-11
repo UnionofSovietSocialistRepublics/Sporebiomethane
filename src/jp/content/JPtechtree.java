@@ -25,7 +25,7 @@ public class JPtechtree {
                     node(JPTurret.suppressor);
                  });
                 node(JPTurret.mitoCannon);
-                node(JPTurret.Oarch, () -> {
+                node(JPTurret.oarch, () -> {
                     node(JPTurret.artilleryTurret, () -> { 
                         node(JPTurret.impalerCannon);
                         node(JPTurret.sentinel);
@@ -114,7 +114,7 @@ public class JPtechtree {
                     node(JPTurret.suppressor);
                  });
                 node(JPTurret.mitoCannon);
-                node(JPTurret.Oarch, () -> {
+                node(JPTurret.oarch, () -> {
                     node(JPTurret.artilleryTurret, () -> { 
                         node(JPTurret.impalerCannon);
                         node(JPTurret.sentinel);

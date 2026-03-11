@@ -29,7 +29,7 @@ import static mindustry.content.Items.*;
 
 public class JPTurret{
     public static Block
-    impalerCannon,flakAccelerator,artilleryTurret,Oarch,sporeGarrison,mitoCannon,suppressor,sentinel;
+    impalerCannon,flakAccelerator,artilleryTurret,oarch,sporeGarrison,mitoCannon,suppressor,sentinel;
 
         public static void load(){
 
@@ -156,7 +156,7 @@ public class JPTurret{
             outlineColor = Color.valueOf("19171b");
         }};
 
-        Oarch = new ItemTurret("Oarch"){{
+        oarch = new ItemTurret("oarch"){{
             requirements(Category.turret, with(graphite, 200, silicon, 125, JPItem.naniteAlloy, 95));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             size = 2;
