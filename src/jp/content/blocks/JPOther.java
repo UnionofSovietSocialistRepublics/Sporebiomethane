@@ -13,11 +13,11 @@ import static mindustry.content.Items.*;
 
 public class JPOther{
     public static Block
-VCAwall,hatchery,hive,nydusaecore;
+    vanadiumCarbideWallLarge,hatchery,hive,nydusaeCore,lunarCore;
 
         public static void load(){
         
-        VCAwall = new Wall("vanadiumCarbideWallLarge"){{
+        vanadiumCarbideWallLarge = new Wall("vanadiumCarbideWallLarge"){{
             requirements(Category.defense, with(JPItem.vanadiumCarbideAlloy, 40));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             size = 2;
@@ -47,10 +47,23 @@ VCAwall,hatchery,hive,nydusaecore;
             unitCapModifier = 32;
             researchCostMultiplier = 0.25f;
         }};
-        nydusaecore = new CoreBlock("nydusaecore"){{
+        nydusaeCore = new CoreBlock("nydusaeCore"){{
             requirements(Category.effect, with(JPItem.biomass, 12000, JPItem.naniteAlloy, 8000, JPItem.vanadiumCarbideAlloy, 4000, silicon, 8000, surgeAlloy, 6000));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             unitType = JPUnits.sporophage;
+            health = 16250;
+            itemCapacity = 25000;
+            size = 6;
+            thrusterLength = 34/4f;
+
+            unitCapModifier = 48;
+            researchCostMultiplier = 0.15f;
+        }};
+
+        lunarCore = new CoreBlock("lunarCore"){{
+            requirements(Category.effect, with(JPItem.fluorite, 6000, JPItem.vanadiumCarbideAlloy, 2000));
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            unitType = JPUnits.hiveDefender;
             health = 16250;
             itemCapacity = 25000;
             size = 6;

@@ -816,8 +816,8 @@ public class JPUnits {
             health = 925;
             targetAir = false;
             range = 140f;
-            engineSize = 5f;
-            engineOffset = 10f;
+            engineSize = 4f;
+            engineOffset = 11f;
             faceTarget = false;
             circleTarget = true;
             weapons.add(new Weapon(){{
@@ -2079,3 +2079,4 @@ public class JPUnits {
             abilities.add(new StatusFieldAbility(JPStatus.frostshield, 60f * 3, 60f * 9f, 60f));
         }};
 }}
+

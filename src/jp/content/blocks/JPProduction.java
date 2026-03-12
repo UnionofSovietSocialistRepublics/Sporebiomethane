@@ -26,8 +26,8 @@ public class JPProduction{
     public static Block
         extractor,zincExtractor,
         massCultivator,
-        nanoProcessor,naniteInfuser,CCB,fluoresiltRefinery,Gaschamber,bioSynthesizer,vanadiumCarbideAlloyer,neostabilizer,packageOpener,
-        biomassReactor,Neocell,Lotus,Oilburner,Voltaicburner;
+        nanoProcessor,naniteInfuser,carbideCompositeSmelter,fluoresiltRefinery,voltaicChamber,bioSynthesizer,vanadiumCarbideAlloyer,neostabilizer,neoplasmDestabilizer,
+        biomassReactor,neocellGenerator,lotusPanel,oilBurner,voltaicBurner,lunarFactory,lunarCrusher;
 
         public static void load(){
 
@@ -80,7 +80,7 @@ public class JPProduction{
             }});
         }};
 
-        CCB = new GenericCrafter("carbideCompositeSmelter"){{
+        carbideCompositeSmelter = new GenericCrafter("carbideCompositeSmelter"){{
             requirements(Category.crafting, with(JPItem.vanadium,300,JPItem.biosil, 250,JPItem.naniteAlloy, 225));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 475;
@@ -126,7 +126,7 @@ public class JPProduction{
             consumeItem(JPItem.fluoresilt, 3);
         }};
 
-        Gaschamber = new GenericCrafter("voltaicChamber"){{
+        voltaicChamber = new GenericCrafter("voltaicChamber"){{
             requirements(Category.crafting, with(graphite, 225,JPItem.biomass, 115, plastanium, 75));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 360;
@@ -174,7 +174,7 @@ public class JPProduction{
             consumeLiquid(Liquids.neoplasm, 6f / 60f);
         }};
 
-        packageOpener = new JPELF("neoplasmDestabilizer"){{
+        neoplasmDestabilizer = new JPELF("neoplasmDestabilizer"){{
             requirements(Category.crafting, with(JPItem.biomass, 325,JPItem.naniteAlloy, 125,JPItem.Carbinecomposite, 125));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 1150;
@@ -284,7 +284,7 @@ public class JPProduction{
         
         //Power blocks
 
-        Oilburner = new ConsumeGenerator("oilBurner"){{
+        oilBurner = new ConsumeGenerator("oilBurner"){{
             requirements(Category.power, with(silicon, 75,graphite, 125,JPItem.biomass, 45));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 180;
@@ -298,7 +298,7 @@ public class JPProduction{
             drawer = new DrawMulti(new DrawDefault(), new DrawFlame(Color.valueOf("8B73C7")));
         }};
 
-        Voltaicburner = new ConsumeGenerator("voltaticBurner"){{
+        voltaicBurner = new ConsumeGenerator("voltaticBurner"){{
             requirements(Category.power, with(silicon, 125,JPItem.naniteAlloy, 65,JPItem.biomass, 45));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 450;
@@ -313,7 +313,7 @@ public class JPProduction{
             
         }};
 
-        Neocell = new JPBoostableCG("neocellGenerator"){{
+        neocellGenerator = new JPBoostableCG("neocellGenerator"){{
             requirements(Category.power, with(silicon, 225,JPItem.vanadium, 75,JPItem.neocell, 95));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 650;
@@ -330,7 +330,7 @@ public class JPProduction{
             }});
         }};
 
-        Lotus = new SolarGenerator("lotusPanel"){{
+        lotusPanel = new SolarGenerator("lotusPanel"){{
             requirements(Category.power, with(silicon, 175,JPItem.vanadium, 125,JPItem.biomass, 50));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 625;
@@ -355,6 +355,36 @@ public class JPProduction{
             drawer = new DrawMulti(new DrawRegion("-bottom"), new DrawPlasma(), new DrawDefault(), new DrawWarmupRegion(){{
                 color = Color.valueOf("8B73C7");
             }});
+        }};
+
+        lunarFactory = new HeatProducer("lunarFactory"){{
+            requirements(Category.crafting, with(silicon, 270,JPItem.biomass, 125,JPItem.vanadium, 450));
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            health = 750;
+            size = 2;
+            craftEffect = Fx.pulverizeMedium;
+            outputItem = new ItemStack(JPItem.vanadiumCarbideAlloy, 1);
+            craftTime = 50f;
+            hasItems = true;
+            hasPower = true;
+            heatOutput = 5f;
+            consumePower(5f);
+            consumeItems(with(JPItem.vanadium, 5,JPItem.biosil, 3));
+        }};
+
+        lunarCrusher = new HeatProducer("lunarCrusher"){{
+            requirements(Category.crafting, with(silicon, 270,JPItem.biomass, 125,JPItem.vanadium, 450));
+            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            health = 750;
+            size = 2;
+            craftEffect = Fx.pulverizeMedium;
+            outputItem = new ItemStack(JPItem.vanadiumCarbideAlloy, 1);
+            craftTime = 50f;
+            hasItems = true;
+            hasPower = true;
+            heatOutput = 5f;
+            consumePower(5f);
+            consumeItems(with(JPItem.vanadium, 5,JPItem.biosil, 3));
         }};
 
         }}

@@ -17,7 +17,7 @@ public class JPtechtree {
             //Above the skies is currently the placeholder for now, the required sector will change later.
             node(JPOther.hatchery, Seq.with(new SectorComplete(JPsectorsHM.skiHM)), () -> {
                 node(JPOther.hive, () -> {
-                    node(JPOther.nydusaecore);
+                    node(JPOther.nydusaeCore);
                 });
             });
             node(JPTurret.sporeGarrison, Seq.with(new SectorComplete(JPsectorsHM.skiHM)), () -> {
@@ -36,12 +36,12 @@ public class JPtechtree {
             
             node(JPProduction.nanoProcessor, Seq.with(new SectorComplete(JPsectorsHM.skiHM)), () -> {
                 node(JPProduction.vanadiumCarbideAlloyer);
-                node(JPProduction.Gaschamber);
+                node(JPProduction.voltaicChamber);
                 node(JPProduction.fluoresiltRefinery);
                 node(JPProduction.massCultivator);
                 node(JPProduction.bioSynthesizer, () -> {
                     node(JPProduction.naniteInfuser, () -> {
-                        node(JPProduction.CCB, () -> {
+                        node(JPProduction.carbideCompositeSmelter, () -> {
                             node(JPProduction.neostabilizer);
                         });
                     });
@@ -55,11 +55,11 @@ public class JPtechtree {
                     node(JPUnitFactory.gestator);
                 });
             });
-            node(JPProduction.Oilburner, () -> {
-                node(JPProduction.Lotus);
-                node(JPProduction.Voltaicburner, () -> {
+            node(JPProduction.oilBurner, () -> {
+                node(JPProduction.lotusPanel);
+                node(JPProduction.voltaicBurner, () -> {
                     node(JPProduction.biomassReactor, () -> { 
-                        node(JPProduction.Neocell);
+                        node(JPProduction.neocellGenerator);
                     });
                 });
             });
@@ -67,7 +67,7 @@ public class JPtechtree {
                 node(JPProduction.zincExtractor, Seq.with(new SectorComplete(JPsectorsHM.digHM)), () -> {
             });
             });
-            node(JPOther.VCAwall);
+            node(JPOther.vanadiumCarbideWallLarge);
              node(JPsectorsHM.skiHM, Seq.with(new SectorComplete(frozenForest)), () -> {
                 node(JPsectorsHM.digHM, Seq.with(
                         new SectorComplete(JPsectorsHM.skiHM),
@@ -106,7 +106,7 @@ public class JPtechtree {
             //Above the skies is currently the placeholder for now, the required sector will change later.
             node(JPOther.hatchery, Seq.with(new SectorComplete(JPsectors.birth)), () -> {
                 node(JPOther.hive, () -> {
-                    node(JPOther.nydusaecore);
+                    node(JPOther.nydusaeCore);
                 });
             });
             node(JPTurret.sporeGarrison, Seq.with(new SectorComplete(JPsectors.ski)), () -> {
@@ -125,12 +125,12 @@ public class JPtechtree {
             
             node(JPProduction.nanoProcessor, Seq.with(new SectorComplete(JPsectors.ski)), () -> {
                 node(JPProduction.vanadiumCarbideAlloyer);
-                node(JPProduction.Gaschamber);
+                node(JPProduction.voltaicChamber);
                 node(JPProduction.fluoresiltRefinery);
                 node(JPProduction.massCultivator);
                 node(JPProduction.bioSynthesizer, () -> {
                     node(JPProduction.naniteInfuser, () -> {
-                        node(JPProduction.CCB, () -> {
+                        node(JPProduction.carbideCompositeSmelter, () -> {
                             node(JPProduction.neostabilizer);
                         });
                     });
@@ -144,11 +144,11 @@ public class JPtechtree {
                     node(JPUnitFactory.gestator);
                 });
             });
-            node(JPProduction.Oilburner, () -> {
-                node(JPProduction.Lotus);
-                node(JPProduction.Voltaicburner, () -> {
+            node(JPProduction.oilBurner, () -> {
+                node(JPProduction.lotusPanel);
+                node(JPProduction.voltaicBurner, () -> {
                     node(JPProduction.biomassReactor, () -> { 
-                        node(JPProduction.Neocell);
+                        node(JPProduction.neocellGenerator);
                     });
                 });
             });
@@ -156,7 +156,7 @@ public class JPtechtree {
                 node(JPProduction.zincExtractor, Seq.with(new SectorComplete(JPsectors.dig)), () -> {
             });
             });
-            node(JPOther.VCAwall);
+            node(JPOther.vanadiumCarbideWallLarge);
              node(JPsectors.ski, Seq.with(new SectorComplete(frozenForest)), () -> {
                  node(JPsectors.dig, Seq.with(
                          new SectorComplete(JPsectors.ski),
