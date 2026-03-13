@@ -26,7 +26,7 @@ public class JPProduction{
     public static Block
         extractor,zincExtractor,
         massCultivator,
-        nanoProcessor,naniteInfuser,carbideCompositeSmelter,fluoresiltRefinery,voltaicChamber,bioSynthesizer,vanadiumCarbideAlloyer,neostabilizer,neoplasmDestabilizer,
+        nanoProcessor,naniteInfuser,carbideCompositeSmelter,fluoresiltRefinery,voltaicChamber,bioSynthesizer,vanadiumCarbideAlloyer,neostabilizer,neodestabilizer,
         biomassReactor,neocellGenerator,lotusPanel,oilBurner,voltaicBurner,lunarFactory,lunarCrusher;
 
         public static void load(){
@@ -174,7 +174,7 @@ public class JPProduction{
             consumeLiquid(Liquids.neoplasm, 6f / 60f);
         }};
 
-        neoplasmDestabilizer = new JPELF("neoplasmDestabilizer"){{
+        neodestabilizer = new JPELF("neodestabilizer"){{
             requirements(Category.crafting, with(JPItem.biomass, 325,JPItem.naniteAlloy, 125,JPItem.Carbinecomposite, 125));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 1150;
