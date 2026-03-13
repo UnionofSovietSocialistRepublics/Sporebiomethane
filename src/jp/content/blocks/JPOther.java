@@ -20,8 +20,8 @@ public class JPOther{
         vanadiumCarbideWallLarge = new Wall("vanadiumCarbideWallLarge"){{
             requirements(Category.defense, with(JPItem.vanadiumCarbideAlloy, 40));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
-            size = 2;
             health = 6500;
+            size = 2;
         }};
         hatchery = new CoreBlock("hatchery"){{
             requirements(Category.effect, with(JPItem.biomass, 3000, JPItem.naniteAlloy, 2000, silicon, 4000));
@@ -64,9 +64,9 @@ public class JPOther{
             requirements(Category.effect, with(JPItem.fluorite, 6000, JPItem.vanadiumCarbideAlloy, 2000));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             unitType = JPUnits.hiveDefender;
-            health = 16250;
-            itemCapacity = 25000;
-            size = 6;
+            health = 4200;
+            itemCapacity = 6500;
+            size = 3;
             thrusterLength = 34/4f;
 
             unitCapModifier = 48;
