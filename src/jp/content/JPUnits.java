@@ -125,7 +125,7 @@ public class JPUnits {
             health = 250;
             range = 50f;
             legCount = 4;
-            weapons.add(new Weapon("claws"){{
+            weapons.add(new Weapon(){{
                 reload = 30f;
                 x = y = 0f;
                 mirror = false;
@@ -138,7 +138,7 @@ public class JPUnits {
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
-            }};
+        }};
 
         lobber = new UnitType("lobber"){{
             this.constructor = LegsUnit::create;
@@ -186,7 +186,7 @@ public class JPUnits {
             health = 450;
             range = 50f;
             legCount = 4;
-            weapons.add(new Weapon("claws"){{
+            weapons.add(new Weapon("mouth"){{
                 reload = 20f;
                 x = 0f;
                 mirror = false;
@@ -197,7 +197,7 @@ public class JPUnits {
                     lifetime = 45f;
                 }};
             }});
-            weapons.add(new Weapon("grapplinghook"){{
+            weapons.add(new Weapon(){{
                 reload = 645f;
                 x = 0f;
                 mirror = false;
@@ -237,7 +237,7 @@ public class JPUnits {
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
-            }};
+        }};
 
         baneling = new UnitType("baneling"){{
             this.constructor = LegsUnit::create;
@@ -248,7 +248,7 @@ public class JPUnits {
             health = 225;
             range = 50f;
             legCount = 4;
-            weapons.add(new Weapon("kys"){{
+            weapons.add(new Weapon(){{
                 reload = 5f;
                 x = 0f;
                 y = 0f;
@@ -352,7 +352,7 @@ public class JPUnits {
             range = 125f;
             legCount = 4;
             stepShake = 0.15f;       
-            weapons.add(new Weapon(name + "-Cannon"){{
+            weapons.add(new Weapon(name + "-cannon"){{
                 reload = 75f;
                 x = 0f;
                 y = -8f;
@@ -600,11 +600,13 @@ public class JPUnits {
             legLength = 30f;
             legExtension = -15f;
             legBaseOffset = 10f;       
-            weapons.add(new Weapon("Superarty"){{
+            weapons.add(new Weapon(name+"-silo"){{
                 reload = 400f;
                 x = y = 0f;
                 mirror = false;
-                bullet = new ArtilleryBulletType(3f, 725){{
+                shoot.firstShotDelay = 300f;
+                shoot.shots = 3;
+                bullet = new ArtilleryBulletType(3f, 525){{
                     hitEffect = Fx.sapExplosion;
                     knockback = 0.8f;
                     lifetime = 120f;
@@ -639,6 +641,11 @@ public class JPUnits {
                     }};
                 }};
                 shootSound = Sounds.shootArtillery;
+                parts.add(new RegionPart("-hatch"){{
+                    mirror = true;
+                    progress = PartProgress.warmup;
+                    moveX = 2f;
+                }});
             }});
             weapons.add(new Weapon(name + "-mini-body"){{
                 reload = 30f;
