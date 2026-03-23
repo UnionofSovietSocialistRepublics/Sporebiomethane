@@ -605,9 +605,10 @@ public class JPUnits {
                 x = y = 0f;
                 mirror = false;
                 shoot.firstShotDelay = 150f;
-                shoot.shotDelay = 20f;
                 shoot.shots = 3;
+                shoot.shotDelay = 30f;
                 shootStatus = StatusEffects.slow;
+                shootStatusDuration = 150f;
                 bullet = new ArtilleryBulletType(3f, 525){{
                     hitEffect = Fx.sapExplosion;
                     knockback = 0.8f;
@@ -646,7 +647,7 @@ public class JPUnits {
                 parts.add(new RegionPart("-hatch"){{
                     mirror = true;
                     progress = PartProgress.warmup;
-                    moveX = 2f;
+                    moveX = -2f;
                 }});
             }});
             weapons.add(new Weapon(name + "-mini-body"){{
