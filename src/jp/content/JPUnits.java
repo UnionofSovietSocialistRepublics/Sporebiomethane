@@ -607,7 +607,7 @@ public class JPUnits {
                 shoot.firstShotDelay = 150f;
                 shoot.shotDelay = 20f;
                 shoot.shots = 3;
-                shoot.shootStatus = StatusEffects.slow;
+                shootStatus = StatusEffects.slow;
                 bullet = new ArtilleryBulletType(3f, 525){{
                     hitEffect = Fx.sapExplosion;
                     knockback = 0.8f;
