@@ -600,7 +600,7 @@ public class JPUnits {
             legLength = 30f;
             legExtension = -15f;
             legBaseOffset = 10f;       
-            weapons.add(new Weapon(name+"-silo"){{
+            weapons.add(new Weapon(){{
                 reload = 400f;
                 x = y = 0f;
                 mirror = false;
@@ -644,11 +644,13 @@ public class JPUnits {
                     }};
                 }};
                 shootSound = Sounds.shootArtillery;
-                parts.add(new RegionPart("-hatch"){{
-                    mirror = true;
-                    progress = PartProgress.warmup;
-                    moveX = -2f;
-                }});
+
+            }});
+            parts.add(new RegionPart("-silo-hatch"){{
+                mirror = true;
+                progress = PartProgress.warmup;
+                x
+                moveX = -2f;
             }});
             weapons.add(new Weapon(name + "-mini-body"){{
                 reload = 30f;
@@ -1804,7 +1806,7 @@ public class JPUnits {
             drag = 0.05f;
             accel = 0.11f;
             engineSize = 0f;
-            weapons.add(new Weapon(name + "-Invis"){{
+            weapons.add(new Weapon(){{
                 x = y = 0;
                 mirror = false;
                 range = 300;
