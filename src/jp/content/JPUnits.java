@@ -649,7 +649,6 @@ public class JPUnits {
             parts.add(new RegionPart("-silo-hatch"){{
                 mirror = true;
                 progress = PartProgress.warmup;
-                x
                 moveX = -2f;
             }});
             weapons.add(new Weapon(name + "-mini-body"){{
