@@ -71,7 +71,7 @@ public class JPtechtree {
              node(JPsectorsHM.skiHM, Seq.with(new SectorComplete(frozenForest)), () -> {
                 node(JPsectorsHM.digHM, Seq.with(
                         new SectorComplete(JPsectorsHM.skiHM),
-                        new SectorComplete(SectorPresets.craters)
+                        new SectorComplete(SectorPresets.crateredBattleground)
                 ), () -> {
                     node(JPsectorsHM.birthHM, Seq.with(
                             new SectorComplete(JPsectorsHM.digHM),
@@ -160,7 +160,7 @@ public class JPtechtree {
              node(JPsectors.ski, Seq.with(new SectorComplete(frozenForest)), () -> {
                  node(JPsectors.dig, Seq.with(
                          new SectorComplete(JPsectors.ski),
-                         new SectorComplete(SectorPresets.craters)
+                         new SectorComplete(SectorPresets.crateredBattleground)
                  ), () -> {
                      node(JPsectors.birth, Seq.with(
                              new SectorComplete(JPsectors.dig),
