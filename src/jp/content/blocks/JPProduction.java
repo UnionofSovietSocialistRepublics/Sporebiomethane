@@ -303,7 +303,7 @@ public class JPProduction{
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 450;
             size = 2;
-            powerProduction = 15f;
+            powerProduction = 12f;
             itemDuration = 180f;
             consumeItem(JPItem.voltaicGas);
             ambientSound = Sounds.loopSmelter;
@@ -318,8 +318,8 @@ public class JPProduction{
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 650;
             size = 2;
-            powerProduction = 11.5f;
-            itemDuration = 275f;
+            powerProduction = 15f;
+            itemDuration = 360f;
             consumeItem(JPItem.neocell);
             //troll emoji
             liquidBoostIntensity = 3f;
