@@ -752,6 +752,7 @@ public class JPUnits {
 
         interceptor = new UnitType("interceptor"){{
             this.constructor = UnitEntity::create;
+            aiController = JPSentientFly::new;
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.3f;
             hitSize = 18f;
