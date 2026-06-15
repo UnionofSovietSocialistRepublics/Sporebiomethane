@@ -83,6 +83,6 @@ public class JPSentientFly extends AIController{
             }
         }
 
-        return core;
+        return mainTarget;
     }
 }
