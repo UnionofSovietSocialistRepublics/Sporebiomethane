@@ -53,10 +53,11 @@ public class JPSentientFly extends AIController{
 
     @Override
     public Teamc findMainTarget(float x, float y, float range, boolean air, boolean ground){
-        var core = targetFlag(x, y, BlockFlag.core, true);
+//        var mainTarget = targetFlag(x, y, BlockFlag.core, true);
+        var mainTarget = Units.closestTarget(unit.team, unit.x, unit.y, unit.hitSize, Unitc::isFlying, t -> true);
 
-        if(core != null && Mathf.within(x, y, core.getX(), core.getY(), range)){
-            return core;
+        if(mainTarget != null && Mathf.within(x, y, mainTarget.getX(), mainTarget.getY(), range)){
+            return mainTarget;
         }
 
         if(state.rules.randomWaveAI){
