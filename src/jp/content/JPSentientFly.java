@@ -46,7 +46,7 @@ public class JPSentientFly extends AIController{
     @Override
     public Teamc findTarget(float x, float y, float range, boolean air, boolean ground){
 //        var result = findMainTarget(x, y, range, air, ground);
-        var result = Units.closestTarget(unit.team, unit.x, unit.y, unit.hitSize);
+        var result = Units.closestTarget(unit.team, unit.x, unit.y, unit.hitSize, Unitc::isFlying, t -> true);
         //if the main target is in range, use it, otherwise target whatever is closest
         return checkTarget(result, x, y, range) ? target(x, y, range, air, ground) : result;
     }
