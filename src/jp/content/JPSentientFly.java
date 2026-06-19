@@ -21,6 +21,7 @@ import mindustry.world.blocks.payloads.*;
 import static mindustry.Vars.*;
 import static mindustry.world.meta.BlockFlag.*;
 //FlyingAI Ripoff Attempt N.69210
+// Observed AI Behavior: Do not mve
 public class JPSentientFly extends AIController{
     final static Rand rand = new Rand();
     final static BlockFlag[] randomTargets = {core, storage, generator, launchPad, factory, repair, battery, reactor, drill};
@@ -46,7 +47,7 @@ public class JPSentientFly extends AIController{
     @Override
     public Teamc findTarget(float x, float y, float range, boolean air, boolean ground){
 //        var result = findMainTarget(x, y, range, air, ground);
-        var result = Units.closestTarget(unit.team, unit.x, unit.y, unit.hitSize, Unitc::isFlying, t -> true);
+        var result = target(x, y, range, air, ground);
         //if the main target is in range, use it, otherwise target whatever is closest
         return checkTarget(result, x, y, range) ? target(x, y, range, air, ground) : result;
     }
@@ -54,7 +55,7 @@ public class JPSentientFly extends AIController{
     @Override
     public Teamc findMainTarget(float x, float y, float range, boolean air, boolean ground){
 //        var mainTarget = targetFlag(x, y, BlockFlag.core, true);
-        var mainTarget = Units.closestTarget(unit.team, unit.x, unit.y, unit.hitSize, Unitc::isFlying, t -> true);
+        var mainTarget = target(x, y, range, air, ground);
 
         if(mainTarget != null && Mathf.within(x, y, mainTarget.getX(), mainTarget.getY(), range)){
             return mainTarget;
