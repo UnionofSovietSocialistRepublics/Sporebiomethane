@@ -47,7 +47,7 @@ public class JPSentientFly extends AIController{
     @Override
     public Teamc findTarget(float x, float y, float range, boolean air, boolean ground){
 //        var result = findMainTarget(x, y, range, air, ground);
-        var result = target(x, y, range, air, ground);
+        Teamc result = target(x, y, range, air, ground);
         //if the main target is in range, use it, otherwise target whatever is closest
         return checkTarget(result, x, y, range) ? target(x, y, range, air, ground) : result;
     }
@@ -55,7 +55,7 @@ public class JPSentientFly extends AIController{
     @Override
     public Teamc findMainTarget(float x, float y, float range, boolean air, boolean ground){
 //        var mainTarget = targetFlag(x, y, BlockFlag.core, true);
-        var mainTarget = target(x, y, range, air, ground);
+        Teamc mainTarget = target(x, y, range, air, ground);
 
         if(mainTarget != null && Mathf.within(x, y, mainTarget.getX(), mainTarget.getY(), range)){
             return mainTarget;
