@@ -6,6 +6,7 @@ import arc.util.*;
 import mindustry.*;
 import mindustry.ai.*;
 import mindustry.ai.types.*;
+import mindustry.core.*;
 import mindustry.entities.units.*;
 import mindustry.gen.*;
 import mindustry.world.meta.*;
@@ -21,7 +22,7 @@ import mindustry.world.blocks.payloads.*;
 import static mindustry.Vars.*;
 import static mindustry.world.meta.BlockFlag.*;
 //FlyingAI Ripoff Attempt N.69210
-// Observed AI Behavior: Do not mve
+// Observed AI Behavior: wack
 public class JPSentientFly extends AIController{
     final static Rand rand = new Rand();
     final static BlockFlag[] randomTargets = {core, storage, generator, launchPad, factory, repair, battery, reactor, drill};
@@ -29,61 +30,77 @@ public class JPSentientFly extends AIController{
     @Override
     public void updateMovement(){
         unloadPayloads();
-
-        if(target != null && unit.hasWeapons()){
-            if(unit.type.circleTarget){
-                circleAttack(unit.type.circleTargetRadius);
-            }else{
-                moveTo(target, unit.type.range * 0.8f);
-                unit.lookAt(target);
-            }
-        }
+        Building core = unit.closestEnemyCore();
+        // if(target != null && unit.hasWeapons()){
+        //     if(unit.type.circleTarget){
+        //         circleAttack(unit.type.circleTargetRadius);
+        //     }else{
+        //         moveTo(target, unit.type.range * 0.8f);
+        //         unit.lookAt(target);
+        //     }
+        // }
 
         if(target == null && state.rules.waves && unit.team == state.rules.defaultTeam){
             moveTo(getClosestSpawner(), state.rules.dropZoneRadius + 130f);
         }
+        seekClosestTarget(core);
+        seekToEngage();
+        faceTarget();
+        faceMovement();
     }
 
-    @Override
-    public Teamc findTarget(float x, float y, float range, boolean air, boolean ground){
-//        var result = findMainTarget(x, y, range, air, ground);
-        Teamc result = target(x, y, range, air, ground);
-        //if the main target is in range, use it, otherwise target whatever is closest
-        return checkTarget(result, x, y, range) ? target(x, y, range, air, ground) : result;
-    }
-
-    @Override
-    public Teamc findMainTarget(float x, float y, float range, boolean air, boolean ground){
-//        var mainTarget = targetFlag(x, y, BlockFlag.core, true);
-        Teamc mainTarget = target(x, y, range, air, ground);
-
-        if(mainTarget != null && Mathf.within(x, y, mainTarget.getX(), mainTarget.getY(), range)){
-            return mainTarget;
+    void seekClosestTarget(Building core) {
+        if (core == null || !core.isValid()) {
+            return;
         }
 
-        if(state.rules.randomWaveAI){
-            //when there are no waves, it's just random based on the unit
-            rand.setSeed(unit.type.id + (state.rules.waves ? state.wave : unit.id));
-            //try a few random flags first
-            for(int attempt = 0; attempt < 5; attempt++){
-                Teamc result = targetFlagActive(x, y, randomTargets[rand.random(randomTargets.length - 1)], true);
-                if(result != null) return result;
+        if (unit.within(core, unit.range())) {
+            engage(core);
+        } else {
+                Building alt = Vars.indexer.findEnemyTile(unit.team, unit.x, unit.y, 5000, b -> b.team != unit.team);
+                if(alt!=null){
+                    moveTo(alt, 10f);
+                }
+                
             }
-            //try the closest target
-            Teamc result = target(x, y, range, air, ground);
-            if(result != null) return result;
-        }else{
-            for(var flag : unit.type.targetFlags){
-                if(flag == null){
-                    Teamc result = target(x, y, range, air, ground);
-                    if(result != null) return result;
-                }else if(ground){
-                    Teamc result = targetFlagActive(x, y, flag, true);
-                    if(result != null) return result;
+        }
+
+    void seekToEngage() {
+        Unit enemy = Units.closestEnemy(unit.team, unit.x, unit.y, unit.range(), u -> true);
+        Building block = Vars.indexer.findEnemyTile(unit.team, unit.x, unit.y, unit.range(), b -> b.block != null);
+
+        if (enemy != null && enemy.isValid() && unit.within(enemy, unit.range())) {
+            engage(enemy);
+        } else if (block != null && block.isValid() && unit.within(block, unit.range())) {
+            engage(block);
+        }
+    }
+
+    void engage(Unit u) {
+        if (u == null || !u.isValid()) return;
+        for (var mount : unit.mounts) {
+            if(u.type.flying){
+                if (mount.weapon.controllable && mount.weapon.bullet != null && mount.weapon.bullet.collidesAir) {
+                    if(unit.type.faceTarget) unit.lookAt(u);
+                    mount.target = u;
+                }
+            } else {
+                if (mount.weapon.controllable && mount.weapon.bullet != null && mount.weapon.bullet.collidesGround) {
+                    if(unit.type.faceTarget) unit.lookAt(u);
+                    mount.target = u;
                 }
             }
         }
-
-        return mainTarget;
     }
+
+    void engage(Building b) {
+        if (b == null || !b.isValid()) return;
+        for (var mount : unit.mounts) {
+            if (mount.weapon.controllable && mount.weapon.bullet != null && mount.weapon.bullet.collidesGround) {
+                if(unit.type.faceTarget) unit.lookAt(b);
+                mount.target = b;
+            }
+        }
+    }
+
 }
