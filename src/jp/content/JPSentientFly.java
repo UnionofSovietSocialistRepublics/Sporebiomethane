@@ -31,14 +31,6 @@ public class JPSentientFly extends AIController{
     public void updateMovement(){
         unloadPayloads();
         Building core = unit.closestEnemyCore();
-        // if(target != null && unit.hasWeapons()){
-        //     if(unit.type.circleTarget){
-        //         circleAttack(unit.type.circleTargetRadius);
-        //     }else{
-        //         moveTo(target, unit.type.range * 0.8f);
-        //         unit.lookAt(target);
-        //     }
-        // }
 
         if(target == null && state.rules.waves && unit.team == state.rules.defaultTeam){
             moveTo(getClosestSpawner(), state.rules.dropZoneRadius + 130f);
@@ -57,8 +49,22 @@ public class JPSentientFly extends AIController{
         if (unit.within(core, unit.range())) {
             engage(core);
         } else {
-                Building alt = Vars.indexer.findEnemyTile(unit.team, unit.x, unit.y, 5000, b -> b.team != unit.team);
-                if(alt!=null){
+                Building alt = null;
+                int range = 200;
+                int maxRange = 5000;
+
+                while(alt == null && range <= maxRange){
+                    alt = Vars.indexer.findEnemyTile(
+                        unit.team,
+                        unit.x,
+                        unit.y,
+                        range,
+                        b -> b.team != unit.team
+                    );
+                    range += 200;
+                }
+
+                if(alt != null){
                     moveTo(alt, 10f);
                 }
                 
