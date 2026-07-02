@@ -29,7 +29,7 @@ import static mindustry.Vars.*;
 public class JPUnits {
     public static UnitType
     //Legs
-    carci,imp, basilisk, autus, baneling, zergling, behomoth, lobber, breacher, scarabid, frost, roach, purger, gorgon, raptor, frostC, demolisher,
+    carci,imp, basilisk, autus, baneling, zergling, behomoth, lobber, breacher, scarabid, frost, roach, purger, gorgon, raptor, frostC, ebola,
     //missiles
     //Bomb,
     //Floaty
@@ -1272,7 +1272,7 @@ public class JPUnits {
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};
 
-        demolisher = new UnitType("demolisher"){{
+        ebola = new UnitType("ebola"){{
             this.constructor = LegsUnit::create;
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 0.6f;
