@@ -357,23 +357,22 @@ public class JPProduction{
             }});
         }};
 
-        lunarFactory = new HeatProducer("lunarFactory"){{
-            requirements(Category.crafting, with(silicon, 270,JPItem.biomass, 125,JPItem.vanadium, 450));
+        lunarFactory = new GenericCrafter("lunarFactory"){{
+            requirements(Category.crafting, with(JPItem.vanadium, 75, JPItem.fluorite, 45));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 750;
             size = 2;
             craftEffect = Fx.pulverizeMedium;
-            outputItem = new ItemStack(JPItem.vanadiumCarbideAlloy, 1);
+            outputItem = new ItemStack(JPItem.umbratechChip, 1);
             craftTime = 50f;
             hasItems = true;
             hasPower = true;
-            heatOutput = 5f;
             consumePower(5f);
-            consumeItems(with(JPItem.vanadium, 5,JPItem.biosil, 3));
+            consumeItems(with(JPItem.fluorite, 2,JPItem.voidStone, 3, JPItem.vanadium, 3));
         }};
 
-        lunarCrusher = new HeatProducer("lunarCrusher"){{
-            requirements(Category.crafting, with(silicon, 270,JPItem.biomass, 125,JPItem.vanadium, 450));
+        lunarCrusher = new GenericCrafter("lunarCrusher"){{
+            requirements(Category.crafting, with(JPItem.vanadium, 75, JPItem.fluorite, 45));
             shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             health = 750;
             size = 2;
@@ -382,7 +381,6 @@ public class JPProduction{
             craftTime = 50f;
             hasItems = true;
             hasPower = true;
-            heatOutput = 5f;
             consumePower(5f);
             consumeItems(with(JPItem.vanadium, 5,JPItem.biosil, 3));
         }};
