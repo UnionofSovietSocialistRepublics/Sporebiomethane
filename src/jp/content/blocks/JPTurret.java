@@ -46,21 +46,21 @@ public class JPTurret{
             ammoUseEffect = Fx.casing1;
             inaccuracy = 2f;
             shootType = new BasicBulletType(4f, 35f){{
-                height = width = 15f;;
+                width = 16f; height = 20f;
                 lifetime = 20f;
                 status = StatusEffects.electrified;
                 statusDuration = 60f * 3;
                 ammoMultiplier = 1f;
                 buildingDamageMultiplier = 0.25f;
-                lightningColor = Color.valueOf("bf92f9");
-                backColor = Color.valueOf("bf92f9");
-                frontColor = Color.valueOf("bf92f9");
+                lightningColor = Pal.accent;
+                backColor = JPPal.sporeBulletBack;
+                frontColor = JPPal.sporeBulletFront;
                 despawnEffect = Fx.hitBulletColor;
                 intervalBullet = new LightningBulletType(){{
                     damage = 8;
                     collidesAir = false;
                     ammoMultiplier = 1f;
-                    lightningColor = Color.valueOf("bf92f9");
+                    lightningColor = Pal.accent;
                     lightningLength = 3;
                     lightningLengthRand = 6;
                     buildingDamageMultiplier = 0.25f;
@@ -78,21 +78,21 @@ public class JPTurret{
                 fragRandomSpread = fragAngle = 0;
                 fragVelocityMin = fragLifeMin = 0.8f;
                 fragBullet = new BasicBulletType(4f, 35f){{
-                    height = width = 15f;;
+                    width = 12f; height = 16f;
                     lifetime = 20f;
                     status = StatusEffects.electrified;
                     statusDuration = 60f * 3;
                     ammoMultiplier = 1f;
                     buildingDamageMultiplier = 0.25f;
-                    lightningColor = Color.valueOf("bf92f9");
-                    backColor = Color.valueOf("bf92f9");
-                    frontColor = Color.valueOf("bf92f9");
+                    lightningColor = Pal.accent;
+                    backColor = JPPal.sporeBulletBack;
+                    frontColor = JPPal.sporeBulletFront;
                     despawnEffect = Fx.hitBulletColor;
                     intervalBullet = new LightningBulletType(){{
                         damage = 8;
                         collidesAir = false;
                         ammoMultiplier = 1f;
-                        lightningColor = Color.valueOf("bf92f9");
+                        lightningColor = Pal.accent;
                         lightningLength = 3;
                         lightningLengthRand = 6;
                         buildingDamageMultiplier = 0.25f;
@@ -110,7 +110,7 @@ public class JPTurret{
                     fragRandomSpread = fragAngle = 0;
                     fragVelocityMin = fragLifeMin = 0.8f;
                     fragBullet = new BasicBulletType(4f, 35f){{
-                        height = width = 15f;;
+                        width = 8f; height = 12f;
                         lifetime = 20f;
                         lightning = 2;
                         lightningLength = 7;
@@ -118,15 +118,15 @@ public class JPTurret{
                         statusDuration = 60f * 3;
                         ammoMultiplier = 1f;
                         buildingDamageMultiplier = 0.25f;
-                        lightningColor = Color.valueOf("bf92f9");
-                        backColor = Color.valueOf("bf92f9");
-                        frontColor = Color.valueOf("bf92f9");
+                        lightningColor = Pal.accent;
+                        backColor = JPPal.sporeBulletBack;
+                        frontColor = JPPal.sporeBulletFront;
                         despawnEffect = Fx.hitBulletColor;
 //                        intervalBullet = new LightningBulletType(){{
 //                            damage = 8;
 //                            collidesAir = false;
 //                            ammoMultiplier = 1f;
-//                            lightningColor = Color.valueOf("bf92f9");
+//                            lightningColor = Pal.accent;
 //                            lightningLength = 3;
 //                            lightningLengthRand = 6;
 //                            buildingDamageMultiplier = 0.25f;
@@ -252,15 +252,15 @@ public class JPTurret{
                 status = StatusEffects.wet;
                 statusDuration = 60f * 3;
                 pierceArmor = true;
-                backColor = Color.valueOf("bf92f9");
-                frontColor = Color.valueOf("bf92f9");
+                backColor = JPPal.sporeBulletBack;
+                frontColor = JPPal.sporeBulletFront;
                 ammoMultiplier = 1f;
                 buildingDamageMultiplier = 0.25f;
                 intervalBullet = new LightningBulletType(){{
                     damage = 32;
                     collidesAir = false;
                     ammoMultiplier = 1f;
-                    lightningColor = Color.valueOf("bf92f9");
+                    lightningColor = Pal.accent;
                     lightningLength = 3;
                     lightningLengthRand = 6;
                     buildingDamageMultiplier = 0.25f;
@@ -287,11 +287,11 @@ public class JPTurret{
                     status = StatusEffects.shocked;
                     hitEffect = new Effect(50f, 100f, e -> {
                         e.scaled(7f, b -> {
-                            color(JPPal.sporeBullet, b.fout());
+                            color(JPPal.sporeBulletFront, b.fout());
                             Fill.circle(e.x, e.y, rad);
                         });
 
-                        color(JPPal.sporeBullet);
+                        color(JPPal.sporeBulletFront);
                         stroke(e.fout() * 3f);
                         Lines.circle(e.x, e.y, rad);
 
@@ -305,7 +305,7 @@ public class JPTurret{
                         Fill.circle(e.x, e.y, 12f * e.fout());
                         color();
                         Fill.circle(e.x, e.y, 6f * e.fout());
-                        Drawf.light(e.x, e.y, rad * 1.6f, JPPal.sporeBullet, e.fout());
+                        Drawf.light(e.x, e.y, rad * 1.6f, JPPal.sporeBulletBack, e.fout());
                     });
 
                 }};
