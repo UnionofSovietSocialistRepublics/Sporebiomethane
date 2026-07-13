@@ -22,7 +22,7 @@ import mindustry.world.blocks.payloads.*;
 import static mindustry.Vars.*;
 import static mindustry.world.meta.BlockFlag.*;
 //FlyingAI Ripoff Attempt N.69210
-// Observed AI Behavior: wack
+// Observed AI Behavior: working as intended, target closest air/ground with the correct weapon.
 public class JPSentientFly extends AIController{
     final static Rand rand = new Rand();
     final static BlockFlag[] randomTargets = {core, storage, generator, launchPad, factory, repair, battery, reactor, drill};
