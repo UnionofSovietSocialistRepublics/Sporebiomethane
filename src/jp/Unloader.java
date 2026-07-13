@@ -61,7 +61,7 @@ public class Unloader extends Mod{
     }
     @Override
     public void loadContent(){
-        Log.info("Ah shit here we go again. Another mod, another load.");
+        Log.info("Loading sporebiometh(ane) contents");
         JPStatus.load();
         JPLiquids.load();
         JPAttribute.load();

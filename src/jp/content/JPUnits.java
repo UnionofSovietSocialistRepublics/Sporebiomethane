@@ -95,7 +95,7 @@ public class JPUnits {
         zeta = new UnitType("zeta"){{
             this.constructor = BuildingTetherPayloadUnit::create;
             controller = u -> new AssemblerAI();
-            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1f;
             hitSize = 11f;
             health = 400;
@@ -119,7 +119,7 @@ public class JPUnits {
 
         zergling = new UnitType("zergling"){{
             this.constructor = LegsUnit::create;
-            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.45f;
             hitSize = 8f;
             health = 250;
@@ -142,7 +142,7 @@ public class JPUnits {
 
         lobber = new UnitType("lobber"){{
             this.constructor = LegsUnit::create;
-            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1f;
             hitSize = 8f;
             health = 325;
@@ -179,7 +179,7 @@ public class JPUnits {
 
         raptor = new UnitType("raptor"){{
             this.constructor = LegsUnit::create;
-            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 2f;
             armor = 3f;
             hitSize = 8f;
@@ -242,7 +242,7 @@ public class JPUnits {
         baneling = new UnitType("baneling"){{
             this.constructor = LegsUnit::create;
             aiController = SuicideAI::new;
-            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.25f;
             hitSize = 8f;
             health = 225;
@@ -306,7 +306,7 @@ public class JPUnits {
         roach = new UnitType("roach"){{
             this.constructor = LegsUnit::create;
         //            aiController = JPSeekerAI::new;
-            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1f;
             hitSize = 18f;
             health = 650;
@@ -344,7 +344,7 @@ public class JPUnits {
 
         scarabid = new UnitType("scarabid"){{
             this.constructor = LegsUnit::create;
-            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1f;
             hitSize = 18f;
             health = 1150;
@@ -385,7 +385,7 @@ public class JPUnits {
 
         breacher = new UnitType("breacher"){{
             this.constructor = LegsUnit::create;
-            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1f;
             hitSize = 18f;
             health = 1150;
@@ -440,7 +440,7 @@ public class JPUnits {
 
         purger = new UnitType("purger"){{
             this.constructor = LegsUnit::create;
-            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1f;
             hitSize = 8f;
             health = 650;
@@ -497,7 +497,7 @@ public class JPUnits {
 
         gorgon = new UnitType("gorgon"){{
             this.constructor = LegsUnit::create;
-            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1f;
             hitSize = 27f;
             health = 12000;
@@ -532,7 +532,7 @@ public class JPUnits {
 
         behomoth = new UnitType("behomoth"){{
             this.constructor = LegsUnit::create;
-            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 0.65f;
             hitSize = 44f;
             armor = 11;
@@ -590,7 +590,7 @@ public class JPUnits {
 
         basilisk = new UnitType("basilisk"){{
             this.constructor = LegsUnit::create;
-            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 0.55f;
             hitSize = 44f;
             health = 35000;
@@ -713,7 +713,7 @@ public class JPUnits {
             this.constructor = UnitEntity::create;
             controller = u -> new MinerAI();
             defaultCommand = UnitCommand.mineCommand;
-            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1f;
             hitSize = 10f;
             health = 400;
@@ -753,7 +753,7 @@ public class JPUnits {
         interceptor = new UnitType("interceptor"){{
             this.constructor = UnitEntity::create;
             aiController = JPSentientFly::new;
-            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.3f;
             hitSize = 18f;
             health = 620;
@@ -819,7 +819,7 @@ public class JPUnits {
 
         rizomorph = new UnitType("rizomorph"){{
             this.constructor = UnitEntity::create;
-            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.85f;
             accel = 0.08f;
             drag = 0.08f;
@@ -873,7 +873,7 @@ public class JPUnits {
 
         guardian = new UnitType("guardian"){{
             this.constructor = UnitEntity::create;
-            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1f;
             hitSize = 18f;
             health = 1500;
@@ -920,7 +920,7 @@ public class JPUnits {
 
         hiveDefender = new UnitType("hiveDefender"){{
             this.constructor = UnitEntity::create;
-            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 2.75f;
             armor = 1;
             hitSize = 18f;
@@ -960,7 +960,7 @@ public class JPUnits {
 
         hiveSentinel = new UnitType("hiveSentinel"){{
             this.constructor = UnitEntity::create;
-            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 2.5f;
             armor = 2;
             hitSize = 18f;
@@ -1000,7 +1000,7 @@ public class JPUnits {
 
         sporophage = new UnitType("sporophage"){{
             this.constructor = UnitEntity::create;
-            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 2f;
             armor = 3;
             hitSize = 17f;
@@ -1045,7 +1045,7 @@ public class JPUnits {
         impReincranation = new UnitType("impReincranation"){{
             this.constructor = UnitEntity::create;
             aiController = SuicideAI::new;
-            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.75f;
             health = 215;
             range = 50f;
@@ -1109,7 +1109,7 @@ public class JPUnits {
         imp = new UnitType("imp"){{
             this.constructor = LegsUnit::create;
             aiController = SuicideAI::new;
-            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.5f;
             hitSize = 8f;
             health = 450;
@@ -1162,7 +1162,7 @@ public class JPUnits {
 
         carci = new UnitType("carci"){{
             this.constructor = LegsUnit::create;
-            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 0.65f;
             targetAir = false;
             hitSize = 8f;
@@ -1203,7 +1203,7 @@ public class JPUnits {
 
         autus = new UnitType("autus"){{
             this.constructor = LegsUnit::create;
-            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 0.75f;
             hitSize = 12f;
             health = 1500;
@@ -1274,7 +1274,7 @@ public class JPUnits {
 
         ebola = new UnitType("ebola"){{
             this.constructor = LegsUnit::create;
-            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 0.6f;
             hitSize = 16f;
             armor = 6;
@@ -1399,7 +1399,7 @@ public class JPUnits {
         }};
 
         protectorate = new JPCopterUnitType("protectorate"){{
-            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.25f;
             armor = 4;
             hitSize = 9f;
@@ -1445,7 +1445,7 @@ public class JPUnits {
         }};
 
         saboteur = new JPCopterUnitType("saboteur"){{
-            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.25f;
             armor = 2;
             hitSize = 9f;
@@ -1496,7 +1496,7 @@ public class JPUnits {
         }};
 
         spitter = new JPCopterUnitType("spitter"){{
-            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.5f;
             armor = 3;
             hitSize = 9f;
@@ -1533,7 +1533,7 @@ public class JPUnits {
         }};
 
         carrier = new JPCopterUnitType("carrier"){{
-            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.65f;
             armor = 2;
             flying = true;
@@ -1636,7 +1636,7 @@ public class JPUnits {
 
         thera = new UnitType("thera"){{
             this.constructor = UnitEntity::create;
-            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.75f;
             hitSize = 8f;
             health = 1150;
@@ -1703,7 +1703,7 @@ public class JPUnits {
         }};  
 
         gragoth = new JPCopterUnitType("gragoth"){{
-            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.55f;
             armor = 3;
             hitSize = 18f;
@@ -1796,7 +1796,7 @@ public class JPUnits {
         }};
 
         slasher = new JPCopterUnitType("slasher"){{
-            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.75f;
             armor = 6;
             hitSize = 18f;
@@ -1848,7 +1848,7 @@ public class JPUnits {
             
         frostC = new UnitType("frostC"){{
             this.constructor = LegsUnit::create;
-            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 0.25f;
             hitSize = 12f;
             health = 58000;
@@ -1956,7 +1956,7 @@ public class JPUnits {
 
         frost = new UnitType("frost"){{
             this.constructor = LegsUnit::create;
-            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 0.25f;
             hitSize = 12f;
             health = 58000;

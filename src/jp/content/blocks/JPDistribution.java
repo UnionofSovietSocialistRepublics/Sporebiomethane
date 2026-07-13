@@ -17,7 +17,7 @@ public class JPDistribution{
     
     biomassPipe = new Duct("biomassPipe"){{
         requirements(Category.distribution, with(titanium, 2, silicon, 2, metaglass,4, JPItem.biomass,1));
-        shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+        // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
         health = 300;
         size = 1;
         speed = 3f;

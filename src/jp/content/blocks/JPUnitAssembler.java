@@ -16,7 +16,7 @@ public class JPUnitAssembler{
 
         apollyonAssembler = new UnitAssembler("apollyonAssembler"){{
             requirements(Category.units, with(Items.silicon, 1000, JPItem.vanadiumCarbideAlloy, 250, JPItem.naniteAlloy, 750, JPItem.biomass, 800));
-            shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             size = 6;
             droneType = JPUnits.zeta;
             plans.add(
