@@ -1717,6 +1717,7 @@ public class JPUnits {
                 reload = 250f;
                 recoil = 6f;
                 y = 8f;
+                x = 0f;
                 layerOffset = -1f;
                 mirror = false;
                 bullet = new BasicBulletType(3f, 250f){{
@@ -1806,19 +1807,22 @@ public class JPUnits {
             drag = 0.05f;
             accel = 0.11f;
             engineSize = 0f;
+            targetAir = false;
             weapons.add(new Weapon(){{
                 x = y = 0;
                 mirror = false;
                 range = 300;
-                reload = 80;
-                shoot.firstShotDelay = 80f;
-                bullet = new ArtilleryBulletType(4.5f, 600){{
-                    collidesTiles = true;
-                    collidesAir = false;
+                reload = 180f;
+                shootWarmupSpeed = 0.06f;
+                minWarmup = 0.9f;
+                bullet = new BasicBulletType(5f, 700f){{
                     lifetime = 60f;
-                    chargeEffect = JPFx.dustcharge;
+                    collidesAir = false;
+                    width = height = 45f;
+                    spin = 4f;
+                    shrinkX = 0.4f;
+                    shrinkY = 0.4f;
                     sprite = "large-bomb";
-                    width = height = 120/4f;
                 }};
 
             }});
