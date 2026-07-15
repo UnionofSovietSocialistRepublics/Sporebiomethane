@@ -37,7 +37,7 @@ public class JPUnits {
     //Le tether
     zeta,
     //Winged
-    gragoth, slasher, saboteur, protectorate, carrier, spitter;
+    yigg, slasher, saboteur, protectorate, malarion, spitter;
     
     private static final ObjectMap.Entry<Class<? extends Entityc>, Prov<? extends Entityc>>[] types = new ObjectMap.Entry[]{
             prov(JPCopterUnitEntity.class, JPCopterUnitEntity::new)
@@ -1532,7 +1532,7 @@ public class JPUnits {
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};
 
-        carrier = new JPCopterUnitType("carrier"){{
+        malarion = new JPCopterUnitType("malarion"){{
             // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.65f;
             armor = 2;
@@ -1702,7 +1702,7 @@ public class JPUnits {
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};  
 
-        gragoth = new JPCopterUnitType("gragoth"){{
+        yigg = new JPCopterUnitType("yigg"){{
             // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.55f;
             armor = 3;
