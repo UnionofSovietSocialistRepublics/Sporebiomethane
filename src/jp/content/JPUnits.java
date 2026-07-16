@@ -33,11 +33,11 @@ public class JPUnits {
     //missiles
     //Bomb,
     //Floaty
-    guardian,thera,impReincranation,drone,interceptor,hiveDefender,hiveSentinel,sporophage,rizomorph,
+    guardian,thera,impReincranation,drone,interceptor,hiveDefender,hiveSentinel,sporophage,rizomorph,spark,
     //Le tether
     zeta,
     //Winged
-    yigg, slasher, saboteur, protectorate, malarion, spitter;
+    yigg, spongiforma, saboteur, protectorate, malarion, spitter;
     
     private static final ObjectMap.Entry<Class<? extends Entityc>, Prov<? extends Entityc>>[] types = new ObjectMap.Entry[]{
             prov(JPCopterUnitEntity.class, JPCopterUnitEntity::new)
@@ -1796,7 +1796,7 @@ public class JPUnits {
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};
 
-        slasher = new JPCopterUnitType("slasher"){{
+        spongiforma = new JPCopterUnitType("spongiforma"){{
             // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.75f;
             armor = 6;
