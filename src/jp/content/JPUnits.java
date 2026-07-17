@@ -130,8 +130,8 @@ public class JPUnits {
                 x = y = 0f;
                 mirror = false;
                 bullet = new BasicBulletType(3f, 25f){{
-                    backColor = Color.valueOf("8B73C7");
-                    frontColor = Color.valueOf("8B73C7");
+                    backColor = JPPal.sporeBulletBack;
+                    frontColor = JPPal.sporeBulletFront;
                     lifetime = 45f;
                     damage = 25f;
                 }};
@@ -161,7 +161,8 @@ public class JPUnits {
                     splashDamage = 30f;
                     splashDamageRadius = 25f;
                     lifetime = 75f;
-                    frontColor = Color.valueOf("8B73C7");
+                    backColor = JPPal.sporeBulletBack;
+                    frontColor = JPPal.sporeBulletFront;
                     collidesTiles = true;
                     trailLength = 5;
                     trailColor = Color.valueOf("8B73C7");
@@ -179,7 +180,6 @@ public class JPUnits {
 
         raptor = new UnitType("raptor"){{
             this.constructor = LegsUnit::create;
-            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 2f;
             armor = 3f;
             hitSize = 8f;
@@ -192,8 +192,8 @@ public class JPUnits {
                 mirror = false;
                 y = 0f;
                 bullet = new BasicBulletType(3f, 35){{
-                    backColor = Color.valueOf("8B73C7");
-                    frontColor = Color.valueOf("8B73C7");
+                    backColor = JPPal.sporeBulletBack;
+                    frontColor = JPPal.sporeBulletFront;
                     lifetime = 45f;
                 }};
             }});
@@ -203,8 +203,8 @@ public class JPUnits {
                 mirror = false;
                 y = 0f;
                 bullet = new BasicBulletType(9f, 180){{
-                    backColor = Color.valueOf("8B73C7");
-                    frontColor = Color.valueOf("8B73C7");
+                    backColor = JPPal.sporeBulletBack;
+                    frontColor = JPPal.sporeBulletFront;
                     lifetime = 10f;
                     splashDamage = 200f;
                     splashDamageRadius = 25.5f;
@@ -242,7 +242,6 @@ public class JPUnits {
         baneling = new UnitType("baneling"){{
             this.constructor = LegsUnit::create;
             aiController = SuicideAI::new;
-            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.25f;
             hitSize = 8f;
             health = 225;
@@ -305,8 +304,6 @@ public class JPUnits {
 
         roach = new UnitType("roach"){{
             this.constructor = LegsUnit::create;
-        //            aiController = JPSeekerAI::new;
-            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1f;
             hitSize = 18f;
             health = 650;
@@ -410,9 +407,8 @@ public class JPUnits {
                     lifetime = 25f;
                     homingPower = 0.1f;
                     homingRange = 60f;
-                    backColor = Color.valueOf("8B73C7");
+                    backColor = JPPal.sporeBulletBack;
                     frontColor = Color.white;
-                    lightColor = Color.valueOf("8B73C7");
                     collidesTiles = true;
                     trailLength = 3;
                     trailColor = Color.valueOf("8B73C7");
@@ -428,9 +424,8 @@ public class JPUnits {
                     width = 15f;
                     height = 15f;
                     lifetime = 45f;
-                    backColor = Color.valueOf("8B73C7");
+                    backColor = JPPal.sporeBulletBack;
                     frontColor = Color.white;
-                    lightColor = Color.valueOf("8B73C7");
                 }};
 
             }});
@@ -559,9 +554,8 @@ public class JPUnits {
                     splashDamageRadius = 25f;
                     status = StatusEffects.slow;
                     statusDuration = 60f * 4;
-                    backColor = Color.valueOf("8B73C7");
-                    frontColor = Color.valueOf("8B73C7");
-                    lightColor = Color.valueOf("8B73C7");
+                    backColor = JPPal.sporeBulletBack;
+                    frontColor = JPPal.sporeBulletFront;
                     shootEffect = Fx.shootBig;
                     hitEffect = Fx.sapExplosion;
                 }};
@@ -574,7 +568,6 @@ public class JPUnits {
                 shootSound = Sounds.shootSalvo;
                 bullet = new BasicBulletType(4.5f, 50){{
                     width = height = 15f;
-
                     lifetime = 70f;
                     backColor = Color.valueOf("CBC3E3");
                     frontColor = Color.valueOf("CBC3E3");
@@ -620,9 +613,8 @@ public class JPUnits {
                     splashDamage = 450f;
                     status = JPStatus.dissolving;
                     statusDuration = 60f * 6;
-                    backColor = Color.valueOf("8B73C7");
-                    frontColor = Color.valueOf("8B73C7");
-                    lightColor = Color.valueOf("8B73C7");
+                    backColor = JPPal.sporeBulletBack;
+                    frontColor = JPPal.sporeBulletFront;
                     fragBullets = 6;
                     fragBullet = new ArtilleryBulletType(2.3f, 30){{
                         hitEffect = Fx.sapExplosion;
@@ -632,14 +624,13 @@ public class JPUnits {
                         collidesTiles = false;
                         splashDamageRadius = 65f;
                         splashDamage = 250f;
-                        backColor = Color.valueOf("8B73C7");
-                        frontColor = Color.valueOf("8B73C7");
+                        backColor = JPPal.sporeBulletBack;
+                        frontColor = JPPal.sporeBulletFront;
                         lightning = 2;
                         lightningLength = 5;
                         smokeEffect = Fx.shootBigSmoke2;
                         hitShake = 5f;
                         lightRadius = 30f;
-                        lightColor = Color.valueOf("8B73C7");
                         lightOpacity = 0.5f;
                     }};
                 }};
@@ -665,14 +656,13 @@ public class JPUnits {
                     width = height = 14f;
                     collides = true;
                     collidesTiles = true;
-                    backColor = Color.valueOf("8B73C7");
-                    frontColor = Color.valueOf("8B73C7");
+                    backColor = JPPal.sporeBulletBack;
+                    frontColor = JPPal.sporeBulletFront;
                     }};
                     shootSound = Sounds.shootArtillery;
                 parts.add(new RegionPart("-barrel"){{
                     mirror = true;
                     progress = PartProgress.recoil;
-        //                    layerOffset= -0.1f;
                     under = true;
                     y = 1.5f;
                     moveY = -2f;
@@ -692,8 +682,8 @@ public class JPUnits {
                     width = height = 14f;
                     collides = true;
                     collidesTiles = true;
-                    backColor = Color.valueOf("8B73C7");
-                    frontColor = Color.valueOf("8B73C7");
+                    backColor = JPPal.sporeBulletBack;
+                    frontColor = JPPal.sporeBulletFront;
                     }};
                     shootSound = Sounds.shootArtillery;
                     parts.add(new RegionPart("-barrel"){{
@@ -853,9 +843,8 @@ public class JPUnits {
                     smokeEffect = Fx.none;
                     splashDamage = 80f;
                     splashDamageRadius = 32f;
-                    backColor = Color.valueOf("8b73c7");
-                    frontColor = Color.valueOf("7357cf");
-                    lightColor = Color.valueOf("8b73c7");
+                    backColor = JPPal.sporeBulletBack;
+                    frontColor = JPPal.sporeBulletFront;
                     status = StatusEffects.sporeSlowed;
                     statusDuration = 60f;
                 }};
@@ -947,10 +936,9 @@ public class JPUnits {
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
                     buildingDamageMultiplier = 0.05f;
-                        lifetime = 50f;
-                    backColor = Color.valueOf("8B73C7");
-                    frontColor = Color.valueOf("8B73C7");
-                    lightColor = Color.valueOf("8B73C7");
+                    lifetime = 50f;
+                    backColor = JPPal.sporeBulletBack;
+                    frontColor = JPPal.sporeBulletFront;
                     collidesTiles = true;
                 }};
             }});
@@ -988,9 +976,9 @@ public class JPUnits {
                     smokeEffect = Fx.shootBigSmoke;
                     buildingDamageMultiplier = 0.05f;
                     lifetime = 50f;
-                    backColor = Color.valueOf("8B73C7");
-                    frontColor = Color.valueOf("8B73C7");
-                    lightColor = Color.valueOf("8B73C7");
+                    backColor = JPPal.sporeBulletBack;
+                    frontColor = JPPal.sporeBulletFront;
+                    //lightColor = Color.valueOf("8B73C7");
                     collidesTiles = true;
                 }};
             }});
@@ -1014,7 +1002,7 @@ public class JPUnits {
             engineSize = 4f;
             drag = 0.05f;
             accel = 0.11f;
-            weapons.add(new Weapon("-mouh"){{
+            weapons.add(new Weapon(){{
                 reload = 75f;
                 shootY = 8f;
                 x = 0f;
@@ -1057,7 +1045,7 @@ public class JPUnits {
             hitSize = 9f;
             drag = 0.05f;
             accel = 0.11f;
-            weapons.add(new Weapon("Ambutakam"){{
+            weapons.add(new Weapon(){{
                 minShootVelocity = 0.75f;
                 x = 2;
                 shootY = 0f;
@@ -1082,7 +1070,7 @@ public class JPUnits {
                     incendAmount = 1;
                 }};
             }});
-            weapons.add(new Weapon("kys"){{
+            weapons.add(new Weapon(){{
                 reload = 5f;
                 x = 0f;
                 y = 0f;
@@ -1114,7 +1102,7 @@ public class JPUnits {
             hitSize = 8f;
             health = 450;
             range = 50f;
-            weapons.add(new Weapon("kys"){{
+            weapons.add(new Weapon(){{
                 reload = 5f;
                 top = false;
                 shootOnDeath = true;
@@ -1417,9 +1405,9 @@ public class JPUnits {
                 y = 0f;
                 layerOffset = -1f;
                 bullet = new BasicBulletType(3.7f, 18){{
-                    backColor = Color.valueOf("8B73C7");
-                    frontColor = Color.valueOf("8B73C7");
-                    lightColor = Color.valueOf("8B73C7");
+                    backColor = JPPal.sporeBulletBack;
+                    frontColor = JPPal.sporeBulletFront;
+                    //lightColor = Color.valueOf("8B73C7");
                     buildingDamageMultiplier = 0.75f;
                     width = 8f;
                     height = 8f;
@@ -1438,7 +1426,7 @@ public class JPUnits {
             abilities.add(new RegenAbility(){{percentAmount = 1f / (90f * 60f * 2f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
             abilities.add(new RepairFieldAbility(35f, 60f * 8, 50f){{
-                lightColor = Color.valueOf("8B73C7");
+                //lightColor = Color.valueOf("8B73C7");
             }});
             abilities.add(new StatusFieldAbility(StatusEffects.overclock, 60f * 6, 60f * 4f, 60f));
             abilities.add(new ShieldRegenFieldAbility(25f, 250f, 60f * 6, 60f));
@@ -1465,9 +1453,9 @@ public class JPUnits {
                     recoil = 4f;
                     statusDuration = 60f * 4;
                     status = StatusEffects.electrified;
-                    backColor = Color.valueOf("8B73C7");
-                    frontColor = Color.valueOf("8B73C7");
-                    lightColor = Color.valueOf("8B73C7");
+                    backColor = JPPal.sporeBulletBack;
+                    frontColor = JPPal.sporeBulletFront;
+                    //lightColor = Color.valueOf("8B73C7");
                     width = 8f;
                     height = 8f;
                     damage = 75f;
@@ -1596,9 +1584,9 @@ public class JPUnits {
                     shootEffect = Fx.none;
                     smokeEffect = Fx.none;
                     splashDamage = 15f;
-                    backColor = Color.valueOf("8b73c7");
+                    backColor = JPPal.sporeBulletBack;
                     frontColor = Color.valueOf("7357cf");
-                    lightColor = Color.valueOf("8b73c7");
+                    //lightColor = Color.valueOf("8B73C7");
                     splashDamageRadius = 32f;
                     status = StatusEffects.blasted;
                     statusDuration = 60f;
@@ -1611,9 +1599,9 @@ public class JPUnits {
                         splashDamageRadius = 32f;
                         width = 10f;
                         height = 7f;
-                        backColor = Color.valueOf("8b73c7");
+                        backColor = JPPal.sporeBulletBack;
                         frontColor = Color.valueOf("7357cf");
-                        lightColor = Color.valueOf("8b73c7");
+                        //lightColor = Color.valueOf("8B73C7");
                         lifetime = 75f;
                         despawnEffect = Fx.none;
                     }};
@@ -1727,9 +1715,9 @@ public class JPUnits {
                     pierceBuilding = true;
                     pierceCap = 7;
                     lifetime = 95f;
-                    backColor = Color.valueOf("8B73C7");
-                    frontColor = Color.valueOf("8B73C7");
-        //                    lightColor = Color.valueOf("8B73C7");
+                    backColor = JPPal.sporeBulletBack;
+                    frontColor = JPPal.sporeBulletFront;
+        //                    //lightColor = Color.valueOf("8B73C7");
                     collidesTiles = true;
                     trailEffect = Fx.missileTrail;
                     trailInterval = 3f;
@@ -2022,8 +2010,8 @@ public class JPUnits {
                 display = false;
             bullet = new BasicBulletType(25f, 500){{
                 rangeOverride = 200f;
-                backColor = Color.valueOf("8B73C7");
-                frontColor = Color.valueOf("8B73C7");
+                backColor = JPPal.sporeBulletBack;
+                frontColor = JPPal.sporeBulletFront;
                 lifetime = 15f;
                 splashDamage = 2000f;
                 splashDamageRadius = 25.5f;

@@ -19,12 +19,12 @@ public class Unloader extends Mod{
         //replace subtitle and author with funky thing
         switch(rand){
         case 1:
-        Vars.mods.locateMod("jp").meta.author="Hydroabyss & Coffee molecules";
-        Vars.mods.locateMod("jp").meta.subtitle="Now with extra coffee";
+        Vars.mods.locateMod("jp").meta.author="Hydroabyss & Water White";
+        Vars.mods.locateMod("jp").meta.subtitle="Jesse we need to cook, jesse";
         break;
         case 2:
-        Vars.mods.locateMod("jp").meta.author="Hydroabyss & Neoplasm Molecule";
-        Vars.mods.locateMod("jp").meta.subtitle="Red sun over serpulo";
+        Vars.mods.locateMod("jp").meta.author="Hydroabyss & Larp molecule";
+        Vars.mods.locateMod("jp").meta.subtitle="I have nothing but my larp, and I want...";
         break;
         case 3:
         Vars.mods.locateMod("jp").meta.author="ssybaordyH & seluceloM retaW";
@@ -36,11 +36,11 @@ public class Unloader extends Mod{
         break;
         case 5:
         Vars.mods.locateMod("jp").meta.author="Abyss & Duke";
-        Vars.mods.locateMod("jp").meta.subtitle="Json has fallen, billion must java!!!";
+        Vars.mods.locateMod("jp").meta.subtitle="Hjson modding has fallen (for real this time)";
         break;
         default:
-        Vars.mods.locateMod("jp").meta.author="Hydroabyssal & Germanium";
-        Vars.mods.locateMod("jp").meta.subtitle="For the Deutschland!";
+        Vars.mods.locateMod("jp").meta.author="Hydroabyssal & Zerggy Molecule";
+        Vars.mods.locateMod("jp").meta.subtitle="For ze fatherland!!";
         break;
         }
         //Nothing suspicious around here, trust me bro

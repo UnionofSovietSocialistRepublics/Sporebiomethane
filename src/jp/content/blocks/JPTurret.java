@@ -46,7 +46,7 @@ public class JPTurret{
             ammoUseEffect = Fx.casing1;
             inaccuracy = 2f;
             shootType = new BasicBulletType(4f, 35f){{
-                width = 16f; height = 20f;
+                width = 12f; height = 16f;
                 lifetime = 20f;
                 status = StatusEffects.electrified;
                 statusDuration = 60f * 3;
@@ -78,7 +78,7 @@ public class JPTurret{
                 fragRandomSpread = fragAngle = 0;
                 fragVelocityMin = fragLifeMin = 0.8f;
                 fragBullet = new BasicBulletType(4f, 35f){{
-                    width = 12f; height = 16f;
+                    width = 8f; height = 12f;
                     lifetime = 20f;
                     status = StatusEffects.electrified;
                     statusDuration = 60f * 3;
@@ -110,7 +110,7 @@ public class JPTurret{
                     fragRandomSpread = fragAngle = 0;
                     fragVelocityMin = fragLifeMin = 0.8f;
                     fragBullet = new BasicBulletType(4f, 35f){{
-                        width = 8f; height = 12f;
+                        width = 4f; height = 8f;
                         lifetime = 20f;
                         lightning = 2;
                         lightningLength = 7;
@@ -118,7 +118,7 @@ public class JPTurret{
                         statusDuration = 60f * 3;
                         ammoMultiplier = 1f;
                         buildingDamageMultiplier = 0.25f;
-                        lightningColor = Pal.accent;
+                        lightningColor = JPPal.sporeBulletBack;
                         backColor = JPPal.sporeBulletBack;
                         frontColor = JPPal.sporeBulletFront;
                         despawnEffect = Fx.hitBulletColor;
@@ -172,6 +172,7 @@ public class JPTurret{
             ammo(
                 sporePod, new BasicBulletType(5f, 15f){{
                     lifetime = 50f;
+                    sprite = "jp-oarch-bullet";
                     reloadMultiplier = 0.5f;
                     splashDamage = 5f;
                     splashDamageRadius = 45f;
@@ -179,23 +180,21 @@ public class JPTurret{
                     height = width = 15f;
                     status = StatusEffects.sporeSlowed;
                     statusDuration = 60f * 14;
-                    backColor = Color.valueOf("7457ce");
+                    // backColor = Color.valueOf("7457ce");
                     frontColor = Color.white;
-//                    lightColor = Color.valueOf("7457ce");
-                    collidesGround = true;
-                    collidesAir = true;
+                    lightOpacity = 0.3f;
                 }},
                 JPItem.biomass, new BasicBulletType(5f, 25f){{
                     height = width = 10f;
+                    sprite = "jp-oarch-bullet";
                     lifetime = 50f;
                     splashDamage = 25f;
                     splashDamageRadius = 30f;
                     fragBullets = 7;
                     status = StatusEffects.slow;
                     statusDuration = 60f * 5;
-                    backColor = Color.valueOf("8B73C7");
+                    backColor = JPPal.sporeBulletBack;
                     frontColor = Color.white;
-//                    lightColor = Color.valueOf("8B73C7");
                     ammoMultiplier = 1f;
                     collidesGround = true;
                     collidesAir = true;
@@ -204,26 +203,25 @@ public class JPTurret{
                         lifetime = 20f;
                         status = StatusEffects.slow;
                         statusDuration = 60f * 7;
-                        backColor = Color.valueOf("8B73C7");
+                        backColor = JPPal.sporeBulletBack;
                         frontColor = Color.white;
-//                        lightColor = Color.valueOf("8B73C7");
                         despawnEffect = Fx.none;
-                        collidesGround = true;
-                        collidesAir = true;
+                        lightOpacity = 0.3f;
                     }};
                 }},
                 JPItem.vanadiumCarbideAlloy, new BasicBulletType(5f, 95f){{
                     reloadMultiplier = 0.5f;
                     height = width = 10f;
+                    backSprite="jp-oarch-bullet-back";
+                    sprite = "jp-oarch-bullet";
                     lifetime = 50f;
                     status = JPStatus.stunned;
                     statusDuration = 60f * 2f;
-                    backColor = Color.valueOf("303a45");
+                    // backColor = Color.valueOf("303a45");
 //                    frontColor = Color.valueOf("303a45");
 //                    lightColor = Color.valueOf("303a45");
                     ammoMultiplier = 1f;
-                    collidesGround = true;
-                    collidesAir = true;
+                    lightOpacity = 0.3f;
                 }});
 
             shootSound = JPSounds.Arty;
@@ -287,11 +285,11 @@ public class JPTurret{
                     status = StatusEffects.shocked;
                     hitEffect = new Effect(50f, 100f, e -> {
                         e.scaled(7f, b -> {
-                            color(JPPal.sporeBulletFront, b.fout());
+                            color(JPPal.sporeBulletBack, b.fout());
                             Fill.circle(e.x, e.y, rad);
                         });
 
-                        color(JPPal.sporeBulletFront);
+                        color(JPPal.sporeBulletBack);
                         stroke(e.fout() * 3f);
                         Lines.circle(e.x, e.y, rad);
 
@@ -332,6 +330,7 @@ public class JPTurret{
             shootY = 1.5f;
             ammoUseEffect = Fx.casing1;
             shootType = new PointLaserBulletType(){{
+                sprite = "jp-sentinel-laser";
 	            collidesTeam = true;
 	            damage = 100;
                 status = StatusEffects.sapped;
@@ -394,8 +393,8 @@ public class JPTurret{
                     splashDamage = 50f;
                     splashDamageRadius = 35f;
                     recoils = 2;
-                    backColor = Color.valueOf("8B73C7");
-                    frontColor = Color.valueOf("8B73C7");
+                    backColor = JPPal.sporeBulletBack;
+                    frontColor = JPPal.sporeBulletFront;
                     lightColor = Color.valueOf("8B73C7");
                     ammoMultiplier = 1f;
                     fragBullet = new BasicBulletType(3f, 5){{
@@ -404,8 +403,8 @@ public class JPTurret{
                         splashDamageRadius = 15f;
                         width = 5f;
                         height = 5f;
-                        backColor = Color.valueOf("8B73C7");
-                        frontColor = Color.valueOf("8B73C7");
+                        backColor = JPPal.sporeBulletBack;
+                        frontColor = JPPal.sporeBulletFront;
                         lightColor = Color.valueOf("8B73C7");
                         lifetime = 20f;
                         backColor = Pal.gray;
@@ -467,19 +466,18 @@ public class JPTurret{
                     collidesGround = true;
                 }},
                JPItem.biomass, new BasicBulletType(){{
-                    lifetime = 75f;
-                    damage = 225f;
-                    speed = 4f;
-                    backColor = Color.valueOf("8B73C7");
-//                    frontColor = Color.valueOf("8B73C7");
-//                    lightColor = Color.valueOf("8B73C7");
-                    ammoMultiplier = 1f;
-                    width = height = 15f;
-                    shootEffect = Fx.shootSmall;
-                    smokeEffect = Fx.shootSmallSmoke;
-                    collidesGround = true;
-                    despawnEffect = Fx.blastExplosion;
-                    pierceArmor = true;
+                lifetime = 75f;
+                damage = 225f;
+                speed = 4f;
+                backColor = JPPal.sporeBulletBack;
+                frontColor = JPPal.sporeBulletFront;
+                ammoMultiplier = 1f;
+                width = height = 15f;
+                shootEffect = Fx.shootSmall;
+                smokeEffect = Fx.shootSmallSmoke;
+                collidesGround = true;
+                despawnEffect = Fx.blastExplosion;
+                pierceArmor = true;
                 }});
             shootSound = JPSounds.Arty;
             coolantMultiplier = 0.5f;
@@ -509,8 +507,8 @@ public class JPTurret{
                     splashDamageRadius = 40f;
                     reloadMultiplier = 0.3f;
                     backColor = Color.valueOf("7457ce");
-//                    frontColor = Color.valueOf("7457ce");
-//                    lightColor = Color.valueOf("7457ce");
+                    frontColor = Color.valueOf("7457ce");
+                    lightColor = Color.valueOf("7457ce");
                     width = height = 15f;
                     shootEffect = Fx.shootSmall;
                     smokeEffect = Fx.shootSmallSmoke;
@@ -519,12 +517,13 @@ public class JPTurret{
                     fragBullets = 6;
                     recoils = 2;
                     fragBullet = new BasicBulletType(4f, 5f){{
-                        width = height = 10f;
+                        height = 14f;
+                        width = (height-3f);
                         splashDamage = 5f;
                         splashDamageRadius = 40f;
                         backColor = Color.valueOf("7457ce");
-//                        frontColor = Color.valueOf("7457ce");
-//                        lightColor = Color.valueOf("7457ce");
+                        frontColor = Color.valueOf("7457ce");
+                        lightColor = Color.valueOf("7457ce");
                         lifetime = 30f;
                         collidesGround = true;
                         collidesAir = true;
@@ -534,8 +533,7 @@ public class JPTurret{
                             splashDamage = 2.5f;
                             splashDamageRadius = 40f;
                             backColor = Color.valueOf("7457ce");
-//                            frontColor = Color.valueOf("7457ce");
-//                            lightColor = Color.valueOf("7457ce");
+                            frontColor = Color.valueOf("7457ce");
                             lifetime = 20f;
                             despawnEffect = Fx.none;
                             collidesGround = false;
@@ -546,8 +544,8 @@ public class JPTurret{
                     lifetime = 45f;
                     splashDamage = 15f;
                     splashDamageRadius = 15f;
-                    backColor = Color.valueOf("8B73C7");
-//                    frontColor = Color.valueOf("8B73C7");
+                    backColor = JPPal.sporeBulletBack;
+                    frontColor = JPPal.sporeBulletFront;
 //                    lightColor = Color.valueOf("8B73C7");
                     ammoMultiplier = 1f;
                     width = height = 15f;
