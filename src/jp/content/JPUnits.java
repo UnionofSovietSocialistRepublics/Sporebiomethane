@@ -37,7 +37,7 @@ public class JPUnits {
     //Le tether
     zeta,
     //Winged
-    yigg, spongiforma, saboteur, protectorate, malarion, spitter;
+    yigg, spongillery, saboteur, protectorate, malarion, spitter;
     
     private static final ObjectMap.Entry<Class<? extends Entityc>, Prov<? extends Entityc>>[] types = new ObjectMap.Entry[]{
             prov(JPCopterUnitEntity.class, JPCopterUnitEntity::new)
@@ -1532,7 +1532,7 @@ public class JPUnits {
             faceTarget = false;
             circleTarget = true;
             
-            weapons.add(new Weapon("Eggspawner"){{
+            weapons.add(new Weapon(){{
                 x = 6f;
                 y = 6f;
                 shoot.firstShotDelay = 200f;
@@ -1563,7 +1563,7 @@ public class JPUnits {
                     }};
                 }};
             }});
-            weapons.add(new Weapon("Ambutakam"){{
+            weapons.add(new Weapon(){{
                 minShootVelocity = 0.75f;
                 x = 0;
                 y = 5;
@@ -1636,7 +1636,7 @@ public class JPUnits {
             flying = true;
             drag = 0.05f;
             accel = 0.11f;
-            weapons.add(new Weapon("balls"){{
+            weapons.add(new Weapon(){{
                 x = 6f;
                 y = 6f;
                 reload = 75f;
@@ -1784,7 +1784,7 @@ public class JPUnits {
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};
 
-        spongiforma = new JPCopterUnitType("spongiforma"){{
+        spongillery = new JPCopterUnitType("spongillery"){{
             // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.75f;
             armor = 6;
@@ -1796,23 +1796,45 @@ public class JPUnits {
             accel = 0.11f;
             engineSize = 0f;
             targetAir = false;
-            weapons.add(new Weapon(){{
+            weapons.add(new Weapon(name+"-wep"){{
                 x = y = 0;
                 mirror = false;
                 range = 300;
                 reload = 180f;
                 shootWarmupSpeed = 0.06f;
                 minWarmup = 0.9f;
+                recoil = 4f;
                 bullet = new BasicBulletType(5f, 700f){{
+                    recoil = 4f;
                     lifetime = 60f;
                     collidesAir = false;
                     width = height = 45f;
                     spin = 4f;
                     shrinkX = 0.4f;
                     shrinkY = 0.4f;
+                    despawnEffect = Fx.sapExplosion;
+                    hitEffect = Fx.sapExplosion;
                     sprite = "large-bomb";
+                    despawnSound = Sounds.explosionArtilleryShockBig;
                 }};
-
+                parts.add(new RegionPart("-artillery"){{
+                    mirror = false;
+                    progress = PartProgress.warmup;
+                    layerOffset= -0.01f;
+                    under = true;
+                    x = 0f;
+                    y = 0f;
+                    moveY = 9f;
+                }});
+                parts.add(new RegionPart("-artillery"){{
+                    mirror = false;
+                    // progress = PartProgress.warmup;
+                    layerOffset= -0.01f;
+                    under = true;
+                    x = 0f;
+                    y = -10f;
+                    // moveY = -4f;
+                }});
             }});
             blade.add(
                 new Blade(name + "-wing"){{
