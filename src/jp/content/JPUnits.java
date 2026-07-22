@@ -37,7 +37,7 @@ public class JPUnits {
     //Le tether
     zeta,
     //Winged
-    yigg, spongillery, saboteur, protectorate, malarion, spitter;
+    yigg, spongillery, lipus, lepus, malarion, indus;
     
     private static final ObjectMap.Entry<Class<? extends Entityc>, Prov<? extends Entityc>>[] types = new ObjectMap.Entry[]{
             prov(JPCopterUnitEntity.class, JPCopterUnitEntity::new)
@@ -1386,7 +1386,7 @@ public class JPUnits {
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};
 
-        protectorate = new JPCopterUnitType("protectorate"){{
+        lepus = new JPCopterUnitType("lepus"){{
             // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.25f;
             armor = 4;
@@ -1432,7 +1432,7 @@ public class JPUnits {
             abilities.add(new ShieldRegenFieldAbility(25f, 250f, 60f * 6, 60f));
         }};
 
-        saboteur = new JPCopterUnitType("saboteur"){{
+        lipus = new JPCopterUnitType("lipus"){{
             // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.25f;
             armor = 2;
@@ -1483,7 +1483,7 @@ public class JPUnits {
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};
 
-        spitter = new JPCopterUnitType("spitter"){{
+        indus = new JPCopterUnitType("indus"){{
             // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
             speed = 1.5f;
             armor = 3;
@@ -1557,8 +1557,8 @@ public class JPUnits {
                     hidden = true;
                     drawCell = false;
                     outlineColor = Color.valueOf("303a45");
-                    abilities.add(new JPRandSpawner(protectorate,saboteur,spitter,100f,0f,0f));
-                    // abilities.add(new UnitSpawnAbility(protectorate,120f,0f,0f));
+                    abilities.add(new JPRandSpawner(lepus,lipus,indus,100f,0f,0f));
+                    // abilities.add(new UnitSpawnAbility(lepus,120f,0f,0f));
                     abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * -500f;}});
                     }};
                 }};
@@ -1617,8 +1617,8 @@ public class JPUnits {
             healColor = Color.valueOf("590e14");
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
-            abilities.add(new SpawnDeathAbility(saboteur, 1, 11f));
-            abilities.add(new SpawnDeathAbility(protectorate, 1, 11f));
+            abilities.add(new SpawnDeathAbility(lipus, 1, 11f));
+            abilities.add(new SpawnDeathAbility(lepus, 1, 11f));
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
         }};
 
