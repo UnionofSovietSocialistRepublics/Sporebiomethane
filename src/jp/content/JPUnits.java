@@ -1804,7 +1804,7 @@ public class JPUnits {
                 shootWarmupSpeed = 0.06f;
                 minWarmup = 0.9f;
                 recoil = 4f;
-                bullet = new BasicBulletType(5f, 700f){{
+                bullet = new BasicBulletType(5f, 450f){{
                     recoil = 4f;
                     lifetime = 60f;
                     collidesAir = false;
@@ -1828,12 +1828,12 @@ public class JPUnits {
                 }});
                 parts.add(new RegionPart("-artillery"){{
                     mirror = false;
-                    // progress = PartProgress.warmup;
+                    progress = PartProgress.warmup;
                     layerOffset= -0.01f;
                     under = true;
                     x = 0f;
                     y = -10f;
-                    // moveY = -4f;
+                    moveY = -4f;
                 }});
             }});
             blade.add(
