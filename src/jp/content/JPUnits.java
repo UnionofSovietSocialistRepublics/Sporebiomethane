@@ -1830,12 +1830,12 @@ public class JPUnits {
                 }});
                 parts.add(new RegionPart("-artillery"){{
                     mirror = false;
-                    progress = PartProgress.warmup;
+                    // progress = PartProgress.warmup;
                     layerOffset= -0.01f;
                     under = true;
                     x = 0f;
                     y = -10f;
-                    moveY = -4f;
+                    // moveY = -2f;
                 }});
             }});
             blade.add(
