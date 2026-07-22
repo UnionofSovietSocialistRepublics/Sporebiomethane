@@ -1804,11 +1804,13 @@ public class JPUnits {
                 shootWarmupSpeed = 0.06f;
                 minWarmup = 0.9f;
                 recoil = 4f;
-                bullet = new BasicBulletType(5f, 450f){{
-                    recoil = 4f;
+                bullet = new BasicBulletType(5f, 50f){{
+                    width = height = 45f;
+                    splashDamage = 200f;
+                    splashDamageRadius = 45f;
                     lifetime = 60f;
                     collidesAir = false;
-                    width = height = 45f;
+                    recoil = 4f;
                     spin = 4f;
                     shrinkX = 0.4f;
                     shrinkY = 0.4f;
