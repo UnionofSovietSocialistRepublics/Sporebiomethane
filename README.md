@@ -14,7 +14,7 @@ This is a java port of our mod, for the hjson/js one please check [here](https:/
 Because it is a java mod, you cannot install it by simply using the zip of the code
 Please check the release section or check the actions tab if you know how to install from there.
 
-# todo list removed because of bloat, will add a website replaement later
+
 
 # List of contributors
 - Twcash01 For some resprites

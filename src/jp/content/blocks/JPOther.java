@@ -6,6 +6,7 @@ import mindustry.world.*;
 import mindustry.world.blocks.defense.*;
 import mindustry.world.blocks.storage.*;
 import jp.content.*;
+import mindustry.world.meta.*;
 
 import static mindustry.type.ItemStack.*;
 import static mindustry.content.Items.*;
@@ -19,13 +20,13 @@ public class JPOther{
         
         vanadiumCarbideWallLarge = new Wall("vanadiumCarbideWallLarge"){{
             requirements(Category.defense, with(JPItem.vanadiumCarbideAlloy, 40));
-            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            envEnabled = Env.spores;;
             health = 6500;
             size = 2;
         }};
         hatchery = new CoreBlock("hatchery"){{
             requirements(Category.effect, with(JPItem.biomass, 3000, JPItem.naniteAlloy, 2000, silicon, 4000));
-            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            envEnabled = Env.spores;;
             unitType = JPUnits.hiveDefender;
             health = 6500;
             itemCapacity = 11000;
@@ -37,7 +38,7 @@ public class JPOther{
         }};
         hive = new CoreBlock("hive"){{
             requirements(Category.effect, with(JPItem.biomass, 6000, JPItem.naniteAlloy, 4000, silicon, 6000, surgeAlloy, 4000));
-            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            envEnabled = Env.spores;;
             unitType = JPUnits.hiveSentinel;
             health = 9500;
             itemCapacity = 15000;
@@ -49,7 +50,7 @@ public class JPOther{
         }};
         nydusaeCore = new CoreBlock("nydusaeCore"){{
             requirements(Category.effect, with(JPItem.biomass, 12000, JPItem.naniteAlloy, 8000, JPItem.vanadiumCarbideAlloy, 4000, silicon, 8000, surgeAlloy, 6000));
-            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            envEnabled = Env.spores;;
             unitType = JPUnits.sporophage;
             health = 16250;
             itemCapacity = 25000;
@@ -62,7 +63,7 @@ public class JPOther{
 
         lunarCore = new CoreBlock("lunarCore"){{
             requirements(Category.effect, with(JPItem.fluorite, 6000, JPItem.vanadiumCarbideAlloy, 2000));
-            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            envEnabled = Env.spores;;
             unitType = JPUnits.hiveDefender;
             health = 4200;
             itemCapacity = 6500;

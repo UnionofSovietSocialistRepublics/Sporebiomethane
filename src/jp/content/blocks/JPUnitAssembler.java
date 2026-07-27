@@ -5,6 +5,7 @@ import mindustry.type.PayloadStack;
 import jp.content.*;
 import mindustry.content.*;
 import mindustry.world.blocks.units.*;
+import mindustry.world.meta.*;
 
 import static mindustry.type.ItemStack.*;
 
@@ -16,7 +17,7 @@ public class JPUnitAssembler{
 
         apollyonAssembler = new UnitAssembler("apollyonAssembler"){{
             requirements(Category.units, with(Items.silicon, 1000, JPItem.vanadiumCarbideAlloy, 250, JPItem.naniteAlloy, 750, JPItem.biomass, 800));
-            // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+            envEnabled = Env.any;
             size = 6;
             droneType = JPUnits.zeta;
             plans.add(

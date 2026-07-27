@@ -5,6 +5,7 @@ import mindustry.type.*;
 import mindustry.world.*;
 import mindustry.world.blocks.distribution.*;
 import jp.content.*;
+import mindustry.world.meta.*;
 
 import static mindustry.type.ItemStack.*;
 import static mindustry.content.Items.*;
@@ -17,7 +18,7 @@ public class JPDistribution{
     
     biomassPipe = new Duct("biomassPipe"){{
         requirements(Category.distribution, with(titanium, 2, silicon, 2, metaglass,4, JPItem.biomass,1));
-        // shownPlanets.addAll(Planets.serpulo, Planets.erekir);
+        envEnabled = Env.spores;
         health = 300;
         size = 1;
         speed = 3f;
