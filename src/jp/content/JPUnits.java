@@ -2127,14 +2127,14 @@ public class JPUnits {
             accel = 0.11f;
             weapons.add(new Weapon(){{
                 reload = 75f;
-                x = -6f;
-                y = 2f;
+                x = 0f;
+                y = 0f;
                 layerOffset = -1f;
                 shoot.shots = 3;
                 shoot.shotDelay = 9f;
-                recoil = 2.5f;
-                bullet = new BasicBulletType(5f, 15){{
-                    height = width = 10f;
+                bullet = new BasicBulletType(0f, 0){{
+                    height = 12f;
+                    weight = 8f;
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
                     buildingDamageMultiplier = 0.05f;
@@ -2142,6 +2142,16 @@ public class JPUnits {
                     backColor = JPPal.sporeBulletBack;
                     frontColor = JPPal.sporeBulletFront;
                     collidesTiles = true;
+                    spin = 3.4f;
+                    fragBullets = 1;
+                    fragRandomSpread = 0f;
+                    fragBullet = new BasicBulletType(9f,250f){{
+                        height = 12f;
+                        width = 8f;
+                        homingRange = 100f;
+                        lifetime = 20f;
+                        fragBullets = 1;
+                    }};
                 }};
             }});
             outlineColor = Color.valueOf("303a45"); 
