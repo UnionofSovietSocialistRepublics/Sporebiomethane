@@ -2134,7 +2134,7 @@ public class JPUnits {
                 shoot.shotDelay = 9f;
                 bullet = new BasicBulletType(0f, 0){{
                     height = 12f;
-                    weight = 8f;
+                    width = 8f;
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
                     buildingDamageMultiplier = 0.05f;
