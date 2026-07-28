@@ -64,7 +64,7 @@ public class JPOther{
         lunarCore = new CoreBlock("lunarCore"){{
             requirements(Category.effect, with(JPItem.fluorite, 6000, JPItem.vanadiumCarbideAlloy, 2000));
             envEnabled = Env.spores;;
-            unitType = JPUnits.hiveDefender;
+            unitType = JPUnits.spark;
             health = 4200;
             itemCapacity = 6500;
             size = 3;

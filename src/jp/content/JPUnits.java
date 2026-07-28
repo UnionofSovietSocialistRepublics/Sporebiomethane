@@ -2125,13 +2125,13 @@ public class JPUnits {
             mineTier = 3;
             drag = 0.05f;
             accel = 0.11f;
-            weapons.add(new Weapon(name + "-gun"){{
+            weapons.add(new Weapon(){{
                 reload = 75f;
                 x = -6f;
                 y = 2f;
                 layerOffset = -1f;
-                shoot.shots = 2;
-                shoot.shotDelay = 5f;
+                shoot.shots = 3;
+                shoot.shotDelay = 9f;
                 recoil = 2.5f;
                 bullet = new BasicBulletType(5f, 15){{
                     height = width = 10f;
