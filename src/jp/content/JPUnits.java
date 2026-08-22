@@ -2137,7 +2137,6 @@ public class JPUnits {
                     width = 8f;
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
-                    buildingDamageMultiplier = 0.05f;
                     lifetime = 50f;
                     backColor = JPPal.sporeBulletBack;
                     frontColor = JPPal.sporeBulletFront;
@@ -2145,12 +2144,18 @@ public class JPUnits {
                     spin = 3.4f;
                     fragBullets = 1;
                     fragRandomSpread = 0f;
-                    fragBullet = new BasicBulletType(9f,250f){{
+                    fragVelocityMin = fragVelocityMax = 1f;
+                    velocityScaleRandMin = velocityScaleRandMax = 0f;
+                    keepVelocity = false;
+                    fragBullet = new BasicBulletType(9f,45f){{
                         height = 12f;
                         width = 8f;
-                        homingRange = 100f;
-                        lifetime = 20f;
-                        fragBullets = 1;
+                        buildingDamageMultiplier = 0.05f;
+                        homingRange = 200f;
+                        homingPower = 0.5f;
+                        lifetime = 30f;
+                        backColor = JPPal.sporeBulletBack;
+                        frontColor = JPPal.sporeBulletFront;
                     }};
                 }};
             }});
