@@ -140,6 +140,7 @@ public class JPUnits {
                 }};
                 parts.add(new RegionPart("-part"){{
                     mirror = true;
+                    outline = false;
                     progress = PartProgress.warmup;
                     layerOffset= -0.0001f;
                     under = true;
@@ -172,6 +173,7 @@ public class JPUnits {
                 }};
                 parts.add(new RegionPart("-part"){{
                     mirror = true;
+                    outline = false;
                     progress = PartProgress.warmup;
                     layerOffset= -0.0001f;
                     under = true;
