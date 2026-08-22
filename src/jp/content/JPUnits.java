@@ -128,7 +128,7 @@ public class JPUnits {
             health = 250;
             range = 50f;
             legCount = 4;
-            weapons.add(new Weapon(name+"mouth"){{
+            weapons.add(new Weapon(name+"-mouth"){{
                 reload = 30f;
                 x = y = 0f;
                 mirror = false;
@@ -143,8 +143,6 @@ public class JPUnits {
                     progress = PartProgress.warmup;
                     layerOffset= -0.0001f;
                     under = true;
-                    x = 3f;
-                    y = 3f;
                     moveX = -1.5f;
                     moveY = -1.25f;
                     moveRot = 10f;
@@ -162,7 +160,7 @@ public class JPUnits {
             health = 450;
             range = 50f;
             legCount = 4;
-            weapons.add(new Weapon("mouth"){{
+            weapons.add(new Weapon(name+"-mouth"){{
                 reload = 20f;
                 x = 0f;
                 mirror = false;
@@ -177,8 +175,6 @@ public class JPUnits {
                     progress = PartProgress.warmup;
                     layerOffset= -0.0001f;
                     under = true;
-                    x = 3f;
-                    y = 3f;
                     moveX = -1.5f;
                     moveY = -1.25f;
                     moveRot = 10f;
