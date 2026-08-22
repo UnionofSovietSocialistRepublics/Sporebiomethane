@@ -227,6 +227,7 @@ public class JPUnits {
             }});
             parts.add(new RegionPart("-wing"){{
                 mirror = true;
+                outline = false;
                 progress = PartProgress.recoil;
                 x = 3.5f;
                 y = -6f;
