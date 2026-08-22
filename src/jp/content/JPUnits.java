@@ -132,12 +132,19 @@ public class JPUnits {
                 reload = 30f;
                 x = y = 0f;
                 mirror = false;
+                shootWarmupSpeed = 0.06f;
+                minWarmup = 0.9f;
                 bullet = new BasicBulletType(3f, 25f){{
                     backColor = JPPal.sporeBulletBack;
                     frontColor = JPPal.sporeBulletFront;
                     lifetime = 45f;
                     damage = 25f;
                 }};
+                parts.add(new RegionPart("-static"){{
+                    mirror = false;
+                    layerOffset= -0.0001f;
+                    under = true;
+                }});
                 parts.add(new RegionPart("-part"){{
                     mirror = true;
                     outline = false;
@@ -162,15 +169,21 @@ public class JPUnits {
             range = 50f;
             legCount = 4;
             weapons.add(new Weapon(name+"-mouth"){{
-                reload = 20f;
-                x = 0f;
+                reload = 15f;
+                x = y = 0;
                 mirror = false;
-                y = 0f;
-                bullet = new BasicBulletType(3f, 35){{
+                shootWarmupSpeed = 0.06f;
+                minWarmup = 0.9f;
+                bullet = new BasicBulletType(3f, 30){{
                     backColor = JPPal.sporeBulletBack;
                     frontColor = JPPal.sporeBulletFront;
                     lifetime = 45f;
                 }};
+                parts.add(new RegionPart("-static"){{
+                    mirror = false;
+                    layerOffset= -0.0001f;
+                    under = true;
+                }});
                 parts.add(new RegionPart("-part"){{
                     mirror = true;
                     outline = false;
@@ -184,9 +197,8 @@ public class JPUnits {
             }});
             weapons.add(new Weapon(){{
                 reload = 645f;
-                x = 0f;
+                x = y = 0;
                 mirror = false;
-                y = 0f;
                 bullet = new BasicBulletType(9f, 180){{
                     backColor = JPPal.sporeBulletBack;
                     frontColor = JPPal.sporeBulletFront;
@@ -2181,7 +2193,7 @@ public class JPUnits {
             }});
             outlineColor = Color.valueOf("303a45"); 
             abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f * 2f) * 100f;}});
-            abilities.add(new MoveEffectAbility(-7f, 0f, Pal.sapBulletBack, Fx.missileTrailShort, 4f){{
+            abilities.add(new MoveEffectAbility(0f, -7f, Pal.sapBulletBack, Fx.missileTrailShort, 4f){{
                 teamColor = true;
             }});
         }};
