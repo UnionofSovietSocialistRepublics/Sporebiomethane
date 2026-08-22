@@ -128,7 +128,7 @@ public class JPUnits {
             health = 250;
             range = 50f;
             legCount = 4;
-            weapons.add(new Weapon(){{
+            weapons.add(new Weapon(name+"mouth"){{
                 reload = 30f;
                 x = y = 0f;
                 mirror = false;
@@ -138,47 +138,20 @@ public class JPUnits {
                     lifetime = 45f;
                     damage = 25f;
                 }};
-            }});
-            outlineColor = Color.valueOf("303a45");
-            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
-        }};
-
-        lobber = new UnitType("lobber"){{
-            this.constructor = LegsUnit::create;
-            envEnabled = Env.spores;
-            speed = 1f;
-            hitSize = 8f;
-            health = 325;
-            armor = 2;
-            range = 60f;
-            legCount = 4;
-            weapons.add(new Weapon(name + "-gun"){{
-                reload = 60f;
-                x = 0f;
-                y = -5f;
-                mirror = false;
-                shootSound = Sounds.shootArtillery;
-                bullet = new BasicBulletType(3f, 35){{
-                    shootEffect = Fx.shootBig;
-                    smokeEffect = Fx.shootBigSmoke;
-                    splashDamage = 30f;
-                    splashDamageRadius = 25f;
-                    lifetime = 75f;
-                    backColor = JPPal.sporeBulletBack;
-                    frontColor = JPPal.sporeBulletFront;
-                    collidesTiles = true;
-                    trailLength = 5;
-                    trailColor = Color.valueOf("8B73C7");
-                }};
-                parts.add(new RegionPart("-barrel"){{
-                    progress = PartProgress.recoil;
-                    mirror = false;
-                    moveY = -2.5f;
-                    layerOffset = -0.000001f;
+                parts.add(new RegionPart("-part"){{
+                    mirror = true;
+                    progress = PartProgress.warmup;
+                    layerOffset= -0.0001f;
+                    under = true;
+                    x = 3f;
+                    y = 3f;
+                    moveX = -1.5f;
+                    moveY = -1.25f;
+                    moveRot = 10f;
                 }});
             }});
             outlineColor = Color.valueOf("303a45");
-            abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f * 2f) * 100f;}});
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
         }};
 
         raptor = new UnitType("raptor"){{
@@ -199,6 +172,17 @@ public class JPUnits {
                     frontColor = JPPal.sporeBulletFront;
                     lifetime = 45f;
                 }};
+                parts.add(new RegionPart("-part"){{
+                    mirror = true;
+                    progress = PartProgress.warmup;
+                    layerOffset= -0.0001f;
+                    under = true;
+                    x = 3f;
+                    y = 3f;
+                    moveX = -1.5f;
+                    moveY = -1.25f;
+                    moveRot = 10f;
+                }});
             }});
             weapons.add(new Weapon(){{
                 reload = 645f;
@@ -240,6 +224,44 @@ public class JPUnits {
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
+        }};
+
+        lobber = new UnitType("lobber"){{
+            this.constructor = LegsUnit::create;
+            envEnabled = Env.spores;
+            speed = 1f;
+            hitSize = 8f;
+            health = 325;
+            armor = 2;
+            range = 60f;
+            legCount = 4;
+            weapons.add(new Weapon(name + "-gun"){{
+                reload = 60f;
+                x = 0f;
+                y = -5f;
+                mirror = false;
+                shootSound = Sounds.shootArtillery;
+                bullet = new BasicBulletType(3f, 35){{
+                    shootEffect = Fx.shootBig;
+                    smokeEffect = Fx.shootBigSmoke;
+                    splashDamage = 30f;
+                    splashDamageRadius = 25f;
+                    lifetime = 75f;
+                    backColor = JPPal.sporeBulletBack;
+                    frontColor = JPPal.sporeBulletFront;
+                    collidesTiles = true;
+                    trailLength = 5;
+                    trailColor = Color.valueOf("8B73C7");
+                }};
+                parts.add(new RegionPart("-barrel"){{
+                    progress = PartProgress.recoil;
+                    mirror = false;
+                    moveY = -2.5f;
+                    layerOffset = -0.000001f;
+                }});
+            }});
+            outlineColor = Color.valueOf("303a45");
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f * 2f) * 100f;}});
         }};
 
         baneling = new UnitType("baneling"){{
@@ -2115,11 +2137,10 @@ public class JPUnits {
             speed = 2.75f;
             armor = 1;
             hitSize = 18f;
-            health = 175;
-            range = 125f;    
+            health = 175;  
             flying = true;
-            engineOffset = 7f;
-            engineSize = 4f;
+            // engineOffset = 7f;
+            // engineSize = 4f;
             mineSpeed = 2f;
             buildSpeed = 1;
             mineTier = 3;
@@ -2135,6 +2156,7 @@ public class JPUnits {
                 bullet = new BasicBulletType(0f, 0){{
                     height = 12f;
                     width = 8f;
+                    rangeOverride = 175f;
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
                     lifetime = 50f;
@@ -2161,6 +2183,9 @@ public class JPUnits {
             }});
             outlineColor = Color.valueOf("303a45"); 
             abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f * 2f) * 100f;}});
+            abilities.add(new MoveEffectAbility(-7f, 0f, Pal.sapBulletBack, Fx.missileTrailShort, 4f){{
+                teamColor = true;
+            }});
         }};
 
 }}
