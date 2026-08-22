@@ -142,8 +142,9 @@ public class JPUnits {
                 }};
                 parts.add(new RegionPart("-static"){{
                     mirror = false;
-                    layerOffset= -0.0001f;
-                    under = true;
+                    outline = false;
+                    // layerOffset= -0.0001f;
+                    // under = true;
                 }});
                 parts.add(new RegionPart("-part"){{
                     mirror = true;
@@ -181,8 +182,9 @@ public class JPUnits {
                 }};
                 parts.add(new RegionPart("-static"){{
                     mirror = false;
-                    layerOffset= -0.0001f;
-                    under = true;
+                    outline = false;
+                    // layerOffset= -0.0001f;
+                    // under = true;
                 }});
                 parts.add(new RegionPart("-part"){{
                     mirror = true;
