@@ -140,12 +140,6 @@ public class JPUnits {
                     lifetime = 45f;
                     damage = 25f;
                 }};
-                parts.add(new RegionPart("-static"){{
-                    mirror = false;
-                    outline = false;
-                    // layerOffset= -0.0001f;
-                    // under = true;
-                }});
                 parts.add(new RegionPart("-part"){{
                     mirror = true;
                     outline = false;
@@ -156,6 +150,12 @@ public class JPUnits {
                     moveY = -1.25f;
                     moveRot = -10f;
                 }});
+            }});
+            parts.add(new RegionPart("-mouth-static"){{
+                mirror = false;
+                outline = false;
+                // layerOffset= -0.0001f;
+                // under = true;
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
@@ -180,12 +180,6 @@ public class JPUnits {
                     frontColor = JPPal.sporeBulletFront;
                     lifetime = 45f;
                 }};
-                parts.add(new RegionPart("-static"){{
-                    mirror = false;
-                    outline = false;
-                    // layerOffset= -0.0001f;
-                    // under = true;
-                }});
                 parts.add(new RegionPart("-part"){{
                     mirror = true;
                     outline = false;
@@ -224,6 +218,12 @@ public class JPUnits {
                             }}
                     );
                 }};
+            }});
+            parts.add(new RegionPart("-mouth-static"){{
+                mirror = false;
+                outline = false;
+                // layerOffset= -0.0001f;
+                // under = true;
             }});
             parts.add(new RegionPart("-wing"){{
                 mirror = true;
