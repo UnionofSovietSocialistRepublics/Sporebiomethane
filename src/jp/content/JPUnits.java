@@ -146,7 +146,7 @@ public class JPUnits {
                     under = true;
                     moveX = -1.5f;
                     moveY = -1.25f;
-                    moveRot = 10f;
+                    moveRot = -10f;
                 }});
             }});
             outlineColor = Color.valueOf("303a45");
@@ -179,7 +179,7 @@ public class JPUnits {
                     under = true;
                     moveX = -1.5f;
                     moveY = -1.25f;
-                    moveRot = 10f;
+                    moveRot = -10f;
                 }});
             }});
             weapons.add(new Weapon(){{
