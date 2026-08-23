@@ -159,6 +159,9 @@ public class JPUnits {
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         raptor = new UnitType("raptor"){{
@@ -237,6 +240,9 @@ public class JPUnits {
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         lobber = new UnitType("lobber"){{
@@ -275,6 +281,9 @@ public class JPUnits {
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f * 2f) * 100f;}});
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         baneling = new UnitType("baneling"){{
@@ -338,6 +347,9 @@ public class JPUnits {
             outlineColor = Color.valueOf("303a45");
             abilities.add(new LiquidExplodeAbility(){{liquid = JPLiquids.liquidSpore; amount = 500f;}});
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         roach = new UnitType("roach"){{
@@ -375,6 +387,9 @@ public class JPUnits {
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         scarabid = new UnitType("scarabid"){{
@@ -416,6 +431,9 @@ public class JPUnits {
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         breacher = new UnitType("breacher"){{
@@ -469,6 +487,9 @@ public class JPUnits {
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         purger = new UnitType("purger"){{
@@ -526,6 +547,9 @@ public class JPUnits {
             immunities.add(StatusEffects.melting);
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         gorgon = new UnitType("gorgon"){{
@@ -561,6 +585,9 @@ public class JPUnits {
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         behomoth = new UnitType("behomoth"){{
@@ -617,6 +644,9 @@ public class JPUnits {
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (200f * 60f * 2f) * 100f;}});
             abilities.add(new UnitSpawnAbility(lobber,475f,0f,-7f));
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         basilisk = new UnitType("basilisk"){{
@@ -735,6 +765,9 @@ public class JPUnits {
 
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (240f * 60f * 2f) * 100f;}});
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         drone = new UnitType("drone"){{
@@ -774,8 +807,11 @@ public class JPUnits {
                     knockback = -1.24f;
                 }};
             }});
-                outlineColor = Color.valueOf("303a45");
+            outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f * 2f) * 100f;}});
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         interceptor = new UnitType("interceptor"){{
@@ -843,6 +879,9 @@ public class JPUnits {
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (90f * 60f * 2f) * 100f;}});
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         rizomorph = new UnitType("rizomorph"){{
@@ -896,6 +935,9 @@ public class JPUnits {
                 teamColor = true;
             }});
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         guardian = new UnitType("guardian"){{
@@ -943,6 +985,9 @@ public class JPUnits {
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         hiveDefender = new UnitType("hiveDefender"){{
@@ -982,6 +1027,9 @@ public class JPUnits {
             }});
             outlineColor = Color.valueOf("303a45"); 
             abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f * 2f) * 100f;}});
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         hiveSentinel = new UnitType("hiveSentinel"){{
@@ -1022,6 +1070,9 @@ public class JPUnits {
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f * 2f) * 100f;}});
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         sporophage = new UnitType("sporophage"){{
@@ -1066,6 +1117,9 @@ public class JPUnits {
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (75f * 60f * 2f) * 100f;}});
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         impReincranation = new UnitType("impReincranation"){{
@@ -1130,6 +1184,9 @@ public class JPUnits {
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm; amount = 210f;}});
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};        
 
         imp = new UnitType("imp"){{
@@ -1184,6 +1241,9 @@ public class JPUnits {
             abilities.add(new SpawnDeathAbility(impReincranation, 1, 11f));
             abilities.add(new RegenAbility(){{percentAmount = 1f / (70f * 60f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm; amount = 75f;}});
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         carci = new UnitType("carci"){{
@@ -1225,6 +1285,9 @@ public class JPUnits {
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (70f * 60f * 2f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         autus = new UnitType("autus"){{
@@ -1296,6 +1359,9 @@ public class JPUnits {
             immunities.add(StatusEffects.melting);
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         ebola = new UnitType("ebola"){{
@@ -1422,6 +1488,9 @@ public class JPUnits {
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         lepus = new JPCopterUnitType("lepus"){{
@@ -1468,6 +1537,9 @@ public class JPUnits {
             }});
             abilities.add(new StatusFieldAbility(StatusEffects.overclock, 60f * 6, 60f * 4f, 60f));
             abilities.add(new ShieldRegenFieldAbility(25f, 250f, 60f * 6, 60f));
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         lipus = new JPCopterUnitType("lipus"){{
@@ -1519,6 +1591,9 @@ public class JPUnits {
             }});
             abilities.add(new RegenAbility(){{percentAmount = 1f / (90f * 60f * 2f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         indus = new JPCopterUnitType("indus"){{
@@ -1556,6 +1631,9 @@ public class JPUnits {
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (90f * 60f * 2f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         malarion = new JPCopterUnitType("malarion"){{
@@ -1658,6 +1736,9 @@ public class JPUnits {
             abilities.add(new SpawnDeathAbility(lipus, 1, 11f));
             abilities.add(new SpawnDeathAbility(lepus, 1, 11f));
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         thera = new UnitType("thera"){{
@@ -1726,6 +1807,9 @@ public class JPUnits {
             }});
             abilities.add(new RegenAbility(){{percentAmount = 1f / (70f * 60f * 2f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};  
 
         yigg = new JPCopterUnitType("yigg"){{
@@ -1820,6 +1904,9 @@ public class JPUnits {
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (70f * 60f * 2f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         spongillery = new JPCopterUnitType("spongillery"){{
@@ -1898,6 +1985,9 @@ public class JPUnits {
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm;}});
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
             
         frostC = new UnitType("frostC"){{
@@ -2143,6 +2233,9 @@ public class JPUnits {
             abilities.add(new RegenAbility(){{percentAmount = 1f / (800f * 60f * 2f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.cryofluid;}});
             abilities.add(new StatusFieldAbility(JPStatus.frostshield, 60f * 3, 60f * 9f, 60f));
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         spark = new UnitType("spark"){{
@@ -2199,6 +2292,9 @@ public class JPUnits {
             abilities.add(new MoveEffectAbility(0f, -7f, Pal.sapBulletBack, Fx.missileTrailShort, 4f){{
                 teamColor = true;
             }});
+            // Serpuloh for testing purposes
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.gier);
         }};
 
 }}
