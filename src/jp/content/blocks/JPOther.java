@@ -36,6 +36,9 @@ public class JPOther{
 
             unitCapModifier = 24;
             researchCostMultiplier = 0.5f;
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
         hive = new CoreBlock("hive"){{
             requirements(Category.effect, with(JPItem.biomass, 6000, JPItem.naniteAlloy, 4000, silicon, 6000, surgeAlloy, 4000));
@@ -48,6 +51,9 @@ public class JPOther{
 
             unitCapModifier = 32;
             researchCostMultiplier = 0.25f;
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
         nydusaeCore = new CoreBlock("nydusaeCore"){{
             requirements(Category.effect, with(JPItem.biomass, 12000, JPItem.naniteAlloy, 8000, JPItem.vanadiumCarbideAlloy, 4000, silicon, 8000, surgeAlloy, 6000));
@@ -60,6 +66,9 @@ public class JPOther{
 
             unitCapModifier = 48;
             researchCostMultiplier = 0.15f;
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         lunarCore = new CoreBlock("lunarCore"){{
@@ -73,5 +82,8 @@ public class JPOther{
 
             unitCapModifier = 48;
             researchCostMultiplier = 0.15f;
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 }}

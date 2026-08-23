@@ -28,6 +28,9 @@ public class JPUnitAssembler{
             researchCostMultiplier = 0.5f;
 
             consumePower(15f);
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
         }};
 

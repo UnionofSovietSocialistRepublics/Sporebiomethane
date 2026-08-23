@@ -60,7 +60,9 @@ public class JPProduction{
             }},
             new DrawRegion("-top")
             );
-
+            
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         naniteInfuser = new GenericCrafter("naniteInfuser"){{
@@ -79,6 +81,9 @@ public class JPProduction{
             drawer = new DrawMulti(new DrawDefault(), new DrawWarmupRegion(){{
                 color = Color.valueOf("8B73C7");
             }});
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         carbideCompositeSmelter = new GenericCrafter("carbideCompositeSmelter"){{
@@ -95,6 +100,9 @@ public class JPProduction{
 
             consumePower(4f);
             consumeItems(with(JPItem.biosil, 2,JPItem.vanadium,4,JPItem.naniteAlloy, 3));
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         vanadiumCarbideAlloyer = new HeatProducer("vanadiumCarbideAlloyer"){{
@@ -110,6 +118,9 @@ public class JPProduction{
             heatOutput = 5f;
             consumePower(5f);
             consumeItems(with(JPItem.vanadium, 5,JPItem.biosil, 3));
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         fluoresiltRefinery = new GenericCrafter("fluoresiltRefinery"){{
@@ -125,6 +136,9 @@ public class JPProduction{
 
             consumePower(1f);
             consumeItem(JPItem.fluoresilt, 3);
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         voltaicChamber = new GenericCrafter("voltaicChamber"){{
@@ -142,6 +156,9 @@ public class JPProduction{
             consumePower(5f);
             consumeItem(sporePod, 5);
             consumeLiquid(Liquids.water, 15f / 60f);
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);            
         }};
 
         bioSynthesizer = new GenericCrafter("bioSynthesizer"){{
@@ -156,6 +173,9 @@ public class JPProduction{
             hasPower = true;
             consumePower(5f);
             consumeItems(with(JPItem.biomass, 3,silicon, 2,graphite, 2));
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);           
         }};
 
         neostabilizer = new GenericCrafter("neostabilizer"){{
@@ -173,6 +193,9 @@ public class JPProduction{
             consumePower(10f);
             consumeItems(with(JPItem.vanadium, 4,JPItem.zinc, 2));
             consumeLiquid(Liquids.neoplasm, 6f / 60f);
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         neodestabilizer = new JPELF("neodestabilizer"){{
@@ -222,6 +245,8 @@ public class JPProduction{
             explosionPuddleAmount = 60f;
             explosionMinWarmup = 0.5f;
 
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         extractor = new Drill("extractor"){{
@@ -241,6 +266,9 @@ public class JPProduction{
             drillMultipliers.put(Items.tungsten, 0f);
             hasLiquids = true;
             consumeLiquid(Liquids.water, 0.05f).boost();
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         zincExtractor = new GenericCrafter("zincExtractor"){{
@@ -256,6 +284,9 @@ public class JPProduction{
                 rotateSpeed = 2f;
             }},
             new DrawRegion("-top"));
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         massCultivator = new GenericCrafter("massCultivator"){{
@@ -281,6 +312,9 @@ public class JPProduction{
             );
             consumePower(10f);
             consumeLiquid(Liquids.water, 18f / 60f);
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
         
         //Power blocks
@@ -297,6 +331,9 @@ public class JPProduction{
             ambientSoundVolume = 0.03f;
             generateEffect = Fx.generatespark;
             drawer = new DrawMulti(new DrawDefault(), new DrawFlame(Color.valueOf("8B73C7")));
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         voltaicBurner = new ConsumeGenerator("voltaticBurner"){{
@@ -311,7 +348,9 @@ public class JPProduction{
             ambientSoundVolume = 0.06f;
             generateEffect = Fx.generatespark;
             drawer = new DrawMulti(new DrawDefault(), new DrawFlame(Color.valueOf("8B73C7")));
-            
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         neocellGenerator = new JPBoostableCG("neocellGenerator"){{
@@ -329,6 +368,9 @@ public class JPProduction{
             drawer = new DrawMulti(new DrawDefault(), new DrawWarmupRegion(){{
                 color = Color.valueOf("9e3736");
             }});
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         lotusPanel = new SolarGenerator("lotusPanel"){{
@@ -337,6 +379,9 @@ public class JPProduction{
             health = 625;
             size = 4;
             powerProduction = 3f;
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         biomassReactor = new ImpactReactor("biomassReactor"){{
@@ -356,6 +401,9 @@ public class JPProduction{
             drawer = new DrawMulti(new DrawRegion("-bottom"), new DrawPlasma(), new DrawDefault(), new DrawWarmupRegion(){{
                 color = Color.valueOf("8B73C7");
             }});
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         lunarFactory = new GenericCrafter("lunarFactory"){{
@@ -370,6 +418,8 @@ public class JPProduction{
             hasPower = true;
             consumePower(5f);
             consumeItems(with(JPItem.fluorite, 2,JPItem.voidStone, 3, JPItem.vanadium, 3));
+
+            shownPlanets.add(Planets.gier);
         }};
 
         lunarCrusher = new GenericCrafter("lunarCrusher"){{
@@ -384,6 +434,8 @@ public class JPProduction{
             hasPower = true;
             consumePower(5f);
             consumeItems(with(JPItem.vanadium, 5,JPItem.biosil, 3));
+
+            shownPlanets.add(Planets.gier);
         }};
 
         }}

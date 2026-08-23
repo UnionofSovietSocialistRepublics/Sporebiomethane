@@ -31,6 +31,8 @@ public class JPUnitFactory{
             size = 3;
             consumePower(1.5f);
 
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         
@@ -46,6 +48,8 @@ public class JPUnitFactory{
             size = 3;
             consumePower(1.5f);
 
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
         gestator = new UnitFactory("gestator"){{
             requirements(Category.units, with(silicon,750,JPItem.naniteAlloy,500,JPItem.biomass,250,JPItem.neocell,75));
@@ -61,6 +65,8 @@ public class JPUnitFactory{
             consumePower(7f);
             consumeLiquid(Liquids.neoplasm, 15f / 60f);
 
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
         assembler = new UnitFactory("assembler"){{
             requirements(Category.units, with(silicon,675,JPItem.naniteAlloy,75,JPItem.biomass,225));
@@ -75,5 +81,7 @@ public class JPUnitFactory{
             size = 4;
             consumePower(1.2f);
 
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 }};

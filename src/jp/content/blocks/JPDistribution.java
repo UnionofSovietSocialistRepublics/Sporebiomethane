@@ -22,6 +22,8 @@ public class JPDistribution{
         health = 300;
         size = 1;
         speed = 3f;
+        shownPlanets.add(Planets.serpulo);
+        shownPlanets.add(Planets.erekir);
     }};
 
     }};

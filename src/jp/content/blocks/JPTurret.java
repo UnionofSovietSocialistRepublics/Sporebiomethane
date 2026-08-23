@@ -154,6 +154,9 @@ public class JPTurret{
                 }});
             }};
             outlineColor = Color.valueOf("19171b");
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         oarch = new ItemTurret("oarch"){{
@@ -227,6 +230,9 @@ public class JPTurret{
             shootSound = JPSounds.Arty;
             coolant = consumeCoolant(0.15f);
             outlineColor = Color.valueOf("19171b");
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
         
         mitoCannon = new PowerTurret("mitoCannon"){{
@@ -312,6 +318,9 @@ public class JPTurret{
             consumeLiquid(water,0.225f);
             consumePower(7f);
             outlineColor = Color.valueOf("19171b");
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         sentinel = new ContinuousTurret("sentinel"){{
@@ -331,8 +340,8 @@ public class JPTurret{
             ammoUseEffect = Fx.casing1;
             shootType = new PointLaserBulletType(){{
                 sprite = "jp-sentinel-laser";
-	            collidesTeam = true;
-	            damage = 100;
+                collidesTeam = true;
+                damage = 100;
                 status = StatusEffects.sapped;
                 statusDuration = 60f * 3;
                 hitColor = Color.valueOf("fda981");
@@ -350,13 +359,16 @@ public class JPTurret{
                 parts.add(new RegionPart("-bottom"){
                 });
 
-        }};
-        shootSound = Sounds.none;
-        loopSoundVolume = 1f;
-        loopSound = Sounds.loopMineBeam;
-        consumeLiquid(water, 45f / 60f);
-        consumePower(10f);
-        outlineColor = Color.valueOf("19171b");
+            }};
+            shootSound = Sounds.none;
+            loopSoundVolume = 1f;
+            loopSound = Sounds.loopMineBeam;
+            consumeLiquid(water, 45f / 60f);
+            consumePower(10f);
+            outlineColor = Color.valueOf("19171b");
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         flakAccelerator = new ItemTurret("flakAccelerator"){{
@@ -433,6 +445,9 @@ public class JPTurret{
                 }});
                 outlineColor = Color.valueOf("19171b");
             }};
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         artilleryTurret = new ItemTurret("artilleryTurret"){{
@@ -483,6 +498,9 @@ public class JPTurret{
             coolantMultiplier = 0.5f;
             coolant = consumeCoolant(0.5f);
             outlineColor = Color.valueOf("19171b");
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         suppressor = new ItemTurret("suppressor"){{
@@ -572,6 +590,9 @@ public class JPTurret{
                 }});
                 outlineColor = Color.valueOf("19171b");
             }};
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         impalerCannon= new ItemTurret("impalerCannon"){{
@@ -630,5 +651,8 @@ public class JPTurret{
             ammoUseEffect = Fx.casing3Double;
             shootSound = Sounds.shootForeshadow;
             outlineColor = Color.valueOf("19171b");
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 }};

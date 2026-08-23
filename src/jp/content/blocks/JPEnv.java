@@ -15,13 +15,13 @@ public class JPEnv {
 	//block part
 
         vanadiumOre = new OreBlock("vanadiumOre") {{
-        itemDrop = JPItem.vanadium;
-		variants = 3;
+			itemDrop = JPItem.vanadium;
+			variants = 3;
         }};
 
         azuriteOre = new OreBlock("azuriteOre") {{
-        itemDrop = JPItem.azurite;
-		variants = 3;
+			itemDrop = JPItem.azurite;
+			variants = 3;
         }};
 
         wall = new StaticWall("wall"){{

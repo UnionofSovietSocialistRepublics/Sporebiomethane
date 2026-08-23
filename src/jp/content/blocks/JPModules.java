@@ -19,6 +19,9 @@ public class JPModules{
             consumePower(5f);
             size = 3;
             health = 475;
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
+        
         }};
 
