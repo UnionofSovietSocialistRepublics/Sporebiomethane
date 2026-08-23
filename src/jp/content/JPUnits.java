@@ -289,7 +289,7 @@ public class JPUnits {
         baneling = new UnitType("baneling"){{
             this.constructor = LegsUnit::create;
             aiController = SuicideAI::new;
-            speed = 1.25f;
+            speed = 1.3f;
             hitSize = 8f;
             health = 225;
             range = 50f;
@@ -300,7 +300,9 @@ public class JPUnits {
                 y = 0f;
                 top = false;
                 shootOnDeath = true;
-                shoot.firstShotDelay = 90f;
+                shoot.firstShotDelay = 75f;
+                shootWarmupSpeed = 0.06f;
+                minWarmup = 0.9f;
                 bullet = new BombBulletType(0f, 100f){{
                     rangeOverride = 30f;
                     width = height = 0f;
@@ -312,7 +314,7 @@ public class JPUnits {
                     killShooter = true;
                     collidesAir = true;
                     buildingDamageMultiplier = 1.25f;
-                    shootStatus = StatusEffects.unmoving;
+                    shootStatus = StatusEffects.slow;
                     statusDuration = 180f;
                     hitSound = Sounds.explosion;
                     fragBullets = 6;
@@ -332,8 +334,8 @@ public class JPUnits {
 
             parts.add(new RegionPart("-sac"){{
                 mirror = false;
-                progress = PartProgress.warmup;
-                heatProgress = PartProgress.warmup;
+                progress = PartProgress.charge;
+                heatProgress = PartProgress.charge;
                 heatColor = Color.valueOf("8B73C7");
                 heatLayerOffset = 0.1f;
                 layerOffset = -0.0001f;
@@ -1207,7 +1209,7 @@ public class JPUnits {
                     width = 0f;
                     height = 0f;
                     lifetime = 10f;
-                    shootStatus = StatusEffects.unmoving;
+                    shootStatus = StatusEffects.slow;
                     shootStatusDuration = 91f;
                     status = StatusEffects.burning;
                     statusDuration = 60f* 4.5f;
@@ -2245,8 +2247,8 @@ public class JPUnits {
             hitSize = 18f;
             health = 175;  
             flying = true;
-            // engineOffset = 7f;
-            // engineSize = 4f;
+            engineOffset = 0f;
+            engineSize = 0f;
             mineSpeed = 2f;
             buildSpeed = 1;
             mineTier = 3;
