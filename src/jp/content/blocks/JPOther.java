@@ -20,9 +20,10 @@ public class JPOther{
         
         vanadiumCarbideWallLarge = new Wall("vanadiumCarbideWallLarge"){{
             requirements(Category.defense, with(JPItem.vanadiumCarbideAlloy, 40));
-            envEnabled = Env.spores;;
             health = 6500;
             size = 2;
+            shownPlanets.add(erekir);
+            shownPlanets.add(serpulo);
         }};
         hatchery = new CoreBlock("hatchery"){{
             requirements(Category.effect, with(JPItem.biomass, 3000, JPItem.naniteAlloy, 2000, silicon, 4000));
