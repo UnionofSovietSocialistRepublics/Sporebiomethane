@@ -22,8 +22,8 @@ public class JPOther{
             requirements(Category.defense, with(JPItem.vanadiumCarbideAlloy, 40));
             health = 6500;
             size = 2;
-            shownPlanets.add(erekir);
-            shownPlanets.add(serpulo);
+            shownPlanets.add("erekir");
+            shownPlanets.add("serpulo");
         }};
         hatchery = new CoreBlock("hatchery"){{
             requirements(Category.effect, with(JPItem.biomass, 3000, JPItem.naniteAlloy, 2000, silicon, 4000));

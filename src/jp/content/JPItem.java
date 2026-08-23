@@ -16,8 +16,8 @@ public class JPItem{
         azurite = new Item("azurite", Color.valueOf("245485")){{
             hardness = 3;
             cost = 0.5f;
-            isOnPlanet(erekir);
-            isOnPlanet(serpulo);
+            isOnPlanet("erekir");
+            isOnPlanet("serpulo");
         }};
 
         biomass = new Item("biomass", Color.valueOf("8B73C7")){{
