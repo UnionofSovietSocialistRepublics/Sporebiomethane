@@ -130,8 +130,8 @@ public class JPUnits {
             legCount = 4;
             weapons.add(new Weapon(name+"-mouth"){{
                 reload = 30f;
-                x = 0f;
-                y = 2f;
+                x = y = 0f;
+                shootY = 2f;
                 mirror = false;
                 shootWarmupSpeed = 0.06f;
                 minWarmup = 0.9f;
@@ -1140,6 +1140,29 @@ public class JPUnits {
             hitSize = 9f;
             drag = 0.05f;
             accel = 0.11f;
+            fallSpeed = 1f;
+            weapons.add(new Weapon(){{
+                reload = 5f;
+                x = 0f;
+                y = 0f;
+                top = false;
+                shootOnDeath = true;
+                bullet = new BombBulletType(1f, 50){{
+                    rangeOverride = 30f;
+                    width = 0f;
+                    height = 0f;
+                    lifetime = 10f;
+                    splashDamage = 175f;
+                    splashDamageRadius = 60f;
+                    killShooter = true;
+                    collidesAir = true;
+                    shootEffect = Fx.none;
+                    hitSound = Sounds.explosion;
+                    hitEffect = Fx.sapExplosion;
+
+                }};
+                shootSound = Sounds.explosion;
+            }});
             weapons.add(new Weapon(){{
                 minShootVelocity = 0.75f;
                 x = 2;
@@ -1165,26 +1188,6 @@ public class JPUnits {
                     incendAmount = 1;
                 }};
             }});
-            weapons.add(new Weapon(){{
-                reload = 5f;
-                x = 0f;
-                y = 0f;
-                top = false;
-                shootOnDeath = true;
-                bullet = new BombBulletType(1f, 50){{
-                    rangeOverride = 30f;
-                    width = 0f;
-                    height = 0f;
-                    lifetime = 10f;
-                    splashDamage = 175f;
-                    splashDamageRadius = 60f;
-                    killShooter = true;
-                    collidesAir = true;
-                    hitSound = Sounds.explosion;
-
-                }};
-                shootSound = Sounds.explosion;
-            }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm; amount = 210f;}});
 
@@ -1204,7 +1207,9 @@ public class JPUnits {
                 reload = 5f;
                 top = false;
                 shootOnDeath = true;
-                shoot.firstShotDelay = 90f;
+                shoot.firstShotDelay = 75f;
+                shootWarmupSpeed = 0.06f;
+                minWarmup = 0.9f;
                 bullet = new BombBulletType(0,50f){{
                     rangeOverride = 30f;
                     width = 0f;
