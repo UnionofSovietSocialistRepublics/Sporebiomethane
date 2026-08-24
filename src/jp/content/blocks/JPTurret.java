@@ -174,13 +174,14 @@ public class JPTurret{
             shootY = -2.5f;
             ammo(
                 sporePod, new BasicBulletType(5f, 15f){{
-                    lifetime = 50f;
+                    reloadMultiplier = 0.65f;
+                    height = 11f;
+                    width = 15f;
                     sprite = "jp-oarch-bullet";
-                    reloadMultiplier = 0.5f;
+                    lifetime = 50f;
                     splashDamage = 5f;
                     splashDamageRadius = 45f;
                     knockback = 1.5f;
-                    height = width = 15f;
                     status = StatusEffects.sporeSlowed;
                     statusDuration = 60f * 14;
                     // backColor = Color.valueOf("7457ce");
@@ -188,7 +189,8 @@ public class JPTurret{
                     lightOpacity = 0.3f;
                 }},
                 JPItem.biomass, new BasicBulletType(5f, 25f){{
-                    height = width = 10f;
+                    height = 6f;
+                    width = 10f;
                     sprite = "jp-oarch-bullet";
                     lifetime = 50f;
                     splashDamage = 25f;
@@ -214,7 +216,8 @@ public class JPTurret{
                 }},
                 JPItem.vanadiumCarbideAlloy, new BasicBulletType(5f, 95f){{
                     reloadMultiplier = 0.5f;
-                    height = width = 10f;
+                    height = 6f;
+                    width = 10f;
                     backSprite="jp-oarch-bullet-back";
                     sprite = "jp-oarch-bullet";
                     lifetime = 50f;

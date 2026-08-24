@@ -385,13 +385,14 @@ public class JPProduction{
         }};
 
         biomassReactor = new ImpactReactor("biomassReactor"){{
-            requirements(Category.power, with(silicon, 225,JPItem.vanadium, 75,JPItem.neocell, 95));
+            requirements(Category.power, with(silicon, 225,JPItem.biomass, 115, JPItem.vanadium, 75,JPItem.naniteAlloy, 95));
             envEnabled = Env.spores;
             health = 1750;
             size = 4;
             hasLiquids = false;
+            itemDuration = 90f;
             consumePower(10f);
-            powerProduction = 40f;
+            powerProduction = 55f;
             consumeItem(JPItem.biomass);
             warmupSpeed = 0.0025f;
             explosionRadius = 10;
