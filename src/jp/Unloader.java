@@ -20,7 +20,7 @@ public class Unloader extends Mod{
         switch(rand){
         case 1:
         Vars.mods.locateMod("jp").meta.author="Hydroabyss & Water White";
-        Vars.mods.locateMod("jp").meta.subtitle="Jesse we need to cook, jesse";
+        Vars.mods.locateMod("jp").meta.subtitle="Face the fear, grow the factory";
         break;
         case 2:
         Vars.mods.locateMod("jp").meta.author="Hydroabyss & Larp molecule";

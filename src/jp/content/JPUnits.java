@@ -130,7 +130,8 @@ public class JPUnits {
             legCount = 4;
             weapons.add(new Weapon(name+"-mouth"){{
                 reload = 30f;
-                x = y = 0f;
+                x = 0f;
+                y = 2f;
                 mirror = false;
                 shootWarmupSpeed = 0.06f;
                 minWarmup = 0.9f;
