@@ -326,7 +326,7 @@ public class JPProduction{
             size = 1;
             powerProduction = 3.75f;
             liquidCapacity = 25f;
-            consumeLiquid(Liquids.oil, 0.01f);
+            consumeLiquid(Liquids.oil, 0.075f);
             ambientSound = Sounds.loopSmelter;
             ambientSoundVolume = 0.03f;
             generateEffect = Fx.generatespark;

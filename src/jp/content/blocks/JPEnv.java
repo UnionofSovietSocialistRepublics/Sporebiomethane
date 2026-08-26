@@ -45,7 +45,7 @@ public class JPEnv {
         tile = new Floor("tile"){{
 			variants = 2;
 		}};
-        blackBoulder = new Block("blackBoulder"){{
+        blackBoulder = new Wall("blackBoulder"){{
             requirements(Category.effect, with(silicon, 270));
             size = 2;
             health = 2000;
