@@ -8,11 +8,15 @@ import mindustry.world.meta.*;
 public class JPItem{
     public static Item
 
-    azurite,biomass,biosil,Carbinecomposite,fluoresilt,
+    tree,azurite,biomass,biosil,Carbinecomposite,fluoresilt,
     fluorite,naniteAlloy,neocell,vanadium,vanadiumCarbideAlloy,
     voltaicGas,zinc,umbratechChip,voidStone;
 
     public static void load(){
+        tree = new Item("tree", Color.valueOf("245485")){{
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
+        }};
         azurite = new Item("azurite", Color.valueOf("245485")){{
             hardness = 3;
             cost = 0.5f;

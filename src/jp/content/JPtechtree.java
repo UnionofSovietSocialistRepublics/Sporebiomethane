@@ -13,7 +13,7 @@ import static mindustry.content.SectorPresets.*;
 public class JPtechtree {
     public static void load(){
         if(Core.settings.getBool("HM")){
-        nodeRoot("Spore biomechs Hardmode", coreShard, false, () -> {
+        nodeRoot("Spore biomechs Hardmode", JPItem.tree, false, () -> {
             //Above the skies is currently the placeholder for now, the required sector will change later.
             node(JPOther.hatchery, Seq.with(new SectorComplete(JPsectorsHM.skiHM)), () -> {
                 node(JPOther.hive, () -> {
@@ -42,7 +42,9 @@ public class JPtechtree {
                 node(JPProduction.bioSynthesizer, () -> {
                     node(JPProduction.naniteInfuser, () -> {
                         node(JPProduction.carbideCompositeSmelter, () -> {
-                            node(JPProduction.neostabilizer);
+                            node(JPProduction.neostabilizer, () -> {
+                                node(JPProduction.neodestabilizer);
+                            });
                         });
                     });
                 });
@@ -102,7 +104,7 @@ public class JPtechtree {
             });
             });
 }else {
-            nodeRoot("Spore biomechs", coreShard, false, () -> {
+            nodeRoot("Spore biomechs", JPItem.tree, false, () -> {
             //Above the skies is currently the placeholder for now, the required sector will change later.
             node(JPOther.hatchery, Seq.with(new SectorComplete(JPsectors.birth)), () -> {
                 node(JPOther.hive, () -> {
@@ -131,7 +133,9 @@ public class JPtechtree {
                 node(JPProduction.bioSynthesizer, () -> {
                     node(JPProduction.naniteInfuser, () -> {
                         node(JPProduction.carbideCompositeSmelter, () -> {
-                            node(JPProduction.neostabilizer);
+                            node(JPProduction.neostabilizer, () -> {
+                                node(JPProduction.neodestabilizer);
+                            });
                         });
                     });
                 });

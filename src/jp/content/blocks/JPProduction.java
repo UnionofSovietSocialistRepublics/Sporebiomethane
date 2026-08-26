@@ -38,12 +38,12 @@ public class JPProduction{
             health = 125;
             size = 2;
             craftEffect = Fx.pulverizeMedium;
-            outputItem = new ItemStack(JPItem.biomass, 1);
+            outputItem = new ItemStack(JPItem.biomass, 2);
+            consumeItem(sporePod, 4);
             craftTime = 45f;
             hasItems = true;
             hasPower = true;
             consumePower(1f);
-            consumeItem(sporePod, 5);
             drawer = new DrawMulti(
             new DrawRegion("-bottom"),
             new DrawDefault(),
@@ -72,11 +72,11 @@ public class JPProduction{
             size = 2;
             craftEffect = Fx.pulverizeMedium;
             outputItem = new ItemStack(JPItem.naniteAlloy, 1);
-            craftTime = 50f;
+            consumeItems(with(JPItem.biomass, 4,JPItem.biosil,4,silicon,8));
+            craftTime = 80f;
             hasPower = true;
             hasItems = true;
             consumePower(5f);
-            consumeItems(with(JPItem.biomass, 5,JPItem.biosil,5,silicon,10));
 
             drawer = new DrawMulti(new DrawDefault(), new DrawWarmupRegion(){{
                 color = Color.valueOf("8B73C7");
@@ -320,13 +320,13 @@ public class JPProduction{
         //Power blocks
 
         oilBurner = new ConsumeGenerator("oilBurner"){{
-            requirements(Category.power, with(silicon, 75,graphite, 125,JPItem.biomass, 45));
+            requirements(Category.power, with(silicon, 25,graphite, 75,JPItem.biomass, 15));
             envEnabled = Env.spores;
             health = 180;
             size = 1;
             powerProduction = 3.75f;
             liquidCapacity = 25f;
-            consumeLiquid(Liquids.oil, 0.2f);
+            consumeLiquid(Liquids.oil, 0.01f);
             ambientSound = Sounds.loopSmelter;
             ambientSoundVolume = 0.03f;
             generateEffect = Fx.generatespark;

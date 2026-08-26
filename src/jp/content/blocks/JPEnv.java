@@ -1,8 +1,13 @@
 package jp.content.blocks;
 
+import mindustry.type.Category;
 import mindustry.world.Block;
+import mindustry.world.blocks.defense.Wall;
 import mindustry.world.blocks.environment.*;
 import jp.content.*;
+
+import static mindustry.content.Items.silicon;
+import static mindustry.type.ItemStack.with;
 
 public class JPEnv {
     public static Block
@@ -40,8 +45,10 @@ public class JPEnv {
         tile = new Floor("tile"){{
 			variants = 2;
 		}};
-        blackBoulder = new Prop("blackBoulder"){{
-			variants = 1;
+        blackBoulder = new Block("blackBoulder"){{
+            requirements(Category.effect, with(silicon, 270));
+            size = 2;
+            health = 2000;
 		}};
     }
 

@@ -1945,8 +1945,8 @@ public class JPUnits {
                     collidesAir = false;
                     recoil = 4f;
                     spin = 4f;
-                    shrinkX = 0.4f;
-                    shrinkY = 0.4f;
+                    shrinkX = 0.6f;
+                    shrinkY = 0.6f;
                     despawnEffect = Fx.sapExplosion;
                     hitEffect = Fx.sapExplosion;
                     sprite = "large-bomb";
