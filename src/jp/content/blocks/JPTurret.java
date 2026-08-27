@@ -406,12 +406,12 @@ public class JPTurret{
                     backColor = JPPal.sporeBulletBack;
                     frontColor = JPPal.sporeBulletFront;
                     lightColor = Color.valueOf("8B73C7");
-                    ammoMultiplier = 0.6f;
                     fragBullets = 12;
                     fragVelocityMin = fragVelocityMax = 1f;
                     fragLifeMax = 1f;
                     fragLifeMin = 0.6f;
                     shoot.shots = 3;
+                    shoot.shotDelay = 20f;
                     fragBullet = new BasicBulletType(3f, 0){{
                         splashDamage = 15f;
                         splashDamageRadius = 15f;
