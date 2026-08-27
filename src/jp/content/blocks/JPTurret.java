@@ -394,29 +394,29 @@ public class JPTurret{
                 spread = 0f;
             }};
             ammo(
-                sporePod, new FlakBulletType(7.5f, 225f){{
-                    lifetime = 25f;
-                    reloadMultiplier = 0.6f;
-                    recoils = 2;
-                    backColor = Color.valueOf("7457ce");
-                    frontColor = Color.valueOf("7457ce");
-                    lightColor = Color.valueOf("7457ce");
-                    fragBullets = 3;
-                    fragBullet = new BasicBulletType(3f, 2){{
-                        splashDamage = 5f;
-                        splashDamageRadius = 15f;
-                        width = 5f;
-                        height = 7f;
-                        backColor = JPPal.sporeBulletBack;
-                        frontColor = JPPal.sporeBulletFront;
-                        lightColor = Color.valueOf("8B73C7");
-                        lifetime = 20f;
-                        backColor = Pal.gray;
-                        frontColor = Color.white;
-                        despawnEffect = Fx.none;
-                        collidesGround = false;
-                    }};
-                }},
+//                sporePod, new FlakBulletType(7.5f, 225f){{
+//                    lifetime = 25f;
+//                    reloadMultiplier = 0.6f;
+//                    recoils = 2;
+//                    backColor = Color.valueOf("7457ce");
+//                    frontColor = Color.valueOf("7457ce");
+//                    lightColor = Color.valueOf("7457ce");
+//                    fragBullets = 3;
+//                    fragBullet = new BasicBulletType(3f, 2){{
+//                        splashDamage = 5f;
+//                        splashDamageRadius = 15f;
+//                        width = 5f;
+//                        height = 7f;
+//                        backColor = JPPal.sporeBulletBack;
+//                        frontColor = JPPal.sporeBulletFront;
+//                        lightColor = Color.valueOf("8B73C7");
+//                        lifetime = 20f;
+//                        backColor = Pal.gray;
+//                        frontColor = Color.white;
+//                        despawnEffect = Fx.none;
+//                        collidesGround = false;
+//                    }};
+//                }},
                JPItem.biomass, new FlakBulletType(5f, 25f){{
                     lifetime = 45f;
                     fragBullets = 6;
@@ -425,7 +425,7 @@ public class JPTurret{
                     recoils = 2;
                     backColor = JPPal.sporeBulletBack;
                     frontColor = JPPal.sporeBulletFront;
-                    lightColor = Color.valueOf("8B73C7");
+                    lightColor = JPPal.sporeBulletBack;
                     ammoMultiplier = 1f;
                     fragBullet = new BasicBulletType(3f, 15){{
                         splashDamage = 25f;
@@ -434,12 +434,56 @@ public class JPTurret{
                         height = 7f;
                         backColor = JPPal.sporeBulletBack;
                         frontColor = JPPal.sporeBulletFront;
-                        lightColor = Color.valueOf("8B73C7");
+                        lightColor =JPPal.sporeBulletBack;
                         lifetime = 20f;
                         backColor = Pal.gray;
                         frontColor = Color.white;
                         despawnEffect = Fx.none;
                         collidesGround = false;
+                    }};
+                }},
+                JPItem.naniteAlloy, new FlakBulletType(5f, 25f){{
+                    lifetime = 45f;
+                    splashDamage = 50f;
+                    splashDamageRadius = 35f;
+                    recoils = 2;
+                    backColor = JPPal.sporeBulletBack;
+                    frontColor = JPPal.sporeBulletFront;
+                    lightColor = Color.valueOf("8B73C7");
+                    ammoMultiplier = 1f;
+                    fragBullets = 12;
+                    fragVelocityMin = fragVelocityMax = 1f;
+                    fragLifeMax = 1f;
+                    fragLifeMin = 0.6f;
+                    fragBullet = new BasicBulletType(3f, 0){{
+                        splashDamage = 25f;
+                        splashDamageRadius = 15f;
+                        width = 5f;
+                        height = 7f;
+                        weaveMag = 4f;
+                        weaveScale = 55f;
+                        backColor = JPPal.sporeBulletBack;
+                        frontColor = JPPal.sporeBulletFront;
+                        lightColor = Color.valueOf("8B73C7");
+                        backColor = Pal.gray;
+                        frontColor = Color.white;
+                        despawnEffect = Fx.none;
+                        fragBullets = 12;
+                        fragVelocityMin = fragVelocityMax = 1f;
+                        fragLifeMax = 1f;
+                        fragLifeMin = 1f;
+                        collidesGround = false;
+                        fragBullet = new BasicBulletType(3f, 45){{
+                            width = 5f;
+                            height = 7f;
+                            backColor = JPPal.sporeBulletBack;
+                            frontColor = JPPal.sporeBulletFront;
+                            lightColor = Color.valueOf("45368F");
+                            lifetime = 20f;
+                            backColor = Pal.gray;
+                            frontColor = Color.white;
+                            collidesGround = false;
+                        }};
                     }};
                 }});
                 coolant = consumeCoolant(0.1f);

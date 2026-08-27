@@ -390,7 +390,7 @@ public class JPProduction{
             health = 1750;
             size = 4;
             hasLiquids = false;
-            itemDuration = 90f;
+            itemDuration = 30f;
             consumePower(10f);
             powerProduction = 55f;
             consumeItem(JPItem.biomass);
