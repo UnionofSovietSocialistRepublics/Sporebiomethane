@@ -370,6 +370,8 @@ public class JPTurret{
             shoot = new ShootAlternate(){{
                 barrels = 2;
                 spread = 0f;
+                shots = 1;
+                shotDelay = 0;
             }};
             ammo(
                JPItem.biomass, new FlakBulletType(5f, 25f){{
@@ -402,7 +404,7 @@ public class JPTurret{
                     splashDamage = 75f;
                     splashDamageRadius = 35f;
                     recoils = 2;
-                    reloadMultiplier = 0.4f;
+                    reloadMultiplier = 0.2f;
                     backColor = JPPal.sporeBulletBack;
                     frontColor = JPPal.sporeBulletFront;
                     lightColor = Color.valueOf("8B73C7");
@@ -412,7 +414,7 @@ public class JPTurret{
                     fragLifeMin = 2f;
                     shoot.shots = 3;
                     shoot.shotDelay = 10f;
-                    fragBullet = new BasicBulletType(3f, 0){{
+                    fragBullet = new BasicBulletType(5f, 0){{
                         splashDamage = 45f;
                         splashDamageRadius = 15f;
                         width = 5f;
@@ -425,10 +427,6 @@ public class JPTurret{
                         frontColor = JPPal.sporeBulletFront;
                         lightColor = Color.valueOf("45368F");
                         despawnEffect = Fx.none;
-                        fragBullets = 12;
-                        fragVelocityMin = fragVelocityMax = 1f;
-                        fragLifeMax = 1f;
-                        fragLifeMin = 1f;
                         collidesGround = false;
                     }};
                 }});
