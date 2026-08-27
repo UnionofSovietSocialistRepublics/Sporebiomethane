@@ -397,30 +397,30 @@ public class JPTurret{
                         collidesGround = false;
                     }};
                 }},
-                JPItem.naniteAlloy, new FlakBulletType(5f, 5f){{
-                    lifetime = 45f;
+                JPItem.naniteAlloy, new FlakBulletType(3f, 5f){{
+                    lifetime = 90f;
                     splashDamage = 75f;
                     splashDamageRadius = 35f;
                     recoils = 2;
-                    reloadMultiplier = 0.6f;
+                    reloadMultiplier = 0.4f;
                     backColor = JPPal.sporeBulletBack;
                     frontColor = JPPal.sporeBulletFront;
                     lightColor = Color.valueOf("8B73C7");
                     fragBullets = 12;
                     fragVelocityMin = fragVelocityMax = 1f;
-                    fragLifeMax = 1f;
-                    fragLifeMin = 0.6f;
+                    fragLifeMax = 1.2f;
+                    fragLifeMin = 2f;
                     shoot.shots = 3;
-                    shoot.shotDelay = 20f;
+                    shoot.shotDelay = 10f;
                     fragBullet = new BasicBulletType(3f, 0){{
-                        splashDamage = 15f;
+                        splashDamage = 45f;
                         splashDamageRadius = 15f;
                         width = 5f;
                         height = 7f;
                         weaveMag = 4f;
                         weaveScale = 55f;
-                        homingDelay = 30f;
-                        homingPower = 0.1f;
+                        homingDelay = 20f;
+                        homingPower = 0.2f;
                         backColor = JPPal.sporeBulletBack;
                         frontColor = JPPal.sporeBulletFront;
                         lightColor = Color.valueOf("45368F");
