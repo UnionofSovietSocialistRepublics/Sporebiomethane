@@ -122,25 +122,6 @@ public class JPTurret{
                         backColor = JPPal.sporeBulletBack;
                         frontColor = JPPal.sporeBulletFront;
                         despawnEffect = Fx.hitBulletColor;
-//                        intervalBullet = new LightningBulletType(){{
-//                            damage = 8;
-//                            collidesAir = false;
-//                            ammoMultiplier = 1f;
-//                            lightningColor = Pal.accent;
-//                            lightningLength = 3;
-//                            lightningLengthRand = 6;
-//                            buildingDamageMultiplier = 0.25f;
-//
-//                            lightningType = new BulletType(0.0001f, 0f){{
-//                                lifetime = Fx.lightning.lifetime;
-//                                hitEffect = Fx.hitLancer;
-//                                despawnEffect = Fx.none;
-//                                hittable = false;
-//                                lightColor = Color.white;
-//                                buildingDamageMultiplier = 0.25f;
-//                            }};
-//                        }};
-
                     }};
                 }};
                 }};
@@ -223,9 +204,6 @@ public class JPTurret{
                     lifetime = 50f;
                     status = JPStatus.stunned;
                     statusDuration = 60f * 2f;
-                    // backColor = Color.valueOf("303a45");
-//                    frontColor = Color.valueOf("303a45");
-//                    lightColor = Color.valueOf("303a45");
                     ammoMultiplier = 1f;
                     lightOpacity = 0.3f;
                 }});
@@ -394,33 +372,10 @@ public class JPTurret{
                 spread = 0f;
             }};
             ammo(
-//                sporePod, new FlakBulletType(7.5f, 225f){{
-//                    lifetime = 25f;
-//                    reloadMultiplier = 0.6f;
-//                    recoils = 2;
-//                    backColor = Color.valueOf("7457ce");
-//                    frontColor = Color.valueOf("7457ce");
-//                    lightColor = Color.valueOf("7457ce");
-//                    fragBullets = 3;
-//                    fragBullet = new BasicBulletType(3f, 2){{
-//                        splashDamage = 5f;
-//                        splashDamageRadius = 15f;
-//                        width = 5f;
-//                        height = 7f;
-//                        backColor = JPPal.sporeBulletBack;
-//                        frontColor = JPPal.sporeBulletFront;
-//                        lightColor = Color.valueOf("8B73C7");
-//                        lifetime = 20f;
-//                        backColor = Pal.gray;
-//                        frontColor = Color.white;
-//                        despawnEffect = Fx.none;
-//                        collidesGround = false;
-//                    }};
-//                }},
                JPItem.biomass, new FlakBulletType(5f, 25f){{
                     lifetime = 45f;
                     fragBullets = 6;
-                    splashDamage = 50f;
+                    splashDamage = 45f;
                     splashDamageRadius = 35f;
                     recoils = 2;
                     backColor = JPPal.sporeBulletBack;
@@ -442,48 +397,39 @@ public class JPTurret{
                         collidesGround = false;
                     }};
                 }},
-                JPItem.naniteAlloy, new FlakBulletType(5f, 25f){{
+                JPItem.naniteAlloy, new FlakBulletType(5f, 5f){{
                     lifetime = 45f;
-                    splashDamage = 50f;
+                    splashDamage = 75f;
                     splashDamageRadius = 35f;
                     recoils = 2;
+                    reloadMultiplier = 0.6f;
                     backColor = JPPal.sporeBulletBack;
                     frontColor = JPPal.sporeBulletFront;
                     lightColor = Color.valueOf("8B73C7");
-                    ammoMultiplier = 1f;
+                    ammoMultiplier = 0.6f;
                     fragBullets = 12;
                     fragVelocityMin = fragVelocityMax = 1f;
                     fragLifeMax = 1f;
                     fragLifeMin = 0.6f;
+                    shoot.shots = 3;
                     fragBullet = new BasicBulletType(3f, 0){{
-                        splashDamage = 25f;
+                        splashDamage = 15f;
                         splashDamageRadius = 15f;
                         width = 5f;
                         height = 7f;
                         weaveMag = 4f;
                         weaveScale = 55f;
+                        homingDelay = 30f;
+                        homingPower = 0.1f;
                         backColor = JPPal.sporeBulletBack;
                         frontColor = JPPal.sporeBulletFront;
-                        lightColor = Color.valueOf("8B73C7");
-                        backColor = Pal.gray;
-                        frontColor = Color.white;
+                        lightColor = Color.valueOf("45368F");
                         despawnEffect = Fx.none;
                         fragBullets = 12;
                         fragVelocityMin = fragVelocityMax = 1f;
                         fragLifeMax = 1f;
                         fragLifeMin = 1f;
                         collidesGround = false;
-                        fragBullet = new BasicBulletType(3f, 45){{
-                            width = 5f;
-                            height = 7f;
-                            backColor = JPPal.sporeBulletBack;
-                            frontColor = JPPal.sporeBulletFront;
-                            lightColor = Color.valueOf("45368F");
-                            lifetime = 20f;
-                            backColor = Pal.gray;
-                            frontColor = Color.white;
-                            collidesGround = false;
-                        }};
                     }};
                 }});
                 coolant = consumeCoolant(0.1f);
@@ -623,8 +569,6 @@ public class JPTurret{
                 }},
                JPItem.biomass, new BasicBulletType(5f, 60f){{
                     lifetime = 45f;
-//                    splashDamage = 15f;
-//                    splashDamageRadius = 15f;
                     backColor = JPPal.sporeBulletBack;
                     frontColor = JPPal.sporeBulletFront;
 //                    lightColor = Color.valueOf("8B73C7");
@@ -718,4 +662,4 @@ public class JPTurret{
             shownPlanets.add(Planets.serpulo);
             shownPlanets.add(Planets.erekir);
         }};
-}};
+}}
