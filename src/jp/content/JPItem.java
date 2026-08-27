@@ -14,8 +14,7 @@ public class JPItem{
 
     public static void load(){
         tree = new Item("tree", Color.valueOf("245485")){{
-            shownPlanets.add(Planets.serpulo);
-            shownPlanets.add(Planets.erekir);
+            hidden=true;
         }};
         azurite = new Item("azurite", Color.valueOf("245485")){{
             hardness = 3;

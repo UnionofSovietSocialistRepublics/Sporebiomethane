@@ -5,6 +5,7 @@ import mindustry.world.Block;
 import mindustry.world.blocks.defense.Wall;
 import mindustry.world.blocks.environment.*;
 import jp.content.*;
+import mindustry.world.meta.BuildVisibility;
 
 import static mindustry.content.Items.silicon;
 import static mindustry.type.ItemStack.with;
@@ -46,7 +47,7 @@ public class JPEnv {
 			variants = 2;
 		}};
         blackBoulder = new Wall("blackBoulder"){{
-            requirements(Category.effect, with(silicon, 270));
+            requirements(Category.effect, BuildVisibility.editorOnly, with(silicon, 270));
             size = 2;
             health = 2000;
 		}};
