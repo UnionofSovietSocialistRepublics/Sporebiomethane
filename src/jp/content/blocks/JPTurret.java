@@ -419,10 +419,10 @@ public class JPTurret{
                         splashDamageRadius = 15f;
                         width = 5f;
                         height = 7f;
-                        weaveMag = 2f;
-                        weaveScale = 35f;
+                        weaveMag = 4f;
+                        weaveScale = 75f;
                         homingDelay = 20f;
-                        homingPower = 0.5f;
+                        homingPower = 0.3f;
                         backColor = JPPal.sporeBulletBack;
                         frontColor = JPPal.sporeBulletFront;
                         lightColor = Color.valueOf("45368F");
