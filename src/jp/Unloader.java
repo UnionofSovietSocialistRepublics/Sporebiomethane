@@ -27,8 +27,8 @@ public class Unloader extends Mod{
         Vars.mods.locateMod("jp").meta.subtitle="I have nothing but my larp, and I want...";
         break;
         case 3:
-        Vars.mods.locateMod("jp").meta.author="ssybaordyH & seluceloM retaW";
-        Vars.mods.locateMod("jp").meta.subtitle="...gnorw si gnihtemoS ?gnorw gnihtemos sI";
+        Vars.mods.locateMod("jp").meta.author="Hydroabyss & Water Molecules";
+        Vars.mods.locateMod("jp").meta.subtitle="gradlew jar";
         break;
         case 4:
         Vars.mods.locateMod("jp").meta.author="Hydrogen & Oxygen";

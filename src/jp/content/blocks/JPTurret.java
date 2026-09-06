@@ -10,6 +10,7 @@ import mindustry.entities.*;
 import mindustry.entities.bullet.*;
 import mindustry.entities.part.*;
 import mindustry.entities.pattern.*;
+import mindustry.entities.effect.*;
 import mindustry.gen.*;
 import mindustry.graphics.*;
 import mindustry.type.*;
@@ -170,8 +171,8 @@ public class JPTurret{
                     lightOpacity = 0.3f;
                 }},
                 JPItem.biomass, new BasicBulletType(5f, 25f){{
-                    height = 10f;
-                    width = 6f;
+                    height = 15f;
+                    width = 11f;
                     sprite = "jp-oarch-bullet";
                     lifetime = 50f;
                     splashDamage = 25f;
@@ -195,15 +196,15 @@ public class JPTurret{
                         lightOpacity = 0.3f;
                     }};
                 }},
+                // Nanite ammo WIP
                 JPItem.vanadiumCarbideAlloy, new BasicBulletType(5f, 95f){{
-                    reloadMultiplier = 0.5f;
-                    height = 10f;
-                    width = 6f;
-                    backSprite="jp-oarch-bullet-back";
+                    reloadMultiplier = 0.2f;
+                    height = 15f;
+                    width = 11f;
                     sprite = "jp-oarch-bullet";
                     lifetime = 50f;
                     status = JPStatus.stunned;
-                    statusDuration = 60f * 2f;
+                    statusDuration = 60f * 1f;
                     ammoMultiplier = 1f;
                     lightOpacity = 0.3f;
                 }});
@@ -257,7 +258,8 @@ public class JPTurret{
                         hittable = false;
                         lightColor = Color.white;
                         buildingDamageMultiplier = 0.25f;
-                    }};}};
+                    }};
+                    }};
                 fragBullets = 1;
                 fragRandomSpread = fragAngle = 0;
                 fragVelocityMin = fragLifeMin = 0.8f;
@@ -354,7 +356,6 @@ public class JPTurret{
 
         flakAccelerator = new ItemTurret("flakAccelerator"){{
             requirements(Category.turret, with(graphite, 125, silicon, 100, JPItem.biomass, 75));
-            envEnabled = Env.spores;
             health = 1250;
             size = 3;
             rotateSpeed = 10f;
@@ -367,6 +368,7 @@ public class JPTurret{
             ammoUseEffect = Fx.casing1;
             targetGround = false;
             inaccuracy = 2f;
+            envEnabled = Env.spores;
             shoot = new ShootAlternate(){{
                 barrels = 2;
                 spread = 0f;
@@ -375,17 +377,17 @@ public class JPTurret{
             }};
             ammo(
                JPItem.biomass, new FlakBulletType(5f, 25f){{
-                    lifetime = 45f;
-                    fragBullets = 6;
-                    splashDamage = 45f;
+                    splashDamage = 55f;
                     splashDamageRadius = 35f;
+                    lifetime = 45f;
                     recoils = 2;
                     backColor = JPPal.sporeBulletBack;
                     frontColor = JPPal.sporeBulletFront;
                     lightColor = JPPal.sporeBulletBack;
                     ammoMultiplier = 1f;
-                    fragBullet = new BasicBulletType(3f, 15){{
-                        splashDamage = 25f;
+                    fragBullets = 6;
+                    fragBullet = new BasicBulletType(3f, 10){{
+                        splashDamage = 5f;
                         splashDamageRadius = 15f;
                         width = 5f;
                         height = 7f;
@@ -400,35 +402,53 @@ public class JPTurret{
                     }};
                 }},
                 JPItem.naniteAlloy, new FlakBulletType(3f, 5f){{
-                    lifetime = 90f;
-                    splashDamage = 75f;
-                    splashDamageRadius = 35f;
+                    splashDamage = 15f;
+                    splashDamageRadius = 40f;
+                    rangeChange = -30f;
+                    lifetime = 65f;
+                    width = 7f;
+                    height = 11f;
+                    shrinkX = 1f;
                     recoils = 2;
-                    reloadMultiplier = 0.2f;
+                    reloadMultiplier = 0.4f;
+                    fragBullets = 12;
+                    fragRandomSpread = 180f;
+                    fragVelocityMin = 0.6f; fragVelocityMax = 1f;
+                    fragLifeMax = 1.2f; fragLifeMin = 1f;
+                    trailColor = Color.valueOf("45368F");
                     backColor = JPPal.sporeBulletBack;
                     frontColor = JPPal.sporeBulletFront;
                     lightColor = Color.valueOf("8B73C7");
-                    fragBullets = 12;
-                    fragVelocityMin = fragVelocityMax = 1f;
-                    fragLifeMax = 0.6f;
-                    fragLifeMin = 1f;
-                    shoot.shots = 3;
-                    shoot.shotDelay = 10f;
-                    fragBullet = new BasicBulletType(5f, 0){{
+                    trailChance = 1f;
+                    trailInterval = 1.6f;
+                    trailEffect = new ParticleEffect(){{
+                        particles = 1;
+                        sizeFrom = 0f;
+                        sizeTo = 5f;
+                        length = 5.5f;
+                        cone = 360f;
+                        lifetime = 25f;
+                        colorTo = Color.valueOf("45368F");
+                        hittable = false;
+                        reflectable = false;
+                    }};
+                    fragBullet = new BasicBulletType(-3.5f, 1){{
                         splashDamage = 45f;
-                        splashDamageRadius = 15f;
+                        splashDamageRadius = 20f;
                         width = 5f;
                         height = 7f;
-                        weaveMag = 5f;
+                        weaveMag = 4f;
                         weaveScale = 115f;
                         homingDelay = 20f;
-                        homingRange = 80f;
+                        homingRange = 200f;
                         homingPower = 0.3f;
                         backColor = JPPal.sporeBulletBack;
                         frontColor = JPPal.sporeBulletFront;
                         lightColor = Color.valueOf("45368F");
                         despawnEffect = Fx.none;
                         collidesGround = false;
+                        trailLength = 5;
+                        trailColor = Color.valueOf("45368F");
                     }};
                 }});
                 coolant = consumeCoolant(0.1f);
@@ -473,33 +493,53 @@ public class JPTurret{
             shoot.shotDelay = 10f;
             inaccuracy = 2f;
             ammo(
-                sporePod, new BasicBulletType(){{
-                    lifetime = 45f;
-                    damage = 100f;
-                    speed = 8f;
-                    backColor = Color.valueOf("7457ce");
-                    frontColor = Color.valueOf("7457ce");
-                    lightColor = Color.valueOf("7457ce");
-                    width = height = 15f;
-                    ammoMultiplier = 4f;
+               JPItem.biomass, new BasicBulletType(4.15f, 225f){{
+                    width = 11f; height = 15f;
+                    lifetime = 75f;
+                    ammoMultiplier = 1f;
+                    collidesGround = true;
+                    pierceArmor = true;
+                    backColor = JPPal.sporeBulletBack;
+                    frontColor = JPPal.sporeBulletFront;
                     shootEffect = Fx.shootSmall;
                     smokeEffect = Fx.shootSmallSmoke;
-                    collidesGround = true;
+                    despawnEffect = Fx.blastExplosion;
                 }},
-               JPItem.biomass, new BasicBulletType(){{
-                lifetime = 75f;
-                damage = 225f;
-                speed = 4f;
-                backColor = JPPal.sporeBulletBack;
-                frontColor = JPPal.sporeBulletFront;
-                ammoMultiplier = 1f;
-                width = height = 15f;
-                shootEffect = Fx.shootSmall;
-                smokeEffect = Fx.shootSmallSmoke;
-                collidesGround = true;
-                despawnEffect = Fx.blastExplosion;
-                pierceArmor = true;
-                }});
+                JPItem.naniteAlloy, new BasicBulletType(2f, 325f){{
+                    width = 11f; height = 15f;
+                    shrinkX = 0;
+                    shrinkY = 0;
+                    lifetime = 135f;
+                    reloadMultiplier = 2f;
+                    shootPattern = new ShootPattern(){{
+                        shots = 1;
+                    }};
+                    pierce = true;
+                    pierceCap = 4;
+                    pierceArmor = true;
+                    homingDelay = 20f;
+                    homingRange = 80f;
+                    homingPower = 0.3f;
+                    backColor = JPPal.sporeBulletBack;
+                    frontColor = JPPal.sporeBulletFront;
+                    shootEffect = Fx.shootSmall;
+                    smokeEffect = Fx.shootSmallSmoke;
+                    despawnEffect = Fx.blastExplosion;
+                    trailChance = 1f;
+                    trailInterval = 1f;
+                    trailEffect = new ParticleEffect(){{
+                        particles = 1;
+                        sizeFrom = 1f;
+                        sizeTo = 6f;
+                        length = 6f;
+                        cone = 360f;
+                        lifetime = 9f;
+                        colorTo = Color.valueOf("45368F");
+                        hittable = false;
+                        reflectable = false;
+                    }};
+                }}
+                );
             shootSound = JPSounds.Arty;
             coolantMultiplier = 0.5f;
             coolant = consumeCoolant(0.5f);
@@ -525,58 +565,67 @@ public class JPTurret{
             shootSound = Sounds.shootSalvo;
             ammoUseEffect = Fx.casing1;
             ammo(
-               sporePod, new BasicBulletType(5f, 10f){{
+               JPItem.biomass, new BasicBulletType(5f, 70f){{
+                    width = 11f; height = 15f;
                     lifetime = 45f;
-                    splashDamage = 25f;
-                    splashDamageRadius = 40f;
-                    reloadMultiplier = 0.5f;
-                    backColor = Color.valueOf("7457ce");
-                    frontColor = Color.valueOf("7457ce");
-                    lightColor = Color.valueOf("7457ce");
-                    height = 15f;
-                    width = (height-2f);
-                    shootEffect = Fx.shootSmall;
-                    smokeEffect = Fx.shootSmallSmoke;
-                    collidesGround = true;
-                    despawnEffect = Fx.blastExplosion;
-                    fragBullets = 6;
-                    recoils = 2;
-                    fragBullet = new BasicBulletType(4f, 10f){{
-                        height = 10f;
-                        width = (height-3f);
-                        splashDamage = 10f;
-                        splashDamageRadius = 40f;
-                        backColor = Color.valueOf("7457ce");
-                        frontColor = Color.valueOf("7457ce");
-                        lightColor = Color.valueOf("7457ce");
-                        lifetime = 30f;
-                        collidesGround = true;
-                        collidesAir = true;
-                        fragBullets = 6;
-                        fragBullet = new BasicBulletType(3f, 5f){{
-                            height = 6f;
-                            width = (height-2f);
-                            splashDamage = 5f;
-                            splashDamageRadius = 40f;
-                            backColor = Color.valueOf("7457ce");
-                            frontColor = Color.valueOf("7457ce");
-                            lifetime = 20f;
-                            despawnEffect = Fx.none;
-//                            collidesGround = false;
-                        }};
-                    }};
-                }},
-               JPItem.biomass, new BasicBulletType(5f, 60f){{
-                    lifetime = 45f;
+                    ammoMultiplier = 1f;
                     backColor = JPPal.sporeBulletBack;
                     frontColor = JPPal.sporeBulletFront;
-//                    lightColor = Color.valueOf("8B73C7");
-                    ammoMultiplier = 1f;
-                    width = height = 15f;
                     shootEffect = Fx.shootSmall;
                     smokeEffect = Fx.shootSmallSmoke;
-                    collidesGround = true;
-                }});
+                }},
+               JPItem.naniteAlloy, new BasicBulletType(2f, 20f){{
+                    lifetime = 85f;
+                    width = 11f; height = 15f;
+                    pierce = true;
+                    backColor = JPPal.sporeBulletBack;
+                    frontColor = JPPal.sporeBulletFront;
+                    shootEffect = Fx.shootSmall;
+                    smokeEffect = Fx.shootSmallSmoke;
+                    trailChance = 1f;
+                    trailInterval = 1f;
+                    inaccuracy = 25f;
+                    velocityScaleRandMin = 0.8f; velocityScaleRandMax = 1.2f;
+                    trailEffect = new ParticleEffect(){{
+                        particles = 1;
+                        sizeFrom = 1f;
+                        sizeTo = 6f;
+                        length = 6f;
+                        cone = 360f;
+                        lifetime = 9f;
+                        colorTo = Color.valueOf("45368F");
+                        hittable = false;
+                        reflectable = false;
+                    }};
+                    intervalBullets=2;
+                    intervalRandomSpread=20f;
+                    intervalDelay = 20f;
+                    bulletInterval = 40f;
+                    intervalSpread= 240f;
+                    // intervalAngle = 120f;
+                    intervalBullet = new BasicBulletType(4f, 40f){{
+                        lifetime = 40f;
+                        trailChance = 1f;
+                        trailInterval = 1f;
+                        pierce = true;
+                        backColor = JPPal.sporeBulletBack;
+                        frontColor = JPPal.sporeBulletFront;
+                        shootEffect = Fx.shootSmall;
+                        smokeEffect = Fx.shootSmallSmoke;
+                        trailEffect = new ParticleEffect(){{
+                            particles = 1;
+                            sizeFrom = 1f;
+                            sizeTo = 6f;
+                            length = 6f;
+                            cone = 360f;
+                            lifetime = 9f;
+                            colorTo = Color.valueOf("45368F");
+                            hittable = false;
+                            reflectable = false;
+                        }};
+                    }};
+                }}
+                );
                 coolantMultiplier = 0.75f;
                 coolant = consumeCoolant(0.5f);
             drawer = new DrawTurret(){{
@@ -625,18 +674,22 @@ public class JPTurret{
                     shootEffect = JPFx.fsinsShoot;
                     hitEffect = JPFx.fsinsHit;
                     smokeEffect = Fx.smokeCloud;
-                    trailEffect = JPFx.fsinsTrail;
                     despawnEffect =  JPFx.fsinsBomb;
+                    trailEffect = JPFx.fsinsTrail;
                     trailLength = 20;
                     trailColor = Color.valueOf("8B73C7");
                     ammoMultiplier = 1f;
                     pierceArmor = true;
                     hitShake = 6f;
             }},
-                JPItem.vanadiumCarbideAlloy, new PointBulletType(){{
+                JPItem.naniteAlloy, new PointBulletType(){{
                     speed = 500f;
-                    damage = 8000f;
-                    reloadMultiplier = 0.5f;
+                    damage = 1000;
+                    shootPattern = new ShootPattern(){{
+                        shots = 6;
+                        shotDelay = 20f;
+                    }};
+                    reloadMultiplier = 0.2f;
                     buildingDamageMultiplier = 0.25f;
                     shootEffect = JPFx.fsinsShoot;
                     hitEffect = JPFx.fsinsHit;
@@ -644,7 +697,7 @@ public class JPTurret{
                     trailEffect = JPFx.fsinsTrail;
                     despawnEffect =  JPFx.fsinsBomb;
                     trailLength = 20;
-                    trailColor = Color.valueOf("303a45");
+                    trailColor = Color.valueOf("8B73C7");
                     ammoMultiplier = 2f;
                     pierceArmor = true;
                     hitShake = 6f;
