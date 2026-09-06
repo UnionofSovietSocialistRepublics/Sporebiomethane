@@ -410,8 +410,8 @@ public class JPTurret{
                     lightColor = Color.valueOf("8B73C7");
                     fragBullets = 12;
                     fragVelocityMin = fragVelocityMax = 1f;
-                    fragLifeMax = 1.2f;
-                    fragLifeMin = 2f;
+                    fragLifeMax = 0.6f;
+                    fragLifeMin = 1f;
                     shoot.shots = 3;
                     shoot.shotDelay = 10f;
                     fragBullet = new BasicBulletType(5f, 0){{
@@ -419,8 +419,8 @@ public class JPTurret{
                         splashDamageRadius = 15f;
                         width = 5f;
                         height = 7f;
-                        weaveMag = 2f;
-                        weaveScale = 15f;
+                        weaveMag = 5f;
+                        weaveScale = 115f;
                         homingDelay = 20f;
                         homingRange = 80f;
                         homingPower = 0.3f;
