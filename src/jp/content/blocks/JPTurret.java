@@ -419,8 +419,8 @@ public class JPTurret{
                         splashDamageRadius = 15f;
                         width = 5f;
                         height = 7f;
-                        weaveMag = 3f;
-                        weaveScale = 85f;
+                        weaveMag = 2f;
+                        weaveScale = 15f;
                         homingDelay = 20f;
                         homingRange = 80f;
                         homingPower = 0.3f;
