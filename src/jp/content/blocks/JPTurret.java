@@ -510,7 +510,6 @@ public class JPTurret{
                     shrinkX = 0;
                     shrinkY = 0;
                     lifetime = 135f;
-                    reloadMultiplier = 2f;
                     shootPattern = new ShootPattern(){{
                         shots = 1;
                     }};
