@@ -32,7 +32,7 @@ public class JPtechtree {
                     });
                     
                 });
-    });
+            });
             
             node(JPProduction.nanoProcessor, Seq.with(new SectorComplete(JPsectorsHM.skiHM)), () -> {
                 node(JPProduction.vanadiumCarbideAlloyer);
@@ -101,7 +101,9 @@ public class JPtechtree {
                 nodeProduce(JPItem.fluoresilt, () -> {
                     nodeProduce(JPItem.fluorite, () -> {});
                 });
+
             });
+            nodeProduce(JPOther.brokenMono, () -> {});
             });
 }else {
             nodeRoot("Spore Biomechs", JPItem.tree, false, () -> {
@@ -193,4 +195,6 @@ public class JPtechtree {
                     nodeProduce(JPItem.fluorite, () -> {});
                 });
             });
-});}}};
+                nodeProduce(JPOther.brokenMono, () -> {});
+        });
+    }}};

@@ -24,7 +24,7 @@ public class JPsectors{
         dig = new SectorPreset("dig", serpulo, 198){{
             difficulty = 3;
             captureWave = 25;
-            //alwaysUnlocked = true;
+//            alwaysUnlocked = true;
         }};
         birth = new SectorPreset("birth", serpulo, 263){{
             difficulty = 4;

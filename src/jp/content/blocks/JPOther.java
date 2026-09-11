@@ -1,23 +1,47 @@
 package jp.content.blocks;
 
+import arc.graphics.Color;
 import mindustry.content.*;
+import mindustry.entities.bullet.BasicBulletType;
+import mindustry.entities.bullet.BulletType;
+import mindustry.entities.bullet.EmptyBulletType;
+import mindustry.entities.bullet.LightningBulletType;
+import mindustry.graphics.Pal;
 import mindustry.type.*;
 import mindustry.world.*;
 import mindustry.world.blocks.defense.*;
+import mindustry.world.blocks.defense.turrets.PowerTurret;
 import mindustry.world.blocks.storage.*;
 import jp.content.*;
 import mindustry.world.meta.*;
 
+import static mindustry.content.UnitTypes.mono;
 import static mindustry.type.ItemStack.*;
 import static mindustry.content.Items.*;
 
 
 public class JPOther{
     public static Block
-    vanadiumCarbideWallLarge,hatchery,hive,nydusaeCore,lunarCore;
+    brokenMono,vanadiumCarbideWallLarge,hatchery,hive,nydusaeCore,lunarCore;
 
         public static void load(){
-        
+        brokenMono = new PowerTurret("brokenMono"){{
+            requirements(Category.effect, BuildVisibility.sandboxOnly, with(silicon, 5));
+            health = 100;
+            range = 0;
+            size = 1;
+            shoot.shotDelay = 60f;
+            shootY=0f;
+            shootType = new EmptyBulletType(){{
+                lifetime = 0f;
+                despawnUnit = mono;
+                killShooter = true;
+            }};
+            consumePower(4f);
+            playerControllable = false;
+            alwaysShooting=true;
+            createRubble = false;
+        }};
         vanadiumCarbideWallLarge = new Wall("vanadiumCarbideWallLarge"){{
             requirements(Category.defense, with(JPItem.vanadiumCarbideAlloy, 40));
             health = 6500;
@@ -55,6 +79,7 @@ public class JPOther{
             shownPlanets.add(Planets.serpulo);
             shownPlanets.add(Planets.erekir);
         }};
+
         nydusaeCore = new CoreBlock("nydusaeCore"){{
             requirements(Category.effect, with(JPItem.biomass, 12000, JPItem.naniteAlloy, 8000, JPItem.vanadiumCarbideAlloy, 4000, silicon, 8000, surgeAlloy, 6000));
             envEnabled = Env.spores;;
