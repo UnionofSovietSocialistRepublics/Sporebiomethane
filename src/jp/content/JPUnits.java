@@ -32,9 +32,9 @@ public class JPUnits {
     //missiles
     //Bomb,
     //Floaty
-    guardian,thera,impReincranation,drone,harvester,interceptor,hiveDefender,hiveSentinel,sporophage,rizomorph,
+    guardian,thera,impReincranation,drone,interceptor,hiveDefender,hiveSentinel,sporophage,rizomorph,
     //Le tether
-    zeta,
+    zeta,harvester,
     //Winged
     yigg, spongillery, lipus, lepus, malarion, indus,
     //Modded Planet Exclusive
@@ -42,7 +42,8 @@ public class JPUnits {
     spark;
     
     private static final ObjectMap.Entry<Class<? extends Entityc>, Prov<? extends Entityc>>[] types = new ObjectMap.Entry[]{
-            prov(JPCopterUnitEntity.class, JPCopterUnitEntity::new)
+            prov(JPCopterUnitEntity.class, JPCopterUnitEntity::new),
+            prov(JPHarvesterUnitEntity.class, JPHarvesterUnitEntity::new)
     };
 
     private static final ObjectIntMap<Class<? extends Entityc>> idMap = new ObjectIntMap<>();
@@ -117,6 +118,33 @@ public class JPUnits {
             allowedInPayloads = false;
             createWreck = false;
             outlineColor = Color.valueOf("303a45");
+        }};
+
+        harvester = new UnitType("harvester"){{
+            this.constructor = JPHarvesterUnitEntity::create;
+            controller = u -> new JPMiningAI();
+            speed = 1f;
+            hitSize = 8f;
+            health = 120;
+            mineSpeed = 3.5f;
+            buildSpeed = 0.75f;
+            mineTier = 3;
+            drag = 0.05f;
+            accel = 0.11f;
+            itemCapacity = 10;
+            engineOffset = 5f;
+            engineSize = 2f;
+            isEnemy = false;
+            allowedInPayloads = false;
+            logicControllable = false;
+            playerControllable = false;
+            flying = true;
+            hidden = true;
+            outlineColor = Color.valueOf("303a45");
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f * 2f) * 100f;}});
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
         }};
 
         zergling = new UnitType("zergling"){{
@@ -809,31 +837,6 @@ public class JPUnits {
                     knockback = -1.24f;
                 }};
             }});
-            outlineColor = Color.valueOf("303a45");
-            abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f * 2f) * 100f;}});
-
-            shownPlanets.add(Planets.serpulo);
-            shownPlanets.add(Planets.erekir);
-        }};
-        harvester = new UnitType("harvester"){{
-            this.constructor = BuildingTetherPayloadUnit::create;
-            controller = u -> new JPMiningAI();
-            isEnemy = false;
-            allowedInPayloads = false;
-            logicControllable = false;
-            playerControllable = false;
-            speed = 1f;
-            hitSize = 8f;
-            health = 120;
-            mineSpeed = 3.5f;
-            buildSpeed = 0.75f;
-            mineTier = 3;
-            drag = 0.05f;
-            accel = 0.11f;
-            itemCapacity = 10;
-            engineOffset = 5f;
-            engineSize = 4f;
-            flying = true;
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f * 2f) * 100f;}});
 

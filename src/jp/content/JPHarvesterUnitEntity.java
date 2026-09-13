@@ -1,23 +1,11 @@
 package jp.content;
 
+import arc.util.Log;
 import arc.util.Nullable;
-import mindustry.gen.Building;
-import mindustry.gen.BuildingTetherc;
-import mindustry.gen.Call;
-import mindustry.gen.UnitEntity;
+import mindustry.gen.*;
+import mindustry.world.blocks.storage.*;
 
-public class JPHarvesterUnitEntity extends UnitEntity implements BuildingTetherc {
-
-    public @Nullable Building building;
-
-    @Override
-    public Building building() {
-        return null;
-    }
-
-    @Override
-    public void building(Building building) {
-    }
+public class JPHarvesterUnitEntity extends BuildingTetherPayloadUnit {
 
     @Override
     public String toString() {
@@ -29,12 +17,12 @@ public class JPHarvesterUnitEntity extends UnitEntity implements BuildingTetherc
         return JPUnits.classID(getClass());
     }
 
+    public static JPHarvesterUnitEntity create(){
+        return new JPHarvesterUnitEntity();
+    }
+//  Trolled
     @Override
-    public void update(){
-        if(building == null || !building.isValid() || building.team != team){
-            Call.unitDespawn(self());
-        }
-
-        super.update();
+    @Nullable public CoreBlock.CoreBuild closestCore(){
+        return null;
     }
 }

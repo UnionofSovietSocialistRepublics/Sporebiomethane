@@ -9,17 +9,16 @@ import mindustry.type.*;
 import mindustry.world.*;
 
 import static mindustry.Vars.*;
-
+// CargoAI If it was a miner instead of a delivery guy
 public class JPMiningAI extends AIController {
     public boolean mining = true;
     public Item targetItem;
     public Tile ore;
     public static float emptyWaitTime = 60f * 2f, dropSpacing = 60f * 1.5f;
-    public static float transferRange = 20f, moveRange = 6f, moveSmoothing = 20f;
+    public static float transferRange = 20f, moveRange = 4f, moveSmoothing = 20f;
 
     public @Nullable JPMiningOutPost.JPMiningOutpostBuild outpostBuild;
     public @Nullable Item itemTarget;
-
     @Override
     public void updateMovement() {
         if (!(unit instanceof BuildingTetherc tether) || tether.building() == null) return;
@@ -32,6 +31,7 @@ public class JPMiningAI extends AIController {
         if (mining) {
 //          If requested item is not the same as item on unit OR outpost haven't requested item, dump item and go back to outpost.
             if((outpostBuild.item != unit.item()&&unit.hasItem())||outpostBuild.item==null){
+                unit.mineTile = null;
                 moveTo(build, moveRange, moveSmoothing);
                 if (unit.within(outpostBuild, transferRange) && timer.get(timerTarget2, dropSpacing)) {
                     int max = outpostBuild.acceptStack(unit.item(), unit.stack.amount, unit);
@@ -40,7 +40,6 @@ public class JPMiningAI extends AIController {
                         Call.transferItemTo(unit, unit.item(), max, unit.x, unit.y, outpostBuild);
                     }
                     unit.clearItem();
-                    unit.mineTile = null;
                     return;
                 }
             }
