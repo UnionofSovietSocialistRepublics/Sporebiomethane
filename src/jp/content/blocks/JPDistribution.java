@@ -34,6 +34,8 @@ public class JPDistribution{
         consumePower(240f / 60f);
         itemCapacity = 100;
 
+        shownPlanets.add(Planets.serpulo);
+        shownPlanets.add(Planets.erekir);
     }};
 
     }};
