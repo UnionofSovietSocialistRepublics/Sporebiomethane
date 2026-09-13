@@ -7,7 +7,6 @@ import arc.struct.*;
 import arc.util.*;
 import arc.util.io.*;
 import mindustry.*;
-import mindustry.content.*;
 import mindustry.gen.*;
 import mindustry.graphics.*;
 import mindustry.type.*;
@@ -17,7 +16,7 @@ import mindustry.world.blocks.units.*;
 import static mindustry.Vars.content;
 import static mindustry.Vars.indexer;
 
-public class JPMiningOutPost extends UnitCargoLoader {
+public class JPMiningOutpost extends UnitCargoLoader {
     public float unitBuildTime = 60f * 8f;
     public float staleTimeDuration = 60f * 6f;
     public float polyStroke = 1.8f, polyRadius = 6f;
@@ -25,7 +24,7 @@ public class JPMiningOutPost extends UnitCargoLoader {
     public float polyRotateSpeed = 1f;
     public Color polyColor = Pal.accent;
 
-    public JPMiningOutPost(String name) {
+    public JPMiningOutpost(String name) {
         super(name);
         unitType = JPUnits.harvester;
         update = solid = true;
@@ -86,7 +85,7 @@ public class JPMiningOutPost extends UnitCargoLoader {
             Seq<Item> mineable = content.items().select(item ->
                     (indexer.hasOre(item) && JPUnits.harvester.mineFloor && item.hardness <= JPUnits.harvester.mineTier)
                             ||(indexer.hasWallOre(item) && JPUnits.harvester.mineWalls && item.hardness <= JPUnits.harvester.mineTier));
-            ItemSelection.buildTable(JPMiningOutPost.this, table, mineable, () -> item, this::configure);
+            ItemSelection.buildTable(JPMiningOutpost.this, table, mineable, () -> item, this::configure);
         }
 
         @Override

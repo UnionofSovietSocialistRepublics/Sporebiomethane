@@ -23,8 +23,6 @@ import mindustry.type.unit.*;
 import mindustry.type.weapons.*;
 import mindustry.world.meta.*;
 
-import static mindustry.Vars.*;
-
 public class JPUnits {
     public static UnitType
     //Legs

@@ -1,6 +1,5 @@
 package jp.content.blocks;
 
-import mindustry.content.Liquids;
 import mindustry.content.Planets;
 import mindustry.type.*;
 import mindustry.world.*;
@@ -26,7 +25,7 @@ public class JPDistribution{
         shownPlanets.add(Planets.erekir);
     }};
 
-    harvesterBay = new JPMiningOutPost("harvesterBay"){{
+    harvesterBay = new JPMiningOutpost("harvesterBay"){{
         requirements(Category.distribution, with(silicon, 95,JPItem.biomass, 45,JPItem.naniteAlloy,15));
         health = 240;
         size = 2;

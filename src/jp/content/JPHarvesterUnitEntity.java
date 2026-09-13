@@ -1,6 +1,5 @@
 package jp.content;
 
-import arc.util.Log;
 import arc.util.Nullable;
 import mindustry.gen.*;
 import mindustry.world.blocks.storage.*;

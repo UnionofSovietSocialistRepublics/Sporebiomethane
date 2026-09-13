@@ -5,7 +5,6 @@ import mindustry.entities.bullet.*;
 import mindustry.type.*;
 import mindustry.world.*;
 import mindustry.world.blocks.defense.*;
-import mindustry.world.blocks.defense.turrets.PowerTurret;
 import mindustry.world.blocks.storage.*;
 import jp.content.*;
 import mindustry.world.meta.*;

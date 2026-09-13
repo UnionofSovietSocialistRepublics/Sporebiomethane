@@ -1,8 +1,6 @@
 package jp.content;
 
 import arc.util.*;
-import mindustry.ai.types.*;
-import mindustry.content.Blocks;
 import mindustry.entities.units.AIController;
 import mindustry.gen.*;
 import mindustry.type.*;
@@ -17,14 +15,14 @@ public class JPMiningAI extends AIController {
     public static float emptyWaitTime = 60f * 2f, dropSpacing = 60f * 1.5f;
     public static float transferRange = 20f, moveRange = 4f, moveSmoothing = 20f;
 
-    public @Nullable JPMiningOutPost.JPMiningOutpostBuild outpostBuild;
+    public @Nullable JPMiningOutpost.JPMiningOutpostBuild outpostBuild;
     public @Nullable Item itemTarget;
     @Override
     public void updateMovement() {
         if (!(unit instanceof BuildingTetherc tether) || tether.building() == null) return;
         var build = tether.building();
 //      actually let me use unloadPoint's fucking function (why, Java?)
-        if (build instanceof JPMiningOutPost.JPMiningOutpostBuild outpost) {
+        if (build instanceof JPMiningOutpost.JPMiningOutpostBuild outpost) {
             outpostBuild = outpost;
         }
 

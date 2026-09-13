@@ -1,6 +1,5 @@
 package jp.content;
 
-import arc.math.Mathf;
 import mindustry.entities.bullet.*;
 import mindustry.gen.Bullet;
 import arc.util.*;
