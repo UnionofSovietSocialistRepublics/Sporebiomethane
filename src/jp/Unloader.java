@@ -13,7 +13,7 @@ public class Unloader extends Mod{
     public Unloader(){
         Log.info("Unloading the storm");
         Events.on(ClientLoadEvent.class, e -> {
-        double random = Math.floor(Math.random() * 5);
+        double random = Math.floor(Math.random() * 6);
         //undouble the random (java double are wacky, and they refuse to be inside switch case)
         int rand = (int) Math.round(random);
         //replace subtitle and author with funky thing
@@ -28,11 +28,11 @@ public class Unloader extends Mod{
         break;
         case 3:
         Vars.mods.locateMod("jp").meta.author="Hydroabyss & Water Molecules";
-        Vars.mods.locateMod("jp").meta.subtitle="gradlew jar";
+        Vars.mods.locateMod("jp").meta.subtitle="It is a tradition at";
         break;
         case 4:
-        Vars.mods.locateMod("jp").meta.author="Hydrogen & Oxygen";
-        Vars.mods.locateMod("jp").meta.subtitle="2 H2 + O2 = 2 H2O!";
+        Vars.mods.locateMod("jp").meta.author="Hydroabyss & Water Molecules";
+        Vars.mods.locateMod("jp").meta.subtitle="Happy bug squashing!";
         break;
         case 5:
         Vars.mods.locateMod("jp").meta.author="Abyss & Duke";
