@@ -68,6 +68,12 @@ public class JPtechtree {
             node(JPProduction.extractor, Seq.with(new SectorComplete(JPsectorsHM.digHM)),() -> {
                 node(JPProduction.zincExtractor, Seq.with(new SectorComplete(JPsectorsHM.digHM)), () -> {
             });
+
+            node(JPDistribution.biomassPipe, Seq.with(new SectorComplete(JPsectorsHM.digHM)), () -> {
+                node(JPDistribution.harvesterBay, Seq.with(new SectorComplete(JPsectorsHM.digHM)), () -> {
+                });
+            });
+
             });
             node(JPOther.vanadiumCarbideWallLarge);
              node(JPsectorsHM.skiHM, Seq.with(new SectorComplete(frozenForest)), () -> {
@@ -160,8 +166,14 @@ public class JPtechtree {
             });
             node(JPProduction.extractor, Seq.with(new SectorComplete(JPsectors.dig)), () -> {
                 node(JPProduction.zincExtractor, Seq.with(new SectorComplete(JPsectors.dig)), () -> {
+                });
             });
+
+            node(JPDistribution.biomassPipe, Seq.with(new SectorComplete(JPsectors.dig)), () -> {
+                node(JPDistribution.harvesterBay, Seq.with(new SectorComplete(JPsectors.dig)), () -> {
+                });
             });
+
             node(JPOther.vanadiumCarbideWallLarge);
              node(JPsectors.ski, Seq.with(new SectorComplete(frozenForest)), () -> {
                  node(JPsectors.dig, Seq.with(
