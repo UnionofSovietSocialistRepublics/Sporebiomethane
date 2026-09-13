@@ -32,7 +32,7 @@ public class JPUnits {
     //missiles
     //Bomb,
     //Floaty
-    guardian,thera,impReincranation,drone,interceptor,hiveDefender,hiveSentinel,sporophage,rizomorph,
+    guardian,thera,impReincranation,drone,harvester,interceptor,hiveDefender,hiveSentinel,sporophage,rizomorph,
     //Le tether
     zeta,
     //Winged
@@ -292,7 +292,7 @@ public class JPUnits {
             speed = 1.3f;
             hitSize = 8f;
             health = 225;
-            range = 50f;
+            range = 70f;
             legCount = 4;
             weapons.add(new Weapon(){{
                 reload = 5f;
@@ -311,12 +311,13 @@ public class JPUnits {
                     status = JPStatus.dissolving;
                     splashDamage = 250f;
                     splashDamageRadius = 60f;
-                    killShooter = true;
-                    collidesAir = true;
                     buildingDamageMultiplier = 1.25f;
                     shootStatus = StatusEffects.slow;
                     statusDuration = 180f;
                     hitSound = Sounds.explosion;
+                    killShooter = true;
+                    collidesAir = true;
+                    shootOnDeath = true;
                     fragBullets = 6;
                     fragBullet = new LiquidBulletType(JPLiquids.liquidSpore){{
                         lifetime = 17f;
@@ -771,7 +772,6 @@ public class JPUnits {
             shownPlanets.add(Planets.serpulo);
             shownPlanets.add(Planets.erekir);
         }};
-
         drone = new UnitType("drone"){{
             this.constructor = UnitEntity::create;
             controller = u -> new MinerAI();
@@ -809,6 +809,31 @@ public class JPUnits {
                     knockback = -1.24f;
                 }};
             }});
+            outlineColor = Color.valueOf("303a45");
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f * 2f) * 100f;}});
+
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
+        }};
+        harvester = new UnitType("harvester"){{
+            this.constructor = BuildingTetherPayloadUnit::create;
+            controller = u -> new JPMiningAI();
+            isEnemy = false;
+            allowedInPayloads = false;
+            logicControllable = false;
+            playerControllable = false;
+            speed = 1f;
+            hitSize = 8f;
+            health = 120;
+            mineSpeed = 3.5f;
+            buildSpeed = 0.75f;
+            mineTier = 3;
+            drag = 0.05f;
+            accel = 0.11f;
+            itemCapacity = 10;
+            engineOffset = 5f;
+            engineSize = 4f;
+            flying = true;
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f * 2f) * 100f;}});
 
@@ -1130,7 +1155,7 @@ public class JPUnits {
             envEnabled = Env.spores;
             speed = 1.75f;
             health = 215;
-            range = 50f;
+            range = 70f;
             engineOffset = 5f;
             engineSize = 4f;
             rotateSpeed = 7f;
@@ -1220,13 +1245,14 @@ public class JPUnits {
                     statusDuration = 60f* 4.5f;
                     splashDamage = 150f;
                     splashDamageRadius = 60f;
-                    killShooter = true;
-                    collidesAir = true;
                     buildingDamageMultiplier = 1.75f;
                     hitSound = Sounds.explosion;
                     incendChance = 100f;
                     incendSpread = 25f;
                     incendAmount = 25;
+                    killShooter = true;
+                    collidesAir = true;
+                    shootOnDeath = true;
                 }};
                 shootSound = Sounds.explosion;
             }});

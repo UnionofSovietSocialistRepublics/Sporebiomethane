@@ -1,12 +1,7 @@
 package jp.content.blocks;
 
-import arc.graphics.Color;
 import mindustry.content.*;
-import mindustry.entities.bullet.BasicBulletType;
-import mindustry.entities.bullet.BulletType;
-import mindustry.entities.bullet.EmptyBulletType;
-import mindustry.entities.bullet.LightningBulletType;
-import mindustry.graphics.Pal;
+import mindustry.entities.bullet.*;
 import mindustry.type.*;
 import mindustry.world.*;
 import mindustry.world.blocks.defense.*;
@@ -25,10 +20,10 @@ public class JPOther{
     brokenMono,vanadiumCarbideWallLarge,hatchery,hive,nydusaeCore,lunarCore;
 
         public static void load(){
-        brokenMono = new PowerTurret("brokenMono"){{
-            requirements(Category.effect, BuildVisibility.sandboxOnly, with(silicon, 5));
+        brokenMono = new JPDormantUnit("brokenMono"){{
+            requirements(Category.effect, BuildVisibility.editorOnly, with(silicon, 5));
             health = 100;
-            range = 0;
+            range = 100;
             size = 1;
             shoot.shotDelay = 60f;
             shootY=0f;
@@ -39,7 +34,7 @@ public class JPOther{
             }};
             consumePower(4f);
             playerControllable = false;
-            alwaysShooting=true;
+            alwaysShooting= true;
             createRubble = false;
         }};
         vanadiumCarbideWallLarge = new Wall("vanadiumCarbideWallLarge"){{
