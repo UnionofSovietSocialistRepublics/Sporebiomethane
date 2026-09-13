@@ -70,6 +70,7 @@ public class JPELF extends GenericCrafter {
 
         @Override
         public void draw(){
+            super.draw();
             drawer.draw(this);
         }
 

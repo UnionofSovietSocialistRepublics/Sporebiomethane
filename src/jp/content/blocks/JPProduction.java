@@ -214,18 +214,18 @@ public class JPProduction{
             outputLiquid = new LiquidStack(Liquids.neoplasm, 6f / 60f);
             drawer = new DrawMulti(new DrawRegion("-bottom"),
                     new DrawLiquidRegion(Liquids.neoplasm),
-                    new DrawAdvancedPistons(){{
-                        suffix = "-p";
-                        sinMag = 2f;
-                        sinScl = 10f;
-                        sideOffset = Mathf.pi * 2;
-                    }},
                     new DrawPistons(){{
                         suffix = "-ep";
                         sinMag = 2.75f;
                         sinScl = 5f;
                         sides = 4;
                         sideOffset = Mathf.PI / 2f;
+                    }},
+                    new DrawAdvancedPistons(){{
+                        suffix = "-p";
+                        sinMag = 2f;
+                        sinScl = 10f;
+                        sideOffset = Mathf.pi * 2;
                     }},
                     new DrawDefault(),
                     new DrawRegion("-rotor"){{
