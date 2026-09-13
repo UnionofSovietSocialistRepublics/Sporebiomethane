@@ -28,12 +28,11 @@ public class JPDistribution{
 
     harvesterBay = new JPMiningOutPost("harvesterBay"){{
         requirements(Category.distribution, with(silicon, 95,JPItem.biomass, 45,JPItem.naniteAlloy,15));
-        health = 100;
-        unitType = JPUnits.harvester;
+        health = 240;
         size = 2;
         unitBuildTime = 60f * 8f;
         consumePower(240f / 60f);
-        itemCapacity = 200;
+        itemCapacity = 100;
 
     }};
 

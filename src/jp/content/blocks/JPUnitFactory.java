@@ -70,7 +70,6 @@ public class JPUnitFactory{
         }};
         assembler = new UnitFactory("assembler"){{
             requirements(Category.units, with(silicon,675,JPItem.naniteAlloy,75,JPItem.biomass,225));
-            envEnabled = Env.spores;
             plans = Seq.with(
                 new UnitPlan( JPUnits.breacher, 60f * 15, with( silicon, 175, JPItem.biomass,55, JPItem.naniteAlloy,45)),
                 new UnitPlan( JPUnits.guardian, 60f * 10, with( silicon, 195, JPItem.biomass,65, JPItem.naniteAlloy,65)),

@@ -35,14 +35,12 @@ public class JPMiningOutPost extends UnitCargoLoader {
         clearOnDoubleTap = true;
 //      I will only ever use this class on 1 block so uhhh, yeah. (Indicates that the sprite have corners)
         squareSprite = false;
-        acceptsItems = false;
         itemCapacity = 200;
         ambientSound = Sounds.loopUnitBuilding;
 
         config(Item.class, (JPMiningOutpostBuild build, Item item) -> build.item = item);
         configClear((JPMiningOutpostBuild build) -> build.item = null);
     }
-
     @Override
     public boolean outputsItems(){
         return true;
@@ -70,10 +68,17 @@ public class JPMiningOutPost extends UnitCargoLoader {
                 stale = true;
             }
         }
+
+        @Override
+        public boolean acceptItem(Building source, Item item){
+            return false;
+        }
+
         @Override
         public int acceptStack(Item item, int amount, Teamc source){
             if(!(source instanceof Unit u)) return 0;
             if(u.type != JPUnits.harvester) return 0;
+
             return Math.min(itemCapacity - items.total(), amount);
         }
 
