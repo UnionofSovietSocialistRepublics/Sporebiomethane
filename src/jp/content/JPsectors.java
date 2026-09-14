@@ -16,11 +16,11 @@ public class JPsectors{
             captureWave = 20;
             //alwaysUnlocked = true;
         }};
-        biomass = new SectorPreset("biomass", serpulo, 81){{
-            difficulty = 3;
-            captureWave = 20;
-//            alwaysUnlocked = true;
-        }};
+//        biomass = new SectorPreset("biomass", serpulo, 81){{
+//            difficulty = 3;
+//            captureWave = 20;
+////            alwaysUnlocked = true;
+//        }};
         dig = new SectorPreset("dig", serpulo, 198){{
             difficulty = 3;
             captureWave = 25;

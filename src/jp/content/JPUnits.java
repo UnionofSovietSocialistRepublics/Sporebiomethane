@@ -132,6 +132,7 @@ public class JPUnits {
             itemCapacity = 10;
             engineOffset = 5f;
             engineSize = 2f;
+            mineWalls = true;
             isEnemy = false;
             allowedInPayloads = false;
             logicControllable = false;
@@ -801,25 +802,24 @@ public class JPUnits {
         drone = new UnitType("drone"){{
             this.constructor = UnitEntity::create;
             controller = u -> new MinerAI();
-            defaultCommand = UnitCommand.mineCommand;
-            envEnabled = Env.spores;
-            speed = 1f;
-            hitSize = 10f;
             health = 400;
-            range = 50f;    
-            flying = true;
-            engineOffset = 5f;
-            engineSize = 4f;
+            hitSize = 10f;
+            speed = 1.15f;
+            range = 50f;
+            mineTier = 3;
             mineSpeed = 3.5f;
             buildSpeed = 0.75f;
-            mineTier = 3;
+            engineOffset = 5f;
+            engineSize = 4f;
             drag = 0.05f;
             accel = 0.11f;
             itemCapacity = 10;
+            flying = true;
+            mineWalls = true;
+            defaultCommand = UnitCommand.mineCommand;
             weapons.add(new Weapon("laser"){{
                 reload = 65f;
-                x = 0f;
-                y = 0f;
+                x = y = 0f;
                 layerOffset = -1f;
                 rotate = false;
                 mirror = false;
@@ -846,9 +846,9 @@ public class JPUnits {
             this.constructor = UnitEntity::create;
             aiController = JPSentientFly::new;
             envEnabled = Env.spores;
-            speed = 1.3f;
-            hitSize = 18f;
             health = 620;
+            hitSize = 18f;
+            speed = 1.3f;
             range = 125f;      
             flying = true;
             engineOffset = 12f;
@@ -914,17 +914,16 @@ public class JPUnits {
 
         rizomorph = new UnitType("rizomorph"){{
             this.constructor = UnitEntity::create;
-            envEnabled = Env.spores;
+            health = 925;
+            hitSize = 10f;
             speed = 1.85f;
             accel = 0.08f;
             drag = 0.08f;
-            flying = true;
-            hitSize = 10f;
-            health = 925;
-            targetAir = false;
             range = 140f;
             engineSize = 4f;
             engineOffset = 11f;
+            flying = true;
+            targetAir = false;
             faceTarget = false;
             circleTarget = true;
             weapons.add(new Weapon(){{
@@ -970,18 +969,17 @@ public class JPUnits {
 
         guardian = new UnitType("guardian"){{
             this.constructor = UnitEntity::create;
-            envEnabled = Env.spores;
-            speed = 1f;
-            hitSize = 18f;
             health = 1500;
             armor = 7;
+            hitSize = 18f;
+            speed = 1f;
             range = 175f;
-            flying = true;
-            targetAir = false;
             engineOffset = 10f;
             engineSize = 4f;
             drag = 0.04f;
-            accel = 0.08f;               
+            accel = 0.08f;
+            flying = true;
+            targetAir = false;
             weapons.add(new Weapon(name + "-gun"){{
                 reload = 125f;
                 x = 11f;
@@ -1020,20 +1018,19 @@ public class JPUnits {
 
         hiveDefender = new UnitType("hiveDefender"){{
             this.constructor = UnitEntity::create;
-            envEnabled = Env.spores;
-            speed = 2.75f;
+            health = 175;
             armor = 1;
             hitSize = 18f;
-            health = 175;
-            range = 125f;    
-            flying = true;
-            engineOffset = 7f;
-            engineSize = 4f;
+            speed = 2.75f;
+            range = 125f;
+            mineTier = 3;
             mineSpeed = 2f;
             buildSpeed = 1;
-            mineTier = 3;
+            engineOffset = 7f;
+            engineSize = 4f;
             drag = 0.05f;
             accel = 0.11f;
+            flying = true;
             weapons.add(new Weapon(name + "-gun"){{
                 reload = 75f;
                 x = -6f;
@@ -1063,19 +1060,19 @@ public class JPUnits {
         hiveSentinel = new UnitType("hiveSentinel"){{
             this.constructor = UnitEntity::create;
             envEnabled = Env.spores;
-            speed = 2.5f;
             armor = 2;
-            hitSize = 18f;
             health = 400;
-            range = 125f;    
-            flying = true;
+            hitSize = 18f;
+            speed = 2.5f;
+            range = 125f;
             engineOffset = 12f;
             engineSize = 4f;
+            mineTier = 4;
             mineSpeed = 3f;
             buildSpeed = 2;
-            mineTier = 4;
             drag = 0.05f;
             accel = 0.11f;
+            flying = true;
             weapons.add(new Weapon(name + "-gun"){{
                 reload = 65f;
                 x = -9f;
@@ -1106,19 +1103,19 @@ public class JPUnits {
         sporophage = new UnitType("sporophage"){{
             this.constructor = UnitEntity::create;
             envEnabled = Env.spores;
-            speed = 2f;
             armor = 3;
-            hitSize = 17f;
             health = 425;
-            range = 125f;      
-            flying = true;
+            hitSize = 17f;
+            speed = 2f;
+            range = 125f;
+            mineTier = 6;
             mineSpeed = 3.5f;
             buildSpeed = 2.5f;
-            mineTier = 6;
             engineOffset = 12f;
             engineSize = 4f;
             drag = 0.05f;
             accel = 0.11f;
+            flying = true;
             weapons.add(new Weapon(){{
                 reload = 75f;
                 shootY = 8f;
@@ -1153,19 +1150,18 @@ public class JPUnits {
         impReincranation = new UnitType("impReincranation"){{
             this.constructor = UnitEntity::create;
             aiController = SuicideAI::new;
-            envEnabled = Env.spores;
-            speed = 1.75f;
             health = 215;
+            hitSize = 9f;
+            speed = 1.75f;
             range = 70f;
             engineOffset = 5f;
             engineSize = 4f;
             rotateSpeed = 7f;
-            flying = true;
-            hidden = true;
-            hitSize = 9f;
             drag = 0.05f;
             accel = 0.11f;
             fallSpeed = 1f;
+            flying = true;
+            hidden = true;
             weapons.add(new Weapon(){{
                 reload = 5f;
                 x = 0f;
@@ -1223,10 +1219,9 @@ public class JPUnits {
         imp = new UnitType("imp"){{
             this.constructor = LegsUnit::create;
             aiController = SuicideAI::new;
-            envEnabled = Env.spores;
-            speed = 1.5f;
-            hitSize = 8f;
             health = 450;
+            hitSize = 8f;
+            speed = 1.5f;
             range = 50f;
             weapons.add(new Weapon(){{
                 reload = 5f;
@@ -1283,16 +1278,16 @@ public class JPUnits {
         carci = new UnitType("carci"){{
             this.constructor = LegsUnit::create;
             envEnabled = Env.spores;
-            speed = 0.65f;
-            targetAir = false;
-            hitSize = 8f;
             health = 875;
             armor = 4;
+            hitSize = 8f;
+            speed = 0.65f;
             range = 50f;
             legCount = 4;
             legLength = 8f;
             legExtension = 4f;
             legBaseOffset = 5f;
+            targetAir = false;
             weapons.add(new Weapon("mouh"){{
                 reload = 60f;
                 x = 0f;
@@ -1326,11 +1321,10 @@ public class JPUnits {
 
         autus = new UnitType("autus"){{
             this.constructor = LegsUnit::create;
-            envEnabled = Env.spores;
-            speed = 0.75f;
             hitSize = 12f;
             health = 1500;
             armor = 7;
+            speed = 0.75f;
             range = 40f;
             legCount = 4;
             legLength = 13f;
@@ -1400,11 +1394,10 @@ public class JPUnits {
 
         ebola = new UnitType("ebola"){{
             this.constructor = LegsUnit::create;
-            envEnabled = Env.spores;
-            speed = 0.6f;
-            hitSize = 16f;
             armor = 6;
             health = 6200;
+            hitSize = 16f;
+            speed = 0.6f;
             range = 50f;
             legCount = 4;
             legLength = 17f;
@@ -1528,17 +1521,15 @@ public class JPUnits {
         }};
 
         lepus = new JPCopterUnitType("lepus"){{
-            envEnabled = Env.spores;
-            speed = 1.25f;
             armor = 4;
-            hitSize = 9f;
             health = 800;
-            range = 125f;    
-            flying = true;
+            hitSize = 9f;
+            speed = 1.25f;
+            range = 125f;
             drag = 0.05f;
             accel = 0.11f;
             engineSize = 0f;
-
+            flying = true;
             weapons.add(new Weapon("mouh"){{
                 mirror = false;
                 reload = 10f;
@@ -1577,16 +1568,16 @@ public class JPUnits {
         }};
 
         lipus = new JPCopterUnitType("lipus"){{
-            envEnabled = Env.spores;
-            speed = 1.25f;
             armor = 2;
-            hitSize = 9f;
             health = 450;
+            hitSize = 9f;
+            speed = 1.25f;
             range = 125f;    
-            flying = true;
+
             drag = 0.05f;
             accel = 0.11f;
             engineSize = 0f;
+            flying = true;
             targetFlags = new BlockFlag[]{BlockFlag.drill, BlockFlag.turret, null};
             weapons.add(new Weapon("mouh"){{
                 reload = 50f;
@@ -1631,11 +1622,10 @@ public class JPUnits {
         }};
 
         indus = new JPCopterUnitType("indus"){{
-            envEnabled = Env.spores;
-            speed = 1.5f;
             armor = 3;
-            hitSize = 9f;
             health = 600;
+            hitSize = 9f;
+            speed = 1.5f;
             flying = true;
             targetAir = false;
             targetFlags = new BlockFlag[]{BlockFlag.extinguisher, BlockFlag.turret, null};
@@ -1671,17 +1661,15 @@ public class JPUnits {
         }};
 
         malarion = new JPCopterUnitType("malarion"){{
-            envEnabled = Env.spores;
-            speed = 1.65f;
             armor = 2;
-            flying = true;
-            hitSize = 10f;
             health = 980;
-            targetAir = false;
+            hitSize = 10f;
+            speed = 1.65f;
             range = 140f;
+            flying = true;
+            targetAir = false;
             faceTarget = false;
             circleTarget = true;
-            
             weapons.add(new Weapon(){{
                 x = 6f;
                 y = 6f;
@@ -1777,18 +1765,17 @@ public class JPUnits {
 
         thera = new UnitType("thera"){{
             this.constructor = UnitEntity::create;
-            envEnabled = Env.spores;
-            speed = 1.75f;
-            hitSize = 8f;
-            health = 1150;
-            range = 75f;
             armor = 3;
+            health = 1150;
+            hitSize = 8f;
+            range = 75f;
+            speed = 1.75f;
+            rotateSpeed = 7f;
             engineOffset = 5f;
             engineSize = 4f;
-            rotateSpeed = 7f;
-            flying = true;
             drag = 0.05f;
             accel = 0.11f;
+            flying = true;
             weapons.add(new Weapon(){{
                 x = 6f;
                 y = 6f;
@@ -1847,16 +1834,15 @@ public class JPUnits {
         }};  
 
         yigg = new JPCopterUnitType("yigg"){{
-            envEnabled = Env.spores;
-            speed = 1.55f;
             armor = 3;
-            hitSize = 18f;
             health = 2400;
-            range = 125f;    
-            flying = true;
+            hitSize = 18f;
+            speed = 1.55f;
+            range = 125f;
             drag = 0.05f;
             accel = 0.11f;
             engineSize = 0f;
+            flying = true;
             weapons.add(new Weapon(name + "-railgun"){{
                 reload = 250f;
                 recoil = 6f;
@@ -1944,16 +1930,15 @@ public class JPUnits {
         }};
 
         spongillery = new JPCopterUnitType("spongillery"){{
-            envEnabled = Env.spores;
-            speed = 1.75f;
             armor = 6;
-            hitSize = 18f;
             health = 2700;
-            range = 125f;    
-            flying = true;
+            hitSize = 18f;
+            speed = 1.75f;
+            range = 125f;
             drag = 0.05f;
             accel = 0.11f;
             engineSize = 0f;
+            flying = true;
             targetAir = false;
             weapons.add(new Weapon(name+"-wep"){{
                 x = y = 0;
@@ -2026,11 +2011,10 @@ public class JPUnits {
             
         frostC = new UnitType("frostC"){{
             this.constructor = LegsUnit::create;
-            envEnabled = Env.spores;
-            speed = 0.25f;
-            hitSize = 12f;
-            health = 58000;
             armor = 30;
+            health = 58000;
+            hitSize = 12f;
+            speed = 0.25f;
             range = 80f;
             legCount = 4;
             legLength = 13f;
@@ -2134,11 +2118,10 @@ public class JPUnits {
 
         frost = new UnitType("frost"){{
             this.constructor = LegsUnit::create;
-            envEnabled = Env.spores;
-            speed = 0.25f;
-            hitSize = 12f;
-            health = 58000;
             armor = 30;
+            health = 58000;
+            hitSize = 12f;
+            speed = 0.25f;
             range = 80f;
             legCount = 4;
             legLength = 13f;
@@ -2274,18 +2257,18 @@ public class JPUnits {
 
         spark = new UnitType("spark"){{
             this.constructor = UnitEntity::create;
-            speed = 2.75f;
             armor = 1;
+            health = 175;
             hitSize = 18f;
-            health = 175;  
-            flying = true;
-            engineOffset = 0f;
-            engineSize = 0f;
+            speed = 2.75f;
+            mineTier = 3;
             mineSpeed = 2f;
             buildSpeed = 1;
-            mineTier = 3;
+            engineSize = 0f;
+            engineOffset = 0f;
             drag = 0.05f;
             accel = 0.11f;
+            flying = true;
             weapons.add(new Weapon(){{
                 reload = 75f;
                 x = 0f;

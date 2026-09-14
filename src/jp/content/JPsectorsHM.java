@@ -15,11 +15,11 @@ public class JPsectorsHM{
             difficulty = 4;
             captureWave = 20;
         }};
-        biomassHM = new SectorPreset("biomassHM", serpulo, 81){{
-            difficulty = 3;
-            captureWave = 25;
-//            alwaysUnlocked = true;
-        }};
+//        biomassHM = new SectorPreset("biomassHM", serpulo, 81){{
+//            difficulty = 3;
+//            captureWave = 25;
+////            alwaysUnlocked = true;
+//        }};
         digHM = new SectorPreset("digHM", serpulo, 198){{
             difficulty = 5;
             captureWave = 25;
