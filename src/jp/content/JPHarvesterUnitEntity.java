@@ -8,7 +8,7 @@ public class JPHarvesterUnitEntity extends BuildingTetherPayloadUnit {
 
     @Override
     public String toString() {
-        return "JPCopterUnit#" + id;
+        return "JPHarvesterUnit#" + id;
     }
 
     @Override
