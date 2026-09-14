@@ -28,7 +28,7 @@ public class Unloader extends Mod{
         break;
         case 3:
         Vars.mods.locateMod("jp").meta.author="Hydroabyss & Water Molecules";
-        Vars.mods.locateMod("jp").meta.subtitle="It is a tradition at";
+        Vars.mods.locateMod("jp").meta.subtitle="Welcome to Hel!";
         break;
         case 4:
         Vars.mods.locateMod("jp").meta.author="Hydroabyss & Water Molecules";
