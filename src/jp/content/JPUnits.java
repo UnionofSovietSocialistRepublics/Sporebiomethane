@@ -100,7 +100,6 @@ public class JPUnits {
             speed = 1f;
             hitSize = 11f;
             health = 400;
-            range = 50f;    
             flying = true;
             engineOffset = 7f;
             engineSize = 4f;
@@ -116,6 +115,8 @@ public class JPUnits {
             allowedInPayloads = false;
             createWreck = false;
             outlineColor = Color.valueOf("303a45");
+
+            abilities.add(new RegenAbility(){{percentAmount = 1f / (60f * 60f * 2f) * 100f;}});
         }};
 
         harvester = new UnitType("harvester"){{
@@ -149,9 +150,9 @@ public class JPUnits {
         zergling = new UnitType("zergling"){{
             this.constructor = LegsUnit::create;
             envEnabled = Env.spores;
-            speed = 1.45f;
-            hitSize = 8f;
             health = 250;
+            hitSize = 8f;
+            speed = 1.45f;
             range = 50f;
             legCount = 4;
             weapons.add(new Weapon(name+"-mouth"){{
@@ -170,8 +171,6 @@ public class JPUnits {
                 parts.add(new RegionPart("-static"){{
                     mirror = false;
                     outline = false;
-                    // layerOffset= -0.0001f;
-                    // under = true;
                 }});
                 parts.add(new RegionPart("-part"){{
                     mirror = true;
@@ -193,10 +192,10 @@ public class JPUnits {
 
         raptor = new UnitType("raptor"){{
             this.constructor = LegsUnit::create;
-            speed = 2f;
             armor = 3f;
-            hitSize = 8f;
             health = 450;
+            hitSize = 8f;
+            speed = 2f;
             range = 50f;
             legCount = 4;
             weapons.add(new Weapon(name+"-mouth"){{
@@ -213,8 +212,6 @@ public class JPUnits {
                 parts.add(new RegionPart("-static"){{
                     mirror = false;
                     outline = false;
-                    // layerOffset= -0.0001f;
-                    // under = true;
                 }});
                 parts.add(new RegionPart("-part"){{
                     mirror = true;
@@ -275,10 +272,10 @@ public class JPUnits {
         lobber = new UnitType("lobber"){{
             this.constructor = LegsUnit::create;
             envEnabled = Env.spores;
-            speed = 1f;
-            hitSize = 8f;
-            health = 325;
             armor = 2;
+            health = 325;
+            hitSize = 8f;
+            speed = 1f;
             range = 60f;
             legCount = 4;
             weapons.add(new Weapon(name + "-gun"){{
@@ -315,23 +312,23 @@ public class JPUnits {
 
         baneling = new UnitType("baneling"){{
             this.constructor = LegsUnit::create;
-            aiController = SuicideAI::new;
-            speed = 1.3f;
-            hitSize = 8f;
+            aiController = JPSuicideCrawlerAI::new;
             health = 225;
-            range = 70f;
+            hitSize = 8f;
+            speed = 1.3f;
             legCount = 4;
             weapons.add(new Weapon(){{
                 reload = 5f;
                 x = 0f;
                 y = 0f;
-                top = false;
-                shootOnDeath = true;
+                range = 30;
                 shoot.firstShotDelay = 75f;
                 shootWarmupSpeed = 0.06f;
                 minWarmup = 0.9f;
+                top = false;
+                shootOnDeath = true;
                 bullet = new BombBulletType(0f, 100f){{
-                    rangeOverride = 30f;
+                    rangeOverride = 30;
                     width = height = 0f;
                     lifetime = 10f;
                     statusDuration = 60f * 2;
@@ -386,8 +383,8 @@ public class JPUnits {
             this.constructor = LegsUnit::create;
             speed = 1f;
             hitSize = 18f;
-            health = 650;
-            armor = 4;
+            health = 600;
+            armor = 3;
             range = 125f;
             legCount = 4;
             stepShake = 0f;      
@@ -407,9 +404,10 @@ public class JPUnits {
                     lifetime = 40f;
                     statusDuration = 60f * 4;
                     status = JPStatus.dissolving;
-                    frontColor = Color.valueOf("8FFE09");
+                    frontColor = JPPal.sporeBulletFront;
+                    backColor = JPPal.sporeBulletBack;
                     trailLength = 3;
-                    trailColor = Color.valueOf("bbfe6b");
+                    trailColor = JPPal.sporeBulletBack;
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
                 }};
@@ -427,9 +425,9 @@ public class JPUnits {
             envEnabled = Env.spores;
             speed = 1f;
             hitSize = 18f;
-            health = 1150;
-            armor = 4;
-            range = 125f;
+            health = 1200;
+            armor = 9;
+            range = 100f;
             legCount = 4;
             stepShake = 0.15f;       
             weapons.add(new Weapon(name + "-cannon"){{
@@ -438,22 +436,25 @@ public class JPUnits {
                 y = -8f;
                 mirror = false;
                 targetAir = false;
-                shoot.shots = 4;
+                shoot.shots = 6;
                 inaccuracy = 12f;
                 velocityRnd = 0.2f;
                 recoil = 2;
-                bullet = new ArtilleryBulletType(6f, 90){{
-                    height = width = 20f;
-                    splashDamage = 25f;
-                    splashDamageRadius = 17f;
+                bullet = new ArtilleryBulletType(6f, 10){{
+                    height = 18f;
+                    width = 15f;
+                    splashDamage = 75f;
+                    splashDamageRadius = 24f;
                     lifetime = 50f;
                     statusDuration = 60f * 4;
                     status = JPStatus.dissolving;
-                    frontColor = Color.valueOf("8FFE09");
+                    frontColor = JPPal.sporeBulletFront;
+                    backColor = JPPal.sporeBulletBack;
                     collides = true;
                     collidesTiles = true;
-                    trailLength = 3;
-                    trailColor = Color.valueOf("bbfe6b");
+                    trailLength = 5;
+                    trailWidth = 3;
+                    trailColor = JPPal.sporeBulletBack;
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
                 }};
@@ -471,8 +472,8 @@ public class JPUnits {
             envEnabled = Env.spores;
             speed = 1f;
             hitSize = 18f;
-            health = 1150;
-            armor = 4;
+            health = 1750;
+            armor = 12;
             range = 125f;
             legCount = 4;            
             weapons.add(new Weapon(name + "-missileLauncher"){{
@@ -527,8 +528,8 @@ public class JPUnits {
             envEnabled = Env.spores;
             speed = 1f;
             hitSize = 8f;
-            health = 650;
-            armor = 3;
+            health = 520;
+            armor = 6;
             range = 45f;
             legCount = 4;
             legLength = 13f;
@@ -547,17 +548,17 @@ public class JPUnits {
                 rotate = true;
                 rotationLimit = 90;
                 bullet = new ContinuousFlameBulletType() {{
-                    lightStroke = 35;
-                    divisions = 40;
-                    width = 3.8f;
-                    drawFlare = false;
-                    length = 90;
-                    pierce = true;
-                    pierceBuilding = true;
-                    pierceArmor = false;
                     pierceCap = 3;
                     damage = 35;
                     damageInterval = 10;
+                    lightStroke = 35;
+                    divisions = 40;
+                    width = 3.8f;
+                    length = 90;
+                    drawFlare = false;
+                    pierce = true;
+                    pierceBuilding = true;
+                    pierceArmor = false;
                     hitColor = Color.valueOf("8B73C7");
                     colors = new Color[]{Color.valueOf("8B73C7"), Color.valueOf("A865C9"), Color.valueOf("A865C9"), Color.valueOf("ffffff")};
                 }};
@@ -574,7 +575,6 @@ public class JPUnits {
 
             }});
             immunities.add(StatusEffects.burning);
-            immunities.add(StatusEffects.melting);
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
 
@@ -623,20 +623,22 @@ public class JPUnits {
         behomoth = new UnitType("behomoth"){{
             this.constructor = LegsUnit::create;
             envEnabled = Env.spores;
-            speed = 0.65f;
             hitSize = 44f;
-            armor = 11;
             health = 14000;
+            armor = 15;
+            speed = 0.65f;
             range = 50f;
             legCount = 4;
             legLength = 30f;
             legExtension = -15f;
             legBaseOffset = 10f;
-            weapons.add(new Weapon(name + "-gun"){{
+            weapons.add(new Weapon(name + "-artillery"){{
                 layerOffset = 1f;
                 reload = 160f;
                 x = 0f;
                 y = -23f;
+                shootWarmupSpeed = 0.06f;
+                minWarmup = 0.9f;
                 recoil = 6f;
                 mirror = false;
                 ejectEffect = Fx.casing1;
@@ -654,9 +656,35 @@ public class JPUnits {
                     shootEffect = Fx.shootBig;
                     hitEffect = Fx.sapExplosion;
                 }};
-
+                parts.add(new RegionPart("-main"){{
+                    x = 0f;
+                    y = 0f;
+                    outline = false;
+                }});
+                parts.add(new RegionPart("-sides"){{
+                    progress = PartProgress.warmup;
+                    mirror = true;
+//                    layerOffset= -0.01f;
+//                    under = true;
+                    x = 0f;
+                    y = 0f;
+                    moveX = 0.75f;
+                    moveY = 0.75f;
+                    moveRot = 21;
+                }});
+                parts.add(new RegionPart("-cannon"){{
+                    mirror = false;
+                    under = true;
+                    progress = PartProgress.recoil;
+                    layerOffset= -0.01f;
+                    heatLight = true;
+//                    heatColor = new Color(1f, 0.1f, 0.1f);
+                    x = 0f;
+                    y = 0f;
+                    moveY = -5f;
+                }});
             }});
-            weapons.add(new Weapon(name + "-mini"){{
+            weapons.add(new Weapon(name + "-miniGun"){{
                 reload = 5f;
                 x = -15f;
                 y = -23f;
@@ -685,21 +713,23 @@ public class JPUnits {
             speed = 0.55f;
             hitSize = 44f;
             health = 35000;
-            armor = 23;
+            armor = 45;
             range = 125f;
             legCount = 4;     
             legLength = 30f;
             legExtension = -15f;
             legBaseOffset = 10f;       
-            weapons.add(new Weapon(){{
+            weapons.add(new Weapon(name + "-silo"){{
                 reload = 400f;
                 x = y = 0f;
-                mirror = false;
+                shootWarmupSpeed = 0.06f;
+                minWarmup = 0.9f;
                 shoot.firstShotDelay = 150f;
                 shoot.shots = 3;
                 shoot.shotDelay = 30f;
                 shootStatus = StatusEffects.slow;
                 shootStatusDuration = 150f;
+                mirror = false;
                 bullet = new ArtilleryBulletType(3f, 525){{
                     hitEffect = Fx.sapExplosion;
                     knockback = 0.8f;
@@ -733,12 +763,12 @@ public class JPUnits {
                     }};
                 }};
                 shootSound = Sounds.shootArtillery;
-
-            }});
-            parts.add(new RegionPart("-silo-hatch"){{
-                mirror = true;
-                progress = PartProgress.warmup;
-                moveX = -2f;
+                parts.add(new RegionPart("-hatch"){{
+                    mirror = true;
+                    progress = PartProgress.warmup;
+                    moveX = -2f;
+                    outline = false;
+                }});
             }});
             weapons.add(new Weapon(name + "-mini-body"){{
                 reload = 30f;
@@ -845,7 +875,6 @@ public class JPUnits {
         interceptor = new UnitType("interceptor"){{
             this.constructor = UnitEntity::create;
             aiController = JPSentientFly::new;
-            envEnabled = Env.spores;
             health = 620;
             hitSize = 18f;
             speed = 1.3f;
@@ -864,6 +893,8 @@ public class JPUnits {
                 mirror = false;
                 targetGround = true;
                 targetAir = false;
+                shootWarmupSpeed = 0.06f;
+                minWarmup = 0.9f;
                 shoot.firstShotDelay = 300f;
                 shoot.shots = 7;
                 shoot.shotDelay = 1f;
@@ -986,24 +1017,24 @@ public class JPUnits {
                 y = 4f;
                 recoil = 6f;
                 layerOffset = -0.01f;
-                bullet = new ArtilleryBulletType(4.5f, 115){{
+                bullet = new ArtilleryBulletType(4.5f, 15){{
                     recoil = 1f;
                     speed = 4.5f;
                     height = 15f;
                     width = 7f;
-                    splashDamage = 18f;
+                    splashDamage = 85f;
                     splashDamageRadius = 35f;
                     lifetime = 60f;
                     statusDuration = 60f * 4;
                     status = JPStatus.dissolving;
-                    backColor = Color.valueOf("8FFE09");
-                    frontColor = Color.valueOf("8FFE09");
-                    lightColor = Color.valueOf("8FFE09");
+                    frontColor = JPPal.sporeBulletFront;
+                    backColor = JPPal.sporeBulletBack;
+//                    lightColor = Color.valueOf("8FFE09");
                     collides = true;
                     collidesTiles = true;
                     trailLength = 6;
                     trailWidth = 2.8f;
-                    trailColor = Color.valueOf("bbfe6b");
+                    trailColor = JPPal.sporeBulletBack;
                         shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
                 }};

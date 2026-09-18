@@ -573,18 +573,23 @@ public class JPTurret{
                     shootEffect = Fx.shootSmall;
                     smokeEffect = Fx.shootSmallSmoke;
                 }},
-               JPItem.naniteAlloy, new BasicBulletType(2f, 20f){{
+               JPItem.naniteAlloy, new BasicBulletType(2f, 30f){{
                     lifetime = 85f;
                     width = 11f; height = 15f;
                     pierce = true;
-                    backColor = JPPal.sporeBulletBack;
-                    frontColor = JPPal.sporeBulletFront;
-                    shootEffect = Fx.shootSmall;
-                    smokeEffect = Fx.shootSmallSmoke;
                     trailChance = 1f;
                     trailInterval = 1f;
                     inaccuracy = 25f;
                     velocityScaleRandMin = 0.8f; velocityScaleRandMax = 1.2f;
+                    intervalBullets=2;
+                    intervalRandomSpread=20f;
+                    intervalDelay = 20f;
+                    bulletInterval = 30f;
+                    intervalSpread= 240f;
+                    backColor = JPPal.sporeBulletBack;
+                    frontColor = JPPal.sporeBulletFront;
+                    shootEffect = Fx.shootSmall;
+                    smokeEffect = Fx.shootSmallSmoke;
                     trailEffect = new ParticleEffect(){{
                         particles = 1;
                         sizeFrom = 1f;
@@ -596,14 +601,9 @@ public class JPTurret{
                         hittable = false;
                         reflectable = false;
                     }};
-                    intervalBullets=2;
-                    intervalRandomSpread=20f;
-                    intervalDelay = 20f;
-                    bulletInterval = 40f;
-                    intervalSpread= 240f;
-                    // intervalAngle = 120f;
-                    intervalBullet = new BasicBulletType(4f, 40f){{
+                    intervalBullet = new BasicBulletType(4f, 55f){{
                         lifetime = 40f;
+                        width = 7f; height = 11f;
                         trailChance = 1f;
                         trailInterval = 1f;
                         pierce = true;
@@ -614,8 +614,8 @@ public class JPTurret{
                         trailEffect = new ParticleEffect(){{
                             particles = 1;
                             sizeFrom = 1f;
-                            sizeTo = 6f;
-                            length = 6f;
+                            sizeTo = 4f;
+                            length = 3f;
                             cone = 360f;
                             lifetime = 9f;
                             colorTo = Color.valueOf("45368F");

@@ -290,7 +290,7 @@ public class JPProduction{
         }};
 
         massCultivator = new GenericCrafter("massCultivator"){{
-            requirements(Category.production, with(silicon, 450,metaglass, 350,JPItem.biomass, 75));
+            requirements(Category.production, with(silicon, 450,graphite, 350,JPItem.biomass, 75));
             envEnabled = Env.any;
             health = 750;
             size = 3;
