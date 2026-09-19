@@ -152,7 +152,7 @@ public class JPUnits {
             envEnabled = Env.spores;
             health = 250;
             hitSize = 8f;
-            speed = 1.45f;
+            speed = 1.3f;
             range = 50f;
             legCount = 4;
             weapons.add(new Weapon(name+"-mouth"){{
@@ -195,7 +195,7 @@ public class JPUnits {
             armor = 3f;
             health = 450;
             hitSize = 8f;
-            speed = 2f;
+            speed = 1.8f;
             range = 50f;
             legCount = 4;
             weapons.add(new Weapon(name+"-mouth"){{
@@ -275,7 +275,7 @@ public class JPUnits {
             armor = 2;
             health = 325;
             hitSize = 8f;
-            speed = 1f;
+            speed = 1.05f;
             range = 60f;
             legCount = 4;
             weapons.add(new Weapon(name + "-gun"){{
@@ -312,7 +312,7 @@ public class JPUnits {
 
         baneling = new UnitType("baneling"){{
             this.constructor = LegsUnit::create;
-            aiController = JPSuicideCrawlerAI::new;
+            aiController = SuicideAI::new;
             health = 225;
             hitSize = 8f;
             speed = 1.3f;
@@ -322,13 +322,13 @@ public class JPUnits {
                 x = 0f;
                 y = 0f;
                 range = 30;
+                shootCone = 180f;
                 shoot.firstShotDelay = 75f;
                 shootWarmupSpeed = 0.06f;
                 minWarmup = 0.9f;
                 top = false;
                 shootOnDeath = true;
                 bullet = new BombBulletType(0f, 100f){{
-                    rangeOverride = 30;
                     width = height = 0f;
                     lifetime = 10f;
                     statusDuration = 60f * 2;
@@ -341,7 +341,37 @@ public class JPUnits {
                     hitSound = Sounds.explosion;
                     killShooter = true;
                     collidesAir = true;
-                    shootOnDeath = true;
+                    fragBullets = 6;
+                    fragBullet = new LiquidBulletType(JPLiquids.liquidSpore){{
+                        lifetime = 17f;
+                        speed = 3f;
+                        puddleSize = 20f;
+                        orbSize = 4f;
+                        status = JPStatus.dissolving;
+                        statusDuration = 60f * 4f;
+                        damage = 40f;
+                        layer = Layer.bullet - 2f;
+                    }};
+                }};
+            }});
+            weapons.add(new Weapon(){{
+                reload = 1f;
+                x = 0f;
+                y = 0f;
+                shootCone = 180f;
+                top = false;
+                shootOnDeath = true;
+                aiControllable = false;
+                controllable = false;
+                hidden=true;
+                bullet = new BombBulletType(0f, 100f){{
+                    width = height = 0f;
+                    lifetime = 10f;
+                    statusDuration = 60f * 2;
+                    status = JPStatus.dissolving;
+                    hitSound = Sounds.explosion;
+                    killShooter = true;
+                    collidesAir = true;
                     fragBullets = 6;
                     fragBullet = new LiquidBulletType(JPLiquids.liquidSpore){{
                         lifetime = 17f;
@@ -381,7 +411,7 @@ public class JPUnits {
 
         roach = new UnitType("roach"){{
             this.constructor = LegsUnit::create;
-            speed = 1f;
+            speed = 0.9f;
             hitSize = 18f;
             health = 600;
             armor = 3;
@@ -423,7 +453,7 @@ public class JPUnits {
         scarabid = new UnitType("scarabid"){{
             this.constructor = LegsUnit::create;
             envEnabled = Env.spores;
-            speed = 1f;
+            speed = 0.8f;
             hitSize = 18f;
             health = 1200;
             armor = 9;
@@ -470,7 +500,7 @@ public class JPUnits {
         breacher = new UnitType("breacher"){{
             this.constructor = LegsUnit::create;
             envEnabled = Env.spores;
-            speed = 1f;
+            speed = 0.8f;
             hitSize = 18f;
             health = 1750;
             armor = 12;
@@ -585,7 +615,7 @@ public class JPUnits {
         gorgon = new UnitType("gorgon"){{
             this.constructor = LegsUnit::create;
             envEnabled = Env.spores;
-            speed = 1f;
+            speed = 0.7f;
             hitSize = 27f;
             health = 12000;
             armor = 14;
@@ -831,7 +861,8 @@ public class JPUnits {
         }};
         drone = new UnitType("drone"){{
             this.constructor = UnitEntity::create;
-            controller = u -> new MinerAI();
+            aiController = MinerAI::new;
+//            controller = u -> new MinerAI();
             health = 400;
             hitSize = 10f;
             speed = 1.15f;
@@ -1184,7 +1215,7 @@ public class JPUnits {
             health = 215;
             hitSize = 9f;
             speed = 1.75f;
-            range = 70f;
+            range = 30f;
             engineOffset = 5f;
             engineSize = 4f;
             rotateSpeed = 7f;
@@ -1197,10 +1228,10 @@ public class JPUnits {
                 reload = 5f;
                 x = 0f;
                 y = 0f;
+                shootCone=180f;
                 top = false;
                 shootOnDeath = true;
                 bullet = new BombBulletType(1f, 50){{
-                    rangeOverride = 30f;
                     width = 0f;
                     height = 0f;
                     lifetime = 10f;
@@ -1253,16 +1284,16 @@ public class JPUnits {
             health = 450;
             hitSize = 8f;
             speed = 1.5f;
-            range = 50f;
+            range = 30f;
             weapons.add(new Weapon(){{
                 reload = 5f;
                 top = false;
                 shootOnDeath = true;
+                shootCone = 180f;
                 shoot.firstShotDelay = 75f;
                 shootWarmupSpeed = 0.06f;
                 minWarmup = 0.9f;
                 bullet = new BombBulletType(0,50f){{
-                    rangeOverride = 30f;
                     width = 0f;
                     height = 0f;
                     lifetime = 10f;
@@ -1280,6 +1311,31 @@ public class JPUnits {
                     killShooter = true;
                     collidesAir = true;
                     shootOnDeath = true;
+                }};
+            }});
+            weapons.add(new Weapon(){{
+                reload = 5f;
+                top = false;
+                shootOnDeath = true;
+                shootCone = 180f;
+                hidden = true;
+                controllable = false;
+                aiControllable = false;
+                bullet = new BombBulletType(0,50f){{
+                    width = 0f;
+                    height = 0f;
+                    lifetime = 10f;
+                    status = StatusEffects.burning;
+                    statusDuration = 60f* 4.5f;
+                    splashDamage = 150f;
+                    splashDamageRadius = 60f;
+                    buildingDamageMultiplier = 1.75f;
+                    hitSound = Sounds.explosion;
+                    incendChance = 100f;
+                    incendSpread = 25f;
+                    incendAmount = 25;
+                    killShooter = true;
+                    collidesAir = true;
                 }};
                 shootSound = Sounds.explosion;
             }});

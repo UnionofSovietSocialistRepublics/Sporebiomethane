@@ -19,7 +19,7 @@ public class JPHarvesterUnitEntity extends BuildingTetherPayloadUnit {
     public static JPHarvesterUnitEntity create(){
         return new JPHarvesterUnitEntity();
     }
-//  Trolled
+//  By default, tether unit deposit item into nearby cores, overriding AI behavior, this exists to prevent tether entity from finding any core at all.
     @Override
     @Nullable public CoreBlock.CoreBuild closestCore(){
         return null;
