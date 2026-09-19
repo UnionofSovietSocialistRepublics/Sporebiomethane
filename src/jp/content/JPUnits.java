@@ -363,7 +363,7 @@ public class JPUnits {
                 shootOnDeath = true;
                 aiControllable = false;
                 controllable = false;
-                hidden=true;
+                display = false;
                 bullet = new BombBulletType(0f, 100f){{
                     width = height = 0f;
                     lifetime = 10f;
@@ -1318,7 +1318,7 @@ public class JPUnits {
                 top = false;
                 shootOnDeath = true;
                 shootCone = 180f;
-                hidden = true;
+                display = false;
                 controllable = false;
                 aiControllable = false;
                 bullet = new BombBulletType(0,50f){{
