@@ -573,7 +573,7 @@ public class JPTurret{
                     shootEffect = Fx.shootSmall;
                     smokeEffect = Fx.shootSmallSmoke;
                 }},
-               JPItem.naniteAlloy, new BasicBulletType(2f, 30f){{
+               JPItem.naniteAlloy, new BasicBulletType(2f, 25){{
                     lifetime = 85f;
                     width = 11f; height = 15f;
                     pierce = true;
@@ -601,7 +601,7 @@ public class JPTurret{
                         hittable = false;
                         reflectable = false;
                     }};
-                    intervalBullet = new BasicBulletType(4f, 55f){{
+                    intervalBullet = new BasicBulletType(4f, 40f){{
                         lifetime = 40f;
                         width = 7f; height = 11f;
                         trailChance = 1f;
