@@ -59,7 +59,7 @@ public class JPSentientFly extends AIController{
                         unit.x,
                         unit.y,
                         range,
-                        b -> b.team != unit.team
+                        b -> (b.block != null)&&(b.team != unit.team)&&(b.block.group!=BlockGroup.transportation)&&(b.block.group!=BlockGroup.liquids)
                     );
                     range += 200;
                 }
@@ -73,7 +73,7 @@ public class JPSentientFly extends AIController{
 
     void seekToEngage() {
         Unit enemy = Units.closestEnemy(unit.team, unit.x, unit.y, unit.range(), u -> true);
-        Building block = Vars.indexer.findEnemyTile(unit.team, unit.x, unit.y, unit.range(), b -> b.block != null);
+        Building block = Vars.indexer.findEnemyTile(unit.team, unit.x, unit.y, unit.range(), b -> (b.block != null)&&(b.team != unit.team)&&(b.block.group!=BlockGroup.transportation)&&(b.block.group!=BlockGroup.liquids));
 
         if (enemy != null && enemy.isValid() && unit.within(enemy, unit.range())) {
             engage(enemy);

@@ -326,32 +326,19 @@ public class JPUnits {
                 shoot.firstShotDelay = 75f;
                 shootWarmupSpeed = 0.06f;
                 minWarmup = 0.9f;
-                top = false;
                 shootOnDeath = true;
                 bullet = new BombBulletType(0f, 100f){{
                     width = height = 0f;
                     lifetime = 10f;
                     statusDuration = 60f * 2;
                     status = JPStatus.dissolving;
-                    splashDamage = 250f;
+                    splashDamage = 125;
                     splashDamageRadius = 60f;
-                    buildingDamageMultiplier = 1.25f;
+                    buildingDamageMultiplier = 0.9f;
                     shootStatus = StatusEffects.slow;
                     statusDuration = 180f;
-                    hitSound = Sounds.explosion;
                     killShooter = true;
                     collidesAir = true;
-                    fragBullets = 6;
-                    fragBullet = new LiquidBulletType(JPLiquids.liquidSpore){{
-                        lifetime = 17f;
-                        speed = 3f;
-                        puddleSize = 20f;
-                        orbSize = 4f;
-                        status = JPStatus.dissolving;
-                        statusDuration = 60f * 4f;
-                        damage = 40f;
-                        layer = Layer.bullet - 2f;
-                    }};
                 }};
             }});
             weapons.add(new Weapon(){{
@@ -369,8 +356,9 @@ public class JPUnits {
                     lifetime = 10f;
                     statusDuration = 60f * 2;
                     status = JPStatus.dissolving;
+                    splashDamage = 125;
+                    splashDamageRadius = 60f;
                     hitSound = Sounds.explosion;
-                    killShooter = true;
                     collidesAir = true;
                     fragBullets = 6;
                     fragBullet = new LiquidBulletType(JPLiquids.liquidSpore){{
@@ -935,13 +923,12 @@ public class JPUnits {
                 bullet = new BasicBulletType(5.5f, 25){{
                     height = width = 5f;
                     lifetime = 25f;
-                    backColor = Color.valueOf("8FFE09");
-                    frontColor = Color.valueOf("8FFE09");
-                    lightColor = Color.valueOf("8FFE09");
+                    backColor = JPPal.sporeBulletBack;
+                    frontColor = JPPal.sporeBulletFront;
                     collidesTiles = true;
                     collidesAir = false;
                     trailLength = 3;
-                    trailColor = Color.valueOf("bbfe6b");
+                    trailColor = JPPal.sporeBulletBack;
                 }};
             }});
             weapons.add(new Weapon("Antiair"){{
@@ -954,9 +941,8 @@ public class JPUnits {
                 bullet = new MissileBulletType(6.5f, 110){{
                     height = width = 10f;
                     lifetime = 30f;
-                    backColor = Color.valueOf("8FFE09");
-                    frontColor = Color.valueOf("8FFE09");
-                    lightColor = Color.valueOf("8FFE09");
+                    backColor = JPPal.sporeBulletBack;
+                    frontColor = JPPal.sporeBulletFront;
                     collidesTiles = true;
                     collidesGround = false;
                     weaveScale = 7f;
@@ -964,7 +950,7 @@ public class JPUnits {
                     homingPower = 0.2f;
                     homingRange = 60f;
                     trailLength = 3;
-                    trailColor = Color.valueOf("bbfe6b");
+                    trailColor = JPPal.sporeBulletBack;
                 }};
             }});
             outlineColor = Color.valueOf("303a45");
@@ -1228,8 +1214,7 @@ public class JPUnits {
                 reload = 5f;
                 x = 0f;
                 y = 0f;
-                shootCone=180f;
-                top = false;
+                shootCone = 180f;
                 shootOnDeath = true;
                 bullet = new BombBulletType(1f, 50){{
                     width = 0f;
@@ -1287,7 +1272,6 @@ public class JPUnits {
             range = 30f;
             weapons.add(new Weapon(){{
                 reload = 5f;
-                top = false;
                 shootOnDeath = true;
                 shootCone = 180f;
                 shoot.firstShotDelay = 75f;
@@ -1297,17 +1281,13 @@ public class JPUnits {
                     width = 0f;
                     height = 0f;
                     lifetime = 10f;
+                    splashDamage = 75f;
+                    splashDamageRadius = 60f;
+                    buildingDamageMultiplier = 1.75f;
                     shootStatus = StatusEffects.slow;
                     shootStatusDuration = 91f;
                     status = StatusEffects.burning;
                     statusDuration = 60f* 4.5f;
-                    splashDamage = 150f;
-                    splashDamageRadius = 60f;
-                    buildingDamageMultiplier = 1.75f;
-                    hitSound = Sounds.explosion;
-                    incendChance = 100f;
-                    incendSpread = 25f;
-                    incendAmount = 25;
                     killShooter = true;
                     collidesAir = true;
                     shootOnDeath = true;
@@ -1315,7 +1295,6 @@ public class JPUnits {
             }});
             weapons.add(new Weapon(){{
                 reload = 5f;
-                top = false;
                 shootOnDeath = true;
                 shootCone = 180f;
                 display = false;
@@ -1327,14 +1306,13 @@ public class JPUnits {
                     lifetime = 10f;
                     status = StatusEffects.burning;
                     statusDuration = 60f* 4.5f;
-                    splashDamage = 150f;
+                    splashDamage = 75f;
                     splashDamageRadius = 60f;
                     buildingDamageMultiplier = 1.75f;
                     hitSound = Sounds.explosion;
                     incendChance = 100f;
                     incendSpread = 25f;
                     incendAmount = 25;
-                    killShooter = true;
                     collidesAir = true;
                 }};
                 shootSound = Sounds.explosion;
