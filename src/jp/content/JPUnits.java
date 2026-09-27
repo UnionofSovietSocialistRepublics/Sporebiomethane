@@ -30,7 +30,7 @@ public class JPUnits {
     //missiles
     //Bomb,
     //Floaty
-    guardian,thera,impReincranation,drone,interceptor,hiveDefender,hiveSentinel,sporophage,rizomorph,
+    guardian,thera,impReincarnation,drone,interceptor,hiveDefender,hiveSentinel,sporophage,rizomorph,
     //Le tether
     zeta,harvester,
     //Winged
@@ -228,11 +228,11 @@ public class JPUnits {
                 reload = 645f;
                 x = y = 0;
                 mirror = false;
-                bullet = new BasicBulletType(9f, 180){{
+                bullet = new BasicBulletType(9f, 165f){{
                     backColor = JPPal.sporeBulletBack;
                     frontColor = JPPal.sporeBulletFront;
                     lifetime = 10f;
-                    splashDamage = 200f;
+                    splashDamage = 75f;
                     splashDamageRadius = 25.5f;
                     recoil = -24f;
                     trailLength = 10;
@@ -240,16 +240,17 @@ public class JPUnits {
                     trailColor = Color.valueOf("8B73C7");
                     trailInterval = 3f;
                     despawnSound = Sounds.shootArc;
-                    hitEffect = new MultiEffect(
-                            new WaveEffect(){{
-                                colorFrom = colorTo = Color.valueOf("8B73C7");
-                                sizeFrom = 0f;
-                                sizeTo = 30f;
-                                lifetime = 20f;
-                                strokeFrom = 0f;
-                                strokeTo = 5.5f;
-                            }}
-                    );
+//                    hitEffect = new MultiEffect(
+//                            new WaveEffect(){{
+//                                colorFrom = colorTo = Color.valueOf("8B73C7");
+//                                sizeFrom = 0f;
+//                                sizeTo = 30f;
+//                                lifetime = 20f;
+//                                strokeFrom = 0f;
+//                                strokeTo = 5.5f;
+//                            }}
+//                    );
+                    hitEffect = JPFx.sapExplosionSmall;
                 }};
             }});
             parts.add(new RegionPart("-wing"){{
@@ -295,6 +296,7 @@ public class JPUnits {
                     collidesTiles = true;
                     trailLength = 5;
                     trailColor = Color.valueOf("8B73C7");
+                    hitEffect = JPFx.sporeExplosion;
                 }};
                 parts.add(new RegionPart("-barrel"){{
                     progress = PartProgress.recoil;
@@ -327,14 +329,13 @@ public class JPUnits {
                 shootWarmupSpeed = 0.06f;
                 minWarmup = 0.9f;
                 shootOnDeath = true;
-                bullet = new BombBulletType(0f, 100f){{
+                bullet = new BombBulletType(0f, 35f){{
                     width = height = 0f;
                     lifetime = 10f;
                     statusDuration = 60f * 2;
                     status = JPStatus.dissolving;
                     splashDamage = 125;
-                    splashDamageRadius = 60f;
-                    buildingDamageMultiplier = 0.9f;
+                    buildingDamageMultiplier = 0.75f;
                     shootStatus = StatusEffects.slow;
                     statusDuration = 180f;
                     killShooter = true;
@@ -346,18 +347,17 @@ public class JPUnits {
                 x = 0f;
                 y = 0f;
                 shootCone = 180f;
-                top = false;
                 shootOnDeath = true;
                 aiControllable = false;
                 controllable = false;
                 display = false;
-                bullet = new BombBulletType(0f, 100f){{
+                bullet = new BombBulletType(0f, 35f){{
                     width = height = 0f;
                     lifetime = 10f;
                     statusDuration = 60f * 2;
                     status = JPStatus.dissolving;
                     splashDamage = 125;
-                    splashDamageRadius = 60f;
+                    buildingDamageMultiplier = 0.75f;
                     hitSound = Sounds.explosion;
                     collidesAir = true;
                     fragBullets = 6;
@@ -390,7 +390,7 @@ public class JPUnits {
 
             immunities.add(JPStatus.dissolving);
             outlineColor = Color.valueOf("303a45");
-            abilities.add(new LiquidExplodeAbility(){{liquid = JPLiquids.liquidSpore; amount = 500f;}});
+            abilities.add(new LiquidExplodeAbility(){{liquid = JPLiquids.liquidSpore; amount = 1500f;}});
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f) * 100f;}});
 
             shownPlanets.add(Planets.serpulo);
@@ -428,6 +428,7 @@ public class JPUnits {
                     trailColor = JPPal.sporeBulletBack;
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
+                    hitEffect = JPFx.sporeExplosion;
                 }};
                 shootSound = Sounds.shootArtillery;
             }});
@@ -473,6 +474,7 @@ public class JPUnits {
                     trailLength = 5;
                     trailWidth = 3;
                     trailColor = JPPal.sporeBulletBack;
+                    hitEffect = JPFx.sporeExplosion;
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
                 }};
@@ -504,14 +506,14 @@ public class JPUnits {
                 recoil = 5;
                 bullet = new MissileBulletType(6f, 85){{
                     height = width = 10f;
-                    hitEffect = Fx.sapExplosion;
-                    shootEffect = Fx.shootBig;
-                    smokeEffect = Fx.shootBigSmoke;
-                    splashDamage = 10f;
-                    splashDamageRadius = 5f;
+                    splashDamage = 25f;
+                    splashDamageRadius = 10f;
                     lifetime = 25f;
                     homingPower = 0.1f;
                     homingRange = 60f;
+                    hitEffect = JPFx.sapExplosionSmall;
+                    shootEffect = Fx.shootBig;
+                    smokeEffect = Fx.shootBigSmoke;
                     backColor = JPPal.sporeBulletBack;
                     frontColor = Color.white;
                     collidesTiles = true;
@@ -524,13 +526,14 @@ public class JPUnits {
                 reload = 5f;
                 x = -11f;
                 y = 2f;
+                shootY = 8f;
                 bullet = new BasicBulletType(3f, 20f){{
                     collidesTiles = true;
-                    width = 15f;
-                    height = 15f;
+                    width = 7f;
+                    height = 11f;
                     lifetime = 45f;
+                    frontColor = JPPal.sporeBulletFront;
                     backColor = JPPal.sporeBulletBack;
-                    frontColor = Color.white;
                 }};
 
             }});
@@ -557,6 +560,8 @@ public class JPUnits {
                 top = true;
                 x = 11f;
                 y = 1f;
+                shootX = 1f;
+                shootY = 9f;
                 recoil = 0.5f;
                 shootSound = Sounds.shootSublimate;
                 ejectEffect = Fx.none;
@@ -610,13 +615,15 @@ public class JPUnits {
             range = 150f;    
             legCount = 4;
             legLength = 25f; 
-            weapons.add(new Weapon("-mouh"){{
-                reload = 300f;
-                shootY = 8f;
+            weapons.add(new Weapon(name+"-mouth"){{
+                reload = 360;
+                shootY = 36f;
+                recoil = 0f;
                 x = 0f;
-                y = 28f;
+                y = 0f;
                 continuous = true;
                 shoot.firstShotDelay = JPFx.purpleLaserChargeSmall.lifetime -1f;
+                parentizeEffects = true;
                 chargeSound = Sounds.chargeVela;
                 shootSound = Sounds.beamMeltdown;
                 mirror = false;
@@ -628,8 +635,37 @@ public class JPUnits {
                     healPercent = 1f;
                     collidesTeam = true;
                     chargeEffect = JPFx.purpleLaserChargeSmall;
+                    status = StatusEffects.sporeSlowed;
+                    statusDuration = 60f * 4f;
                     colors = new Color[]{Color.valueOf("8B73C7"), Color.valueOf("A865C9"), Color.valueOf("A865C9"), Color.valueOf("ffffff")};
                 }};
+            }});
+            weapons.add(new Weapon(name + "-mini-body"){{
+                reload = 15f;
+                x = 15f;
+                y = 0f;
+                controllable = false;
+                autoTarget = true;
+                rotate = true;
+                bullet = new BasicBulletType(4f, 35){{
+                    knockback = 2.5f;
+                    lifetime = 40f;
+                    width = 10f;
+                    height = 14f;
+                    collides = true;
+                    collidesTiles = true;
+                    backColor = JPPal.sporeBulletBack;
+                    frontColor = JPPal.sporeBulletFront;
+                    despawnEffect = hitEffect = JPFx.sporeExplosion;
+                }};
+                shootSound = Sounds.shootArtillery;
+                parts.add(new RegionPart("-barrel"){{
+                    mirror = true;
+                    progress = PartProgress.recoil;
+                    under = true;
+                    y = 1.5f;
+                    moveY = -2f;
+                }});
             }});
             outlineColor = Color.valueOf("303a45");
             abilities.add(new RegenAbility(){{percentAmount = 1f / (120f * 60f * 2f) * 100f;}});
@@ -662,12 +698,12 @@ public class JPUnits {
                 ejectEffect = Fx.casing1;
                 shootSound = JPSounds.ArtyBig;
                 bullet = new BasicBulletType(6f, 195){{
-                    width = 15f;
-                    height = 30f;
+                    width = 18f;
+                    height = 23f;
                     lifetime = 50f;
                     splashDamage = 75f;
                     splashDamageRadius = 25f;
-                    status = StatusEffects.slow;
+                    status = StatusEffects.sporeSlowed;
                     statusDuration = 60f * 4;
                     backColor = JPPal.sporeBulletBack;
                     frontColor = JPPal.sporeBulletFront;
@@ -706,12 +742,14 @@ public class JPUnits {
                 reload = 5f;
                 x = -15f;
                 y = -23f;
+                shootY = 2f;
                 shootSound = Sounds.shootSalvo;
                 bullet = new BasicBulletType(4.5f, 50){{
-                    width = height = 15f;
+                    width = 11f;
+                    height = 15f;
                     lifetime = 70f;
-                    backColor = Color.valueOf("CBC3E3");
-                    frontColor = Color.valueOf("CBC3E3");
+                    backColor = JPPal.sporeBulletBack;
+                    frontColor = JPPal.sporeBulletFront;
                     collides = true;
                     collidesTiles = true;
                 }};
@@ -748,27 +786,27 @@ public class JPUnits {
                 shootStatus = StatusEffects.slow;
                 shootStatusDuration = 150f;
                 mirror = false;
-                bullet = new ArtilleryBulletType(3f, 525){{
-                    hitEffect = Fx.sapExplosion;
+                bullet = new ArtilleryBulletType(3f, 225f){{
                     knockback = 0.8f;
                     lifetime = 120f;
                     width = height = 30f;
                     collides = true;
                     collidesTiles = true;
-                    splashDamageRadius = 65f;
-                    splashDamage = 450f;
+                    splashDamageRadius = 60f;
+                    splashDamage = 325f;
                     status = JPStatus.dissolving;
                     statusDuration = 60f * 6;
+                    hitEffect = Fx.sapExplosion;
                     backColor = JPPal.sporeBulletBack;
                     frontColor = JPPal.sporeBulletFront;
                     fragBullets = 6;
                     fragBullet = new ArtilleryBulletType(2.3f, 30){{
-                        hitEffect = Fx.sapExplosion;
+                        hitEffect = JPFx.sapExplosionSmall;
                         knockback = 0.8f;
                         lifetime = 30f;
-                        width = height = 20f;
+                        width = height = 16f;
                         collidesTiles = false;
-                        splashDamageRadius = 65f;
+                        splashDamageRadius = 45;
                         splashDamage = 250f;
                         backColor = JPPal.sporeBulletBack;
                         frontColor = JPPal.sporeBulletFront;
@@ -795,15 +833,16 @@ public class JPUnits {
                 controllable = false;
                 autoTarget = true;
                 rotate = true;
-                bullet = new BasicBulletType(4f, 50){{
-                    hitEffect = Fx.blastExplosion;
+                bullet = new BasicBulletType(4f, 80){{
                     knockback = 2.5f;
                     lifetime = 40f;
-                    width = height = 14f;
+                    width = 10f;
+                    height = 14f;
                     collides = true;
                     collidesTiles = true;
                     backColor = JPPal.sporeBulletBack;
                     frontColor = JPPal.sporeBulletFront;
+                    despawnEffect = hitEffect = JPFx.sporeExplosion;
                     }};
                     shootSound = Sounds.shootArtillery;
                 parts.add(new RegionPart("-barrel"){{
@@ -821,15 +860,16 @@ public class JPUnits {
                 controllable = false;
                 autoTarget = true;
                 rotate = true;
-                bullet = new BasicBulletType(4f, 50){{
-                    hitEffect = Fx.blastExplosion;
+                bullet = new BasicBulletType(4f, 80){{
                     knockback = 2.5f;
                     lifetime = 40f;
-                    width = height = 14f;
+                    width = 10f;
+                    height = 14f;
                     collides = true;
                     collidesTiles = true;
                     backColor = JPPal.sporeBulletBack;
                     frontColor = JPPal.sporeBulletFront;
+                    despawnEffect = hitEffect = JPFx.sporeExplosion;
                     }};
                     shootSound = Sounds.shootArtillery;
                     parts.add(new RegionPart("-barrel"){{
@@ -1017,6 +1057,7 @@ public class JPUnits {
 
         guardian = new UnitType("guardian"){{
             this.constructor = UnitEntity::create;
+            aiController = JPSentientFly::new;
             health = 1500;
             armor = 7;
             hitSize = 18f;
@@ -1052,8 +1093,9 @@ public class JPUnits {
                     trailLength = 6;
                     trailWidth = 2.8f;
                     trailColor = JPPal.sporeBulletBack;
-                        shootEffect = Fx.shootBig;
+                    shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
+                    hitEffect = JPFx.sporeExplosion;
                 }};
                 shootSound = Sounds.shootArtillery;
             }});
@@ -1088,7 +1130,7 @@ public class JPUnits {
                 shoot.shotDelay = 5f;
                 recoil = 2.5f;
                 bullet = new BasicBulletType(5f, 15){{
-                    height = width = 10f;
+                    height = 10f; width = 6f;
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
                     buildingDamageMultiplier = 0.05f;
@@ -1130,7 +1172,7 @@ public class JPUnits {
                 shoot.shotDelay = 5f;
                 recoil = 4f;
                 bullet = new BasicBulletType(4.5f, 25){{
-                    height = width = 15f;
+                    height = 12f; width = 7f;
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
                     buildingDamageMultiplier = 0.05f;
@@ -1164,13 +1206,15 @@ public class JPUnits {
             drag = 0.05f;
             accel = 0.11f;
             flying = true;
-            weapons.add(new Weapon(){{
+            weapons.add(new Weapon(name+"-mouth"){{
                 reload = 75f;
                 shootY = 8f;
+                recoil = 0f;
                 x = 0f;
                 y = 0f;
                 continuous = true;
                 shoot.firstShotDelay = JPFx.purpleLaserChargeSmall.lifetime -1f;
+                parentizeEffects = true;
                 chargeSound = Sounds.chargeVela;
                 shootSound = Sounds.beamMeltdown;
                 shootStatus = StatusEffects.slow;
@@ -1195,7 +1239,7 @@ public class JPUnits {
             shownPlanets.add(Planets.erekir);
         }};
 
-        impReincranation = new UnitType("impReincranation"){{
+        impReincarnation = new UnitType("impReincarnation"){{
             this.constructor = UnitEntity::create;
             aiController = SuicideAI::new;
             health = 215;
@@ -1216,17 +1260,16 @@ public class JPUnits {
                 y = 0f;
                 shootCone = 180f;
                 shootOnDeath = true;
-                bullet = new BombBulletType(1f, 50){{
+                bullet = new BombBulletType(1f, 45f){{
                     width = 0f;
                     height = 0f;
                     lifetime = 10f;
                     splashDamage = 175f;
-                    splashDamageRadius = 60f;
                     killShooter = true;
                     collidesAir = true;
                     shootEffect = Fx.none;
                     hitSound = Sounds.explosion;
-                    hitEffect = Fx.sapExplosion;
+                    hitEffect = JPFx.sapExplosionSmall;
 
                 }};
                 shootSound = Sounds.explosion;
@@ -1266,23 +1309,24 @@ public class JPUnits {
         imp = new UnitType("imp"){{
             this.constructor = LegsUnit::create;
             aiController = SuicideAI::new;
-            health = 450;
+            health = 400;
             hitSize = 8f;
-            speed = 1.5f;
+            speed = 1.6f;
             range = 30f;
-            weapons.add(new Weapon(){{
+            weapons.add(new Weapon(name+"-mouth"){{
                 reload = 5f;
+                x = y = 0;
+                mirror = false;
                 shootOnDeath = true;
                 shootCone = 180f;
                 shoot.firstShotDelay = 75f;
                 shootWarmupSpeed = 0.06f;
                 minWarmup = 0.9f;
-                bullet = new BombBulletType(0,50f){{
+                bullet = new BombBulletType(0,45f){{
                     width = 0f;
                     height = 0f;
                     lifetime = 10f;
                     splashDamage = 75f;
-                    splashDamageRadius = 60f;
                     buildingDamageMultiplier = 1.75f;
                     shootStatus = StatusEffects.slow;
                     shootStatusDuration = 91f;
@@ -1292,6 +1336,23 @@ public class JPUnits {
                     collidesAir = true;
                     shootOnDeath = true;
                 }};
+                parts.add(new RegionPart("-part"){{
+                    mirror = true;
+                    progress = PartProgress.charge;
+                    layerOffset= -0.0001f;
+                    under = true;
+                    outline = false;
+                    moveX = 0.75f;
+                    moveY = 0.75f;
+                    moveRot = 21f;
+                }});
+                parts.add(new RegionPart("-static"){{
+                    mirror = false;
+                    progress = PartProgress.warmup;
+//                    layerOffset= -0.0001f;
+//                    under = true;
+                    outline = false;
+                }});
             }});
             weapons.add(new Weapon(){{
                 reload = 5f;
@@ -1300,14 +1361,13 @@ public class JPUnits {
                 display = false;
                 controllable = false;
                 aiControllable = false;
-                bullet = new BombBulletType(0,50f){{
+                bullet = new BombBulletType(0,45f){{
                     width = 0f;
                     height = 0f;
                     lifetime = 10f;
                     status = StatusEffects.burning;
                     statusDuration = 60f* 4.5f;
                     splashDamage = 75f;
-                    splashDamageRadius = 60f;
                     buildingDamageMultiplier = 1.75f;
                     hitSound = Sounds.explosion;
                     incendChance = 100f;
@@ -1319,8 +1379,8 @@ public class JPUnits {
             }});
             parts.add(new RegionPart("-sac"){{
                 mirror = false;
-                progress = PartProgress.warmup;
-                heatProgress = PartProgress.warmup;
+                progress = PartProgress.charge;
+                heatProgress = PartProgress.charge;
                 heatColor = Color.valueOf("590e14");
                 heatLayerOffset = 0.1f;
                 layerOffset = -0.0001f;
@@ -1332,7 +1392,7 @@ public class JPUnits {
             immunities.add(StatusEffects.freezing);
             healColor = Color.valueOf("590e14");
             outlineColor = Color.valueOf("303a45");
-            abilities.add(new SpawnDeathAbility(impReincranation, 1, 11f));
+            abilities.add(new SpawnDeathAbility(impReincarnation, 1, 11f));
             abilities.add(new RegenAbility(){{percentAmount = 1f / (70f * 60f) * 100f;}});
             abilities.add(new LiquidExplodeAbility(){{liquid = Liquids.neoplasm; amount = 75f;}});
 
@@ -1353,14 +1413,16 @@ public class JPUnits {
             legExtension = 4f;
             legBaseOffset = 5f;
             targetAir = false;
-            weapons.add(new Weapon("mouh"){{
+            weapons.add(new Weapon(name+"-mouth"){{
                 reload = 60f;
+                recoil = 3f;
                 x = 0f;
                 y = 0f;
                 mirror = false;
+                shootWarmupSpeed = 0.06f;
+                minWarmup = 0.9f;
                 shootSound = Sounds.shootArtillery;
-                bullet = new ArtilleryBulletType(2.5f, 9){{
-                    speed = 3f;
+                bullet = new ArtilleryBulletType(3f, 0){{
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke;
                     splashDamageRadius = 25f;
@@ -1368,12 +1430,22 @@ public class JPUnits {
                     lifetime = 75f;
                     statusDuration = 60f * 4;
                     status = StatusEffects.slow;
-                    backColor = Color.valueOf("85151e");
-                    frontColor = Color.valueOf("85151e");
+                    backColor = JPPal.neoplasmBulletBack;
+                    frontColor = JPPal.neoplasmBulletFront;
                     collidesTiles = true;
                     trailLength = 5;
-                    trailColor = Color.valueOf("69262b");
+                    trailColor = JPPal.neoplasmBulletBack;
                 }};
+                parts.add(new RegionPart("-part"){{
+                    mirror = true;
+                    progress = PartProgress.warmup;
+                    layerOffset= -0.0001f;
+                    under = true;
+                    outline = false;
+                    moveX = 0.75f;
+                    moveY = 0.75f;
+                    moveRot = 21f;
+                }});
             }});
             healColor = Color.valueOf("590e14");
             outlineColor = Color.valueOf("303a45");
@@ -1779,31 +1851,29 @@ public class JPUnits {
                 shoot.shots = 3;
                 shoot.shotDelay = 10f;
                 shootSound = Sounds.none;
-                bullet = new BombBulletType(25f, 25f){{
+                bullet = new BombBulletType(25f, 45f){{
                     fragBullets = 3;
-                    width = 10f;
+                    width = 8f;
                     height = 14f;
+                    splashDamage = 95f;
                     hitEffect = Fx.flakExplosion;
                     shootEffect = Fx.none;
                     smokeEffect = Fx.none;
-                    splashDamage = 15f;
-                    backColor = JPPal.sporeBulletBack;
-                    frontColor = Color.valueOf("7357cf");
+                    backColor = JPPal.neoplasmBulletBack;
+                    frontColor = JPPal.neoplasmBulletFront;
                     //lightColor = Color.valueOf("8B73C7");
-                    splashDamageRadius = 32f;
                     status = StatusEffects.blasted;
                     statusDuration = 60f;
-                    fragBullet = new BombBulletType(25f, 25f){{
+                    fragBullet = new BombBulletType(5f, 32f){{
                         shrinkX = 0f;
                         shrinkY = 0f;
                         spin = 4.6f;
                         speed = 6;
-                        splashDamage = 15f;
-                        splashDamageRadius = 32f;
-                        width = 10f;
-                        height = 7f;
-                        backColor = JPPal.sporeBulletBack;
-                        frontColor = Color.valueOf("7357cf");
+                        splashDamage = 45f;
+                        width = 4f;
+                        height = 8f;
+                        backColor = JPPal.neoplasmBulletBack;
+                        frontColor = JPPal.neoplasmBulletFront;
                         //lightColor = Color.valueOf("8B73C7");
                         lifetime = 75f;
                         despawnEffect = Fx.none;
@@ -1843,26 +1913,25 @@ public class JPUnits {
             flying = true;
             weapons.add(new Weapon(){{
                 x = 6f;
-                y = 6f;
+                y = -4f;
                 reload = 75f;
                 top = false;
-                bullet = new BasicBulletType(2.5f, 9){{
+                bullet = new BasicBulletType(0f, 0){{
                     collidesAir = false;
-                    width = 0f;
-                    height = 0f;
+                    width = height = 0f;
                     lifetime = 10f;
-                    damage = 0f;
-                    shoot.shots = 4;
+                    shoot.shots = 2;
                     alternate = true;
                     shoot.shotDelay = 5f;
                     spawnUnit = new MissileUnitType("bomb"){{
+                    health = 250;
+                    hitSize = 3f;
+                    lifetime = 50f;
+                    engineSize = 3f;
+                    engineColor = trailColor = JPPal.sporeBulletBack;
+                    engineLayer = Layer.effect;
                     flying = true;
                     useUnitCap = false;
-                    lifetime = 50f;
-                    trailLength = 3;
-                    trailColor = Color.valueOf("A865C9");
-                    health = 1120f;
-                    hitSize = 3f;
                     hidden = true;
                     drawCell =false;
                     weapons.add(new Weapon(){{
@@ -1872,7 +1941,7 @@ public class JPUnits {
                         shootOnDeath = true;
                         bullet = new ExplosionBulletType(110f, 25f){{
                             killShooter = true;
-                            shootEffect = Fx.massiveExplosion;
+                            shootEffect = JPFx.sapExplosionSmall;
                             collidesAir = true;
                             splashDamage = 145f;
                             splashDamageRadius = 30f;
@@ -2023,8 +2092,10 @@ public class JPUnits {
                     spin = 4f;
                     shrinkX = 0.6f;
                     shrinkY = 0.6f;
-                    despawnEffect = Fx.sapExplosion;
-                    hitEffect = Fx.sapExplosion;
+                    backColor = JPPal.sporeBulletBack;
+                    frontColor = JPPal.sporeBulletFront;
+                    despawnEffect = JPFx.sapExplosionSmall;
+                    hitEffect = JPFx.sapExplosionSmall;
                     sprite = "large-bomb";
                     despawnSound = Sounds.explosionArtilleryShockBig;
                 }};

@@ -19,7 +19,8 @@ public class InfestationBulletType extends BasicBulletType {
             Tmp.v3.set(unit).sub(b.x, b.y).nor().scl(knockback * 80f);
             unit.impulse(Tmp.v3);
             //Unit that cannot be infested
-            if (unit.type == JPUnits.roach || unit.type == JPUnits.frost || unit.type == JPUnits.frostC) return;
+//          Lobber is added temporaily until a unit for the bullet is decided on.
+            if (unit.type == JPUnits.roach || unit.type == JPUnits.frost || unit.type == JPUnits.frostC || unit.type == JPUnits.lobber) return;
             //Health check when bullet hits
             // Condition is as follow: unit health smaller than 25% of max OR
             // unit health < 100 OR unit have infested status effect

@@ -108,6 +108,54 @@ public class JPFx {
         Drawf.light(e.x, e.y, e.fin() * 20f, Pal.heal, 0.7f);
     }).followParent(true).rotWithParent(true),
 
+    sporeExplosion = new Effect(25, e -> {
+        color(Pal.sapBullet);
+
+        e.scaled(6, i -> {
+            stroke(3f * i.fout());
+            Lines.circle(e.x, e.y, 3f + i.fin() * 15f);
+        });
+
+        color(Color.gray);
+
+        randLenVectors(e.id, 5, 2f + 23f * e.finpow(), (x, y) -> {
+            Fill.circle(e.x + x, e.y + y, e.fout() * 4f + 0.5f);
+        });
+
+        color(JPPal.sporeBulletBack);
+        stroke(e.fout());
+
+        randLenVectors(e.id + 1, 4, 1f + 23f * e.finpow(), (x, y) -> {
+            lineAngle(e.x + x, e.y + y, Mathf.angle(x, y), 1f + e.fout() * 3f);
+        });
+
+        Drawf.light(e.x, e.y, 45f, JPPal.sporeBulletBack, 0.8f * e.fout());
+    }),
+
+    sapExplosionSmall = new Effect(25, e -> {
+        color(Pal.sapBullet);
+
+        e.scaled(6, i -> {
+            stroke(3f * i.fout());
+            Lines.circle(e.x, e.y, 3f + i.fin() * 40f);
+        });
+
+        color(Color.gray);
+
+        randLenVectors(e.id, 9, 2f + 70 * e.finpow(), (x, y) -> {
+            Fill.circle(e.x + x, e.y + y, e.fout() * 4f + 0.5f);
+        });
+
+        color(Pal.sapBulletBack);
+        stroke(e.fout());
+
+        randLenVectors(e.id + 1, 8, 1f + 60f * e.finpow(), (x, y) -> {
+            lineAngle(e.x + x, e.y + y, Mathf.angle(x, y), 1f + e.fout() * 3f);
+        });
+
+        Drawf.light(e.x, e.y, 90f, Pal.sapBulletBack, 0.8f * e.fout());
+    }),
+
     purpleLaserChargeSmall = new Effect(40f, 100f, e -> {
         color(Color.valueOf("8B73C7"));
         stroke(e.fin() * 2f);

@@ -6,7 +6,9 @@ public class JPPal{
     public static Color
 
     sporeBulletBack = Color.valueOf("9183cf"),
-    sporeBulletFront = Color.white.cpy()
+    sporeBulletFront = Color.white.cpy(),
+    neoplasmBulletBack = Color.valueOf("9e3736"),
+    neoplasmBulletFront = Color.white.cpy()
     ;
 
 }
