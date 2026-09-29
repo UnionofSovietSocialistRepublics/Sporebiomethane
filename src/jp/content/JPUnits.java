@@ -648,7 +648,7 @@ public class JPUnits {
                 autoTarget = true;
                 rotate = true;
                 bullet = new BasicBulletType(4f, 35){{
-                    knockback = 2.5f;
+                    knockback = 1.5f;
                     lifetime = 40f;
                     width = 10f;
                     height = 14f;
@@ -834,7 +834,7 @@ public class JPUnits {
                 autoTarget = true;
                 rotate = true;
                 bullet = new BasicBulletType(4f, 80){{
-                    knockback = 2.5f;
+                    knockback = 2f;
                     lifetime = 40f;
                     width = 10f;
                     height = 14f;
@@ -861,7 +861,7 @@ public class JPUnits {
                 autoTarget = true;
                 rotate = true;
                 bullet = new BasicBulletType(4f, 80){{
-                    knockback = 2.5f;
+                    knockback = 2f;
                     lifetime = 40f;
                     width = 10f;
                     height = 14f;
