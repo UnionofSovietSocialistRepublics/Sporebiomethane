@@ -16,7 +16,7 @@ import static mindustry.content.Items.*;
 
 public class JPOther{
     public static Block
-    brokenMono,vanadiumCarbideWallLarge,hatchery,hive,nydusaeCore,lunarCore;
+    brokenMono,vanadiumCarbideWallLarge,hatchery,hive,nydusaeCore,lunarCore,creepTower;
 
         public static void load(){
         brokenMono = new JPDormantUnit("brokenMono"){{
@@ -104,5 +104,14 @@ public class JPOther{
 
             shownPlanets.add(Planets.serpulo);
             shownPlanets.add(Planets.erekir);
+        }};
+
+        creepTower = new JPCreepTower("creepTower"){{
+            requirements(Category.defense, with(JPItem.vanadiumCarbideAlloy, 40));
+            health = 6500;
+            size = 2;
+            shownPlanets.add(Planets.serpulo);
+            shownPlanets.add(Planets.erekir);
+            consumePower(6f);
         }};
 }}
