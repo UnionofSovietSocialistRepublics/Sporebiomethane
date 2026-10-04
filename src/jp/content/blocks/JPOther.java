@@ -7,6 +7,7 @@ import mindustry.world.*;
 import mindustry.world.blocks.defense.*;
 import mindustry.world.blocks.storage.*;
 import jp.content.*;
+import mindustry.world.draw.*;
 import mindustry.world.meta.*;
 
 import static mindustry.content.UnitTypes.mono;
@@ -107,11 +108,21 @@ public class JPOther{
         }};
 
         creepTower = new JPCreepTower("creepTower"){{
-            requirements(Category.defense, with(JPItem.vanadiumCarbideAlloy, 40));
-            health = 6500;
+            requirements(Category.effect, with(JPItem.naniteAlloy, 55, JPItem.biomass, 25));
+            health = 420;
             size = 2;
+            radius = 8;
+            convertSpeed = 4f;
             shownPlanets.add(Planets.serpulo);
             shownPlanets.add(Planets.erekir);
             consumePower(6f);
+            drawer = new DrawMulti(
+                    new DrawRegion("-bottom"),
+                    new DrawRegion("-mid"){{
+                        rotateSpeed = 2f;
+                    }},
+                    new DrawDefault()
+
+            );
         }};
 }}

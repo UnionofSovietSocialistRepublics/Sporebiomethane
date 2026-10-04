@@ -5,6 +5,10 @@ import mindustry.type.Category;
 import mindustry.world.blocks.units.UnitFactory;
 import jp.content.*;
 import mindustry.content.*;
+import mindustry.world.draw.DrawDefault;
+import mindustry.world.draw.DrawLiquidTile;
+import mindustry.world.draw.DrawMulti;
+import mindustry.world.draw.DrawRegion;
 import mindustry.world.meta.*;
 
 import static mindustry.type.ItemStack.*;
@@ -51,7 +55,7 @@ public class JPUnitFactory{
             shownPlanets.add(Planets.serpulo);
             shownPlanets.add(Planets.erekir);
         }};
-        gestator = new UnitFactory("gestator"){{
+        gestator = new JPDrawerUnitFactory("gestator"){{
             requirements(Category.units, with(silicon,750,JPItem.naniteAlloy,500,JPItem.biomass,250,JPItem.neocell,75));
             envEnabled = Env.spores;
             plans = Seq.with(
@@ -65,6 +69,8 @@ public class JPUnitFactory{
             consumePower(7f);
             consumeLiquid(Liquids.neoplasm, 15f / 60f);
 
+            drawer = new DrawMulti(new DrawRegion("-bottom"), new DrawLiquidTile(Liquids.neoplasm,1.5f){{drawLiquidLight = true;}}, new DrawDefault());
+            squareSprite = false;
             shownPlanets.add(Planets.serpulo);
             shownPlanets.add(Planets.erekir);
         }};

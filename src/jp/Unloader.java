@@ -55,7 +55,8 @@ public class Unloader extends Mod{
     }
     @Override
     public void init() {
-        // IDK what super and init does but settings only work when init
+        // I KNOW now!!!
+        // It uhhh does inherience thing inside of javah.
         super.init();
         JPSettings.init();
     }

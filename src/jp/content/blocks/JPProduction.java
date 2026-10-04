@@ -3,8 +3,8 @@ package jp.content.blocks;
 import arc.Core;
 import arc.graphics.*;
 import arc.math.Mathf;
-import mindustry.entities.effect.MultiEffect;
-import mindustry.entities.effect.WrapEffect;
+import arc.struct.*;
+import mindustry.entities.effect.*;
 import mindustry.gen.*;
 import mindustry.type.*;
 import mindustry.world.*;
@@ -257,6 +257,7 @@ public class JPProduction{
             size = 2;
             drillTime = 125f;
             itemCapacity = 25;
+            blockedItems = Seq.with(copper,lead,titanium,thorium,scrap,beryllium,tungsten);
             drillMultipliers.put(Items.copper, 0f);
             drillMultipliers.put(Items.lead, 0f);
             drillMultipliers.put(Items.titanium, 0f);
