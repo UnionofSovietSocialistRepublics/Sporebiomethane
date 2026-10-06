@@ -495,7 +495,8 @@ public class JPUnits {
             health = 1750;
             armor = 12;
             range = 125f;
-            legCount = 4;            
+            legCount = 4;
+            stepShake = 0.15f;
             weapons.add(new Weapon(name + "-missileLauncher"){{
                 reload = 250f;
                 x = 0f;
@@ -1310,6 +1311,7 @@ public class JPUnits {
             this.constructor = LegsUnit::create;
             aiController = SuicideAI::new;
             health = 400;
+            armor = 1f;
             hitSize = 8f;
             speed = 1.6f;
             range = 30f;
