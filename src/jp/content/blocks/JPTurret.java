@@ -36,7 +36,7 @@ public class JPTurret{
 
         sporeGarrison = new PowerTurret("sporeGarrison"){{
             requirements(Category.turret, with(graphite, 125, silicon, 95, JPItem.biomass, 75));
-            envEnabled = Env.spores;
+             
             health = 720;
             size = 2;
             rotateSpeed = 10f;
@@ -143,7 +143,7 @@ public class JPTurret{
 
         oarch = new ItemTurret("oarch"){{
             requirements(Category.turret, with(graphite, 200, silicon, 125, JPItem.naniteAlloy, 95));
-            envEnabled = Env.spores;
+             
             size = 2;
             rotateSpeed = 10f;
             range = 250f;
@@ -308,7 +308,7 @@ public class JPTurret{
 
         sentinel = new ContinuousTurret("sentinel"){{
             requirements(Category.turret, with(graphite, 200, JPItem.naniteAlloy, 75, JPItem.neocell, 25));
-            envEnabled = Env.spores;
+             
             health = 975;
             size = 2;
             rotateSpeed = 1.25f;
@@ -368,7 +368,7 @@ public class JPTurret{
             ammoUseEffect = Fx.casing1;
             targetGround = false;
             inaccuracy = 2f;
-            envEnabled = Env.spores;
+             
             shoot = new ShootAlternate(){{
                 barrels = 2;
                 spread = 0f;
@@ -478,7 +478,7 @@ public class JPTurret{
 
         artilleryTurret = new ItemTurret("artilleryTurret"){{
             requirements(Category.turret, with(graphite, 675, JPItem.naniteAlloy, 250, JPItem.biomass, 150));
-            envEnabled = Env.spores;
+             
             size = 3;
             rotateSpeed = 10f;
             range = 260f;
@@ -550,7 +550,7 @@ public class JPTurret{
 
         suppressor = new ItemTurret("suppressor"){{
             requirements(Category.turret, with(graphite, 225, JPItem.naniteAlloy, 75, JPItem.biomass, 95));
-            envEnabled = Env.spores;
+             
             health = 1850;
             size = 3;
             rotateSpeed = 10f;
@@ -651,7 +651,7 @@ public class JPTurret{
 
         impalerCannon= new ItemTurret("impalerCannon"){{
             requirements(Category.turret, with(surgeAlloy, 750, JPItem.naniteAlloy, 500,thorium, 500,silicon, 450));
-            envEnabled = Env.spores;
+             
             health = 4250;
             size = 4;
             range = 325f;

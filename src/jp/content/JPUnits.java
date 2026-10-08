@@ -96,7 +96,7 @@ public class JPUnits {
         zeta = new UnitType("zeta"){{
             this.constructor = BuildingTetherPayloadUnit::create;
             controller = u -> new AssemblerAI();
-            envEnabled = Env.spores;
+             
             speed = 1f;
             hitSize = 11f;
             health = 400;
@@ -149,7 +149,7 @@ public class JPUnits {
 
         zergling = new UnitType("zergling"){{
             this.constructor = LegsUnit::create;
-            envEnabled = Env.spores;
+             
             health = 250;
             hitSize = 8f;
             speed = 1.3f;
@@ -272,7 +272,7 @@ public class JPUnits {
 
         lobber = new UnitType("lobber"){{
             this.constructor = LegsUnit::create;
-            envEnabled = Env.spores;
+             
             armor = 2;
             health = 325;
             hitSize = 8f;
@@ -441,7 +441,7 @@ public class JPUnits {
 
         scarabid = new UnitType("scarabid"){{
             this.constructor = LegsUnit::create;
-            envEnabled = Env.spores;
+             
             speed = 0.8f;
             hitSize = 18f;
             health = 1200;
@@ -489,7 +489,7 @@ public class JPUnits {
 
         breacher = new UnitType("breacher"){{
             this.constructor = LegsUnit::create;
-            envEnabled = Env.spores;
+             
             speed = 0.8f;
             hitSize = 18f;
             health = 1750;
@@ -547,7 +547,7 @@ public class JPUnits {
 
         purger = new UnitType("purger"){{
             this.constructor = LegsUnit::create;
-            envEnabled = Env.spores;
+             
             speed = 1f;
             hitSize = 8f;
             health = 520;
@@ -608,7 +608,7 @@ public class JPUnits {
 
         gorgon = new UnitType("gorgon"){{
             this.constructor = LegsUnit::create;
-            envEnabled = Env.spores;
+             
             speed = 0.7f;
             hitSize = 27f;
             health = 12000;
@@ -677,7 +677,7 @@ public class JPUnits {
 
         behomoth = new UnitType("behomoth"){{
             this.constructor = LegsUnit::create;
-            envEnabled = Env.spores;
+             
             hitSize = 44f;
             health = 14000;
             armor = 15;
@@ -766,7 +766,7 @@ public class JPUnits {
 
         basilisk = new UnitType("basilisk"){{
             this.constructor = LegsUnit::create;
-            envEnabled = Env.spores;
+             
             speed = 0.55f;
             hitSize = 44f;
             health = 35000;
@@ -1150,7 +1150,7 @@ public class JPUnits {
 
         hiveSentinel = new UnitType("hiveSentinel"){{
             this.constructor = UnitEntity::create;
-            envEnabled = Env.spores;
+             
             armor = 2;
             health = 400;
             hitSize = 18f;
@@ -1193,7 +1193,7 @@ public class JPUnits {
 
         sporophage = new UnitType("sporophage"){{
             this.constructor = UnitEntity::create;
-            envEnabled = Env.spores;
+             
             armor = 3;
             health = 425;
             hitSize = 17f;
@@ -1404,7 +1404,7 @@ public class JPUnits {
 
         carci = new UnitType("carci"){{
             this.constructor = LegsUnit::create;
-            envEnabled = Env.spores;
+             
             health = 875;
             armor = 4;
             hitSize = 8f;

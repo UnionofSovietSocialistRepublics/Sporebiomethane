@@ -16,9 +16,8 @@ public class JPDistribution{
 
     public static void load(){
     biomassPipe = new Duct("biomassPipe"){{
-        requirements(Category.distribution, with(titanium, 2, silicon, 2, metaglass,4, JPItem.biomass,1));
-        envEnabled = Env.spores;
-        health = 300;
+        requirements(Category.distribution, with(graphite, 2,silicon, 2, JPItem.biomass,1));
+        scaledHealth = 265f;
         size = 1;
         speed = 3f;
         shownPlanets.add(Planets.serpulo);
@@ -27,7 +26,7 @@ public class JPDistribution{
 
     harvesterBay = new JPMiningOutpost("harvesterBay"){{
         requirements(Category.distribution, with(silicon, 95,JPItem.biomass, 45,JPItem.naniteAlloy,15));
-        health = 240;
+        scaledHealth = 60f;
         size = 2;
         unitBuildTime = 60f * 8f;
         consumePower(240f / 60f);

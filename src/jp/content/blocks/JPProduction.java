@@ -33,9 +33,9 @@ public class JPProduction{
         public static void load(){
 
         nanoProcessor = new GenericCrafter("nanoProcessor"){{
-            requirements(Category.crafting, with(silicon, 60, graphite, 45));
-            envEnabled = Env.spores;
-            health = 125;
+            requirements(Category.crafting, with(graphite, 60, silicon, 45));
+             
+            scaledHealth = 60f;
             size = 2;
             craftEffect = Fx.pulverizeMedium;
             outputItem = new ItemStack(JPItem.biomass, 2);
@@ -66,9 +66,9 @@ public class JPProduction{
         }};
 
         naniteInfuser = new GenericCrafter("naniteInfuser"){{
-            requirements(Category.crafting, with(silicon, 325, graphite, 275,JPItem.biosil,95));
-            envEnabled = Env.spores;
-            health = 350;
+            requirements(Category.crafting, with(graphite, 85,JPItem.biosil,15));
+             
+            scaledHealth = 90f;
             size = 2;
             craftEffect = Fx.pulverizeMedium;
             outputItem = new ItemStack(JPItem.naniteAlloy, 1);
@@ -87,9 +87,9 @@ public class JPProduction{
         }};
 
         carbideCompositeSmelter = new GenericCrafter("carbideCompositeSmelter"){{
-            requirements(Category.crafting, with(JPItem.vanadium,300,JPItem.biosil, 250,JPItem.naniteAlloy, 225));
-            envEnabled = Env.spores;
-            health = 475;
+            requirements(Category.crafting, with(JPItem.vanadium,225,JPItem.biosil, 75,JPItem.naniteAlloy, 45));
+             
+            scaledHealth = 90f;
             size = 2;
             craftEffect = Fx.smeltsmoke;
             outputItem = new ItemStack(JPItem.Carbinecomposite, 1);
@@ -106,9 +106,9 @@ public class JPProduction{
         }};
 
         vanadiumCarbideAlloyer = new HeatProducer("vanadiumCarbideAlloyer"){{
-            requirements(Category.crafting, with(silicon, 270,JPItem.biomass, 125,JPItem.vanadium, 450));
-            envEnabled = Env.spores;
-            health = 750;
+            requirements(Category.crafting, with(JPItem.vanadium, 450,silicon, 270,JPItem.biomass, 125));
+             
+            scaledHealth = 90f;
             size = 2;
             craftEffect = Fx.pulverizeMedium;
             outputItem = new ItemStack(JPItem.vanadiumCarbideAlloy, 1);
@@ -124,9 +124,9 @@ public class JPProduction{
         }};
 
         fluoresiltRefinery = new GenericCrafter("fluoresiltRefinery"){{
-            requirements(Category.crafting, with(JPItem.biomass, 45,silicon, 75, graphite, 125));
-            envEnabled = Env.spores;
-            health = 120;
+            requirements(Category.crafting, with(graphite, 125, silicon, 75,JPItem.biomass, 45));
+             
+            scaledHealth = 50f;
             size = 2;
             craftEffect = Fx.pulverizeMedium;
             outputItem = new ItemStack(JPItem.fluorite, 1);
@@ -142,9 +142,9 @@ public class JPProduction{
         }};
 
         voltaicChamber = new GenericCrafter("voltaicChamber"){{
-            requirements(Category.crafting, with(graphite, 225,JPItem.biomass, 115, plastanium, 75));
-            envEnabled = Env.spores;
-            health = 360;
+            requirements(Category.crafting, with(graphite, 115,JPItem.biomass, 65, JPItem.naniteAlloy, 45));
+             
+            scaledHealth = 40f;
             size = 3;
             craftEffect = Fx.pulverizeMedium;
             outputItem = new ItemStack(JPItem.voltaicGas, 1);
@@ -162,9 +162,9 @@ public class JPProduction{
         }};
 
         bioSynthesizer = new GenericCrafter("bioSynthesizer"){{
-            requirements(Category.crafting, with(JPItem.biomass, 100,silicon, 75, graphite, 125));
-            envEnabled = Env.spores;
-            health = 360;
+            requirements(Category.crafting, with(graphite, 165, silicon, 75,JPItem.biomass, 45));
+             
+            scaledHealth = 40f;
             size = 3;
             craftEffect = Fx.pulverizeMedium;
             outputItem = new ItemStack(JPItem.biosil, 1);
@@ -179,9 +179,8 @@ public class JPProduction{
         }};
 
         neostabilizer = new GenericCrafter("neostabilizer"){{
-            requirements(Category.crafting, with(JPItem.biomass, 250,JPItem.naniteAlloy, 75,JPItem.Carbinecomposite, 75));
-            envEnabled = Env.spores;
-            health = 1000;
+            requirements(Category.crafting, with(JPItem.biomass, 195,JPItem.naniteAlloy, 75,JPItem.Carbinecomposite, 45));
+            scaledHealth = 100f;
             size = 3;
             craftEffect = Fx.pulverizeMedium;
             outputItem = new ItemStack(JPItem.neocell, 1);
@@ -199,9 +198,8 @@ public class JPProduction{
         }};
 
         neodestabilizer = new JPELF("neodestabilizer"){{
-            requirements(Category.crafting, with(JPItem.biomass, 325,JPItem.naniteAlloy, 125,JPItem.Carbinecomposite, 125));
-            envEnabled = Env.spores;
-            health = 1150;
+            requirements(Category.crafting, with(JPItem.biomass, 325,JPItem.Carbinecomposite, 125));
+            scaledHealth = 90f;
             size = 4;
             craftEffect = Fx.pulverizeMedium;
             craftTime = 60f;
@@ -250,21 +248,13 @@ public class JPProduction{
         }};
 
         extractor = new Drill("extractor"){{
-            requirements(Category.production, with(silicon, 15,graphite, 30));
-            envEnabled = Env.spores;
-            health = 275;
+            requirements(Category.production, with(graphite, 40, silicon, 25));
+            scaledHealth = 70f;
             tier = 4;
             size = 2;
             drillTime = 125f;
             itemCapacity = 25;
             blockedItems = Seq.with(copper,lead,titanium,thorium,scrap,beryllium,tungsten);
-            drillMultipliers.put(Items.copper, 0f);
-            drillMultipliers.put(Items.lead, 0f);
-            drillMultipliers.put(Items.titanium, 0f);
-            drillMultipliers.put(Items.thorium, 0f);
-            drillMultipliers.put(Items.scrap, 0f);
-            drillMultipliers.put(Items.beryllium, 0f);
-            drillMultipliers.put(Items.tungsten, 0f);
             hasLiquids = true;
             consumeLiquid(Liquids.water, 0.05f).boost();
 
@@ -273,9 +263,8 @@ public class JPProduction{
         }};
 
         zincExtractor = new GenericCrafter("zincExtractor"){{
-            requirements(Category.production, with(silicon, 45,JPItem.biomass, 25,JPItem.vanadium, 125));
-            envEnabled = Env.spores;
-            health = 625;
+            requirements(Category.production, with(JPItem.vanadium, 125,silicon, 45,JPItem.biomass, 25));
+            scaledHealth = 70f;
             size = 2;
             outputItem = new ItemStack(JPItem.zinc, 1);
             consumePower(5f);
@@ -291,9 +280,9 @@ public class JPProduction{
         }};
 
         massCultivator = new GenericCrafter("massCultivator"){{
-            requirements(Category.production, with(silicon, 450,graphite, 350,JPItem.biomass, 75));
+            requirements(Category.production, with(graphite, 325,silicon, 285,JPItem.biomass, 75));
             envEnabled = Env.any;
-            health = 750;
+            scaledHealth = 90f;
             size = 3;
             outputItem = new ItemStack(sporePod, 5);
             craftTime = 50f;
@@ -321,9 +310,8 @@ public class JPProduction{
         //Power blocks
 
         oilBurner = new ConsumeGenerator("oilBurner"){{
-            requirements(Category.power, with(silicon, 25,graphite, 75,JPItem.biomass, 15));
-            envEnabled = Env.spores;
-            health = 180;
+            requirements(Category.power, with(graphite,75,silicon,35,JPItem.biomass, 15));
+            scaledHealth = 180f;
             size = 1;
             powerProduction = 3.75f;
             liquidCapacity = 25f;
@@ -339,8 +327,7 @@ public class JPProduction{
 
         voltaicBurner = new ConsumeGenerator("voltaticBurner"){{
             requirements(Category.power, with(silicon, 125,JPItem.naniteAlloy, 65,JPItem.biomass, 45));
-            envEnabled = Env.spores;
-            health = 450;
+            scaledHealth = 90f;
             size = 2;
             powerProduction = 12f;
             itemDuration = 180f;
@@ -355,9 +342,8 @@ public class JPProduction{
         }};
 
         neocellGenerator = new JPBoostableCG("neocellGenerator"){{
-            requirements(Category.power, with(silicon, 225,JPItem.vanadium, 75,JPItem.neocell, 95));
-            envEnabled = Env.spores;
-            health = 650;
+            requirements(Category.power, with(silicon, 225,JPItem.neocell, 95,JPItem.vanadium, 75));
+            scaledHealth = 120f;
             size = 2;
             powerProduction = 15f;
             itemDuration = 360f;
@@ -375,9 +361,9 @@ public class JPProduction{
         }};
 
         lotusPanel = new SolarGenerator("lotusPanel"){{
-            requirements(Category.power, with(silicon, 175,JPItem.vanadium, 125,JPItem.biomass, 50));
-            envEnabled = Env.spores;
-            health = 625;
+            requirements(Category.power, with(silicon, 175,JPItem.vanadium, 75,JPItem.biomass, 15));
+             
+            scaledHealth = 60f;
             size = 4;
             powerProduction = 3f;
 
@@ -386,9 +372,9 @@ public class JPProduction{
         }};
 
         biomassReactor = new ImpactReactor("biomassReactor"){{
-            requirements(Category.power, with(silicon, 225,JPItem.biomass, 115, JPItem.vanadium, 75,JPItem.naniteAlloy, 95));
-            envEnabled = Env.spores;
-            health = 1750;
+            requirements(Category.power, with(silicon, 350,JPItem.vanadium, 185,JPItem.biomass, 95,JPItem.naniteAlloy, 45));
+             
+            scaledHealth = 80f;
             size = 4;
             hasLiquids = false;
             itemDuration = 30f;
@@ -410,8 +396,8 @@ public class JPProduction{
 
         lunarFactory = new GenericCrafter("lunarFactory"){{
             requirements(Category.crafting, with(JPItem.vanadium, 75, JPItem.fluorite, 45));
-            envEnabled = Env.spores;
-            health = 750;
+             
+            scaledHealth = 75f;
             size = 2;
             craftEffect = Fx.pulverizeMedium;
             outputItem = new ItemStack(JPItem.umbratechChip, 1);
@@ -426,8 +412,8 @@ public class JPProduction{
 
         lunarCrusher = new GenericCrafter("lunarCrusher"){{
             requirements(Category.crafting, with(JPItem.vanadium, 75, JPItem.fluorite, 45));
-            envEnabled = Env.spores;
-            health = 750;
+             
+            scaledHealth = 75f;
             size = 2;
             craftEffect = Fx.pulverizeMedium;
             outputItem = new ItemStack(JPItem.vanadiumCarbideAlloy, 1);

@@ -14,11 +14,10 @@ public class JPModules{
 
         public static void load(){
         acidifierModule = new UnitAssemblerModule("acidifierModule"){{
-            requirements(Category.units, with(Items.silicon, 400, JPItem.naniteAlloy,50, JPItem.biomass, 250));
-            envEnabled = Env.spores;
-            consumePower(5f);
+            requirements(Category.units, with(Items.silicon, 400, JPItem.biomass, 125, JPItem.naniteAlloy,50));
+            scaledHealth = 40f;
             size = 3;
-            health = 475;
+            consumePower(5f);
             shownPlanets.add(Planets.serpulo);
             shownPlanets.add(Planets.erekir);
         }};
