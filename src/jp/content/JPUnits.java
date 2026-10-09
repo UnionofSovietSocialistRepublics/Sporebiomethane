@@ -298,11 +298,16 @@ public class JPUnits {
                     trailColor = Color.valueOf("8B73C7");
                     hitEffect = JPFx.sporeExplosion;
                 }};
-                parts.add(new RegionPart("-barrel"){{
+                parts.add(new RegionPart("-main"){{
                     progress = PartProgress.recoil;
                     mirror = false;
-                    moveY = -2.5f;
-                    layerOffset = -0.000001f;
+                    layerOffset = -0.000005f;
+                    parts.add(new RegionPart("-barrel"){{
+                        progress = PartProgress.recoil;
+                        mirror = false;
+                        moveY = -2.5f;
+                        layerOffset = -0.000001f;
+                    }});
                 }});
             }});
             outlineColor = Color.valueOf("303a45");

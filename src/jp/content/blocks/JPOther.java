@@ -22,7 +22,7 @@ public class JPOther{
         public static void load(){
         brokenMono = new JPDormantUnit("brokenMono"){{
             requirements(Category.effect, BuildVisibility.editorOnly, with(silicon, 5));
-            health = 120f;
+            health = 120;
             range = 100;
             size = 1;
             shoot.shotDelay = 60f;
