@@ -70,8 +70,11 @@ public class JPtechtree {
             });
 
             node(JPDistribution.biomassPipe, Seq.with(new SectorComplete(JPsectorsHM.digHM)), () -> {
-                node(JPDistribution.harvesterBay, Seq.with(new SectorComplete(JPsectorsHM.digHM)), () -> {
+                node(JPDistribution.harvesterBay, Seq.with(new SectorComplete(JPsectorsHM.nestedHM)), () -> {
                 });
+            });
+
+            node(JPOther.creepTower, Seq.with(new SectorComplete(JPsectorsHM.nestedHM)), () -> {
             });
 
             });
@@ -170,8 +173,11 @@ public class JPtechtree {
             });
 
             node(JPDistribution.biomassPipe, Seq.with(new SectorComplete(JPsectors.dig)), () -> {
-                node(JPDistribution.harvesterBay, Seq.with(new SectorComplete(JPsectors.dig)), () -> {
+                node(JPDistribution.harvesterBay, Seq.with(new SectorComplete(JPsectors.nested)), () -> {
                 });
+            });
+
+            node(JPOther.creepTower, Seq.with(new SectorComplete(JPsectors.nested)), () -> {
             });
 
             node(JPOther.vanadiumCarbideWallLarge);

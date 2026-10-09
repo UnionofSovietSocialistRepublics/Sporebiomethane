@@ -23,7 +23,7 @@ public class JPUnitFactory{
 
         public static void load(){
         pool = new UnitFactory("pool"){{
-            requirements(Category.units, with(silicon,150,JPItem.biomass,45));
+            requirements(Category.units, with(silicon,150,JPItem.biomass,25));
             scaledHealth = 60f;
             size = 3;
             consumePower(1.5f);
@@ -39,7 +39,7 @@ public class JPUnitFactory{
         }};
         
         synapseTower = new UnitFactory("synapseTower"){{
-            requirements(Category.units, with(silicon,250,JPItem.biomass,75));
+            requirements(Category.units, with(silicon,175,JPItem.biomass,45));
             scaledHealth = 60f;
             size = 3;
             consumePower(1.5f);
@@ -54,7 +54,7 @@ public class JPUnitFactory{
         }};
 
         gestator = new JPDrawerUnitFactory("gestator"){{
-            requirements(Category.units, with(silicon,750,JPItem.naniteAlloy,500,JPItem.biomass,250,JPItem.neocell,75));
+            requirements(Category.units, with(silicon,480,JPItem.biomass,200,JPItem.naniteAlloy,125,JPItem.neocell,45));
             scaledHealth = 90f;
             size = 3;
             consumePower(7f);
