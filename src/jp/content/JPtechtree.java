@@ -88,6 +88,7 @@ public class JPtechtree {
                             new SectorComplete(JPsectorsHM.digHM),
                             new SectorComplete(fungalPass)
                     ), () -> {
+                        node(JPsectorsHM.nestedHM);
                         node(JPsectorsHM.magmaHM, Seq.with(new SectorComplete(JPsectorsHM.birthHM)), () -> {
                             node(JPsectorsHM.Frosted);
                             });
@@ -190,6 +191,7 @@ public class JPtechtree {
                              new SectorComplete(JPsectors.dig),
                              new SectorComplete(fungalPass)
                      ), () -> {
+                        node(JPsectors.nested);
                         node(JPsectors.magma, Seq.with(new SectorComplete(JPsectors.birth)), () -> {
                             node(JPsectors.frost);
                             });
