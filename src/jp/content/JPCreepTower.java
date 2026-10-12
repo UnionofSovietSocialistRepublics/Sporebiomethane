@@ -274,7 +274,7 @@ public class JPCreepTower extends Block{
 
             if(target.floor() != result){
                 convertEffect.at(target.worldx(), target.worldy(), JPPal.sporeBulletBack);
-                convertSound.at(target.worldx(), target.worldy(), 1);
+                convertSound.at(target.worldx(), target.worldy(), 1f, 0.25f);
                 target.setFloor(result);
             }
         }
