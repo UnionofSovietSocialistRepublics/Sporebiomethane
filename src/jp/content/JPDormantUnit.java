@@ -12,7 +12,6 @@ import mindustry.world.blocks.defense.turrets.*;
 import static mindustry.Vars.world;
 
 public class JPDormantUnit extends PowerTurret {
-
     public JPDormantUnit(String name) {
         super(name);
         liquidCapacity = 20f;
@@ -36,7 +35,6 @@ public class JPDormantUnit extends PowerTurret {
         public void updateTile(){
 
             if(team == Team.derelict){
-                Effect placeeffect = Fx.placeBlock;
                 Units.nearby(null,x, y, range(), unit -> {
                     if(unit.team() != Team.derelict && !unit.dead()){
                         changeTeam(unit.team);
