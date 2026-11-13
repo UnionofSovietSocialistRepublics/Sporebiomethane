@@ -15,7 +15,7 @@ public class JPStatus {
             damage = -60f / 60f;
         }};
         frostshield = new StatusEffect("frostshield"){{
-            healthMultiplier = 4f;
+            healthMultiplier = 3.5f;
         }};
         reversion = new StatusEffect("reversion"){{
             speedMultiplier = -1f;
