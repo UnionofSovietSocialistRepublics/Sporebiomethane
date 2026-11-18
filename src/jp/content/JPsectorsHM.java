@@ -13,7 +13,7 @@ public class JPsectorsHM{
         //region serpulo
         skiHM = new SectorPreset("skiHM", serpulo, 241){{
             difficulty = 4;
-            captureWave = 20;
+            captureWave = 15;
         }};
 //        biomassHM = new SectorPreset("biomassHM", serpulo, 81){{
 //            difficulty = 3;
@@ -34,7 +34,7 @@ public class JPsectorsHM{
         }};
         magmaHM = new SectorPreset("magmaHM", serpulo, 271){{
             difficulty = 6;
-            captureWave = 30;
+            captureWave = 20;
            // alwaysUnlocked = true;
         }};
         Frosted = new SectorPreset("frost", serpulo, 111){{

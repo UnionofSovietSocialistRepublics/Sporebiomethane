@@ -22,7 +22,7 @@ public class InfestationBulletType extends BasicBulletType {
 //          Lobber is added temporaily until a unit for the bullet is decided on.
             if (unit.type == JPUnits.roach || unit.type == JPUnits.frost || unit.type == JPUnits.frostC || unit.type == JPUnits.lobber) return;
             //Health check when bullet hits
-            // Condition is as follow: unit health smaller than 25% of max OR
+            // Condition is as follows: unit health smaller than 25% of max OR
             // unit health < 100 OR unit have infested status effect
             // Might oooor might or be overpowered due to how much health late game unit have
             if( (unit.health <= (unit.maxHealth*0.25)) || (unit.health <= 100f || (unit.getDuration(JPStatus.infested)) > 0) ){

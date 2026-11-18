@@ -28,6 +28,7 @@ public class JPUnitFactory{
             size = 3;
             consumePower(1.5f);
             plans = Seq.with(
+//              60 tick is 1s, 60 tick * 15 = 15s
                 new UnitPlan( JPUnits.zergling, 60f * 15, with(silicon, 25,JPItem.biomass,5)),
                 new UnitPlan( JPUnits.baneling, 60f * 10, with(silicon, 15,JPItem.biomass,5)),
                 new UnitPlan( JPUnits.roach, 60f * 30, with(silicon, 65,JPItem.biomass,30)),
